@@ -1,0 +1,9 @@
+
+Erreur {{ code() }}
+
+@if (error()) {
+   <pre>{{ error() | json }}</pre>
+} @else {
+   <pre>Aucun contenu dans la réponse HTTP</pre>
+}
+

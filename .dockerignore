@@ -1,0 +1,6 @@
+.angular
+node_modules
+.editorconfig
+.gitignore
+proxy-dev.conf.json
+README.md

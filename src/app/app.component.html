@@ -1,0 +1,19 @@
+
+@switch (_settingService.appStatus()) {
+   @case ("initialized") {
+      <router-outlet/>
+   }
+   @case ("pending") {
+      Chargement en cours...
+   }
+   @case ("failed") {
+      Erreur lors du chargement de l'application
+   }
+}
+
+<br>
+Frontend version : {{ frontendVersion }}
+<br>
+Backend version : {{ backendVersion }}
+
+
