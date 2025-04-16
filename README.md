@@ -13,7 +13,7 @@ Ce module contient le client web du projet Fantome App. Il est écrit en Angular
 Tout d'abord, il faut installer les dépendances NPM.
 
 ```bash
-npm install
+pnpm install
 ```
 
 L'utilisation de l'option `--force` peut être nécessaire.
@@ -21,7 +21,7 @@ L'utilisation de l'option `--force` peut être nécessaire.
 Ensuite, la commande suivante permet de lancer le frontend :
 
 ```bash
-npm run start
+pnpm start
 ```
 
 Attention : cette commande n'est pas identique à `ng serve`, l'application ne fonctionnera pas correctement. 

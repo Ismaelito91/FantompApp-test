@@ -24,6 +24,6 @@ pipelines:
           caches:
             - docker
           script:
-            - ocker build -t rg.fr-par.scw.cloud/demo-aot/fantome-app-frontend:$BITBUCKET_TAG .
+            - docker build -t rg.fr-par.scw.cloud/demo-aot/fantome-app-frontend:$BITBUCKET_TAG .
             - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS" rg.fr-par.scw.cloud
             - docker push rg.fr-par.scw.cloud/demo-aot/fantome-app-frontend:$BITBUCKET_TAG

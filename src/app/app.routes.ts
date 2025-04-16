@@ -2,16 +2,11 @@ import {Routes} from '@angular/router';
 import {ErrorComponent} from "./components/common/error/error.component";
 import {HomeComponent} from "./components/home/home.component";
 
-import {FooComponent} from "./components/foo/foo.component";
 
 export const routes: Routes = [
    {
       path: '',
       component: HomeComponent
-   },
-   {
-      path: 'foo/:id',
-      component: FooComponent
    },
    {
       path: 'error/:code',

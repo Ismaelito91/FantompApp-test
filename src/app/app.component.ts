@@ -1,6 +1,6 @@
-import {Component, inject} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
-import {SettingService} from "./service/setting.service";
+import { Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { SettingService } from "./service/setting.service";
 
 import packageInfo from '../../package.json'
 
@@ -18,13 +18,12 @@ export class AppComponent {
 
    _settingService = inject(SettingService);
 
-
    get frontendVersion() {
       return packageInfo.version;
    }
 
    get backendVersion() {
-      return _settingService.settings()?.version;
+      return this._settingService.settings()?.version;
    }
 
 }

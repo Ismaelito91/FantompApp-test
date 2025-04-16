@@ -12,8 +12,6 @@ import {JsonPipe} from "@angular/common";
 })
 export class ErrorComponent implements OnInit{
 
-   
-
    code = input<number>();
    error = signal<ApiErrorModel>(history.state?.error);
 

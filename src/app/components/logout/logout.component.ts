@@ -12,7 +12,7 @@ export class LogoutComponent {
    constructor(
       private _authService: AuthService
    ) {
-      _authService.logout();
+      this._authService.logout();
    }
 
 }
