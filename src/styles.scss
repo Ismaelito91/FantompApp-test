@@ -1,4 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+@use '@angular/material' as mat;
+@use 'material-icons/iconfont/material-icons.scss';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+   font-family: 'OpenSans';
+   src: url('assets/fonts/OpenSans/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+html {
+   @include mat.theme((color: mat.$azure-palette, density: 0));
+}
+
+html,
+body {
+   height: 100%;
+}
+
+body {
+   margin: 0;
+   font-family: 'OpenSans', Arial, sans-serif !important;
+   background-color: var(--mat-sys-background);
+   color: var(--mat-sys-on-background);
+}
+
+:root {
+   @include mat.toolbar-overrides((container-background-color: var(--mat-sys-inverse-primary), title-text-font: 'OpenSans'));
+   @include mat.menu-overrides((item-label-text-font: 'OpenSans'));
+   @include mat.button-overrides((text-label-text-font: 'OpenSans', filled-label-text-font: 'OpenSans',outlined-label-text-font: 'OpenSans'));
+}
+
+.toolbar-nav {
+   position: fixed;
+   bottom: 0;
+   z-index: 1000;
+   display: flex;
+   justify-content: space-between;
+}

@@ -1,7 +1,8 @@
-
 @switch (_settingService.appStatus()) {
    @case ("initialized") {
+      <app-header />
       <router-outlet/>
+      <app-footer/>
    }
    @case ("pending") {
       Chargement en cours...
@@ -11,7 +12,8 @@
    }
 }
 
-<br>
+<p>
 Frontend version : {{ frontendVersion }}
 <br>
 Backend version : {{ backendVersion }}
+</p>

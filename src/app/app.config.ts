@@ -1,33 +1,32 @@
-import {ApplicationConfig, inject, provideAppInitializer,
-   provideZoneChangeDetection} from '@angular/core';
-import {provideRouter, withComponentInputBinding} from '@angular/router';
+import {
+   ApplicationConfig, inject,
+   isDevMode,
+   provideAppInitializer,
+   provideZoneChangeDetection
+} from '@angular/core';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
-import {routes} from './app.routes';
-import {provideHttpClient, withInterceptors} from "@angular/common/http";
-import {apiInterceptor} from "./interceptor/api.interceptor";
-import {SettingService} from "./service/setting.service";
-import {catchError, EMPTY, tap} from "rxjs";
+import { provideHttpClient, withInterceptors } from "@angular/common/http";
+import { catchError, EMPTY, tap } from "rxjs";
+import { routes } from './app.routes';
+import { apiInterceptor } from "./interceptor/api.interceptor";
+import { SettingService } from "./service/setting.service";
 
-import {provideOAuthClient} from "angular-oauth2-oidc";
-import {AuthService} from "./service/auth.service";
-import {authInterceptor} from "./interceptor/auth.interceptor";
+import { provideServiceWorker } from '@angular/service-worker';
 
 
-function initSettings(_settingsService: SettingService, _authService: AuthService) {
+function initSettings(_settingsService: SettingService) {
    // On récupère d'abord la configuration globale de l'application depuis le backend
    return _settingsService.getSettings()
       .pipe(
          tap(async settings => {
             _settingsService.settings.set(settings);
 
-            // Enfin on configure le fournisseur OIDC selon les valeurs récupérées
-            await _authService.configure();
-
             _settingsService.appStatus.set("initialized");
          }),
          catchError(() => {
             _settingsService.appStatus.set("failed");
-            
+
             return EMPTY;
          }) // Requis, sinon c'est le catch du bootstrapApplication qui est pris en compte
       )
@@ -35,17 +34,15 @@ function initSettings(_settingsService: SettingService, _authService: AuthServic
 
 export const appConfig: ApplicationConfig = {
    providers: [
-      provideZoneChangeDetection({eventCoalescing: true}),
+      provideZoneChangeDetection({ eventCoalescing: true }),
       provideRouter(routes, withComponentInputBinding()),
       provideHttpClient(
-         withInterceptors([authInterceptor, apiInterceptor])
+         withInterceptors([apiInterceptor])
       ),
-      provideAppInitializer(() => initSettings(inject(SettingService), inject(AuthService))),
-      provideOAuthClient({
-         resourceServer: {
-            allowedUrls: [],
-            sendAccessToken: true
-         }
+      provideAppInitializer(() => initSettings(inject(SettingService))),
+      provideServiceWorker('ngsw-worker.js', {
+         enabled: !isDevMode(),
+         registrationStrategy: 'registerWhenStable:30000'
       })
    ]
 };

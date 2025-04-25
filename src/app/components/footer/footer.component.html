@@ -1,12 +1,16 @@
 <footer>
-   <div class="fr-container">
-      <div class="fr-footer__bottom-copy">
-         <p>
-            Version du client : {{ frontendVersion }}
-         </p>
-         <p>
-            Version de l'API : {{ backendVersion }}
-         </p>
-      </div>
-   </div>
+   <mat-toolbar class="toolbar-nav">
+      <button mat-button routerLink="/" routerLinkActive="active-link">
+         <mat-icon>home</mat-icon>
+         <span>Accueil</span>
+      </button>
+      <button mat-button routerLink="/top-tracks" routerLinkActive="active-link">
+         <mat-icon>assistant</mat-icon>
+         <span>Aide</span>
+      </button>
+      <button mat-button routerLink="/history" routerLinkActive="active-link">
+         <mat-icon>settings_suggest</mat-icon>
+         <span>Outils</span>
+      </button>
+   </mat-toolbar>
 </footer>

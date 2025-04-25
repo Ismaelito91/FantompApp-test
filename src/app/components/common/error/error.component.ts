@@ -1,6 +1,6 @@
-import {Component, input, OnInit, signal} from '@angular/core';
+import { Component, input, OnInit, signal } from '@angular/core';
 import ApiErrorModel from "../../../model/api-error.model";
-import {JsonPipe} from "@angular/common";
+import { JsonPipe } from "@angular/common";
 
 @Component({
    selector: 'app-error',
@@ -10,7 +10,7 @@ import {JsonPipe} from "@angular/common";
    ],
    templateUrl: './error.component.html'
 })
-export class ErrorComponent implements OnInit{
+export class ErrorComponent implements OnInit {
 
    code = input<number>();
    error = signal<ApiErrorModel>(history.state?.error);

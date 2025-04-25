@@ -2,7 +2,9 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SettingService } from "./service/setting.service";
 
-import packageInfo from '../../package.json'
+import packageInfo from '../../package.json';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @Component({
@@ -10,6 +12,8 @@ import packageInfo from '../../package.json'
    standalone: true,
    imports: [
       RouterOutlet,
+      HeaderComponent,
+      FooterComponent
    ],
    templateUrl: './app.component.html',
    styleUrl: './app.component.scss'

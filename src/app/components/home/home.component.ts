@@ -1,26 +1,15 @@
 import { Component } from '@angular/core';
-
-import { AuthService } from "../../service/auth.service";
-import { JsonPipe } from "@angular/common";
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
    selector: 'app-home',
    standalone: true,
-   imports: [
-      JsonPipe,
-   ],
+   imports: [MatButtonModule],
    templateUrl: './home.component.html'
 })
 export class HomeComponent {
 
-   get user() {
-      return this._authService.user;
-   }
-
-
    constructor(
-
-      private _authService: AuthService,
    ) { }
 }
