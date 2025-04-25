@@ -34,3 +34,8 @@ target
 node_modules
 .angular
 dist
+
+### Karma SonarQube ###
+.scannerwork/*
+reports/*
+coverage/*
