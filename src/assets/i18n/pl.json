@@ -1,0 +1,40 @@
+{
+   "APP": {
+      "TITLE": "Aplikacja Duch",
+      "LOADING": "Ładowanie...",
+      "ERROR": "Błąd podczas ładowania aplikacji"
+   },
+   "COMMON": {
+      "SAVE": "Zapisz",
+      "CANCEL": "Anuluj",
+      "DELETE": "Usuń",
+      "EDIT": "Edytuj",
+      "SEARCH": "Szukaj",
+      "BACK": "Wstecz",
+      "NEXT": "Dalej",
+      "PREVIOUS": "Poprzedni",
+      "HOME": "Strona główna",
+      "HELP": "Pomoc",
+      "TOOLS": "Narzędzia"
+   },
+   "LANGUAGES": {
+      "FR": "Francuski",
+      "EN": "Angielski",
+      "PT": "Portugalski",
+      "ES": "Hiszpański",
+      "CA": "Kataloński",
+      "PL": "Polski",
+      "DA": "Duński",
+      "EL": "Grecki",
+      "HU": "Węgierski"
+   },
+   "HOME": {
+      "WELCOME": "Witamy w Aplikacji Duch"
+   },
+   "VERSION": {
+      "FRONTEND": "Wersja Frontend",
+      "BACKEND": "Wersja Backend",
+      "FRONTEND_VALUE": "Wersja Frontend: {{version}}",
+      "BACKEND_VALUE": "Wersja Backend: {{version}}"
+   }
+}

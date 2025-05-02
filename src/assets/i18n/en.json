@@ -1,0 +1,40 @@
+{
+   "APP": {
+      "TITLE": "Phantom App",
+      "LOADING": "Loading...",
+      "ERROR": "Error loading the application"
+   },
+   "COMMON": {
+      "SAVE": "Save",
+      "CANCEL": "Cancel",
+      "DELETE": "Delete",
+      "EDIT": "Edit",
+      "SEARCH": "Search",
+      "BACK": "Back",
+      "NEXT": "Next",
+      "PREVIOUS": "Previous",
+      "HOME": "Home",
+      "HELP": "Help",
+      "TOOLS": "Tools"
+   },
+   "LANGUAGES": {
+      "FR": "French",
+      "EN": "English",
+      "PT": "Portuguese",
+      "ES": "Spanish",
+      "CA": "Catalan",
+      "PL": "Polish",
+      "DA": "Danish",
+      "EL": "Greek",
+      "HU": "Hungarian"
+   },
+   "HOME": {
+      "WELCOME": "Welcome to Phantom App"
+   },
+   "VERSION": {
+      "FRONTEND": "Frontend Version",
+      "BACKEND": "Backend Version",
+      "FRONTEND_VALUE": "Frontend Version: {{version}}",
+      "BACKEND_VALUE": "Backend Version: {{version}}"
+   }
+}

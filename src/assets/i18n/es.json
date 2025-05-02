@@ -1,0 +1,40 @@
+{
+   "APP": {
+      "TITLE": "App Fantasma",
+      "LOADING": "Cargando...",
+      "ERROR": "Error al cargar la aplicación"
+   },
+   "COMMON": {
+      "SAVE": "Guardar",
+      "CANCEL": "Cancelar",
+      "DELETE": "Eliminar",
+      "EDIT": "Editar",
+      "SEARCH": "Buscar",
+      "BACK": "Volver",
+      "NEXT": "Siguiente",
+      "PREVIOUS": "Anterior",
+      "HOME": "Inicio",
+      "HELP": "Ayuda",
+      "TOOLS": "Herramientas"
+   },
+   "LANGUAGES": {
+      "FR": "Francés",
+      "EN": "Inglés",
+      "PT": "Portugués",
+      "ES": "Español",
+      "CA": "Catalán",
+      "PL": "Polaco",
+      "DA": "Danés",
+      "EL": "Griego",
+      "HU": "Húngaro"
+   },
+   "HOME": {
+      "WELCOME": "Bienvenido a la App Fantasma"
+   },
+   "VERSION": {
+      "FRONTEND": "Versión Frontend",
+      "BACKEND": "Versión Backend",
+      "FRONTEND_VALUE": "Versión Frontend: {{version}}",
+      "BACKEND_VALUE": "Versión Backend: {{version}}"
+   }
+}

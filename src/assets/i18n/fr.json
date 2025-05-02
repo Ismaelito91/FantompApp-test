@@ -1,0 +1,40 @@
+{
+   "APP": {
+      "TITLE": "Fantôme App",
+      "LOADING": "Chargement en cours...",
+      "ERROR": "Erreur lors du chargement de l'application"
+   },
+   "COMMON": {
+      "SAVE": "Enregistrer",
+      "CANCEL": "Annuler",
+      "DELETE": "Supprimer",
+      "EDIT": "Modifier",
+      "SEARCH": "Rechercher",
+      "BACK": "Retour",
+      "NEXT": "Suivant",
+      "PREVIOUS": "Précédent",
+      "HOME": "Accueil",
+      "HELP": "Aide",
+      "TOOLS": "Outils"
+   },
+   "LANGUAGES": {
+      "FR": "Français",
+      "EN": "Anglais",
+      "PT": "Portugais",
+      "ES": "Espagnol",
+      "CA": "Catalan",
+      "PL": "Polonais",
+      "DA": "Danois",
+      "EL": "Grec",
+      "HU": "Hongrois"
+   },
+   "HOME": {
+      "WELCOME": "Bienvenue sur l'application Fantôme"
+   },
+   "VERSION": {
+      "FRONTEND": "Version Frontend",
+      "BACKEND": "Version Backend",
+      "FRONTEND_VALUE": "Version Frontend : {{version}}",
+      "BACKEND_VALUE": "Version Backend : {{version}}"
+   }
+}

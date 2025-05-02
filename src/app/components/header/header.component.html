@@ -1,17 +1,43 @@
 <mat-toolbar>
    <div class="flex justify-between items-center w-full">
       <h1 class="font-bold capitalize">
-         fantome app
+         {{ "APP.TITLE" | translate }}
       </h1>
-      <button mat-icon-button [mat-menu-trigger-for]="themeMenu">
-         <mat-icon>{{ _themeService.selectedTheme()?.icon }}</mat-icon>
-      </button>
+      <div class="flex gap-2">
+         <!-- Sélecteur de langue -->
+         <button mat-icon-button [mat-menu-trigger-for]="languageMenu">
+            <mat-icon>language</mat-icon>
+         </button>
+         <!-- Sélecteur de thème -->
+         <button mat-icon-button [mat-menu-trigger-for]="themeMenu">
+            <mat-icon>{{ _themeService.selectedTheme()?.icon }}</mat-icon>
+         </button>
+      </div>
    </div>
+
+   <!-- Menu pour les langues -->
+   <mat-menu #languageMenu="matMenu">
+      @for (lang of _languageService.supportedLanguages; track lang.code) {
+      <button
+         [class.selected-theme]="_languageService.language() === lang.code"
+         mat-menu-item
+         (click)="_languageService.setLanguage(lang.code)"
+      >
+         <span>{{ lang.name }}</span>
+      </button>
+      }
+   </mat-menu>
+
+   <!-- Menu pour les thèmes -->
    <mat-menu #themeMenu="matMenu">
       @for (theme of _themeService.getThemes(); track theme.name) {
-      <button [class.selected-theme]="
-         _themeService.selectedTheme()?.name === theme.name
-       " mat-menu-item (click)="_themeService.setTheme(theme.name)">
+      <button
+         [class.selected-theme]="
+            _themeService.selectedTheme()?.name === theme.name
+         "
+         mat-menu-item
+         (click)="_themeService.setTheme(theme.name)"
+      >
          <mat-icon>{{ theme.icon }}</mat-icon>
          <span>{{ theme.name | titlecase }}</span>
       </button>

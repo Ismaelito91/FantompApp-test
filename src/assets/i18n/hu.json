@@ -1,0 +1,40 @@
+{
+   "APP": {
+      "TITLE": "Fantom Alkalmazás",
+      "LOADING": "Betöltés...",
+      "ERROR": "Hiba az alkalmazás betöltése közben"
+   },
+   "COMMON": {
+      "SAVE": "Mentés",
+      "CANCEL": "Mégse",
+      "DELETE": "Törlés",
+      "EDIT": "Szerkesztés",
+      "SEARCH": "Keresés",
+      "BACK": "Vissza",
+      "NEXT": "Következő",
+      "PREVIOUS": "Előző",
+      "HOME": "Kezdőlap",
+      "HELP": "Segítség",
+      "TOOLS": "Eszközök"
+   },
+   "LANGUAGES": {
+      "FR": "Francia",
+      "EN": "Angol",
+      "PT": "Portugál",
+      "ES": "Spanyol",
+      "CA": "Katalán",
+      "PL": "Lengyel",
+      "DA": "Dán",
+      "EL": "Görög",
+      "HU": "Magyar"
+   },
+   "HOME": {
+      "WELCOME": "Üdvözöljük a Fantom Alkalmazásban"
+   },
+   "VERSION": {
+      "FRONTEND": "Frontend verzió",
+      "BACKEND": "Backend verzió",
+      "FRONTEND_VALUE": "Frontend verzió: {{version}}",
+      "BACKEND_VALUE": "Backend verzió: {{version}}"
+   }
+}

@@ -1,0 +1,40 @@
+{
+   "APP": {
+      "TITLE": "Spøgelse App",
+      "LOADING": "Indlæser...",
+      "ERROR": "Fejl ved indlæsning af applikationen"
+   },
+   "COMMON": {
+      "SAVE": "Gem",
+      "CANCEL": "Annuller",
+      "DELETE": "Slet",
+      "EDIT": "Rediger",
+      "SEARCH": "Søg",
+      "BACK": "Tilbage",
+      "NEXT": "Næste",
+      "PREVIOUS": "Forrige",
+      "HOME": "Hjem",
+      "HELP": "Hjælp",
+      "TOOLS": "Værktøjer"
+   },
+   "LANGUAGES": {
+      "FR": "Fransk",
+      "EN": "Engelsk",
+      "PT": "Portugisisk",
+      "ES": "Spansk",
+      "CA": "Catalansk",
+      "PL": "Polsk",
+      "DA": "Dansk",
+      "EL": "Græsk",
+      "HU": "Ungarsk"
+   },
+   "HOME": {
+      "WELCOME": "Velkommen til Spøgelse App"
+   },
+   "VERSION": {
+      "FRONTEND": "Frontend Version",
+      "BACKEND": "Backend Version",
+      "FRONTEND_VALUE": "Frontend Version: {{version}}",
+      "BACKEND_VALUE": "Backend Version: {{version}}"
+   }
+}
