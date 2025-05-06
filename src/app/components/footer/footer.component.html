@@ -4,13 +4,17 @@
          <mat-icon>home</mat-icon>
          <span>{{ "COMMON.HOME" | translate }}</span>
       </button>
-      <button mat-button routerLink="/help" routerLinkActive="active-link">
-         <mat-icon>assistant</mat-icon>
-         <span>{{ "COMMON.HELP" | translate }}</span>
+      <button mat-button routerLink="/problems" routerLinkActive="active-link">
+         <mat-icon>warning</mat-icon>
+         <span>{{ "COMMON.PROBLEM" | translate }}</span>
       </button>
       <button mat-button routerLink="/tools" routerLinkActive="active-link">
-         <mat-icon>settings_suggest</mat-icon>
+         <mat-icon>construction</mat-icon>
          <span>{{ "COMMON.TOOLS" | translate }}</span>
       </button>
+      <!-- <button mat-button routerLink="/tools" routerLinkActive="active-link">
+         <mat-icon>security</mat-icon>
+         <span>{{ "COMMON.SECURE" | translate }}</span>
+      </button> -->
    </mat-toolbar>
 </footer>

@@ -1,15 +1,11 @@
-@switch (_settingService.appStatus()) { @case ("initialized") {
-<app-header />
-<router-outlet />
-<app-footer />
-} @case ("pending") {
-{{ "APP.LOADING" | translate }}
-} @case ("failed") {
-{{ "APP.ERROR" | translate }}
-} }
-
-<p>
-   {{ "VERSION.FRONTEND_VALUE" | translate : { version: frontendVersion } }}
-   <br />
-   {{ "VERSION.BACKEND_VALUE" | translate : { version: backendVersion } }}
-</p>
+@switch (_settingService.appStatus()) {
+   @case ("initialized") {
+      <app-header />
+      <router-outlet />
+      <app-footer />
+   } @case ("pending") {
+      {{ "APP.LOADING" | translate }}
+   } @case ("failed") {
+      {{ "APP.ERROR" | translate }}
+   }
+}

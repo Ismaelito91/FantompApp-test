@@ -1,12 +1,11 @@
 import { Component, OnInit, inject } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { SettingService } from "./service/setting.service";
 
-import packageInfo from "../../package.json";
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { LanguageService } from "./service/language.service";
+import { SettingService } from "./service/setting.service";
 
 @Component({
    selector: "app-root",
@@ -16,9 +15,9 @@ import { LanguageService } from "./service/language.service";
    styleUrl: "./app.component.scss",
 })
 export class AppComponent implements OnInit {
-   _settingService = inject(SettingService);
    private translateService = inject(TranslateService);
    private languageService = inject(LanguageService);
+   _settingService = inject(SettingService);
 
    ngOnInit(): void {
       // Définir les langues disponibles
@@ -31,13 +30,5 @@ export class AppComponent implements OnInit {
 
       // Le service de langue gère le choix de la langue
       // Il est déjà injecté et s'initialise automatiquement
-   }
-
-   get frontendVersion() {
-      return packageInfo.version;
-   }
-
-   get backendVersion() {
-      return this._settingService.settings()?.version;
    }
 }

@@ -14,8 +14,9 @@
       "NEXT": "Επόμενο",
       "PREVIOUS": "Προηγούμενο",
       "HOME": "Αρχική",
-      "HELP": "Βοήθεια",
-      "TOOLS": "Εργαλεία"
+      "PROBLEM": "Βοήθεια",
+      "TOOLS": "Εργαλεία",
+      "SECURE": "Secure me"
    },
    "LANGUAGES": {
       "FR": "Γαλλικά",
