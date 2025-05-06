@@ -14,8 +14,9 @@
       "NEXT": "Következő",
       "PREVIOUS": "Előző",
       "HOME": "Kezdőlap",
-      "HELP": "Segítség",
-      "TOOLS": "Eszközök"
+      "PROBLEM": "Probléma",
+      "TOOLS": "Eszközök",
+      "SECURE": "Secure me"
    },
    "LANGUAGES": {
       "FR": "Francia",

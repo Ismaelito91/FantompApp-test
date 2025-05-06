@@ -14,8 +14,9 @@
       "NEXT": "Næste",
       "PREVIOUS": "Forrige",
       "HOME": "Hjem",
-      "HELP": "Hjælp",
-      "TOOLS": "Værktøjer"
+      "PROBLEM": "Spørgsmål",
+      "TOOLS": "Værktøjer",
+      "SECURE": "Secure me"
    },
    "LANGUAGES": {
       "FR": "Fransk",

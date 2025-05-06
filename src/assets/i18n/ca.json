@@ -14,8 +14,9 @@
       "NEXT": "Següent",
       "PREVIOUS": "Anterior",
       "HOME": "Inici",
-      "HELP": "Ajuda",
-      "TOOLS": "Eines"
+      "PROBLEM": "Problema",
+      "TOOLS": "Eines",
+      "SECURE": "Secure me"
    },
    "LANGUAGES": {
       "FR": "Francès",
