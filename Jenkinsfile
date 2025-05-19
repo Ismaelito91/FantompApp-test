@@ -46,7 +46,7 @@ pipeline {
       stage('Build') {
          steps {
             script {
-               sh "pnpm build"
+               sh "pnpm build:prod"
             }
          }
       }
