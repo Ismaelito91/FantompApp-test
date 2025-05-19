@@ -1,14 +1,15 @@
-import { Component, OnInit, Renderer2, Inject } from "@angular/core";
+import {
+   Component,
+   OnInit,
+   Renderer2,
+   Inject,
+   ViewChild,
+   ElementRef,
+} from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
 import { DOCUMENT } from "@angular/common";
-import {
-   trigger,
-   state,
-   style,
-   animate,
-   transition,
-} from "@angular/animations";
+import { gsap } from "gsap";
 
 @Component({
    selector: "app-splash-screen",
@@ -16,16 +17,9 @@ import {
    imports: [CommonModule],
    templateUrl: "./splash-screen.component.html",
    styleUrls: ["./splash-screen.component.scss"],
-   animations: [
-      trigger("fadeOut", [
-         state("visible", style({ opacity: 1 })),
-         state("hidden", style({ opacity: 0 })),
-         transition("visible => hidden", [animate("0.5s ease-out")]),
-      ]),
-   ],
 })
 export class SplashScreenComponent implements OnInit {
-   fadeState: "visible" | "hidden" = "visible";
+   @ViewChild("splashContainer", { static: true }) splashContainer!: ElementRef;
 
    constructor(
       private router: Router,
@@ -34,30 +28,28 @@ export class SplashScreenComponent implements OnInit {
    ) {}
 
    ngOnInit(): void {
-      // Assurer que le viewport est correctement configuré
       this.ensureViewportMeta();
-
-      // Afficher l'écran de démarrage pendant 2.5 secondes puis naviguer vers l'accueil
       setTimeout(() => {
-         this.fadeState = "hidden";
-         setTimeout(() => {
-            this.router.navigate(["/home"]);
-         }, 500); // Attendre que l'animation de fade-out se termine
-      }, 2500);
+         const el = this.splashContainer.nativeElement;
+         gsap.to(el, {
+            // scale: 0.69,
+            opacity: 0,
+            duration: 1.7,
+            ease: "power2.inOut",
+            onComplete: () => {
+               this.router.navigate(["/home"]);
+            },
+         });
+      }, 1700);
    }
 
    private ensureViewportMeta(): void {
-      // Vérifier si la balise meta viewport existe
       let viewportMeta = this.document.querySelector('meta[name="viewport"]');
-
-      // Si elle n'existe pas, on la crée
       if (!viewportMeta) {
          viewportMeta = this.renderer.createElement("meta");
          this.renderer.setAttribute(viewportMeta, "name", "viewport");
          this.renderer.appendChild(this.document.head, viewportMeta);
       }
-
-      // Définir les attributs du viewport pour une expérience mobile optimale
       this.renderer.setAttribute(
          viewportMeta,
          "content",
