@@ -1,0 +1,78 @@
+.splash-screen {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   background: linear-gradient(180deg, #4e21a9 0%, #2f0d70 100%);
+   color: white;
+   z-index: 9999;
+   font-family: "OpenSans", sans-serif;
+   padding: 20px;
+   box-sizing: border-box;
+}
+
+.splash-content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   flex-grow: 1;
+}
+
+.ghost-logo {
+   width: 250px;
+   height: auto;
+   margin-bottom: 20px;
+}
+
+.footer {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 20px;
+}
+
+.cnil-logo {
+   width: 390px;
+   height: 45.7359619140625px;
+   top: 742px;
+   gap: 24px;
+}
+
+/* Responsive adjustments */
+@media (max-height: 600px) {
+   .ghost-logo {
+      width: 80px;
+   }
+
+   .footer {
+      transform: scale(0.9);
+   }
+}
+
+@media (max-width: 400px) {
+   .footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+   }
+}
+
+/* Classe pour masquer visuellement du contenu tout en le rendant disponible aux lecteurs d'écran */
+.sr-only {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   padding: 0;
+   overflow: hidden;
+   clip: rect(0, 0, 0, 0);
+   white-space: nowrap;
+   border: 0;
+}

@@ -1,0 +1,29 @@
+<div
+   class="splash-screen"
+   [@fadeOut]="fadeState"
+   role="status"
+   aria-live="polite"
+   aria-label="Écran de démarrage de l'application FantomApp"
+>
+   <div class="splash-content">
+      <img
+         src="assets/images/famtome-app.svg"
+         alt="Logo FantomApp représentant un fantôme blanc"
+         class="ghost-logo"
+         aria-hidden="false"
+      />
+   </div>
+
+   <div class="footer" role="contentinfo">
+      <img
+         src="assets/images/logo-CNIL-EU.svg"
+         alt="Logo de la CNIL (Commission Nationale de l'Informatique et des Libertés)"
+         class="cnil-logo"
+      />
+   </div>
+   <!-- Message pour lecteurs d'écran indiquant le chargement -->
+   <div class="sr-only" aria-live="assertive">
+      L'application FantomApp est en cours de chargement, veuillez patienter
+      quelques instants
+   </div>
+</div>
