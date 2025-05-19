@@ -32,7 +32,6 @@ export class SplashScreenComponent implements OnInit {
       setTimeout(() => {
          const el = this.splashContainer.nativeElement;
          gsap.to(el, {
-            // scale: 0.69,
             opacity: 0,
             duration: 1.7,
             ease: "power2.inOut",
