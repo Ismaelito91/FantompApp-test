@@ -1,6 +1,6 @@
 import { Injectable, computed, effect, signal } from "@angular/core";
 
-type ThemeType = "light" | "dark" | "system";
+export type ThemeType = "light" | "dark" | "system";
 
 export interface AppTheme {
    name: ThemeType;
