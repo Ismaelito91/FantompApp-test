@@ -2,6 +2,7 @@
 @use "tailwindcss";
 @use "@angular/material" as mat;
 @use "material-icons/iconfont/material-icons.scss";
+@use "styles/themes";
 
 // Déclaration de la police Lexend (Variable Font) - Pour les titres
 @font-face {
@@ -76,74 +77,35 @@
    --primary-darkest: #ffffff;
 
    // Variables spécifiques au mode sombre
-   --Neutrals-Dark-Mode---DM-background-1: rgba(20, 13, 38, 1);
-   --Neutrals-Dark-Mode---DM-background-2: rgba(41, 30, 67, 1);
-   --Neutrals-Dark-Mode---DM-background-3: rgba(65, 50, 93, 0.6);
+   --Neutrals-Dark-Mode---DM-background-1: #140d26;
+   --Neutrals-Dark-Mode---DM-background-2: #291e43;
+   --Neutrals-Dark-Mode---DM-background-3: #413a5c;
+   --Neutrals-Dark-Mode---DM-text: #ffffff;
 
-   // Styles globaux pour le mode sombre
-   .app-info-container,
-   .app-info-item {
-      background: var(--Neutrals-Dark-Mode---DM-background-2);
-
-      mat-icon {
-         color: #ffffff !important;
-
-         &[svgIcon] {
-            ::ng-deep svg {
-               * {
-                  stroke: #ffffff !important;
-                  fill: none !important;
-               }
-            }
-         }
-
-         &.arrow {
-            color: #ffffff !important;
-         }
-      }
-
-      span {
-         color: #ffffff !important;
-      }
-
-      &:hover {
-         background: var(--Neutrals-Dark-Mode---DM-background-3);
-      }
+   body {
+      background-color: var(--Neutrals-Dark-Mode---DM-background-1);
+      color: var(--Neutrals-Dark-Mode---DM-text);
    }
 
-   // Styles pour les éléments hors du conteneur
-   .app-info-parent > .app-info-item {
-      background: var(--Neutrals-Dark-Mode---DM-background-2);
-      margin-top: 16px;
-
-      mat-icon {
-         color: #ffffff !important;
-
-         &[svgIcon] {
-            ::ng-deep svg {
-               * {
-                  stroke: #ffffff !important;
-                  fill: none !important;
-               }
-            }
-         }
-      }
-
-      span {
-         color: #ffffff !important;
-      }
-
-      &:hover {
-         background: var(--Neutrals-Dark-Mode---DM-background-3);
-      }
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      color: var(--Neutrals-Dark-Mode---DM-text);
    }
 
-   // Force les icônes SVG en blanc
+   mat-icon {
+      color: var(--Neutrals-Dark-Mode---DM-text) !important;
+   }
+
    mat-icon[svgIcon] {
+      color: var(--Neutrals-Dark-Mode---DM-text) !important;
       ::ng-deep svg {
          * {
-            stroke: #ffffff !important;
-            fill: #ffffff !important;
+            stroke: var(--Neutrals-Dark-Mode---DM-text) !important;
+            fill: var(--Neutrals-Dark-Mode---DM-text) !important;
          }
       }
    }
@@ -161,18 +123,20 @@ html {
 html,
 body {
    height: 100%;
+   margin: 0;
+   padding: 0;
 }
 
 body {
-   margin: 0;
-   font-family: "Nunito", Arial, sans-serif;
-   background-color: var(--background);
-   color: var(--primary);
+   font-family: var(--body-font-family);
+   font-weight: var(--font-weight-body);
+   font-size: var(--font-size-body);
+   line-height: var(--line-height-body);
+   letter-spacing: var(--letter-spacing-body);
+   background-color: var(--Neutrals-Light-Mode---background-1);
+   color: var(--Neutrals-Light-Mode---content-2);
    transition: background-color 0.3s ease, color 0.3s ease;
-   font-weight: 400;
-   font-size: 16px;
-   line-height: 100%;
-   letter-spacing: 0%;
+   min-height: 100vh;
 }
 
 .toolbar-nav {
@@ -205,10 +169,10 @@ h3,
 mat-icon[svgIcon] {
    width: 24px !important;
    height: 24px !important;
-   color: #10052e !important;
    display: inline-flex !important;
    align-items: center;
    justify-content: center;
+   color: var(--Neutrals-Light-Mode---content-2) !important;
 }
 
 ::ng-deep svg {
@@ -235,31 +199,6 @@ h6 {
 h5 {
    font-size: var(--font-size-h5);
    line-height: var(--line-height-h5);
-}
-
-// Style par défaut pour le corps du texte
-body,
-p,
-.body-text {
-   font-family: var(--body-font-family);
-   font-size: var(--font-size-body);
-   line-height: var(--line-height-body);
-   font-weight: var(--font-weight-body);
-   letter-spacing: var(--letter-spacing-body);
-   margin: 0;
-   padding: 0;
-}
-
-// Mode sombre
-:root.dark-theme {
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   h6 {
-      color: var(--Neutrals-Dark-Mode---DM-text, #ffffff);
-   }
 }
 
 .autre-element {
