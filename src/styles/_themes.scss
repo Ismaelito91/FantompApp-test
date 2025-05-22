@@ -1,0 +1,69 @@
+// Mixins pour les thèmes
+@mixin theme-aware-background() {
+   background-color: var(--Neutrals-Light-Mode---background-1);
+
+   :root.dark-theme & {
+      background-color: var(--Neutrals-Dark-Mode---DM-background-1);
+   }
+}
+
+@mixin theme-aware-text() {
+   color: var(--Neutrals-Light-Mode---content-2);
+
+   :root.dark-theme & {
+      color: var(--Neutrals-Dark-Mode---DM-text);
+   }
+}
+
+@mixin theme-aware-background-hover() {
+   background-color: var(--Neutrals-Light-Mode---background-2);
+
+   :root.dark-theme & {
+      background-color: var(--Neutrals-Dark-Mode---DM-background-2);
+   }
+
+   &:hover {
+      background-color: var(--Neutrals-Light-Mode---background-3);
+
+      :root.dark-theme & {
+         background-color: var(--Neutrals-Dark-Mode---DM-background-3);
+      }
+   }
+}
+
+@mixin theme-aware-background-selected() {
+   background-color: var(--Neutrals-Light-Mode---background-3);
+
+   :root.dark-theme & {
+      background-color: var(--Neutrals-Dark-Mode---DM-background-3);
+   }
+}
+
+// Classes utilitaires
+.theme-background {
+   @include theme-aware-background();
+}
+
+.theme-text {
+   @include theme-aware-text();
+}
+
+.theme-hover {
+   @include theme-aware-background-hover();
+}
+
+.theme-selected {
+   @include theme-aware-background-selected();
+}
+
+// Mixins pour les composants spécifiques
+@mixin theme-card() {
+   @include theme-aware-background();
+   @include theme-aware-text();
+   border-radius: 8px;
+   transition: all 0.2s ease;
+
+   &:hover {
+      @include theme-aware-background-hover();
+   }
+}
