@@ -1,0 +1,118 @@
+@use "../../../styles/themes" as theme;
+
+.home-container {
+   position: relative;
+   width: 100%;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 32px;
+   background-color: var(--Neutrals-Dark-Mode---DM-background-1);
+}
+
+.h5 {
+   width: 365;
+   height: 25;
+   top: 985px;
+   left: 32px;
+   color: var(--Neutrals-Dark-Mode---DM-text);
+}
+
+.app-info-container {
+   width: 358px;
+   margin-top: 8px;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   border-radius: 16px;
+   padding: 16px;
+   background-color: var(--Neutrals-Dark-Mode---DM-background-2);
+}
+
+.app-info-item {
+   display: flex;
+   align-items: center;
+   padding: 12px 16px;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   border-radius: 8px;
+   background-color: var(--Neutrals-Dark-Mode---DM-background-2);
+
+   &:hover {
+      background-color: var(--Neutrals-Dark-Mode---DM-background-3);
+   }
+
+   mat-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 16px;
+      color: var(--Neutrals-Dark-Mode---DM-text);
+
+      &.arrow {
+         margin-left: auto;
+         margin-right: 0;
+      }
+
+      &[svgIcon] {
+         ::ng-deep svg {
+            * {
+               stroke: var(--Neutrals-Dark-Mode---DM-text);
+               fill: none;
+            }
+         }
+      }
+   }
+
+   span {
+      font-family: var(--body-font-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: var(--Neutrals-Dark-Mode---DM-text);
+   }
+}
+
+:root:not(.dark-theme) {
+   .home-container {
+      background-color: var(--Neutrals-Light-Mode---background-1);
+   }
+
+   .h5 {
+      color: var(--Neutrals-Light-Mode---content-2);
+   }
+
+   .app-info-container {
+      background-color: var(--Neutrals-Light-Mode---background-1);
+   }
+
+   .app-info-item {
+      background-color: var(--Neutrals-Light-Mode---background-2);
+
+      &:hover {
+         background-color: var(--Neutrals-Light-Mode---background-3);
+      }
+
+      mat-icon {
+         color: var(--Neutrals-Light-Mode---content-2);
+
+         &[svgIcon] {
+            ::ng-deep svg {
+               * {
+                  stroke: var(--Neutrals-Light-Mode---content-2);
+                  fill: none;
+               }
+            }
+         }
+      }
+
+      span {
+         color: var(--Neutrals-Light-Mode---content-2);
+      }
+   }
+}
+
+.mon-element {
+   @include theme.theme-aware-background();
+   @include theme.theme-aware-text();
+}

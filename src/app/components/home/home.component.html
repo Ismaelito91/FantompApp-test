@@ -1,5 +1,99 @@
-<p>
-   {{ "VERSION.FRONTEND_VALUE" | translate : { version: frontendVersion } }}
-   <br />
-   {{ "VERSION.BACKEND_VALUE" | translate : { version: backendVersion } }}
-</p>
+<div class="home-container">
+   <h5 class="h5">Informations sur l'application</h5>
+   <div class="app-info-parent">
+      <div class="app-info-container">
+         <div class="app-info-item" routerLink="/user-app-config">
+            <mat-icon
+               [svgIcon]="isDarkMode() ? 'icon-sun-dark' : 'icon-sun-light'"
+            ></mat-icon>
+            <span>Apparence</span>
+            <mat-icon
+               class="arrow"
+               [svgIcon]="
+                  isDarkMode()
+                     ? 'chevron24x24-icon-dark'
+                     : 'chevron24x24-icon-light'
+               "
+            ></mat-icon>
+         </div>
+         <div class="app-info-item" routerLink="/changer-icone">
+            <mat-icon
+               [svgIcon]="isDarkMode() ? 'app-icon-dark' : 'app-icon-light'"
+            ></mat-icon>
+            <span>Changer l'icône</span>
+            <mat-icon
+               class="arrow"
+               [svgIcon]="
+                  isDarkMode()
+                     ? 'chevron24x24-icon-dark'
+                     : 'chevron24x24-icon-light'
+               "
+            ></mat-icon>
+         </div>
+         <div class="app-info-item">
+            <mat-icon
+               [svgIcon]="isDarkMode() ? 'icon-file-dark' : 'icon-file-light'"
+            ></mat-icon>
+            <span>Ressources</span>
+            <mat-icon
+               class="arrow"
+               [svgIcon]="
+                  isDarkMode()
+                     ? 'chevron24x24-icon-dark'
+                     : 'chevron24x24-icon-light'
+               "
+            ></mat-icon>
+         </div>
+         <div class="app-info-item">
+            <mat-icon
+               [svgIcon]="isDarkMode() ? 'icon-what-dark' : 'icon-what-light'"
+            ></mat-icon>
+            <span>C'est quoi cette app ?</span>
+            <mat-icon
+               class="arrow"
+               [svgIcon]="
+                  isDarkMode()
+                     ? 'chevron24x24-icon-dark'
+                     : 'chevron24x24-icon-light'
+               "
+            ></mat-icon>
+         </div>
+         <div class="app-info-item">
+            <mat-icon
+               [svgIcon]="
+                  isDarkMode() ? 'icon-rights-dark' : 'icon-rights-light'
+               "
+            ></mat-icon>
+            <span>J'ai des droits</span>
+            <mat-icon
+               class="arrow"
+               [svgIcon]="
+                  isDarkMode()
+                     ? 'chevron24x24-icon-dark'
+                     : 'chevron24x24-icon-light'
+               "
+            ></mat-icon>
+         </div>
+         <div class="app-info-item">
+            <mat-icon
+               [svgIcon]="isDarkMode() ? 'icon-file-dark' : 'icon-file-light'"
+            ></mat-icon>
+            <span>FantomApp pour tous<br />(Accessibilité)</span>
+            <mat-icon
+               class="arrow"
+               [svgIcon]="
+                  isDarkMode()
+                     ? 'chevron24x24-icon-dark'
+                     : 'chevron24x24-icon-light'
+               "
+            ></mat-icon>
+         </div>
+         <div class="app-info-item">
+            <mat-icon
+               [svgIcon]="isDarkMode() ? 'icon-play-dark' : 'icon-play-light'"
+            ></mat-icon>
+            <span>Revoir le tutoriel de bienvenue</span>
+         </div>
+      </div>
+   </div>
+</div>
