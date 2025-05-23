@@ -28,9 +28,14 @@ export class HomeComponent {
    private themeService = inject(ThemeService);
    _settingService = inject(SettingService);
 
-   isDarkMode = computed(
-      () => this.themeService.selectedTheme()?.name === "dark"
-   );
+   isDarkMode = computed(() => {
+      const theme = this.themeService.selectedTheme()?.name;
+      return (
+         theme === "dark" ||
+         (theme === "system" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+   });
 
    constructor() {
       // Vérifie que les icônes sont disponibles

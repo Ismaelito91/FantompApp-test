@@ -33,10 +33,16 @@ export class ThemeService {
    }
 
    private applyTheme(theme: ThemeType) {
+      const systemPrefersDark = window.matchMedia(
+         "(prefers-color-scheme: dark)"
+      ).matches;
+      console.log("Système préfère le mode sombre:", systemPrefersDark);
+      console.log("Thème actuel:", theme);
+
       const isDark =
-         theme === "dark" ||
-         (theme === "system" &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches);
+         theme === "dark" || (theme === "system" && systemPrefersDark);
+
+      console.log("Mode sombre appliqué:", isDark);
 
       if (isDark) {
          document.documentElement.classList.add("dark-theme");
@@ -56,7 +62,6 @@ export class ThemeService {
          );
       } else {
          document.documentElement.classList.remove("dark-theme");
-         // Réinitialiser les couleurs pour le thème clair
          document.documentElement.style.setProperty("--background", "#FFFFFF");
          document.documentElement.style.setProperty("--primary", "#000000");
          document.documentElement.style.setProperty(
@@ -91,18 +96,28 @@ export class ThemeService {
 
       effect(() => {
          const appTheme = this.appTheme();
+         console.log("Changement de thème:", appTheme);
+         localStorage.setItem("theme", appTheme);
          const colorScheme = appTheme === "system" ? "light dark" : appTheme;
          document.body.style.setProperty("color-scheme", colorScheme);
          this.applyTheme(appTheme);
       });
 
-      // Écouter les changements de préférence système
-      window
-         .matchMedia("(prefers-color-scheme: dark)")
-         .addEventListener("change", (e) => {
-            if (this.appTheme() === "system") {
-               this.applyTheme("system");
-            }
-         });
+      // Amélioration de la détection des changements système
+      const darkModeMediaQuery = window.matchMedia(
+         "(prefers-color-scheme: dark)"
+      );
+      const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+         console.log(
+            "Changement de préférence système détecté:",
+            e.matches ? "sombre" : "clair"
+         );
+         if (this.appTheme() === "system") {
+            console.log("Application du nouveau thème système");
+            this.applyTheme("system");
+         }
+      };
+
+      darkModeMediaQuery.addEventListener("change", handleSystemThemeChange);
    }
 }
