@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ThemeService, ThemeType } from "../../service/theme.service"; // adapte le chemin si besoin
+import { ThemeService, ThemeType } from "../../../service/theme.service"; // adapte le chemin si besoin
 import { MatRadioModule } from "@angular/material/radio";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
