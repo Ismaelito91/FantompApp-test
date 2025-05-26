@@ -8,7 +8,7 @@
 }
 
 @mixin theme-aware-text() {
-   color: var(--Neutrals-Light-Mode---content-2);
+   color: var(--Neutrals-Light-Mode---content);
 
    :root.dark-theme & {
       color: var(--Neutrals-Dark-Mode---DM-text);

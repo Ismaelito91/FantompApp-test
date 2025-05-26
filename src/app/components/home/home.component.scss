@@ -79,7 +79,7 @@
    }
 
    .h5 {
-      color: var(--Neutrals-Light-Mode---content-2);
+      color: var(--Neutrals-Light-Mode---content);
    }
 
    .app-info-container {
@@ -94,12 +94,12 @@
       }
 
       mat-icon {
-         color: var(--Neutrals-Light-Mode---content-2);
+         color: var(--Neutrals-Light-Mode---content);
 
          &[svgIcon] {
             ::ng-deep svg {
                * {
-                  stroke: var(--Neutrals-Light-Mode---content-2);
+                  stroke: var(--Neutrals-Light-Mode---content);
                   fill: none;
                }
             }
@@ -107,7 +107,7 @@
       }
 
       span {
-         color: var(--Neutrals-Light-Mode---content-2);
+         color: var(--Neutrals-Light-Mode---content);
       }
    }
 }
