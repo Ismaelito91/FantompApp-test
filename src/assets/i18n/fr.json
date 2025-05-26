@@ -18,6 +18,17 @@
       "TOOLS": "Outils",
       "SECURE": "Me sécuriser"
    },
+   "USER_CONFIG_APP": {
+      "TITLE": "Apparence",
+      "SUBTITLE": "Choisis ton thème d'affichage préféré.",
+      "THEME": {
+         "LABEL": "Thème",
+         "DEFAULT": "par défaut",
+         "LIGHT": "clair",
+         "DARK": "sombre",
+         "SYSTEM_SETTINGS": "Utiliser le même réglage que le téléphone"
+      }
+   },
    "LANGUAGES": {
       "FR": "Français",
       "EN": "Anglais",

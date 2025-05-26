@@ -1,8 +1,8 @@
 {
    "APP": {
-      "TITLE": "Spøgelse App",
+      "TITLE": "Fantôme App",
       "LOADING": "Indlæser...",
-      "ERROR": "Fejl ved indlæsning af applikationen"
+      "ERROR": "Fejl under indlæsning af applikationen"
    },
    "COMMON": {
       "SAVE": "Gem",
@@ -14,9 +14,20 @@
       "NEXT": "Næste",
       "PREVIOUS": "Forrige",
       "HOME": "Hjem",
-      "PROBLEM": "Spørgsmål",
+      "PROBLEM": "Problem",
       "TOOLS": "Værktøjer",
-      "SECURE": "Secure me"
+      "SECURE": "Sikre mig"
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Udseende",
+      "SUBTITLE": "Vælg dit foretrukne visningstema.",
+      "THEME": {
+         "LABEL": "Tema",
+         "DEFAULT": "standard",
+         "LIGHT": "lys",
+         "DARK": "mørk",
+         "SYSTEM_SETTINGS": "Brug samme indstilling som telefonen"
+      }
    },
    "LANGUAGES": {
       "FR": "Fransk",
@@ -30,12 +41,12 @@
       "HU": "Ungarsk"
    },
    "HOME": {
-      "WELCOME": "Velkommen til Spøgelse App"
+      "WELCOME": "Velkommen til Fantôme-appen"
    },
    "VERSION": {
-      "FRONTEND": "Frontend Version",
-      "BACKEND": "Backend Version",
-      "FRONTEND_VALUE": "Frontend Version: {{version}}",
-      "BACKEND_VALUE": "Backend Version: {{version}}"
+      "FRONTEND": "Frontend-version",
+      "BACKEND": "Backend-version",
+      "FRONTEND_VALUE": "Frontend-version: {{version}}",
+      "BACKEND_VALUE": "Backend-version: {{version}}"
    }
 }

@@ -1,8 +1,8 @@
 {
    "APP": {
-      "TITLE": "Fantom Alkalmazás",
+      "TITLE": "Fantôme App",
       "LOADING": "Betöltés...",
-      "ERROR": "Hiba az alkalmazás betöltése közben"
+      "ERROR": "Hiba történt az alkalmazás betöltése közben"
    },
    "COMMON": {
       "SAVE": "Mentés",
@@ -16,7 +16,18 @@
       "HOME": "Kezdőlap",
       "PROBLEM": "Probléma",
       "TOOLS": "Eszközök",
-      "SECURE": "Secure me"
+      "SECURE": "Biztonság"
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Megjelenés",
+      "SUBTITLE": "Válaszd ki a preferált megjelenítési témát.",
+      "THEME": {
+         "LABEL": "Téma",
+         "DEFAULT": "alapértelmezett",
+         "LIGHT": "világos",
+         "DARK": "sötét",
+         "SYSTEM_SETTINGS": "Telefon beállításainak használata"
+      }
    },
    "LANGUAGES": {
       "FR": "Francia",
@@ -30,7 +41,7 @@
       "HU": "Magyar"
    },
    "HOME": {
-      "WELCOME": "Üdvözöljük a Fantom Alkalmazásban"
+      "WELCOME": "Üdvözöljük a Fantôme alkalmazásban"
    },
    "VERSION": {
       "FRONTEND": "Frontend verzió",

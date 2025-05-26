@@ -1,13 +1,13 @@
 {
    "APP": {
-      "TITLE": "App Fantasma",
+      "TITLE": "Fantôme App",
       "LOADING": "Carregant...",
       "ERROR": "Error en carregar l'aplicació"
    },
    "COMMON": {
       "SAVE": "Desar",
       "CANCEL": "Cancel·lar",
-      "DELETE": "Esborrar",
+      "DELETE": "Eliminar",
       "EDIT": "Editar",
       "SEARCH": "Cercar",
       "BACK": "Tornar",
@@ -16,7 +16,18 @@
       "HOME": "Inici",
       "PROBLEM": "Problema",
       "TOOLS": "Eines",
-      "SECURE": "Secure me"
+      "SECURE": "Assegurar-me"
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Aparença",
+      "SUBTITLE": "Tria el teu tema de visualització preferit.",
+      "THEME": {
+         "LABEL": "Tema",
+         "DEFAULT": "per defecte",
+         "LIGHT": "clar",
+         "DARK": "fosc",
+         "SYSTEM_SETTINGS": "Utilitzar la mateixa configuració que el telèfon"
+      }
    },
    "LANGUAGES": {
       "FR": "Francès",
@@ -30,7 +41,7 @@
       "HU": "Hongarès"
    },
    "HOME": {
-      "WELCOME": "Benvingut a l'App Fantasma"
+      "WELCOME": "Benvingut a l'aplicació Fantôme"
    },
    "VERSION": {
       "FRONTEND": "Versió Frontend",

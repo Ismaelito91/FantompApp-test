@@ -1,8 +1,8 @@
 {
    "APP": {
-      "TITLE": "Phantom App",
+      "TITLE": "Ghost App",
       "LOADING": "Loading...",
-      "ERROR": "Error loading the application"
+      "ERROR": "Error loading application"
    },
    "COMMON": {
       "SAVE": "Save",
@@ -18,6 +18,17 @@
       "TOOLS": "Tools",
       "SECURE": "Secure me"
    },
+   "USER_CONFIG_APP": {
+      "TITLE": "Appearance",
+      "SUBTITLE": "Choose your preferred display theme.",
+      "THEME": {
+         "LABEL": "Theme",
+         "DEFAULT": "default",
+         "LIGHT": "light",
+         "DARK": "dark",
+         "SYSTEM_SETTINGS": "Use the same settings as your phone"
+      }
+   },
    "LANGUAGES": {
       "FR": "French",
       "EN": "English",
@@ -30,7 +41,7 @@
       "HU": "Hungarian"
    },
    "HOME": {
-      "WELCOME": "Welcome to Phantom App"
+      "WELCOME": "Welcome to Ghost App"
    },
    "VERSION": {
       "FRONTEND": "Frontend Version",

@@ -2,8 +2,8 @@
    <button mat-icon-button class="back-btn" routerLink="/home">
       <mat-icon>arrow_back</mat-icon>
    </button>
-   <h2>Apparence</h2>
-   <p>Choisis ton thème d'affichage préféré.</p>
+   <h2>{{ "USER_CONFIG_APP.TITLE" | translate }}</h2>
+   <p>{{ "USER_CONFIG_APP.SUBTITLE" | translate }}</p>
 
    <div class="theme-list">
       <div
@@ -19,21 +19,24 @@
          ></mat-radio-button>
          <div class="theme-info">
             <span class="theme-title">
-               Thème
+               {{ "USER_CONFIG_APP.THEME.LABEL" | translate }}
                <ng-container [ngSwitch]="theme.name">
-                  <span *ngSwitchCase="'system'"
-                     >par défaut <mat-icon inline>smartphone</mat-icon></span
-                  >
-                  <span *ngSwitchCase="'light'"
-                     >clair <span class="emoji">🌞</span></span
-                  >
-                  <span *ngSwitchCase="'dark'"
-                     >sombre <span class="emoji">🌙</span></span
-                  >
+                  <span *ngSwitchCase="'system'">
+                     {{ "USER_CONFIG_APP.THEME.DEFAULT" | translate }}
+                     <mat-icon inline>smartphone</mat-icon>
+                  </span>
+                  <span *ngSwitchCase="'light'">
+                     {{ "USER_CONFIG_APP.THEME.LIGHT" | translate }}
+                     <span class="emoji">🌞</span>
+                  </span>
+                  <span *ngSwitchCase="'dark'">
+                     {{ "USER_CONFIG_APP.THEME.DARK" | translate }}
+                     <span class="emoji">🌙</span>
+                  </span>
                </ng-container>
             </span>
             <span class="theme-desc" *ngIf="theme.name === 'system'">
-               Utiliser le même réglage que le téléphone
+               {{ "USER_CONFIG_APP.THEME.SYSTEM_SETTINGS" | translate }}
             </span>
          </div>
       </div>

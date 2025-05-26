@@ -1,6 +1,6 @@
 {
    "APP": {
-      "TITLE": "Aplikacja Duch",
+      "TITLE": "Fantôme App",
       "LOADING": "Ładowanie...",
       "ERROR": "Błąd podczas ładowania aplikacji"
    },
@@ -10,13 +10,24 @@
       "DELETE": "Usuń",
       "EDIT": "Edytuj",
       "SEARCH": "Szukaj",
-      "BACK": "Wstecz",
+      "BACK": "Powrót",
       "NEXT": "Dalej",
       "PREVIOUS": "Poprzedni",
       "HOME": "Strona główna",
-      "PROBLEM": "Wydanie",
+      "PROBLEM": "Problem",
       "TOOLS": "Narzędzia",
-      "SECURE": "Secure me"
+      "SECURE": "Zabezpiecz mnie"
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Wygląd",
+      "SUBTITLE": "Wybierz preferowany motyw wyświetlania.",
+      "THEME": {
+         "LABEL": "Motyw",
+         "DEFAULT": "domyślny",
+         "LIGHT": "jasny",
+         "DARK": "ciemny",
+         "SYSTEM_SETTINGS": "Użyj tych samych ustawień co telefon"
+      }
    },
    "LANGUAGES": {
       "FR": "Francuski",
@@ -30,7 +41,7 @@
       "HU": "Węgierski"
    },
    "HOME": {
-      "WELCOME": "Witamy w Aplikacji Duch"
+      "WELCOME": "Witamy w aplikacji Fantôme"
    },
    "VERSION": {
       "FRONTEND": "Wersja Frontend",
