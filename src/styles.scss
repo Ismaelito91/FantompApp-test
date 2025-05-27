@@ -96,6 +96,128 @@
    --spacing-9: 56px;
    --spacing-10: 64px;
    --spacing-11: 72px;
+
+   // Couleurs
+   --color-primary-50: #f3f1ff;
+   --color-primary-100: #e9e6ff;
+   --color-primary-200: #d5d1ff;
+   --color-primary-300: #b7abff;
+   --color-primary-400: #937cff;
+   --color-primary-500: #7347ff;
+   --color-primary-600: #6222ff;
+   --color-primary-700: #5410f1;
+   --color-primary-800: #420cc0;
+   --color-primary-900: #3a0da5;
+   --color-primary-950: #210471;
+
+   --color-neutral-50: #ffffff;
+   --color-neutral-200: #faf9fb;
+   --color-neutral-350: #f6f5fa;
+   --color-neutral-400: #efedf7;
+   --color-neutral-light-500: #786c93;
+   --color-neutral-light-600: #484158;
+   --color-neutral-light-700: #2f293d;
+   --color-neutral-light-900: #161221;
+   --color-neutral-dark-500: #897da6;
+   --color-neutral-dark-600: #443a5c;
+   --color-neutral-dark-700: #291e43;
+   --color-neutral-dark-900: #140d26;
+
+   --color-red-50: #fef2f3;
+   --color-red-100: #fee2e4;
+   --color-red-200: #ffc9cd;
+   --color-red-300: #fda4ab;
+   --color-red-400: #f9707b;
+   --color-red-500: #f03948;
+   --color-red-600: #de2433;
+   --color-red-700: #bb1a27;
+   --color-red-800: #9a1a24;
+   --color-red-900: #801c24;
+   --color-red-950: #46090e;
+
+   --color-secondary-violet-50: #faf4ff;
+   --color-secondary-violet-100: #f2e5ff;
+   --color-secondary-violet-200: #e7d0ff;
+   --color-secondary-violet-300: #d5acff;
+   --color-secondary-violet-400: #ba76ff;
+   --color-secondary-violet-500: #a042ff;
+   --color-secondary-violet-600: #912aff;
+   --color-secondary-violet-700: #760ee2;
+   --color-secondary-violet-800: #6512b7;
+   --color-secondary-violet-900: #541093;
+   --color-secondary-violet-950: #37006f;
+
+   --color-secondary-green-50: #effef6;
+   --color-secondary-green-100: #dafeeb;
+   --color-secondary-green-200: #b7fbd9;
+   --color-secondary-green-300: #7ff6bc;
+   --color-secondary-green-400: #40e896;
+   --color-secondary-green-500: #18df7f;
+   --color-secondary-green-600: #0cad5f;
+   --color-secondary-green-700: #0d884d;
+   --color-secondary-green-800: #106b41;
+   --color-secondary-green-900: #105737;
+   --color-secondary-green-950: #02311d;
+
+   --color-secondary-pink-50: #fff1f3;
+   --color-secondary-pink-100: #ffe4e9;
+   --color-secondary-pink-200: #fdced8;
+   --color-secondary-pink-300: #fca5b8;
+   --color-secondary-pink-400: #f97393;
+   --color-secondary-pink-500: #f14271;
+   --color-secondary-pink-600: #df205c;
+   --color-secondary-pink-700: #bb154d;
+   --color-secondary-pink-800: #9d1447;
+   --color-secondary-pink-900: #861543;
+   --color-secondary-pink-950: #4b0620;
+
+   --color-secondary-blue-50: #edfcfe;
+   --color-secondary-blue-100: #d0f5fd;
+   --color-secondary-blue-200: #a8eaf9;
+   --color-secondary-blue-300: #6cdaf4;
+   --color-secondary-blue-400: #19bae6;
+   --color-secondary-blue-500: #0ca1ce;
+   --color-secondary-blue-600: #0d81ad;
+   --color-secondary-blue-700: #12688c;
+   --color-secondary-blue-800: #185572;
+   --color-secondary-blue-900: #184761;
+   --color-secondary-blue-950: #0a2d42;
+
+   --color-secondary-orange-50: #fff3f1;
+   --color-secondary-orange-100: #e9e6ff;
+   --color-secondary-orange-200: #d5d1ff;
+   --color-secondary-orange-300: #b7abff;
+   --color-secondary-orange-400: #937cff;
+   --color-secondary-orange-500: #7347ff;
+   --color-secondary-orange-600: #6222ff;
+   --color-secondary-orange-700: #5410f1;
+   --color-secondary-orange-800: #420cc0;
+   --color-secondary-orange-900: #3a0da5;
+   --color-secondary-orange-950: #210471;
+
+   --color-beige-50: #f3f1ff;
+   --color-beige-100: #ffe5e0;
+   --color-beige-200: #ffcfc7;
+   --color-beige-300: #ffad9f;
+   --color-beige-400: #ff7f68;
+   --color-beige-500: #fa5538;
+   --color-beige-600: #e8391a;
+   --color-beige-700: #c32c12;
+   --color-beige-800: #a12813;
+   --color-beige-900: #852717;
+   --color-beige-950: #491006;
+
+   --color-blue-50: #edf3ff;
+   --color-blue-100: #dee9ff;
+   --color-blue-200: #c3d5ff;
+   --color-blue-300: #9fb8ff;
+   --color-blue-400: #7891ff;
+   --color-blue-500: #596afb;
+   --color-blue-600: #3339f0;
+   --color-blue-700: #2d2fd5;
+   --color-blue-800: #282cab;
+   --color-blue-900: #282d87;
+   --color-blue-950: #181a4e;
 }
 
 :root.dark-theme {
