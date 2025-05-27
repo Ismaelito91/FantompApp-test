@@ -1,49 +1,49 @@
-@use "../../../styles/themes" as theme;
+@use "styles" as *;
 
 :host {
    .config-container {
+      @include theme-aware-background();
       position: relative;
       width: 100%;
       min-height: 100vh;
-      padding: 32px;
-      background-color: var(--Neutrals-Dark-Mode---DM-background-1);
+      padding: var(--spacing-5);
       display: flex;
       flex-direction: column;
    }
 
    .back-btn {
-      margin-bottom: 24px;
+      margin-bottom: var(--spacing-4);
       width: fit-content;
-      color: var(--Neutrals-Dark-Mode---DM-text);
+      @include theme-aware-text();
 
       mat-icon {
          width: 24px;
          height: 24px;
          font-size: 24px;
-         color: var(--Neutrals-Dark-Mode---DM-text);
+         @include theme-aware-text();
       }
    }
 
    h2 {
-      font-family: Lexend;
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 8px;
-      color: var(--Neutrals-Dark-Mode---DM-text);
+      font-family: var(--heading-font-family);
+      font-size: var(--font-size-h5);
+      font-weight: var(--font-weight-heading);
+      margin-bottom: var(--spacing-2);
+      @include theme-aware-text();
    }
 
    p {
       font-family: var(--body-font-family);
-      font-size: 14px;
-      margin-bottom: 24px;
-      color: var(--Neutrals-Dark-Mode---DM-text);
+      font-size: var(--font-size-body-sm);
+      margin-bottom: var(--spacing-4);
+      @include theme-aware-text();
       opacity: 0.7;
    }
 
    .theme-list {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: var(--spacing-2);
       width: 100%;
       max-width: 358px;
    }
@@ -51,135 +51,68 @@
    .theme-option {
       display: flex;
       align-items: center;
-      border-radius: 12px;
-      padding: 16px;
+      border-radius: var(--border-radius-2);
+      padding: var(--spacing-3);
       cursor: pointer;
       transition: all 0.2s ease;
-      background-color: var(--Neutrals-Dark-Mode---DM-background-2);
+      @include theme-aware-background();
 
       &:hover,
       &.selected {
-         background-color: var(
-            --Primary-Blue---blue-100,
-            rgba(233, 230, 255, 1)
-         );
+         @include theme-aware-background-hover();
 
          .theme-title {
-            color: #000000;
+            color: var(--primary);
          }
 
          .theme-desc {
-            color: #000000;
+            color: var(--primary);
             opacity: 0.7;
          }
 
          mat-radio-button {
             ::ng-deep {
                .mdc-radio__outer-circle {
-                  border-color: var(
-                     --Neutrals-Dark-Mode---DM-background-1,
-                     rgba(20, 13, 38, 1)
-                  ) !important;
+                  border-color: var(--primary-darkest) !important;
                }
                .mdc-radio__inner-circle {
-                  border-color: var(
-                     --Neutrals-Dark-Mode---DM-background-1,
-                     rgba(20, 13, 38, 1)
-                  ) !important;
-                  background-color: var(
-                     --Neutrals-Dark-Mode---DM-background-1,
-                     rgba(20, 13, 38, 1)
-                  ) !important;
+                  border-color: var(--primary-darkest) !important;
+                  background-color: var(--primary-darkest) !important;
                }
             }
          }
       }
 
       .theme-info {
-         margin-left: 16px;
+         margin-left: var(--spacing-2);
          flex: 1;
       }
 
       .theme-title {
          font-family: var(--body-font-family);
-         font-weight: 400;
-         font-size: 16px;
-         color: var(--Neutrals-Dark-Mode---DM-text);
+         font-weight: var(--font-weight-body);
+         font-size: var(--font-size-body-md);
+         @include theme-aware-text();
          display: flex;
          align-items: center;
-         gap: 8px;
+         gap: var(--spacing-2);
       }
 
       .theme-desc {
-         font-family: Nunito;
-         font-weight: 400;
-         font-size: 14px;
-         line-height: 100%;
-         letter-spacing: 0%;
-         color: var(--Neutrals-Dark-Mode---DM-text);
+         font-family: var(--body-font-family);
+         font-weight: var(--font-weight-body);
+         font-size: var(--font-size-body-sm);
+         line-height: var(--line-height-body);
+         letter-spacing: var(--letter-spacing-body);
+         @include theme-aware-text();
          opacity: 0.7;
-         margin-top: 4px;
+         margin-top: var(--spacing-1);
          width: 263px;
          height: 19px;
       }
 
       .emoji {
-         font-size: 16px;
-      }
-   }
-
-   :root:not(.dark-theme) & {
-      .config-container {
-         background-color: var(--Neutrals-Light-Mode---background-1);
-      }
-
-      .back-btn {
-         color: var(--Neutrals-Light-Mode---content);
-
-         mat-icon {
-            color: var(--Neutrals-Light-Mode---content);
-         }
-      }
-
-      h2 {
-         color: var(--Neutrals-Light-Mode---content);
-      }
-
-      p {
-         color: var(--Neutrals-Light-Mode---content);
-      }
-
-      .theme-option {
-         background-color: var(--Neutrals-Light-Mode---background-2);
-
-         &:hover,
-         &.selected {
-            background-color: var(
-               --Primary-Blue---blue-200,
-               rgba(213, 209, 255, 1)
-            );
-
-            mat-radio-button {
-               ::ng-deep {
-                  .mdc-radio__outer-circle {
-                     border-color: var(
-                        --Primary-Blue---blue-800,
-                        rgba(66, 12, 192, 1)
-                     ) !important;
-                  }
-                  .mdc-radio__inner-circle {
-                     border-color: var(
-                        --Primary-Blue---blue-800,
-                        rgba(66, 12, 192, 1)
-                     ) !important;
-                     background-color: var(
-                        --Primary-Blue---blue-800,
-                        rgba(66, 12, 192, 1)
-                     ) !important;
-                  }
-               }
-            }
-         }
+         font-size: var(--font-size-body-md);
       }
    }
 }
