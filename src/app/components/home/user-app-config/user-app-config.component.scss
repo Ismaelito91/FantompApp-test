@@ -115,4 +115,12 @@
          font-size: var(--font-size-body-md);
       }
    }
+
+   .mdc-radio__native-control {
+      border-color: var(--color-secondary-orange-800);
+
+      &:checked {
+         background-color: var(--color-secondary-orange-800);
+      }
+   }
 }
