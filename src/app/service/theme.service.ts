@@ -14,9 +14,9 @@ export class ThemeService {
    private appTheme = signal<ThemeType>("system");
 
    private themes: AppTheme[] = [
+      { name: "system", icon: "desktop_windows" },
       { name: "light", icon: "light_mode" },
       { name: "dark", icon: "dark_mode" },
-      { name: "system", icon: "desktop_windows" },
    ];
 
    selectedTheme = computed(() =>
