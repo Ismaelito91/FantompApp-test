@@ -1,21 +1,31 @@
-<div class="config-container">
-   <button mat-icon-button class="back-btn" routerLink="/home">
-      <mat-icon>arrow_back</mat-icon>
+<div class="config-container" role="main">
+   <button
+      mat-icon-button
+      class="back-btn"
+      routerLink="/home"
+      aria-label="Retour à l'accueil"
+   >
+      <mat-icon aria-hidden="true">arrow_back</mat-icon>
    </button>
-   <h2>{{ "USER_CONFIG_APP.TITLE" | translate }}</h2>
-   <p>{{ "USER_CONFIG_APP.SUBTITLE" | translate }}</p>
+   <h2 id="config-title">{{ "USER_CONFIG_APP.TITLE" | translate }}</h2>
+   <p id="config-subtitle">{{ "USER_CONFIG_APP.SUBTITLE" | translate }}</p>
 
-   <div class="theme-list">
+   <div class="theme-list" role="list" aria-labelledby="config-title">
       <div
          *ngFor="let theme of themes"
          class="theme-option"
          [class.selected]="selectedTheme?.name === theme.name"
          (click)="setTheme(theme.name)"
+         role="listitem"
+         [attr.aria-checked]="selectedTheme?.name === theme.name"
+         tabindex="0"
+         attr.aria-label="{{ theme.name | translate }}"
       >
          <mat-radio-button
             [checked]="selectedTheme?.name === theme.name"
             [value]="theme.name"
             disableRipple
+            aria-hidden="true"
          ></mat-radio-button>
          <div class="theme-info">
             <span class="theme-title">
@@ -23,15 +33,15 @@
                <ng-container [ngSwitch]="theme.name">
                   <span *ngSwitchCase="'system'">
                      {{ "USER_CONFIG_APP.THEME.DEFAULT" | translate }}
-                     <mat-icon inline>smartphone</mat-icon>
+                     <mat-icon inline aria-hidden="true">📱</mat-icon>
                   </span>
                   <span *ngSwitchCase="'light'">
                      {{ "USER_CONFIG_APP.THEME.LIGHT" | translate }}
-                     <span class="emoji">🌞</span>
+                     <span class="emoji" aria-hidden="true">🌞</span>
                   </span>
                   <span *ngSwitchCase="'dark'">
                      {{ "USER_CONFIG_APP.THEME.DARK" | translate }}
-                     <span class="emoji">🌙</span>
+                     <span class="emoji" aria-hidden="true">🌙</span>
                   </span>
                </ng-container>
             </span>
