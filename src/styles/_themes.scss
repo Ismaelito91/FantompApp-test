@@ -1,6 +1,6 @@
 // Mixins pour les thèmes
 @mixin theme-aware-background() {
-   background-color: var(--Neutrals-Light-Mode---background-1);
+   background-color: var(--Neutrals-Light-Mode---content-2);
 
    :root.dark-theme & {
       background-color: var(--Neutrals-Dark-Mode---DM-background-1);
@@ -16,14 +16,14 @@
 }
 
 @mixin theme-aware-background-hover() {
-   background-color: var(--Neutrals-Light-Mode---background-2);
+   background-color: var(--Neutrals-Light-Mode---content-2);
 
    :root.dark-theme & {
       background-color: var(--Neutrals-Dark-Mode---DM-background-2);
    }
 
    &:hover {
-      background-color: var(--Neutrals-Light-Mode---background-3);
+      background-color: var(--Neutrals-Light-Mode---content-2);
 
       :root.dark-theme & {
          background-color: var(--Neutrals-Dark-Mode---DM-background-3);
@@ -32,7 +32,7 @@
 }
 
 @mixin theme-aware-background-selected() {
-   background-color: var(--Neutrals-Light-Mode---background-3);
+   background-color: var(--Neutrals-Light-Mode---content-2);
 
    :root.dark-theme & {
       background-color: var(--Neutrals-Dark-Mode---DM-background-3);

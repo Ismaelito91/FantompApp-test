@@ -1,6 +1,6 @@
 {
    "APP": {
-      "TITLE": "App Fantasma",
+      "TITLE": "Aplicación Fantasma",
       "LOADING": "Cargando...",
       "ERROR": "Error al cargar la aplicación"
    },
@@ -16,7 +16,18 @@
       "HOME": "Inicio",
       "PROBLEM": "Problema",
       "TOOLS": "Herramientas",
-      "SECURE": "Secure me"
+      "SECURE": "Asegurarme"
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Apariencia",
+      "SUBTITLE": "Elige tu tema de visualización preferido.",
+      "THEME": {
+         "LABEL": "Tema",
+         "DEFAULT": "predeterminado",
+         "LIGHT": "claro",
+         "DARK": "oscuro",
+         "SYSTEM_SETTINGS": "Usar la misma configuración que el teléfono"
+      }
    },
    "LANGUAGES": {
       "FR": "Francés",
@@ -30,7 +41,7 @@
       "HU": "Húngaro"
    },
    "HOME": {
-      "WELCOME": "Bienvenido a la App Fantasma"
+      "WELCOME": "Bienvenido a la Aplicación Fantasma"
    },
    "VERSION": {
       "FRONTEND": "Versión Frontend",

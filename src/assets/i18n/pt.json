@@ -1,6 +1,6 @@
 {
    "APP": {
-      "TITLE": "App Fantasma",
+      "TITLE": "Aplicativo Fantasma",
       "LOADING": "Carregando...",
       "ERROR": "Erro ao carregar o aplicativo"
    },
@@ -9,14 +9,25 @@
       "CANCEL": "Cancelar",
       "DELETE": "Excluir",
       "EDIT": "Editar",
-      "SEARCH": "Buscar",
+      "SEARCH": "Pesquisar",
       "BACK": "Voltar",
       "NEXT": "Próximo",
       "PREVIOUS": "Anterior",
       "HOME": "Início",
-      "PROBLEM": "Emitir",
+      "PROBLEM": "Problema",
       "TOOLS": "Ferramentas",
-      "SECURE": "Secure me"
+      "SECURE": "Me proteger"
+   },
+   "USER_CONFIG": {
+      "APPEARANCE": {
+         "TITLE": "Aparência",
+         "SUBTITLE": "Escolha seu tema de exibição preferido.",
+         "THEME": "Tema",
+         "THEME_DEFAULT": "padrão",
+         "THEME_LIGHT": "claro",
+         "THEME_DARK": "escuro",
+         "USE_SYSTEM_SETTINGS": "Usar a mesma configuração que o telefone"
+      }
    },
    "LANGUAGES": {
       "FR": "Francês",
@@ -30,7 +41,7 @@
       "HU": "Húngaro"
    },
    "HOME": {
-      "WELCOME": "Bem-vindo ao App Fantasma"
+      "WELCOME": "Bem-vindo ao Aplicativo Fantasma"
    },
    "VERSION": {
       "FRONTEND": "Versão Frontend",

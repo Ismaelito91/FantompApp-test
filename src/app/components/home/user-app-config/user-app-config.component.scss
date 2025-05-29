@@ -1,0 +1,138 @@
+@use "styles" as *;
+
+:host {
+   .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+   }
+
+   .config-container {
+      @include theme-aware-background();
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      padding: var(--spacing-5);
+      display: flex;
+      flex-direction: column;
+   }
+
+   .back-btn {
+      margin-bottom: var(--spacing-4);
+      width: fit-content;
+      @include theme-aware-text();
+
+      mat-icon {
+         width: 24px;
+         height: 24px;
+         font-size: 24px;
+         @include theme-aware-text();
+      }
+   }
+
+   #config-title {
+      font-family: var(--heading-font-family);
+      font-size: var(--font-size-h5);
+      font-weight: var(--font-weight-heading);
+      margin-bottom: var(--spacing-2);
+      @include theme-aware-text();
+   }
+
+   #config-description {
+      font-family: var(--body-font-family);
+      font-size: var(--font-size-body-sm);
+      margin-bottom: var(--spacing-4);
+      @include theme-aware-text();
+      opacity: 0.7;
+   }
+
+   .theme-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-2);
+      width: 100%;
+      max-width: 358px;
+   }
+
+   .theme-option {
+      display: flex;
+      align-items: center;
+      border-radius: var(--border-radius-2);
+      padding: var(--spacing-3);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      @include theme-aware-background();
+
+      &:hover,
+      &.selected {
+         @include theme-aware-background-hover();
+
+         .theme-title {
+            color: var(--primary);
+         }
+
+         .theme-desc {
+            color: var(--primary);
+            opacity: 0.7;
+         }
+
+         mat-radio-button {
+            ::ng-deep {
+               .mdc-radio__outer-circle {
+                  border-color: var(--primary-darkest) !important;
+               }
+               .mdc-radio__inner-circle {
+                  border-color: var(--primary-darkest) !important;
+                  background-color: var(--primary-darkest) !important;
+               }
+            }
+         }
+      }
+
+      .theme-info {
+         margin-left: var(--spacing-2);
+         flex: 1;
+      }
+
+      .theme-title {
+         font-family: var(--body-font-family);
+         font-weight: var(--font-weight-body);
+         font-size: var(--font-size-body-md);
+         @include theme-aware-text();
+         display: flex;
+         align-items: center;
+         gap: var(--spacing-2);
+      }
+
+      .theme-desc {
+         font-family: var(--body-font-family);
+         font-weight: var(--font-weight-body);
+         font-size: var(--font-size-body-sm);
+         line-height: var(--line-height-body);
+         letter-spacing: var(--letter-spacing-body);
+         @include theme-aware-text();
+         opacity: 0.7;
+         margin-top: var(--spacing-1);
+         width: 263px;
+         height: 19px;
+      }
+
+      .emoji {
+         font-size: var(--font-size-body-md);
+      }
+   }
+
+   .mdc-radio__native-control {
+      border-color: var(--color-secondary-orange-800);
+
+      &:checked {
+         background-color: var(--color-secondary-orange-800);
+      }
+   }
+}
