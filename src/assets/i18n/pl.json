@@ -41,7 +41,15 @@
       "HU": "Węgierski"
    },
    "HOME": {
-      "WELCOME": "Witamy w aplikacji Fantôme"
+      "WELCOME": "Witamy w aplikacji Fantôme",
+      "APP_INFO_TITLE": "Informacje o aplikacji",
+      "APPEARANCE": "Wygląd",
+      "CHANGE_ICON": "Zmień ikonę",
+      "RESOURCES": "Zasoby",
+      "WHAT_IS_APP": "Czym jest ta aplikacja?",
+      "RIGHTS": "Mam prawa",
+      "ACCESSIBILITY": "FantomApp dla wszystkich (Dostępność)",
+      "TUTORIAL": "Przejrzyj samouczek powitalny"
    },
    "VERSION": {
       "FRONTEND": "Wersja Frontend",

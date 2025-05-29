@@ -41,7 +41,15 @@
       "HU": "Ουγγρικά"
    },
    "HOME": {
-      "WELCOME": "Καλώς ήρθατε στην εφαρμογή Fantôme"
+      "WELCOME": "Καλώς ήρθατε στην εφαρμογή Fantôme",
+      "APP_INFO_TITLE": "Πληροφορίες εφαρμογής",
+      "APPEARANCE": "Εμφάνιση",
+      "CHANGE_ICON": "Αλλαγή εικονιδίου",
+      "RESOURCES": "Πόροι",
+      "WHAT_IS_APP": "Τι είναι αυτή η εφαρμογή;",
+      "RIGHTS": "Έχω δικαιώματα",
+      "ACCESSIBILITY": "FantomApp για όλους (Προσβασιμότητα)",
+      "TUTORIAL": "Επανεξέταση του tutorial καλωσορίσματος"
    },
    "VERSION": {
       "FRONTEND": "Έκδοση Frontend",

@@ -41,7 +41,15 @@
       "HU": "Húngaro"
    },
    "HOME": {
-      "WELCOME": "Bem-vindo ao Aplicativo Fantasma"
+      "WELCOME": "Bem-vindo ao Aplicativo Fantasma",
+      "APP_INFO_TITLE": "Informações da aplicação",
+      "APPEARANCE": "Aparência",
+      "CHANGE_ICON": "Alterar ícone",
+      "RESOURCES": "Recursos",
+      "WHAT_IS_APP": "O que é este aplicativo?",
+      "RIGHTS": "Eu tenho direitos",
+      "ACCESSIBILITY": "FantomApp para todos (Acessibilidade)",
+      "TUTORIAL": "Revisar tutorial de boas-vindas"
    },
    "VERSION": {
       "FRONTEND": "Versão Frontend",

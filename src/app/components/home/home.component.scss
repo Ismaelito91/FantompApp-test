@@ -1,118 +1,199 @@
-@use "../../../styles/themes" as theme;
+@use "styles" as *;
 
-.home-container {
-   position: relative;
-   width: 100%;
-   min-height: 100vh;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding-top: 32px;
-   background-color: var(--Neutrals-Dark-Mode---DM-background-1);
-}
-
-.h5 {
-   width: 365;
-   height: 25;
-   top: 985px;
-   left: 32px;
-   color: var(--Neutrals-Dark-Mode---DM-text);
-}
-
-.app-info-container {
-   width: 358px;
-   margin-top: 8px;
-   display: flex;
-   flex-direction: column;
-   gap: 8px;
-   border-radius: 16px;
-   padding: 16px;
-   background-color: var(--Neutrals-Dark-Mode---DM-background-2);
-}
-
-.app-info-item {
-   display: flex;
-   align-items: center;
-   padding: 12px 16px;
-   cursor: pointer;
-   transition: all 0.2s ease;
-   border-radius: 8px;
-   background-color: var(--Neutrals-Dark-Mode---DM-background-2);
-
-   &:hover {
-      background-color: var(--Neutrals-Dark-Mode---DM-background-3);
+:host {
+   #home-container {
+      @include theme-aware-background();
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--spacing-5);
    }
 
-   mat-icon {
-      width: 24px;
-      height: 24px;
-      margin-right: 16px;
-      color: var(--Neutrals-Dark-Mode---DM-text);
+   // Classes d'accessibilité RGAA
+   .sr-only,
+   .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+   }
 
-      &.arrow {
-         margin-left: auto;
-         margin-right: 0;
+   #app-info-title {
+      font-family: var(--heading-font-family);
+      font-size: var(--font-size-h5);
+      font-weight: var(--font-weight-heading);
+      line-height: var(--line-height-h5);
+      letter-spacing: var(--letter-spacing-heading);
+      margin: 0 0 var(--spacing-2) 0;
+      @include theme-aware-text();
+   }
+
+   #app-info-title-visible {
+      font-family: var(--heading-font-family);
+      font-size: var(--font-size-h5);
+      font-weight: var(--font-weight-heading);
+      line-height: var(--line-height-h5);
+      letter-spacing: var(--letter-spacing-heading);
+      margin: 0 0 var(--spacing-2) 0;
+      @include theme-aware-text();
+   }
+
+   #app-info-parent {
+      width: 100%;
+      max-width: 358px;
+   }
+
+   #app-info-container {
+      @include theme-aware-background-hover();
+      border-radius: var(--border-radius-2);
+      padding: var(--spacing-3);
+
+      // Structure liste pour l'accessibilité
+      ul {
+         list-style: none;
+         margin: 0;
+         padding: 0;
+         display: flex;
+         flex-direction: column;
+         gap: var(--spacing-1);
       }
 
-      &[svgIcon] {
+      li {
+         margin: 0;
+         padding: 0;
+      }
+   }
+
+   .app-info-item {
+      display: flex;
+      align-items: center;
+      padding: var(--spacing-2) var(--spacing-3);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: var(--border-radius-1);
+      border: none; // Pour les boutons
+      background: none; // Pour les boutons
+      width: 100%; // Pour les boutons
+      text-align: left; // Pour les boutons
+      text-decoration: none; // Pour les liens
+      color: inherit; // Pour les liens
+      @include theme-aware-background-hover();
+
+      &:hover,
+      &:focus {
+         opacity: 0.8;
+         outline: 2px solid var(--primary-color, #007bff);
+         outline-offset: 2px;
+      }
+
+      // Amélioration du focus pour l'accessibilité
+      &:focus-visible {
+         outline: 3px solid var(--focus-color, #005fcc);
+         outline-offset: 2px;
+         box-shadow: 0 0 0 1px var(--focus-ring-color, rgba(0, 123, 255, 0.25));
+      }
+
+      // Support pour les lecteurs d'écran
+      &:active {
+         transform: translateY(1px);
+      }
+
+      // Force la taille uniforme pour toutes les icônes principales (non-arrow)
+      mat-icon:not(.arrow) {
+         width: 16px !important;
+         height: 16px !important;
+         min-width: 16px !important;
+         min-height: 16px !important;
+         margin-right: var(--spacing-3);
+         @include theme-aware-text();
+         pointer-events: none;
+         display: flex !important;
+         align-items: center;
+         justify-content: center;
+         flex-shrink: 0;
+
          ::ng-deep svg {
+            width: 16px !important;
+            height: 16px !important;
+            max-width: 16px !important;
+            max-height: 16px !important;
+
             * {
-               stroke: var(--Neutrals-Dark-Mode---DM-text);
+               stroke: currentColor;
                fill: none;
             }
          }
       }
-   }
 
-   span {
-      font-family: var(--body-font-family);
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 100%;
-      color: var(--Neutrals-Dark-Mode---DM-text);
-   }
-}
+      // Règles spécifiques pour les flèches
+      mat-icon.arrow {
+         width: 16px !important;
+         height: 16px !important;
+         margin-left: auto;
+         margin-right: 0;
+         display: flex !important;
+         align-items: center;
+         justify-content: center;
+         flex-shrink: 0;
 
-:root:not(.dark-theme) {
-   .home-container {
-      background-color: var(--Neutrals-Light-Mode---background-1);
-   }
+         ::ng-deep svg {
+            width: 16px !important;
+            height: 16px !important;
 
-   .h5 {
-      color: var(--Neutrals-Light-Mode---content);
-   }
-
-   .app-info-container {
-      background-color: var(--Neutrals-Light-Mode---background-1);
-   }
-
-   .app-info-item {
-      background-color: var(--Neutrals-Light-Mode---background-2);
-
-      &:hover {
-         background-color: var(--Neutrals-Light-Mode---background-3);
-      }
-
-      mat-icon {
-         color: var(--Neutrals-Light-Mode---content);
-
-         &[svgIcon] {
-            ::ng-deep svg {
-               * {
-                  stroke: var(--Neutrals-Light-Mode---content);
-                  fill: none;
-               }
+            * {
+               stroke: currentColor;
+               fill: none;
             }
          }
       }
 
       span {
-         color: var(--Neutrals-Light-Mode---content);
+         font-family: var(--body-font-family);
+         font-weight: var(--font-weight-body);
+         font-size: var(--font-size-body-md);
+         line-height: var(--line-height-body);
+         letter-spacing: var(--letter-spacing-body);
+         @include theme-aware-text();
+         pointer-events: none; // Empêche le texte d'intercepter les événements
+         flex-grow: 1;
       }
    }
-}
 
-.mon-element {
-   @include theme.theme-aware-background();
-   @include theme.theme-aware-text();
+   #tutorial-item {
+      mat-icon.arrow {
+         display: none; // Pas de flèche pour le dernier élément
+      }
+   }
+
+   // Styles spécifiques pour les modes à contraste élevé
+   @media (prefers-contrast: high) {
+      .app-info-item {
+         border: 2px solid currentColor;
+
+         &:hover,
+         &:focus {
+            background-color: var(--high-contrast-bg, #000);
+            color: var(--high-contrast-text, #fff);
+         }
+      }
+   }
+
+   // Support pour les animations réduites
+   @media (prefers-reduced-motion: reduce) {
+      .app-info-item {
+         transition: none;
+
+         &:active {
+            transform: none;
+         }
+      }
+   }
 }
