@@ -3,50 +3,92 @@
       mat-icon-button
       class="back-btn"
       routerLink="/home"
-      aria-label="Retour à l'accueil"
+      [attr.aria-label]="'COMMON.BACK' | translate"
+      [attr.title]="'COMMON.BACK' | translate"
    >
-      <mat-icon aria-hidden="true">arrow_back</mat-icon>
+      <mat-icon>arrow_back</mat-icon>
+      <span class="sr-only">{{ "COMMON.BACK" | translate }}</span>
    </button>
-   <h5 id="config-title">{{ "USER_CONFIG_APP.TITLE" | translate }}</h5>
-   <p id="config-description">{{ "USER_CONFIG_APP.SUBTITLE" | translate }}</p>
+   <div id="config-title">{{ "USER_CONFIG_APP.TITLE" | translate }}</div>
+   <div id="config-description">
+      {{ "USER_CONFIG_APP.SUBTITLE" | translate }}
+   </div>
 
    <div class="theme-list" role="list" aria-labelledby="config-title">
+      <!-- Theme System -->
       <div
-         *ngFor="let theme of themes"
          class="theme-option"
-         [class.selected]="selectedTheme?.name === theme.name"
-         (click)="setTheme(theme.name)"
+         [class.selected]="isThemeSelected('system')"
+         (click)="setTheme('system')"
          role="listitem"
-         [attr.aria-checked]="selectedTheme?.name === theme.name"
+         [attr.aria-checked]="isThemeSelected('system')"
          tabindex="0"
-         attr.aria-label="{{ theme.name | translate }}"
+         [attr.aria-label]="'USER_CONFIG_APP.THEME.DEFAULT' | translate"
       >
          <mat-radio-button
-            [checked]="selectedTheme?.name === theme.name"
-            [value]="theme.name"
-            disableRipple
+            [checked]="isThemeSelected('system')"
+            value="system"
+            [disableRipple]="true"
             aria-hidden="true"
          ></mat-radio-button>
          <div class="theme-info">
             <span class="theme-title">
                {{ "USER_CONFIG_APP.THEME.LABEL" | translate }}
-               <ng-container [ngSwitch]="theme.name">
-                  <span *ngSwitchCase="'system'">
-                     {{ "USER_CONFIG_APP.THEME.DEFAULT" | translate }}
-                     <mat-icon inline aria-hidden="true">📱</mat-icon>
-                  </span>
-                  <span *ngSwitchCase="'light'">
-                     {{ "USER_CONFIG_APP.THEME.LIGHT" | translate }}
-                     <span class="emoji" aria-hidden="true">🌞</span>
-                  </span>
-                  <span *ngSwitchCase="'dark'">
-                     {{ "USER_CONFIG_APP.THEME.DARK" | translate }}
-                     <span class="emoji" aria-hidden="true">🌙</span>
-                  </span>
-               </ng-container>
+               {{ "USER_CONFIG_APP.THEME.DEFAULT" | translate }}
+               <span class="emoji" aria-hidden="true">📱</span>
             </span>
-            <span class="theme-desc" *ngIf="theme.name === 'system'">
+            <span class="theme-desc">
                {{ "USER_CONFIG_APP.THEME.SYSTEM_SETTINGS" | translate }}
+            </span>
+         </div>
+      </div>
+
+      <!-- Theme Light -->
+      <div
+         class="theme-option"
+         [class.selected]="isThemeSelected('light')"
+         (click)="setTheme('light')"
+         role="listitem"
+         [attr.aria-checked]="isThemeSelected('light')"
+         tabindex="0"
+         [attr.aria-label]="'USER_CONFIG_APP.THEME.LIGHT' | translate"
+      >
+         <mat-radio-button
+            [checked]="isThemeSelected('light')"
+            value="light"
+            [disableRipple]="true"
+            aria-hidden="true"
+         ></mat-radio-button>
+         <div class="theme-info">
+            <span class="theme-title">
+               {{ "USER_CONFIG_APP.THEME.LABEL" | translate }}
+               {{ "USER_CONFIG_APP.THEME.LIGHT" | translate }}
+               <span class="emoji" aria-hidden="true">🌞</span>
+            </span>
+         </div>
+      </div>
+
+      <!-- Theme Dark -->
+      <div
+         class="theme-option"
+         [class.selected]="isThemeSelected('dark')"
+         (click)="setTheme('dark')"
+         role="listitem"
+         [attr.aria-checked]="isThemeSelected('dark')"
+         tabindex="0"
+         [attr.aria-label]="'USER_CONFIG_APP.THEME.DARK' | translate"
+      >
+         <mat-radio-button
+            [checked]="isThemeSelected('dark')"
+            value="dark"
+            [disableRipple]="true"
+            aria-hidden="true"
+         ></mat-radio-button>
+         <div class="theme-info">
+            <span class="theme-title">
+               {{ "USER_CONFIG_APP.THEME.LABEL" | translate }}
+               {{ "USER_CONFIG_APP.THEME.DARK" | translate }}
+               <span class="emoji" aria-hidden="true">🌙</span>
             </span>
          </div>
       </div>
