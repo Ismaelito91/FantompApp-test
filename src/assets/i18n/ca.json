@@ -41,7 +41,15 @@
       "HU": "Hongarès"
    },
    "HOME": {
-      "WELCOME": "Benvingut a l'aplicació Fantôme"
+      "WELCOME": "Benvingut a l'aplicació Fantôme",
+      "APP_INFO_TITLE": "Informació de l'aplicació",
+      "APPEARANCE": "Aparença",
+      "CHANGE_ICON": "Canviar icona",
+      "RESOURCES": "Recursos",
+      "WHAT_IS_APP": "Què és aquesta aplicació?",
+      "RIGHTS": "Tinc drets",
+      "ACCESSIBILITY": "FantomApp per a tothom (Accessibilitat)",
+      "TUTORIAL": "Revisar tutorial de benvinguda"
    },
    "VERSION": {
       "FRONTEND": "Versió Frontend",

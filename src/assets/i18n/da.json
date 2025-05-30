@@ -41,7 +41,15 @@
       "HU": "Ungarsk"
    },
    "HOME": {
-      "WELCOME": "Velkommen til Fantôme-appen"
+      "WELCOME": "Velkommen til Fantôme-appen",
+      "APP_INFO_TITLE": "Applikationsinformation",
+      "APPEARANCE": "Udseende",
+      "CHANGE_ICON": "Skift ikon",
+      "RESOURCES": "Ressourcer",
+      "WHAT_IS_APP": "Hvad er denne app?",
+      "RIGHTS": "Jeg har rettigheder",
+      "ACCESSIBILITY": "FantomApp for alle (Tilgængelighed)",
+      "TUTORIAL": "Gennemgå velkomst tutorial"
    },
    "VERSION": {
       "FRONTEND": "Frontend-version",

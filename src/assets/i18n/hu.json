@@ -41,7 +41,15 @@
       "HU": "Magyar"
    },
    "HOME": {
-      "WELCOME": "Üdvözöljük a Fantôme alkalmazásban"
+      "WELCOME": "Üdvözöljük a Fantôme alkalmazásban",
+      "APP_INFO_TITLE": "Alkalmazás információ",
+      "APPEARANCE": "Megjelenés",
+      "CHANGE_ICON": "Ikon módosítása",
+      "RESOURCES": "Erőforrások",
+      "WHAT_IS_APP": "Mi ez az alkalmazás?",
+      "RIGHTS": "Jogaim vannak",
+      "ACCESSIBILITY": "FantomApp mindenkinek (Akadálymentesség)",
+      "TUTORIAL": "Üdvözlő útmutató áttekintése"
    },
    "VERSION": {
       "FRONTEND": "Frontend verzió",

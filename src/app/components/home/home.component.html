@@ -1,99 +1,212 @@
-<div class="home-container">
-   <h5 class="h5">Informations sur l'application</h5>
-   <div class="app-info-parent">
-      <div class="app-info-container">
-         <div class="app-info-item" routerLink="/user-app-config">
-            <mat-icon
-               [svgIcon]="isDarkMode() ? 'icon-sun-dark' : 'icon-sun-light'"
-            ></mat-icon>
-            <span>Apparence</span>
-            <mat-icon
-               class="arrow"
-               [svgIcon]="
-                  isDarkMode()
-                     ? 'chevron24x24-icon-dark'
-                     : 'chevron24x24-icon-light'
-               "
-            ></mat-icon>
-         </div>
-         <div class="app-info-item" routerLink="/changer-icone">
-            <mat-icon
-               [svgIcon]="isDarkMode() ? 'app-icon-dark' : 'app-icon-light'"
-            ></mat-icon>
-            <span>Changer l'icône</span>
-            <mat-icon
-               class="arrow"
-               [svgIcon]="
-                  isDarkMode()
-                     ? 'chevron24x24-icon-dark'
-                     : 'chevron24x24-icon-light'
-               "
-            ></mat-icon>
-         </div>
-         <div class="app-info-item">
-            <mat-icon
-               [svgIcon]="isDarkMode() ? 'icon-file-dark' : 'icon-file-light'"
-            ></mat-icon>
-            <span>Ressources</span>
-            <mat-icon
-               class="arrow"
-               [svgIcon]="
-                  isDarkMode()
-                     ? 'chevron24x24-icon-dark'
-                     : 'chevron24x24-icon-light'
-               "
-            ></mat-icon>
-         </div>
-         <div class="app-info-item">
-            <mat-icon
-               [svgIcon]="isDarkMode() ? 'icon-what-dark' : 'icon-what-light'"
-            ></mat-icon>
-            <span>C'est quoi cette app ?</span>
-            <mat-icon
-               class="arrow"
-               [svgIcon]="
-                  isDarkMode()
-                     ? 'chevron24x24-icon-dark'
-                     : 'chevron24x24-icon-light'
-               "
-            ></mat-icon>
-         </div>
-         <div class="app-info-item">
-            <mat-icon
-               [svgIcon]="
-                  isDarkMode() ? 'icon-rights-dark' : 'icon-rights-light'
-               "
-            ></mat-icon>
-            <span>J'ai des droits</span>
-            <mat-icon
-               class="arrow"
-               [svgIcon]="
-                  isDarkMode()
-                     ? 'chevron24x24-icon-dark'
-                     : 'chevron24x24-icon-light'
-               "
-            ></mat-icon>
-         </div>
-         <div class="app-info-item">
-            <mat-icon
-               [svgIcon]="isDarkMode() ? 'icon-file-dark' : 'icon-file-light'"
-            ></mat-icon>
-            <span>FantomApp pour tous<br />(Accessibilité)</span>
-            <mat-icon
-               class="arrow"
-               [svgIcon]="
-                  isDarkMode()
-                     ? 'chevron24x24-icon-dark'
-                     : 'chevron24x24-icon-light'
-               "
-            ></mat-icon>
-         </div>
-         <div class="app-info-item">
-            <mat-icon
-               [svgIcon]="isDarkMode() ? 'icon-play-dark' : 'icon-play-light'"
-            ></mat-icon>
-            <span>Revoir le tutoriel de bienvenue</span>
-         </div>
-      </div>
+<main id="home-container" role="main" aria-labelledby="app-info-title">
+   <h1 id="app-info-title" class="sr-only">
+      {{ "HOME.APP_INFO_TITLE" | translate }}
+   </h1>
+   <h5 id="app-info-title-visible">{{ "HOME.APP_INFO_TITLE" | translate }}</h5>
+
+   <div id="app-info-parent">
+      <nav
+         id="app-info-container"
+         role="navigation"
+         [attr.aria-label]="'HOME.APP_INFO_TITLE' | translate"
+      >
+         <ul role="list">
+            <li>
+               <a
+                  id="appearance-item"
+                  class="app-info-item"
+                  routerLink="/user-app-config"
+                  role="button"
+                  tabindex="0"
+                  [attr.aria-label]="'HOME.APPEARANCE' | translate"
+                  (keydown)="onKeyDown($event, '/user-app-config')"
+               >
+                  <mat-icon
+                     [svgIcon]="
+                        isDarkMode() ? 'icon-sun-dark' : 'icon-sun-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+                  <span>{{ "HOME.APPEARANCE" | translate }}</span>
+                  <mat-icon
+                     class="arrow"
+                     [svgIcon]="
+                        isDarkMode()
+                           ? 'chevron24x24-icon-dark'
+                           : 'chevron24x24-icon-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+               </a>
+            </li>
+            <li>
+               <a
+                  id="change-icon-item"
+                  class="app-info-item"
+                  routerLink="/changer-icone"
+                  role="button"
+                  tabindex="0"
+                  [attr.aria-label]="'HOME.CHANGE_ICON' | translate"
+                  (keydown)="onKeyDown($event, '/changer-icone')"
+               >
+                  <mat-icon
+                     [svgIcon]="
+                        isDarkMode() ? 'app-icon-dark' : 'app-icon-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+                  <span>{{ "HOME.CHANGE_ICON" | translate }}</span>
+                  <mat-icon
+                     class="arrow"
+                     [svgIcon]="
+                        isDarkMode()
+                           ? 'chevron24x24-icon-dark'
+                           : 'chevron24x24-icon-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+               </a>
+            </li>
+            <li>
+               <button
+                  id="resources-item"
+                  class="app-info-item"
+                  type="button"
+                  [attr.aria-label]="'HOME.RESOURCES' | translate"
+                  (click)="navigateToResources()"
+                  (keydown)="onKeyDownButton($event, 'resources')"
+               >
+                  <mat-icon
+                     [svgIcon]="
+                        isDarkMode() ? 'icon-file-dark' : 'icon-file-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+                  <span>{{ "HOME.RESOURCES" | translate }}</span>
+                  <mat-icon
+                     class="arrow"
+                     [svgIcon]="
+                        isDarkMode()
+                           ? 'chevron24x24-icon-dark'
+                           : 'chevron24x24-icon-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+               </button>
+            </li>
+            <li>
+               <button
+                  id="what-is-app-item"
+                  class="app-info-item"
+                  type="button"
+                  [attr.aria-label]="'HOME.WHAT_IS_APP' | translate"
+                  (click)="navigateToWhatIsApp()"
+                  (keydown)="onKeyDownButton($event, 'what-is-app')"
+               >
+                  <mat-icon
+                     [svgIcon]="
+                        isDarkMode() ? 'icon-what-dark' : 'icon-what-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+                  <span>{{ "HOME.WHAT_IS_APP" | translate }}</span>
+                  <mat-icon
+                     class="arrow"
+                     [svgIcon]="
+                        isDarkMode()
+                           ? 'chevron24x24-icon-dark'
+                           : 'chevron24x24-icon-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+               </button>
+            </li>
+            <li>
+               <button
+                  id="rights-item"
+                  class="app-info-item"
+                  type="button"
+                  [attr.aria-label]="'HOME.RIGHTS' | translate"
+                  (click)="navigateToRights()"
+                  (keydown)="onKeyDownButton($event, 'rights')"
+               >
+                  <mat-icon
+                     [svgIcon]="
+                        isDarkMode() ? 'icon-rights-dark' : 'icon-rights-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+                  <span>{{ "HOME.RIGHTS" | translate }}</span>
+                  <mat-icon
+                     class="arrow"
+                     [svgIcon]="
+                        isDarkMode()
+                           ? 'chevron24x24-icon-dark'
+                           : 'chevron24x24-icon-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+               </button>
+            </li>
+            <li>
+               <button
+                  id="accessibility-item"
+                  class="app-info-item"
+                  type="button"
+                  [attr.aria-label]="'HOME.ACCESSIBILITY' | translate"
+                  (click)="navigateToAccessibility()"
+                  (keydown)="onKeyDownButton($event, 'accessibility')"
+               >
+                  <mat-icon
+                     [svgIcon]="
+                        isDarkMode() ? 'icon-file-dark' : 'icon-file-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+                  <span>{{ "HOME.ACCESSIBILITY" | translate }}</span>
+                  <mat-icon
+                     class="arrow"
+                     [svgIcon]="
+                        isDarkMode()
+                           ? 'chevron24x24-icon-dark'
+                           : 'chevron24x24-icon-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+               </button>
+            </li>
+            <li>
+               <button
+                  id="tutorial-item"
+                  class="app-info-item"
+                  type="button"
+                  [attr.aria-label]="'HOME.TUTORIAL' | translate"
+                  (click)="navigateToTutorial()"
+                  (keydown)="onKeyDownButton($event, 'tutorial')"
+               >
+                  <mat-icon
+                     [svgIcon]="
+                        isDarkMode() ? 'icon-play-dark' : 'icon-play-light'
+                     "
+                     aria-hidden="true"
+                     focusable="false"
+                  ></mat-icon>
+                  <span>{{ "HOME.TUTORIAL" | translate }}</span>
+               </button>
+            </li>
+         </ul>
+      </nav>
    </div>
-</div>
+</main>

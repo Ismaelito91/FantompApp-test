@@ -41,7 +41,15 @@
       "HU": "Hungarian"
    },
    "HOME": {
-      "WELCOME": "Welcome to Ghost App"
+      "WELCOME": "Welcome to Ghost App",
+      "APP_INFO_TITLE": "Application Information",
+      "APPEARANCE": "Appearance",
+      "CHANGE_ICON": "Change Icon",
+      "RESOURCES": "Resources",
+      "WHAT_IS_APP": "What is this app?",
+      "RIGHTS": "I have rights",
+      "ACCESSIBILITY": "FantomApp for everyone (Accessibility)",
+      "TUTORIAL": "Review welcome tutorial"
    },
    "VERSION": {
       "FRONTEND": "Frontend Version",
