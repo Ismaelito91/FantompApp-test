@@ -1,1 +1,12 @@
-<p>problems works!</p>
+<div class="problems-container flex flex-col">
+   <h1 class="problems-title">J'ai un problème en ligne</h1>
+   <div class="problems-items-container flex flex-col">
+      @for (problem of problems(); track $index) {
+         @switch (problem.type) {
+            @case ('card-1') {
+               <app-card-1 [data]="problem"></app-card-1>
+            }
+         }
+      }
+   </div>
+</div>

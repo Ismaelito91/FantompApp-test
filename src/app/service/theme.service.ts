@@ -46,36 +46,8 @@ export class ThemeService {
 
       if (isDark) {
          document.documentElement.classList.add("dark-theme");
-         document.documentElement.style.setProperty("--background", "#140D26");
-         document.documentElement.style.setProperty("--primary", "#897DA6");
-         document.documentElement.style.setProperty(
-            "--primary-dark",
-            "#443A5C"
-         );
-         document.documentElement.style.setProperty(
-            "--primary-darker",
-            "#291E43"
-         );
-         document.documentElement.style.setProperty(
-            "--primary-darkest",
-            "#140D26"
-         );
       } else {
          document.documentElement.classList.remove("dark-theme");
-         document.documentElement.style.setProperty("--background", "#FFFFFF");
-         document.documentElement.style.setProperty("--primary", "#000000");
-         document.documentElement.style.setProperty(
-            "--primary-dark",
-            "#666666"
-         );
-         document.documentElement.style.setProperty(
-            "--primary-darker",
-            "#333333"
-         );
-         document.documentElement.style.setProperty(
-            "--primary-darkest",
-            "#000000"
-         );
       }
    }
 

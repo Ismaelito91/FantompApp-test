@@ -1,0 +1,20 @@
+.card-container {
+   gap: var(--spacing-1);
+}
+
+.card-title {
+   color: var(--color-neutral-light-content-3);
+   font-weight: bold;
+   opacity: 70%;
+}
+
+.card-image {
+   border-radius: var(--border-radius-2);
+}
+
+.card-item-container {
+   background-color: var(--color-neutral-light-background-1);
+   padding: var(--spacing-1);
+   border-radius: var(--border-radius-2);
+   gap: var(--spacing-2);
+}

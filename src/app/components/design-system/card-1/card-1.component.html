@@ -1,0 +1,17 @@
+<div class="card-container flex flex-col">
+   <span class="card-title">{{ data.translations[0].firstTitle }}</span>
+   <div class="card-item-container flex flex-col">
+      <div>
+         <img class="card-image" src="../../../../assets/images/tmp/effacer-contenu.jpg" alt="effacer un contenut" />
+      </div>
+      <div class="flex justify-between items-center">
+         <div>
+            <h5>{{ data.translations[0].secondTitle }}</h5>
+            <span>{{ data.translations[0].shortDescription }}</span>
+         </div>
+         <div>
+            <mat-icon [svgIcon]="isDarkMode() ? 'chevron24x24-icon-dark' : 'chevron24x24-icon-light'"></mat-icon>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,8 +1,5 @@
-@use "styles" as *;
-
 :host {
    #home-container {
-      @include theme-aware-background();
       position: relative;
       width: 100%;
       min-height: 100vh;
@@ -33,7 +30,6 @@
       line-height: var(--line-height-h5);
       letter-spacing: var(--letter-spacing-heading);
       margin: 0 0 var(--spacing-2) 0;
-      @include theme-aware-text();
    }
 
    #app-info-title-visible {
@@ -43,7 +39,6 @@
       line-height: var(--line-height-h5);
       letter-spacing: var(--letter-spacing-heading);
       margin: 0 0 var(--spacing-2) 0;
-      @include theme-aware-text();
    }
 
    #app-info-parent {
@@ -52,7 +47,6 @@
    }
 
    #app-info-container {
-      @include theme-aware-background-hover();
       border-radius: var(--border-radius-2);
       padding: var(--spacing-3);
 
@@ -85,18 +79,15 @@
       text-align: left; // Pour les boutons
       text-decoration: none; // Pour les liens
       color: inherit; // Pour les liens
-      @include theme-aware-background-hover();
 
       &:hover,
       &:focus {
          opacity: 0.8;
-         outline: 2px solid var(--primary-color, #007bff);
          outline-offset: 2px;
       }
 
       // Amélioration du focus pour l'accessibilité
       &:focus-visible {
-         outline: 3px solid var(--focus-color, #005fcc);
          outline-offset: 2px;
          box-shadow: 0 0 0 1px var(--focus-ring-color, rgba(0, 123, 255, 0.25));
       }
@@ -113,7 +104,6 @@
          min-width: 16px !important;
          min-height: 16px !important;
          margin-right: var(--spacing-3);
-         @include theme-aware-text();
          pointer-events: none;
          display: flex !important;
          align-items: center;
@@ -161,7 +151,6 @@
          font-size: var(--font-size-body-md);
          line-height: var(--line-height-body);
          letter-spacing: var(--letter-spacing-body);
-         @include theme-aware-text();
          pointer-events: none; // Empêche le texte d'intercepter les événements
          flex-grow: 1;
       }
