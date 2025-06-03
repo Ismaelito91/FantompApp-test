@@ -54,8 +54,8 @@ pipeline {
       stage('Build Docker Image') {
          steps {
             script {
-               def branch = env.BRANCH_NAME ?: 'latest'
-               sh "docker build . -t ${IMAGE_URL}:${branch}"
+               def tag = env.BRANCH_NAME ?: 'latest'
+               sh "docker build . -t ${IMAGE_URL}:${tag}"
             }
          }
       }
