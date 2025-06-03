@@ -71,6 +71,19 @@ pipeline {
             }
          }
       }
+
+      stage('Deploy Application') {
+         steps {
+            script {
+               echo "🚀 Déploiement en cours..."
+               def branch = env.BRANCH_NAME ?: 'latest'
+               build job: 'fantome-app-deploy', parameters: [
+                  string(name: 'TAG', value: branch),
+                  string(name: 'ENVIRONNEMENT', value: 'sandbox')
+               ]
+            }
+         }
+      }
    }
 
    post {
