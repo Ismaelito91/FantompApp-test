@@ -29,7 +29,8 @@ export class PwaService {
     private platform: Platform) {
 
     if (this.swUpdate.isEnabled) {
-      interval(5000).subscribe(() => this.swUpdate.checkForUpdate()
+      // check toutes les 1 minutes
+      interval(1*60*1000).subscribe(() => this.swUpdate.checkForUpdate()
         .then(() => {
           console.log('checking for updates');
         }));
@@ -73,8 +74,10 @@ export class PwaService {
   }
 
   public initPwaPrompt() {
+    console.log("platform android : ", this.platform.ANDROID, "platform ios : ", this.platform.IOS);
     if (this.platform.ANDROID) {
       window.addEventListener('beforeinstallprompt', (event: any) => {
+        console.log('beforeinstallprompt', event.origin, window.location.origin);
         if (event.origin && event.origin !== window.location.origin) {
           return;
         }
