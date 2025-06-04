@@ -4,6 +4,7 @@ import {
    isDevMode,
    provideZoneChangeDetection,
    provideAppInitializer,
+   enableProdMode,
 } from "@angular/core";
 import { provideRouter, withComponentInputBinding } from "@angular/router";
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
@@ -16,7 +17,10 @@ import { HttpClient } from "@angular/common/http";
 import { importProvidersFrom } from "@angular/core";
 import { SettingService } from "./service/setting.service";
 import { catchError, EMPTY, tap } from "rxjs";
-
+import { environment } from "../environments/environment";
+if (environment.production) {
+   enableProdMode();
+ }
 // Fonction factory pour le chargeur de traductions
 export function HttpLoaderFactory(http: HttpClient) {
    return new TranslateHttpLoader(http, "./assets/i18n/", ".json");

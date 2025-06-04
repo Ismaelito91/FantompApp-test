@@ -1,6 +1,6 @@
 {
-  "name": "fantome-app-frontend",
-  "short_name": "fantome-app-frontend",
+  "name": "FantomApp",
+  "short_name": "FantomApp",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

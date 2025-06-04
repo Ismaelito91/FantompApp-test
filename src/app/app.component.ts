@@ -1,10 +1,11 @@
-import { Component, OnInit, inject } from "@angular/core";
+import { Component, OnInit, enableProdMode, inject } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { LanguageService } from "./service/language.service";
+import { PwaService } from "./service/pwa/pwa.service";
 import { SettingService } from "./service/setting.service";
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
@@ -16,7 +17,7 @@ import { DomSanitizer } from "@angular/platform-browser";
       RouterOutlet,
       HeaderComponent,
       FooterComponent,
-      TranslateModule,
+      TranslateModule
    ],
    templateUrl: "./app.component.html",
    styleUrl: "./app.component.scss",
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit {
    _settingService = inject(SettingService);
    private matIconRegistry = inject(MatIconRegistry);
    private domSanitizer = inject(DomSanitizer);
+   private pwaService = inject(PwaService);
 
    ngOnInit(): void {
       // Définir les langues disponibles
@@ -39,6 +41,10 @@ export class AppComponent implements OnInit {
 
       // Le service de langue gère le choix de la langue
       // Il est déjà injecté et s'initialise automatiquement
+
+      //initialisation du service PWA
+      this.pwaService.initPwaPrompt();
+      this.pwaService.checkForUpdates();
 
       // Enregistrement des icônes SVG personnalisées
       console.log("Registering SVG icons...");
