@@ -1,4 +1,4 @@
-import { Component, OnInit, enableProdMode, inject } from "@angular/core";
+import { Component, OnInit, inject } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 
 import { HeaderComponent } from "./components/header/header.component";
@@ -85,7 +85,7 @@ export class AppComponent implements OnInit {
 
       // Enregistrer toutes les icônes
       [...lightIcons, ...darkIcons].forEach((icon) => {
-         console.log(`Registering icon: ${icon.name} from ${icon.path}`);
+         //console.log(`Registering icon: ${icon.name} from ${icon.path}`);
          this.matIconRegistry.addSvgIcon(
             icon.name,
             this.domSanitizer.bypassSecurityTrustResourceUrl(icon.path)

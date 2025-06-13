@@ -3,9 +3,17 @@
   outline-style: solid;
   outline-width: 2px;
   outline-offset: 2px;
-  outline-color: #1212ff;
 }
 .android-prompt {
+    .mat-mdc-button {
+        font-family: var(--heading-font-family);
+        font-weight: var(--font-weight-body);
+        font-size: var(--font-size-body-md);
+        line-height: var(--line-height-body);
+        letter-spacing: var(--letter-spacing-body);
+    }
+    background-color: var(--color-neutral-background-4);
+    color: var(--color-neutral-content-1);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -13,8 +21,6 @@
     -webkit-flex-direction: row;
     -webkit-justify-content: space-between;
     border-radius: 6px;
-    background-color: var(--janus-aot-primary-light);
-    color: var(--janus-aot-white);
 
     img {
         height: 40px;
@@ -22,6 +28,13 @@
 }
 
 .ios-prompt {
+    .mat-mdc-button {
+        font-family: var(--heading-font-family);
+        font-weight: var(--font-weight-body);
+        font-size: var(--font-size-body-md);
+        line-height: var(--line-height-body);
+        letter-spacing: var(--letter-spacing-body);
+    }
     width: 100%;
     display: flex;
     flex-direction: column;

@@ -1,8 +1,29 @@
-.prompt-update-title-wrapper {
+.prompt-update-wrapper {
+  background-color: var(--color-neutral-background-4);
+  color: var(--color-neutral-content-1);
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+}
 
+.prompt-update-title-wrapper {
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
 }
 
 .prompt-update-content-wrapper {
+  background-color: var(--color-neutral-background-4);
+  color: var(--color-neutral-content-1);
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-body);
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
     .prompt-update-content-line {
       p span {
         display: block;
@@ -12,9 +33,21 @@
 }
 
 .prompt-update-actions-wrapper {
+  
+    .mat-mdc-button {
+      font-family: var(--heading-font-family);
+      font-weight: var(--font-weight-body);
+      font-size: var(--font-size-body-md);
+      line-height: var(--line-height-body);
+      letter-spacing: var(--letter-spacing-body);
+    }
     .btn-yes {
-        background-color: var(--janus-aot-asset-dark);
-        color: var(--janus-aot-white);
+      background-color: var(--color-neutral-background-4);
+      color: var(--color-neutral-content-1);
+    }
+    .btn-no {
+      background-color: var(--color-neutral-background-4);
+      color: var(--color-neutral-content-1);
     }
 }
 

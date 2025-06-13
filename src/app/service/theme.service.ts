@@ -36,13 +36,9 @@ export class ThemeService {
       const systemPrefersDark = window.matchMedia(
          "(prefers-color-scheme: dark)"
       ).matches;
-      console.log("Système préfère le mode sombre:", systemPrefersDark);
-      console.log("Thème actuel:", theme);
 
       const isDark =
          theme === "dark" || (theme === "system" && systemPrefersDark);
-
-      console.log("Mode sombre appliqué:", isDark);
 
       if (isDark) {
          document.documentElement.classList.add("dark-theme");
@@ -56,19 +52,16 @@ export class ThemeService {
       const systemPrefersDark = window.matchMedia(
          "(prefers-color-scheme: dark)"
       ).matches;
-      console.log("Préférence système initiale (sombre):", systemPrefersDark);
 
       // Récupérer le thème sauvegardé ou utiliser "system" par défaut
       const savedTheme =
          (localStorage.getItem("theme") as ThemeType) || "system";
-      console.log("Thème sauvegardé:", savedTheme);
 
       this.appTheme.set(savedTheme);
       this.applyTheme(savedTheme);
 
       effect(() => {
          const appTheme = this.appTheme();
-         console.log("Changement de thème:", appTheme);
          localStorage.setItem("theme", appTheme);
          const colorScheme = appTheme === "system" ? "light dark" : appTheme;
          document.body.style.setProperty("color-scheme", colorScheme);
@@ -80,12 +73,7 @@ export class ThemeService {
          "(prefers-color-scheme: dark)"
       );
       const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-         console.log(
-            "Changement de préférence système détecté:",
-            e.matches ? "sombre" : "clair"
-         );
          if (this.appTheme() === "system") {
-            console.log("Application du nouveau thème système");
             this.applyTheme("system");
          }
       };

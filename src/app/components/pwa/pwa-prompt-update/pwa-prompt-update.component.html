@@ -1,15 +1,17 @@
-<div mat-dialog-title class="prompt-update-title-wrapper">
-    <h1 class="prompt-update-title">{{'APP.NEW_VERSION_AVAILABLE' | translate}}</h1>
-</div>
-<div class="prompt-update-content-wrapper" mat-dialog-content>
-    <div class="prompt-update-content-line">
-      <p>
-        <span> {{'APP.NEW_VERSION_AVAILABLE' | translate}}</span>
-        <span> {{'APP.UPDATE_APP' | translate}}</span>
-      </p>
-    </div>
-</div>
-<div class="prompt-update-actions-wrapper" mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close attr.aria-label="{{'COMMON.NO' | translate}}"> {{'COMMON.NO' | translate}}</button>
-    <button class="btn-yes" mat-button [mat-dialog-close]="true" cdkFocusInitial attr.aria-label="{{'COMMON.YES' | translate}}"> {{'COMMON.YES' | translate}}</button>
+<div class="prompt-update-wrapper">
+  <div mat-dialog-title class="prompt-update-title-wrapper">
+      <h1 class="prompt-update-title">{{'APP.NEW_VERSION_AVAILABLE' | translate}}</h1>
+  </div>
+  <div class="prompt-update-content-wrapper" mat-dialog-content>
+      <div class="prompt-update-content-line">
+        <p>
+          <span> {{'APP.NEW_VERSION_AVAILABLE' | translate}}</span>
+          <span> {{'APP.UPDATE_APP' | translate}}</span>
+        </p>
+      </div>
+  </div>
+  <div class="prompt-update-actions-wrapper" mat-dialog-actions align="end">
+      <button class="btn-no" mat-button mat-dialog-close attr.aria-label="{{'COMMON.NO' | translate}}"> {{'COMMON.NO' | translate}}</button>
+      <button class="btn-yes" mat-button [mat-dialog-close]="true" cdkFocusInitial attr.aria-label="{{'COMMON.YES' | translate}}"> {{'COMMON.YES' | translate}}</button>
+  </div>
 </div>
