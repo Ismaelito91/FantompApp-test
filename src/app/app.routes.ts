@@ -5,6 +5,7 @@ import { ToolsComponent } from "./components/tools/tools.component";
 import { ProblemsComponent } from "./components/problems/problems.component";
 import { SplashScreenComponent } from "./components/splash-screen/splash-screen.component";
 import { UserAppConfigComponent } from "./components/home/user-app-config/user-app-config.component";
+import { AppIconSelectorComponent } from "./components/home/app-icon-selector/app-icon-selector.component";
 
 export const routes: Routes = [
    {
@@ -26,6 +27,10 @@ export const routes: Routes = [
    {
       path: "user-app-config",
       component: UserAppConfigComponent,
+   },
+   {
+      path: "changer-icone",
+      component: AppIconSelectorComponent,
    },
    {
       path: "error/:code",

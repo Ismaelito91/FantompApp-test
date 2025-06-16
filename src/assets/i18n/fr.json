@@ -35,6 +35,18 @@
          "SYSTEM_SETTINGS": "Utiliser le même réglage que le téléphone"
       }
    },
+   "APP_ICON_SELECTOR": {
+      "TITLE": "Icône de l'application",
+      "SUBTITLE": "Personnalise l'icône visible de ton application.",
+      "DEFAULT": "Icône par défaut",
+      "DEFAULT_DESC": "L'icône originale de l'application",
+      "GHOST": "Icône fantôme",
+      "GHOST_DESC": "Une version mystérieuse et discrète",
+      "DARK": "Icône sombre",
+      "DARK_DESC": "Parfaite pour les utilisateurs nocturnes",
+      "COLORFUL": "Icône colorée",
+      "COLORFUL_DESC": "Une version vibrante et joyeuse"
+   },
    "LANGUAGES": {
       "FR": "Français",
       "EN": "Anglais",

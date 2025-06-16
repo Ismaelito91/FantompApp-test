@@ -1,0 +1,82 @@
+<div class="config-container" role="main">
+   <button
+      mat-icon-button
+      class="back-btn"
+      routerLink="/home"
+      aria-label="Retour"
+      title="Retour"
+   >
+      <mat-icon>arrow_back</mat-icon>
+      <span class="sr-only">Retour</span>
+   </button>
+
+   <h2 id="config-title">Changer l'icône de l'app</h2>
+   <div id="config-description">Choisis ton icône préférée !</div>
+
+   <div class="icon-selector-block">
+      <div class="icon-grid">
+         <!-- Icône CNIL EU -->
+         <div class="icon-container" [class.selected]="isIconSelected('cnil')">
+            <div
+               class="icon-item"
+               [class.selected]="isIconSelected('cnil')"
+               (click)="setIcon('cnil')"
+               role="button"
+               tabindex="0"
+               aria-label="Icône CNIL EU"
+            >
+               <img
+                  src="assets/images/logo-CNIL-EU.svg"
+                  alt="Icône CNIL EU"
+                  class="icon-image"
+               />
+            </div>
+            <div class="icon-title">CNIL</div>
+         </div>
+
+         <!-- Icône Fantôme App -->
+         <div
+            class="icon-container"
+            [class.selected]="isIconSelected('fantome')"
+         >
+            <div
+               class="icon-item"
+               [class.selected]="isIconSelected('fantome')"
+               (click)="setIcon('fantome')"
+               role="button"
+               tabindex="0"
+               aria-label="Icône Fantôme App"
+            >
+               <img
+                  src="assets/images/famtome-app.svg"
+                  alt="Icône Fantôme App"
+                  class="icon-image"
+               />
+            </div>
+            <div class="icon-title">Fantôme</div>
+         </div>
+
+         <!-- Icône Rectangle -->
+         <div
+            class="icon-container"
+            [class.selected]="isIconSelected('rectangle')"
+         >
+            <div
+               class="icon-item"
+               [class.selected]="isIconSelected('rectangle')"
+               (click)="setIcon('rectangle')"
+               role="button"
+               tabindex="0"
+               aria-label="Icône Rectangle"
+            >
+               <img
+                  src="assets/images/Rectangle 521.svg"
+                  alt="Icône Rectangle"
+                  class="icon-image"
+               />
+            </div>
+            <div class="icon-title">Rectangle</div>
+         </div>
+      </div>
+   </div>
+</div>
