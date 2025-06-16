@@ -30,6 +30,7 @@
 }
 
 :root {
+
    // Variables de typographie selon les spécifications
    --heading-font-family: "Lexend", Arial, sans-serif;
    --body-font-family: "Nunito", Arial, sans-serif;
@@ -219,7 +220,7 @@
       line-height: var(--line-height-body);
       letter-spacing: var(--letter-spacing-body);
       background-color: var(--color-neutral-background-4);
-      color: var(--color-neutral-content-1);
+      color: var(--color-neutral-content-2);
       transition: background-color 0.3s ease, color 0.3s ease;
       min-height: 100vh;
    }
@@ -269,6 +270,7 @@
    h2 {
       font-size: var(--font-size-h2);
       line-height: var(--line-height-h2);
+      color: var(--color-neutral-content-1)
    }
 
    h3 {
@@ -284,12 +286,20 @@
    h5 {
       font-size: var(--font-size-h5);
       line-height: var(--line-height-h5);
+      color: var(--color-neutral-content-2)
    }
 
    h6 {
       font-size: var(--font-size-h6);
       line-height: var(--line-height-h6);
    }
+
+   @include mat.button-overrides((text-label-text-font: var(--body-font-family)));
+
+   @include mat.toolbar-overrides((container-background-color: var(--color-neutral-background-1)));
+
+   @include mat.toolbar-overrides((container-text-color: var(--color-primary-800),
+      ));
 }
 
 
@@ -300,8 +310,29 @@
    --color-neutral-700: #291e43;
    --color-neutral-900: #140d26;
 
+   --color-neutral-background-1: var(--color-neutral-900);
+   // --color-neutral-background-2: var(--color-neutral-700);
+   // --color-neutral-background-3: var(--color-neutral-350);
+   // --color-neutral-background-4: var(--color-neutral-400);
+   // --color-neutral-content-1: var(--color-neutral-900);
+   // --color-neutral-content-2: var(--color-neutral-700);
+   // --color-neutral-content-3: var(--color-neutral-600);
+   // --color-neutral-content-4: var(--color-neutral-500);
+
    body {
       background-color: var(--color-neutral-content-1);
       color: var(--color-neutral-background-2);
    }
+
+   h2 {
+      color: var(--color-neutral-background-2);
+   }
+
+   h5 {
+      color: var(--color-neutral-background-2);
+   }
+
+   @include mat.toolbar-overrides((container-background-color: var(--color-neutral-background-1),
+         container-text-color: var(--color-primary-100),
+      ));
 }

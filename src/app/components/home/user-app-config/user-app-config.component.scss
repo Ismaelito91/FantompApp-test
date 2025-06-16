@@ -46,6 +46,12 @@
       max-width: 358px;
    }
 
+   :host-context(.dark-theme) {
+      .theme-option {
+         background-color: var(--color-neutral-700);
+      }
+   }
+
    .theme-option {
       display: flex;
       align-items: center;
@@ -53,6 +59,7 @@
       padding: var(--spacing-3);
       cursor: pointer;
       transition: all 0.2s ease;
+      background-color: var(--color-neutral-background-1);
 
       mat-radio-button {
          ::ng-deep {

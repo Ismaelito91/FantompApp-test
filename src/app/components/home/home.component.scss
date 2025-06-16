@@ -44,6 +44,14 @@
    #app-info-parent {
       width: 100%;
       max-width: 358px;
+      background-color: var(--color-neutral-background-1);
+      border-radius: var(--border-radius-2);
+   }
+
+   :host-context(.dark-theme) {
+      #app-info-parent {
+         background-color: var(--color-neutral-700);
+      }
    }
 
    #app-info-container {
