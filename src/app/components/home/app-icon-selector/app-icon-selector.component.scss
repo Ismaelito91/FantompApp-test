@@ -1,0 +1,197 @@
+:host {
+   .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+   }
+
+   .config-container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      padding: var(--spacing-3);
+      display: flex;
+      flex-direction: column;
+   }
+
+   .back-btn {
+      margin-bottom: var(--spacing-4);
+      width: fit-content;
+
+      mat-icon {
+         width: 24px;
+         height: 24px;
+         font-size: 24px;
+      }
+   }
+
+   #config-title {
+      font-family: var(--heading-font-family);
+      font-weight: var(--font-weight-heading);
+      font-size: var(--font-size-h2);
+      margin-bottom: var(--spacing-2);
+      margin-left: var(--spacing-3);
+      color: var(--color-neutral-content-1);
+   }
+
+   #config-description {
+      font-family: var(--body-font-family);
+      font-size: var(--font-size-body);
+      margin-bottom: var(--spacing-6);
+      margin-left: var(--spacing-3);
+      opacity: 0.7;
+      color: var(--color-neutral-content-2);
+   }
+
+   .icon-selector-block {
+      width: calc(100% - var(--spacing-4));
+      max-width: none;
+      padding: var(--spacing-6);
+      height: auto;
+      min-height: 120px;
+      border-radius: 20px;
+      margin: 0 auto;
+      background-color: var(--color-neutral-background-1);
+   }
+
+   .icon-grid {
+      display: flex;
+      gap: var(--spacing-8);
+      align-items: flex-start;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+   }
+
+   .icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-1);
+      padding: var(--spacing-2);
+      flex-shrink: 0;
+
+      &.selected {
+         .icon-title {
+            background-color: var(--color-primary-800);
+            color: var(--color-neutral-50);
+         }
+      }
+   }
+
+   .icon-item {
+      width: 62px;
+      height: 62px;
+      border-radius: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+      overflow: hidden;
+      position: relative;
+
+      // Effet tactile pour mobile (au lieu de hover)
+      &:active {
+         transform: scale(0.95);
+         opacity: 0.8;
+      }
+
+      &.selected {
+         border-color: var(--color-primary-800);
+         box-shadow: 0 0 0 2px rgba(66, 12, 192, 0.2);
+      }
+
+      .icon-image {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+   }
+
+   .icon-title {
+      width: 62px;
+      height: 19px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--body-font-family);
+      font-size: 12px;
+      font-weight: var(--font-weight-body);
+      color: var(--color-neutral-content-1);
+      text-align: center;
+      transition: all 0.2s ease;
+   }
+
+   // Support pour le mode sombre
+   :host-context(.dark-theme) {
+      #config-title {
+         color: var(--color-neutral-50);
+      }
+
+      #config-description {
+         color: var(--color-neutral-200);
+      }
+
+      .icon-selector-block {
+         background-color: var(--color-neutral-700);
+      }
+
+      .icon-title {
+         color: var(--color-neutral-50);
+      }
+
+      .icon-container {
+         &.selected {
+            .icon-title {
+               background-color: var(--color-primary-800);
+               color: var(--color-neutral-50);
+            }
+         }
+      }
+
+      .icon-item {
+         &:active {
+            transform: scale(0.95);
+            opacity: 0.8;
+         }
+
+         &.selected {
+            border-color: var(--color-primary-800);
+         }
+      }
+   }
+
+   // Responsive design
+   @media (max-width: 768px) {
+      .config-container {
+         padding: var(--spacing-3);
+      }
+
+      .icon-selector-block {
+         width: calc(100% - var(--spacing-4));
+         max-width: none;
+         padding: var(--spacing-2);
+      }
+
+      .icon-grid {
+         gap: var(--spacing-2);
+      }
+
+      .icon-item {
+         width: 56px;
+         height: 56px;
+      }
+
+      .icon-title {
+         width: 56px;
+         height: 16px;
+         font-size: 11px;
+      }
+   }
+}

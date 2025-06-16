@@ -29,6 +29,18 @@
          "SYSTEM_SETTINGS": "Use the same settings as your phone"
       }
    },
+   "APP_ICON_SELECTOR": {
+      "TITLE": "Application Icon",
+      "SUBTITLE": "Customize your app's visible icon.",
+      "DEFAULT": "Default Icon",
+      "DEFAULT_DESC": "The original app icon",
+      "GHOST": "Ghost Icon",
+      "GHOST_DESC": "A mysterious and discreet version",
+      "DARK": "Dark Icon",
+      "DARK_DESC": "Perfect for night users",
+      "COLORFUL": "Colorful Icon",
+      "COLORFUL_DESC": "A vibrant and joyful version"
+   },
    "LANGUAGES": {
       "FR": "French",
       "EN": "English",
