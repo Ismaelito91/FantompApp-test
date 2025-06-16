@@ -1,11 +1,20 @@
 {
+  "id": "fantome.app.cnil",
   "name": "FantomApp",
   "short_name": "FantomApp",
+  "description": "Outil de sensibilisation des adolescents à la protection de leurs vie privée en ligne",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
+  "lang": "fr",
+  "orientation": "portrait",
+  "categories": [
+    "education",
+    "government",
+    "security"
+  ],
   "icons": [
     {
       "src": "icons/icon-72x72.png",
