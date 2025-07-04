@@ -33,9 +33,9 @@
 
    #config-description {
       font-family: var(--body-font-family);
-      font-size: var(--font-size-body-sm);
+      font-size: var(--font-size-body-md);
       margin-bottom: var(--spacing-4);
-      opacity: 0.7;
+      color: var(--color-4)
    }
 
    .theme-list {
@@ -46,12 +46,6 @@
       max-width: 358px;
    }
 
-   :host-context(.dark-theme) {
-      .theme-option {
-         background-color: var(--color-neutral-700);
-      }
-   }
-
    .theme-option {
       display: flex;
       align-items: center;
@@ -59,34 +53,20 @@
       padding: var(--spacing-3);
       cursor: pointer;
       transition: all 0.2s ease;
-      background-color: var(--color-neutral-background-1);
+      background-color: var(--background-2);
 
-      mat-radio-button {
-         ::ng-deep {
-            .mdc-radio__outer-circle {
-               border-color: var(--color-primary-800) !important;
-            }
+      // mat-radio-button {
+      //    ::ng-deep {
+      //       .mdc-radio__outer-circle {
+      //          border-color: var(--color-primary-800) !important;
+      //       }
 
-            .mdc-radio__inner-circle {
-               border-color: var(--color-primary-800) !important;
-               background-color: var(--color-primary-800) !important;
-            }
-         }
-      }
-
-      &:hover,
-      &.selected {
-         background-color: var(--color-primary-200);
-
-         .theme-title {
-            color: var(--color-neutral-content-1);
-         }
-
-         .theme-desc {
-            color: var(--color-neutral-content-4);
-            opacity: 0.7;
-         }
-      }
+      //       .mdc-radio__inner-circle {
+      //          border-color: var(--color-primary-800) !important;
+      //          background-color: var(--color-primary-800) !important;
+      //       }
+      //    }
+      // }
 
       .theme-info {
          margin-left: var(--spacing-2);
@@ -95,11 +75,12 @@
 
       .theme-title {
          font-family: var(--body-font-family);
-         font-weight: var(--font-weight-body);
+         font-weight: var(--font-weight-title);
          font-size: var(--font-size-body-md);
          display: flex;
          align-items: center;
          gap: var(--spacing-2);
+         color: var(--color-3);
       }
 
       .theme-desc {
@@ -108,8 +89,8 @@
          font-size: var(--font-size-body-sm);
          line-height: var(--line-height-body);
          letter-spacing: var(--letter-spacing-body);
-         opacity: 0.7;
          margin-top: var(--spacing-1);
+         color: var(--color-5);
          width: 263px;
          height: 19px;
       }
@@ -117,13 +98,18 @@
       .emoji {
          font-size: var(--font-size-body-md);
       }
-   }
 
-   .mdc-radio__native-control {
-      border-color: var(--color-orange-800);
+      &:hover,
+      &.selected {
+         background-color: var(--background-3);
 
-      &:checked {
-         background-color: var(--color-orange-800);
+         .theme-title {
+            color: var(--color-neutral-light-content-1);
+         }
+
+         .theme-desc {
+            color: var(--color-neutral-light-content-4);
+         }
       }
    }
 }

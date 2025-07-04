@@ -32,12 +32,8 @@
    }
 
    #config-title {
-      font-family: var(--heading-font-family);
-      font-weight: var(--font-weight-heading);
-      font-size: var(--font-size-h2);
       margin-bottom: var(--spacing-2);
       margin-left: var(--spacing-3);
-      color: var(--color-neutral-content-1);
    }
 
    #config-description {
@@ -45,8 +41,7 @@
       font-size: var(--font-size-body);
       margin-bottom: var(--spacing-6);
       margin-left: var(--spacing-3);
-      opacity: 0.7;
-      color: var(--color-neutral-content-2);
+      color: var(--color-4)
    }
 
    .icon-selector-block {
@@ -57,7 +52,7 @@
       min-height: 120px;
       border-radius: 20px;
       margin: 0 auto;
-      background-color: var(--color-neutral-background-1);
+      background-color: var(--background-2);
    }
 
    .icon-grid {
@@ -80,7 +75,7 @@
       &.selected {
          .icon-title {
             background-color: var(--color-primary-800);
-            color: var(--color-neutral-50);
+            color: var(--color-neutral-light-background-1);
          }
       }
    }
@@ -94,6 +89,8 @@
       border: 2px solid transparent;
       overflow: hidden;
       position: relative;
+      background-color: var(--color-neutral-light-content-5);
+
 
       // Effet tactile pour mobile (au lieu de hover)
       &:active {
@@ -123,34 +120,22 @@
       font-family: var(--body-font-family);
       font-size: 12px;
       font-weight: var(--font-weight-body);
-      color: var(--color-neutral-content-1);
+      color: var(--color-neutral-light-content-1);
       text-align: center;
       transition: all 0.2s ease;
    }
 
    // Support pour le mode sombre
    :host-context(.dark-theme) {
-      #config-title {
-         color: var(--color-neutral-50);
-      }
-
-      #config-description {
-         color: var(--color-neutral-200);
-      }
-
-      .icon-selector-block {
-         background-color: var(--color-neutral-700);
-      }
-
       .icon-title {
-         color: var(--color-neutral-50);
+         color: var(--color-neutral-light-background-1);
       }
 
       .icon-container {
          &.selected {
             .icon-title {
                background-color: var(--color-primary-800);
-               color: var(--color-neutral-50);
+               color: var(--color-neutral-light-background-1);
             }
          }
       }

@@ -1,12 +1,21 @@
-.problems-container {
-   padding-left: var(--spacing-3);
-   padding-right: var(--spacing-3);
+.problems-container {}
+
+
+.page-1 {
+   background-color: var(--background-5);
+}
+
+.page-2 {
+   background-color: var(--background-6);
 }
 
 .problems-title {
    height: 80px;
+   margin-top: 40px;
+   padding: 0 var(--spacing-3);
 }
 
 .problems-items-container {
-   gap: var(--spacing-5)
+   gap: var(--spacing-5);
+   padding: 0 var(--spacing-3);
 }

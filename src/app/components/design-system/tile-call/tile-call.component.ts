@@ -1,17 +1,16 @@
-import { Component, computed, inject, input, Input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { ThemeService } from '../../../service/theme.service';
 import PageComponentModel from '../../../model/page-component.model';
+import { ThemeService } from '../../../service/theme.service';
+import { StripHtmlPipe } from "../../../pipes/strip-html.pipe";
 
 @Component({
-   selector: 'app-card-1',
-   imports: [
-      MatIconModule
-   ],
-   templateUrl: './card-1.component.html',
-   styleUrl: './card-1.component.scss'
+   selector: 'app-tile-call',
+   imports: [MatIconModule, StripHtmlPipe],
+   templateUrl: './tile-call.component.html',
+   styleUrl: './tile-call.component.scss'
 })
-export class Card1Component {
+export class TileCallComponent {
    private readonly themeService = inject(ThemeService);
    data = input.required<PageComponentModel>();
 

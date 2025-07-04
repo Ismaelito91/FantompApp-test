@@ -9,7 +9,10 @@ export class PageComponentService {
 
    private readonly _http = inject(HttpClient);
 
-   getPageComponentsBySectionId(sectionId: number) {
-      return this._http.get<PageComponentModel[]>(`api/public/page-components/${sectionId}`);
+   // getPageComponentsBySectionId(sectionId: number) {
+   //    return this._http.get<PageComponentModel[]>(`api/public/page-components/section/${sectionId}`);
+   // }
+   getRootPageComponentsBySectionId(sectionId: number) {
+      return this._http.get<PageComponentModel>(`api/public/page-components/section/${sectionId}/root`);
    }
 }

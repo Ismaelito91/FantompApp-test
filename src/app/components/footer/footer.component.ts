@@ -19,9 +19,11 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
       RouterLinkActive,
    ],
    templateUrl: "./footer.component.html",
+   styleUrls: ["./footer.component.scss"],
+
 })
 export class FooterComponent {
-   constructor(private _settingService: SettingService) {}
+   constructor(private _settingService: SettingService) { }
 
    get frontendVersion() {
       return packageInfo.version;

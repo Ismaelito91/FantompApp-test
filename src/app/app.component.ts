@@ -60,27 +60,25 @@ export class AppComponent implements OnInit {
          { name: "icon-file-light", path: "assets/images/clear/icon-file.svg" },
          { name: "icon-play-light", path: "assets/images/clear/icon-play.svg" },
          { name: "app-icon-light", path: "assets/images/clear/app-icon.svg" },
-         {
-            name: "chevron24x24-icon-light",
-            path: "assets/images/clear/chevron24x24-icon.svg",
-         },
+         { name: "chevron24x24-icon-light", path: "assets/images/clear/chevron24x24-icon.svg" },
+         { name: "icon-phone-light", path: "assets/images/clear/icon-phone.svg" },
+         { name: "icon-message-light", path: "assets/images/clear/icon-message.svg" },
+         { name: "icon-external-link-clear", path: "assets/images/clear/external-link.svg" },
+
       ];
 
       // Icônes en mode sombre
       const darkIcons = [
          { name: "icon-sun-dark", path: "assets/images/dark/icon-sun.svg" },
-         {
-            name: "icon-rights-dark",
-            path: "assets/images/dark/icon-rights.svg",
-         },
+         { name: "icon-rights-dark", path: "assets/images/dark/icon-rights.svg" },
          { name: "icon-what-dark", path: "assets/images/dark/icon-what.svg" },
          { name: "icon-file-dark", path: "assets/images/dark/icon-file.svg" },
          { name: "icon-play-dark", path: "assets/images/dark/icon-play.svg" },
          { name: "app-icon-dark", path: "assets/images/dark/app-icon.svg" },
-         {
-            name: "chevron24x24-icon-dark",
-            path: "assets/images/dark/chevron24x24-icon.svg",
-         },
+         { name: "chevron24x24-icon-dark", path: "assets/images/dark/chevron24x24-icon.svg" },
+         { name: "icon-phone-dark", path: "assets/images/dark/icon-phone.svg" },
+         { name: "icon-message-dark", path: "assets/images/dark/icon-message.svg" },
+         { name: "icon-external-link-dark", path: "assets/images/dark/external-link.svg" },
       ];
 
       // Enregistrer toutes les icônes

@@ -1,10 +1,76 @@
-<div class="problems-container flex flex-col">
-   <h1 class="problems-title">J'ai un problème en ligne</h1>
+<div class="problems-container flex flex-col" [class.page-2]="page()?.type === ComponentType.PAGE_2" style="padding-bottom: 80px;">
+   @switch (page()?.type) {
+      @case (ComponentType.PAGE_1) {
+         <h1 class="problems-title" [innerHTML]="page()?.translations?.at(0)?.firstTitle"></h1>
+      }
+      @case (ComponentType.PAGE_2) {
+         <div>
+            <img [src]="page()?.translations?.at(0)?.image" alt="image" style="width: 100%;" />
+         </div>
+         <h3 class="problems-title" [innerHTML]="page()?.translations?.at(0)?.firstTitle"></h3>
+      }
+   }
    <div class="problems-items-container flex flex-col">
-      @for (problem of problems(); track $index) {
-         @switch (problem.type) {
-            @case ('card-1') {
-               <app-card-1 [data]="problem"></app-card-1>
+      @for (problem of sortedChildren; track $index) {
+         @if (problem.status === ComponentStatus.PUBLISHED) {
+            @switch (problem.type) {
+               @case (ComponentType.CARD_1) {
+                  @if (problem.next) {
+                     <a [routerLink]="'/problems/' + problem.next.id">
+                        <app-card-1 [data]="problem"></app-card-1>
+                     </a>
+                  } @else {
+                     <app-card-1 [data]="problem"></app-card-1>
+                  }
+               }
+               @case (ComponentType.CARD_2) {
+                  @if (problem.next) {
+                     <a [routerLink]="'/problems/' + problem.next.id">
+                        <app-card-2 [data]="problem"></app-card-2>
+                     </a>
+                  } @else {
+                     <app-card-2 [data]="problem"></app-card-2>
+                  }
+               }
+               @case (ComponentType.CARD_3){
+                  @if (problem.next) {
+                     <a [routerLink]="'/problems/' + problem.next.id">
+                        <app-card-3 [data]="problem"></app-card-3>
+                     </a>
+                  } @else {
+                     <app-card-3 [data]="problem"></app-card-3>
+                  }
+               }
+               @case (ComponentType.CARD_4){
+                  @if (problem.next) {
+                     <a [routerLink]="'/problems/' + problem.next.id">
+                        <app-card-4 [data]="problem"></app-card-4>
+                     </a>
+                  } @else {
+                     <app-card-4 [data]="problem"></app-card-4>
+                  }
+               }
+               @case (ComponentType.CARD_5) {
+                  @if (problem.next) {
+                     <a [routerLink]="'/problems/' + problem.next.id">
+                        <app-card-5 [data]="problem"></app-card-5>
+                     </a>
+                  } @else {
+                     <app-card-5 [data]="problem"></app-card-5>
+                  }
+               }
+               @case (ComponentType.CARD_6) {
+                  @if (problem.next) {
+                     <a [routerLink]="'/problems/' + problem.next.id">
+                        <app-card-6 [data]="problem"></app-card-6>
+                     </a>
+                  } @else {
+                     <app-card-6 [data]="problem"></app-card-6>
+                  }
+               }
+               @case (ComponentType.DIVIDER) {
+                  <app-divider />
+               }
             }
          }
       }

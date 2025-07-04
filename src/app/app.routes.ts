@@ -19,6 +19,12 @@ export const routes: Routes = [
    {
       path: "problems",
       component: ProblemsComponent,
+      children: [
+         {
+            path: ":id",
+            component: ProblemsComponent,
+         }
+      ]
    },
    {
       path: "home",

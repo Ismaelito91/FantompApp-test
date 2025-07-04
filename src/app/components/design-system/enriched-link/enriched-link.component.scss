@@ -1,0 +1,25 @@
+.tile-main {
+   background-color: var(--background-2);
+   border-radius: var(--border-radius-3);
+   padding: var(--spacing-3);
+}
+
+.tile-container {
+   gap: 6px;
+}
+
+.tile-title {
+   font-weight: var(--font-weight-title);
+}
+
+.tile-link {
+   font-size: var(--font-size-body-sm);
+   color: var(--color-neutral-light-content-4)
+}
+
+.tile-image {
+   margin-right: 6px;
+   width: 18px;
+   height: 18px;
+   object-fit: contain;
+}
