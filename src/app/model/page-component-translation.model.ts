@@ -9,4 +9,5 @@ export default interface PageComponentTranslationModel {
    secondTitle?: string | null;
    shortDescription?: string | null;
    longDescription?: string | null;
+   image?: string | null;
 }

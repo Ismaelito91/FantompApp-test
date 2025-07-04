@@ -1,0 +1,17 @@
+.tile-main {
+   gap: var(--spacing-3);
+}
+
+.tile-container {
+   background-color: var(--background-2);
+   padding: 13px 18px;
+   border-radius: var(--border-radius-3);
+}
+
+
+.tile-image {
+   margin-right: var(--spacing-2);
+   width: 38px;
+   height: 38px;
+   object-fit: contain;
+}

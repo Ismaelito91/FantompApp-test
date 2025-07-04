@@ -1,17 +1,15 @@
-import { Component, computed, inject, input, Input } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { ThemeService } from '../../../service/theme.service';
+import { Component, computed, inject, input } from '@angular/core';
 import PageComponentModel from '../../../model/page-component.model';
+import { ThemeService } from '../../../service/theme.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-   selector: 'app-card-1',
-   imports: [
-      MatIconModule
-   ],
-   templateUrl: './card-1.component.html',
-   styleUrl: './card-1.component.scss'
+   selector: 'app-card-2',
+   imports: [MatIconModule],
+   templateUrl: './card-2.component.html',
+   styleUrl: './card-2.component.scss'
 })
-export class Card1Component {
+export class Card2Component {
    private readonly themeService = inject(ThemeService);
    data = input.required<PageComponentModel>();
 

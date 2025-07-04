@@ -1,6 +1,6 @@
 .prompt-update-wrapper {
-  background-color: var(--color-neutral-background-4);
-  color: var(--color-neutral-content-1);
+  background-color: var(--color-neutral-light-background-4);
+  color: var(--color-neutral-light-content-1);
   font-family: var(--body-font-family);
   font-weight: var(--font-weight-body);
   font-size: var(--font-size-body-md);
@@ -17,8 +17,8 @@
 }
 
 .prompt-update-content-wrapper {
-  background-color: var(--color-neutral-background-4);
-  color: var(--color-neutral-content-1);
+  background-color: var(--color-neutral-light-background-4);
+  color: var(--color-neutral-light-content-1);
   font-family: var(--body-font-family);
   font-weight: var(--font-weight-body);
   font-size: var(--font-size-body-md);
@@ -42,12 +42,12 @@
       letter-spacing: var(--letter-spacing-body);
     }
     .btn-yes {
-      background-color: var(--color-neutral-background-4);
-      color: var(--color-neutral-content-1);
+      background-color: var(--color-neutral-light-background-4);
+      color: var(--color-neutral-light-content-1);
     }
     .btn-no {
-      background-color: var(--color-neutral-background-4);
-      color: var(--color-neutral-content-1);
+      background-color: var(--color-neutral-light-background-4);
+      color: var(--color-neutral-light-content-1);
     }
 }
 

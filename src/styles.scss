@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@use "tailwindcss";
 @use "@angular/material" as mat;
 @use "material-icons/iconfont/material-icons.scss";
+@use "tailwindcss";
 
 // Déclaration de la police Lexend (Variable Font) - Pour les titres
 @font-face {
@@ -30,7 +30,6 @@
 }
 
 :root {
-
    // Variables de typographie selon les spécifications
    --heading-font-family: "Lexend", Arial, sans-serif;
    --body-font-family: "Nunito", Arial, sans-serif;
@@ -64,6 +63,7 @@
    --border-radius-5: 40px;
 
    // Poids de police
+   --font-weight-title: 700;
    --font-weight-heading: 500;
    --font-weight-body: 400;
 
@@ -194,24 +194,43 @@
    --color-blue-900: #282d87;
    --color-blue-950: #181a4e;
    // Neutral
-   --color-neutral-50: #ffffff;
-   --color-neutral-200: #faf9fb;
-   --color-neutral-350: #f6f5fa;
-   --color-neutral-400: #efedf7;
-   --color-neutral-500: #786c93;
-   --color-neutral-600: #484158;
-   --color-neutral-700: #2f293d;
-   --color-neutral-900: #161221;
+   --color-neutral-light-background-1: #ffffff;
+   --color-neutral-light-background-2: #faf9fb;
+   --color-neutral-light-background-3: #f6f5fa;
+   --color-neutral-light-background-4: #d6d3de;
+   --color-neutral-light-content-1: #10052e;
+   --color-neutral-light-content-2: #291a4d;
+   --color-neutral-light-content-3: #484158;
+   --color-neutral-light-content-4: #605775;
+   --color-neutral-light-content-5: #958fa3;
 
-   --color-neutral-background-1: var(--color-neutral-50);
-   --color-neutral-background-2: var(--color-neutral-200);
-   --color-neutral-background-3: var(--color-neutral-350);
-   --color-neutral-background-4: var(--color-neutral-400);
-   --color-neutral-content-1: var(--color-neutral-900);
-   --color-neutral-content-2: var(--color-neutral-700);
-   --color-neutral-content-3: var(--color-neutral-600);
-   --color-neutral-content-4: var(--color-neutral-500);
+   --color-neutral-dark-background-1: #140d26;
+   --color-neutral-dark-background-2: #291e43;
+   --color-neutral-dark-background-3: #443a5c;
+   --color-neutral-dark-background-4: #897da6;
 
+   // Custom variables
+   --background-1: var(--color-neutral-light-background-3);
+   --background-2: var(--color-neutral-light-background-1);
+   --background-3: var(--color-primary-200);
+   --background-4: var(--color-neutral-light-background-1);
+   --background-5: var(--color-primary-50);
+   --background-6: var(--color-neutral-light-background-1);
+   --background-7: var(--color-neutral-light-background-3);
+   --background-8: var(--color-primary-50);
+   --background-9: var(--color-primary-100);
+
+   --color-1: var(--color-neutral-light-content-2);
+   --color-2: var(--color-primary-950);
+   --color-3: var(--color-neutral-light-content-1);
+   --color-4: var(--color-neutral-light-content-2);
+   --color-5: var(--color-neutral-light-content-4);
+   --color-6: var(--color-primary-800);
+   --color-7: var(--color-primary-800);
+   --color-8: var(--color-primary-800);
+   --color-9: var(--color-neutral-light-content-3);
+   --color-10: var(--color-neutral-light-content-2);
+   --color-11: var(--color-primary-800);
 
    body {
       font-family: var(--body-font-family);
@@ -219,32 +238,10 @@
       font-size: var(--font-size-body-md);
       line-height: var(--line-height-body);
       letter-spacing: var(--letter-spacing-body);
-      background-color: var(--color-neutral-background-4);
-      color: var(--color-neutral-content-2);
+      background-color: var(--background-1);
+      color: var(--color-1);
       transition: background-color 0.3s ease, color 0.3s ease;
       min-height: 100vh;
-   }
-
-   .toolbar-nav {
-      position: fixed;
-      bottom: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-   }
-
-   mat-icon[svgIcon] {
-      width: 24px !important;
-      height: 24px !important;
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-neutral-content-1) !important;
-   }
-
-   ::ng-deep svg {
-      width: 100%;
-      height: 100%;
    }
 
    // Styles globaux pour tous les titres (h1 à h6)
@@ -265,17 +262,19 @@
    h1 {
       font-size: var(--font-size-h1);
       line-height: var(--line-height-h1);
+      color: var(--color-2);
    }
 
    h2 {
       font-size: var(--font-size-h2);
       line-height: var(--line-height-h2);
-      color: var(--color-neutral-content-1)
+      color: var(--color-3);
    }
 
    h3 {
       font-size: var(--font-size-h3);
       line-height: var(--line-height-h3);
+      color: var(--color-3);
    }
 
    h4 {
@@ -286,7 +285,7 @@
    h5 {
       font-size: var(--font-size-h5);
       line-height: var(--line-height-h5);
-      color: var(--color-neutral-content-2)
+      color: var(--color-1);
    }
 
    h6 {
@@ -296,43 +295,41 @@
 
    @include mat.button-overrides((text-label-text-font: var(--body-font-family)));
 
-   @include mat.toolbar-overrides((container-background-color: var(--color-neutral-background-1)));
+   @include mat.toolbar-overrides((container-background-color: var(--background-1), container-text-color: var(--color-8)));
 
-   @include mat.toolbar-overrides((container-text-color: var(--color-primary-800),
-      ));
+   @include mat.radio-overrides((selected-focus-icon-color: var(--color-6),
+         selected-icon-color: var(--color-6),
+         selected-hover-icon-color: var(--color-6),
+         selected-pressed-icon-color: var(--color-6),
+         unselected-focus-icon-color: var(--color-7),
+         unselected-icon-color: var(--color-7),
+         unselected-hover-icon-color: var(--color-7),
+         unselected-pressed-icon-color: var(--color-7)));
+
+   @include mat.divider-overrides((color: var(--color-primary-100), width: 2px));
 }
 
 
 // Dark overrides
 :root.dark-theme {
-   --color-neutral-500: #897da6;
-   --color-neutral-600: #443a5c;
-   --color-neutral-700: #291e43;
-   --color-neutral-900: #140d26;
+   --background-1: var(--color-neutral-dark-background-1);
+   --background-2: var(--color-neutral-dark-background-3);
+   --background-3: var(--color-primary-100);
+   --background-4: var(--color-neutral-dark-background-2);
+   --background-5: var(--color-neutral-dark-background-1);
+   --background-6: var(--color-neutral-dark-background-1);
+   --background-7: var(--color-neutral-dark-background-2);
+   --background-8: var(--color-primary-950);
 
-   --color-neutral-background-1: var(--color-neutral-900);
-   // --color-neutral-background-2: var(--color-neutral-700);
-   // --color-neutral-background-3: var(--color-neutral-350);
-   // --color-neutral-background-4: var(--color-neutral-400);
-   // --color-neutral-content-1: var(--color-neutral-900);
-   // --color-neutral-content-2: var(--color-neutral-700);
-   // --color-neutral-content-3: var(--color-neutral-600);
-   // --color-neutral-content-4: var(--color-neutral-500);
-
-   body {
-      background-color: var(--color-neutral-content-1);
-      color: var(--color-neutral-background-2);
-   }
-
-   h2 {
-      color: var(--color-neutral-background-2);
-   }
-
-   h5 {
-      color: var(--color-neutral-background-2);
-   }
-
-   @include mat.toolbar-overrides((container-background-color: var(--color-neutral-background-1),
-         container-text-color: var(--color-primary-100),
-      ));
+   --color-1: var(--color-neutral-light-background-2);
+   --color-2: var(--color-neutral-light-background-2);
+   --color-3: var(--color-neutral-light-background-2);
+   --color-4: var(--color-neutral-light-background-4);
+   --color-5: var(--color-neutral-light-background-4);
+   --color-6: var(--color-neutral-dark-background-1);
+   --color-7: var(--color-blue-50);
+   --color-8: var(--color-primary-100);
+   --color-9: var(--color-neutral-light-background-4);
+   --color-10: var(--color-neutral-light-background-3);
+   --color-11: var(--color-neutral-light-background-3);
 }

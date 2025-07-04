@@ -1,0 +1,16 @@
+<a [href]="`sms:${(data().translations.at(0)?.firstTitle | stripHtml)}`">
+   <div class="flex flex-col tile-main">
+      @if (data().translations.at(0)?.shortDescription) {
+         <div [innerHTML]="data().translations.at(0)?.shortDescription"></div>
+      }
+      <div class="tile-container flex justify-between items-center">
+         <div class="flex items-center tile-body">
+            <img [src]="data().translations.at(0)?.image" class="tile-image" />
+            <h3 [innerHTML]="data().translations.at(0)?.firstTitle"></h3>
+         </div>
+         <div>
+            <mat-icon [svgIcon]="isDarkMode() ? 'icon-message-dark' : 'icon-message-light'"></mat-icon>
+         </div>
+      </div>
+   </div>
+</a>
