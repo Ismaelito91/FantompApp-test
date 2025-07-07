@@ -7,7 +7,6 @@ export default interface PageComponentTranslationModel {
    device?: Device
    firstTitle?: string | null;
    secondTitle?: string | null;
-   shortDescription?: string | null;
-   longDescription?: string | null;
+   description?: string | null;
    image?: string | null;
 }

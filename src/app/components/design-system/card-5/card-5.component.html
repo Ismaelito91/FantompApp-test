@@ -1,8 +1,8 @@
 <div class="flex flex-col card-container">
    <h5 class="card-title" [innerHTML]="data().translations.at(0)?.firstTitle"></h5>
    <div class="card-description">
-      @if (data().translations.at(0)?.shortDescription) {
-         <div [innerHTML]="data().translations.at(0)?.shortDescription"></div>
+      @if (data().translations.at(0)?.description) {
+         <div [innerHTML]="data().translations.at(0)?.description"></div>
          <br />
       }
       <div class="card-children flex flex-col">

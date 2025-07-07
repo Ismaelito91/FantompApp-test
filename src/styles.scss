@@ -294,7 +294,7 @@
 
    @include mat.button-overrides((text-label-text-font: var(--body-font-family)));
 
-   @include mat.toolbar-overrides((container-background-color: var(--background-1), container-text-color: var(--color-8)));
+   @include mat.toolbar-overrides((container-background-color: var(--background-6), container-text-color: var(--color-8)));
 
    @include mat.radio-overrides((selected-focus-icon-color: var(--color-6),
          selected-icon-color: var(--color-6),

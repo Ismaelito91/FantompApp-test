@@ -1,10 +1,10 @@
-<a [href]="(data().translations.at(0)?.shortDescription | stripHtml)" target="_blank">
+<a [href]="(data().translations.at(0)?.description | stripHtml)" target="_blank">
    <div class="flex justify-between tile-main">
       <div class="flex flex-col justify-center tile-container">
          <div class="tile-title" [innerHTML]="data().translations.at(0)?.firstTitle"></div>
          <div class="flex items-center tile-body">
             <img [src]="data().translations.at(0)?.image" class="tile-image" />
-            <div class="tile-link" [innerHTML]="data().translations.at(0)?.shortDescription"></div>
+            <div class="tile-link" [innerHTML]="data().translations.at(0)?.description"></div>
          </div>
       </div>
       <div class="flex items-center">
