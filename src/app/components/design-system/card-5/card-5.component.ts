@@ -5,10 +5,11 @@ import PageComponentModel from '../../../model/page-component.model';
 import { EnrichedLinkComponent } from "../enriched-link/enriched-link.component";
 import { TileCallComponent } from "../tile-call/tile-call.component";
 import { TileMessageComponent } from "../tile-message/tile-message.component";
+import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 
 @Component({
    selector: 'app-card-5',
-   imports: [TileCallComponent, TileMessageComponent, EnrichedLinkComponent],
+   imports: [TileCallComponent, TileMessageComponent, EnrichedLinkComponent, SafeHtmlPipe],
    templateUrl: './card-5.component.html',
    styleUrl: './card-5.component.scss'
 })

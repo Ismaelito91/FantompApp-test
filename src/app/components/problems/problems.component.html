@@ -4,9 +4,7 @@
          <h1 class="problems-title" [innerHTML]="page()?.translations?.at(0)?.firstTitle"></h1>
       }
       @case (ComponentType.PAGE_2) {
-         <div>
-            <img [src]="page()?.translations?.at(0)?.image" alt="image" style="width: 100%;" />
-         </div>
+         <img [src]="page()?.translations?.at(0)?.image" alt="image" />
          <h3 class="problems-title" [innerHTML]="page()?.translations?.at(0)?.firstTitle"></h3>
       }
    }

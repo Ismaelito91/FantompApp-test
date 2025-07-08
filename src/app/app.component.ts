@@ -81,8 +81,12 @@ export class AppComponent implements OnInit {
          { name: "icon-external-link-dark", path: "assets/images/dark/external-link.svg" },
       ];
 
+      const neutralIcons = [
+         { name: "chevron16x16-icon", path: "assets/images/chevron16x16-icon.svg" }
+      ];
+
       // Enregistrer toutes les icônes
-      [...lightIcons, ...darkIcons].forEach((icon) => {
+      [...lightIcons, ...darkIcons, ...neutralIcons].forEach((icon) => {
          //console.log(`Registering icon: ${icon.name} from ${icon.path}`);
          this.matIconRegistry.addSvgIcon(
             icon.name,

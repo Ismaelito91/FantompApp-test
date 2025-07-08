@@ -3,10 +3,11 @@ import PageComponentModel from '../../../model/page-component.model';
 import { ThemeService } from '../../../service/theme.service';
 import { MatIconModule } from '@angular/material/icon';
 import { StripHtmlPipe } from '../../../pipes/strip-html.pipe';
+import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 
 @Component({
    selector: 'app-tile-message',
-   imports: [MatIconModule, StripHtmlPipe],
+   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe],
    templateUrl: './tile-message.component.html',
    styleUrl: './tile-message.component.scss'
 })

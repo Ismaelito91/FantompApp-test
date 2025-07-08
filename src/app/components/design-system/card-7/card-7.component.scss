@@ -1,0 +1,21 @@
+.card-header {
+   margin: 0 var(--spacing-5);
+}
+
+.card-header-title {
+   gap: var(--spacing-2);
+}
+
+.card-header-link {
+   gap: var(--spacing-1);
+   color: var(--color-8);
+   font-size: var(--font-size-body-sm);
+   font-weight: var(--font-weight-heading);
+}
+
+.card-children {
+   margin: 20px 0 20px var(--spacing-5);
+   gap: var(--spacing-4);
+   overflow-y: scroll;
+   scrollbar-width: none;
+}

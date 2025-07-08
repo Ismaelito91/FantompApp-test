@@ -1,13 +1,11 @@
 <div class="card-container flex flex-col">
-   <span class="card-title" [innerHTML]="data().translations.at(0)?.firstTitle"></span>
+   <span class="card-title" [innerHTML]="data().translations.at(0)?.firstTitle | safeHtml"></span>
    <div class="card-item-container flex">
-      <div style="width: 30%;">
-         <img class="card-image" [src]="data().translations.at(0)?.image" alt="image" />
-      </div>
-      <div class="flex justify-between items-center" style="width: 70%;">
+      <img class="card-image" [src]="data().translations.at(0)?.image" alt="image" />
+      <div class="flex justify-between items-center w-full">
          <div>
-            <h5 [innerHTML]="data().translations.at(0)?.secondTitle"></h5>
-            <span [innerHTML]="data().translations.at(0)?.description"></span>
+            <h5 [innerHTML]="data().translations.at(0)?.secondTitle | safeHtml"></h5>
+            <span [innerHTML]="data().translations.at(0)?.description | safeHtml"></span>
          </div>
          <div>
             <mat-icon [svgIcon]="isDarkMode() ? 'chevron24x24-icon-dark' : 'chevron24x24-icon-light'"></mat-icon>

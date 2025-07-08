@@ -2,10 +2,11 @@ import { Component, computed, inject, input } from '@angular/core';
 import PageComponentModel from '../../../model/page-component.model';
 import { ThemeService } from '../../../service/theme.service';
 import { MatIconModule } from '@angular/material/icon';
+import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 
 @Component({
    selector: 'app-card-2',
-   imports: [MatIconModule],
+   imports: [MatIconModule, SafeHtmlPipe],
    templateUrl: './card-2.component.html',
    styleUrl: './card-2.component.scss'
 })

@@ -1,9 +1,10 @@
 import { Component, input } from '@angular/core';
 import PageComponentModel from '../../../model/page-component.model';
+import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 
 @Component({
   selector: 'app-card-4',
-  imports: [],
+  imports: [SafeHtmlPipe],
   templateUrl: './card-4.component.html',
   styleUrl: './card-4.component.scss'
 })

@@ -1,1 +1,1 @@
-<div class="card-description" [innerHTML]="data().translations.at(0)?.description"></div>
+<div class="card-description" [innerHTML]="data().translations.at(0)?.description | safeHtml"></div>

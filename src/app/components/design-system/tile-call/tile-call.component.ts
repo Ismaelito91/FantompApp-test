@@ -3,10 +3,11 @@ import { MatIconModule } from '@angular/material/icon';
 import PageComponentModel from '../../../model/page-component.model';
 import { ThemeService } from '../../../service/theme.service';
 import { StripHtmlPipe } from "../../../pipes/strip-html.pipe";
+import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 
 @Component({
    selector: 'app-tile-call',
-   imports: [MatIconModule, StripHtmlPipe],
+   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe],
    templateUrl: './tile-call.component.html',
    styleUrl: './tile-call.component.scss'
 })

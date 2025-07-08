@@ -1,12 +1,12 @@
 <a [href]="`tel:${(data().translations.at(0)?.firstTitle | stripHtml)}`">
    <div class="flex flex-col tile-main">
       @if (data().translations.at(0)?.description) {
-         <div [innerHTML]="data().translations.at(0)?.description"></div>
+         <div [innerHTML]="data().translations.at(0)?.description | safeHtml"></div>
       }
       <div class="tile-container flex justify-between items-center">
          <div class="flex items-center tile-body">
             <img [src]="data().translations.at(0)?.image" class="tile-image" />
-            <h3 [innerHTML]="data().translations.at(0)?.firstTitle"></h3>
+            <h3 [innerHTML]="data().translations.at(0)?.firstTitle | safeHtml"></h3>
          </div>
          <div>
             <mat-icon [svgIcon]="isDarkMode() ? 'icon-phone-dark' : 'icon-phone-light'"></mat-icon>

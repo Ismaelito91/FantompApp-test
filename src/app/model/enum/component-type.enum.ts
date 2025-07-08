@@ -7,6 +7,8 @@ export enum ComponentType {
    CARD_4 = "CARD_4",
    CARD_5 = "CARD_5",
    CARD_6 = "CARD_6",
+   CARD_7 = "CARD_7",
+   CARD_8 = "CARD_8",
    TILE_CALL = "TILE_CALL",
    TILE_MESSAGE = "TILE_MESSAGE",
    ENRICHED_LINK = "ENRICHED_LINK",
