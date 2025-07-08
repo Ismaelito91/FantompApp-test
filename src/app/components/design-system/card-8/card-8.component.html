@@ -1,10 +1,10 @@
 <div class="flex flex-col card-container">
    <div class="card-preview">
-      <span class="card-preview-title">LOCALISATION</span>
-      <img class="card-preview-image" src="assets/images/tmp/insta-localisation-screen.png" />
+      <span class="card-preview-title" [innerHTML]="data().translations.at(0)?.firstTitle | safeHtml"></span>
+      <img class="card-preview-image" [src]="data().translations.at(0)?.image" alt="screen image" />
    </div>
    <div class="flex items-center card-description">
-      <span class="card-description-text">Ne pas donner ma localisation à Insta</span>
+      <span class="card-description-text" [innerHTML]="data().translations.at(0)?.description | safeHtml"></span>
       <mat-icon svgIcon="chevron16x16-icon"></mat-icon>
    </div>
 </div>

@@ -64,7 +64,6 @@ export class ProblemsComponent implements OnInit, OnDestroy {
          },
          error: (err) => console.error('Erreur lors du chargement des problèmes', err)
       });
-
    }
 
    findItemById(item: PageComponentModel, id: number | null): PageComponentModel | null {
