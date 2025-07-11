@@ -1,13 +1,12 @@
 import { Component, effect, inject } from "@angular/core";
-import { SettingService } from "../../service/setting.service";
-import packageInfo from "../../../../package.json";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
-import { TranslateModule } from "@ngx-translate/core";
+import { MatIconModule } from "@angular/material/icon";
+import { MatToolbarModule } from "@angular/material/toolbar";
 import { RouterLink, RouterLinkActive } from "@angular/router";
+import { TranslateModule } from "@ngx-translate/core";
+import packageInfo from "../../../../package.json";
+import { SettingService } from "../../service/setting.service";
 import { ThemeService } from "../../service/theme.service";
-import { AsyncPipe } from "@angular/common";
 
 @Component({
    selector: "app-footer",
@@ -19,7 +18,6 @@ import { AsyncPipe } from "@angular/common";
       TranslateModule,
       RouterLink,
       RouterLinkActive,
-      AsyncPipe,
    ],
    templateUrl: "./footer.component.html",
    styleUrls: ["./footer.component.scss"],
