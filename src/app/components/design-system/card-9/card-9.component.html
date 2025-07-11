@@ -1,10 +1,10 @@
 <div class="flex flex-col" style="padding: 16px; gap: 29px">
    <div class="flex flex-col" style="gap: 12px;">
       <div class="flex justify-between">
-         <span style="color: var(--color-8); font-weight: 600;" [innerHTML]="data().translations.at(0)?.firstTitle"></span>
+         <span style="color: var(--color-8); font-weight: 600;" [innerHTML]="(data() | pageTranslation)?.firstTitle"></span>
          <div class="flex justify-between items-center"
             style="color: var(--color-12); border: dashed 1px; border-radius: 30px; padding: 2px 8px; gap: 6px;">
-            <span style="font-size: 12px;" [innerHTML]="data().translations.at(0)?.secondTitle"></span>
+            <span style="font-size: 12px;" [innerHTML]="(data() | pageTranslation)?.secondTitle"></span>
             <mat-icon svgIcon="checkbox-unselected16x16-icon"
                style="height: 16px; width: 16px; margin: 2px 0;"></mat-icon>
          </div>

@@ -4,10 +4,11 @@ import PageComponentModel from '../../../model/page-component.model';
 import { StripHtmlPipe } from '../../../pipes/strip-html.pipe';
 import { ThemeService } from '../../../service/theme.service';
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
+import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 
 @Component({
    selector: 'app-enriched-link',
-   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe],
+   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe, PageTranslationPipe],
    templateUrl: './enriched-link.component.html',
    styleUrl: './enriched-link.component.scss'
 })

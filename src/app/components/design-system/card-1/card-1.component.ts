@@ -3,13 +3,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { ThemeService } from '../../../service/theme.service';
 import PageComponentModel from '../../../model/page-component.model';
 import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
+import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 
 @Component({
    selector: 'app-card-1',
    imports: [
-      MatIconModule,
-      SafeHtmlPipe
-   ],
+    MatIconModule,
+    SafeHtmlPipe,
+    PageTranslationPipe
+],
    templateUrl: './card-1.component.html',
    styleUrl: './card-1.component.scss'
 })

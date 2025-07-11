@@ -1,11 +1,11 @@
 <div class="flex flex-col card-container">
    <div class="flex justify-between card-header">
       <div class="flex items-center card-header-title">
-         <img [src]="data().translations.at(0)?.image" alt="logo" />
-         <h5 [innerHTML]="data().translations.at(0)?.firstTitle | safeHtml"></h5>
+         <img [src]="(data() | pageTranslation)?.image" alt="logo" />
+         <h5 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h5>
       </div>
       <a class="flex items-center card-header-link" [routerLink]="data().next ? `/secure-myself/${data().next?.id}` : null">
-         <span [innerHTML]="data().translations.at(0)?.secondTitle | safeHtml"></span>
+         <span [innerHTML]="(data() | pageTranslation)?.secondTitle | safeHtml"></span>
          <mat-icon svgIcon="chevron16x16-icon" class="!size-[16px]"></mat-icon>
       </a>
    </div>

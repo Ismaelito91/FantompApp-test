@@ -1,0 +1,78 @@
+{
+   "APP": {
+      "TITLE": "Fantôme App",
+      "LOADING": "Chargement en cours...",
+      "ERROR": "Erreur lors du chargement de l'application",
+      "INSTALL_APP": "Installer l'application",
+      "NEW_VERSION_AVAILABLE": "Nouvelle version disponible",
+      "UPDATE_APP": "Mettre à jour l'application"
+   },
+   "COMMON": {
+      "SAVE": "Enregistrer",
+      "CANCEL": "Annuler",
+      "DELETE": "Supprimer",
+      "EDIT": "Modifier",
+      "CLOSE": "Fermer",
+      "SEARCH": "Rechercher",
+      "BACK": "Retour",
+      "NEXT": "Suivant",
+      "PREVIOUS": "Précédent",
+      "HOME": "Accueil",
+      "PROBLEM": "Problème",
+      "TOOLS": "Outils",
+      "SECURE": "Me sécuriser",
+      "YES": "Oui",
+      "NO": "Non"
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Apparence",
+      "SUBTITLE": "Choisis ton thème d'affichage préféré.",
+      "THEME": {
+         "LABEL": "Thème",
+         "DEFAULT": "par défaut",
+         "LIGHT": "clair",
+         "DARK": "sombre",
+         "SYSTEM_SETTINGS": "Utiliser le même réglage que le téléphone"
+      }
+   },
+   "APP_ICON_SELECTOR": {
+      "TITLE": "Icône de l'application",
+      "SUBTITLE": "Personnalise l'icône visible de ton application.",
+      "DEFAULT": "Icône par défaut",
+      "DEFAULT_DESC": "L'icône originale de l'application",
+      "GHOST": "Icône fantôme",
+      "GHOST_DESC": "Une version mystérieuse et discrète",
+      "DARK": "Icône sombre",
+      "DARK_DESC": "Parfaite pour les utilisateurs nocturnes",
+      "COLORFUL": "Icône colorée",
+      "COLORFUL_DESC": "Une version vibrante et joyeuse"
+   },
+   "LANGUAGES": {
+      "FR": "Français",
+      "EN": "Anglais",
+      "PT": "Portugais",
+      "ES": "Espagnol",
+      "CA": "Catalan",
+      "PL": "Polonais",
+      "DA": "Danois",
+      "EL": "Grec",
+      "HU": "Hongrois"
+   },
+   "HOME": {
+      "WELCOME": "Bienvenue sur l'application Fantôme",
+      "APP_INFO_TITLE": "Informations sur l'application",
+      "APPEARANCE": "Apparence",
+      "CHANGE_ICON": "Changer l'icône",
+      "RESOURCES": "Ressources",
+      "WHAT_IS_APP": "C'est quoi cette app ?",
+      "RIGHTS": "J'ai des droits",
+      "ACCESSIBILITY": "FantomApp pour tous (Accessibilité)",
+      "TUTORIAL": "Revoir le tutoriel de bienvenue"
+   },
+   "VERSION": {
+      "FRONTEND": "Version Frontend",
+      "BACKEND": "Version Backend",
+      "FRONTEND_VALUE": "Version Frontend : {{version}}",
+      "BACKEND_VALUE": "Version Backend : {{version}}"
+   }
+}

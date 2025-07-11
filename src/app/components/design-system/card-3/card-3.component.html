@@ -1,4 +1,4 @@
 <div class="flex flex-col card-container">
-   <h5 class="card-title" [innerHTML]="data().translations.at(0)?.firstTitle | safeHtml"></h5>
-   <div class="card-description" [innerHTML]="data().translations.at(0)?.description | safeHtml"></div>
+   <h5 class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h5>
+   <div class="card-description" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
 </div>

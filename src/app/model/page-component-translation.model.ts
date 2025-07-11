@@ -1,9 +1,9 @@
 import { Device } from "./enum/device.enum";
-import { Language } from "./enum/language.enum";
+import { CountryRegion } from "./enum/country-region.enum";
 
 export default interface PageComponentTranslationModel {
    id: number
-   language?: Language
+   countryRegion?: keyof typeof CountryRegion
    device?: Device
    firstTitle?: string | null;
    secondTitle?: string | null;

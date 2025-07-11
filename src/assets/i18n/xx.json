@@ -1,0 +1,72 @@
+{
+   "APP": {
+      "TITLE": "Ghost App",
+      "LOADING": "Loading...",
+      "ERROR": "Error loading application"
+   },
+   "COMMON": {
+      "SAVE": "Save",
+      "CANCEL": "Cancel",
+      "DELETE": "Delete",
+      "EDIT": "Edit",
+      "SEARCH": "Search",
+      "BACK": "Back",
+      "NEXT": "Next",
+      "PREVIOUS": "Previous",
+      "HOME": "Home",
+      "PROBLEM": "Problem",
+      "TOOLS": "Tools",
+      "SECURE": "Secure me"
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Appearance",
+      "SUBTITLE": "Choose your preferred display theme.",
+      "THEME": {
+         "LABEL": "Theme",
+         "DEFAULT": "default",
+         "LIGHT": "light",
+         "DARK": "dark",
+         "SYSTEM_SETTINGS": "Use the same settings as your phone"
+      }
+   },
+   "APP_ICON_SELECTOR": {
+      "TITLE": "Application Icon",
+      "SUBTITLE": "Customize your app's visible icon.",
+      "DEFAULT": "Default Icon",
+      "DEFAULT_DESC": "The original app icon",
+      "GHOST": "Ghost Icon",
+      "GHOST_DESC": "A mysterious and discreet version",
+      "DARK": "Dark Icon",
+      "DARK_DESC": "Perfect for night users",
+      "COLORFUL": "Colorful Icon",
+      "COLORFUL_DESC": "A vibrant and joyful version"
+   },
+   "LANGUAGES": {
+      "FR": "French",
+      "EN": "English",
+      "PT": "Portuguese",
+      "ES": "Spanish",
+      "CA": "Catalan",
+      "PL": "Polish",
+      "DA": "Danish",
+      "EL": "Greek",
+      "HU": "Hungarian"
+   },
+   "HOME": {
+      "WELCOME": "Welcome to Ghost App",
+      "APP_INFO_TITLE": "Application Information",
+      "APPEARANCE": "Appearance",
+      "CHANGE_ICON": "Change Icon",
+      "RESOURCES": "Resources",
+      "WHAT_IS_APP": "What is this app?",
+      "RIGHTS": "I have rights",
+      "ACCESSIBILITY": "FantomApp for everyone (Accessibility)",
+      "TUTORIAL": "Review welcome tutorial"
+   },
+   "VERSION": {
+      "FRONTEND": "Frontend Version",
+      "BACKEND": "Backend Version",
+      "FRONTEND_VALUE": "Frontend Version: {{version}}",
+      "BACKEND_VALUE": "Backend Version: {{version}}"
+   }
+}

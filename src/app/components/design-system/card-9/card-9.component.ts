@@ -2,10 +2,11 @@ import { Component, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Card10Component } from "../card-10/card-10.component";
 import PageComponentModel from '../../../model/page-component.model';
+import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 
 @Component({
    selector: 'app-card-9',
-   imports: [MatIconModule, Card10Component],
+   imports: [MatIconModule, Card10Component, PageTranslationPipe],
    templateUrl: './card-9.component.html',
    styleUrl: './card-9.component.scss'
 })

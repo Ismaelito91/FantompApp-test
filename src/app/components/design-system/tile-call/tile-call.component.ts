@@ -4,10 +4,11 @@ import PageComponentModel from '../../../model/page-component.model';
 import { ThemeService } from '../../../service/theme.service';
 import { StripHtmlPipe } from "../../../pipes/strip-html.pipe";
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
+import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 
 @Component({
    selector: 'app-tile-call',
-   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe],
+   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe, PageTranslationPipe],
    templateUrl: './tile-call.component.html',
    styleUrl: './tile-call.component.scss'
 })

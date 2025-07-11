@@ -1,15 +1,16 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
+import { ComponentStatus } from '../../model/enum/component-status.enum';
+import { ComponentType } from '../../model/enum/component-type.enum';
+import PageComponentModel from '../../model/page-component.model';
+import { PageTranslationPipe } from "../../pipes/page-translation.pipe";
+import { SafeHtmlPipe } from "../../pipes/safe-html.pipe";
+import { PageComponentService } from '../../service/page-component.service';
 import { Card7Component } from "../design-system/card-7/card-7.component";
 import { DividerComponent } from "../design-system/divider/divider.component";
-import { PageComponentService } from '../../service/page-component.service';
-import PageComponentModel from '../../model/page-component.model';
-import { SafeHtmlPipe } from "../../pipes/safe-html.pipe";
-import { ComponentType } from '../../model/enum/component-type.enum';
-import { ComponentStatus } from '../../model/enum/component-status.enum';
 
 @Component({
    selector: 'app-secure-myself',
-   imports: [Card7Component, DividerComponent, SafeHtmlPipe, DividerComponent, Card7Component],
+   imports: [Card7Component, DividerComponent, SafeHtmlPipe, DividerComponent, Card7Component, PageTranslationPipe],
    templateUrl: './secure-myself.component.html',
    styleUrl: './secure-myself.component.scss'
 })

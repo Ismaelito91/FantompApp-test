@@ -6,10 +6,11 @@ import PageComponentModel from '../../../model/page-component.model';
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { ComponentType } from '../../../model/enum/component-type.enum';
 import { ComponentStatus } from '../../../model/enum/component-status.enum';
+import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 
 @Component({
    selector: 'app-card-7',
-   imports: [Card8Component, MatIconModule, RouterLink, SafeHtmlPipe],
+   imports: [Card8Component, MatIconModule, RouterLink, SafeHtmlPipe, PageTranslationPipe],
    templateUrl: './card-7.component.html',
    styleUrl: './card-7.component.scss'
 })
