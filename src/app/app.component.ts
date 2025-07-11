@@ -82,7 +82,8 @@ export class AppComponent implements OnInit {
       ];
 
       const neutralIcons = [
-         { name: "chevron16x16-icon", path: "assets/images/chevron16x16-icon.svg" }
+         { name: "chevron16x16-icon", path: "assets/images/chevron16x16-icon.svg" },
+         { name: "checkbox-unselected16x16-icon", path: "assets/images/checkbox-unselected16x16-icon.svg" }
       ];
 
       // Enregistrer toutes les icônes

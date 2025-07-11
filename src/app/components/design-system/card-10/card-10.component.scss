@@ -1,0 +1,19 @@
+.card-container {
+   padding: 8px;
+   background-color: var(--background-2);
+   border-radius: 16px;
+   gap: 12px;
+   box-shadow: 0px 0px 0px 1px #625C700A, 0px 1px 1px -0.5px #16122114, 0px 3px 3px -1.5px #625C700A, 0px 6px 6px -3px #958FA30A, 0px 12px 12px -6px #625C700A;
+}
+
+.card-image {
+   width: 109px;
+   height: 73px;
+   object-fit: cover;
+   border-radius: 10px;
+}
+
+.card-title {
+   font-weight: 600;
+   color: var(--color-3);
+}

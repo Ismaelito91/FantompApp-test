@@ -1,0 +1,10 @@
+<div class="view-all-container">
+   <div class="flex justify-between" style="padding: 32px;">
+      <app-button-back link="/secure-myself"></app-button-back>
+      <img [src]="page()?.translations?.at(0)?.image" alt="image" />
+   </div>
+   <h2 style="margin: 18px 25px;" [innerHTML]="page()?.translations?.at(0)?.firstTitle"></h2>
+   @for (child of sortedChildren; track $index) {
+      <app-card-9 [data]="child"></app-card-9>
+   }
+</div>

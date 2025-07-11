@@ -2,10 +2,11 @@ import { Component, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import PageComponentModel from '../../../model/page-component.model';
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
+import { RouterLink } from '@angular/router';
 
 @Component({
    selector: 'app-card-8',
-   imports: [MatIconModule, SafeHtmlPipe],
+   imports: [MatIconModule, SafeHtmlPipe, RouterLink],
    templateUrl: './card-8.component.html',
    styleUrl: './card-8.component.scss'
 })

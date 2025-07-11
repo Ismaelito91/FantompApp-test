@@ -1,4 +1,4 @@
-<div class="flex flex-col card-container">
+<a [routerLink]="data().next ? `/secure-myself/${data().next?.id}/steps` : null" class="flex flex-col card-container">
    <div class="card-preview">
       <span class="card-preview-title" [innerHTML]="data().translations.at(0)?.firstTitle | safeHtml"></span>
       <img class="card-preview-image" [src]="data().translations.at(0)?.image" alt="screen image" />
@@ -7,4 +7,4 @@
       <span class="card-description-text" [innerHTML]="data().translations.at(0)?.description | safeHtml"></span>
       <mat-icon svgIcon="chevron16x16-icon"></mat-icon>
    </div>
-</div>
+</a>

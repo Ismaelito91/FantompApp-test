@@ -7,6 +7,8 @@ import { SplashScreenComponent } from "./components/splash-screen/splash-screen.
 import { UserAppConfigComponent } from "./components/home/user-app-config/user-app-config.component";
 import { AppIconSelectorComponent } from "./components/home/app-icon-selector/app-icon-selector.component";
 import { SecureMyselfComponent } from "./components/secure-myself/secure-myself.component";
+import { ViewAllComponent } from "./components/secure-myself/view-all/view-all.component";
+import { ViewStepsComponent } from "./components/secure-myself/view-steps/view-steps.component";
 
 export const routes: Routes = [
    {
@@ -41,7 +43,23 @@ export const routes: Routes = [
    },
    {
       path: "secure-myself",
-      component: SecureMyselfComponent
+      children: [
+         {
+            path: "",
+            component: SecureMyselfComponent,
+            pathMatch: "full",
+         },
+         {
+            path: ":id",
+            component: ViewAllComponent,
+            pathMatch: "full",
+         },
+         {
+            path: ":id/steps",
+            component: ViewStepsComponent,
+            pathMatch: "full",
+         }
+      ]
    },
    {
       path: "error/:code",

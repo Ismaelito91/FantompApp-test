@@ -1,0 +1,21 @@
+.view-steps-container {
+   background-color: var(--background-9);
+   height: calc(100vh - 200px);
+}
+
+.view-header {
+   margin: 16px 90px;
+}
+
+.view-header-btn {
+   position: absolute;
+   left: 32px;
+}
+
+.view-header-title {
+   color: var(--color-9);
+}
+
+.view-header-description {
+   color: var(--color-neutral-light-content-5);
+}

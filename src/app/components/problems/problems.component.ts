@@ -66,18 +66,6 @@ export class ProblemsComponent implements OnInit, OnDestroy {
       });
    }
 
-   findItemById(item: PageComponentModel, id: number | null): PageComponentModel | null {
-      if (item.next) {
-         for (const child of item.children) {
-            const found: PageComponentModel | null = this.findItemById(child, id);
-            if (found) {
-               return found;
-            }
-         }
-      }
-      return item;
-   }
-
    findNextById(item: PageComponentModel, id: number | null): PageComponentModel | null {
       if (item.next && item.next.id === id) {
          return item.next;

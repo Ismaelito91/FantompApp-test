@@ -1,0 +1,8 @@
+<a [routerLink]="data().next ? `/secure-myself/${data().next?.id}/steps` : null"
+   class="flex justify-between items-center card-container">
+   <div class="flex items-center" style="gap: 12px">
+      <img class="card-image" [src]="data().translations.at(0)?.image" alt="screen-image" />
+      <div class="card-title" [innerHTML]="data().translations.at(0)?.firstTitle"></div>
+   </div>
+   <mat-icon svgIcon="chevron16x16-icon" class="!size-[16px]"></mat-icon>
+</a>

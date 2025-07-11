@@ -1,0 +1,15 @@
+<div class="view-steps-container flex flex-col">
+   <div class="flex flex-col justify-center items-center view-header">
+      <app-button-back link="/secure-myself" class="view-header-btn"></app-button-back>
+      <div class="text-center view-header-title" [innerHTML]="page()?.translations?.at(0)?.firstTitle"></div>
+      <div class="text-center view-header-description" [innerHTML]="page()?.translations?.at(0)?.description"></div>
+   </div>
+
+   <swiper-container class="flex-1" slides-per-view="1" [pagination]="{ clickable: true }" class="h-full">
+      @for (child of sortedChildren; track $index) {
+         <swiper-slide class="!h-full">
+            <app-card-11 [data]="child" [index]="$index"></app-card-11>
+         </swiper-slide>
+      }
+   </swiper-container>
+</div>

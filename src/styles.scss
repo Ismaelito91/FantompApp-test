@@ -218,6 +218,8 @@
    --background-6: var(--color-neutral-light-background-1);
    --background-7: var(--color-neutral-light-background-3);
    --background-8: var(--color-primary-50);
+   --background-9: var(--color-neutral-light-background-2);
+   --background-10: var(--color-primary-50);
 
    --color-1: var(--color-neutral-light-content-2);
    --color-2: var(--color-primary-950);
@@ -230,6 +232,9 @@
    --color-9: var(--color-neutral-light-content-3);
    --color-10: var(--color-neutral-light-content-2);
    --color-11: var(--color-primary-800);
+   --color-12: var(--color-primary-400);
+   --color-13: var(--color-primary-200);
+   --color-14: var(--color-primary-800);
 
    body {
       font-family: var(--body-font-family);
@@ -292,6 +297,8 @@
       line-height: var(--line-height-h6);
    }
 
+   --swiper-pagination-bottom: 0;
+
    @include mat.button-overrides((text-label-text-font: var(--body-font-family)));
 
    @include mat.toolbar-overrides((container-background-color: var(--background-6), container-text-color: var(--color-8)));
@@ -306,6 +313,8 @@
          unselected-pressed-icon-color: var(--color-7)));
 
    @include mat.divider-overrides((color: var(--color-primary-100), width: 2px));
+
+   @include mat.fab-overrides((container-shape: 50%, container-elevation-shadow: 0, container-color: var(--background-10)));
 }
 
 
@@ -319,6 +328,8 @@
    --background-6: var(--color-neutral-dark-background-1);
    --background-7: var(--color-neutral-dark-background-2);
    --background-8: var(--color-primary-950);
+   --background-9: var(--color-neutral-dark-background-1);
+   --background-10: var(--color-neutral-dark-background-2);
 
    --color-1: var(--color-neutral-light-background-2);
    --color-2: var(--color-neutral-light-background-2);
@@ -331,4 +342,7 @@
    --color-9: var(--color-neutral-light-background-4);
    --color-10: var(--color-neutral-light-background-3);
    --color-11: var(--color-neutral-light-background-3);
+   --color-12: var(--color-primary-100);
+   --color-13: var(--color-primary-50);
+   --color-14: var(--color-primary-50);
 }
