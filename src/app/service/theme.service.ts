@@ -13,6 +13,17 @@ export interface AppTheme {
 export class ThemeService {
    private appTheme = signal<ThemeType>("system");
 
+   isDark$ = computed(() => {
+      const currentTheme = this.appTheme();
+      if (currentTheme === "dark") {
+         return true;
+      }
+      if (currentTheme === "system") {
+         return window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      return false;
+   });
+
    private themes: AppTheme[] = [
       { name: "system", icon: "desktop_windows" },
       { name: "light", icon: "light_mode" },

@@ -6,7 +6,8 @@
 // Déclaration de la police Lexend (Variable Font) - Pour les titres
 @font-face {
    font-family: "Lexend";
-   src: url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype-variations");
+   src: url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf")
+      format("truetype-variations");
    font-weight: 100 900;
    font-style: normal;
    font-display: swap;
@@ -15,7 +16,8 @@
 // Déclaration de la police Nunito (Variable Font) - Pour le corps du texte
 @font-face {
    font-family: "Nunito";
-   src: url("assets/fonts/Nunito/Nunito-VariableFont_wght.ttf") format("truetype-variations");
+   src: url("assets/fonts/Nunito/Nunito-VariableFont_wght.ttf")
+      format("truetype-variations");
    font-weight: 100 900;
    font-style: normal;
    font-display: swap;
@@ -23,7 +25,8 @@
 
 @font-face {
    font-family: "Nunito";
-   src: url("assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf") format("truetype-variations");
+   src: url("assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf")
+      format("truetype-variations");
    font-weight: 100 900;
    font-style: italic;
    font-display: swap;
@@ -301,22 +304,23 @@
 
    @include mat.button-overrides((text-label-text-font: var(--body-font-family)));
 
-   @include mat.toolbar-overrides((container-background-color: var(--background-6), container-text-color: var(--color-8)));
-
-   @include mat.radio-overrides((selected-focus-icon-color: var(--color-6),
+   @include mat.radio-overrides(
+      (
+         selected-focus-icon-color: var(--color-6),
          selected-icon-color: var(--color-6),
          selected-hover-icon-color: var(--color-6),
          selected-pressed-icon-color: var(--color-6),
          unselected-focus-icon-color: var(--color-7),
          unselected-icon-color: var(--color-7),
          unselected-hover-icon-color: var(--color-7),
-         unselected-pressed-icon-color: var(--color-7)));
+         unselected-pressed-icon-color: var(--color-7),
+      )
+   );
 
    @include mat.divider-overrides((color: var(--color-primary-100), width: 2px));
 
    @include mat.fab-overrides((container-shape: 50%, container-elevation-shadow: 0, container-color: var(--background-10)));
 }
-
 
 // Dark overrides
 :root.dark-theme {

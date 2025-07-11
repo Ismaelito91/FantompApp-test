@@ -13,12 +13,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 @Component({
    selector: "app-root",
    standalone: true,
-   imports: [
-      RouterOutlet,
-      HeaderComponent,
-      FooterComponent,
-      TranslateModule
-   ],
+   imports: [RouterOutlet, HeaderComponent, FooterComponent, TranslateModule],
    templateUrl: "./app.component.html",
    styleUrl: "./app.component.scss",
 })
@@ -60,30 +55,82 @@ export class AppComponent implements OnInit {
          { name: "icon-file-light", path: "assets/images/clear/icon-file.svg" },
          { name: "icon-play-light", path: "assets/images/clear/icon-play.svg" },
          { name: "app-icon-light", path: "assets/images/clear/app-icon.svg" },
-         { name: "chevron24x24-icon-light", path: "assets/images/clear/chevron24x24-icon.svg" },
-         { name: "icon-phone-light", path: "assets/images/clear/icon-phone.svg" },
-         { name: "icon-message-light", path: "assets/images/clear/icon-message.svg" },
-         { name: "icon-external-link-clear", path: "assets/images/clear/external-link.svg" },
-
+         {
+            name: "chevron24x24-icon-light",
+            path: "assets/images/clear/chevron24x24-icon.svg",
+         },
+         {
+            name: "icon-phone-light",
+            path: "assets/images/clear/icon-phone.svg",
+         },
+         {
+            name: "icon-message-light",
+            path: "assets/images/clear/icon-message.svg",
+         },
+         {
+            name: "icon-external-link-clear",
+            path: "assets/images/clear/external-link.svg",
+         },
       ];
 
       // Icônes en mode sombre
       const darkIcons = [
          { name: "icon-sun-dark", path: "assets/images/dark/icon-sun.svg" },
-         { name: "icon-rights-dark", path: "assets/images/dark/icon-rights.svg" },
+         {
+            name: "icon-rights-dark",
+            path: "assets/images/dark/icon-rights.svg",
+         },
          { name: "icon-what-dark", path: "assets/images/dark/icon-what.svg" },
          { name: "icon-file-dark", path: "assets/images/dark/icon-file.svg" },
          { name: "icon-play-dark", path: "assets/images/dark/icon-play.svg" },
          { name: "app-icon-dark", path: "assets/images/dark/app-icon.svg" },
-         { name: "chevron24x24-icon-dark", path: "assets/images/dark/chevron24x24-icon.svg" },
+         {
+            name: "chevron24x24-icon-dark",
+            path: "assets/images/dark/chevron24x24-icon.svg",
+         },
          { name: "icon-phone-dark", path: "assets/images/dark/icon-phone.svg" },
-         { name: "icon-message-dark", path: "assets/images/dark/icon-message.svg" },
-         { name: "icon-external-link-dark", path: "assets/images/dark/external-link.svg" },
+         {
+            name: "icon-message-dark",
+            path: "assets/images/dark/icon-message.svg",
+         },
+         {
+            name: "icon-external-link-dark",
+            path: "assets/images/dark/external-link.svg",
+         },
+         // Icônes Outils pour le mode sombre
+         {
+            name: "tools-dark-inactive",
+            path: "assets/images/dark/icon-tools.svg",
+         },
+         {
+            name: "tools-dark-active",
+            path: "assets/images/dark/icon-tools-page.svg",
+         },
       ];
 
       const neutralIcons = [
          { name: "chevron16x16-icon", path: "assets/images/chevron16x16-icon.svg" },
-         { name: "checkbox-unselected16x16-icon", path: "assets/images/checkbox-unselected16x16-icon.svg" }
+         { name: "checkbox-unselected16x16-icon", path: "assets/images/checkbox-unselected16x16-icon.svg" },
+         // Icônes outline (état inactif)
+         { name: "home-icon", path: "assets/images/home.svg" },
+         { name: "problem-icon", path: "assets/images/problem.svg" },
+         { name: "securiser-icon", path: "assets/images/securiser.svg" },
+         // Icônes filled (état actif)
+         { name: "home-icon-filled", path: "assets/images/homepage.svg" },
+         { name: "problem-icon-filled", path: "assets/images/problempage.svg" },
+         {
+            name: "securiser-icon-filled",
+            path: "assets/images/securisepage.svg",
+         },
+         // Icônes Outils pour le mode clair
+         {
+            name: "tools-clear-inactive",
+            path: "assets/images/clear/icon-tools-clear.svg",
+         },
+         {
+            name: "tools-clear-active",
+            path: "assets/images/clear/icon-tools-page-clear.svg",
+         }
       ];
 
       // Enregistrer toutes les icônes

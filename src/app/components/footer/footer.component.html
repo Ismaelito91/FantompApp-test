@@ -1,20 +1,68 @@
 <footer>
-   <mat-toolbar class="toolbar-nav">
-      <button mat-button routerLink="/home" routerLinkActive="active-link">
-         <mat-icon>home</mat-icon>
+   <nav class="toolbar-nav">
+      <button
+         mat-button
+         routerLink="/home"
+         routerLinkActive="active-link"
+         [routerLinkActiveOptions]="{ exact: true }"
+         class="nav-button home-button"
+      >
+         <div class="icon-container">
+            <mat-icon svgIcon="home-icon" class="icon-inactive"></mat-icon>
+            <mat-icon svgIcon="home-icon-filled" class="icon-active"></mat-icon>
+         </div>
          <span>{{ "COMMON.HOME" | translate }}</span>
       </button>
-      <button mat-button routerLink="/problems" routerLinkActive="active-link">
-         <mat-icon>warning</mat-icon>
+      <button
+         mat-button
+         routerLink="/problems"
+         routerLinkActive="active-link"
+         [routerLinkActiveOptions]="{ exact: false }"
+         class="nav-button problem-button"
+      >
+         <div class="icon-container">
+            <mat-icon svgIcon="problem-icon" class="icon-inactive"></mat-icon>
+            <mat-icon
+               svgIcon="problem-icon-filled"
+               class="icon-active"
+            ></mat-icon>
+         </div>
          <span>{{ "COMMON.PROBLEM" | translate }}</span>
       </button>
-      <button mat-button routerLink="/tools" routerLinkActive="active-link">
-         <mat-icon>construction</mat-icon>
+      <button
+         mat-button
+         routerLink="/tools"
+         routerLinkActive="active-link"
+         [routerLinkActiveOptions]="{ exact: true }"
+         class="nav-button tools-button"
+      >
+         <div class="icon-container">
+            <mat-icon
+               [svgIcon]="toolsInactiveIcon"
+               class="icon-inactive"
+            ></mat-icon>
+            <mat-icon
+               [svgIcon]="toolsActiveIcon"
+               class="icon-active"
+            ></mat-icon>
+         </div>
          <span>{{ "COMMON.TOOLS" | translate }}</span>
       </button>
-      <button mat-button routerLink="/secure-myself" routerLinkActive="active-link">
-         <mat-icon>security</mat-icon>
+      <button
+         mat-button
+         routerLink="/secure-myself"
+         routerLinkActive="active-link"
+         [routerLinkActiveOptions]="{ exact: true }"
+         class="nav-button secure-button"
+      >
+         <div class="icon-container">
+            <mat-icon svgIcon="securiser-icon" class="icon-inactive"></mat-icon>
+            <mat-icon
+               svgIcon="securiser-icon-filled"
+               class="icon-active"
+            ></mat-icon>
+         </div>
          <span>{{ "COMMON.SECURE" | translate }}</span>
       </button>
-   </mat-toolbar>
+   </nav>
 </footer>
