@@ -1,7 +1,7 @@
 <div class="flex flex-col card-container">
    <div class="flex justify-between card-header">
       <div class="flex items-center card-header-title">
-         <img [src]="(data() | pageTranslation)?.image" alt="logo" />
+         <img [src]="(data() | pageTranslation)?.image" alt="logo" class="!size-[32px]" />
          <h5 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h5>
       </div>
       <a class="flex items-center card-header-link" [routerLink]="data().next ? `/secure-myself/${data().next?.id}` : null">
