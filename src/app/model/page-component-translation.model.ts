@@ -4,7 +4,7 @@ import { CountryRegion } from "./enum/country-region.enum";
 export default interface PageComponentTranslationModel {
    id: number
    countryRegion?: keyof typeof CountryRegion
-   device?: Device
+   devices?: Device[]
    firstTitle?: string | null;
    secondTitle?: string | null;
    description?: string | null;
