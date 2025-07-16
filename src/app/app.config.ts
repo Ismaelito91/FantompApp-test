@@ -5,9 +5,11 @@ import {
    provideZoneChangeDetection,
    provideAppInitializer,
    enableProdMode,
+   APP_INITIALIZER,
 } from "@angular/core";
 import { provideRouter, withComponentInputBinding } from "@angular/router";
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
+import { provideAnimations } from "@angular/platform-browser/animations";
 import { routes } from "./app.routes";
 import { apiInterceptor } from "./interceptor/api.interceptor";
 import { provideServiceWorker } from "@angular/service-worker";
@@ -18,9 +20,11 @@ import { importProvidersFrom } from "@angular/core";
 import { SettingService } from "./service/setting.service";
 import { catchError, EMPTY, tap } from "rxjs";
 import { environment } from "../environments/environment";
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 if (environment.production) {
    enableProdMode();
- }
+}
 // Fonction factory pour le chargeur de traductions
 export function HttpLoaderFactory(http: HttpClient) {
    return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -45,6 +49,7 @@ export const appConfig: ApplicationConfig = {
       provideZoneChangeDetection({ eventCoalescing: true }),
       provideRouter(routes, withComponentInputBinding()),
       provideHttpClient(withInterceptors([apiInterceptor])),
+      provideAnimations(), // Configuration des animations Angular
       provideAppInitializer(() => initSettings(inject(SettingService))),
       provideServiceWorker("ngsw-worker.js", {
          enabled: !isDevMode(),
@@ -62,5 +67,23 @@ export const appConfig: ApplicationConfig = {
             },
          })
       ),
+      {
+         provide: APP_INITIALIZER,
+         useFactory: (
+            iconRegistry: MatIconRegistry,
+            sanitizer: DomSanitizer
+         ) => {
+            return () => {
+               iconRegistry.addSvgIcon(
+                  "Switch-triste",
+                  sanitizer.bypassSecurityTrustResourceUrl(
+                     "assets/images/onboarding/Switch-triste img.svg"
+                  )
+               );
+            };
+         },
+         deps: [MatIconRegistry, DomSanitizer],
+         multi: true,
+      },
    ],
 };

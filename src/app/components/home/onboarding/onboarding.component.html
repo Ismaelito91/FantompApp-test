@@ -1,0 +1,338 @@
+<div
+   class="onboarding-overlay"
+   [class.step-two]="currentStep() === 2"
+   [class.step-three]="currentStep() === 3"
+   [class.step-four]="currentStep() === 4"
+   [class.problem-active]="currentStep() === 2"
+>
+   <!-- Fond flouté de l'application -->
+   <div class="blurred-background"></div>
+
+   <!-- ===== ÉTAPE 1 : ONBOARDING INITIAL ===== -->
+   <div class="onboarding-step-one" *ngIf="currentStep() === 1">
+      <div class="onboarding-container">
+         <!-- Bouton Passer en haut à droite -->
+         <button
+            type="button"
+            class="skip-button"
+            [@slideInUp]="animationStates().skip"
+            (click)="closeOnboarding(); $event.stopPropagation()"
+         >
+            {{ "ONBOARDING.SKIP" | translate }}
+         </button>
+
+         <!-- Zone du haut : Bulles de l'étape 1 -->
+         <div class="top-section">
+            <!-- Bulle de bienvenue -->
+            <div
+               class="speech-bubble welcome-bubble"
+               [@slideInUp]="animationStates().welcome"
+            >
+               <div class="bubble-content">
+                  <div class="welcome-header">
+                     <span class="welcome-text">{{
+                        "ONBOARDING.WELCOME_TO" | translate
+                     }}</span>
+                     <!-- Logo FantomApp dans la bulle de bienvenue -->
+                     <div class="app-branding">
+                        <img
+                           src="assets/images/onboarding/logo-fantomapp.svg"
+                           alt="Logo Fantomapp"
+                           class="app-logo light-mode"
+                        />
+                        <img
+                           src="assets/images/logo-fantomapp-dark.svg"
+                           alt="Logo Fantomapp dark"
+                           class="app-logo dark-mode"
+                        />
+                     </div>
+                     <span class="celebration">🎉</span>
+                  </div>
+               </div>
+               <div class="bubble-arrow"></div>
+            </div>
+
+            <!-- Bulle explicative -->
+            <div
+               class="speech-bubble explanation-bubble"
+               [@slideInUp]="animationStates().explanation"
+            >
+               <div class="bubble-content">
+                  <p>
+                     Ici tu navigues en
+                     <span class="ghost-mode">mode fantôme</span>, personne ne
+                     sait que tu es là. Aucune information sur toi n'est
+                     enregistrée. Tu es libre d'explorer comment protéger ta vie
+                     privée.
+                  </p>
+               </div>
+               <div class="bubble-arrow"></div>
+            </div>
+         </div>
+
+         <!-- Fantôme pancarte (étape 1) -->
+         <div
+            class="main-character-area"
+            [@ghostAppear]="animationStates().ghost"
+         >
+            <!-- Mode clair -->
+            <img
+               src="assets/images/onboarding/switch-pancarte.svg"
+               alt="Fantôme avec pancarte"
+               class="ghost-character light-mode"
+            />
+            <!-- Mode sombre -->
+            <div class="ghost-dark-wrapper dark-mode">
+               <img
+                  src="assets/images/switch-pancarte-dark.svg"
+                  alt="Fantôme avec pancarte dark"
+                  class="ghost-character"
+               />
+               <span class="emoji-pancarte">👋</span>
+            </div>
+         </div>
+
+         <!-- Contrôles de navigation -->
+         <div class="ghost-footer" [@slideInUp]="animationStates().nextButton">
+            <button
+               type="button"
+               class="start-button next-button"
+               (click)="completeOnboarding(); $event.stopPropagation()"
+            >
+               <span class="button-text">Suivant</span>
+               <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow-icon"
+               >
+                  <path
+                     d="M4 12L19 12"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-miterlimit="10"
+                     stroke-linecap="round"
+                  />
+                  <path
+                     d="M13 6L19 12L13 18"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-miterlimit="10"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                  />
+               </svg>
+            </button>
+         </div>
+      </div>
+   </div>
+
+   <!-- ===== ÉTAPE 2 : DÉMONSTRATION PROBLÈME ===== -->
+   <div class="onboarding-step-two" *ngIf="currentStep() === 2">
+      <!-- Fantôme triste pour l'étape 2 -->
+      <div class="sad-ghost-wrapper">
+         <img
+            src="assets/images/onboarding/Switch-triste-img.svg"
+            alt="Fantôme triste"
+            class="ghost-character"
+         />
+      </div>
+
+      <!-- Bulle d'aide pour l'étape 2 (problème) -->
+      <div class="problem-bubble">
+         <div class="bubble-content">
+            <div class="problem-header">
+               <h3 class="problem-title">Tu as besoin d'aide ? 🛟</h3>
+            </div>
+            <p class="problem-description">
+               Parfois on peut avoir des problèmes en ligne. Ici, tu trouveras
+               des pistes et des solutions.
+            </p>
+            <button
+               type="button"
+               class="bubble-next-button"
+               (click)="completeOnboarding(); $event.stopPropagation()"
+            >
+               <span class="button-text">Suivant</span>
+               <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow-icon"
+               >
+                  <path
+                     d="M4 12L19 12"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-miterlimit="10"
+                     stroke-linecap="round"
+                  />
+                  <path
+                     d="M13 6L19 12L13 18"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-miterlimit="10"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                  />
+               </svg>
+            </button>
+         </div>
+         <div class="bubble-arrow"></div>
+      </div>
+
+      <!-- Cercle de mise en évidence pour l'étape 2 -->
+      <div class="highlight-circle"></div>
+
+      <!-- Bouton Passer pour l'étape 2 -->
+      <button
+         type="button"
+         class="skip-button step-two-skip"
+         (click)="closeOnboarding(); $event.stopPropagation()"
+      >
+         {{ "ONBOARDING.SKIP" | translate }}
+      </button>
+   </div>
+
+   <!-- ===== ÉTAPE 3 : DÉMONSTRATION OUTILS ===== -->
+   <div class="onboarding-step-three" *ngIf="currentStep() === 3">
+      <!-- Fantôme triste pour l'étape 3 -->
+      <div class="sad-ghost-wrapper">
+         <img
+            src="assets/images/onboarding/illu-onboarding.svg"
+            alt="Illustration onboarding"
+            class="ghost-character"
+         />
+      </div>
+
+      <!-- Bulle d'aide pour l'étape 3 (outils) -->
+      <div class="problem-bubble">
+         <div class="bubble-content">
+            <div class="problem-header">
+               <h3 class="problem-title">Outils 🛠️</h3>
+            </div>
+            <p class="problem-description">
+               Mot de passe béton, photo protégée, bio vérifiée : prends le
+               contrôle de ta vie privée !
+            </p>
+            <button
+               type="button"
+               class="bubble-next-button"
+               (click)="completeOnboarding(); $event.stopPropagation()"
+            >
+               <span class="button-text">Suivant</span>
+               <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow-icon"
+               >
+                  <path
+                     d="M4 12L19 12"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-miterlimit="10"
+                     stroke-linecap="round"
+                  />
+                  <path
+                     d="M13 6L19 12L13 18"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-miterlimit="10"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                  />
+               </svg>
+            </button>
+         </div>
+         <div class="bubble-arrow"></div>
+      </div>
+
+      <!-- Cercle de mise en évidence pour l'étape 3 -->
+      <div class="highlight-circle"></div>
+
+      <!-- Bouton Passer pour l'étape 3 -->
+      <button
+         type="button"
+         class="skip-button step-three-skip"
+         (click)="closeOnboarding(); $event.stopPropagation()"
+      >
+         {{ "ONBOARDING.SKIP" | translate }}
+      </button>
+   </div>
+
+   <!-- ===== ÉTAPE 4 : DÉMONSTRATION PARAMÈTRES ===== -->
+   <div class="onboarding-step-four" *ngIf="currentStep() === 4">
+      <!-- Fantôme triste pour l'étape 4 -->
+      <div class="sad-ghost-wrapper">
+         <img
+            src="assets/images/onboarding/illu-onboarding-4.svg"
+            alt="Illustration onboarding paramètres"
+            class="ghost-character"
+         />
+      </div>
+
+      <!-- Bulle d'aide pour l'étape 4 (paramètres) -->
+      <div class="problem-bubble">
+         <div class="bubble-content">
+            <div class="problem-header">
+               <h3 class="problem-title">Paramètres essentiels ⚙️</h3>
+            </div>
+            <p class="problem-description">
+               C'est pas toujours simple de paramétrer tes comptes... sur
+               FantomApp tu trouveras plein d'astuces.
+            </p>
+            <button
+               type="button"
+               class="bubble-next-button"
+               (click)="completeOnboarding(); $event.stopPropagation()"
+            >
+               <span class="button-text">Suivant</span>
+               <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow-icon"
+               >
+                  <path
+                     d="M4 12L19 12"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-miterlimit="10"
+                     stroke-linecap="round"
+                  />
+                  <path
+                     d="M13 6L19 12L13 18"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-miterlimit="10"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                  />
+               </svg>
+            </button>
+         </div>
+         <div class="bubble-arrow"></div>
+      </div>
+
+      <!-- Cercle de mise en évidence pour l'étape 4 -->
+      <div class="highlight-circle"></div>
+
+      <!-- Bouton Passer pour l'étape 4 -->
+      <button
+         type="button"
+         class="skip-button step-four-skip"
+         (click)="closeOnboarding(); $event.stopPropagation()"
+      >
+         {{ "ONBOARDING.SKIP" | translate }}
+      </button>
+   </div>
+</div>

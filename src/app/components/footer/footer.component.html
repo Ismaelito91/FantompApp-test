@@ -19,6 +19,8 @@
          routerLinkActive="active-link"
          [routerLinkActiveOptions]="{ exact: false }"
          class="nav-button problem-button"
+         [class.problem-active]="isProblemIconActive"
+         [class.force-active]="isProblemIconActive"
       >
          <div class="icon-container">
             <mat-icon svgIcon="problem-icon" class="icon-inactive"></mat-icon>
@@ -35,6 +37,8 @@
          routerLinkActive="active-link"
          [routerLinkActiveOptions]="{ exact: true }"
          class="nav-button tools-button"
+         [class.tools-active]="isToolsIconActive"
+         [class.force-active]="isToolsIconActive"
       >
          <div class="icon-container">
             <mat-icon

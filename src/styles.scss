@@ -221,8 +221,12 @@
    --background-6: var(--color-neutral-light-background-1);
    --background-7: var(--color-neutral-light-background-3);
    --background-8: var(--color-primary-50);
+   --background-9: var(--color-neutral-light-background-2);
+   --background-10: var(--color-primary-50);
+   --background-11: var(--color-primary-800);
    --background-14: var(--color-neutral-light-background-2);
    --background-15: var(--color-primary-50);
+   --background-16: var(--color-primary-800);
 
    --color-1: var(--color-neutral-light-content-2);
    --color-2: var(--color-primary-950);
@@ -238,6 +242,10 @@
    --color-12: var(--color-primary-400);
    --color-13: var(--color-primary-200);
    --color-14: var(--color-primary-800);
+   --color-15: var(--color-neutral-light-background-1);
+   --color-16: var(--color-primary-950);
+   --color-17: var(--color-neutral-light-background-3);
+   --color-18: var(--color-neutral-light-background-1);
 
    body {
       font-family: var(--body-font-family);
@@ -302,7 +310,18 @@
 
    --swiper-pagination-bottom: 0;
 
-   @include mat.button-overrides((text-label-text-font: var(--body-font-family)));
+   @include mat.button-overrides(
+      (
+         text-label-text-font: var(--body-font-family),
+      )
+   );
+
+   @include mat.toolbar-overrides(
+      (
+         container-background-color: var(--background-6),
+         container-text-color: var(--color-8),
+      )
+   );
 
    @include mat.radio-overrides(
       (
@@ -317,7 +336,12 @@
       )
    );
 
-   @include mat.divider-overrides((color: var(--color-primary-100), width: 2px));
+   @include mat.divider-overrides(
+      (
+         color: var(--color-primary-100),
+         width: 2px,
+      )
+   );
 
    @include mat.fab-overrides((container-shape: 50%, container-elevation-shadow: 0, container-color: var(--background-15)));
 }
@@ -332,8 +356,12 @@
    --background-6: var(--color-neutral-dark-background-1);
    --background-7: var(--color-neutral-dark-background-2);
    --background-8: var(--color-primary-950);
+   --background-9: var(--color-neutral-dark-background-1);
+   --background-10: var(--color-neutral-dark-background-2);
+   --background-11: var(--color-primary-100);
    --background-14: var(--color-neutral-dark-background-1);
    --background-15: var(--color-neutral-dark-background-2);
+   --background-16: var(--color-neutral-light-background-4);
 
    --color-1: var(--color-neutral-light-background-2);
    --color-2: var(--color-neutral-light-background-2);
@@ -349,4 +377,8 @@
    --color-12: var(--color-primary-100);
    --color-13: var(--color-primary-50);
    --color-14: var(--color-primary-50);
+   --color-15: var(--color-neutral-dark-background-2);
+   --color-16: var(--color-primary-950);
+   --color-17: var(--color-neutral-light-background-3);
+   --color-18: var(--color-primary-950);
 }

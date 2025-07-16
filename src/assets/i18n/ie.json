@@ -18,6 +18,63 @@
       "TOOLS": "Tools",
       "SECURE": "Secure me"
    },
+   "ONBOARDING": {
+      "CLOSE": "Close introduction",
+      "SKIP": "Skip",
+      "NEXT": "Next",
+      "PREVIOUS": "Previous",
+      "CONTINUE": "Continue",
+      "START_USING": "Start using",
+      "TAP_TO_CONTINUE": "Tap to continue",
+      "WELCOME_TO": "Welcome to",
+      "GHOST_MODE_EXPLANATION": "Here you navigate in ghost mode, no one knows you're here. No information about you is recorded. You're free to explore how to protect your privacy.",
+      "PROGRESS": "Introduction progress",
+      "GO_TO_STEP": "Go to step",
+      "COMPLETED_STEP": "Completed step",
+      "CURRENT_STEP": "Current step",
+      "FUTURE_STEP": "Future step",
+      "STEP_INFO": "Step",
+      "OF": "of",
+      "BUBBLE": {
+         "WELCOME": "Hi! I'm here to guide you through discovering the app!"
+      },
+      "WELCOME": {
+         "TITLE": "Welcome to Ghost App!",
+         "DESCRIPTION": "Discover an application designed to protect your privacy and provide you with an exceptional user experience. Let us introduce you to its main features."
+      },
+      "APPEARANCE": {
+         "TITLE": "Customize your experience",
+         "DESCRIPTION": "Adapt the application's appearance according to your preferences and environment.",
+         "FEATURE_1": "Choice between light, dark or automatic theme",
+         "FEATURE_2": "Adaptation according to your device settings",
+         "FEATURE_3": "Interface optimized for visual comfort"
+      },
+      "ICON_CHANGE": {
+         "TITLE": "Change the application icon",
+         "DESCRIPTION": "Customize the icon visible on your home screen for more discretion or aesthetics.",
+         "FEATURE_1": "Multiple icon designs available",
+         "FEATURE_2": "Instant and secure change",
+         "FEATURE_3": "Discretion option for your privacy"
+      },
+      "RESOURCES": {
+         "TITLE": "Access resources",
+         "DESCRIPTION": "Find all important information and useful tools at your fingertips.",
+         "FEATURE_1": "Complete application documentation",
+         "FEATURE_2": "Detailed user guides",
+         "FEATURE_3": "Online support and help"
+      },
+      "ACCESSIBILITY": {
+         "TITLE": "An app for everyone",
+         "DESCRIPTION": "Ghost App is designed to be accessible to all users, regardless of their abilities.",
+         "FEATURE_1": "Interface compatible with screen readers",
+         "FEATURE_2": "Optimized keyboard navigation",
+         "FEATURE_3": "Compliance with WCAG accessibility standards"
+      },
+      "READY": {
+         "TITLE": "You're ready!",
+         "DESCRIPTION": "You now know the main features of Ghost App. Enjoy your secure and personalized experience to the fullest."
+      }
+   },
    "USER_CONFIG_APP": {
       "TITLE": "Appearance",
       "SUBTITLE": "Choose your preferred display theme.",
