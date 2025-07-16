@@ -5,6 +5,8 @@ import {
    OnInit,
    OnDestroy,
    ChangeDetectorRef,
+   AfterViewInit,
+   computed,
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { MatButtonModule } from "@angular/material/button";
@@ -20,6 +22,7 @@ import {
 } from "@angular/animations";
 import { OnboardingService } from "../../../service/onboarding.service";
 import { Router } from "@angular/router";
+import { ThemeService } from "../../../service/theme.service";
 
 @Component({
    selector: "app-onboarding",
@@ -91,13 +94,19 @@ import { Router } from "@angular/router";
       ]),
    ],
 })
-export class OnboardingComponent implements OnInit, OnDestroy {
+export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
    private onboardingService = inject(OnboardingService);
    private cdr = inject(ChangeDetectorRef);
    private router = inject(Router);
+   private themeService = inject(ThemeService);
 
    // Signal pour l'étape actuelle
    currentStep = signal<number>(1);
+
+   // Propriété pour détecter le dark mode via le ThemeService
+   isDarkMode = computed(() => {
+      return this.themeService.isDark$();
+   });
 
    // États d'animation pour l'étape 1
    animationStates = signal({
@@ -113,8 +122,13 @@ export class OnboardingComponent implements OnInit, OnDestroy {
       this.startStep1Animations();
    }
 
+   ngAfterViewInit() {
+      // Plus besoin de détection manuelle, le ThemeService s'en charge
+      console.log("✅ Vue initialisée, thème détecté:", this.isDarkMode());
+   }
+
    ngOnDestroy() {
-      // Nettoyage si nécessaire
+      console.log("🔚 Onboarding terminé");
    }
 
    /**
@@ -192,9 +206,10 @@ export class OnboardingComponent implements OnInit, OnDestroy {
          this.onboardingService.activateSecureMyselfIcon();
          this.router.navigate(["/secure-myself"]);
       } else if (this.currentStep() === 4) {
-         // Fermer l'onboarding seulement à la fin de la quatrième partie
+         // Fermer l'onboarding et rediriger vers la page d'accueil
          this.onboardingService.completeOnboarding();
          this.onboardingService.deactivateSecureMyselfIcon();
+         this.router.navigate(["/home"]);
       }
    }
 
@@ -203,5 +218,6 @@ export class OnboardingComponent implements OnInit, OnDestroy {
     */
    closeOnboarding(): void {
       this.onboardingService.hideOnboarding();
+      this.router.navigate(["/home"]);
    }
 }

@@ -9,7 +9,8 @@
    <div class="blurred-background"></div>
 
    <!-- ===== ÉTAPE 1 : ONBOARDING INITIAL ===== -->
-   <div class="onboarding-step-one" *ngIf="currentStep() === 1">
+   @if (currentStep() === 1) {
+   <div class="onboarding-step-one">
       <div class="onboarding-container">
          <!-- Bouton Passer en haut à droite -->
          <button
@@ -35,16 +36,19 @@
                      }}</span>
                      <!-- Logo FantomApp dans la bulle de bienvenue -->
                      <div class="app-branding">
+                        @if (!isDarkMode()) {
                         <img
                            src="assets/images/onboarding/logo-fantomapp.svg"
                            alt="Logo Fantomapp"
-                           class="app-logo light-mode"
+                           class="app-logo"
                         />
+                        } @else {
                         <img
                            src="assets/images/logo-fantomapp-dark.svg"
                            alt="Logo Fantomapp dark"
-                           class="app-logo dark-mode"
+                           class="app-logo"
                         />
+                        }
                      </div>
                      <span class="celebration">🎉</span>
                   </div>
@@ -75,14 +79,16 @@
             class="main-character-area"
             [@ghostAppear]="animationStates().ghost"
          >
+            @if (!isDarkMode()) {
             <!-- Mode clair -->
             <img
                src="assets/images/onboarding/switch-pancarte.svg"
                alt="Fantôme avec pancarte"
-               class="ghost-character light-mode"
+               class="ghost-character"
             />
+            } @else {
             <!-- Mode sombre -->
-            <div class="ghost-dark-wrapper dark-mode">
+            <div class="ghost-dark-wrapper">
                <img
                   src="assets/images/switch-pancarte-dark.svg"
                   alt="Fantôme avec pancarte dark"
@@ -90,6 +96,7 @@
                />
                <span class="emoji-pancarte">👋</span>
             </div>
+            }
          </div>
 
          <!-- Contrôles de navigation -->
@@ -128,9 +135,11 @@
          </div>
       </div>
    </div>
+   }
 
    <!-- ===== ÉTAPE 2 : DÉMONSTRATION PROBLÈME ===== -->
-   <div class="onboarding-step-two" *ngIf="currentStep() === 2">
+   @if (currentStep() === 2) {
+   <div class="onboarding-step-two">
       <!-- Fantôme triste pour l'étape 2 -->
       <div class="sad-ghost-wrapper">
          <img
@@ -197,9 +206,11 @@
          {{ "ONBOARDING.SKIP" | translate }}
       </button>
    </div>
+   }
 
    <!-- ===== ÉTAPE 3 : DÉMONSTRATION OUTILS ===== -->
-   <div class="onboarding-step-three" *ngIf="currentStep() === 3">
+   @if (currentStep() === 3) {
+   <div class="onboarding-step-three">
       <!-- Fantôme triste pour l'étape 3 -->
       <div class="sad-ghost-wrapper">
          <img
@@ -266,9 +277,11 @@
          {{ "ONBOARDING.SKIP" | translate }}
       </button>
    </div>
+   }
 
    <!-- ===== ÉTAPE 4 : DÉMONSTRATION PARAMÈTRES ===== -->
-   <div class="onboarding-step-four" *ngIf="currentStep() === 4">
+   @if (currentStep() === 4) {
+   <div class="onboarding-step-four">
       <!-- Fantôme triste pour l'étape 4 -->
       <div class="sad-ghost-wrapper">
          <img
@@ -335,4 +348,5 @@
          {{ "ONBOARDING.SKIP" | translate }}
       </button>
    </div>
+   }
 </div>

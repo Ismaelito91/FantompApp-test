@@ -5,11 +5,13 @@ import {
    Inject,
    ViewChild,
    ElementRef,
+   inject,
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
 import { DOCUMENT } from "@angular/common";
 import { gsap } from "gsap";
+import { OnboardingService } from "../../service/onboarding.service";
 
 @Component({
    selector: "app-splash-screen",
@@ -20,6 +22,8 @@ import { gsap } from "gsap";
 })
 export class SplashScreenComponent implements OnInit {
    @ViewChild("splashContainer", { static: true }) splashContainer!: ElementRef;
+
+   private onboardingService = inject(OnboardingService);
 
    constructor(
       private router: Router,
@@ -36,7 +40,14 @@ export class SplashScreenComponent implements OnInit {
             duration: 1.7,
             ease: "power2.inOut",
             onComplete: () => {
-               this.router.navigate(["/home"]);
+               // Vérifier si c'est la première visite et si l'onboarding doit être affiché
+               if (!this.onboardingService.hasCompletedOnboarding()) {
+                  // Rediriger vers l'onboarding
+                  this.router.navigate(["/onboarding"]);
+               } else {
+                  // Rediriger vers la page d'accueil normale
+                  this.router.navigate(["/home"]);
+               }
             },
          });
       }, 1700);
