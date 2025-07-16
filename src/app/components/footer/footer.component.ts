@@ -59,4 +59,8 @@ export class FooterComponent {
    get isToolsIconActive() {
       return this.onboardingService.isToolsIconActive();
    }
+
+   get isSecureMyselfIconActive() {
+      return this.onboardingService.isSecureMyselfIconActive();
+   }
 }

@@ -3,6 +3,7 @@ import { RouterOutlet } from "@angular/router";
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { CommonModule } from "@angular/common";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { OnboardingComponent } from "./components/home/onboarding/onboarding.component";
@@ -18,8 +19,9 @@ import { SettingService } from "./service/setting.service";
       RouterOutlet,
       HeaderComponent,
       FooterComponent,
-      OnboardingComponent,
       TranslateModule,
+      CommonModule,
+      OnboardingComponent,
    ],
    templateUrl: "./app.component.html",
    styleUrl: "./app.component.scss",

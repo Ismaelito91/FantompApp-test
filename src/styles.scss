@@ -343,7 +343,13 @@
       )
    );
 
-   @include mat.fab-overrides((container-shape: 50%, container-elevation-shadow: 0, container-color: var(--background-15)));
+   @include mat.fab-overrides(
+      (
+         container-shape: 50%,
+         container-elevation-shadow: 0,
+         container-color: var(--background-15),
+      )
+   );
 }
 
 // Dark overrides

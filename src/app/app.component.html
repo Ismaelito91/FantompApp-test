@@ -2,6 +2,7 @@
 <app-header />
 <router-outlet />
 <app-footer />
+<app-onboarding *ngIf="_onboardingService.isOnboardingVisible()" />
 } @case ("pending") {
 {{ "APP.LOADING" | translate }}
 } @case ("failed") {

@@ -42,8 +42,9 @@ export class SplashScreenComponent implements OnInit {
             onComplete: () => {
                // Vérifier si c'est la première visite et si l'onboarding doit être affiché
                if (!this.onboardingService.hasCompletedOnboarding()) {
-                  // Rediriger vers l'onboarding
-                  this.router.navigate(["/onboarding"]);
+                  // Lancer l'onboarding directement
+                  this.onboardingService.showOnboarding();
+                  this.router.navigate(["/home"]);
                } else {
                   // Rediriger vers la page d'accueil normale
                   this.router.navigate(["/home"]);
