@@ -6,13 +6,14 @@
   */
 
 import { Platform } from '@angular/cdk/platform';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 import { interval, BehaviorSubject, timer } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 import { PwaPromptInstallComponent, PwaPromptUpdateComponent } from '../../components/pwa';
+import { OnboardingService } from '../onboarding.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ import { PwaPromptInstallComponent, PwaPromptUpdateComponent } from '../../compo
 export class PwaService {
 
   private promptEvent: any;
+  private onboardingService = inject(OnboardingService);
   appInstalled$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   appUpdateAvailable$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
@@ -83,12 +85,14 @@ export class PwaService {
         }
         event.preventDefault();
         this.promptEvent = event;
-        this.openPromptComponent('android');
+        if (this.onboardingService.hasCompletedOnboarding()) {
+          this.openPromptComponent('android');
+        }
       });
     }
     if (this.platform.IOS) {
       const isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator['standalone']);
-      if (!isInStandaloneMode) {
+      if (!isInStandaloneMode && this.onboardingService.hasCompletedOnboarding()) {
         this.openPromptComponent('ios');
       }
     }
