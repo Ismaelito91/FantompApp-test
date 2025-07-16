@@ -7,6 +7,8 @@ import packageInfo from "../../../../package.json";
 import { SettingService } from "../../service/setting.service";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { ThemeService } from "../../service/theme.service";
+import { OnboardingService } from "../../service/onboarding.service";
+import { OnboardingComponent } from "./onboarding/onboarding.component";
 import { computed } from "@angular/core";
 
 @Component({
@@ -19,6 +21,7 @@ import { computed } from "@angular/core";
       MatButtonModule,
       MatIconModule,
       RouterModule,
+      OnboardingComponent,
    ],
    templateUrl: "./home.component.html",
    styleUrls: ["./home.component.scss"],
@@ -27,6 +30,7 @@ export class HomeComponent {
    private translateService = inject(TranslateService);
    private themeService = inject(ThemeService);
    private router = inject(Router);
+   onboardingService = inject(OnboardingService);
    _settingService = inject(SettingService);
 
    isDarkMode = computed(() => {
@@ -95,9 +99,9 @@ export class HomeComponent {
    }
 
    navigateToWhatIsApp(): void {
-      // TODO: Implémenter la navigation vers "C'est quoi cette app"
-      console.log('Navigation vers "C\'est quoi cette app"');
-      // this.router.navigate(['/what-is-app']);
+      // Lance l'onboarding quand l'utilisateur clique sur "C'est quoi cette app ?"
+      console.log("Lancement de l'onboarding via \"C'est quoi cette app\"");
+      this.onboardingService.showOnboarding();
    }
 
    navigateToRights(): void {

@@ -1,11 +1,11 @@
-@switch (_settingService.appStatus()) {
-   @case ("initialized") {
-      <app-header />
-      <router-outlet />
-      <app-footer />
-   } @case ("pending") {
-      {{ "APP.LOADING" | translate }}
-   } @case ("failed") {
-      {{ "APP.ERROR" | translate }}
-   }
-}
+@switch (_settingService.appStatus()) { @case ("initialized") {
+<app-header />
+<router-outlet />
+<app-footer />
+@if (_onboardingService.isOnboardingVisible()) {
+<app-onboarding />
+} } @case ("pending") {
+{{ "APP.LOADING" | translate }}
+} @case ("failed") {
+{{ "APP.ERROR" | translate }}
+} }

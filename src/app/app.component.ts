@@ -1,19 +1,26 @@
 import { Component, OnInit, inject } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";
+import { OnboardingComponent } from "./components/home/onboarding/onboarding.component";
 import { LanguageService } from "./service/language.service";
+import { OnboardingService } from "./service/onboarding.service";
 import { PwaService } from "./service/pwa/pwa.service";
 import { SettingService } from "./service/setting.service";
 
 @Component({
    selector: "app-root",
    standalone: true,
-   imports: [RouterOutlet, HeaderComponent, FooterComponent, TranslateModule],
+   imports: [
+      RouterOutlet,
+      HeaderComponent,
+      FooterComponent,
+      OnboardingComponent,
+      TranslateModule,
+   ],
    templateUrl: "./app.component.html",
    styleUrl: "./app.component.scss",
 })
@@ -21,6 +28,7 @@ export class AppComponent implements OnInit {
    private translateService = inject(TranslateService);
    private languageService = inject(LanguageService);
    _settingService = inject(SettingService);
+   _onboardingService = inject(OnboardingService);
    private matIconRegistry = inject(MatIconRegistry);
    private domSanitizer = inject(DomSanitizer);
    private pwaService = inject(PwaService);
@@ -40,6 +48,10 @@ export class AppComponent implements OnInit {
       //initialisation du service PWA
       this.pwaService.initPwaPrompt();
       this.pwaService.checkForUpdates();
+
+      // Initialisation du service onboarding
+      // Le service vérifie automatiquement si c'est la première visite
+      console.log("Onboarding service initialized");
 
       // Enregistrement des icônes SVG personnalisées
       console.log("Registering SVG icons...");
@@ -109,8 +121,14 @@ export class AppComponent implements OnInit {
       ];
 
       const neutralIcons = [
-         { name: "chevron16x16-icon", path: "assets/images/chevron16x16-icon.svg" },
-         { name: "checkbox-unselected16x16-icon", path: "assets/images/checkbox-unselected16x16-icon.svg" },
+         {
+            name: "chevron16x16-icon",
+            path: "assets/images/chevron16x16-icon.svg",
+         },
+         {
+            name: "checkbox-unselected16x16-icon",
+            path: "assets/images/checkbox-unselected16x16-icon.svg",
+         },
          // Icônes outline (état inactif)
          { name: "home-icon", path: "assets/images/home.svg" },
          { name: "problem-icon", path: "assets/images/problem.svg" },
@@ -130,12 +148,47 @@ export class AppComponent implements OnInit {
          {
             name: "tools-clear-active",
             path: "assets/images/clear/icon-tools-page-clear.svg",
-         }
+         },
       ];
 
       // Enregistrer toutes les icônes
       [...lightIcons, ...darkIcons, ...neutralIcons].forEach((icon) => {
          //console.log(`Registering icon: ${icon.name} from ${icon.path}`);
+         this.matIconRegistry.addSvgIcon(
+            icon.name,
+            this.domSanitizer.bypassSecurityTrustResourceUrl(icon.path)
+         );
+      });
+
+      // Enregistrement des icônes d'onboarding
+      const onboardingIcons = [
+         {
+            name: "fantome-logo",
+            path: "assets/images/onboarding/logo fantomapp.svg",
+         },
+         {
+            name: "onboarding-illustration",
+            path: "assets/images/onboarding/illu-onboarding.svg",
+         },
+         {
+            name: "onboarding-illustration-4",
+            path: "assets/images/onboarding/illu-onboarding-4.svg",
+         },
+         {
+            name: "switch-pancarte",
+            path: "assets/images/onboarding/switch pancarte.svg",
+         },
+         {
+            name: "switch-triste",
+            path: "assets/images/onboarding/Switch triste img.svg",
+         },
+         {
+            name: "icon-arrow-right",
+            path: "assets/images/onboarding/icon-arrow-right.svg",
+         },
+      ];
+
+      onboardingIcons.forEach((icon) => {
          this.matIconRegistry.addSvgIcon(
             icon.name,
             this.domSanitizer.bypassSecurityTrustResourceUrl(icon.path)

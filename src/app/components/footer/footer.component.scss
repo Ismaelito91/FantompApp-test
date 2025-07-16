@@ -98,5 +98,53 @@
             color: var(--color-8);
          }
       }
+
+      &.problem-active {
+         .icon-inactive {
+            opacity: 0;
+         }
+
+         .icon-active {
+            opacity: 1;
+            z-index: 2;
+         }
+
+         span {
+            font-weight: var(--font-weight-heading);
+            color: var(--color-8);
+         }
+      }
+
+      &.force-active {
+         .icon-inactive {
+            opacity: 0 !important;
+         }
+
+         .icon-active {
+            opacity: 1 !important;
+            z-index: 2 !important;
+         }
+
+         span {
+            font-weight: var(--font-weight-heading) !important;
+            color: var(--color-8) !important;
+         }
+      }
+
+      &.tools-active {
+         .icon-inactive {
+            opacity: 0;
+         }
+
+         .icon-active {
+            opacity: 1;
+            z-index: 2;
+         }
+
+         span {
+            font-weight: var(--font-weight-heading);
+            color: var(--color-8);
+         }
+      }
    }
 }

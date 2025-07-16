@@ -7,6 +7,7 @@ import { TranslateModule } from "@ngx-translate/core";
 import packageInfo from "../../../../package.json";
 import { SettingService } from "../../service/setting.service";
 import { ThemeService } from "../../service/theme.service";
+import { OnboardingService } from "../../service/onboarding.service";
 
 @Component({
    selector: "app-footer",
@@ -25,6 +26,7 @@ import { ThemeService } from "../../service/theme.service";
 export class FooterComponent {
    private _settingService = inject(SettingService);
    private themeService = inject(ThemeService);
+   private onboardingService = inject(OnboardingService);
 
    toolsInactiveIcon: string = "tools-clear-inactive";
    toolsActiveIcon: string = "tools-clear-active";
@@ -48,5 +50,13 @@ export class FooterComponent {
 
    get backendVersion() {
       return this._settingService.settings()?.version;
+   }
+
+   get isProblemIconActive() {
+      return this.onboardingService.isProblemIconActive();
+   }
+
+   get isToolsIconActive() {
+      return this.onboardingService.isToolsIconActive();
    }
 }
