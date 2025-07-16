@@ -2,9 +2,7 @@
 <app-header />
 <router-outlet />
 <app-footer />
-@if (_onboardingService.isOnboardingVisible()) {
-<app-onboarding />
-} } @case ("pending") {
+} @case ("pending") {
 {{ "APP.LOADING" | translate }}
 } @case ("failed") {
 {{ "APP.ERROR" | translate }}
