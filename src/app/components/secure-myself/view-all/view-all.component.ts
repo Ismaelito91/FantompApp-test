@@ -8,10 +8,11 @@ import { PageComponentService } from '../../../service/page-component.service';
 import { ComponentType } from '../../../model/enum/component-type.enum';
 import { ComponentStatus } from '../../../model/enum/component-status.enum';
 import { ActivatedRoute } from '@angular/router';
+import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
 
 @Component({
    selector: 'app-view-all',
-   imports: [MatIconModule, MatButtonModule, Card9Component, ButtonBackComponent],
+   imports: [MatIconModule, MatButtonModule, Card9Component, ButtonBackComponent, PageTranslationPipe],
    templateUrl: './view-all.component.html',
    styleUrl: './view-all.component.scss'
 })

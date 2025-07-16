@@ -221,8 +221,8 @@
    --background-6: var(--color-neutral-light-background-1);
    --background-7: var(--color-neutral-light-background-3);
    --background-8: var(--color-primary-50);
-   --background-9: var(--color-neutral-light-background-2);
-   --background-10: var(--color-primary-50);
+   --background-14: var(--color-neutral-light-background-2);
+   --background-15: var(--color-primary-50);
 
    --color-1: var(--color-neutral-light-content-2);
    --color-2: var(--color-primary-950);
@@ -319,7 +319,7 @@
 
    @include mat.divider-overrides((color: var(--color-primary-100), width: 2px));
 
-   @include mat.fab-overrides((container-shape: 50%, container-elevation-shadow: 0, container-color: var(--background-10)));
+   @include mat.fab-overrides((container-shape: 50%, container-elevation-shadow: 0, container-color: var(--background-15)));
 }
 
 // Dark overrides
@@ -332,8 +332,8 @@
    --background-6: var(--color-neutral-dark-background-1);
    --background-7: var(--color-neutral-dark-background-2);
    --background-8: var(--color-primary-950);
-   --background-9: var(--color-neutral-dark-background-1);
-   --background-10: var(--color-neutral-dark-background-2);
+   --background-14: var(--color-neutral-dark-background-1);
+   --background-15: var(--color-neutral-dark-background-2);
 
    --color-1: var(--color-neutral-light-background-2);
    --color-2: var(--color-neutral-light-background-2);

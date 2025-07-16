@@ -1,11 +1,11 @@
 <div class="problems-container flex flex-col" [class.page-2]="page()?.type === ComponentType.PAGE_2">
    @switch (page()?.type) {
       @case (ComponentType.PAGE_1) {
-         <h1 class="problems-title" [innerHTML]="page()?.translations?.at(0)?.firstTitle"></h1>
+         <h1 class="problems-title" [innerHTML]="(page() | pageTranslation)?.firstTitle"></h1>
       }
       @case (ComponentType.PAGE_2) {
-         <img [src]="page()?.translations?.at(0)?.image" alt="image" />
-         <h3 class="problems-title" [innerHTML]="page()?.translations?.at(0)?.firstTitle"></h3>
+         <img [src]="(page() | pageTranslation)?.image" alt="image" />
+         <h3 class="problems-title" [innerHTML]="(page() | pageTranslation)?.firstTitle"></h3>
       }
    }
    <div class="problems-items-container flex flex-col">

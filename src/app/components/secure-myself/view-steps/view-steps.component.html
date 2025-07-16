@@ -1,8 +1,8 @@
 <div class="view-steps-container flex flex-col">
    <div class="flex flex-col justify-center items-center view-header">
       <app-button-back link="/secure-myself" class="view-header-btn"></app-button-back>
-      <div class="text-center view-header-title" [innerHTML]="page()?.translations?.at(0)?.firstTitle"></div>
-      <div class="text-center view-header-description" [innerHTML]="page()?.translations?.at(0)?.description"></div>
+      <div class="text-center view-header-title" [innerHTML]="(page() | pageTranslation)?.firstTitle"></div>
+      <div class="text-center view-header-description" [innerHTML]="(page() | pageTranslation)?.description"></div>
    </div>
 
    <swiper-container class="flex-1" slides-per-view="1" [pagination]="{ clickable: true }" class="h-full">

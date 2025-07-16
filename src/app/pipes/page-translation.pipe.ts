@@ -11,7 +11,7 @@ import { LanguageService } from '../service/language.service';
 export class PageTranslationPipe implements PipeTransform {
    private languageService = inject(LanguageService);
 
-   transform(page: PageComponentModel | null): PageComponentTranslationModel | null {
+   transform(page: PageComponentModel | null | undefined): PageComponentTranslationModel | null {
       const lang = this.languageService.language(); // "FR", "ES", etc.
       if (!page?.translations) return null;
 

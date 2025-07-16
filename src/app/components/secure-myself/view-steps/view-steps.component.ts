@@ -10,12 +10,13 @@ import { ComponentStatus } from '../../../model/enum/component-status.enum';
 import { ActivatedRoute } from '@angular/router';
 import { PageComponentService } from '../../../service/page-component.service';
 import { Card11Component } from "../../design-system/card-11/card-11.component";
+import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
 
 register();
 
 @Component({
    selector: 'app-view-steps',
-   imports: [MatIconModule, MatButtonModule, ButtonBackComponent, Card11Component],
+   imports: [MatIconModule, MatButtonModule, ButtonBackComponent, Card11Component, PageTranslationPipe],
    templateUrl: './view-steps.component.html',
    styleUrl: './view-steps.component.scss',
    schemas: [CUSTOM_ELEMENTS_SCHEMA],
