@@ -58,6 +58,8 @@
          routerLinkActive="active-link"
          [routerLinkActiveOptions]="{ exact: true }"
          class="nav-button secure-button"
+         [class.secure-active]="isSecureMyselfIconActive"
+         [class.force-active]="isSecureMyselfIconActive"
       >
          <div class="icon-container">
             <mat-icon svgIcon="securiser-icon" class="icon-inactive"></mat-icon>

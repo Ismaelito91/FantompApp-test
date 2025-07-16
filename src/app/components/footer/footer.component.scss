@@ -148,3 +148,11 @@
       }
    }
 }
+
+// Styles spécifiques pour le mode sombre
+:root.dark-theme {
+   .toolbar-nav {
+      background-color: var(--color-neutral-dark-background-1);
+      border-top-color: var(--color-neutral-light-background-4);
+   }
+}

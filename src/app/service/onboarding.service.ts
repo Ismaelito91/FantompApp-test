@@ -22,8 +22,8 @@ export class OnboardingService {
    private _isSecureMyselfIconActive = signal<boolean>(false);
 
    constructor() {
-      // Vérifie si c'est la première visite au démarrage
-      this.checkFirstVisit();
+      // Ne plus vérifier automatiquement au démarrage
+      // L'onboarding sera lancé par le splash screen si nécessaire
    }
 
    /**

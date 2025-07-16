@@ -23,6 +23,21 @@ import {
 import { OnboardingService } from "../../../service/onboarding.service";
 import { Router } from "@angular/router";
 import { ThemeService } from "../../../service/theme.service";
+// Interface pour les éléments d'onboarding
+interface OnboardingElement {
+   id: string;
+   type:
+      | "ghost"
+      | "welcome"
+      | "explanation"
+      | "skip"
+      | "next-button"
+      | "help"
+      | "highlight"
+      | "sad-ghost";
+   step: number;
+   visible: boolean;
+}
 
 @Component({
    selector: "app-onboarding",
@@ -116,7 +131,6 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
       skip: "hidden",
       nextButton: "hidden",
    });
-
    ngOnInit() {
       console.log("🚀 Onboarding démarré, étape initiale:", this.currentStep());
       this.startStep1Animations();
@@ -189,27 +203,34 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
       );
 
       if (this.currentStep() === 1) {
-         // Passer à l'étape 2, activer l'icône problème et naviguer
+         // Passer à l'étape 2, activer l'icône problème
          this.currentStep.set(2);
          this.onboardingService.activateProblemIcon();
-         this.router.navigate(["/problems"]);
+         console.log("🔄 Passage à l'étape 2");
       } else if (this.currentStep() === 2) {
-         // Passer à l'étape 3, activer l'icône outils et naviguer
+         // Passer à l'étape 3, activer l'icône outils
          this.currentStep.set(3);
          this.onboardingService.deactivateProblemIcon();
          this.onboardingService.activateToolsIcon();
-         this.router.navigate(["/tools"]);
+         console.log("🔄 Passage à l'étape 3");
       } else if (this.currentStep() === 3) {
-         // Passer à l'étape 4, activer l'icône "Me sécuriser" et naviguer
+         // Passer à l'étape 4, activer l'icône "Me sécuriser" et naviguer vers la page des problèmes
          this.currentStep.set(4);
          this.onboardingService.deactivateToolsIcon();
          this.onboardingService.activateSecureMyselfIcon();
-         this.router.navigate(["/secure-myself"]);
+         this.router.navigate(["/problems"]);
+         console.log("🔄 Passage à l'étape 4 sur la page des problèmes");
+         console.log("📍 Étape actuelle après navigation:", this.currentStep());
+         console.log(
+            "👁️ Onboarding visible:",
+            this.onboardingService.isOnboardingVisible()
+         );
       } else if (this.currentStep() === 4) {
          // Fermer l'onboarding et rediriger vers la page d'accueil
          this.onboardingService.completeOnboarding();
          this.onboardingService.deactivateSecureMyselfIcon();
          this.router.navigate(["/home"]);
+         console.log("✅ Onboarding terminé, redirection vers /home");
       }
    }
 
