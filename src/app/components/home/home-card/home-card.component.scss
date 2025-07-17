@@ -11,11 +11,17 @@
    font-size: var(--font-size-h5);
    font-weight: var(--font-weight-heading);
    line-height: var(--line-height-h5);
+   color: var(--color-1);
    color: var(--color-15);
    margin: 0;
    padding: 0;
    align-self: flex-start;
    margin-bottom: var(--spacing-2);
+}
+
+/* Style spécifique pour le titre des problèmes */
+.home-cards-problems-container .home-cards__main-title {
+   color: var(--color-15);
 }
 
 .home-cards__section-title {
@@ -42,14 +48,28 @@
    padding-bottom: var(--spacing-4);
 }
 
-.home-cards-problems-container .home-cards__section-title {
-   text-align: center;
-   margin-bottom: var(--spacing-4);
+.problems-cards-row {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-start;
+   gap: var(--spacing-3);
    width: 100%;
-   font-size: var(--font-size-h4);
-   font-weight: var(--font-weight-heading);
-   color: var(--color-15);
-   padding: var(--spacing-2) 0;
+}
+
+.home-cards-problems-container .home-card-problem,
+.home-cards-problems-container .home-card-harassment {
+   width: 48%;
+   margin: 0 1%;
+}
+
+.problems-cards-row {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-start;
+   gap: var(--spacing-3);
+   width: 100%;
 }
 
 .home-cards-problems-container .home-card-problem,
@@ -286,8 +306,9 @@
    text-align: left;
 }
 
-/* Styles pour la troisième carte : Problème en ligne */
-.home-card-problem {
+/* Styles communs pour les cartes de problèmes */
+.home-card-problem,
+.home-card-harassment {
    display: flex;
    flex-direction: column;
    gap: 12px;
@@ -295,18 +316,23 @@
    height: 212px;
    cursor: pointer;
    transition: transform 0.2s ease-in-out;
+   flex: 1;
+   max-width: 200px;
 }
 
-.home-card-problem:hover {
+.home-card-problem:hover,
+.home-card-harassment:hover {
    transform: translateY(-2px);
 }
 
-.home-card-problem:focus {
+.home-card-problem:focus,
+.home-card-harassment:focus {
    outline: 2px solid var(--color-primary-500);
    outline-offset: 2px;
 }
 
-.home-card-problem__title {
+.home-card-problem__title,
+.home-card-harassment__title {
    font-family: var(--heading-font-family);
    font-weight: 500;
    font-size: 20px;
@@ -317,19 +343,25 @@
    padding: 0;
 }
 
-.home-card-problem__main {
+.home-card-problem__main,
+.home-card-harassment__main {
    background: var(--background-4);
    border: 2px solid var(--background-4);
    border-radius: 16px;
    padding: 4px;
    transition: box-shadow 0.2s ease-in-out;
+   width: 177px;
+   height: 212px;
+   box-sizing: border-box;
 }
 
-.home-card-problem:hover .home-card-problem__main {
+.home-card-problem:hover .home-card-problem__main,
+.home-card-harassment:hover .home-card-harassment__main {
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.home-card-problem__background {
+.home-card-problem__background,
+.home-card-harassment__background {
    background: var(--background-13);
    border-radius: 12px;
    padding: 6px 6px 16px 6px;
@@ -337,27 +369,85 @@
    display: flex;
    flex-direction: column;
    height: 100%;
-   overflow: hidden;
+   overflow: visible;
 }
 
-.home-card-problem__image-container {
+.home-card-problem__image-container,
+.home-card-harassment__image-container {
    position: relative;
    width: 100%;
    height: 60%;
    display: flex;
    align-items: center;
    justify-content: center;
+   overflow: visible;
 }
 
 .home-card-problem__image {
    position: absolute;
-   width: 89px;
-   height: 97px;
+   width: 155px !important;
+   height: 134px !important;
    opacity: 1;
    object-fit: contain;
    z-index: 2;
+   border-radius: var(--border-radius-2);
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
+.home-card-harassment__image {
+   position: absolute;
+   width: 160px !important;
+   height: 144px !important;
+   opacity: 1;
+   object-fit: contain;
+   z-index: 2;
+   border-radius: var(--border-radius-2);
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+/* Règles très spécifiques pour forcer la taille */
+.home-card-harassment .home-card-harassment__image,
+.home-cards-problems-container
+   .home-card-harassment
+   .home-card-harassment__image,
+.problems-cards-row .home-card-harassment .home-card-harassment__image {
+   width: 160px !important;
+   height: 144px !important;
+   max-width: 160px !important;
+   max-height: 144px !important;
+   min-width: 160px !important;
+   min-height: 144px !important;
+}
+
+.home-card-problem__text-content,
+.home-card-harassment__text-content {
+   position: absolute;
+   bottom: 16px;
+   left: 6px;
+   right: 6px;
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+}
+
+.home-card-problem__subtitle,
+.home-card-harassment__subtitle {
+   font-family: var(--heading-font-family);
+   font-weight: 500;
+   font-size: var(--font-size-h6);
+   line-height: 22.6px;
+   letter-spacing: 0%;
+   color: var(--color-15);
+   margin: 0;
+   padding: 0;
+   text-align: left;
+}
+
+/* Éléments décoratifs spécifiques */
 .home-card-problem__rectangle-137 {
    position: absolute;
    width: 50px;
@@ -380,114 +470,6 @@
    left: 10px;
 }
 
-.home-card-problem__text-content {
-   position: absolute;
-   bottom: 16px;
-   left: 6px;
-   right: 6px;
-   display: flex;
-   flex-direction: column;
-   gap: 4px;
-}
-
-.home-card-problem__subtitle {
-   font-family: var(--heading-font-family);
-   font-weight: 500;
-   font-size: 18px;
-   line-height: 22.6px;
-   letter-spacing: 0%;
-   color: var(--color-neutral-light-background-1);
-   margin: 0;
-   padding: 0;
-   text-align: left;
-}
-
-.home-card-problem__arrow {
-   position: absolute;
-   top: 50%;
-   right: 12px;
-   transform: translateY(-50%);
-   z-index: 3;
-}
-
-.home-card-problem__arrow-icon {
-   width: 16px;
-   height: 16px;
-   opacity: 0.7;
-}
-
-/* Styles pour la quatrième carte : Cyber-harcèlement */
-.home-card-harassment {
-   display: flex;
-   flex-direction: column;
-   gap: 12px;
-   width: 48%;
-   height: 212px;
-   cursor: pointer;
-   transition: transform 0.2s ease-in-out;
-}
-
-.home-card-harassment:hover {
-   transform: translateY(-2px);
-}
-
-.home-card-harassment:focus {
-   outline: 2px solid var(--color-primary-500);
-   outline-offset: 2px;
-}
-
-.home-card-harassment__title {
-   font-family: var(--heading-font-family);
-   font-weight: 500;
-   font-size: 20px;
-   line-height: 25px;
-   letter-spacing: 0%;
-   color: var(--color-15);
-   margin: 0;
-   padding: 0;
-}
-
-.home-card-harassment__main {
-   background: var(--background-4);
-   border: 2px solid var(--background-4);
-   border-radius: 16px;
-   padding: 4px;
-   transition: box-shadow 0.2s ease-in-out;
-}
-
-.home-card-harassment:hover .home-card-harassment__main {
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.home-card-harassment__background {
-   background: var(--background-13);
-   border-radius: 12px;
-   padding: 6px 6px 16px 6px;
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   height: 100%;
-   overflow: hidden;
-}
-
-.home-card-harassment__image-container {
-   position: relative;
-   width: 100%;
-   height: 60%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.home-card-harassment__image {
-   position: absolute;
-   width: 94px;
-   height: 112px;
-   opacity: 1;
-   object-fit: contain;
-   z-index: 2;
-}
-
 .home-card-harassment__union {
    position: absolute;
    width: 60px;
@@ -499,38 +481,54 @@
    right: 10px;
 }
 
-.home-card-harassment__text-content {
+/* Animation du fantôme */
+.ghost-animation-container {
    position: absolute;
-   bottom: 16px;
-   left: 6px;
-   right: 6px;
-   display: flex;
-   flex-direction: column;
-   gap: 4px;
-}
-
-.home-card-harassment__subtitle {
-   font-family: var(--heading-font-family);
-   font-weight: 500;
-   font-size: 18px;
-   line-height: 22.6px;
-   letter-spacing: 0%;
-   color: var(--color-neutral-light-background-1);
-   margin: 0;
-   padding: 0;
-   text-align: left;
-}
-
-.home-card-harassment__arrow {
-   position: absolute;
-   top: 50%;
-   right: 12px;
+   top: 60%;
+   right: -120px;
    transform: translateY(-50%);
-   z-index: 3;
+   width: 99px;
+   height: 138px;
+   z-index: 1000;
+   pointer-events: none;
+   -webkit-user-select: none;
+   user-select: none;
 }
 
-.home-card-harassment__arrow-icon {
-   width: 16px;
-   height: 16px;
-   opacity: 0.7;
+.home-card-anonym__wrapper {
+   position: relative;
+}
+
+.ghost-image {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   transition: opacity 0.3s ease-in-out;
+}
+
+.ghost-normal {
+   opacity: 1;
+}
+
+.ghost-wink-image {
+   opacity: 0;
+}
+
+.ghost-normal.ghost-wink {
+   opacity: 0;
+}
+
+.ghost-wink-image.ghost-wink {
+   opacity: 1;
+}
+
+/* Classes d'identification en anglais */
+.delete-content-card {
+   /* Carte pour effacer du contenu */
+}
+
+.harassment-card {
+   /* Carte pour le harcèlement */
 }
