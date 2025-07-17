@@ -1,0 +1,27 @@
+<svg width="50" height="49" viewBox="0 0 50 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-11.2915" y="-11.4502" width="72.3652" height="71.8183"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(5.96px);clip-path:url(#bgblur_0_6265_12460_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="11.9218">
+<rect x="-2.62586" y="14.164" width="42.0788" height="41.0127" rx="10.7864" transform="rotate(-23.7525 -2.62586 14.164)" fill="url(#paint0_radial_6265_12460)"/>
+<rect x="-2.62586" y="14.164" width="42.0788" height="41.0127" rx="10.7864" transform="rotate(-23.7525 -2.62586 14.164)" stroke="url(#paint1_radial_6265_12460)" stroke-width="0.567707"/>
+<rect x="-2.62586" y="14.164" width="42.0788" height="41.0127" rx="10.7864" transform="rotate(-23.7525 -2.62586 14.164)" stroke="url(#paint2_radial_6265_12460)" stroke-width="0.567707"/>
+<rect x="-2.62586" y="14.164" width="42.0788" height="41.0127" rx="10.7864" transform="rotate(-23.7525 -2.62586 14.164)" stroke="url(#paint3_linear_6265_12460)" stroke-width="0.567707"/>
+</g>
+<defs>
+<clipPath id="bgblur_0_6265_12460_clip_path" transform="translate(11.2915 11.4502)"><rect x="-2.62586" y="14.164" width="42.0788" height="41.0127" rx="10.7864" transform="rotate(-23.7525 -2.62586 14.164)"/>
+</clipPath><radialGradient id="paint0_radial_6265_12460" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-2.6164 15.2557) rotate(43.3496) scale(57.2192 91.4098)">
+<stop stop-color="white" stop-opacity="0.4"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint1_radial_6265_12460" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-2.6164 15.2557) rotate(43.3496) scale(57.2192 91.4098)">
+<stop stop-color="#EFEFEF" stop-opacity="0"/>
+<stop offset="1" stop-color="#EFEFEF"/>
+</radialGradient>
+<radialGradient id="paint2_radial_6265_12460" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-2.41333 54.3275) rotate(-43.339) scale(56.93 90.8512)">
+<stop stop-color="#EFEFEF" stop-opacity="0"/>
+<stop offset="1" stop-color="#EFEFEF"/>
+</radialGradient>
+<linearGradient id="paint3_linear_6265_12460" x1="-2.21025" y1="15.1526" x2="46.7024" y2="38.0728" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.9"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

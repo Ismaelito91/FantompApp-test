@@ -10,6 +10,7 @@ import { ThemeService } from "../../service/theme.service";
 import { OnboardingService } from "../../service/onboarding.service";
 import { OnboardingComponent } from "./onboarding/onboarding.component";
 import { computed } from "@angular/core";
+import { HomeCardComponent } from "./home-card/home-card.component";
 
 @Component({
    selector: "app-home",
@@ -21,7 +22,7 @@ import { computed } from "@angular/core";
       MatButtonModule,
       MatIconModule,
       RouterModule,
-      OnboardingComponent,
+      HomeCardComponent,
    ],
    templateUrl: "./home.component.html",
    styleUrls: ["./home.component.scss"],

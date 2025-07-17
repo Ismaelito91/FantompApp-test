@@ -1,0 +1,155 @@
+<div class="home-cards-container">
+   <!-- Titre principal -->
+   <h5 class="home-cards__main-title">Je protège mes réseaux sociaux</h5>
+
+   <!-- Première carte : Mot de passe -->
+   <div
+      class="home-card"
+      role="button"
+      tabindex="0"
+      (click)="navigateToTools()"
+      (keydown)="onKeyDown($event)"
+   >
+      <div class="home-card__wrapper">
+         <div class="home-card__content">
+            <div class="home-card__row">
+               <div class="home-card__image-container">
+                  <img
+                     src="assets/images/password-img.svg"
+                     alt="Image de mot de passe"
+                     class="home-card__image"
+                  />
+               </div>
+               <div class="home-card__text-content">
+                  <h3 class="home-card__subtitle">
+                     Je teste mon<br />
+                     mot de passe
+                  </h3>
+                  <p class="home-card__description">
+                     En combien de temps un cybercriminel le trouve ?
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Deuxième carte : Anonymisation -->
+   <div
+      class="home-card-anonym"
+      role="button"
+      tabindex="0"
+      (click)="navigateToTools()"
+      (keydown)="onKeyDown($event)"
+   >
+      <div class="home-card-anonym__wrapper">
+         <div class="home-card-anonym__content">
+            <div class="home-card-anonym__image-container">
+               <img
+                  src="assets/images/anonym-img.svg"
+                  alt="Image d'anonymisation"
+                  class="home-card-anonym__image"
+               />
+            </div>
+            <div class="home-card-anonym__text-content">
+               <h3 class="home-card-anonym__subtitle">
+                  J'anonymise<br />
+                  ma photo
+               </h3>
+               <p class="home-card-anonym__description">
+                  Flouter ma photo<br />
+                  de profil
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Section des cartes de problèmes - TEMPORAIREMENT COMMENTÉE -->
+   <!--
+   <div class="home-cards-problems-container">
+      <h5 class="home-cards__section-title">J'ai un problème en ligne</h5>
+
+      <div
+         class="home-card-problem"
+         role="button"
+         tabindex="0"
+         (click)="navigateToTools()"
+         (keydown)="onKeyDown($event)"
+      >
+         <div class="home-card-problem__main">
+            <div class="home-card-problem__background">
+               <div class="home-card-problem__image-container">
+                  <img
+                     src="assets/images/image-probleme.svg"
+                     alt="Image de problème"
+                     class="home-card-problem__image"
+                  />
+                  <img
+                     src="assets/images/Rectangle-137.svg"
+                     alt="Rectangle 137"
+                     class="home-card-problem__rectangle-137"
+                  />
+                  <img
+                     src="assets/images/Rectangle-136.svg"
+                     alt="Rectangle 136"
+                     class="home-card-problem__rectangle-136"
+                  />
+               </div>
+               <div class="home-card-problem__text-content">
+                  <h3 class="home-card-problem__subtitle">
+                     Je veux effacer<br />
+                     un contenu
+                  </h3>
+               </div>
+               <div class="home-card-problem__arrow">
+                  <img
+                     src="assets/images/chevron16x16-icon.svg"
+                     alt="Flèche"
+                     class="home-card-problem__arrow-icon"
+                  />
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div
+         class="home-card-harassment"
+         role="button"
+         tabindex="0"
+         (click)="navigateToTools()"
+         (keydown)="onKeyDown($event)"
+      >
+         <div class="home-card-harassment__main">
+            <div class="home-card-harassment__background">
+               <div class="home-card-harassment__image-container">
+                  <img
+                     src="assets/images/harcelement.svg"
+                     alt="Image de harcèlement"
+                     class="home-card-harassment__image"
+                  />
+                  <img
+                     src="assets/images/Union.svg"
+                     alt="Union"
+                     class="home-card-harassment__union"
+                  />
+               </div>
+               <div class="home-card-harassment__text-content">
+                  <h3 class="home-card-harassment__subtitle">
+                     Je vis du cyber-<br />
+                     harcèlement
+                  </h3>
+               </div>
+               <div class="home-card-harassment__arrow">
+                  <img
+                     src="assets/images/chevron16x16-icon.svg"
+                     alt="Flèche"
+                     class="home-card-harassment__arrow-icon"
+                  />
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   -->
+</div>
