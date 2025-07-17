@@ -267,10 +267,10 @@ button.skip-button {
    }
 }
 .bubble-content {
-   background: var(--color-15);
+   background: var(--background-4);
    border-radius: var(--border-radius-2);
    padding: 24px 16px;
-   color: var(--color-3);
+   color: var(--color-19);
    font-family: var(--body-font-family);
    width: 100%;
    box-sizing: border-box;
@@ -284,7 +284,7 @@ button.skip-button {
    height: 0;
    border-left: 8px solid transparent;
    border-right: 8px solid transparent;
-   border-top: 8px solid var(--color-15);
+   border-top: 8px solid var(--background-4);
 }
 .welcome-bubble {
    margin-left: 16px;
@@ -353,7 +353,7 @@ button.skip-button {
 }
 .welcome-text {
    font-size: var(--font-size-body-md);
-   color: var(--color-3);
+   color: var(--color-19);
    text-align: center;
 }
 .app-branding {
@@ -388,7 +388,7 @@ button.skip-button {
    }
    p {
       font-size: var(--font-size-body-md);
-      color: var(--color-3);
+      color: var(--color-19);
       margin: 0;
       font-weight: var(--font-weight-body);
       font-family: var(--body-font-family);
@@ -526,10 +526,10 @@ button.skip-button {
       gap: var(--spacing-2);
       z-index: 9999;
       .bubble-content {
-         background: var(--color-15);
+         background: var(--background-4);
          border-radius: var(--border-radius-2);
          padding: var(--spacing-3) var(--spacing-4);
-         color: var(--color-3);
+         color: var(--color-19);
          font-family: var(--body-font-family);
          width: 100%;
          height: 100%;
@@ -548,7 +548,7 @@ button.skip-button {
          height: 0;
          border-left: clamp(6px, 1.5vw, 8px) solid transparent;
          border-right: clamp(6px, 1.5vw, 8px) solid transparent;
-         border-top: clamp(6px, 1.5vw, 8px) solid var(--color-15);
+         border-top: clamp(6px, 1.5vw, 8px) solid var(--background-4);
       }
    }
    .sad-ghost-wrapper {
@@ -654,7 +654,7 @@ button.skip-button {
       gap: var(--spacing-2);
       z-index: 9999;
       .bubble-content {
-         background: var(--color-15);
+         background: var(--background-4);
          border-radius: var(--border-radius-2);
          padding: var(--spacing-3) var(--spacing-4);
          color: var(--color-3);
@@ -676,7 +676,7 @@ button.skip-button {
          height: 0;
          border-left: clamp(6px, 1.5vw, 8px) solid transparent;
          border-right: clamp(6px, 1.5vw, 8px) solid transparent;
-         border-top: clamp(6px, 1.5vw, 8px) solid var(--color-15);
+         border-top: clamp(6px, 1.5vw, 8px) solid var(--background-4);
       }
    }
    .sad-ghost-wrapper {
@@ -782,7 +782,7 @@ button.skip-button {
       gap: var(--spacing-2);
       z-index: 9999;
       .bubble-content {
-         background: var(--color-15);
+         background: var(--background-4);
          border-radius: var(--border-radius-2);
          padding: var(--spacing-3) var(--spacing-4);
          color: var(--color-3);
@@ -804,7 +804,7 @@ button.skip-button {
          height: 0;
          border-left: clamp(6px, 1.5vw, 8px) solid transparent;
          border-right: clamp(6px, 1.5vw, 8px) solid transparent;
-         border-top: clamp(6px, 1.5vw, 8px) solid var(--color-15);
+         border-top: clamp(6px, 1.5vw, 8px) solid var(--background-4);
       }
    }
    .sad-ghost-wrapper {
@@ -990,17 +990,17 @@ button.skip-button {
    .onboarding-overlay {
       background: linear-gradient(
          180deg,
-         var(--color-15) 0%,
-         var(--color-15) 44.93%,
-         var(--color-15) 100%
+         var(--background-4) 0%,
+         var(--background-4) 44.93%,
+         var(--background-4) 100%
       );
    }
    .bubble-content {
-      background: var(--color-15);
+      background: var(--background-4);
       color: var(--color-neutral-light-background-1);
    }
    .bubble-arrow {
-      border-top-color: var(--color-15);
+      border-top-color: var(--background-4);
    }
    .start-button.next-button {
       background: var(--background-16) !important;
@@ -1039,11 +1039,11 @@ button.skip-button {
    }
    .problem-bubble {
       .bubble-content {
-         background: var(--color-15) !important;
+         background: var(--background-4) !important;
          color: var(--color-neutral-light-background-1) !important;
       }
       .bubble-arrow {
-         border-top-color: var(--color-15) !important;
+         border-top-color: var(--background-4) !important;
       }
       .problem-title {
          color: var(--color-neutral-light-background-1) !important;
@@ -1158,7 +1158,7 @@ button.bubble-next-button .arrow-icon,
       z-index: 9999;
 
       .bubble-content {
-         background: var(--color-15);
+         background: var(--background-4);
          border-radius: var(--border-radius-2);
          padding: var(--spacing-3) var(--spacing-4);
          color: var(--color-3);
@@ -1181,7 +1181,7 @@ button.bubble-next-button .arrow-icon,
          height: 0;
          border-left: clamp(6px, 1.5vw, 8px) solid transparent;
          border-right: clamp(6px, 1.5vw, 8px) solid transparent;
-         border-top: clamp(6px, 1.5vw, 8px) solid var(--color-15);
+         border-top: clamp(6px, 1.5vw, 8px) solid var(--background-4);
       }
    }
 
@@ -1291,7 +1291,7 @@ button.bubble-next-button .arrow-icon,
       gap: var(--spacing-2);
       z-index: 9999;
       .bubble-content {
-         background: var(--color-15);
+         background: var(--background-4);
          border-radius: var(--border-radius-2);
          padding: var(--spacing-3) var(--spacing-4);
          color: var(--color-3);
@@ -1313,7 +1313,7 @@ button.bubble-next-button .arrow-icon,
          height: 0;
          border-left: clamp(6px, 1.5vw, 8px) solid transparent;
          border-right: clamp(6px, 1.5vw, 8px) solid transparent;
-         border-top: clamp(6px, 1.5vw, 8px) solid var(--color-15);
+         border-top: clamp(6px, 1.5vw, 8px) solid var(--background-4);
       }
    }
    .sad-ghost-wrapper {
@@ -1419,7 +1419,7 @@ button.bubble-next-button .arrow-icon,
       gap: var(--spacing-2);
       z-index: 9999;
       .bubble-content {
-         background: var(--color-15);
+         background: var(--background-4);
          border-radius: var(--border-radius-2);
          padding: var(--spacing-3) var(--spacing-4);
          color: var(--color-3);
@@ -1441,7 +1441,7 @@ button.bubble-next-button .arrow-icon,
          height: 0;
          border-left: clamp(6px, 1.5vw, 8px) solid transparent;
          border-right: clamp(6px, 1.5vw, 8px) solid transparent;
-         border-top: clamp(6px, 1.5vw, 8px) solid var(--color-15);
+         border-top: clamp(6px, 1.5vw, 8px) solid var(--background-4);
       }
    }
    .sad-ghost-wrapper {
@@ -1627,17 +1627,17 @@ button.bubble-next-button .arrow-icon,
    .onboarding-overlay {
       background: linear-gradient(
          180deg,
-         var(--color-15) 0%,
-         var(--color-15) 44.93%,
-         var(--color-15) 100%
+         var(--background-4) 0%,
+         var(--background-4) 44.93%,
+         var(--background-4) 100%
       );
    }
    .bubble-content {
-      background: var(--color-15);
+      background: var(--background-4);
       color: var(--color-neutral-light-background-1);
    }
    .bubble-arrow {
-      border-top-color: var(--color-15);
+      border-top-color: var(--background-4);
    }
    .start-button.next-button {
       background: var(--background-16) !important;
@@ -1676,11 +1676,11 @@ button.bubble-next-button .arrow-icon,
    }
    .problem-bubble {
       .bubble-content {
-         background: var(--color-15) !important;
+         background: var(--background-4) !important;
          color: var(--color-neutral-light-background-1) !important;
       }
       .bubble-arrow {
-         border-top-color: var(--color-15) !important;
+         border-top-color: var(--background-4) !important;
       }
       .problem-title {
          color: var(--color-neutral-light-background-1) !important;
