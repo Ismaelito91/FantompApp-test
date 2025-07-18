@@ -290,6 +290,11 @@ button.skip-button {
    margin-left: 16px;
    margin-right: 60.95px;
    max-width: calc(100% - 16px - 60.95px);
+
+   .bubble-content {
+      border-radius: var(--border-radius-5);
+      padding: var(--spacing-2) var(--spacing-2);
+   }
    @media (max-width: 480px) {
       margin-left: 16px;
       margin-right: 60.95px;
@@ -374,17 +379,20 @@ button.skip-button {
    font-size: var(--font-size-h4);
    margin-left: var(--spacing-1);
 }
+
 .explanation-bubble {
-   margin-left: 20px;
-   margin-right: 16px;
-   margin-top: 16px;
-   width: calc(100% - 32px);
-   height: 136px;
+   margin-left: var(--spacing-2);
+   margin-right: var(--spacing-2);
+   margin-top: var(--spacing-2);
+   width: 326px;
+   height: 88px;
+
    .bubble-content {
       height: 100%;
       display: flex;
       align-items: center;
-      padding: 24px 16px;
+      padding: var(--spacing-3) var(--spacing-2);
+      border-radius: var(--border-radius-3);
    }
    p {
       font-size: var(--font-size-body-md);
