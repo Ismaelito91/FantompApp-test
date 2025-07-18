@@ -505,23 +505,59 @@
    left: 0;
    width: 100%;
    height: 100%;
-   transition: opacity 0.3s ease-in-out;
+}
+
+/* Animation CSS pour le fantôme */
+
+/* Animation d'entrée : apparition depuis la droite avec rotation */
+@keyframes ghost-entrance {
+   0% {
+      transform: translateX(217px) translateY(-30px) rotate(30deg);
+      opacity: 0;
+   }
+   100% {
+      transform: translateX(0px) translateY(0px) rotate(0deg);
+      opacity: 1;
+   }
+}
+
+@keyframes ghost-visible {
+   0% {
+      opacity: 0; 
+   }
+   100% {
+      opacity: 1;
+   }
+}
+@keyframes ghost-invisible {
+   0% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
 }
 
 .ghost-normal {
-   opacity: 1;
+   opacity: 0;
+   /* Animation d'entrée puis animation de clignotement */
+   animation: 
+      ghost-entrance 0.2s ease-out forwards 0.8s,
+      ghost-invisible 100ms ease-out forwards 1.6s,
+      ghost-visible 50ms ease-out forwards 1.7s;
+      // ghost-invisible 2000ms ease-out infinite 1.6s,
+      // ghost-visible 2000ms ease-out infinite 2.6s;
 }
 
 .ghost-wink-image {
    opacity: 0;
-}
-
-.ghost-normal.ghost-wink {
-   opacity: 0;
-}
-
-.ghost-wink-image.ghost-wink {
-   opacity: 1;
+   /* animation de clignotement */
+   animation: 
+      //ghost-blink-wink 6s ease-in-out infinite 1.5s
+      ghost-visible 100ms ease-out forwards 1.6s,
+      ghost-invisible 50ms ease-out forwards 1.7s;
+      // ghost-visible 2000ms ease-out infinite 1.6s,
+      // ghost-invisible 2000ms ease-out infinite 2.6s;
 }
 
 /* Classes d'identification en anglais */

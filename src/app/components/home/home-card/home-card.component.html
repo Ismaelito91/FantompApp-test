@@ -66,16 +66,24 @@
          <!-- Fantôme animé -->
          <div class="ghost-animation-container">
             <img
-               src="assets/images/Switch-not-wink.svg"
+               src="assets/images/Switch-not-wink-light.svg"
                alt="Fantôme"
-               class="ghost-image ghost-normal"
-               [class.ghost-wink]="showWink"
+               class="ghost-image ghost-normal only-on-light"
             />
             <img
-               src="assets/images/Switch -wink.svg"
+               src="assets/images/Switch-wink-light.svg"
                alt="Fantôme qui cligne"
-               class="ghost-image ghost-wink-image"
-               [class.ghost-wink]="showWink"
+               class="ghost-image ghost-wink-image only-on-light"
+            />
+            <img
+               src="assets/images/Switch-not-wink-dark.svg"
+               alt="Fantôme"
+               class="ghost-image ghost-normal only-on-dark"
+            />
+            <img
+               src="assets/images/Switch-wink-dark.svg"
+               alt="Fantôme qui cligne"
+               class="ghost-image ghost-wink-image only-on-dark"
             />
          </div>
       </div>
