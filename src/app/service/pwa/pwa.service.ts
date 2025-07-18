@@ -57,17 +57,20 @@ export class PwaService {
   }
 
   promptUserUpdate(): void {
-    console.log('updating to new version');
     this.swUpdate.activateUpdate().then(() => {
-      const dialogRef = this._dialog.open(PwaPromptUpdateComponent, {
-        width: '500px'
-      });
-      dialogRef.afterClosed().subscribe((result: any) => {
-        if (result) {
-          this.appUpdateAvailable$.next(false);
-          window.location.reload();
-        }
-      });
+      console.log('updating to new version');
+      // on ne demande plus l'avis de l'utilisateur, on update quoi qu'il arrive
+      // const dialogRef = this._dialog.open(PwaPromptUpdateComponent, {
+      //   width: '500px'
+      // });
+      // dialogRef.afterClosed().subscribe((result: any) => {
+      //   if (result) {
+      //     this.appUpdateAvailable$.next(false);
+      //     window.location.reload();
+      //   }
+      // });
+      this.appUpdateAvailable$.next(false);
+      window.location.reload();
     });
   }
 
