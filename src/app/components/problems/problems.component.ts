@@ -1,7 +1,7 @@
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 import { ComponentStatus } from '../../model/enum/component-status.enum';
 import { ComponentType } from '../../model/enum/component-type.enum';
@@ -28,6 +28,7 @@ export class ProblemsComponent implements OnInit, OnDestroy {
 
    private readonly pageComponentService = inject(PageComponentService);
    private readonly router = inject(Router);
+   private readonly route = inject(ActivatedRoute);
    private sub!: Subscription;
    private problemId = signal<number | null>(null);
    rootPage = signal<PageComponentModel>({ id: 0, translations: [], children: [] });
@@ -36,20 +37,10 @@ export class ProblemsComponent implements OnInit, OnDestroy {
    ComponentStatus = ComponentStatus;
    ngOnInit(): void {
       this.loadRootPage();
-      // TODO set the problemId to the current problem id
-
       this.sub = this.router.events
          .pipe(filter(event => event instanceof NavigationEnd))
          .subscribe((event: NavigationEnd) => {
-            const problemIdUrl = event.urlAfterRedirects.split('/')[2];
-            if (!Number.isNaN(parseInt(problemIdUrl))) {
-               this.problemId.set(parseInt(problemIdUrl));
-            } else {
-               this.problemId.set(null);
-            }
-
-            // this.page.set(this.findItemById(this.rootPage(), this.problemId()));
-            this.page.set(this.findNextById(this.rootPage(), this.problemId()));
+            this.loadProblem();
          });
    }
 
@@ -57,17 +48,34 @@ export class ProblemsComponent implements OnInit, OnDestroy {
       this.sub.unsubscribe();
    }
 
+   private loadProblem() {
+      const problemIdUrl = this.route.firstChild?.snapshot.params['id'];
+         if (!Number.isNaN(parseInt(problemIdUrl))) {
+            this.problemId.set(parseInt(problemIdUrl));
+         } else {
+            this.problemId.set(null);
+         }
+
+         // this.page.set(this.findItemById(this.rootPage(), this.problemId()));
+         this.page.set(this.findNextById(this.rootPage(), this.problemId()));
+   }
+
    private loadRootPage(): void {
       this.pageComponentService.getRootPageComponentsBySectionId(1).subscribe({
          next: (data) => {
             this.rootPage.set(data);
             this.page.set(data);
+            this.loadProblem();
          },
          error: (err) => console.error('Erreur lors du chargement des problèmes', err)
       });
    }
 
    findNextById(item: PageComponentModel, id: number | null): PageComponentModel | null {
+      if (!id) {
+         return item;
+      }
+
       if (item.next && item.next.id === id) {
          return item.next;
       }

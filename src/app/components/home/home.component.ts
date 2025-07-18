@@ -118,8 +118,7 @@ export class HomeComponent {
    }
 
    navigateToTutorial(): void {
-      // TODO: Implémenter la navigation vers le tutoriel
       console.log("Navigation vers le tutoriel");
-      // this.router.navigate(['/tutorial']);
+      this.onboardingService.showOnboarding();
    }
 }

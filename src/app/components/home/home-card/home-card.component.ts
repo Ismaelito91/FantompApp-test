@@ -1,6 +1,7 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from "@angular/core";
+import { Component, OnInit, OnDestroy, AfterViewInit, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
+import { PageComponentService } from "../../../service/page-component.service";
 
 @Component({
    selector: "app-home-card",
@@ -10,13 +11,20 @@ import { Router } from "@angular/router";
    styleUrls: ["./home-card.component.scss"],
 })
 export class HomeCardComponent implements OnInit, OnDestroy, AfterViewInit {
+   private pageComponentService = inject(PageComponentService);
    showWink = false;
    private animationTimeouts: number[] = [];
+   private homePageLinkIds: Map<string, number> = new Map();
 
    constructor(private router: Router) {}
 
    ngOnInit(): void {
       // Initialisation de base
+      this.pageComponentService.getHomePageLinkIds().subscribe({
+         next: (data) => {
+            this.homePageLinkIds = new Map(Object.entries(data));
+         }
+      });
    }
 
    ngAfterViewInit(): void {
@@ -67,8 +75,8 @@ export class HomeCardComponent implements OnInit, OnDestroy, AfterViewInit {
       this.router.navigate(["/tools"]);
    }
 
-   navigateToProblems(): void {
-      this.router.navigate(["/problems"]);
+   navigateToHarassment(): void {
+      this.router.navigate(["/problems/" + this.homePageLinkIds.get("3.3_cyberharcelement") || ""]);
    }
 
    onKeyDown(event: KeyboardEvent): void {
@@ -78,10 +86,10 @@ export class HomeCardComponent implements OnInit, OnDestroy, AfterViewInit {
       }
    }
 
-   onKeyDownProblems(event: KeyboardEvent): void {
+   onKeyDownHarassment(event: KeyboardEvent): void {
       if (event.key === "Enter" || event.key === " ") {
          event.preventDefault();
-         this.navigateToProblems();
+         this.navigateToHarassment();
       }
    }
 }

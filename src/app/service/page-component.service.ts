@@ -15,4 +15,11 @@ export class PageComponentService {
    getRootPageComponentsBySectionId(sectionId: number) {
       return this._http.get<PageComponentModel>(`api/public/page-components/section/${sectionId}/root`);
    }
+
+   // getPageComponentsBySectionId(sectionId: number) {
+   //    return this._http.get<PageComponentModel[]>(`api/public/page-components/section/${sectionId}`);
+   // }
+   getHomePageLinkIds() {
+      return this._http.get<Map<string, number>>(`api/public/page-components/home-page-link-ids`);
+   }
 }
