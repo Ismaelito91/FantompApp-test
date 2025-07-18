@@ -64,28 +64,45 @@
          </div>
 
          <!-- Fantôme animé -->
+         @if (shouldPlayGhostAnimation()) {
          <div class="ghost-animation-container">
             <img
                src="assets/images/Switch-not-wink-light.svg"
-               alt="Fantôme"
+               alt=""
                class="ghost-image ghost-normal only-on-light"
+               (animationend)="onGhostAnimationEnd()"
             />
             <img
                src="assets/images/Switch-wink-light.svg"
-               alt="Fantôme qui cligne"
+               alt=""
                class="ghost-image ghost-wink-image only-on-light"
             />
             <img
                src="assets/images/Switch-not-wink-dark.svg"
-               alt="Fantôme"
+               alt=""
                class="ghost-image ghost-normal only-on-dark"
+               (animationend)="onGhostAnimationEnd()"
             />
             <img
                src="assets/images/Switch-wink-dark.svg"
-               alt="Fantôme qui cligne"
+               alt=""
                class="ghost-image ghost-wink-image only-on-dark"
             />
          </div>
+         } @else {
+            <div class="ghost-animation-container">
+               <img
+                  src="assets/images/Switch-not-wink-light.svg"
+                  alt=""
+                  class="ghost-image only-on-light"
+               />
+               <img
+                  src="assets/images/Switch-not-wink-dark.svg"
+                  alt=""
+                  class="ghost-image only-on-dark"
+               />
+            </div>
+         }
       </div>
    </div>
 

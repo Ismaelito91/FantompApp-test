@@ -48,7 +48,9 @@ export class AppComponent implements OnInit {
       // Il est déjà injecté et s'initialise automatiquement
 
       //initialisation du service PWA
-      this.pwaService.initPwaPrompt();
+
+      // on ne demande plus l'installation de l'app, qui perturbe les animations
+      //this.pwaService.initPwaPrompt();
       this.pwaService.checkForUpdates();
 
       // Initialisation du service onboarding

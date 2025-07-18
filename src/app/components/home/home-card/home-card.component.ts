@@ -1,7 +1,8 @@
-import { Component, OnInit, inject } from "@angular/core";
+import { Component, OnInit, computed, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
 import { PageComponentService } from "../../../service/page-component.service";
+import { GhostAnimationService } from "../../../service/ghost-animation.service";
 
 @Component({
    selector: "app-home-card",
@@ -12,7 +13,9 @@ import { PageComponentService } from "../../../service/page-component.service";
 })
 export class HomeCardComponent implements OnInit {
    private pageComponentService = inject(PageComponentService);
+   private ghostAnimationService = inject(GhostAnimationService);
    private homePageLinkIds: Map<string, number> = new Map();
+   shouldPlayGhostAnimation = computed(() => this.ghostAnimationService.shouldPlayGhostAnimation());
 
    constructor(private router: Router) {}
 
@@ -45,5 +48,12 @@ export class HomeCardComponent implements OnInit {
          event.preventDefault();
          this.navigateToHarassment();
       }
+   }
+
+   /**
+    * Désactive l'animation du fantôme quand elle se termine
+    */
+   onGhostAnimationEnd(): void {
+      this.ghostAnimationService.stopGhostAnimation();
    }
 }

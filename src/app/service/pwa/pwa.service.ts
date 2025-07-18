@@ -74,10 +74,6 @@ export class PwaService {
     });
   }
 
-  promptUserInstall() {
-    this.initPwaPrompt();
-  }
-
   public initPwaPrompt() {
     console.log("platform android : ", this.platform.ANDROID, "platform ios : ", this.platform.IOS);
     if (this.platform.ANDROID) {

@@ -23,6 +23,7 @@ import {
 import { OnboardingService } from "../../../service/onboarding.service";
 import { Router } from "@angular/router";
 import { ThemeService } from "../../../service/theme.service";
+import { GhostAnimationService } from "../../../service/ghost-animation.service";
 // Interface pour les éléments d'onboarding
 interface OnboardingElement {
    id: string;
@@ -114,6 +115,7 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
    private cdr = inject(ChangeDetectorRef);
    private router = inject(Router);
    private themeService = inject(ThemeService);
+   private ghostAnimationService = inject(GhostAnimationService);
 
    // Signal pour l'étape actuelle
    currentStep = signal<number>(1);
@@ -231,6 +233,8 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
          this.onboardingService.deactivateSecureMyselfIcon();
          this.router.navigate(["/home"]);
          console.log("✅ Onboarding terminé, redirection vers /home");
+         // Déclencher l'animation du fantôme après un délai pour laisser la page se charger
+         this.ghostAnimationService.triggerGhostAnimation();
       }
    }
 

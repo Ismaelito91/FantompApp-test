@@ -12,6 +12,7 @@ import { Router } from "@angular/router";
 import { DOCUMENT } from "@angular/common";
 import { gsap } from "gsap";
 import { OnboardingService } from "../../service/onboarding.service";
+import { GhostAnimationService } from "../../service/ghost-animation.service";
 
 @Component({
    selector: "app-splash-screen",
@@ -24,6 +25,7 @@ export class SplashScreenComponent implements OnInit {
    @ViewChild("splashContainer", { static: true }) splashContainer!: ElementRef;
 
    private onboardingService = inject(OnboardingService);
+   private ghostAnimationService = inject(GhostAnimationService);
 
    constructor(
       private router: Router,
@@ -48,6 +50,8 @@ export class SplashScreenComponent implements OnInit {
                } else {
                   // Rediriger vers la page d'accueil normale
                   this.router.navigate(["/home"]);
+                  // Déclencher l'animation du fantôme après un délai pour laisser la page se charger
+                  this.ghostAnimationService.triggerGhostAnimation();
                }
             },
          });

@@ -543,8 +543,6 @@
    /* Animation d'entrée puis animation de clignotement */
    animation: 
       ghost-entrance 0.2s ease-out forwards 0.8s,
-      // ghost-invisible 100ms ease-out forwards 1.6s,
-      // ghost-visible 50ms ease-out forwards 1.7s;
       ghost-invisible 0ms ease-out forwards 1.6s,
       ghost-visible 0ms ease-out forwards 1.8s;
 }
@@ -553,8 +551,6 @@
    opacity: 0;
    /* animation de clignotement */
    animation: 
-      // ghost-visible 100ms ease-out forwards 1.6s,
-      // ghost-invisible 50ms ease-out forwards 1.7s;
       ghost-visible 0ms ease-out forwards 1.6s,
       ghost-invisible 0ms ease-out forwards 1.80s;
 }
