@@ -552,6 +552,14 @@ button.skip-button {
          border-right: 13.095px solid transparent;
          border-top: 19.99px solid var(--background-4);
       }
+
+      .bubble-next-button {
+         border-radius: var(--border-radius-5);
+         position: absolute;
+         bottom: var(--spacing-3);
+         right: var(--spacing-4);
+         margin-bottom: 15px;
+      }
    }
    .sad-ghost-wrapper {
       position: fixed;
@@ -679,6 +687,14 @@ button.skip-button {
          border-left: 13.095px solid transparent;
          border-right: 13.095px solid transparent;
          border-top: 19.99px solid var(--background-4);
+      }
+
+      .bubble-next-button {
+         border-radius: var(--border-radius-5);
+         position: absolute;
+         bottom: var(--spacing-3);
+         right: var(--spacing-4);
+         margin: 0;
       }
    }
    .sad-ghost-wrapper {
@@ -808,6 +824,14 @@ button.skip-button {
          border-right: 13.095px solid transparent;
          border-top: 19.99px solid var(--background-4);
       }
+
+      .bubble-next-button {
+         border-radius: var(--border-radius-5);
+         position: absolute;
+         bottom: var(--spacing-3);
+         right: var(--spacing-4);
+         margin: 0;
+      }
    }
    .sad-ghost-wrapper {
       position: fixed;
@@ -891,7 +915,7 @@ button.skip-button {
    width: 120px;
    height: 48px;
    background: var(--color-16);
-   border-radius: var(--border-radius-2);
+   border-radius: var(--border-radius-5);
    padding: var(--spacing-3) var(--spacing-5);
    color: var(--color-17);
    font-size: var(--font-size-body-md);
@@ -905,6 +929,7 @@ button.skip-button {
    transition: all 0.2s ease;
    margin: var(--spacing-2) 0 0 auto;
    box-shadow: 0px 6px 16px rgba(from var(--color-primary-500) r g b/0.25);
+   align-self: flex-end;
    &:hover {
       background: var(--color-16);
       transform: translateY(-3px);
