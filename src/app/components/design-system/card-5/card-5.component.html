@@ -7,17 +7,15 @@
       }
       <div class="card-children flex flex-col">
          @for (child of sortedChildren; track $index) {
-            @if (child.status === ComponentStatus.PUBLISHED) {
-               @switch (child.type) {
-                  @case (ComponentType.ENRICHED_LINK) {
-                     <app-enriched-link [data]="child"></app-enriched-link>
-                  }
-                  @case (ComponentType.TILE_CALL) {
-                     <app-tile-call [data]="child"></app-tile-call>
-                  }
-                  @case (ComponentType.TILE_MESSAGE) {
-                     <app-tile-message [data]="child"></app-tile-message>
-                  }
+            @switch (child.type) {
+               @case (ComponentType.ENRICHED_LINK) {
+                  <app-enriched-link [data]="child"></app-enriched-link>
+               }
+               @case (ComponentType.TILE_CALL) {
+                  <app-tile-call [data]="child"></app-tile-call>
+               }
+               @case (ComponentType.TILE_MESSAGE) {
+                  <app-tile-message [data]="child"></app-tile-message>
                }
             }
          }

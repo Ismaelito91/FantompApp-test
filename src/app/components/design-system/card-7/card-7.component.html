@@ -11,11 +11,9 @@
    </div>
    <div class="flex card-children">
       @for (child of sortedChildren; track $index) {
-         @if (child.status === ComponentStatus.PUBLISHED) {
-            @switch (child.type) {
-               @case (ComponentType.CARD_8) {
-                  <app-card-8 [data]="child"></app-card-8>
-               }
+         @switch (child.type) {
+            @case (ComponentType.CARD_8) {
+               <app-card-8 [data]="child"></app-card-8>
             }
          }
       }

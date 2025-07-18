@@ -10,41 +10,39 @@
    }
    <div class="problems-items-container flex flex-col">
       @for (problem of sortedChildren; track $index) {
-         @if (problem.status === ComponentStatus.PUBLISHED) {
-            @switch (problem.type) {
-               @case (ComponentType.CARD_1) {
-                  <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
-                     <app-card-1 [data]="problem"></app-card-1>
-                  </a>
-               }
-               @case (ComponentType.CARD_2) {
-                  <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
-                     <app-card-2 [data]="problem"></app-card-2>
-                  </a>
-               }
-               @case (ComponentType.CARD_3){
-                  <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
-                     <app-card-3 [data]="problem"></app-card-3>
-                  </a>
-               }
-               @case (ComponentType.CARD_4){
-                  <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
-                     <app-card-4 [data]="problem"></app-card-4>
-                  </a>
-               }
-               @case (ComponentType.CARD_5) {
-                  <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
-                     <app-card-5 [data]="problem"></app-card-5>
-                  </a>
-               }
-               @case (ComponentType.CARD_6) {
-                  <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
-                     <app-card-6 [data]="problem"></app-card-6>
-                  </a>
-               }
-               @case (ComponentType.DIVIDER) {
-                  <app-divider />
-               }
+         @switch (problem.type) {
+            @case (ComponentType.CARD_1) {
+               <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
+                  <app-card-1 [data]="problem"></app-card-1>
+               </a>
+            }
+            @case (ComponentType.CARD_2) {
+               <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
+                  <app-card-2 [data]="problem"></app-card-2>
+               </a>
+            }
+            @case (ComponentType.CARD_3){
+               <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
+                  <app-card-3 [data]="problem"></app-card-3>
+               </a>
+            }
+            @case (ComponentType.CARD_4){
+               <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
+                  <app-card-4 [data]="problem"></app-card-4>
+               </a>
+            }
+            @case (ComponentType.CARD_5) {
+               <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
+                  <app-card-5 [data]="problem"></app-card-5>
+               </a>
+            }
+            @case (ComponentType.CARD_6) {
+               <a [routerLink]="problem.next ? `/problems/${problem.next.id}` : null">
+                  <app-card-6 [data]="problem"></app-card-6>
+               </a>
+            }
+            @case (ComponentType.DIVIDER) {
+               <app-divider />
             }
          }
       }
