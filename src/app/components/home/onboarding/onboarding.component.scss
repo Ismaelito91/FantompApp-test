@@ -296,9 +296,6 @@ button.skip-button {
          max-height: 18px !important;
          object-fit: contain;
       }
-      .celebration {
-         font-size: var(--font-size-h5);
-      }
    }
    @media (max-width: 360px) {
       width: calc(100% - 95px);
@@ -319,9 +316,6 @@ button.skip-button {
          max-width: 112px !important;
          max-height: 18px !important;
          object-fit: contain;
-      }
-      .celebration {
-         font-size: var(--font-size-h3);
       }
    }
    @media (max-width: 320px) {
@@ -361,10 +355,6 @@ button.skip-button {
    max-height: 18px !important;
    object-fit: contain;
 }
-.celebration {
-   font-size: var(--font-size-h4);
-   margin-left: var(--spacing-0);
-}
 
 .explanation-bubble {
    margin-top: 0;
@@ -375,7 +365,7 @@ button.skip-button {
       display: flex;
       align-items: center;
       padding: 24px 16px;
-      border-radius: var(--border-radius-5);
+      border-radius: var(--border-radius-3);
    }
    p {
       font-size: var(--font-size-body-md);
@@ -822,7 +812,7 @@ button.skip-button {
          transform: translateX(-50%);
          border-left: 13.095px solid transparent;
          border-right: 13.095px solid transparent;
-         border-top: 19.99px solid var(--background-4);
+         border-top: 20.99px solid var(--background-4);
       }
 
       .bubble-next-button {
