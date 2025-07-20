@@ -553,9 +553,8 @@ button.skip-button {
    }
    .sad-ghost-wrapper {
       position: fixed;
-      width: 450px;
-      height: auto;
-      aspect-ratio: 254.49/352.52;
+      width: 399.95px;
+      height: 847px;
       top: 150px;
       left: 100px;
       z-index: 9997;
@@ -593,10 +592,10 @@ button.skip-button {
       display: none;
    }
    .step-two-skip {
-      position: fixed;
-      top: var(--spacing-5);
-      right: var(--spacing-5);
-      z-index: 10000;
+      position: absolute;
+      top: 73px;
+      right: 19px;
+      z-index: 10;
    }
    .highlight-problem {
       position: fixed;
@@ -729,10 +728,10 @@ button.skip-button {
       display: none;
    }
    .step-three-skip {
-      position: fixed;
-      top: var(--spacing-5);
-      right: var(--spacing-5);
-      z-index: 10000;
+      position: absolute;
+      top: 73px;
+      right: 19px;
+      z-index: 10;
    }
    .highlight-tools {
       position: fixed;
@@ -865,10 +864,10 @@ button.skip-button {
       display: none;
    }
    .step-four-skip {
-      position: fixed;
-      top: var(--spacing-5);
-      right: var(--spacing-5);
-      z-index: 10000;
+      position: absolute;
+      top: 73px;
+      right: 19px;
+      z-index: 10;
    }
    .highlight-settings {
       position: fixed;
