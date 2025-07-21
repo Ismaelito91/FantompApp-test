@@ -130,6 +130,10 @@ export class AppComponent implements OnInit {
             path: "assets/images/chevron16x16-icon.svg",
          },
          {
+            name: "chevron24x24-icon",
+            path: "assets/images/chevron24x24-icon.svg",
+         },
+         {
             name: "checkbox-unselected16x16-icon",
             path: "assets/images/checkbox-unselected16x16-icon.svg",
          },

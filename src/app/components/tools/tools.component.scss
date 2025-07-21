@@ -1,0 +1,56 @@
+.tools-container {
+   gap: var(--spacing-5);
+   padding: var(--spacing-3);
+}
+
+.tools-title {
+   padding-left: var(--spacing-3);
+}
+
+.tools-items {
+   gap: var(--spacing-5);
+}
+
+.tools-item {
+   padding: 22px 4px;
+   gap: 19px;
+   background-size: cover;
+   border: 4px solid var(--background-4);
+   border-radius: var(--border-radius-4);
+   box-shadow: var(--shadow-1);
+}
+
+#password-check-tool {
+   background-image: url('../../../assets/images/password-check-tool-bg.png');
+}
+
+#blur-image-tool {
+   background-image: url('../../../assets/images/blur-image-tool-bg.jpg');
+}
+
+#visibility-check-tool {
+   background-image: url('../../../assets/images/visibility-check-tool-bg.jpg');
+}
+
+.tools-item-body {
+   gap: var(--spacing-2);
+}
+
+.tools-item-img {
+   min-width: 116px;
+   max-width: 116px;
+   height: 92px;
+   object-fit: contain;
+}
+
+.tools-item-text {
+   gap: var(--spacing-1);
+}
+
+.tools-item-title {
+   color: var(--color-neutral-light-background-1);
+}
+
+.tools-item-description {
+   color: var(--color-neutral-light-background-3);
+}

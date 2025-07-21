@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { BlurEditorComponent } from './blur-editor/blur-editor.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
    selector: 'app-tools',
    standalone: true,
-   imports: [BlurEditorComponent],
+   imports: [MatIconModule],
    templateUrl: './tools.component.html',
    styleUrl: './tools.component.scss'
 })

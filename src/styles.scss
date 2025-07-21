@@ -6,8 +6,7 @@
 // Déclaration de la police Lexend (Variable Font) - Pour les titres
 @font-face {
    font-family: "Lexend";
-   src: url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf")
-      format("truetype-variations");
+   src: url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype-variations");
    font-weight: 100 900;
    font-style: normal;
    font-display: swap;
@@ -16,8 +15,7 @@
 // Déclaration de la police Nunito (Variable Font) - Pour le corps du texte
 @font-face {
    font-family: "Nunito";
-   src: url("assets/fonts/Nunito/Nunito-VariableFont_wght.ttf")
-      format("truetype-variations");
+   src: url("assets/fonts/Nunito/Nunito-VariableFont_wght.ttf") format("truetype-variations");
    font-weight: 100 900;
    font-style: normal;
    font-display: swap;
@@ -25,8 +23,7 @@
 
 @font-face {
    font-family: "Nunito";
-   src: url("assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf")
-      format("truetype-variations");
+   src: url("assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf") format("truetype-variations");
    font-weight: 100 900;
    font-style: italic;
    font-display: swap;
@@ -86,6 +83,23 @@
    --spacing-9: 56px;
    --spacing-10: 64px;
    --spacing-11: 72px;
+
+   // Ombres
+   --shadow-light-0:
+      0px 0px 0px 1px #625C700A,
+      0px 1px 1px -0.5px #16122114,
+      0px 3px 3px -1.5px #625C700A,
+      0px 6px 6px -3px #958FA30A,
+      0px 12px 12px -6px #625C700A;
+   --shadow-light-1:
+      0px 2px 6px 2px #00000026,
+      0px 1px 2px 0px #0000004D;
+   --shadow-dark-0:
+      0px 0px 0px 1px #291E430A,
+      0px 1px 1px -0.5px #140D2614,
+      0px 3px 3px -1.5px #291E430A,
+      0px 6px 6px -3px #291E430A,
+      0px 12px 12px -6px #291E430A;
 
    // Couleurs
    // Primary (Blue)
@@ -249,6 +263,8 @@
    --color-17: var(--color-neutral-light-background-3);
    --color-18: var(--color-neutral-light-background-1);
 
+   --shadow-1: var(--shadow-light-0);
+
    body {
       font-family: var(--body-font-family);
       font-weight: var(--font-weight-body);
@@ -309,25 +325,21 @@
       font-size: var(--font-size-h6);
       line-height: var(--line-height-h6);
    }
+
    .only-on-light {
       display: block;
-    }
-    
+   }
+
    .only-on-dark {
       display: none;
    }
 
    --swiper-pagination-bottom: 0;
 
-   @include mat.button-overrides(
-      (
-         text-label-text-font: var(--body-font-family),
-      )
-   );
+   @include mat.button-overrides((text-label-text-font: var(--body-font-family),
+      ));
 
-   @include mat.radio-overrides(
-      (
-         selected-focus-icon-color: var(--color-6),
+   @include mat.radio-overrides((selected-focus-icon-color: var(--color-6),
          selected-icon-color: var(--color-6),
          selected-hover-icon-color: var(--color-6),
          selected-pressed-icon-color: var(--color-6),
@@ -335,31 +347,24 @@
          unselected-icon-color: var(--color-7),
          unselected-hover-icon-color: var(--color-7),
          unselected-pressed-icon-color: var(--color-7),
-      )
-   );
+      ));
 
-   @include mat.divider-overrides(
-      (
-         color: var(--color-primary-100),
+   @include mat.divider-overrides((color: var(--color-primary-100),
          width: 2px,
-      )
-   );
+      ));
 
-   @include mat.fab-overrides(
-      (
-         container-shape: 50%,
+   @include mat.fab-overrides((container-shape: 50%,
          container-elevation-shadow: 0,
          container-color: var(--background-12),
-      )
-   );
+      ));
 }
 
 // Dark overrides
 :root.dark-theme {
    .only-on-dark {
       display: block;
-    }
-    
+   }
+
    .only-on-light {
       display: none;
    }
@@ -400,4 +405,6 @@
    --color-17: var(--color-neutral-light-background-3);
    --color-18: var(--color-primary-950);
    --color-19: var(--color-primary-300);
+
+   --shadow-1: var(--shadow-dark-0);
 }

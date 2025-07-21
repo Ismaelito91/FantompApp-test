@@ -1,1 +1,41 @@
-<app-blur-editor />
+<div class="tools-container flex flex-col">
+   <h1 class="tools-title">Outils</h1>
+   <div class="tools-items flex flex-col">
+      <div id="password-check-tool" class="tools-item flex justify-between items-center">
+         <div class="tools-item-body flex items-center">
+            <img src="assets/images/password-check-tool-img.png" alt="image" class="tools-item-img">
+            <div class="tools-item-text flex flex-col">
+               <h6 class="tools-item-title">Je teste mon mot de passe</h6>
+               <p class="tools-item-description">En combien de temps un cybercriminel le trouve ?</p>
+            </div>
+         </div>
+         <div>
+            <mat-icon svgIcon="chevron24x24-icon" class="!size-[24px]" style="color: var(--color-neutral-light-background-1);"></mat-icon>
+         </div>
+      </div>
+      <div id="blur-image-tool" class="tools-item flex justify-between items-center">
+         <div class="tools-item-body flex items-center">
+            <img src="assets/images/blur-image-tool-img.png" alt="image" class="tools-item-img">
+            <div class="tools-item-text flex flex-col">
+               <h6 class="tools-item-title">J'anonymise ma photo</h6>
+               <p class="tools-item-description">Flouter ma photo de profil</p>
+            </div>
+         </div>
+         <div>
+            <mat-icon svgIcon="chevron24x24-icon" class="!size-[24px]" style="color: var(--color-neutral-light-background-1);"></mat-icon>
+         </div>
+      </div>
+      <div id="visibility-check-tool" class="tools-item flex justify-between items-center">
+         <div class="tools-item-body flex items-center">
+            <img src="assets/images/visibility-check-tool-img.png" alt="image" class="tools-item-img">
+            <div class="tools-item-text flex flex-col">
+               <h6 class="tools-item-title">Je teste ma visibilité</h6>
+               <p class="tools-item-description">Que révèlent mon pseudo et ma bio ?</p>
+            </div>
+         </div>
+         <div>
+            <mat-icon svgIcon="chevron24x24-icon" class="!size-[24px]" style="color: var(--color-neutral-light-background-1);"></mat-icon>
+         </div>
+      </div>
+   </div>
+</div>
