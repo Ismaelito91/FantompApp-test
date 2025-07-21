@@ -555,9 +555,9 @@ button.skip-button {
       position: fixed;
       width: 254.49px;
       height: 352.52px;
-      margin-left: 150px;
-      margin-top: 145px;
-      z-index: 9997;
+      bottom: 300px;
+      left: 150px;
+      z-index: 99999;
       pointer-events: none;
       .ghost-character {
          width: 100%;
@@ -568,13 +568,8 @@ button.skip-button {
          transition: none;
       }
    }
-   .sad-ghost-wrapper.switch-triste-ghost {
-      top: 113.48px; /* 73px (bouton) + 40.48px (distance) */
-      z-index: 15000;
-   }
    .sad-ghost-wrapper.illu-onboarding-ghost {
-      top: 151px;
-      left: 16.45px;
+      top: 113.48px; /* 73px (bouton) + 40.48px (distance) */
       z-index: 15000;
    }
    .sad-ghost-wrapper.illu-onboarding-4-ghost {
@@ -639,7 +634,7 @@ button.skip-button {
    .no-blur {
       display: none !important;
    }
-   .problem-bubble {
+   .tools-bubble {
       position: fixed;
       width: calc(100vw - 16px);
       height: min(232px, 25vh);
@@ -676,7 +671,6 @@ button.skip-button {
          border-right: 13.095px solid transparent;
          border-top: 19.99px solid var(--background-4);
       }
-
       .bubble-next-button {
          border-radius: var(--border-radius-5);
          position: absolute;
@@ -685,22 +679,22 @@ button.skip-button {
          margin: 0;
       }
    }
-   .sad-ghost-wrapper.switch-triste-ghost {
-      position: fixed !important;
-      width: 254.49px !important;
-      height: 352.52px !important;
-      top: 113.48px !important; /* 73px (bouton) + 40.48px (distance) */
-      left: 70px !important;
-      z-index: 15000 !important;
-      pointer-events: none !important;
-      background: rgba(255, 0, 0, 0.3) !important; /* Debug visuel temporaire */
+   // Correction : styles spécifiques pour le fantôme "outils"
+   .sad-ghost-wrapper.illu-onboarding-ghost {
+      position: fixed;
+      width: 191px;
+      height: 351px;
+      top: 151px;
+      left: 110px;
+      z-index: 15000;
+      pointer-events: none;
       .ghost-character {
-         width: 100% !important;
-         height: 100% !important;
-         object-fit: contain !important;
-         animation: none !important;
-         transform: none !important;
-         transition: none !important;
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+         animation: none;
+         transform: none;
+         transition: none;
       }
    }
    &.element-hidden,
@@ -759,44 +753,6 @@ button.skip-button {
    }
    .no-blur {
       display: none !important;
-   }
-   .problem-bubble {
-      position: fixed;
-      width: calc(100vw - 16px);
-      height: min(232px, 25vh);
-      bottom: min(120px, 15vh);
-      left: 8px;
-      opacity: 1;
-      border-radius: var(--border-radius-2);
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-2);
-      z-index: 9999;
-      .bubble-content {
-         background: var(--background-4);
-         border-radius: var(--border-radius-2);
-         padding: var(--spacing-3) var(--spacing-4);
-         color: var(--color-3);
-         font-family: var(--body-font-family);
-         width: 100%;
-         height: 100%;
-         box-sizing: border-box;
-         position: relative;
-         display: flex;
-         flex-direction: column;
-         gap: var(--spacing-2);
-      }
-      .bubble-arrow {
-         position: absolute;
-         width: 0;
-         height: 0;
-         bottom: -19.99px;
-         left: 87.5%;
-         transform: translateX(-50%);
-         border-left: 13.095px solid transparent;
-         border-right: 13.095px solid transparent;
-         border-top: 20.99px solid var(--background-4);
-      }
 
       .bubble-next-button {
          border-radius: var(--border-radius-5);
@@ -807,10 +763,9 @@ button.skip-button {
       }
    }
    .sad-ghost-wrapper.illu-onboarding-ghost {
-      position: fixed;
+      position: absolute;
       width: 254.49px;
       height: 352.52px;
-      margin-top: 151px;
       left: 16.45px;
       z-index: 15000;
       pointer-events: none;
