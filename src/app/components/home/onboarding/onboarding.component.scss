@@ -1213,6 +1213,25 @@ button.bubble-next-button .arrow-icon,
       margin-bottom: 15px;
    }
 }
-.onboarding-step-four .sad-ghost-wrapper.illu-onboarding-4-ghost {
-   top: 270px !important;
+.onboarding-step-one .bubble-content::after {
+   left: 0%;
+   transform: translateX(-10%) rotate(-18deg);
+   border-left: 0px solid transparent;
+   border-right: 26.19px solid transparent;
+   border-top: 24px solid var(--background-4);
+   width: 36px;
+   height: 24px;
+   /* Effet visuel accentué */
+}
+.onboarding-step-one .speech-bubble .bubble-content::after {
+   left: 0;
+   bottom: -11px;
+   width: 22px;
+   height: 18px;
+   background: var(--background-4);
+   opacity: 1;
+   transform: rotate(18deg);
+   clip-path: polygon(0 0, 100% 0, 0 100%);
+   border-bottom-left-radius: 4px;
+   /* Flèche pivotée vers la gauche */
 }
