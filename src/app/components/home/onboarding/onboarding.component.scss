@@ -555,7 +555,7 @@ button.skip-button {
       position: fixed;
       width: 254.49px;
       height: 352.52px;
-      bottom: 300px;
+      bottom: 310px;
       left: 150px;
       z-index: 99999;
       pointer-events: none;
@@ -684,17 +684,46 @@ button.skip-button {
       position: fixed;
       width: 191px;
       height: 351px;
-      top: 151px;
-      left: 110px;
+      top: 160px;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 15000;
       pointer-events: none;
       .ghost-character {
          width: 100%;
          height: 100%;
          object-fit: contain;
-         animation: none;
-         transform: none;
-         transition: none;
+         animation: none !important;
+         transform: none !important;
+         transition: none !important;
+      }
+      @media (max-width: 480px) {
+         width: 191px;
+         height: 351px;
+         top: 160px;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+      @media (min-width: 481px) and (max-width: 768px) {
+         width: 191px;
+         height: 351px;
+         top: 160px;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+      @media (min-width: 769px) and (max-width: 1024px) {
+         width: 191px;
+         height: 351px;
+         top: 160px;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+      @media (min-width: 1025px) {
+         width: 191px;
+         height: 351px;
+         top: 160px;
+         left: 50%;
+         transform: translateX(-50%);
       }
    }
    &.element-hidden,
@@ -763,19 +792,20 @@ button.skip-button {
       }
    }
    .sad-ghost-wrapper.illu-onboarding-ghost {
-      position: absolute;
-      width: 254.49px;
-      height: 352.52px;
-      left: 16.45px;
+      position: fixed;
+      width: 258px;
+      height: 365px;
+      top: 113px;
+      left: 100px;
       z-index: 15000;
       pointer-events: none;
       .ghost-character {
          width: 100%;
          height: 100%;
          object-fit: contain;
-         animation: none !important;
-         transform: none !important;
-         transition: none !important;
+         animation: none;
+         transform: none;
+         transition: none;
       }
       @media (max-width: 320px) {
          width: 280px;
@@ -810,49 +840,34 @@ button.skip-button {
    }
    .sad-ghost-wrapper.illu-onboarding-4-ghost {
       position: fixed;
-      width: 254.49px;
-      height: 352.52px;
-      margin-top: 151px;
-      left: 16.45px;
+      width: 256px;
+      height: 365px;
+      top: 300px;
+      left: 11%;
       z-index: 15000;
       pointer-events: none;
       .ghost-character {
          width: 100%;
          height: 100%;
          object-fit: contain;
-         animation: none !important;
-         transform: none !important;
-         transition: none !important;
+         animation: none;
+         transform: none;
+         transition: none;
       }
-      @media (max-width: 320px) {
-         width: 280px;
-         height: 388px;
-         top: 300px;
-         left: 20px;
+      @media (max-width: 360px) {
+         width: 256px;
+         height: 365px;
+         top: 259px; // <-- spécifique petits écrans
+         left: 11%;
       }
-      @media (min-width: 321px) and (max-width: 360px) {
-         width: 300px;
-         height: 416px;
-         top: 300px;
-         left: 30px;
-      }
-      @media (min-width: 361px) and (max-width: 480px) {
-         width: 350px;
-         height: 485px;
-         top: 300px;
-         left: 65px;
-      }
-      @media (min-width: 481px) and (max-width: 768px) {
-         width: 400px;
-         height: 554px;
-         top: 300px;
-         left: 100px;
-      }
-      @media (min-width: 769px) and (max-width: 1024px) {
-         width: 450px;
-         height: 623px;
-         top: 300px;
-         left: 150px;
+      @media (min-width: 361px) and (max-width: 480px),
+         (min-width: 481px) and (max-width: 768px),
+         (min-width: 769px) and (max-width: 1024px),
+         (min-width: 1025px) {
+         width: 256px;
+         height: 365px;
+         top: 210px;
+         left: 11%;
       }
    }
    &.element-hidden,
@@ -1152,4 +1167,52 @@ button.bubble-next-button .arrow-icon,
       border-color: var(--color-primary-500);
       background: transparent;
    }
+}
+.settings-bubble {
+   position: fixed;
+   width: calc(100vw - 16px);
+   height: min(232px, 25vh);
+   bottom: min(120px, 15vh);
+   left: 8px;
+   opacity: 1;
+   border-radius: var(--border-radius-2);
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-2);
+   z-index: 9999;
+   .bubble-content {
+      background: var(--background-4);
+      border-radius: var(--border-radius-2);
+      padding: var(--spacing-3) var(--spacing-4);
+      color: var(--color-19);
+      font-family: var(--body-font-family);
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-2);
+   }
+   .bubble-arrow {
+      position: absolute;
+      width: 0;
+      height: 0;
+      bottom: -19.99px;
+      left: 87.5%;
+      transform: translateX(-50%);
+      border-left: 13.095px solid transparent;
+      border-right: 13.095px solid transparent;
+      border-top: 19.99px solid var(--background-4);
+   }
+   .bubble-next-button {
+      border-radius: var(--border-radius-5);
+      position: absolute;
+      bottom: var(--spacing-3);
+      right: var(--spacing-4);
+      margin-bottom: 15px;
+   }
+}
+.onboarding-step-four .sad-ghost-wrapper.illu-onboarding-4-ghost {
+   top: 270px !important;
 }
