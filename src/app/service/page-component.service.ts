@@ -1,6 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import PageComponentModel from "../model/page-component.model";
+import { Platform } from "@angular/cdk/platform";
+import { Device } from "../model/enum/device.enum";
 
 @Injectable({
    providedIn: 'root'
@@ -8,17 +10,24 @@ import PageComponentModel from "../model/page-component.model";
 export class PageComponentService {
 
    private readonly _http = inject(HttpClient);
+   private readonly platform = inject(Platform);
 
-   // getPageComponentsBySectionId(sectionId: number) {
-   //    return this._http.get<PageComponentModel[]>(`api/public/page-components/section/${sectionId}`);
-   // }
    getRootPageComponentsBySectionId(sectionId: number) {
-      return this._http.get<PageComponentModel>(`api/public/page-components/section/${sectionId}/root`);
+      const devicesHeader: Device[] = [];
+      if (this.platform.isBrowser) {
+         devicesHeader.push(Device.WEB);
+      }
+      if (this.platform.ANDROID) {
+         devicesHeader.push(Device.ANDROID);
+      }
+      if (this.platform.IOS) {
+         devicesHeader.push(Device.IOS);
+      }
+     
+      return this._http.get<PageComponentModel>(`api/public/page-components/section/${sectionId}/root`,
+         { headers: { 'X-Devices': devicesHeader } });
    }
 
-   // getPageComponentsBySectionId(sectionId: number) {
-   //    return this._http.get<PageComponentModel[]>(`api/public/page-components/section/${sectionId}`);
-   // }
    getHomePageLinkIds() {
       return this._http.get<Map<string, number>>(`api/public/page-components/home-page-link-ids`);
    }
