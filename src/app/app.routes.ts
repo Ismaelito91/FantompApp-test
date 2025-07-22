@@ -57,6 +57,7 @@ export const routes: Routes = [
             path: "visibility-check",
             component: VisibilityCheckComponent,
             pathMatch: "full",
+            data: { hideFooter: true },
          },
       ]
    },
@@ -82,11 +83,13 @@ export const routes: Routes = [
             path: ":id",
             component: ViewAllComponent,
             pathMatch: "full",
+            data: { hideFooter: true },
          },
          {
             path: ":id/steps",
             component: ViewStepsComponent,
             pathMatch: "full",
+            data: { hideFooter: true },
          },
       ],
    },

@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
@@ -11,6 +11,7 @@ import { LanguageService } from "./service/language.service";
 import { OnboardingService } from "./service/onboarding.service";
 import { PwaService } from "./service/pwa/pwa.service";
 import { SettingService } from "./service/setting.service";
+import { filter, map } from "rxjs";
 
 @Component({
    selector: "app-root",
@@ -27,15 +28,34 @@ import { SettingService } from "./service/setting.service";
    styleUrl: "./app.component.scss",
 })
 export class AppComponent implements OnInit {
-   private translateService = inject(TranslateService);
-   private languageService = inject(LanguageService);
    _settingService = inject(SettingService);
    _onboardingService = inject(OnboardingService);
+   private translateService = inject(TranslateService);
+   private languageService = inject(LanguageService);
    private matIconRegistry = inject(MatIconRegistry);
    private domSanitizer = inject(DomSanitizer);
    private pwaService = inject(PwaService);
+   private router = inject(Router);
+   private activatedRoute = inject(ActivatedRoute);
+   hideFooter = false;
 
    ngOnInit(): void {
+      // On écoute les changements de route pour activer/masquer le footer
+      this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        map(() => {
+          let route = this.activatedRoute.firstChild;
+          while (route?.firstChild) {
+            route = route.firstChild;
+          }
+          return route;
+        }),
+        filter(route => !!route),
+        map(route => route!.snapshot.data['hideFooter'] ?? false)
+      )
+      .subscribe(hide => this.hideFooter = hide);
+
       // Définir les langues disponibles
       const supportedLanguageCodes =
          this.languageService.supportedLanguages.map((lang) => lang.code);
