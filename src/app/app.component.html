@@ -1,6 +1,8 @@
 @switch (_settingService.appStatus()) {
    @case ("initialized") {
-      <app-header />
+      @if (!hideHeader) {
+         <app-header />
+      }
       <router-outlet />
       @if (!hideFooter) {
          <app-footer />

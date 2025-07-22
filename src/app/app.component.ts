@@ -37,24 +37,28 @@ export class AppComponent implements OnInit {
    private pwaService = inject(PwaService);
    private router = inject(Router);
    private activatedRoute = inject(ActivatedRoute);
+   hideHeader = false;
    hideFooter = false;
 
    ngOnInit(): void {
-      // On écoute les changements de route pour activer/masquer le footer
+      // On écoute les changements de route pour activer/masquer le header/footer
       this.router.events
-      .pipe(
-        filter(event => event instanceof NavigationEnd),
-        map(() => {
-          let route = this.activatedRoute.firstChild;
-          while (route?.firstChild) {
-            route = route.firstChild;
-          }
-          return route;
-        }),
-        filter(route => !!route),
-        map(route => route!.snapshot.data['hideFooter'] ?? false)
-      )
-      .subscribe(hide => this.hideFooter = hide);
+         .pipe(
+            filter(event => event instanceof NavigationEnd),
+            map(() => {
+               let route = this.activatedRoute.firstChild;
+               while (route?.firstChild) {
+                  route = route.firstChild;
+               }
+               return route;
+            }),
+            filter(route => !!route),
+            map(route => route!.snapshot.data)
+         )
+         .subscribe(data => {
+            this.hideFooter = data['hideFooter'] ?? false;
+            this.hideHeader = data['hideHeader'] ?? false;
+         });
 
       // Définir les langues disponibles
       const supportedLanguageCodes =

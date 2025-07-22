@@ -57,7 +57,7 @@ export const routes: Routes = [
             path: "visibility-check",
             component: VisibilityCheckComponent,
             pathMatch: "full",
-            data: { hideFooter: true },
+            data: { hideHeader: true, hideFooter: true },
          },
       ]
    },
