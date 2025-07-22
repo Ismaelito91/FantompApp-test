@@ -54,6 +54,9 @@ export class HomeCardComponent implements OnInit {
     * Désactive l'animation du fantôme quand elle se termine
     */
    onGhostAnimationEnd(): void {
-      this.ghostAnimationService.stopGhostAnimation();
+      // on met un timeout le temps de laisser la deuxième animation s'effectuer
+      setTimeout(() => {
+         this.ghostAnimationService.stopGhostAnimation();
+      }, 5000);
    }
 }
