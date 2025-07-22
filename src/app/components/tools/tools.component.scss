@@ -18,10 +18,30 @@
    border: 4px solid var(--background-4);
    border-radius: var(--border-radius-4);
    box-shadow: var(--shadow-1);
+   position: relative;
 }
 
 #password-check-tool {
    background-image: url('../../../assets/images/password-check-tool-bg.png');
+}
+
+.tools-item::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #10052E66;
+   opacity: 0;
+   transition: opacity 0.2s ease;
+   pointer-events: none;
+   z-index: 1;
+   border-radius: var(--border-radius-3);
+}
+
+.tools-item:active::after {
+   opacity: 1;
 }
 
 #blur-image-tool {

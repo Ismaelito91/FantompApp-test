@@ -10,6 +10,9 @@ import { ViewAllComponent } from "./components/secure-myself/view-all/view-all.c
 import { ViewStepsComponent } from "./components/secure-myself/view-steps/view-steps.component";
 import { ErrorComponent } from "./components/common/error/error.component";
 import { OnboardingComponent } from "./components/home/onboarding/onboarding.component";
+import { PasswordCheckComponent } from "./components/tools/password-check/password-check.component";
+import { VisibilityCheckComponent } from "./components/tools/visibility-check/visibility-check.component";
+import { BlurImageComponent } from "./components/tools/blur-image/blur-image.component";
 
 export const routes: Routes = [
    {
@@ -34,7 +37,28 @@ export const routes: Routes = [
    },
    {
       path: "tools",
-      component: ToolsComponent,
+      children: [
+         {
+            path: "",
+            component: ToolsComponent,
+            pathMatch: "full",
+         },
+         {
+            path: "password-check",
+            component: PasswordCheckComponent,
+            pathMatch: "full",
+         },
+         {
+            path: "blur-image",
+            component: BlurImageComponent,
+            pathMatch: "full",
+         },
+         {
+            path: "visibility-check",
+            component: VisibilityCheckComponent,
+            pathMatch: "full",
+         },
+      ]
    },
    {
       path: "problems",
