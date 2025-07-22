@@ -24,11 +24,11 @@ export class PageComponentService {
          devicesHeader.push(Device.IOS);
       }
      
-      return this._http.get<PageComponentModel>(`api/public/page-components/section/${sectionId}/root`,
+      return this._http.get<Record<string, PageComponentModel>>(`api/public/page-components/section/${sectionId}/root`,
          { headers: { 'X-Devices': devicesHeader } });
    }
 
    getHomePageLinkIds() {
-      return this._http.get<Map<string, number>>(`api/public/page-components/home-page-link-ids`);
+      return this._http.get<Record<string, number>>(`api/public/page-components/home-page-link-ids`);
    }
 }

@@ -8,8 +8,8 @@ export default interface PageComponentModel {
    code?: string | null;
    status?: ComponentStatus;
    position?: number;
-   next?: PageComponentModel;
-   parent?: PageComponentModel;
-   children: PageComponentModel[];
+   nextId?: number;
+   parentId?: number;
+   childrenIdList?: number[];
    translations: PageComponentTranslationModel[];
 }

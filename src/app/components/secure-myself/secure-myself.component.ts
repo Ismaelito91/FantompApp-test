@@ -5,6 +5,7 @@ import PageComponentModel from '../../model/page-component.model';
 import { PageTranslationPipe } from "../../pipes/page-translation.pipe";
 import { SafeHtmlPipe } from "../../pipes/safe-html.pipe";
 import { PageComponentService } from '../../service/page-component.service';
+import { PageComponentUtilsService } from '../../service/page-component-utils.service';
 import { Card7Component } from "../design-system/card-7/card-7.component";
 import { DividerComponent } from "../design-system/divider/divider.component";
 
@@ -16,9 +17,10 @@ import { DividerComponent } from "../design-system/divider/divider.component";
 })
 export class SecureMyselfComponent implements OnInit {
    private readonly pageComponentService = inject(PageComponentService);
+   private readonly pageComponentUtils = inject(PageComponentUtilsService);
 
-   rootPage = signal<PageComponentModel>({ id: 0, translations: [], children: [] });
-   page = signal<PageComponentModel | null>({ id: 0, translations: [], children: [] });
+   rootPage = signal<PageComponentModel>({ id: 0, translations: [], childrenIdList: [] });
+   page = signal<PageComponentModel | null>({ id: 0, translations: [], childrenIdList: [] });
    ComponentType = ComponentType;
    ComponentStatus = ComponentStatus;
 
@@ -27,17 +29,27 @@ export class SecureMyselfComponent implements OnInit {
    }
 
    private loadRootPage(): void {
-      this.pageComponentService.getRootPageComponentsBySectionId(2).subscribe({
-         next: (data) => {
-            this.rootPage.set(data);
-            this.page.set(data);
-         },
-         error: (err) => console.error('Erreur lors du chargement des problèmes', err)
-      });
+      let rootPage = this.pageComponentUtils.findRootPage(2);
+      if (!rootPage) {
+         this.pageComponentService.getRootPageComponentsBySectionId(2).subscribe({
+            next: (data) => {
+               console.log("secure my sefl response");
+               this.pageComponentUtils.updateComponentMap(data);
+               let rootPage = this.pageComponentUtils.findRootPage(2);
+               if (rootPage) {
+                  this.rootPage.set(rootPage);
+                  this.page.set(rootPage);
+               }
+            },
+               error: (err) => console.error('Erreur lors du chargement des problèmes', err)
+            });
+      } else {
+         this.rootPage.set(rootPage);
+         this.page.set(rootPage);
+      }
    }
 
    get sortedChildren() {
-      const children = this.page()?.children ?? [];
-      return [...children].sort((a, b) => a.position! - b.position!);
+      return this.pageComponentUtils.getSortedChildren(this.page());
    }
 }

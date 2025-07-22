@@ -9,6 +9,7 @@ import { ComponentType } from '../../../model/enum/component-type.enum';
 import { ComponentStatus } from '../../../model/enum/component-status.enum';
 import { ActivatedRoute } from '@angular/router';
 import { PageComponentService } from '../../../service/page-component.service';
+import { PageComponentUtilsService } from '../../../service/page-component-utils.service';
 import { Card11Component } from "../../design-system/card-11/card-11.component";
 import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
 
@@ -24,50 +25,39 @@ register();
 })
 export class ViewStepsComponent {
    private readonly pageComponentService = inject(PageComponentService);
+   private readonly pageComponentUtils = inject(PageComponentUtilsService);
    private readonly route = inject(ActivatedRoute);
 
-   rootPage = signal<PageComponentModel>({ id: 0, translations: [], children: [] });
-   page = signal<PageComponentModel | undefined | null>({ id: 0, translations: [], children: [] });
+   rootPage = signal<PageComponentModel>({ id: 0, translations: [], childrenIdList: [] });
+   page = signal<PageComponentModel | undefined | null>({ id: 0, translations: [], childrenIdList: [] });
    ComponentType = ComponentType;
    ComponentStatus = ComponentStatus;
    targetId = 0;
 
    ngOnInit(): void {
-      this.loadRootPage();
       console.log(+this.route.snapshot.params['id']);
       this.targetId = +this.route.snapshot.params['id'];
+      this.loadRootPage();
    }
 
    private loadRootPage(): void {
-      this.pageComponentService.getRootPageComponentsBySectionId(2).subscribe({
-         next: (data) => {
-            this.rootPage.set(data);
-            this.page.set(this.findNodeById(this.rootPage()));
-         },
-         error: (err) => console.error('Erreur lors du chargement des problèmes', err)
-      });
+      let rootPage = this.pageComponentUtils.getComponentById(this.targetId);
+      if (!rootPage) {
+         this.pageComponentService.getRootPageComponentsBySectionId(2).subscribe({
+            next: (data) => {
+               this.pageComponentUtils.updateComponentMap(data);
+               this.rootPage.set(this.pageComponentUtils.getComponentById(this.targetId)!);
+               this.page.set(this.rootPage());
+            },
+            error: (err) => console.error('Erreur lors du chargement des problèmes', err)
+         });
+      } else {
+         this.rootPage.set(rootPage);
+         this.page.set(rootPage);
+      }
    }
 
    get sortedChildren() {
-      const children = this.page()?.children ?? [];
-      return [...children].sort((a, b) => a.position! - b.position!);
-   }
-
-   findNodeById(tree: PageComponentModel): PageComponentModel | undefined | null {
-      if (tree.next && tree.next.id === this.targetId) {
-         return tree.next;
-      }
-
-      if (tree.children?.length) {
-         for (const child of tree.children) {
-            const found = this.findNodeById(child);
-            if (found) {
-               console.log('found', found);
-               return found;
-            };
-         }
-      }
-
-      return null;
+      return this.pageComponentUtils.getSortedChildren(this.page());
    }
 }

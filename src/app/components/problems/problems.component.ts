@@ -7,6 +7,7 @@ import { ComponentStatus } from '../../model/enum/component-status.enum';
 import { ComponentType } from '../../model/enum/component-type.enum';
 import PageComponentModel from '../../model/page-component.model';
 import { PageComponentService } from '../../service/page-component.service';
+import { PageComponentUtilsService } from '../../service/page-component-utils.service';
 import { Card1Component } from "../design-system/card-1/card-1.component";
 import { Card2Component } from "../design-system/card-2/card-2.component";
 import { Card3Component } from "../design-system/card-3/card-3.component";
@@ -27,14 +28,16 @@ import { PageTranslationPipe } from '../../pipes/page-translation.pipe';
 export class ProblemsComponent implements OnInit, OnDestroy {
 
    private readonly pageComponentService = inject(PageComponentService);
+   private readonly pageComponentUtils = inject(PageComponentUtilsService);
    private readonly router = inject(Router);
    private readonly route = inject(ActivatedRoute);
    private sub!: Subscription;
    private problemId = signal<number | null>(null);
-   rootPage = signal<PageComponentModel>({ id: 0, translations: [], children: [] });
-   page = signal<PageComponentModel | null>({ id: 0, translations: [], children: [] });
+   rootPage = signal<PageComponentModel>({ id: 0, translations: [], childrenIdList: [] });
+   page = signal<PageComponentModel | null>({ id: 0, translations: [], childrenIdList: [] });
    ComponentType = ComponentType;
    ComponentStatus = ComponentStatus;
+
    ngOnInit(): void {
       this.loadRootPage();
       this.sub = this.router.events
@@ -57,43 +60,30 @@ export class ProblemsComponent implements OnInit, OnDestroy {
          }
 
          // this.page.set(this.findItemById(this.rootPage(), this.problemId()));
-         this.page.set(this.findNextById(this.rootPage(), this.problemId()));
+         this.page.set(this.pageComponentUtils.getComponentById(this.problemId()!));
    }
 
    private loadRootPage(): void {
-      this.pageComponentService.getRootPageComponentsBySectionId(1).subscribe({
-         next: (data) => {
-            this.rootPage.set(data);
-            this.page.set(data);
-            this.loadProblem();
-         },
-         error: (err) => console.error('Erreur lors du chargement des problèmes', err)
-      });
-   }
-
-   findNextById(item: PageComponentModel, id: number | null): PageComponentModel | null {
-      if (!id) {
-         return item;
+      let rootPage = this.pageComponentUtils.findRootPage(1);
+      if (!rootPage) {
+         this.pageComponentService.getRootPageComponentsBySectionId(1).subscribe({
+            next: (data) => {
+               this.pageComponentUtils.updateComponentMap(data);
+               let rootPage = this.pageComponentUtils.findRootPage(1);
+               if (rootPage) {
+                  this.rootPage.set(rootPage);
+                  this.page.set(rootPage);
+               }
+            },
+            error: (err) => console.error('Erreur lors du chargement des problèmes', err)
+         });
+      } else {
+         this.rootPage.set(rootPage);
+         this.page.set(rootPage);
       }
-
-      if (item.next && item.next.id === id) {
-         return item.next;
-      }
-
-      if (item.children && item.children.length > 0) {
-         for (const child of item.children) {
-            const result: PageComponentModel | null = this.findNextById(child, id);
-            if (result) {
-               return result;
-            }
-         }
-      }
-
-      return null;
    }
 
    get sortedChildren() {
-      const children = this.page()?.children ?? [];
-      return [...children].sort((a, b) => a.position! - b.position!);
+      return this.pageComponentUtils.getSortedChildren(this.page());
    }
 }

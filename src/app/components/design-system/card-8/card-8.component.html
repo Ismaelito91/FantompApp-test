@@ -1,4 +1,4 @@
-<a [routerLink]="data().next ? `/secure-myself/${data().next?.id}/steps` : null" class="flex flex-col card-container">
+<a [routerLink]="data().nextId ? `/secure-myself/${data().nextId}/steps` : null" class="flex flex-col card-container">
    <div class="card-preview">
       <span class="card-preview-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></span>
       <img class="card-preview-image" [src]="(data() | pageTranslation)?.image" alt="screen image" />

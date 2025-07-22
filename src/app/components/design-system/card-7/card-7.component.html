@@ -4,7 +4,7 @@
          <img [src]="(data() | pageTranslation)?.image" alt="logo" class="!size-[32px] object-contain" />
          <h5 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h5>
       </div>
-      <a class="flex items-center card-header-link" [routerLink]="data().next ? `/secure-myself/${data().next?.id}` : null">
+      <a class="flex items-center card-header-link" [routerLink]="data().nextId ? `/secure-myself/${data().nextId}` : null">
          <span [innerHTML]="(data() | pageTranslation)?.secondTitle | safeHtml"></span>
          <mat-icon svgIcon="chevron16x16-icon" class="!size-[16px]"></mat-icon>
       </a>

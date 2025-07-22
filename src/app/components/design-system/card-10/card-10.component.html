@@ -1,4 +1,4 @@
-<a [routerLink]="data().next ? `/secure-myself/${data().next?.id}/steps` : null"
+<a [routerLink]="data().nextId ? `/secure-myself/${data().nextId}/steps` : null"
    class="flex justify-between items-center card-container">
    <div class="flex items-center" style="gap: 12px">
       <img class="card-image" [src]="(data() | pageTranslation)?.image" alt="screen-image" />

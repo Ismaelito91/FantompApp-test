@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import PageComponentModel from '../../../model/page-component.model';
+import { PageComponentUtilsService } from '../../../service/page-component-utils.service';
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 
 @Component({
@@ -11,10 +12,10 @@ import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
    styleUrl: './card-10.component.scss'
 })
 export class Card10Component {
+   private readonly pageComponentUtils = inject(PageComponentUtilsService);
    data = input.required<PageComponentModel>();
 
    get sortedChildren() {
-      const children = this.data()?.children ?? [];
-      return [...children].sort((a, b) => a.position! - b.position!);
+      return this.pageComponentUtils.getSortedChildren(this.data());
    }
 }
