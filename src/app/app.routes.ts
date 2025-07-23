@@ -10,7 +10,6 @@ import { ViewAllComponent } from "./components/secure-myself/view-all/view-all.c
 import { ViewStepsComponent } from "./components/secure-myself/view-steps/view-steps.component";
 import { ErrorComponent } from "./components/common/error/error.component";
 import { OnboardingComponent } from "./components/home/onboarding/onboarding.component";
-import { ToolsPasswordComponent } from "./components/tools/tools-password/tools-password.component";
 import { PasswordCheckComponent } from "./components/tools/password-check/password-check.component";
 import { VisibilityCheckComponent } from "./components/tools/visibility-check/visibility-check.component";
 import { BlurImageComponent } from "./components/tools/blur-image/blur-image.component";
@@ -61,10 +60,6 @@ export const routes: Routes = [
             data: { hideHeader: true, hideFooter: true },
          },
       ]
-   },
-   {
-      path: "tools/password",
-      component: ToolsPasswordComponent,
    },
    {
       path: "problems",
