@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 
 @Component({
-   selector: 'app-tools',
+   selector: "app-tools",
    standalone: true,
    imports: [MatIconModule],
    templateUrl: './tools.component.html',
