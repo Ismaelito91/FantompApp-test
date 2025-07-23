@@ -1,11 +1,30 @@
-<div class="view-all-container">
+<div class="visibility-check-container">
    <div class="flex justify-between p-[16px]">
       <app-button-back link="/tools"></app-button-back>
-      <img src="assets/images/pseudo-illustration.svg" alt="image" class="!w-[104px] object-contain"/>
+      <img src="assets/images/pseudo-illustration.svg" alt="image" class="!w-[104px] object-contain" />
    </div>
    <h3 class="!p-[16px]">Je teste ma visibilité</h3>
    <p class="p-[16px]">Peut-on m'identifier à partir de mon pseudo et ma bio ?</p>
-   <div class="questions-container">
-
+   <div class="questions-container flex flex-col">
+      <div>Question 1 sur 2</div>
+      <div class="questions-sections flex flex-col">
+         <h4>Que contient ton pseudo ?</h4>
+         <div class="questions-items flex flex-col">
+            @for (item of ['', '', '']; track $index) {
+            <div class="questions-item flex flex-col">
+               <div>🪪 Identité</div>
+               @for (item of ['', '', '']; track $index) {
+               <div class="answers flex flex-col">
+                  <div class="answer flex items-center">
+                     <mat-radio-button  [disableRipple]="true"
+                        aria-hidden="true"></mat-radio-button>
+                     <div>Mon nom ou mon prénom en entier <span>(exemple : Martin)</span></div>
+                  </div>
+               </div>
+               }
+            </div>
+            }
+         </div>
+      </div>
    </div>
 </div>
