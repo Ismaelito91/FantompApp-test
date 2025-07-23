@@ -10,18 +10,17 @@
       </div>
    </div>
    <div class="questions-container flex flex-col">
-      <div>Question 1 sur 2</div>
+      <app-stepper [currentStep]="currentStep" [totalSteps]="totalSteps"></app-stepper>
       <div class="sections flex flex-col">
          <h4>Que contient ton pseudo ?</h4>
          <div class="section-items flex flex-col">
-            @for (item of ['', '', '']; track $index) {
+            @for (item of ['', '']; track $index) {
             <div class="section-item flex flex-col">
                <div>🪪 Identité</div>
                @for (item of ['', '', '']; track $index) {
                <div class="answers flex flex-col">
                   <div class="answer flex items-center">
-                     <mat-radio-button  [disableRipple]="true"
-                        aria-hidden="true"></mat-radio-button>
+                     <mat-radio-button [disableRipple]="true" aria-hidden="true"></mat-radio-button>
                      <div>Mon nom ou mon prénom en entier <span>(exemple : Martin)</span></div>
                   </div>
                </div>
@@ -31,7 +30,15 @@
          </div>
       </div>
    </div>
-   <div class="controls fixed bottom-0 w-full">
-      <button mat-flat-button class="w-full">Suivant</button>
+   <div class="controls fixed bottom-0 w-full flex">
+      @if(currentStep > 1) {
+         <button mat-stroked-button class="w-full" (click)="onClickPrevious()">Précédent</button>
+      }
+      @if(currentStep < totalSteps) {
+         <button mat-flat-button class="w-full" (click)="onClickNext()">Suivant</button>
+      }
+      @if (currentStep === totalSteps) {
+         <button mat-flat-button class="w-full" (click)="onClickResults()">Résultats</button>
+      }
    </div>
 </div>

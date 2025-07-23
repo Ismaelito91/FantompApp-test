@@ -8,13 +8,18 @@
 
       .details {
          gap: var(--spacing-1);
+         color: var(--color-neutral-light-background-2);
+
+         h3 {
+            color: var(--color-neutral-light-background-2);
+         }
       }
    }
 
    .questions-container {
-      background-color: #faf9fbcc;
+      background-color: var(--background-20);
       border-radius: var(--border-radius-5) var(--border-radius-5) 0 0;
-      padding: var(--spacing-5);
+      padding: var(--spacing-5) var(--spacing-5) 148px var(--spacing-5);
       gap: var(--spacing-5);
 
       .sections {
@@ -44,7 +49,6 @@
 
    .controls {
       padding: 54px var(--spacing-5);
-      background: linear-gradient(0deg, #F7F6F9 29.29%, rgba(247, 246, 249, 0.750971) 61.66%, rgba(247, 246, 249, 0.575324) 77.99%, rgba(247, 246, 249, 0.2) 94.29%);
-
+      background: var(--background-19);
    }
 }

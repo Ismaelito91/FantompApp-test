@@ -213,6 +213,7 @@
    // Neutral
    --color-neutral-light-background-1: #ffffff;
    --color-neutral-light-background-2: #faf9fb;
+   --color-neutral-light-background-2_80: #faf9fbcc;
    --color-neutral-light-background-3: #f6f5fa;
    --color-neutral-light-background-4: #d6d3de;
    --color-neutral-light-content-1: #10052e;
@@ -245,6 +246,9 @@
    --background-16: var(--color-primary-800);
    --background-17: var(--color-blue-200);
    --background-18: var(--color-blue-600);
+   --background-19: linear-gradient(0deg, #F7F6F9 29.29%, rgba(247, 246, 249, 0.750971) 61.66%, rgba(247, 246, 249, 0.575324) 77.99%, rgba(247, 246, 249, 0.2) 94.29%);
+   --background-20: var(--color-neutral-light-background-2_80);
+   --background-21: var(--color-primary-300);
 
    --color-1: var(--color-neutral-light-content-2);
    --color-2: var(--color-primary-950);
@@ -389,6 +393,9 @@
    --background-16: var(--color-neutral-light-background-4);
    --background-17: var(--color-blue-600);
    --background-18: var(--color-blue-950);
+   --background-19: linear-gradient(0deg, #140D26 29.29%, rgba(41, 30, 67, 0) 94.29%);
+   --background-20: var(--color-neutral-dark-background-1);
+   --background-21: var(--color-neutral-dark-background-3);
 
    --color-1: var(--color-neutral-light-background-2);
    --color-2: var(--color-neutral-light-background-2);
