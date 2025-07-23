@@ -5,6 +5,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { RouterLink } from "@angular/router";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { firstValueFrom } from "rxjs";
 
 @Component({
    selector: "app-user-app-config",
@@ -27,7 +28,7 @@ export class UserAppConfigComponent implements OnInit {
    async ngOnInit() {
       try {
          // Initialisation des traductions
-         await this.translateService.use("fr").toPromise();
+         await firstValueFrom(this.translateService.use("fr"));
 
          // Vérification que les traductions sont chargées
          const translation = await this.translateService.get(

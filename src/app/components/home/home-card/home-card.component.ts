@@ -1,8 +1,8 @@
-import { Component, OnInit, computed, inject } from "@angular/core";
+import { Component, OnInit, computed, inject, effect } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
-import { PageComponentService } from "../../../service/page-component.service";
 import { GhostAnimationService } from "../../../service/ghost-animation.service";
+import { PreloadService } from "../../../service/preload.service";
 
 @Component({
    selector: "app-home-card",
@@ -12,20 +12,24 @@ import { GhostAnimationService } from "../../../service/ghost-animation.service"
    styleUrls: ["./home-card.component.scss"],
 })
 export class HomeCardComponent implements OnInit {
-   private pageComponentService = inject(PageComponentService);
    private ghostAnimationService = inject(GhostAnimationService);
+   private preloadService = inject(PreloadService);
    private homePageLinkIds: Map<string, number> = new Map();
    shouldPlayGhostAnimation = computed(() => this.ghostAnimationService.shouldPlayGhostAnimation());
 
-   constructor(private router: Router) {}
-
-   ngOnInit(): void {
-      // Initialisation de base
-      this.pageComponentService.getHomePageLinkIds().subscribe({
-         next: (data) => {
-            this.homePageLinkIds = new Map(Object.entries(data));
+   constructor(private router: Router) {
+      effect(() => {
+         if (this.preloadService.isPreloaded()) {
+            const preloadedData = this.preloadService.preloadedData();
+            if (preloadedData && Object.keys(preloadedData.homePageLinkIds).length > 0) {
+               this.homePageLinkIds = new Map(Object.entries(preloadedData.homePageLinkIds));
+            }
          }
       });
+   }
+
+   ngOnInit(): void {
+      
    }
 
    navigateToTools(): void {
@@ -57,6 +61,6 @@ export class HomeCardComponent implements OnInit {
       // on met un timeout le temps de laisser la deuxième animation s'effectuer
       setTimeout(() => {
          this.ghostAnimationService.stopGhostAnimation();
-      }, 5000);
+      }, 1500);
    }
 }

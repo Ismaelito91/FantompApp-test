@@ -12,6 +12,7 @@ import { OnboardingService } from "./service/onboarding.service";
 import { PwaService } from "./service/pwa/pwa.service";
 import { SettingService } from "./service/setting.service";
 import { filter, map } from "rxjs";
+import { PreloadService } from "./service/preload.service";
 
 @Component({
    selector: "app-root",
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit {
    private activatedRoute = inject(ActivatedRoute);
    hideHeader = false;
    hideFooter = false;
+   private preloadService = inject(PreloadService);
 
    ngOnInit(): void {
       // On écoute les changements de route pour activer/masquer le header/footer
@@ -81,6 +83,9 @@ export class AppComponent implements OnInit {
       // Le service vérifie automatiquement si c'est la première visite
       console.log("Onboarding service initialized");
 
+      // Démarrer le préchargement de toutes les données
+      this.preloadService.preloadAllData();
+      
       // Enregistrement des icônes SVG personnalisées
       console.log("Registering SVG icons...");
 
