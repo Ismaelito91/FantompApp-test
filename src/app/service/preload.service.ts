@@ -7,6 +7,7 @@ import { PageComponentUtilsService } from "./page-component-utils.service";
 import { PageComponentService } from "./page-component.service";
 import { SettingService } from "./setting.service";
 import { LanguageService } from "./language.service";
+import { ImagePreloadService } from "./image-preload.service";
 
 export interface PreloadedData {
   settings: SettingModel | null;
@@ -23,6 +24,7 @@ export class PreloadService {
   private readonly pageComponentUtils = inject(PageComponentUtilsService);
   private readonly pageComponentService = inject(PageComponentService);
   private readonly settingService = inject(SettingService);
+  private readonly imagePreloadService = inject(ImagePreloadService);
 
   // État du préchargement
   private _isPreloading = signal(false);
@@ -86,8 +88,22 @@ export class PreloadService {
         // Mettre à jour les maps de composants
         this.pageComponentUtils.updateComponentMap(preloadedData.problemsSection);
         this.pageComponentUtils.updateComponentMap(preloadedData.secureMyselfSection);
-        console.log("fin du pré-chargement");
-        this._isPreloaded.set(true);
+        
+        // Précharger toutes les images (statiques et dynamiques)
+        this.imagePreloadService.preloadAllImages({
+          problemsSection: preloadedData.problemsSection,
+          secureMyselfSection: preloadedData.secureMyselfSection
+        }).subscribe({
+          next: () => {
+            console.log("fin du pré-chargement");
+            this._isPreloaded.set(true);
+          },
+          error: (error) => {
+            console.error("Erreur lors du préchargement des images:", error);
+            console.log("fin du pré-chargement (avec erreurs d'images)");
+            this._isPreloaded.set(true);
+          }
+        });
       }),
       catchError(err => {
         console.error("Erreur lors du pré-chargement:", err);
