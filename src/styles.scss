@@ -6,7 +6,8 @@
 // Déclaration de la police Lexend (Variable Font) - Pour les titres
 @font-face {
    font-family: "Lexend";
-   src: url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype-variations");
+   src: url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf")
+      format("truetype-variations");
    font-weight: 100 900;
    font-style: normal;
    font-display: swap;
@@ -15,7 +16,8 @@
 // Déclaration de la police Nunito (Variable Font) - Pour le corps du texte
 @font-face {
    font-family: "Nunito";
-   src: url("assets/fonts/Nunito/Nunito-VariableFont_wght.ttf") format("truetype-variations");
+   src: url("assets/fonts/Nunito/Nunito-VariableFont_wght.ttf")
+      format("truetype-variations");
    font-weight: 100 900;
    font-style: normal;
    font-display: swap;
@@ -23,7 +25,8 @@
 
 @font-face {
    font-family: "Nunito";
-   src: url("assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf") format("truetype-variations");
+   src: url("assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf")
+      format("truetype-variations");
    font-weight: 100 900;
    font-style: italic;
    font-display: swap;
@@ -85,21 +88,13 @@
    --spacing-11: 72px;
 
    // Ombres
-   --shadow-light-0:
-      0px 0px 0px 1px #625C700A,
-      0px 1px 1px -0.5px #16122114,
-      0px 3px 3px -1.5px #625C700A,
-      0px 6px 6px -3px #958FA30A,
-      0px 12px 12px -6px #625C700A;
-   --shadow-light-1:
-      0px 2px 6px 2px #00000026,
-      0px 1px 2px 0px #0000004D;
-   --shadow-dark-0:
-      0px 0px 0px 1px #291E430A,
-      0px 1px 1px -0.5px #140D2614,
-      0px 3px 3px -1.5px #291E430A,
-      0px 6px 6px -3px #291E430A,
-      0px 12px 12px -6px #291E430A;
+   --shadow-light-0: 0px 0px 0px 1px #625c700a, 0px 1px 1px -0.5px #16122114,
+      0px 3px 3px -1.5px #625c700a, 0px 6px 6px -3px #958fa30a,
+      0px 12px 12px -6px #625c700a;
+   --shadow-light-1: 0px 2px 6px 2px #00000026, 0px 1px 2px 0px #0000004d;
+   --shadow-dark-0: 0px 0px 0px 1px #291e430a, 0px 1px 1px -0.5px #140d2614,
+      0px 3px 3px -1.5px #291e430a, 0px 6px 6px -3px #291e430a,
+      0px 12px 12px -6px #291e430a;
 
    // Couleurs
    // Primary (Blue)
@@ -246,7 +241,13 @@
    --background-16: var(--color-primary-800);
    --background-17: var(--color-blue-200);
    --background-18: var(--color-blue-600);
-   --background-19: linear-gradient(0deg, #F7F6F9 29.29%, rgba(247, 246, 249, 0.750971) 61.66%, rgba(247, 246, 249, 0.575324) 77.99%, rgba(247, 246, 249, 0.2) 94.29%);
+   --background-19: linear-gradient(
+      0deg,
+      #f7f6f9 29.29%,
+      rgba(247, 246, 249, 0.750971) 61.66%,
+      rgba(247, 246, 249, 0.575324) 77.99%,
+      rgba(247, 246, 249, 0.2) 94.29%
+   );
    --background-20: var(--color-neutral-light-background-2_80);
    --background-21: var(--color-primary-300);
 
@@ -265,7 +266,6 @@
    --color-13: var(--color-primary-200);
    --color-14: var(--color-primary-800);
    --color-15: var(--color-neutral-light-content-2);
-   --color-16: var(--color-primary-950);
    --color-17: var(--color-neutral-light-background-3);
    --color-18: var(--color-neutral-light-background-1);
 
@@ -342,10 +342,15 @@
 
    --swiper-pagination-bottom: 0;
 
-   @include mat.button-overrides((text-label-text-font: var(--body-font-family),
-      ));
+   @include mat.button-overrides(
+      (
+         text-label-text-font: var(--body-font-family),
+      )
+   );
 
-   @include mat.radio-overrides((selected-focus-icon-color: var(--color-6),
+   @include mat.radio-overrides(
+      (
+         selected-focus-icon-color: var(--color-6),
          selected-icon-color: var(--color-6),
          selected-hover-icon-color: var(--color-6),
          selected-pressed-icon-color: var(--color-6),
@@ -353,16 +358,23 @@
          unselected-icon-color: var(--color-7),
          unselected-hover-icon-color: var(--color-7),
          unselected-pressed-icon-color: var(--color-7),
-      ));
+      )
+   );
 
-   @include mat.divider-overrides((color: var(--color-primary-100),
+   @include mat.divider-overrides(
+      (
+         color: var(--color-primary-100),
          width: 2px,
-      ));
+      )
+   );
 
-   @include mat.fab-overrides((container-shape: 50%,
+   @include mat.fab-overrides(
+      (
+         container-shape: 50%,
          container-elevation-shadow: 0,
          container-color: var(--background-12),
-      ));
+      )
+   );
 }
 
 // Dark overrides
@@ -393,7 +405,11 @@
    --background-16: var(--color-neutral-light-background-4);
    --background-17: var(--color-blue-600);
    --background-18: var(--color-blue-950);
-   --background-19: linear-gradient(0deg, #140D26 29.29%, rgba(41, 30, 67, 0) 94.29%);
+   --background-19: linear-gradient(
+      0deg,
+      #140d26 29.29%,
+      rgba(41, 30, 67, 0) 94.29%
+   );
    --background-20: var(--color-neutral-dark-background-1);
    --background-21: var(--color-neutral-dark-background-3);
 
@@ -412,10 +428,8 @@
    --color-13: var(--color-primary-50);
    --color-14: var(--color-primary-50);
    --color-15: var(--color-neutral-light-background-2);
-   --color-16: var(--color-primary-950);
    --color-17: var(--color-neutral-light-background-3);
    --color-18: var(--color-primary-950);
-   --color-19: var(--color-primary-300);
 
    --shadow-1: var(--shadow-dark-0);
 }
