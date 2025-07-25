@@ -1,6 +1,34 @@
-<div>
-   <div class="flex justify-between items-center p-[32px]">
-      <h3>Tes résultats</h3>
+<div class="flex flex-col gap-(--spacing-3) p-(--spacing-3)" style="background-image: url('../../../../../assets/images/visibility-results-bg.png'); background-size: cover;">
+   <div class="flex justify-between items-center">
+      <h3 class="!p-(--spacing-3)">Tes résultats</h3>
       <app-button-close link="/tools"></app-button-close>
+   </div>
+   <div class="flex flex-col gap-(--spacing-2) p-(--spacing-3)" style="background-color: white; border-radius: 20px;">
+      <h6>Prudence ! 🧐</h6>
+      <p>Ton profil contient beaucoup d'informations sur toi. Sois prudent.e, certaines personnes malintentionnées
+         peuvent se faire passer pour des amis, nuire à ta réputation ou te stalker dans la vraie vie.</p>
+   </div>
+   <div class="flex flex-col gap-[13px] p-(--spacing-3)"
+      style="background-color: #3339F0; border-radius: 20px; box-shadow: 0px 0px 0px 6px #FFFFFF33 inset;">
+      @for (item of ['','']; track $index) {
+      <div class="flex flex-col gap-(--spacing-2) relative"
+         style="background-color: white; padding: 32px 24px 16px 24px; border-radius: 10px;">
+         <img src="assets/images/pseudo-illu.svg" alt="image"
+            class="!w-[88px] h-[49px] object-contain absolute top-[-11px] right-[-6px]" />
+         <div class="flex flex-col gap-(--spacing-1) ">
+            <h5>Ton pseudo indique</h5>
+            <ul>
+               @for (item of ['','', '']; track $index) {
+               <li>Ton nom ou ton prénom en entier</li>
+               }
+            </ul>
+         </div>
+         <div class="flex justify-center items-center">
+            <div
+               style="border: 3px solid white; background-color: #FEE2E4; padding: 10px 16px; border-radius: 20px; box-shadow: var(--shadow-1); color: #F03948; font-weight: 700; font-size: 18px;">
+               PUBLIC 👀</div>
+         </div>
+      </div>
+      }
    </div>
 </div>
