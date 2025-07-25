@@ -268,6 +268,8 @@
    --color-15: var(--color-neutral-light-content-2);
    --color-17: var(--color-neutral-light-background-3);
    --color-18: var(--color-neutral-light-background-1);
+   --color-19: var(--color-primary-800);
+   --color-20: var(--color-primary-800);
 
    --shadow-1: var(--shadow-light-0);
 
@@ -342,11 +344,10 @@
 
    --swiper-pagination-bottom: 0;
 
-   @include mat.button-overrides(
-      (
-         text-label-text-font: var(--body-font-family),
-      )
-   );
+   @include mat.button-overrides((text-label-text-font: var(--body-font-family),
+         outlined-label-text-font: var(--body-font-family),
+         protected-label-text-font: var(--body-font-family),
+         filled-label-text-font: var(--body-font-family)));
 
    @include mat.radio-overrides(
       (
@@ -430,6 +431,8 @@
    --color-15: var(--color-neutral-light-background-2);
    --color-17: var(--color-neutral-light-background-3);
    --color-18: var(--color-primary-950);
+   --color-19: var(--color-neutral-light-background-2);
+   --color-20: var(--color-primary-200);
 
    --shadow-1: var(--shadow-dark-0);
 }

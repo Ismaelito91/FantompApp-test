@@ -85,7 +85,7 @@ export class AppComponent implements OnInit {
 
       // Démarrer le préchargement de toutes les données
       this.preloadService.preloadAllData();
-      
+
       // Enregistrement des icônes SVG personnalisées
       console.log("Registering SVG icons...");
 
@@ -166,6 +166,11 @@ export class AppComponent implements OnInit {
             name: "checkbox-unselected16x16-icon",
             path: "assets/images/checkbox-unselected16x16-icon.svg",
          },
+         {
+            name: "arrow24x24-icon",
+            path: "assets/images/arrow24x24-icon.svg",
+         },
+
          // Icônes outline (état inactif)
          { name: "home-icon", path: "assets/images/home.svg" },
          { name: "problem-icon", path: "assets/images/problem.svg" },

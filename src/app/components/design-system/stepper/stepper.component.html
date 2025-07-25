@@ -1,9 +1,9 @@
-<div>
-   <div class="flex items-center space-x-2">
+<div class="flex flex-col gap-(--spacing-1)">
+   <div class="flex items-center gap-(--spacing-1)">
       @for (current of steps; track $index) {
       <div class="flex-1 h-2 rounded-full transition-all duration-300"
          [class]="currentStep() >= current ? 'step-viewed' : 'step-unviewed'"></div>
       }
    </div>
-   <p class="stepper-description text-sm mt-1">Question {{ currentStep() }} sur {{ totalSteps() }}</p>
+   <p class="stepper-description">Question {{ currentStep() }} sur {{ totalSteps() }}</p>
 </div>

@@ -13,6 +13,7 @@ import { OnboardingComponent } from "./components/home/onboarding/onboarding.com
 import { PasswordCheckComponent } from "./components/tools/password-check/password-check.component";
 import { VisibilityCheckComponent } from "./components/tools/visibility-check/visibility-check.component";
 import { BlurImageComponent } from "./components/tools/blur-image/blur-image.component";
+import { VisibilityResultsComponent } from "./components/tools/visibility-check/visibility-results/visibility-results.component";
 
 export const routes: Routes = [
    {
@@ -58,9 +59,15 @@ export const routes: Routes = [
             path: "visibility-check",
             component: VisibilityCheckComponent,
             pathMatch: "full",
-            data: { hideHeader: false, hideFooter: true },
+            data: { hideHeader: true, hideFooter: true }
          },
-      ],
+         {
+            path: "visibility-check/results",
+            component: VisibilityResultsComponent,
+            pathMatch: "full",
+            data: { hideHeader: true, hideFooter: true },
+         }
+      ]
    },
    {
       path: "problems",

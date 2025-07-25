@@ -1,8 +1,8 @@
-<div class="visibility-check-container relative">
-   <div class="header flex flex-col">
+<div class="visibility-check-container">
+   <div class="header flex flex-col relative">
       <app-button-back link="/tools" class="fixed top-[16px] z-1"></app-button-back>
       <div class="flex justify-end">
-         <img src="assets/images/pseudo-illustration.svg" alt="image" class="!w-[104px] object-contain" />
+         <img [src]="currentQuestion.image" alt="image" class="!w-[104px] object-contain" />
       </div>
       <div class="details flex flex-col">
          <h3>Je teste ma visibilité</h3>
@@ -12,16 +12,23 @@
    <div class="questions-container flex flex-col">
       <app-stepper [currentStep]="currentStep" [totalSteps]="totalSteps"></app-stepper>
       <div class="sections flex flex-col">
-         <h4>Que contient ton pseudo ?</h4>
+         <h4 class="text-(--color-19)">{{ currentQuestion.title }}</h4>
          <div class="section-items flex flex-col">
-            @for (item of ['', '']; track $index) {
+            @for (section of currentQuestion.sections; track $index) {
             <div class="section-item flex flex-col">
-               <div>🪪 Identité</div>
-               @for (item of ['', '', '']; track $index) {
+               @if (section.title) {
+                  <div class="font-[600] text-(--color-8)">{{ section.title }}</div>
+               }
+               @for (answer of section.answers; track $index) {
                <div class="answers flex flex-col">
-                  <div class="answer flex items-center">
+                  <div class="answer flex items-center cursor-pointer">
                      <mat-radio-button [disableRipple]="true" aria-hidden="true"></mat-radio-button>
-                     <div>Mon nom ou mon prénom en entier <span>(exemple : Martin)</span></div>
+                     <div>
+                        <span class="radio-title">{{ answer.title }}</span>
+                        @if(answer.description) {
+                           <span class="radio-description ml-1">{{ answer.description }}</span>
+                        }
+                     </div>
                   </div>
                </div>
                }
@@ -32,13 +39,28 @@
    </div>
    <div class="controls fixed bottom-0 w-full flex">
       @if(currentStep > 1) {
-         <button mat-stroked-button class="w-full" (click)="onClickPrevious()">Précédent</button>
+      <button mat-flat-button class="prev-btn w-full" (click)="onClickPrevious()">
+         <div class="flex items-center gap-(--spacing-1)">
+            <mat-icon svgIcon="arrow24x24-icon" class="rotate-[180deg]"></mat-icon>
+            <span>Précédent</span>
+         </div>
+      </button>
       }
-      @if(currentStep < totalSteps) {
-         <button mat-flat-button class="w-full" (click)="onClickNext()">Suivant</button>
-      }
-      @if (currentStep === totalSteps) {
-         <button mat-flat-button class="w-full" (click)="onClickResults()">Résultats</button>
-      }
+      @if(currentStep < totalSteps) { 
+         <button mat-flat-button class="next-btn w-full" (click)="onClickNext()">
+            <div class="flex items-center gap-(--spacing-1)">
+               <span>Suivant</span>
+               <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
+            </div>
+         </button>
+         }
+         @if (currentStep === totalSteps) {
+         <button mat-flat-button class="submit-btn w-full" (click)="onClickResults()">
+            <div class="flex items-center gap-(--spacing-1)">
+               <span>Résultats</span>
+               <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
+            </div>
+         </button>
+         }
    </div>
 </div>

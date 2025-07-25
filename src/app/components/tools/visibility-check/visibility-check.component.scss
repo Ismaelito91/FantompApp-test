@@ -1,3 +1,5 @@
+@use "@angular/material" as mat;
+
 .visibility-check-container {
    height: 100%;
    background: linear-gradient(354.89deg, var(--background-17) 4.1%, var(--background-18) 95.9%);
@@ -35,11 +37,32 @@
                   gap: var(--spacing-3);
 
                   .answer {
-                     background-color: white;
-                     gap: var(--spacing-3);
+                     background-color: var(--background-2);
+                     gap: 10px;
                      min-height: 83px;
                      padding: 20px var(--spacing-3);
                      border-radius: var(--border-radius-2);
+
+                     .radio-title {
+                        color: var(--color-3);
+                     }
+
+                     .radio-description {
+                        color: var(--color-5);
+                     }
+
+                     &:hover,
+                     &.selected {
+                        background-color: var(--background-3);
+
+                        .radio-title {
+                           color: var(--color-neutral-light-content-1);
+                        }
+
+                        .radio-description {
+                           color: var(--color-neutral-light-content-4);
+                        }
+                     }
                   }
                }
             }
@@ -48,7 +71,29 @@
    }
 
    .controls {
+      --mdc-filled-button-label-text-size: 18px;
+      --mdc-filled-button-container-height: auto;
+
       padding: 54px var(--spacing-5);
       background: var(--background-19);
+      gap: var(--spacing-3);
+
+      .prev-btn,
+      .next-btn,
+      .submit-btn {
+         padding: 10px var(--spacing-4);
+      }
+
+      .next-btn,
+      .submit-btn {
+         --mdc-filled-button-container-color: var(--color-20);
+         --mdc-filled-button-label-text-color: var(--color-18);
+      }
+
+      .prev-btn {
+         --mdc-filled-button-container-color: var(--background-8);
+         --mdc-filled-button-label-text-color: var(--color-8);
+         border: var(--border) var(--background-3);
+      }
    }
 }

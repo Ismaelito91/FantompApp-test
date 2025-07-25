@@ -1,11 +1,13 @@
-.stepper-description {
-   color: var(--color-8)
-}
-
 .step-viewed {
    background-color: var(--color-8);
 }
 
 .step-unviewed {
    background-color: var(--background-21);
+}
+
+.stepper-description {
+   color: var(--color-8);
+   font-size: var(--font-size-body-xs);
+   font-weight: var(--font-weight-heading);
 }
