@@ -47,6 +47,7 @@ export const routes: Routes = [
             path: "password-check",
             component: PasswordCheckComponent,
             pathMatch: "full",
+            data: { hideHeader: true, hideFooter: true },
          },
          {
             path: "blur-image",
@@ -59,7 +60,7 @@ export const routes: Routes = [
             pathMatch: "full",
             data: { hideHeader: false, hideFooter: true },
          },
-      ]
+      ],
    },
    {
       path: "problems",
