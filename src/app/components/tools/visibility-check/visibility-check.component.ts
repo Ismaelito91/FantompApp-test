@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from "@angular/material/icon";
-import { MatRadioModule } from "@angular/material/radio";
+import { MatRadioChange, MatRadioModule } from "@angular/material/radio";
 import { Router } from '@angular/router';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { StepperComponent } from "../../design-system/stepper/stepper.component";
@@ -163,12 +163,18 @@ export class VisibilityCheckComponent {
       }
    ]
    currentQuestion = this.questions[this.currentStep - 1]
-   results: Results = { pseudo: [], bio: [] };
-
+   pseudoKeys = ['pseudo_identity', 'pseudo_origin'];
+   bioKeys = [
+      'bio_identity',
+      'bio_origin',
+      'bio_digital_life',
+      'bio_interest',
+      'bio_education_pro',
+   ];
    formGroup = new FormGroup({
       pseudo_identity: new FormControl(''),
       pseudo_origin: new FormControl(''),
-      bio_empty: new FormControl(''),
+      bio_empty: new FormControl(this.questions[1].sections[0].answers[0].title),
       bio_identity: new FormControl(''),
       bio_origin: new FormControl(''),
       bio_digital_life: new FormControl(''),
@@ -176,21 +182,45 @@ export class VisibilityCheckComponent {
       bio_education_pro: new FormControl(''),
    });
 
+   onRadioChange($event: MatRadioChange<string>) {
+      const name = $event.source.name;
+      const value = $event.value;
+      if (name === 'bio_empty' && value) {
+         this.formGroup.patchValue({
+            bio_identity: '',
+            bio_origin: '',
+            bio_digital_life: '',
+            bio_interest: '',
+            bio_education_pro: '',
+         });
+      } else if (this.bioKeys.includes(name)) {
+         this.formGroup.patchValue({
+            bio_empty: ''
+         });
+      }
+   }
+
    onClickNext() {
       this.currentStep++;
       this.currentQuestion = this.questions[this.currentStep - 1]
-      console.log(this.formGroup.value)
    }
 
    onClickPrevious() {
       this.currentStep--;
       this.currentQuestion = this.questions[this.currentStep - 1]
-      console.log(this.formGroup.value)
-
    }
 
    onClickResults() {
-      console.log(this.formGroup.value)
-      this.router.navigate(['tools', 'visibility-check', 'results'])
+      const formValues = this.formGroup.value as Record<string, string | null>;
+      const results: Results = {
+         pseudo: this.pseudoKeys
+            .map(key => formValues[key])
+            .filter(value => !!value) as string[],
+         bio: this.bioKeys
+            .map(key => formValues[key])
+            .filter(value => !!value) as string[],
+      };
+
+      this.router.navigate(['tools', 'visibility-check', 'results'], { state: { results } });
    }
 }

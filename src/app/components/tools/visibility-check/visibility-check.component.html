@@ -14,21 +14,20 @@
       <div class="sections flex flex-col">
          <h4 class="text-(--color-19)">{{ currentQuestion.title }}</h4>
          <div class="section-items flex flex-col">
-            @for (section of currentQuestion.sections; track $index) {
+            @for (section of currentQuestion.sections; track section.name) {
             <div class="section-item flex flex-col">
                @if (section.title) {
                <div class="font-[600] text-(--color-8)">{{ section.title }}</div>
                }
-               <mat-radio-group [formControlName]="section.name" class="answers flex flex-col">
+               <mat-radio-group [formControlName]="section.name" [name]="section.name" class="answers flex flex-col"
+                  (change)="onRadioChange($event)">
                   @for (answer of section.answers; track $index) {
                   <mat-radio-button [disableRipple]="true" [value]="answer.title"
                      class="answer flex items-center cursor-pointer">
-                     <div>
-                        <span class="radio-title">{{ answer.title }}</span>
-                        @if (answer.description) {
-                        <span class="radio-description ml-1">{{ answer.description }}</span>
-                        }
-                     </div>
+                     <span class="radio-title">{{ answer.title }}</span>
+                     @if (answer.description) {
+                     <span class="radio-description ml-1">{{ answer.description }}</span>
+                     }
                   </mat-radio-button>
                   }
                </mat-radio-group>

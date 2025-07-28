@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ButtonCloseComponent } from "../../../design-system/button-close/button-close.component";
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { BadgeComponent } from "../../../design-system/badge/badge.component";
+import { Router } from '@angular/router';
 
 export const moveInTopWithFlipYAnimation = trigger('moveInTopWithFlipY', [
    transition(':enter', [
       animate(
-         '2000ms 200ms cubic-bezier(0.22, 1, 0.36, 1)', // ralentir + effet spring
+         '3000ms 200ms cubic-bezier(0.22, 1, 0.36, 1)', // ralentir + effet spring
          keyframes([
             style({
                opacity: 0,
@@ -30,16 +31,16 @@ export const moveInTopWithFlipYAnimation = trigger('moveInTopWithFlipY', [
 ]);
 
 export const bounceOnceDownAnimation = trigger('bounceOnceDown', [
-  transition('* => active', [
-    animate(
-      '1000ms cubic-bezier(0.25, 0.8, 0.25, 1)', // ease-out smooth
-      keyframes([
-        style({ transform: 'translateY(0)', offset: 0 }),
-        style({ transform: 'translateY(25px)', offset: 0.4 }),
-        style({ transform: 'translateY(0)', offset: 1 })
-      ])
-    )
-  ])
+   transition('* => active', [
+      animate(
+         '1000ms cubic-bezier(0.25, 0.8, 0.25, 1)', // ease-out smooth
+         keyframes([
+            style({ transform: 'translateY(0)', offset: 0 }),
+            style({ transform: 'translateY(25px)', offset: 0.4 }),
+            style({ transform: 'translateY(0)', offset: 1 })
+         ])
+      )
+   ])
 ]);
 
 export const smartSpringAnimation = trigger('smartSpring', [
@@ -52,6 +53,17 @@ export const smartSpringAnimation = trigger('smartSpring', [
    ])
 ]);
 
+type Results = {
+   pseudo: string[],
+   bio: string[]
+}
+
+type Variant = 'primary' | 'success' | 'danger';
+
+type Badge = {
+   title: string,
+   variant: Variant,
+}
 @Component({
    selector: 'app-visibility-results',
    imports: [ButtonCloseComponent, BadgeComponent],
@@ -59,10 +71,52 @@ export const smartSpringAnimation = trigger('smartSpring', [
    styleUrl: './visibility-results.component.scss',
    animations: [moveInTopWithFlipYAnimation, bounceOnceDownAnimation, smartSpringAnimation]
 })
-export class VisibilityResultsComponent {
+export class VisibilityResultsComponent implements OnInit {
+   private readonly router = inject(Router);
    showSecondDiv = false;
    bounceTrigger = 'inactive';
+   results!: Results;
+   pseudoBadge!: Badge;
+   bioBadge!: Badge;
+   summary!: { title: string, content: string };
 
+   ngOnInit(): void {
+      const state = history.state as { results: Results };
+      console.log('Résultats reçus :', state.results);
+      this.results = state.results;
+      if (this.results.pseudo.length === 0) {
+         this.pseudoBadge = { title: 'INVISIBLE 👻', variant: 'success' };
+      } else if (this.results.pseudo.length <= 2) {
+         this.pseudoBadge = { title: 'DISCRET 🙈️', variant: 'primary' };
+      } else {
+         this.pseudoBadge = { title: 'PUBLIC 👀', variant: 'danger' };
+      }
+
+      if (this.results.bio.length === 0) {
+         this.bioBadge = { title: 'INVISIBLE 👻', variant: 'success' };
+      } else if (this.results.bio.length <= 2) {
+         this.bioBadge = { title: 'DISCRET 🙈️', variant: 'primary' };
+      } else {
+         this.bioBadge = { title: 'PUBLIC 👀', variant: 'danger' };
+      }
+
+      if (this.pseudoBadge.variant === 'danger' || this.bioBadge.variant === 'danger') {
+         this.summary = {
+            title: 'Prudence ! 🧐',
+            content: 'Ton profil contient beaucoup d\'informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie.'
+         };
+      } else if (this.pseudoBadge.variant === 'success' && this.bioBadge.variant === 'success') {
+         this.summary = {
+            title: 'Bien joué ! 🥷',
+            content: 'Ton profil ne permet pas de savoir qui tu es dans la vie, sur les réseaux et aussi hors ligne.'
+         };
+      } else {
+         this.summary = {
+            title: 'Pas mal ! 🥸',
+            content: 'Il y a encore quelques indices pour deviner qui tu es dans la vraie vie mais tu peux encore t’améliorer et divulguer moins d’informations sur toi.'
+         }
+      }
+   }
    onFirstAnimationDone() {
       // Déclenche la seconde animation après la première
       setTimeout(() => {
