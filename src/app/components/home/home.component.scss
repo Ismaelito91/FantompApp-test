@@ -6,16 +6,28 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: var(--spacing-5) var(--spacing-5) 100px var(--spacing-5);
       gap: var(--spacing-5);
+      padding: var(--spacing-5) 16px 100px 16px;
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 200px;
+         height: 200px;
+         background-color: var(--color-primary-300);
+         border-radius: 50%;
+         filter: blur(121.8px);
+         z-index: -1;
+         pointer-events: none;
+      }
    }
 
    #app-info-title {
-      font-family: var(--heading-font-family);
-      font-size: var(--font-size-h5);
       font-weight: var(--font-weight-heading);
-      line-height: var(--line-height-h5);
       letter-spacing: var(--letter-spacing-heading);
+
       margin: 0 0 var(--spacing-2) 0;
    }
 
@@ -157,8 +169,8 @@
 
          &:hover,
          &:focus {
-            background-color: var(--high-contrast-bg, #000);
-            color: var(--high-contrast-text, #fff);
+            background-color: var(--color-neutral-light-content-1);
+            color: var(--color-neutral-dark-content-1);
          }
       }
    }

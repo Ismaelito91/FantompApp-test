@@ -267,7 +267,9 @@
    --color-18: var(--color-neutral-light-background-1);
    --color-19: var(--color-primary-800);
    --color-20: var(--color-primary-800);
-   --color-21: var(--color-neutral-light-background-1);
+   --color-21: var(--color-red-950);
+   --color-22: var(--color-blue-950);
+   --color-23: var(--color-neutral-light-background-1);
 
    --shadow-1: var(--shadow-light-0);
 
@@ -342,10 +344,14 @@
 
    --swiper-pagination-bottom: 0;
 
-   @include mat.button-overrides((text-label-text-font: var(--body-font-family),
+   @include mat.button-overrides(
+      (
+         text-label-text-font: var(--body-font-family),
          outlined-label-text-font: var(--body-font-family),
          protected-label-text-font: var(--body-font-family),
-         filled-label-text-font: var(--body-font-family)));
+         filled-label-text-font: var(--body-font-family),
+      )
+   );
 
    @include mat.radio-overrides((selected-focus-icon-color: var(--color-6),
          selected-icon-color: var(--color-6),
@@ -421,7 +427,9 @@
    --color-18: var(--color-primary-950);
    --color-19: var(--color-neutral-light-background-2);
    --color-20: var(--color-primary-200);
-   --color-21: var(--color-neutral-dark-background-2_70);
+   --color-21: var(--color-neutral-light-background-3);
+   --color-22: var(--color-neutral-light-background-3);
+   --color-23: var(--color-neutral-dark-background-2_70);
 
    --shadow-1: var(--shadow-dark-0);
 }
