@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ButtonCloseComponent } from "../../../design-system/button-close/button-close.component";
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import { BadgeComponent } from "../../../design-system/badge/badge.component";
 
 export const moveInTopWithFlipYAnimation = trigger('moveInTopWithFlipY', [
    transition(':enter', [
@@ -53,7 +54,7 @@ export const smartSpringAnimation = trigger('smartSpring', [
 
 @Component({
    selector: 'app-visibility-results',
-   imports: [ButtonCloseComponent],
+   imports: [ButtonCloseComponent, BadgeComponent],
    templateUrl: './visibility-results.component.html',
    styleUrl: './visibility-results.component.scss',
    animations: [moveInTopWithFlipYAnimation, bounceOnceDownAnimation, smartSpringAnimation]
