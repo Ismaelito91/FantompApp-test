@@ -2,35 +2,39 @@
    <!-- Titre principal -->
    <h5 class="home-cards__main-title">Je protège mes réseaux sociaux</h5>
 
-   <!-- Première carte : Mot de passe -->
+   <!-- Première carte : Mot de passe (structure harmonisée) -->
    <div
-      class="home-card"
-      role="button"
+      id="password-check-tool"
+      class="tools-item flex justify-between items-center cursor-pointer"
+      [routerLink]="'/tools/password-check'"
       tabindex="0"
-      (click)="navigateToTools()"
-      (keydown)="onKeyDown($event)"
+      role="button"
    >
-      <div class="home-card__wrapper">
-         <div class="home-card__content">
-            <div class="home-card__row">
-               <div class="home-card__image-container">
-                  <img
-                     src="assets/images/password-img.svg"
-                     alt="Image de mot de passe"
-                     class="home-card__image"
-                  />
-               </div>
-               <div class="home-card__text-content">
-                  <h3 class="home-card__subtitle">
-                     Je teste mon<br />
-                     mot de passe
-                  </h3>
-                  <p class="home-card__description">
-                     En combien de temps un cybercriminel le trouve ?
-                  </p>
-               </div>
-            </div>
+      <img
+         src="../../../../assets/images/password-check-tool-bg.png"
+         alt=""
+         class="tools-item-bg"
+         aria-hidden="true"
+      />
+      <div class="tools-item-body flex items-center">
+         <img
+            src="../../../../assets/images/password-img.svg"
+            alt="image"
+            class="tools-item-img"
+         />
+         <div class="tools-item-text flex flex-col">
+            <h6 class="tools-item-title">Je teste mon mot de passe</h6>
+            <p class="tools-item-description">
+               En combien de temps un cybercriminel le trouve ?
+            </p>
          </div>
+      </div>
+      <div>
+         <mat-icon
+            svgIcon="chevron24x24-icon"
+            class="!size-[24px]"
+            style="color: var(--color-neutral-light-background-1)"
+         ></mat-icon>
       </div>
    </div>
 
@@ -41,139 +45,127 @@
       tabindex="0"
       (click)="navigateToTools()"
       (keydown)="onKeyDown($event)"
+      id="blur-image-tool"
    >
-      <div class="home-card-anonym__wrapper">
-         <div class="home-card-anonym__content">
-            <div class="home-card-anonym__image-container">
-               <img
-                  src="assets/images/anonym-img.svg"
-                  alt="Image d'anonymisation"
-                  class="home-card-anonym__image"
-               />
-            </div>
-            <div class="home-card-anonym__text-content">
-               <h3 class="home-card-anonym__subtitle">
-                  J'anonymise<br />
-                  ma photo
-               </h3>
-               <p class="home-card-anonym__description">
-                  Flouter ma photo<br />
-                  de profil
-               </p>
-            </div>
-         </div>
-
-         <!-- Fantôme animé -->
-         @if (shouldPlayGhostAnimation()) {
-         <div class="ghost-animation-container">
+      <div class="home-card-anonym__content">
+         <div class="home-card-anonym__image-container">
             <img
-               src="assets/images/Switch-not-wink-light.svg"
-               alt=""
-               class="ghost-image ghost-normal only-on-light"
-               (animationend)="onGhostAnimationEnd()"
-            />
-            <img
-               src="assets/images/Switch-wink-light.svg"
-               alt=""
-               class="ghost-image ghost-wink-image only-on-light"
-            />
-            <img
-               src="assets/images/Switch-not-wink-dark.svg"
-               alt=""
-               class="ghost-image ghost-normal only-on-dark"
-               (animationend)="onGhostAnimationEnd()"
-            />
-            <img
-               src="assets/images/Switch-wink-dark.svg"
-               alt=""
-               class="ghost-image ghost-wink-image only-on-dark"
+               src="../../../../assets/images/anonym-img.svg"
+               alt="Image d'anonymisation"
+               class="home-card-anonym__image"
             />
          </div>
-         } @else {
-            <div class="ghost-animation-container">
-               <img
-                  src="assets/images/Switch-not-wink-light.svg"
-                  alt=""
-                  class="ghost-image only-on-light"
-               />
-               <img
-                  src="assets/images/Switch-not-wink-dark.svg"
-                  alt=""
-                  class="ghost-image only-on-dark"
-               />
-            </div>
-         }
+         <div class="home-card-anonym__text-content">
+            <h3 class="home-card-anonym__subtitle">
+               J'anonymise<br />
+               ma photo
+            </h3>
+            <p class="home-card-anonym__description">
+               Flouter ma photo<br />
+               de profil
+            </p>
+         </div>
+         <div class="home-card-anonym__arrow">
+            <mat-icon
+               svgIcon="chevron24x24-icon"
+               class="!size-[24px]"
+               style="color: var(--color-neutral-light-background-1)"
+            ></mat-icon>
+         </div>
       </div>
+
+      <!-- Fantôme animé -->
+      @if (shouldPlayGhostAnimation()) {
+      <div class="ghost-animation-container">
+         <img
+            src="assets/images/Switch-not-wink-light.svg"
+            alt=""
+            class="ghost-image ghost-normal only-on-light"
+            (animationend)="onGhostAnimationEnd()"
+         />
+         <img
+            src="assets/images/Switch-wink-light.svg"
+            alt=""
+            class="ghost-image ghost-wink-image only-on-light"
+         />
+         <img
+            src="assets/images/Switch-not-wink-dark.svg"
+            alt=""
+            class="ghost-image ghost-normal only-on-dark"
+            (animationend)="onGhostAnimationEnd()"
+         />
+         <img
+            src="assets/images/Switch-wink-dark.svg"
+            alt=""
+            class="ghost-image ghost-wink-image only-on-dark"
+         />
+      </div>
+      } @else {
+      <div class="ghost-animation-container">
+         <img
+            src="assets/images/Switch-not-wink-light.svg"
+            alt=""
+            class="ghost-image only-on-light"
+         />
+         <img
+            src="assets/images/Switch-not-wink-dark.svg"
+            alt=""
+            class="ghost-image only-on-dark"
+         />
+      </div>
+      }
    </div>
 
-   <!-- Section des cartes de problèmes - TEMPORAIREMENT COMMENTÉE -->
+   <!-- Section des cartes de problèmes -->
 
    <div class="home-cards-problems-container">
       <h5 class="home-cards__section-title">J'ai un problème en ligne</h5>
 
       <div class="problems-cards-row">
          <div
+            id="delete-content-tool"
             class="home-card-problem delete-content-card"
             role="button"
             tabindex="0"
             (click)="navigateToTools()"
             (keydown)="onKeyDown($event)"
          >
-            <div class="home-card-problem__main">
-               <div class="home-card-problem__background">
-                  <div class="home-card-problem__image-container">
-                     <img
-                        src="assets/images/delete-contenu-card.svg"
-                        alt="Image suppression de contenu"
-                        class="home-card-problem__image"
-                     />
-                  </div>
-                  <div class="home-card-problem__text-content">
-                     <h3 class="home-card-problem__subtitle">
-                        Je veux effacer<br />
-                        un contenu
-                     </h3>
-                  </div>
-                  <div class="home-card-problem__arrow">
-                     <img
-                        src="assets/images/chevron16x16-icon.svg"
-                        alt="Flèche"
-                        class="home-card-problem__arrow-icon"
-                     />
-                  </div>
-               </div>
+            <div class="home-card-problem__bg-container"></div>
+            <div class="home-card-problem__text-content">
+               <h3 class="home-card-problem__subtitle">
+                  Je veux effacer<br />
+                  un contenu
+               </h3>
+            </div>
+            <div class="home-card-problem__arrow">
+               <mat-icon
+                  svgIcon="chevron24x24-icon"
+                  class="!size-[24px]"
+                  style="color: var(--color-red-950)"
+               ></mat-icon>
             </div>
          </div>
 
          <div
+            id="harassment-tool"
             class="home-card-harassment harassment-card"
             role="button"
             tabindex="0"
             (click)="navigateToHarassment()"
             (keydown)="onKeyDownHarassment($event)"
          >
-            <div class="home-card-harassment__main">
-               <div class="home-card-harassment__background">
-                  <div class="home-card-harassment__image-container">
-                     <img
-                        src="assets/images/harcelement-card.svg"
-                        alt="Image de harcèlement"
-                        class="home-card-harassment__image"
-                        style="
-                           width: 160px !important;
-                           height: 144px !important;
-                           max-width: 160px !important;
-                           max-height: 144px !important;
-                        "
-                     />
-                  </div>
-                  <div class="home-card-harassment__text-content">
-                     <h6 class="home-card-harassment__subtitle">
-                        Je vis du cyber-<br />
-                        harcèlement
-                     </h6>
-                  </div>
-               </div>
+            <div class="home-card-harassment__bg-container"></div>
+            <div class="home-card-harassment__text-content">
+               <h6 class="home-card-harassment__subtitle">
+                  Je vis du cyber-harcèlement
+               </h6>
+            </div>
+            <div class="home-card-harassment__arrow">
+               <mat-icon
+                  svgIcon="chevron24x24-icon"
+                  class="!size-[24px]"
+                  style="color: var(--color-blue-950)"
+               ></mat-icon>
             </div>
          </div>
       </div>
