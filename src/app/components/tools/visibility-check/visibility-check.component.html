@@ -9,7 +9,7 @@
          <p>Peut-on m'identifier à partir de mon pseudo et ma bio ?</p>
       </div>
    </div>
-   <div class="questions-container flex flex-col">
+   <form class="questions-container flex flex-col" [formGroup]="formGroup">
       <app-stepper [currentStep]="currentStep" [totalSteps]="totalSteps"></app-stepper>
       <div class="sections flex flex-col">
          <h4 class="text-(--color-19)">{{ currentQuestion.title }}</h4>
@@ -17,26 +17,26 @@
             @for (section of currentQuestion.sections; track $index) {
             <div class="section-item flex flex-col">
                @if (section.title) {
-                  <div class="font-[600] text-(--color-8)">{{ section.title }}</div>
+               <div class="font-[600] text-(--color-8)">{{ section.title }}</div>
                }
-               @for (answer of section.answers; track $index) {
-               <div class="answers flex flex-col">
-                  <div class="answer flex items-center cursor-pointer">
-                     <mat-radio-button [disableRipple]="true" aria-hidden="true"></mat-radio-button>
+               <mat-radio-group [formControlName]="section.name" class="answers flex flex-col">
+                  @for (answer of section.answers; track $index) {
+                  <mat-radio-button [disableRipple]="true" [value]="answer.title"
+                     class="answer flex items-center cursor-pointer">
                      <div>
                         <span class="radio-title">{{ answer.title }}</span>
-                        @if(answer.description) {
-                           <span class="radio-description ml-1">{{ answer.description }}</span>
+                        @if (answer.description) {
+                        <span class="radio-description ml-1">{{ answer.description }}</span>
                         }
                      </div>
-                  </div>
-               </div>
-               }
+                  </mat-radio-button>
+                  }
+               </mat-radio-group>
             </div>
             }
          </div>
       </div>
-   </div>
+   </form>
    <div class="controls fixed bottom-0 w-full flex">
       @if(currentStep > 1) {
       <button mat-flat-button class="prev-btn w-full" (click)="onClickPrevious()">
@@ -46,12 +46,11 @@
          </div>
       </button>
       }
-      @if(currentStep < totalSteps) { 
-         <button mat-flat-button class="next-btn w-full" (click)="onClickNext()">
-            <div class="flex items-center gap-(--spacing-1)">
-               <span>Suivant</span>
-               <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
-            </div>
+      @if(currentStep < totalSteps) { <button mat-flat-button class="next-btn w-full" (click)="onClickNext()">
+         <div class="flex items-center gap-(--spacing-1)">
+            <span>Suivant</span>
+            <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
+         </div>
          </button>
          }
          @if (currentStep === totalSteps) {

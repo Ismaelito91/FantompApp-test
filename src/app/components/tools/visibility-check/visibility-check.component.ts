@@ -1,11 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
-import { MatRadioButton } from "@angular/material/radio";
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { StepperComponent } from "../../design-system/stepper/stepper.component";
 import { MatIconModule } from "@angular/material/icon";
+import { MatRadioModule } from "@angular/material/radio";
 import { Router } from '@angular/router';
-
+import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
+import { StepperComponent } from "../../design-system/stepper/stepper.component";
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 type Question = {
    image: string,
@@ -13,6 +13,7 @@ type Question = {
    sections: Section[]
 }
 type Section = {
+   name: string,
    title?: string,
    answers: Answer[]
 }
@@ -20,13 +21,17 @@ type Answer = {
    title: string,
    description?: string
 }
+type Results = {
+   pseudo: string[],
+   bio: string[]
+}
 @Component({
    selector: 'app-visibility-check',
-   imports: [ButtonBackComponent, MatRadioButton, MatButtonModule, StepperComponent, MatIconModule],
+   imports: [ButtonBackComponent, MatRadioModule, MatButtonModule, StepperComponent, MatIconModule, ReactiveFormsModule],
    templateUrl: './visibility-check.component.html',
    styleUrl: './visibility-check.component.scss'
 })
-export class VisibilityCheckComponent implements OnInit {
+export class VisibilityCheckComponent {
    private readonly router = inject(Router);
    currentStep = 1;
    totalSteps = 2;
@@ -36,6 +41,7 @@ export class VisibilityCheckComponent implements OnInit {
          title: 'Que contient ton pseudo ?',
          sections: [
             {
+               name: 'pseudo_identity',
                title: '🪪 Identité',
                answers: [
                   {
@@ -55,6 +61,7 @@ export class VisibilityCheckComponent implements OnInit {
                ]
             },
             {
+               name: 'pseudo_origin',
                title: '🗺️ Origine géographique ou culturelle',
                answers: [
                   {
@@ -74,6 +81,7 @@ export class VisibilityCheckComponent implements OnInit {
          title: 'Que contient ta bio ?',
          sections: [
             {
+               name: 'bio_empty',
                answers: [
                   {
                      title: 'Je n’ai rien écrit dans ma bio',
@@ -81,6 +89,7 @@ export class VisibilityCheckComponent implements OnInit {
                ]
             },
             {
+               name: 'bio_identity',
                title: '🪪 Identité',
                answers: [
                   {
@@ -100,6 +109,7 @@ export class VisibilityCheckComponent implements OnInit {
                ]
             },
             {
+               name: 'bio_origin',
                title: '🗺️ Origine géographique ou culturelle',
                answers: [
                   {
@@ -113,6 +123,7 @@ export class VisibilityCheckComponent implements OnInit {
                ]
             },
             {
+               name: 'bio_digital_life',
                title: '👥 Vie numérique',
                answers: [
                   {
@@ -126,6 +137,7 @@ export class VisibilityCheckComponent implements OnInit {
                ]
             },
             {
+               name: 'bio_interest',
                title: '🎭 Centres d’intérêt',
                answers: [
                   {
@@ -135,6 +147,7 @@ export class VisibilityCheckComponent implements OnInit {
                ]
             },
             {
+               name: 'bio_education_pro',
                title: '🏫 Éducation ou profession',
                answers: [
                   {
@@ -150,21 +163,34 @@ export class VisibilityCheckComponent implements OnInit {
       }
    ]
    currentQuestion = this.questions[this.currentStep - 1]
+   results: Results = { pseudo: [], bio: [] };
 
-   ngOnInit(): void {
-   }
+   formGroup = new FormGroup({
+      pseudo_identity: new FormControl(''),
+      pseudo_origin: new FormControl(''),
+      bio_empty: new FormControl(''),
+      bio_identity: new FormControl(''),
+      bio_origin: new FormControl(''),
+      bio_digital_life: new FormControl(''),
+      bio_interest: new FormControl(''),
+      bio_education_pro: new FormControl(''),
+   });
 
    onClickNext() {
       this.currentStep++;
       this.currentQuestion = this.questions[this.currentStep - 1]
+      console.log(this.formGroup.value)
    }
 
    onClickPrevious() {
       this.currentStep--;
       this.currentQuestion = this.questions[this.currentStep - 1]
+      console.log(this.formGroup.value)
+
    }
 
    onClickResults() {
+      console.log(this.formGroup.value)
       this.router.navigate(['tools', 'visibility-check', 'results'])
    }
 }

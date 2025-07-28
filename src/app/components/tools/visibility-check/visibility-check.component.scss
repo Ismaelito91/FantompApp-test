@@ -43,6 +43,11 @@
                      padding: 20px var(--spacing-3);
                      border-radius: var(--border-radius-2);
 
+                     --mat-radio-label-text-font: var(--body-font-family);
+                     --mat-radio-label-text-size: var(--font-size-body-md);
+                     --mat-radio-label-text-weight: var(--font-weight-body);
+                     --mat-radio-label-text-line-height: var(--line-height-body);
+                     --mat-radio-label-text-tracking: var(--letter-spacing-body);
                      .radio-title {
                         color: var(--color-3);
                      }
