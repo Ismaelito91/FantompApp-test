@@ -6,7 +6,8 @@
 // Déclaration de la police Lexend (Variable Font) - Pour les titres
 @font-face {
    font-family: "Lexend";
-   src: url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype-variations");
+   src: url("assets/fonts/Lexend/Lexend-VariableFont_wght.ttf")
+      format("truetype-variations");
    font-weight: 100 900;
    font-style: normal;
    font-display: swap;
@@ -15,7 +16,8 @@
 // Déclaration de la police Nunito (Variable Font) - Pour le corps du texte
 @font-face {
    font-family: "Nunito";
-   src: url("assets/fonts/Nunito/Nunito-VariableFont_wght.ttf") format("truetype-variations");
+   src: url("assets/fonts/Nunito/Nunito-VariableFont_wght.ttf")
+      format("truetype-variations");
    font-weight: 100 900;
    font-style: normal;
    font-display: swap;
@@ -23,7 +25,8 @@
 
 @font-face {
    font-family: "Nunito";
-   src: url("assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf") format("truetype-variations");
+   src: url("assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf")
+      format("truetype-variations");
    font-weight: 100 900;
    font-style: italic;
    font-display: swap;
@@ -239,13 +242,16 @@
    --background-16: var(--color-primary-800);
    --background-17: var(--color-blue-200);
    --background-18: var(--color-blue-600);
-   --background-19: linear-gradient(0deg,
-         #f7f6f9 29.29%,
-         rgba(247, 246, 249, 0.750971) 61.66%,
-         rgba(247, 246, 249, 0.575324) 77.99%,
-         rgba(247, 246, 249, 0.2) 94.29%);
+   --background-19: linear-gradient(
+      0deg,
+      #f7f6f9 29.29%,
+      rgba(247, 246, 249, 0.750971) 61.66%,
+      rgba(247, 246, 249, 0.575324) 77.99%,
+      rgba(247, 246, 249, 0.2) 94.29%
+   );
    --background-20: var(--color-neutral-light-background-2_80);
    --background-21: var(--color-primary-300);
+   --background-22: var(--color-primary-50);
 
    --color-1: var(--color-neutral-light-content-2);
    --color-2: var(--color-primary-950);
@@ -270,6 +276,7 @@
    --color-21: var(--color-red-950);
    --color-22: var(--color-blue-950);
    --color-23: var(--color-neutral-light-background-1);
+   --color-24: var(--color-primary-800);
 
    --shadow-1: var(--shadow-light-0);
 
@@ -353,7 +360,9 @@
       )
    );
 
-   @include mat.radio-overrides((selected-focus-icon-color: var(--color-6),
+   @include mat.radio-overrides(
+      (
+         selected-focus-icon-color: var(--color-6),
          selected-icon-color: var(--color-6),
          selected-hover-icon-color: var(--color-6),
          selected-pressed-icon-color: var(--color-6),
@@ -361,16 +370,23 @@
          unselected-icon-color: var(--color-7),
          unselected-hover-icon-color: var(--color-7),
          unselected-pressed-icon-color: var(--color-7),
-      ));
+      )
+   );
 
-   @include mat.divider-overrides((color: var(--color-primary-100),
+   @include mat.divider-overrides(
+      (
+         color: var(--color-primary-100),
          width: 2px,
-      ));
+      )
+   );
 
-   @include mat.fab-overrides((container-shape: 50%,
+   @include mat.fab-overrides(
+      (
+         container-shape: 50%,
          container-elevation-shadow: 0,
          container-color: var(--background-12),
-      ));
+      )
+   );
 }
 
 // Dark overrides
@@ -401,11 +417,14 @@
    --background-16: var(--color-neutral-light-background-4);
    --background-17: var(--color-blue-600);
    --background-18: var(--color-blue-950);
-   --background-19: linear-gradient(0deg,
+   --background-19: linear-gradient(
+      0deg,
       #140d26 29.29%,
-      rgba(41, 30, 67, 0) 94.29%);
+      rgba(41, 30, 67, 0) 94.29%
+   );
    --background-20: var(--color-neutral-dark-background-1);
    --background-21: var(--color-neutral-dark-background-3);
+   --background-22: var(--color-neutral-dark-background-2);
 
    --color-1: var(--color-neutral-light-background-2);
    --color-2: var(--color-neutral-light-background-2);
@@ -430,6 +449,7 @@
    --color-21: var(--color-neutral-light-background-3);
    --color-22: var(--color-neutral-light-background-3);
    --color-23: var(--color-neutral-dark-background-2_70);
+   --color-24: var(--color-primary-400);
 
    --shadow-1: var(--shadow-dark-0);
 }
