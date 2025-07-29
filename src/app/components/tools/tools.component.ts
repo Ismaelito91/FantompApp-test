@@ -2,11 +2,12 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: "app-tools",
    standalone: true,
-   imports: [MatIconModule],
+   imports: [MatIconModule, TranslatePipe],
    templateUrl: './tools.component.html',
    styleUrl: './tools.component.scss',
    animations: [

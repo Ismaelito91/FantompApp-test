@@ -56,5 +56,15 @@
       "BACKEND": "Backend verzió",
       "FRONTEND_VALUE": "Frontend verzió: {{version}}",
       "BACKEND_VALUE": "Backend verzió: {{version}}"
+   },
+   "TOOLS": {
+      "TITLE": "Outils HU",
+      "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe HU",
+      "PASSWORD_CHECK_DESCRIPTION": "En combien de temps un cybercriminel le trouve ? HU",
+      "BLUR_IMAGE_TITLE": "J'anonymise ma photo HU",
+      "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil HU",
+      "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité HU",
+      "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? HU",
+      "VISIBILITY_CHECK": {}
    }
 }

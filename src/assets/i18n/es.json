@@ -56,5 +56,15 @@
       "BACKEND": "Versión Backend",
       "FRONTEND_VALUE": "Versión Frontend: {{version}}",
       "BACKEND_VALUE": "Versión Backend: {{version}}"
+   },
+   "TOOLS": {
+      "TITLE": "Outils ES",
+      "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe ES",
+      "PASSWORD_CHECK_DESCRIPTION": "En combien de temps un cybercriminel le trouve ? ES",
+      "BLUR_IMAGE_TITLE": "J'anonymise ma photo ES",
+      "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil ES",
+      "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité ES",
+      "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? ES",
+      "VISIBILITY_CHECK": {}
    }
 }

@@ -1,0 +1,15 @@
+.badge {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0 var(--spacing-3);
+}
+.badge-sm {
+   border: 3px solid var(--color-neutral-light-background-1);
+   height: 38px;
+}
+
+.badge-md {
+   border: 5px solid var(--color-neutral-light-background-1);
+   height: 58px;
+}

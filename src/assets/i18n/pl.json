@@ -56,5 +56,15 @@
       "BACKEND": "Wersja Backend",
       "FRONTEND_VALUE": "Wersja Frontend: {{version}}",
       "BACKEND_VALUE": "Wersja Backend: {{version}}"
+   },
+   "TOOLS": {
+      "TITLE": "Outils PL",
+      "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe PL",
+      "PASSWORD_CHECK_DESCRIPTION": "En combien de temps un cybercriminel le trouve ? PL",
+      "BLUR_IMAGE_TITLE": "J'anonymise ma photo PL",
+      "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil PL",
+      "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité PL",
+      "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? PL",
+      "VISIBILITY_CHECK": {}
    }
 }

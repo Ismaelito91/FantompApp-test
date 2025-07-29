@@ -5,8 +5,8 @@
          <img [src]="currentQuestion.image" alt="image" class="!w-[104px] object-contain" />
       </div>
       <div class="details flex flex-col">
-         <h3>Je teste ma visibilité</h3>
-         <p>Peut-on m'identifier à partir de mon pseudo et ma bio ?</p>
+         <h3>{{ "TOOLS.VISIBILITY_CHECK.TITLE" | translate }}</h3>
+         <p>{{ "TOOLS.VISIBILITY_CHECK.DESCRIPTION" | translate }}</p>
       </div>
    </div>
    <form class="questions-container flex flex-col" [formGroup]="formGroup">

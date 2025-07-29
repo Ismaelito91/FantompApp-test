@@ -3,6 +3,7 @@ import { ButtonCloseComponent } from "../../../design-system/button-close/button
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { BadgeComponent } from "../../../design-system/badge/badge.component";
 import { Router } from '@angular/router';
+import { BadgeVariant } from '../../../../model/type/badge-variant.type';
 
 export const moveInTopWithFlipYAnimation = trigger('moveInTopWithFlipY', [
    transition(':enter', [
@@ -58,11 +59,9 @@ type Results = {
    bio: string[]
 }
 
-type Variant = 'primary' | 'success' | 'danger';
-
 type Badge = {
    title: string,
-   variant: Variant,
+   variant: BadgeVariant,
 }
 @Component({
    selector: 'app-visibility-results',
@@ -87,20 +86,20 @@ export class VisibilityResultsComponent implements OnInit {
       if (this.results.pseudo.length === 0) {
          this.pseudoBadge = { title: 'INVISIBLE 👻', variant: 'success' };
       } else if (this.results.pseudo.length <= 2) {
-         this.pseudoBadge = { title: 'DISCRET 🙈️', variant: 'primary' };
+         this.pseudoBadge = { title: 'DISCRET 🙈️', variant: 'info' };
       } else {
-         this.pseudoBadge = { title: 'PUBLIC 👀', variant: 'danger' };
+         this.pseudoBadge = { title: 'PUBLIC 👀', variant: 'danger-light' };
       }
 
       if (this.results.bio.length === 0) {
          this.bioBadge = { title: 'INVISIBLE 👻', variant: 'success' };
       } else if (this.results.bio.length <= 2) {
-         this.bioBadge = { title: 'DISCRET 🙈️', variant: 'primary' };
+         this.bioBadge = { title: 'DISCRET 🙈️', variant: 'info' };
       } else {
-         this.bioBadge = { title: 'PUBLIC 👀', variant: 'danger' };
+         this.bioBadge = { title: 'PUBLIC 👀', variant: 'danger-light' };
       }
 
-      if (this.pseudoBadge.variant === 'danger' || this.bioBadge.variant === 'danger') {
+      if (this.pseudoBadge.variant === 'danger-light' || this.bioBadge.variant === 'danger-light') {
          this.summary = {
             title: 'Prudence ! 🧐',
             content: 'Ton profil contient beaucoup d\'informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie.'

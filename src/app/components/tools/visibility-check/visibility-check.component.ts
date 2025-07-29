@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { StepperComponent } from "../../design-system/stepper/stepper.component";
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 
 type Question = {
    image: string,
@@ -27,7 +28,7 @@ type Results = {
 }
 @Component({
    selector: 'app-visibility-check',
-   imports: [ButtonBackComponent, MatRadioModule, MatButtonModule, StepperComponent, MatIconModule, ReactiveFormsModule],
+   imports: [TranslatePipe, ButtonBackComponent, MatRadioModule, MatButtonModule, StepperComponent, MatIconModule, ReactiveFormsModule],
    templateUrl: './visibility-check.component.html',
    styleUrl: './visibility-check.component.scss'
 })

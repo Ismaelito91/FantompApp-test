@@ -56,5 +56,15 @@
       "BACKEND": "Backend-version",
       "FRONTEND_VALUE": "Frontend-version: {{version}}",
       "BACKEND_VALUE": "Backend-version: {{version}}"
+   },
+   "TOOLS": {
+      "TITLE": "Outils DK",
+      "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe DK",
+      "PASSWORD_CHECK_DESCRIPTION": "En combien de temps un cybercriminel le trouve ? DK",
+      "BLUR_IMAGE_TITLE": "J'anonymise ma photo DK",
+      "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil DK",
+      "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité DK",
+      "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? DK",
+      "VISIBILITY_CHECK": {}
    }
 }

@@ -125,5 +125,15 @@
       "BACKEND": "Backend Version",
       "FRONTEND_VALUE": "Frontend Version: {{version}}",
       "BACKEND_VALUE": "Backend Version: {{version}}"
+   },
+   "TOOLS": {
+      "TITLE": "Outils IE",
+      "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe IE",
+      "PASSWORD_CHECK_DESCRIPTION": "En combien de temps un cybercriminel le trouve ? IE",
+      "BLUR_IMAGE_TITLE": "J'anonymise ma photo IE",
+      "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil IE",
+      "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité IE",
+      "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? IE",
+      "VISIBILITY_CHECK": {}
    }
 }

@@ -56,5 +56,15 @@
       "BACKEND": "Έκδοση Backend",
       "FRONTEND_VALUE": "Έκδοση Frontend: {{version}}",
       "BACKEND_VALUE": "Έκδοση Backend: {{version}}"
+   },
+   "TOOLS": {
+      "TITLE": "Outils GR",
+      "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe GR",
+      "PASSWORD_CHECK_DESCRIPTION": "En combien de temps un cybercriminel le trouve ? GR",
+      "BLUR_IMAGE_TITLE": "J'anonymise ma photo GR",
+      "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil GR",
+      "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité GR",
+      "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? GR",
+      "VISIBILITY_CHECK": {}
    }
 }
