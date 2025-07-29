@@ -1,8 +1,9 @@
 import { Component, input } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-stepper',
-   imports: [],
+   imports: [TranslatePipe],
    templateUrl: './stepper.component.html',
    styleUrl: './stepper.component.scss'
 })

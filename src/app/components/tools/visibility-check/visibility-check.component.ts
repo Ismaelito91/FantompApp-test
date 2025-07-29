@@ -39,39 +39,39 @@ export class VisibilityCheckComponent {
    questions: Question[] = [
       {
          image: 'assets/images/pseudo-illu.svg',
-         title: 'Que contient ton pseudo ?',
+         title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.TITLE',
          sections: [
             {
                name: 'pseudo_identity',
-               title: '🪪 Identité',
+               title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.TITLE',
                answers: [
                   {
-                     title: 'Mon nom ou mon prénom en entier',
-                     description: '(exemple : Martin)'
+                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_1_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_1_DESCRIPTION',
                   },
                   {
-                     title: 'Mon nom ou mon prénom en abrégé.',
-                     description: '(exemple: Mrt1)'
+                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_2_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_2_DESCRIPTION',
                   },
                   {
-                     title: 'Mon surnom',
+                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_3_TITLE',
                   },
                   {
-                     title: 'Ma date de naissance',
+                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_4_TITLE',
                   }
                ]
             },
             {
                name: 'pseudo_origin',
-               title: '🗺️ Origine géographique ou culturelle',
+               title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.TITLE',
                answers: [
                   {
-                     title: 'Mon code postal',
-                     description: '(exemple: 78 ou 44300)'
+                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_1_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_1_DESCRIPTION',
                   },
                   {
-                     title: 'Mon lieu de vie ou d’origine',
-                     description: '(Ville, région, pays, emoji de drapeau.)'
+                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_2_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_2_DESCRIPTION',
                   },
                ]
             }
@@ -79,84 +79,84 @@ export class VisibilityCheckComponent {
       },
       {
          image: 'assets/images/bio-illu.svg',
-         title: 'Que contient ta bio ?',
+         title: 'TOOLS.VISIBILITY_CHECK.BIO.TITLE',
          sections: [
             {
                name: 'bio_empty',
                answers: [
                   {
-                     title: 'Je n’ai rien écrit dans ma bio',
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.EMPTY.ANSWERS.ANSWER_1_TITLE',
                   },
                ]
             },
             {
                name: 'bio_identity',
-               title: '🪪 Identité',
+               title: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.TITLE',
                answers: [
                   {
-                     title: 'Mon nom ou mon prénom en entier',
-                     description: '(exemple : Martin)'
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_1_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_1_DESCRIPTION',
                   },
                   {
-                     title: 'Mon nom ou mon prénom en abrégé.',
-                     description: '(exemple: Mrt1)'
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_2_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_2_DESCRIPTION',
                   },
                   {
-                     title: 'Mon surnom',
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_3_TITLE',
                   },
                   {
-                     title: 'Ma date de naissance',
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_4_TITLE',
                   }
                ]
             },
             {
                name: 'bio_origin',
-               title: '🗺️ Origine géographique ou culturelle',
+               title: 'TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.TITLE',
                answers: [
                   {
-                     title: 'Mon code postal',
-                     description: '(exemple: 78 ou 44300)'
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_1_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_1_DESCRIPTION',
                   },
                   {
-                     title: 'Mon lieu de vie ou d’origine',
-                     description: '(Ville, région, pays, emoji de drapeau.)'
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_2_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_2_DESCRIPTION',
                   },
                ]
             },
             {
                name: 'bio_digital_life',
-               title: '👥 Vie numérique',
+               title: 'TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.TITLE',
                answers: [
                   {
-                     title: 'Les liens vers mes autres réseaux.',
-                     description: '(Twitter, Instagram, TikTok, LinkedIn).'
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_1_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_1_DESCRIPTION',
                   },
                   {
-                     title: 'Les comptes de mon entourage',
-                     description: '(Amis, relations amoureuses...)'
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_2_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_2_DESCRIPTION',
                   },
                ]
             },
             {
                name: 'bio_interest',
-               title: '🎭 Centres d’intérêt',
+               title: 'TOOLS.VISIBILITY_CHECK.BIO.INTEREST.TITLE',
                answers: [
                   {
-                     title: 'Un lien vers mon club ou une association où je participe.',
-                     description: '(ex : @VolleyNantes)'
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.INTEREST.ANSWERS.ANSWER_1_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.BIO.INTEREST.ANSWERS.ANSWER_1_TITLE',
                   },
                ]
             },
             {
                name: 'bio_education_pro',
-               title: '🏫 Éducation ou profession',
+               title: 'TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.TITLE',
                answers: [
                   {
-                     title: 'Une mention de mon établissement ou de mon entreprise.',
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.ANSWERS.ANSWER_1_TITLE',
                   },
                   {
-                     title: 'Mes compétences',
-                     description: '(Apprenti pâtissier, Étudiant en médecine…)'
+                     title: 'TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.ANSWERS.ANSWER_2_TITLE',
+                     description: 'TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.ANSWERS.ANSWER_2_DESCRIPTION',
                   },
                ]
             },

@@ -1,14 +1,14 @@
 <div class="flex flex-col gap-(--spacing-3) p-(--spacing-3)"
-   style="background-image: url('../../../../../assets/images/visibility-results-bg.png'); background-size: cover;">
+   style="height: 100vh; background-image: url('../../../../../assets/images/visibility-results-bg.png'); background-size: cover;">
    <div class="flex justify-between items-center">
-      <h3 class="!p-(--spacing-3)">Tes résultats</h3>
+      <h3 class="!p-(--spacing-3)">{{ "TOOLS.VISIBILITY_CHECK.RESULTS.TITLE" | translate}}</h3>
       <app-button-close link="/tools"></app-button-close>
    </div>
    @if (showSecondDiv) {
    <div @smartSpring
       class="flex flex-col gap-(--spacing-2) p-(--spacing-3) bg-(--background-4) rounded-(--border-radius-3)">
-      <h6>{{ summary.title }}</h6>
-      <p>{{ summary.content }}</p>
+      <h6 class="!text-(--color-19)">{{ summary.title | translate }}</h6>
+      <p class="text-(--color-10)">{{ summary.content | translate }}</p>
    </div>
    }
    <div @moveInTopWithFlipY (@moveInTopWithFlipY.done)="onFirstAnimationDone()" [@bounceOnceDown]="bounceTrigger"
@@ -21,17 +21,17 @@
          <img src="assets/images/pseudo-illu.svg" alt="image"
             class="!w-[88px] h-[49px] object-contain absolute top-[-11px] right-[-6px]" />
          <div class="flex flex-col gap-(--spacing-1)">
-            <h5 class="!text-(--color-16) !font-[600]">Ton pseudo indique</h5>
+            <h5 class="!text-(--color-16) !font-[600]">{{ "TOOLS.VISIBILITY_CHECK.RESULTS.PSEUDO.TITLE" | translate}}</h5>
             <ul>
                @for (answer of results.pseudo; track $index) {
-               <li>{{ answer }}</li>
+               <li>{{ answer | translate }}</li>
                } @empty {
-               <li>Aucune information personnelle !</li>
+               <li>{{ "TOOLS.VISIBILITY_CHECK.RESULTS.NO_PERSONAL_INFO" | translate}}</li>
                }
             </ul>
          </div>
          <div class="flex justify-center items-center">
-            <app-badge [variant]="pseudoBadge.variant" [title]="pseudoBadge.title"></app-badge>
+            <app-badge [variant]="pseudoBadge.variant" [title]="pseudoBadge.title | translate"></app-badge>
          </div>
       </div>
       <!-- Bio -->
@@ -40,17 +40,17 @@
          <img src="assets/images/bio-illu.svg" alt="image"
             class="!w-[88px] h-[75px] object-contain absolute top-[-11px] right-[-17px]" />
          <div class="flex flex-col gap-(--spacing-1)">
-            <h5 class="!text-(--color-16) !font-[600]">Ta bio indique</h5>
+            <h5 class="!text-(--color-16) !font-[600]">{{ "TOOLS.VISIBILITY_CHECK.RESULTS.BIO.TITLE" | translate }}</h5>
             <ul>
                @for (answer of results.bio; track $index) {
-               <li>{{ answer }}</li>
+               <li>{{ answer | translate }}</li>
                } @empty {
-               <li>Aucune information personnelle !</li>
+               <li>{{ "TOOLS.VISIBILITY_CHECK.RESULTS.NO_PERSONAL_INFO" | translate}}</li>
                }
             </ul>
          </div>
          <div class="flex justify-center items-center">
-            <app-badge [variant]="bioBadge.variant" [title]="bioBadge.title"></app-badge>
+            <app-badge [variant]="bioBadge.variant" [title]="bioBadge.title | translate"></app-badge>
          </div>
       </div>
    </div>

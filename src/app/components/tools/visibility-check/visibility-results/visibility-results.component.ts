@@ -1,9 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ButtonCloseComponent } from "../../../design-system/button-close/button-close.component";
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { BadgeComponent } from "../../../design-system/badge/badge.component";
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BadgeVariant } from '../../../../model/type/badge-variant.type';
+import { BadgeComponent } from "../../../design-system/badge/badge.component";
+import { ButtonCloseComponent } from "../../../design-system/button-close/button-close.component";
+import { TranslatePipe } from '@ngx-translate/core';
 
 export const moveInTopWithFlipYAnimation = trigger('moveInTopWithFlipY', [
    transition(':enter', [
@@ -65,7 +66,7 @@ type Badge = {
 }
 @Component({
    selector: 'app-visibility-results',
-   imports: [ButtonCloseComponent, BadgeComponent],
+   imports: [ButtonCloseComponent, BadgeComponent, TranslatePipe],
    templateUrl: './visibility-results.component.html',
    styleUrl: './visibility-results.component.scss',
    animations: [moveInTopWithFlipYAnimation, bounceOnceDownAnimation, smartSpringAnimation]
@@ -81,38 +82,37 @@ export class VisibilityResultsComponent implements OnInit {
 
    ngOnInit(): void {
       const state = history.state as { results: Results };
-      console.log('Résultats reçus :', state.results);
       this.results = state.results;
       if (this.results.pseudo.length === 0) {
-         this.pseudoBadge = { title: 'INVISIBLE 👻', variant: 'success' };
+         this.pseudoBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.INVISIBLE', variant: 'success' };
       } else if (this.results.pseudo.length <= 2) {
-         this.pseudoBadge = { title: 'DISCRET 🙈️', variant: 'info' };
+         this.pseudoBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.DISCREET', variant: 'info' };
       } else {
-         this.pseudoBadge = { title: 'PUBLIC 👀', variant: 'danger-light' };
+         this.pseudoBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.PUBLIC', variant: 'danger-light' };
       }
 
       if (this.results.bio.length === 0) {
-         this.bioBadge = { title: 'INVISIBLE 👻', variant: 'success' };
+         this.bioBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.INVISIBLE', variant: 'success' };
       } else if (this.results.bio.length <= 2) {
-         this.bioBadge = { title: 'DISCRET 🙈️', variant: 'info' };
+         this.bioBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.DISCREET', variant: 'info' };
       } else {
-         this.bioBadge = { title: 'PUBLIC 👀', variant: 'danger-light' };
+         this.bioBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.PUBLIC', variant: 'danger-light' };
       }
 
       if (this.pseudoBadge.variant === 'danger-light' || this.bioBadge.variant === 'danger-light') {
          this.summary = {
-            title: 'Prudence ! 🧐',
-            content: 'Ton profil contient beaucoup d\'informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie.'
+            title: 'TOOLS.VISIBILITY_CHECK.RESULTS.SUMMARY.BAD.TITLE',
+            content: 'TOOLS.VISIBILITY_CHECK.RESULTS.SUMMARY.BAD.CONTENT'
          };
       } else if (this.pseudoBadge.variant === 'success' && this.bioBadge.variant === 'success') {
          this.summary = {
-            title: 'Bien joué ! 🥷',
-            content: 'Ton profil ne permet pas de savoir qui tu es dans la vie, sur les réseaux et aussi hors ligne.'
+            title: 'TOOLS.VISIBILITY_CHECK.RESULTS.SUMMARY.GOOD.TITLE',
+            content: 'TOOLS.VISIBILITY_CHECK.RESULTS.SUMMARY.GOOD.CONTENT'
          };
       } else {
          this.summary = {
-            title: 'Pas mal ! 🥸',
-            content: 'Il y a encore quelques indices pour deviner qui tu es dans la vraie vie mais tu peux encore t’améliorer et divulguer moins d’informations sur toi.'
+            title: 'TOOLS.VISIBILITY_CHECK.RESULTS.SUMMARY.OK.TITLE',
+            content: 'TOOLS.VISIBILITY_CHECK.RESULTS.SUMMARY.OK.CONTENT'
          }
       }
    }

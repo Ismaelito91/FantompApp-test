@@ -17,12 +17,18 @@
       "BACK": "Retour",
       "NEXT": "Suivant",
       "PREVIOUS": "Précédent",
+      "RESULTS": "Résultats LU",
       "HOME": "Accueil",
       "PROBLEM": "Problème",
       "TOOLS": "Outils",
       "SECURE": "Me sécuriser",
       "YES": "Oui",
       "NO": "Non"
+   },
+   "DESIGN_SYSTEM": {
+      "STEPPER": {
+         "DESCRIPTION": "Question {{ currentStep }} sur {{ totalSteps }} LU"
+      }
    },
    "USER_CONFIG_APP": {
       "TITLE": "Apparence",
@@ -83,6 +89,113 @@
       "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil LU",
       "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité LU",
       "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? LU",
-      "VISIBILITY_CHECK": {}
+      "VISIBILITY_CHECK": {
+         "TITLE": "Je teste ma visibilité LU",
+         "DESCRIPTION": "Peut-on m'identifier à partir de mon pseudo et ma bio ? LU",
+         "PSEUDO": {
+            "TITLE": "Que contient ton pseudo ? LU",
+            "IDENTITY": {
+               "TITLE": "🪪 Identité LU",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier LU",
+                  "ANSWER_1_DESCRIPTION": "(exemple : Martin) LU",
+                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé. LU",
+                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1) LU",
+                  "ANSWER_3_TITLE": "Mon surnom LU",
+                  "ANSWER_4_TITLE": "Ma date de naissance LU"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "🗺️ Origine géographique ou culturelle LU",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon code postal LU",
+                  "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300) LU",
+                  "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine LU",
+                  "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.) LU"
+               }
+            }
+         },
+         "BIO": {
+            "TITLE": "Que contient ta bio ? LU",
+            "EMPTY": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Je n’ai rien écrit dans ma bio LU"
+               }
+            },
+            "IDENTITY": {
+               "TITLE": "🪪 Identité LU",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier LU",
+                  "ANSWER_1_DESCRIPTION": "(exemple : Martin) LU",
+                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé. LU",
+                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1) LU",
+                  "ANSWER_3_TITLE": "Mon surnom LU",
+                  "ANSWER_4_TITLE": "Ma date de naissance LU"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "🗺️ Origine géographique ou culturelle LU",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon code postal LU",
+                  "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300) LU",
+                  "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine LU",
+                  "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.) LU"
+               }
+            },
+            "DIGITAL_LIFE": {
+               "TITLE": "👥 Vie numérique LU",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Les liens vers mes autres réseaux. LU",
+                  "ANSWER_1_DESCRIPTION": "(Twitter, Instagram, TikTok, LinkedIn). LU",
+                  "ANSWER_2_TITLE": "Les comptes de mon entourage LU",
+                  "ANSWER_2_DESCRIPTION": "(Amis, relations amoureuses...) LU"
+               }
+            },
+            "INTEREST": {
+               "TITLE": "🎭 Centres d’intérêt LU",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Un lien vers mon club ou une association où je participe. LU",
+                  "ANSWER_1_DESCRIPTION": "(ex : @VolleyNantes) LU"
+               }
+            },
+            "EDUCATION_PRO": {
+               "TITLE": "🏫 Éducation ou profession LU",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Une mention de mon établissement ou de mon entreprise. LU",
+                  "ANSWER_2_TITLE": "Mes compétences LU",
+                  "ANSWER_2_DESCRIPTION": "(Apprenti pâtissier, Étudiant en médecine…) LU"
+               }
+            }
+         },
+         "RESULTS": {
+            "TITLE": "Tes résultats LU",
+            "SUMMARY": {
+               "GOOD": {
+                  "TITLE": "Bien joué ! 🥷 LU",
+                  "CONTENT": "Ton profil ne permet pas de savoir qui tu es dans la vie, sur les réseaux et aussi hors ligne. LU"
+               },
+               "OK": {
+                  "TITLE": "Pas mal ! 🥸 LU",
+                  "CONTENT": "Il y a encore quelques indices pour deviner qui tu es dans la vraie vie mais tu peux encore t’améliorer et divulguer moins d’informations sur toi. LU"
+               },
+               "BAD": {
+                  "TITLE": "Prudence ! 🧐 LU",
+                  "CONTENT": "Ton profil contient beaucoup d’informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie. LU"
+               }
+            },
+            "PSEUDO": {
+               "TITLE": "Ton pseudo indique LU"
+            },
+            "BIO": {
+               "TITLE": "Ta bio indique LU"
+            },
+            "STATE": {
+               "PUBLIC": "PUBLIC 👀 LU",
+               "DISCREET": "DISCRET 🙈️ LU",
+               "INVISIBLE": "INVISIBLE 👻 LU"
+            },
+            "NO_PERSONAL_INFO": "Aucune information personnelle ! LU"
+         }
+      }
    }
 }

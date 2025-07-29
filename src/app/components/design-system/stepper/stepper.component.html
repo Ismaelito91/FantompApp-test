@@ -5,5 +5,5 @@
          [class]="currentStep() >= current ? 'step-viewed' : 'step-unviewed'"></div>
       }
    </div>
-   <p class="stepper-description">Question {{ currentStep() }} sur {{ totalSteps() }}</p>
+   <p class="stepper-description">{{ "DESIGN_SYSTEM.STEPPER.DESCRIPTION" | translate:{currentStep: currentStep(), totalSteps: totalSteps()} }}</p>
 </div>

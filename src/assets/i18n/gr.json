@@ -13,10 +13,16 @@
       "BACK": "Πίσω",
       "NEXT": "Επόμενο",
       "PREVIOUS": "Προηγούμενο",
+      "RESULTS": "Résultats GR",
       "HOME": "Αρχική",
       "PROBLEM": "Πρόβλημα",
       "TOOLS": "Εργαλεία",
       "SECURE": "Ασφάλεια"
+   },
+   "DESIGN_SYSTEM": {
+      "STEPPER": {
+         "DESCRIPTION": "Question {{ currentStep }} sur {{ totalSteps }} GR"
+      }
    },
    "USER_CONFIG_APP": {
       "TITLE": "Εμφάνιση",
@@ -65,6 +71,113 @@
       "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil GR",
       "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité GR",
       "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? GR",
-      "VISIBILITY_CHECK": {}
+      "VISIBILITY_CHECK": {
+         "TITLE": "Je teste ma visibilité GR",
+         "DESCRIPTION": "Peut-on m'identifier à partir de mon pseudo et ma bio ? GR",
+         "PSEUDO": {
+            "TITLE": "Que contient ton pseudo ? GR",
+            "IDENTITY": {
+               "TITLE": "🪪 Identité GR",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier GR",
+                  "ANSWER_1_DESCRIPTION": "(exemple : Martin) GR",
+                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé. GR",
+                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1) GR",
+                  "ANSWER_3_TITLE": "Mon surnom GR",
+                  "ANSWER_4_TITLE": "Ma date de naissance GR"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "🗺️ Origine géographique ou culturelle GR",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon code postal GR",
+                  "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300) GR",
+                  "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine GR",
+                  "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.) GR"
+               }
+            }
+         },
+         "BIO": {
+            "TITLE": "Que contient ta bio ? GR",
+            "EMPTY": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Je n’ai rien écrit dans ma bio GR"
+               }
+            },
+            "IDENTITY": {
+               "TITLE": "🪪 Identité GR",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier GR",
+                  "ANSWER_1_DESCRIPTION": "(exemple : Martin) GR",
+                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé. GR",
+                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1) GR",
+                  "ANSWER_3_TITLE": "Mon surnom GR",
+                  "ANSWER_4_TITLE": "Ma date de naissance GR"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "🗺️ Origine géographique ou culturelle GR",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon code postal GR",
+                  "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300) GR",
+                  "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine GR",
+                  "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.) GR"
+               }
+            },
+            "DIGITAL_LIFE": {
+               "TITLE": "👥 Vie numérique GR",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Les liens vers mes autres réseaux. GR",
+                  "ANSWER_1_DESCRIPTION": "(Twitter, Instagram, TikTok, LinkedIn). GR",
+                  "ANSWER_2_TITLE": "Les comptes de mon entourage GR",
+                  "ANSWER_2_DESCRIPTION": "(Amis, relations amoureuses...) GR"
+               }
+            },
+            "INTEREST": {
+               "TITLE": "🎭 Centres d’intérêt GR",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Un lien vers mon club ou une association où je participe. GR",
+                  "ANSWER_1_DESCRIPTION": "(ex : @VolleyNantes) GR"
+               }
+            },
+            "EDUCATION_PRO": {
+               "TITLE": "🏫 Éducation ou profession GR",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Une mention de mon établissement ou de mon entreprise. GR",
+                  "ANSWER_2_TITLE": "Mes compétences GR",
+                  "ANSWER_2_DESCRIPTION": "(Apprenti pâtissier, Étudiant en médecine…) GR"
+               }
+            }
+         },
+         "RESULTS": {
+            "TITLE": "Tes résultats GR",
+            "SUMMARY": {
+               "GOOD": {
+                  "TITLE": "Bien joué ! 🥷 GR",
+                  "CONTENT": "Ton profil ne permet pas de savoir qui tu es dans la vie, sur les réseaux et aussi hors ligne. GR"
+               },
+               "OK": {
+                  "TITLE": "Pas mal ! 🥸 GR",
+                  "CONTENT": "Il y a encore quelques indices pour deviner qui tu es dans la vraie vie mais tu peux encore t’améliorer et divulguer moins d’informations sur toi. GR"
+               },
+               "BAD": {
+                  "TITLE": "Prudence ! 🧐 GR",
+                  "CONTENT": "Ton profil contient beaucoup d’informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie. GR"
+               }
+            },
+            "PSEUDO": {
+               "TITLE": "Ton pseudo indique GR"
+            },
+            "BIO": {
+               "TITLE": "Ta bio indique GR"
+            },
+            "STATE": {
+               "PUBLIC": "PUBLIC 👀 GR",
+               "DISCREET": "DISCRET 🙈️ GR",
+               "INVISIBLE": "INVISIBLE 👻 GR"
+            },
+            "NO_PERSONAL_INFO": "Aucune information personnelle ! GR"
+         }
+      }
    }
 }

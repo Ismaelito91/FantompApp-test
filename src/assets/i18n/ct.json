@@ -13,10 +13,16 @@
       "BACK": "Tornar",
       "NEXT": "Següent",
       "PREVIOUS": "Anterior",
+      "RESULTS": "Résultats CT",
       "HOME": "Inici",
       "PROBLEM": "Problema",
       "TOOLS": "Eines",
       "SECURE": "Assegurar-me"
+   },
+   "DESIGN_SYSTEM": {
+      "STEPPER": {
+         "DESCRIPTION": "Question {{ currentStep }} sur {{ totalSteps }} CT"
+      }
    },
    "USER_CONFIG_APP": {
       "TITLE": "Aparença",
@@ -65,6 +71,113 @@
       "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil CT",
       "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité CT",
       "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? CT",
-      "VISIBILITY_CHECK": {}
+      "VISIBILITY_CHECK": {
+         "TITLE": "Je teste ma visibilité CT",
+         "DESCRIPTION": "Peut-on m'identifier à partir de mon pseudo et ma bio ? CT",
+         "PSEUDO": {
+            "TITLE": "Que contient ton pseudo ? CT",
+            "IDENTITY": {
+               "TITLE": "🪪 Identité CT",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier CT",
+                  "ANSWER_1_DESCRIPTION": "(exemple : Martin) CT",
+                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé. CT",
+                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1) CT",
+                  "ANSWER_3_TITLE": "Mon surnom CT",
+                  "ANSWER_4_TITLE": "Ma date de naissance CT"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "🗺️ Origine géographique ou culturelle CT",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon code postal CT",
+                  "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300) CT",
+                  "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine CT",
+                  "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.) CT"
+               }
+            }
+         },
+         "BIO": {
+            "TITLE": "Que contient ta bio ? CT",
+            "EMPTY": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Je n’ai rien écrit dans ma bio CT"
+               }
+            },
+            "IDENTITY": {
+               "TITLE": "🪪 Identité CT",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier CT",
+                  "ANSWER_1_DESCRIPTION": "(exemple : Martin) CT",
+                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé. CT",
+                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1) CT",
+                  "ANSWER_3_TITLE": "Mon surnom CT",
+                  "ANSWER_4_TITLE": "Ma date de naissance CT"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "🗺️ Origine géographique ou culturelle CT",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon code postal CT",
+                  "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300) CT",
+                  "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine CT",
+                  "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.) CT"
+               }
+            },
+            "DIGITAL_LIFE": {
+               "TITLE": "👥 Vie numérique CT",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Les liens vers mes autres réseaux. CT",
+                  "ANSWER_1_DESCRIPTION": "(Twitter, Instagram, TikTok, LinkedIn). CT",
+                  "ANSWER_2_TITLE": "Les comptes de mon entourage CT",
+                  "ANSWER_2_DESCRIPTION": "(Amis, relations amoureuses...) CT"
+               }
+            },
+            "INTEREST": {
+               "TITLE": "🎭 Centres d’intérêt CT",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Un lien vers mon club ou une association où je participe. CT",
+                  "ANSWER_1_DESCRIPTION": "(ex : @VolleyNantes) CT"
+               }
+            },
+            "EDUCATION_PRO": {
+               "TITLE": "🏫 Éducation ou profession CT",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Une mention de mon établissement ou de mon entreprise. CT",
+                  "ANSWER_2_TITLE": "Mes compétences CT",
+                  "ANSWER_2_DESCRIPTION": "(Apprenti pâtissier, Étudiant en médecine…) CT"
+               }
+            }
+         },
+         "RESULTS": {
+            "TITLE": "Tes résultats CT",
+            "SUMMARY": {
+               "GOOD": {
+                  "TITLE": "Bien joué ! 🥷 CT",
+                  "CONTENT": "Ton profil ne permet pas de savoir qui tu es dans la vie, sur les réseaux et aussi hors ligne. CT"
+               },
+               "OK": {
+                  "TITLE": "Pas mal ! 🥸 CT",
+                  "CONTENT": "Il y a encore quelques indices pour deviner qui tu es dans la vraie vie mais tu peux encore t’améliorer et divulguer moins d’informations sur toi. CT"
+               },
+               "BAD": {
+                  "TITLE": "Prudence ! 🧐 CT",
+                  "CONTENT": "Ton profil contient beaucoup d’informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie. CT"
+               }
+            },
+            "PSEUDO": {
+               "TITLE": "Ton pseudo indique CT"
+            },
+            "BIO": {
+               "TITLE": "Ta bio indique CT"
+            },
+            "STATE": {
+               "PUBLIC": "PUBLIC 👀 CT",
+               "DISCREET": "DISCRET 🙈️ CT",
+               "INVISIBLE": "INVISIBLE 👻 CT"
+            },
+            "NO_PERSONAL_INFO": "Aucune information personnelle ! CT"
+         }
+      }
    }
 }
