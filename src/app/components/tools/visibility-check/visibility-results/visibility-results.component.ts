@@ -1,36 +1,30 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { Component, inject, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { BadgeVariant } from '../../../../model/type/badge-variant.type';
 import { BadgeComponent } from "../../../design-system/badge/badge.component";
 import { ButtonCloseComponent } from "../../../design-system/button-close/button-close.component";
-import { TranslatePipe } from '@ngx-translate/core';
 
-export const moveInTopWithFlipYAnimation = trigger('moveInTopWithFlipY', [
+export const flipDropFromTopOfPage = trigger('flipDropFromTopOfPage', [
    transition(':enter', [
+      style({
+         position: 'absolute',
+         top: '-100vh',
+         transform: 'rotateY(-270deg)',
+         width: 'calc(100% - 32px)',
+         transformOrigin: 'top',
+      }),
       animate(
-         '3000ms 200ms cubic-bezier(0.22, 1, 0.36, 1)', // ralentir + effet spring
-         keyframes([
-            style({
-               opacity: 0,
-               transform: 'perspective(1000px) rotateY(-90deg) translateY(-20px)',
-               transformOrigin: 'center',
-               offset: 0
-            }),
-            style({
-               opacity: 0.7,
-               transform: 'perspective(1000px) rotateY(10deg) translateY(-10px)',
-               offset: 0.6
-            }),
-            style({
-               opacity: 1,
-               transform: 'perspective(1000px) rotateY(0deg) translateY(0)',
-               offset: 1
-            })
-         ])
+         '2000ms 200ms cubic-bezier(0.22, 1, 0.36, 1)',
+         style({
+            top: '88px',
+            left: '16px',
+            transform: 'rotateY(0deg)',
+         })
       )
    ])
 ]);
+
 
 export const bounceOnceDownAnimation = trigger('bounceOnceDown', [
    transition('* => active', [
@@ -69,10 +63,9 @@ type Badge = {
    imports: [ButtonCloseComponent, BadgeComponent, TranslatePipe],
    templateUrl: './visibility-results.component.html',
    styleUrl: './visibility-results.component.scss',
-   animations: [moveInTopWithFlipYAnimation, bounceOnceDownAnimation, smartSpringAnimation]
+   animations: [flipDropFromTopOfPage, bounceOnceDownAnimation, smartSpringAnimation]
 })
 export class VisibilityResultsComponent implements OnInit {
-   private readonly router = inject(Router);
    showSecondDiv = false;
    bounceTrigger = 'inactive';
    results!: Results;

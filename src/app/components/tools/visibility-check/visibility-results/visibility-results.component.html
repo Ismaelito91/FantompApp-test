@@ -1,6 +1,5 @@
-<div class="flex flex-col gap-(--spacing-3) p-(--spacing-3)"
-   style="height: 100vh; background-image: url('../../../../../assets/images/visibility-results-bg.png'); background-size: cover;">
-   <div class="flex justify-between items-center">
+<div class="visibility-results-container flex flex-col gap-(--spacing-3) p-(--spacing-3)">
+   <div class="title flex justify-between items-center">
       <h3 class="!p-(--spacing-3)">{{ "TOOLS.VISIBILITY_CHECK.RESULTS.TITLE" | translate}}</h3>
       <app-button-close link="/tools"></app-button-close>
    </div>
@@ -11,22 +10,21 @@
       <p class="text-(--color-10)">{{ summary.content | translate }}</p>
    </div>
    }
-   <div @moveInTopWithFlipY (@moveInTopWithFlipY.done)="onFirstAnimationDone()" [@bounceOnceDown]="bounceTrigger"
-      class="flex flex-col gap-[13px] p-(--spacing-3) bg-(--color-blue-600)"
-      style="border-radius: 20px; box-shadow: 0px 0px 0px 6px #FFFFFF33 inset;">
+   <div @flipDropFromTopOfPage (@flipDropFromTopOfPage.done)="onFirstAnimationDone()" [@bounceOnceDown]="bounceTrigger"
+      class="details flex flex-col gap-[13px] p-(--spacing-3) bg-(--color-blue-600)">
 
       <!-- Pseudo -->
       <div class="flex flex-col gap-(--spacing-2) relative bg-(--color-23)"
          style="padding: 32px 24px 16px 24px; border-radius: 10px;">
          <img src="assets/images/pseudo-illu.svg" alt="image"
-            class="!w-[88px] h-[49px] object-contain absolute top-[-11px] right-[-6px]" />
+            class="!w-[88px] h-[49px] object-contain absolute top-[-10px] right-[-6px]" />
          <div class="flex flex-col gap-(--spacing-1)">
             <h5 class="!text-(--color-16) !font-[600]">{{ "TOOLS.VISIBILITY_CHECK.RESULTS.PSEUDO.TITLE" | translate}}</h5>
             <ul>
                @for (answer of results.pseudo; track $index) {
                <li>{{ answer | translate }}</li>
                } @empty {
-               <li>{{ "TOOLS.VISIBILITY_CHECK.RESULTS.NO_PERSONAL_INFO" | translate}}</li>
+               <li>{{ "TOOLS.VISIBILITY_CHECK.RESULTS.NO_PERSONAL_INFO" | translate }}</li>
                }
             </ul>
          </div>
@@ -38,14 +36,14 @@
       <div class="flex flex-col gap-(--spacing-2) relative bg-(--color-23)"
          style="padding: 32px 24px 16px 24px; border-radius: 10px;">
          <img src="assets/images/bio-illu.svg" alt="image"
-            class="!w-[88px] h-[75px] object-contain absolute top-[-11px] right-[-17px]" />
+            class="!w-[88px] h-[75px] object-contain absolute top-[-10px] right-[-17px]" />
          <div class="flex flex-col gap-(--spacing-1)">
             <h5 class="!text-(--color-16) !font-[600]">{{ "TOOLS.VISIBILITY_CHECK.RESULTS.BIO.TITLE" | translate }}</h5>
             <ul>
                @for (answer of results.bio; track $index) {
                <li>{{ answer | translate }}</li>
                } @empty {
-               <li>{{ "TOOLS.VISIBILITY_CHECK.RESULTS.NO_PERSONAL_INFO" | translate}}</li>
+               <li>{{ "TOOLS.VISIBILITY_CHECK.RESULTS.NO_PERSONAL_INFO" | translate }}</li>
                }
             </ul>
          </div>
