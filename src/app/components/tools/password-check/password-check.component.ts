@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
+import { ButtonCloseComponent } from "../../design-system/button-close/button-close.component";
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 
@@ -306,7 +307,12 @@ export const passwordCalculator = new PasswordSecurityCalculator();
 
 @Component({
    selector: "app-password-check",
-   imports: [ButtonBackComponent, FormsModule, CommonModule],
+   imports: [
+      ButtonBackComponent,
+      ButtonCloseComponent,
+      FormsModule,
+      CommonModule,
+   ],
    templateUrl: "./password-check.component.html",
    styleUrl: "./password-check.component.scss",
 })
@@ -317,6 +323,7 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
    message: string = "";
    showPassword: boolean = false;
    showInfoModal: boolean = false;
+   showPasswordInfoModal: boolean = false;
    hasSeenOnboarding: boolean = false;
 
    constructor() {
@@ -355,6 +362,10 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
 
    toggleInfoModal() {
       this.showInfoModal = !this.showInfoModal;
+   }
+
+   togglePasswordInfoModal() {
+      this.showPasswordInfoModal = !this.showPasswordInfoModal;
    }
 
    checkPassword() {
