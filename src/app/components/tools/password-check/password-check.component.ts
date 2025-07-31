@@ -149,6 +149,14 @@ export class PasswordSecurityCalculator {
    ];
 
    getCrackingDataByLength(length: number): PasswordCrackingData | undefined {
+      if (length < 4) {
+         return this.crackingTimeData.find((data) => data.characters === 4);
+      }
+
+      if (length > 18) {
+         return this.crackingTimeData.find((data) => data.characters === 18);
+      }
+
       return this.crackingTimeData.find((data) => data.characters === length);
    }
 
@@ -172,7 +180,7 @@ export class PasswordSecurityCalculator {
       crackingTime: string;
       strengthLevel: string;
    } {
-      const data = this.getCrackingDataByLength(Math.min(length, 18));
+      const data = this.getCrackingDataByLength(length);
 
       if (!data) {
          return {
@@ -325,6 +333,7 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
    showInfoModal: boolean = false;
    showPasswordInfoModal: boolean = false;
    hasSeenOnboarding: boolean = false;
+   isInputFocused: boolean = false;
 
    constructor() {
       // Vérifie si c'est la première fois que l'utilisateur utilise l'app
@@ -366,6 +375,19 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
 
    togglePasswordInfoModal() {
       this.showPasswordInfoModal = !this.showPasswordInfoModal;
+   }
+
+   // Gestion du focus pour l'animation
+   onInputFocus() {
+      this.isInputFocused = true;
+   }
+
+   onInputBlur() {
+      this.isInputFocused = false;
+   }
+
+   cancelInputFocus() {
+      this.isInputFocused = false;
    }
 
    checkPassword() {
