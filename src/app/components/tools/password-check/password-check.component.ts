@@ -1,8 +1,7 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
-import { ButtonCloseComponent } from "../../design-system/button-close/button-close.component";
-import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 
 export interface PasswordCrackingData {
    characters: number;
@@ -317,7 +316,6 @@ export const passwordCalculator = new PasswordSecurityCalculator();
    selector: "app-password-check",
    imports: [
       ButtonBackComponent,
-      ButtonCloseComponent,
       FormsModule,
       CommonModule,
    ],
