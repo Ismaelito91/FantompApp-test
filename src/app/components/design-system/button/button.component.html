@@ -1,0 +1,9 @@
+<button mat-flat-button class="btn w-full" [class]="{
+   'btn-lg': size() === 'lg',
+   'btn-md': size() === 'md',
+   'btn-sm': size() === 'sm',
+}">
+   <div class="flex items-center gap-(--spacing-1)">
+      <span>{{ label() }}</span>
+   </div>
+</button>

@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from "@angular/material/icon";
 import { MatRadioChange, MatRadioModule } from "@angular/material/radio";
 import { Router } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { StepperComponent } from "../../design-system/stepper/stepper.component";
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { TranslatePipe } from '@ngx-translate/core';
 
 type Question = {
    image: string,
@@ -28,7 +28,8 @@ type Results = {
 }
 @Component({
    selector: 'app-visibility-check',
-   imports: [TranslatePipe, ButtonBackComponent, MatRadioModule, MatButtonModule, StepperComponent, MatIconModule, ReactiveFormsModule],
+   imports: [TranslatePipe, ButtonBackComponent, MatRadioModule, MatButtonModule,
+      StepperComponent, MatIconModule, ReactiveFormsModule],
    templateUrl: './visibility-check.component.html',
    styleUrl: './visibility-check.component.scss'
 })
