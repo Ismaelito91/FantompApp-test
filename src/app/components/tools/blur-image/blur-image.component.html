@@ -1,4 +1,6 @@
 <div class="flex flex-col h-screen p-(--spacing-3) gap-(--spacing-3) relative">
+   <div class="ellipse-1"></div>
+   <div class="ellipse-2"></div>
    <app-button-back link="/tools" class="fixed top-[16px] left-[32px] z-1"></app-button-back>
 
    <div class="flex flex-col h-full gap-(--spacing-5)">
@@ -7,17 +9,18 @@
          <p class="text-(--color-4)">Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne.
          </p>
       </div>
-      <div
-         class="image-container flex justify-center items-center h-full rounded-(--border-radius-3) bg-(--background-25)">
-         <img src="assets/images/photo-illu.svg" alt="image-illu" class="h-[200px]" />
+      <div class="image-container flex justify-center items-center h-full rounded-(--border-radius-3) z-1">
+         <img src="assets/images/photo-illu.svg" alt="image-illu" class="h-[200px]" (click)="fileInput.click()" />
       </div>
       <div class="pl-(--spacing-3) pr-(--spacing-3)">
-         <!-- <button mat-flat-button class="w-full"></button> -->
-         <app-button label="Importer une photo 🤳" variant="primary" size="md"></app-button>
+         <input type="file" accept="image/*" (change)="handleImageUpload($event)" hidden
+            #fileInput />
+         <app-button label="Importer une photo 🤳" variant="primary" size="lg" (click)="fileInput.click()"></app-button>
       </div>
    </div>
 
    <p class="text-(--color-14) pt-(--spacing-2) pr-(--spacing-3) pb-(--spacing-2) pl-(--spacing-3)">
-      💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée !
+      💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas
+      ailleurs non floutée !
    </p>
 </div>

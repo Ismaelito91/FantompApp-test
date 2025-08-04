@@ -1,3 +1,26 @@
 .image-container {
-   border: 4px dashed #937CFF33
+   border: 4px dashed #937CFF33;
+   background: var(--background-25);
+}
+
+.ellipse-1 {
+   position: absolute;
+   width: 206px;
+   height: 206px;
+   top: 70px;
+   left: 203px;
+   background-color: var(--color-25);
+   border-radius: 50%;
+   filter: blur(99px);
+}
+
+.ellipse-2 {
+   position: absolute;
+   width: 284px;
+   height: 284px;
+   bottom: 10px;
+   left: -22px;
+   background-color: var(--color-26);
+   border-radius: 50%;
+   filter: blur(99px);
 }
