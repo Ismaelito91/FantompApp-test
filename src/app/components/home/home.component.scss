@@ -109,18 +109,6 @@
          align-items: center;
          justify-content: center;
          flex-shrink: 0;
-
-         ::ng-deep svg {
-            width: 16px !important;
-            height: 16px !important;
-            max-width: 16px !important;
-            max-height: 16px !important;
-
-            * {
-               stroke: currentColor;
-               fill: none;
-            }
-         }
       }
 
       // Règles spécifiques pour les flèches
@@ -133,16 +121,7 @@
          align-items: center;
          justify-content: center;
          flex-shrink: 0;
-
-         ::ng-deep svg {
-            width: 16px !important;
-            height: 16px !important;
-
-            * {
-               stroke: currentColor;
-               fill: none;
-            }
-         }
+         
       }
 
       span {
