@@ -13,7 +13,7 @@
          <img src="assets/images/photo-illu.svg" alt="image-illu" class="h-[200px]" (click)="fileInput.click()" />
       </div>
       <div class="pl-(--spacing-3) pr-(--spacing-3)">
-         <input type="file" accept="image/*" (change)="handleImageUpload($event)" hidden
+         <input type="file" accept="capture=camera,image/*" (change)="handleImageUpload($event)" hidden
             #fileInput />
          <app-button label="Importer une photo 🤳" variant="primary" size="lg" (click)="fileInput.click()"></app-button>
       </div>
