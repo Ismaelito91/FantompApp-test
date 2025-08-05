@@ -167,6 +167,10 @@ export class AppComponent implements OnInit {
             path: "assets/images/close24x24-icon.svg",
          },
          {
+            name: "icon-redo24x24",
+            path: "assets/images/icon-redo24x24.svg",
+         },
+         {
             name: "checkbox-unselected16x16-icon",
             path: "assets/images/checkbox-unselected16x16-icon.svg",
          },

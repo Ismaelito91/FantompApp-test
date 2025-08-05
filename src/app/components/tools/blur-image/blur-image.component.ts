@@ -1,12 +1,13 @@
 import { afterNextRender, Component, effect, ElementRef, signal, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import * as StackBlur from 'stackblur-canvas';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
 
 @Component({
    selector: 'app-blur-image',
-   imports: [ButtonBackComponent, MatButtonModule, ButtonComponent],
+   imports: [ButtonBackComponent, MatButtonModule, ButtonComponent, MatIconModule],
    templateUrl: './blur-image.component.html',
    styleUrl: './blur-image.component.scss'
 })
@@ -16,7 +17,7 @@ export class BlurImageComponent {
    // Reactive properties
    brushSize = signal(30);
    blurRadius = signal(5);
-   canvasSize = signal({ width: 600, height: 400 });
+   canvasSize = signal({ width: 0, height: 0 });
    private isPainting = false;
    private ctx!: CanvasRenderingContext2D;
 
@@ -24,7 +25,6 @@ export class BlurImageComponent {
       // Initialize after view renders
       afterNextRender(() => {
          this.initCanvas();
-         this.loadSampleImage();
       });
 
       // Resize observer for responsive canvas
@@ -42,34 +42,6 @@ export class BlurImageComponent {
       this.ctx = canvas.getContext('2d')!;
       this.ctx.fillStyle = '#f0f0f0';
       this.ctx.fillRect(0, 0, canvas.width, canvas.height);
-   }
-
-   private async loadSampleImage() {
-      try {
-         const response = await fetch('assets/sample.jpg');
-         const blob = await response.blob();
-         const img = await createImageBitmap(blob);
-
-         this.canvasSize.set({
-            width: Math.min(img.width, window.innerWidth - 40),
-            height: Math.min(img.height, window.innerHeight - 200)
-         });
-
-         this.ctx.drawImage(img, 0, 0, this.canvasSize().width, this.canvasSize().height);
-      } catch (error) {
-         console.warn('Using fallback canvas:', error);
-         this.drawFallbackCanvas();
-      }
-   }
-
-   private drawFallbackCanvas() {
-      const canvas = this.canvasRef.nativeElement;
-      this.ctx.fillStyle = '#f0f0f0';
-      this.ctx.fillRect(0, 0, canvas.width, canvas.height);
-      this.ctx.fillStyle = '#666';
-      this.ctx.font = '16px Arial';
-      this.ctx.textAlign = 'center';
-      this.ctx.fillText('Drag to blur areas', canvas.width / 2, canvas.height / 2);
    }
 
    startPainting(event: MouseEvent | Touch) {
@@ -210,7 +182,6 @@ export class BlurImageComponent {
          this.ctx.drawImage(imgBitmap, 0, 0, canvas.width, canvas.height);
       } catch (error) {
          console.error('Error loading image:', error);
-         this.drawFallbackCanvas();
       }
    }
 }

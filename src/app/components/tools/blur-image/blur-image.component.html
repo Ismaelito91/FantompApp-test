@@ -1,10 +1,55 @@
 <div class="flex flex-col h-screen p-(--spacing-3) gap-(--spacing-3) relative">
-   <div class="ellipse-1"></div>
-   <div class="ellipse-2"></div>
+   <input type="file" accept="image/*,android/allowCamera" (change)="handleImageUpload($event)" hidden #fileInput />
    <app-button-back link="/tools" class="fixed top-[16px] left-[32px] z-2"></app-button-back>
 
+   <div class="flex flex-col items-center gap-(--spacing-2) h-full" [class]="{
+      'hidden': !(fileInput.files && fileInput.files.length > 0),
+   }">
+      <div class="relative">
+         <canvas #canvas class="w-full object-contain rounded-(--border-radius-1) z-1" [class]="{
+            'mt-[60px]': fileInput.files && fileInput.files.length > 0,
+         }" (mousedown)="startPainting($event)" (mousemove)="paint($event)" (mouseup)="stopPainting()"
+            (mouseleave)="stopPainting()" (touchstart)="startPainting($event.touches[0])"
+            (touchmove)="paint($event.touches[0])" (touchend)="stopPainting()">
+         </canvas>
+         <div
+            class="absolute bottom-(--spacing-2) left-1/2 -translate-x-1/2 p-(--spacing-2) bg-[#10052E33] rounded-(--spacing-3) flex">
+            <div class="action flex flex-col justify-center items-center size-[70px]">
+               <img src="assets/images/flouter.svg" class="size-[40px]" />
+               <div>Flouter</div>
+            </div>
+            <div class="action active flex flex-col justify-center items-center size-[70px]">
+               <img src="assets/images/pixelliser.svg" class="image size-[40px]" />
+               <div class="label">Pixelliser</div>
+            </div>
+         </div>
+      </div>
+
+      <div class="w-full z-1 flex justify-between">
+         <div class="flex gap-(--spacing-1)">
+            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);">
+               <mat-icon svgIcon="icon-redo24x24" class="!size-[24px] scale-x-[-1]"
+                  style="color: var(--color-14);"></mat-icon>
+            </button>
+            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);">
+               <mat-icon svgIcon="icon-redo24x24" class="!size-[24px]" style="color: var(--color-14);"></mat-icon>
+            </button>
+         </div>
+         <div>
+            <app-button label="Tout flouter" variant="primary" size="sm"></app-button>
+         </div>
+      </div>
+
+      <div class="w-full pl-(--spacing-3) pr-(--spacing-3) z-1">
+         <app-button label="Télécharger" variant="primary" size="lg" (click)="fileInput.click()"></app-button>
+      </div>
+   </div>
+
+   @if (!(fileInput.files && fileInput.files.length > 0)) {
    <div class="flex flex-col h-full gap-(--spacing-5) z-1">
-      <div class="flex flex-col gap-(--spacing-3) pt-[66px] pl-(--spacing-3) pr-(--spacing-3)">
+      <div class="ellipse-1"></div>
+      <div class="ellipse-2"></div>
+      <div class="flex flex-col gap-(--spacing-3) pt-[66px] pl-(--spacing-3) pr-(--spacing-3) z-1">
          <h3 class="!text-(--color-19)">Anonymiser ma photo</h3>
          <p class="text-(--color-4)">Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne.
          </p>
@@ -12,15 +57,15 @@
       <div class="image-container flex justify-center items-center h-full rounded-(--border-radius-3) z-1">
          <img src="assets/images/photo-illu.svg" alt="image-illu" class="h-[200px]" (click)="fileInput.click()" />
       </div>
-      <div class="pl-(--spacing-3) pr-(--spacing-3)">
-         <input type="file" accept="image/*,android/allowCamera" (change)="handleImageUpload($event)" hidden
-            #fileInput />
+      <div class="pl-(--spacing-3) pr-(--spacing-3) z-1">
          <app-button label="Importer une photo 🤳" variant="primary" size="lg" (click)="fileInput.click()"></app-button>
       </div>
    </div>
 
-   <p class="text-(length:--font-size-body-xs) text-(--color-14) font-(--font-weight-title) pt-(--spacing-2) pr-(--spacing-3) pb-(--spacing-2) pl-(--spacing-3) z-1">
+   <p
+      class="text-(length:--font-size-body-xs) text-(--color-14) font-(--font-weight-title) pt-(--spacing-2) pr-(--spacing-3) pb-(--spacing-2) pl-(--spacing-3) z-1">
       💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas
       ailleurs non floutée !
    </p>
+   }
 </div>

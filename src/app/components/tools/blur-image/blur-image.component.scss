@@ -24,3 +24,14 @@
    border-radius: 50%;
    filter: blur(99px);
 }
+
+.action {
+   &.active {
+      .image {
+         border: 3px solid white;
+      }
+      .label {
+         background-color: white;
+      }
+   }
+}
