@@ -1,6 +1,7 @@
 import { afterNextRender, Component, effect, ElementRef, signal, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import * as StackBlur from 'stackblur-canvas';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
@@ -9,7 +10,7 @@ type Action = 'blur' | 'pixelate';
 
 @Component({
    selector: 'app-blur-image',
-   imports: [ButtonBackComponent, MatButtonModule, ButtonComponent, MatIconModule],
+   imports: [ButtonBackComponent, MatButtonModule, ButtonComponent, MatIconModule, MatMenuModule],
    templateUrl: './blur-image.component.html',
    styleUrl: './blur-image.component.scss'
 })
@@ -24,6 +25,8 @@ export class BlurImageComponent {
    private ctx!: CanvasRenderingContext2D;
 
    action: Action = 'blur';
+   blurPercentages = signal([100, 75, 50, 25]);
+   blurPercentage: number | null = null;
 
    constructor() {
       // Initialize after view renders
@@ -43,6 +46,11 @@ export class BlurImageComponent {
 
    onClickAction(action: Action) {
       this.action = action;
+   }
+
+   onClickBlurPercent(event: MouseEvent, percentage: number) {
+      event.stopPropagation();
+      this.blurPercentage = percentage;
    }
 
    private initCanvas() {

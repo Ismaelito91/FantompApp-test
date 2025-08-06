@@ -3,7 +3,7 @@
    <app-button-back link="/tools" class="fixed top-[16px] left-[32px] z-2"></app-button-back>
 
    <div class="flex flex-col items-center gap-(--spacing-2) h-full" [class]="{
-      'hidden': !(fileInput.files && fileInput.files.length > 0),
+      'hidden': !(fileInput.files && fileInput.files.length > 0) && false,
    }">
       <div class="relative">
          <canvas #canvas class="w-full object-contain rounded-(--border-radius-1) z-1" [class]="{
@@ -14,8 +14,8 @@
          </canvas>
          <div
             class="actions absolute bottom-(--spacing-2) left-1/2 -translate-x-1/2 p-(--spacing-2) bg-[#10052E33] rounded-(--spacing-3) flex">
-            <div class="action flex flex-col justify-center items-center cursor-pointer"
-               (click)="onClickAction('blur')" [class]="{
+            <div class="action flex flex-col justify-center items-center cursor-pointer" (click)="onClickAction('blur')"
+               [class]="{
                'active': action === 'blur',
             }">
                <img src="assets/images/flouter.svg" class="image" />
@@ -42,16 +42,28 @@
             </button>
          </div>
          <div>
-            <app-button label="Tout flouter" variant="secondary" size="sm"></app-button>
+            <app-button label="Tout flouter" variant="secondary" size="sm" [iconAfterLabel]="{name: 'chevron16x16-icon', rotate: 90 }" [matMenuTriggerFor]="menu"></app-button>
+            <mat-menu #menu="matMenu" yPosition="above">
+               @for (percentage of blurPercentages(); track $index) {
+               <button mat-menu-item (click)="onClickBlurPercent($event, percentage)"
+                  [class]="{ 'active' : blurPercentage === percentage}">
+                  @if (blurPercentage === percentage) {
+                  <mat-icon svgIcon="icon-check24x24" class="!size-[24px]" style="color: var(--color-14);"></mat-icon>
+                  }
+                  <span>{{ percentage }} %</span>
+               </button>
+               }
+            </mat-menu>
          </div>
       </div>
 
       <div class="w-full pl-(--spacing-3) pr-(--spacing-3) z-1">
-         <app-button label="Télécharger" variant="primary" size="lg" (click)="downloadImage()"></app-button>
+         <app-button label="Télécharger" variant="primary" [iconAfterLabel]="{name: 'icon-download24x24' }"
+            (click)="downloadImage()"></app-button>
       </div>
    </div>
 
-   @if (!(fileInput.files && fileInput.files.length > 0)) {
+   @if (!(fileInput.files && fileInput.files.length > 0) && false) {
    <div class="flex flex-col h-full gap-(--spacing-5) z-1">
       <div class="ellipse-1"></div>
       <div class="ellipse-2"></div>

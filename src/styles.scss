@@ -377,7 +377,38 @@
    @include mat.fab-overrides((container-shape: 50%,
          container-elevation-shadow: 0,
          container-color: var(--background-12),
-      ));
+         focus-container-elevation-shadow: none,
+         hover-container-elevation-shadow: none,
+         pressed-container-elevation-shadow: none));
+
+   @include mat.menu-overrides((item-label-text-font: var(--body-font-family),
+         container-color: var(--background-10), item-label-text-color: var(--color-14),
+         container-shape: var(--border-radius-1),
+         container-elevation-shadow: var(--shadow-1)));
+
+   .mat-mdc-menu-panel {
+      margin: 14px 0;
+
+      .mat-mdc-menu-content {
+         padding: 0;
+      }
+
+      .mat-mdc-menu-item {
+         padding: 4px var(--spacing-2);
+         min-width: 154px;
+         min-height: 36px;
+
+         &:hover,
+         &.active {
+            background-color: var(--background-3);
+         }
+
+         .mat-mdc-menu-item-text {
+            display: flex;
+            justify-content: end;
+         }
+      }
+   }
 }
 
 // Dark overrides
