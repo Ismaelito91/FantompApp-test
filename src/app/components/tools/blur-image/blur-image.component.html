@@ -3,7 +3,7 @@
    <app-button-back link="/tools" class="fixed top-[16px] left-[32px] z-2"></app-button-back>
 
    <div class="flex flex-col items-center gap-(--spacing-2) h-full" [class]="{
-      'hidden': !(fileInput.files && fileInput.files.length > 0) && false,
+      'hidden': !(fileInput.files && fileInput.files.length > 0),
    }">
       <div class="relative">
          <canvas #canvas class="w-full object-contain rounded-(--border-radius-1) z-1" [class]="{
@@ -63,7 +63,7 @@
       </div>
    </div>
 
-   @if (!(fileInput.files && fileInput.files.length > 0) && false) {
+   @if (!(fileInput.files && fileInput.files.length > 0)) {
    <div class="flex flex-col h-full gap-(--spacing-5) z-1">
       <div class="ellipse-1"></div>
       <div class="ellipse-2"></div>
