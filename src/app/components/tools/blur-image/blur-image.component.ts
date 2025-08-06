@@ -5,6 +5,8 @@ import * as StackBlur from 'stackblur-canvas';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
 
+type Action = 'blur' | 'pixelate';
+
 @Component({
    selector: 'app-blur-image',
    imports: [ButtonBackComponent, MatButtonModule, ButtonComponent, MatIconModule],
@@ -20,6 +22,8 @@ export class BlurImageComponent {
    canvasSize = signal({ width: 0, height: 0 });
    private isPainting = false;
    private ctx!: CanvasRenderingContext2D;
+
+   action: Action = 'blur';
 
    constructor() {
       // Initialize after view renders
@@ -37,10 +41,14 @@ export class BlurImageComponent {
       });
    }
 
+   onClickAction(action: Action) {
+      this.action = action;
+   }
+
    private initCanvas() {
       const canvas = this.canvasRef.nativeElement;
       this.ctx = canvas.getContext('2d')!;
-      this.ctx.fillStyle = '#f0f0f0';
+      // this.ctx.fillStyle = '#f0f0f0';
       this.ctx.fillRect(0, 0, canvas.width, canvas.height);
    }
 
@@ -171,8 +179,8 @@ export class BlurImageComponent {
          const imgBitmap = await createImageBitmap(new Blob([arrayBuffer]));
 
          this.canvasSize.set({
-            width: Math.min(imgBitmap.width, 1200),
-            height: Math.min(imgBitmap.height, 800)
+            width: imgBitmap.width,
+            height: imgBitmap.height
          });
 
          const canvas = this.canvasRef.nativeElement;

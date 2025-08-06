@@ -25,13 +25,34 @@
    filter: blur(99px);
 }
 
-.action {
-   &.active {
+.actions {
+
+   .action {
+      width: 70px;
+      height: 70px;
+      gap: 2.96px;
+
       .image {
-         border: 3px solid white;
+         width: 65px;
+         height: 65px;
+         padding: 5px;
       }
+
       .label {
-         background-color: white;
+         font-size: 9px;
+         padding: 1.48px 7.4px;
+      }
+
+      &.active {
+         .image {
+            border: 3px solid white;
+            border-radius: 11.85px;
+         }
+
+         .label {
+            background-color: white;
+            border-radius: 14.81px;
+         }
       }
    }
 }

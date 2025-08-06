@@ -13,19 +13,25 @@
             (touchmove)="paint($event.touches[0])" (touchend)="stopPainting()">
          </canvas>
          <div
-            class="absolute bottom-(--spacing-2) left-1/2 -translate-x-1/2 p-(--spacing-2) bg-[#10052E33] rounded-(--spacing-3) flex">
-            <div class="action flex flex-col justify-center items-center size-[70px]">
-               <img src="assets/images/flouter.svg" class="size-[40px]" />
-               <div>Flouter</div>
+            class="actions absolute bottom-(--spacing-2) left-1/2 -translate-x-1/2 p-(--spacing-2) bg-[#10052E33] rounded-(--spacing-3) flex">
+            <div class="action flex flex-col justify-center items-center cursor-pointer"
+               (click)="onClickAction('blur')" [class]="{
+               'active': action === 'blur',
+            }">
+               <img src="assets/images/flouter.svg" class="image" />
+               <div class="label">Flouter</div>
             </div>
-            <div class="action active flex flex-col justify-center items-center size-[70px]">
-               <img src="assets/images/pixelliser.svg" class="image size-[40px]" />
+            <div class="action flex flex-col justify-center items-center cursor-pointer"
+               (click)="onClickAction('pixelate')" [class]="{
+               'active': action === 'pixelate',
+            }">
+               <img src="assets/images/pixelliser.svg" class="image" />
                <div class="label">Pixelliser</div>
             </div>
          </div>
       </div>
 
-      <div class="w-full z-1 flex justify-between">
+      <div class="w-full z-1 flex justify-between items-center">
          <div class="flex gap-(--spacing-1)">
             <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);">
                <mat-icon svgIcon="icon-redo24x24" class="!size-[24px] scale-x-[-1]"
@@ -36,12 +42,12 @@
             </button>
          </div>
          <div>
-            <app-button label="Tout flouter" variant="primary" size="sm"></app-button>
+            <app-button label="Tout flouter" variant="secondary" size="sm"></app-button>
          </div>
       </div>
 
       <div class="w-full pl-(--spacing-3) pr-(--spacing-3) z-1">
-         <app-button label="Télécharger" variant="primary" size="lg" (click)="fileInput.click()"></app-button>
+         <app-button label="Télécharger" variant="primary" size="lg" (click)="downloadImage()"></app-button>
       </div>
    </div>
 
@@ -58,7 +64,7 @@
          <img src="assets/images/photo-illu.svg" alt="image-illu" class="h-[200px]" (click)="fileInput.click()" />
       </div>
       <div class="pl-(--spacing-3) pr-(--spacing-3) z-1">
-         <app-button label="Importer une photo 🤳" variant="primary" size="lg" (click)="fileInput.click()"></app-button>
+         <app-button label="Importer une photo 🤳" variant="primary" (click)="fileInput.click()"></app-button>
       </div>
    </div>
 
