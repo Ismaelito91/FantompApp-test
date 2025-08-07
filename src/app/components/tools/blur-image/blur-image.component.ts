@@ -18,11 +18,13 @@ export class BlurImageComponent {
    @ViewChild('canvas') canvasRef!: ElementRef<HTMLCanvasElement>;
 
    // Reactive properties
-   brushSize = signal(30);
-   blurRadius = signal(5);
+   brushSize = signal(50);
+   blurRadius = signal(10);
    canvasSize = signal({ width: 0, height: 0 });
    private isPainting = false;
    private ctx!: CanvasRenderingContext2D;
+   historyStack: ImageData[] = [];
+   redoStack: ImageData[] = [];
 
    action: Action = 'blur';
    blurPercentages = signal([100, 75, 50, 25]);
@@ -44,6 +46,42 @@ export class BlurImageComponent {
       });
    }
 
+   private saveState() {
+      const canvas = this.canvasRef.nativeElement;
+      const ctx = this.ctx;
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+      this.historyStack.push(imageData);
+      // Clear redo stack on new action
+      this.redoStack = [];
+   }
+
+   undo() {
+      if (this.historyStack.length > 0) {
+         const canvas = this.canvasRef.nativeElement;
+         const ctx = this.ctx;
+
+         const currentState = ctx.getImageData(0, 0, canvas.width, canvas.height);
+         this.redoStack.push(currentState); // Save current before undo
+
+         const prevState = this.historyStack.pop()!;
+         ctx.putImageData(prevState, 0, 0);
+      }
+   }
+
+   redo() {
+      if (this.redoStack.length > 0) {
+         const canvas = this.canvasRef.nativeElement;
+         const ctx = this.ctx;
+
+         const currentState = ctx.getImageData(0, 0, canvas.width, canvas.height);
+         this.historyStack.push(currentState); // Save current before redo
+
+         const nextState = this.redoStack.pop()!;
+         ctx.putImageData(nextState, 0, 0);
+      }
+   }
+
    onClickAction(action: Action) {
       this.action = action;
    }
@@ -51,30 +89,31 @@ export class BlurImageComponent {
    onClickBlurPercent(event: MouseEvent, percentage: number) {
       event.stopPropagation();
       this.blurPercentage = percentage;
+      this.applyGlobalBlur(percentage);
    }
 
    private initCanvas() {
       const canvas = this.canvasRef.nativeElement;
-      this.ctx = canvas.getContext('2d')!;
-      // this.ctx.fillStyle = '#f0f0f0';
+      this.ctx = canvas.getContext('2d', { willReadFrequently: true })!;
       this.ctx.fillRect(0, 0, canvas.width, canvas.height);
    }
 
    startPainting(event: MouseEvent | Touch) {
+      this.saveState();
       this.isPainting = true;
-      this.applyNuclearBlur(event);
+      this.applyBlurEffect(event);
    }
 
    paint(event: MouseEvent | Touch) {
       if (!this.isPainting) return;
-      this.applyNuclearBlur(event);
+      this.applyBlurEffect(event);
    }
 
    stopPainting() {
       this.isPainting = false;
    }
 
-   private applyBlurEffect(event: MouseEvent | Touch) {
+   private async applyBlurEffect(event: MouseEvent | Touch) {
       const canvas = this.canvasRef.nativeElement;
       const rect = canvas.getBoundingClientRect();
       const scaleX = canvas.width / rect.width;
@@ -85,59 +124,46 @@ export class BlurImageComponent {
       const brushSize = this.brushSize();
       const blurRadius = this.blurRadius();
 
-      // Apply blur using StackBlur
-      StackBlur.canvasRGB(
-         canvas,
-         x - brushSize / 2,
-         y - brushSize / 2,
-         brushSize,
-         brushSize,
-         blurRadius
-      );
-   }
-
-   async applyNuclearBlur(event: MouseEvent | Touch) {
-      const canvas = this.canvasRef.nativeElement;
-      const rect = canvas.getBoundingClientRect();
-      const scaleX = canvas.width / rect.width;
-      const scaleY = canvas.height / rect.height;
-
-      const x = (event.clientX - rect.left) * scaleX;
-      const y = (event.clientY - rect.top) * scaleY;
-      const brushSize = this.brushSize();
-      const blurRadius = this.blurRadius();
-
-      // 1. Flou gaussien intensif (5 passes)
-      for (let i = 0; i < 5; i++) {
-         StackBlur.canvasRGB(
-            canvas,
-            x - brushSize / 2,
-            y - brushSize / 2,
-            brushSize,
-            brushSize,
-            blurRadius
-         );
-         await this.delay(50); // Pause pour éviter le blocage UI
+      if (this.action === 'pixelate') {
+         this.pixelateRect(x - brushSize / 2, y - brushSize / 2, brushSize, 20); // ou pixelSize dynamique
+      } else {
+         StackBlur.canvasRGB(canvas, x - brushSize / 2, y - brushSize / 2, brushSize, brushSize, blurRadius);
       }
 
-      // 2. Ajout de bruit aléatoire
-      // this.addWhiteNoise(canvas.getContext('2d')!, 0.15);
-
-      // 3. Compression destructive
+      // 2. Compression destructive
       const finalBlob = await this.canvasToLowQualityBlob(canvas);
       return finalBlob;
    }
 
-   // Bruit numérique aléatoire
-   addWhiteNoise(ctx: CanvasRenderingContext2D, intensity: number) {
-      const imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-      for (let i = 0; i < imageData.data.length; i++) {
-         if (i % 4 !== 3) { // Ignore canal alpha
-            const noise = (Math.random() - 0.5) * intensity * 255;
-            imageData.data[i] = Math.max(0, Math.min(255, imageData.data[i] + noise));
+   pixelateRect(x: number, y: number, size: number, pixelSize: number) {
+      const ctx = this.ctx;
+
+      for (let yy = y; yy < y + size; yy += pixelSize) {
+         for (let xx = x; xx < x + size; xx += pixelSize) {
+            const imageData = ctx.getImageData(xx, yy, pixelSize, pixelSize);
+            const data = imageData.data;
+
+            let r = 0, g = 0, b = 0;
+            const count = data.length / 4;
+
+            for (let i = 0; i < data.length; i += 4) {
+               r += data[i];
+               g += data[i + 1];
+               b += data[i + 2];
+            }
+
+            r = r / count;
+            g = g / count;
+            b = b / count;
+
+            ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+            ctx.fillRect(xx, yy, pixelSize, pixelSize);
          }
       }
-      ctx.putImageData(imageData, 0, 0);
+   }
+
+   private delay(ms: number): Promise<void> {
+      return new Promise(resolve => setTimeout(resolve, ms));
    }
 
    // Conversion en qualité très basse
@@ -145,15 +171,35 @@ export class BlurImageComponent {
       return new Promise((resolve) => {
          canvas.toBlob(
             (blob) => resolve(blob!),
-            'image/jpeg',
+            'image/png',
             0.4 // Qualité à 40%
          );
       });
    }
+   private applyGlobalBlur(percentage: number) {
+      this.saveState();
 
-   delay(ms: number): Promise<void> {
-      return new Promise(resolve => setTimeout(resolve, ms));
+      const canvas = this.canvasRef.nativeElement;
+
+      let blurRadius = 0;
+      switch (percentage) {
+         case 25:
+            blurRadius = 25;
+            break;
+         case 50:
+            blurRadius = 35;
+            break;
+         case 75:
+            blurRadius = 65;
+            break;
+         case 100:
+            blurRadius = 80;
+            break;
+      }
+
+      StackBlur.canvasRGB(canvas, 0, 0, canvas.width, canvas.height, blurRadius);
    }
+
 
    downloadImage() {
       const canvas = this.canvasRef.nativeElement;
@@ -166,7 +212,7 @@ export class BlurImageComponent {
 
       // 3. Configure le lien
       link.href = imageUrl;
-      link.download = 'image-floutee-' + new Date().getTime() + '.png'; // Nom unique
+      link.download = 'image-blur-' + new Date().getTime() + '.png'; // Nom unique
 
       // 4. Déclenche le téléchargement
       link.click();

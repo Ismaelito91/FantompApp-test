@@ -33,16 +33,17 @@
 
       <div class="w-full z-1 flex justify-between items-center">
          <div class="flex gap-(--spacing-1)">
-            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);">
+            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);" (click)="undo()" [disabled]="historyStack.length === 0">
                <mat-icon svgIcon="icon-redo24x24" class="!size-[24px] scale-x-[-1]"
                   style="color: var(--color-14);"></mat-icon>
             </button>
-            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);">
+            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);" (click)="redo()" [disabled]="redoStack.length === 0">
                <mat-icon svgIcon="icon-redo24x24" class="!size-[24px]" style="color: var(--color-14);"></mat-icon>
             </button>
          </div>
          <div>
-            <app-button label="Tout flouter" variant="secondary" size="sm" [iconAfterLabel]="{name: 'chevron16x16-icon', rotate: 90 }" [matMenuTriggerFor]="menu"></app-button>
+            <app-button label="Tout flouter" variant="secondary" size="sm"
+               [iconAfterLabel]="{name: 'chevron16x16-icon', rotate: 90 }" [matMenuTriggerFor]="menu"></app-button>
             <mat-menu #menu="matMenu" yPosition="above">
                @for (percentage of blurPercentages(); track $index) {
                <button mat-menu-item (click)="onClickBlurPercent($event, percentage)"
