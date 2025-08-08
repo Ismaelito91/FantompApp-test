@@ -38,6 +38,10 @@ export class HomeCardComponent implements OnInit {
 
    ngOnInit(): void {}
 
+   navigateTo(url: string): void {
+      this.router.navigate([url]);
+   }
+   
    navigateToTools(): void {
       this.router.navigate(["/tools"]);
    }
