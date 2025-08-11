@@ -381,6 +381,34 @@
          hover-container-elevation-shadow: none,
          pressed-container-elevation-shadow: none));
 
+   mat-slider {
+      height: 35px;
+      --mdc-slider-handle-color: white;
+      --mdc-slider-focus-handle-color: white;
+      --mdc-slider-handle-width: 22px;
+      --mdc-slider-handle-height: 22px;
+      --mdc-slider-active-track-color: gray;
+      --mdc-slider-inactive-track-color: gray;
+      --mdc-slider-active-track-height: 10px;
+      --mdc-slider-inactive-track-height: 10px;
+
+      .mdc-slider__track--inactive {
+         opacity: 1;
+      }
+
+      .mdc-slider__input {
+         height: 35px;
+      }
+
+      .mdc-slider__thumb {
+         height: 35px;
+      }
+
+      .mat-mdc-slider-visual-thumb .mat-ripple {
+         display: none;
+      }
+   }
+
    @include mat.menu-overrides((item-label-text-font: var(--body-font-family),
          container-color: var(--background-10), item-label-text-color: var(--color-14),
          container-shape: var(--border-radius-1),

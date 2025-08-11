@@ -2,6 +2,7 @@ import { afterNextRender, Component, effect, ElementRef, signal, ViewChild } fro
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSliderModule } from '@angular/material/slider';
 import * as StackBlur from 'stackblur-canvas';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
@@ -10,7 +11,7 @@ type Action = 'blur' | 'pixelate';
 
 @Component({
    selector: 'app-blur-image',
-   imports: [ButtonBackComponent, MatButtonModule, ButtonComponent, MatIconModule, MatMenuModule],
+   imports: [ButtonBackComponent, MatButtonModule, ButtonComponent, MatIconModule, MatMenuModule, MatSliderModule],
    templateUrl: './blur-image.component.html',
    styleUrl: './blur-image.component.scss'
 })
@@ -29,6 +30,7 @@ export class BlurImageComponent {
    action: Action = 'blur';
    blurPercentages = signal([100, 75, 50, 25]);
    blurPercentage: number | null = null;
+   showBrushSizer: boolean = true;
 
    constructor() {
       // Initialize after view renders
@@ -44,6 +46,12 @@ export class BlurImageComponent {
             canvas.height = this.canvasSize().height;
          }
       });
+   }
+
+   onChangeBrushSize(event: Event) {
+      const input = event.target as HTMLInputElement;
+      const value = input.value ? +input.value : 50;
+      this.brushSize.set(value);
    }
 
    private saveState() {
@@ -83,6 +91,11 @@ export class BlurImageComponent {
    }
 
    onClickAction(action: Action) {
+      if (this.action === action) {
+         this.showBrushSizer = !this.showBrushSizer;
+      } else {
+         this.showBrushSizer = true;
+      }
       this.action = action;
    }
 

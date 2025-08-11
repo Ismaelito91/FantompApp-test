@@ -12,6 +12,27 @@
             (mouseleave)="stopPainting()" (touchstart)="startPainting($event.touches[0])"
             (touchmove)="paint($event.touches[0])" (touchend)="stopPainting()">
          </canvas>
+         @if (showBrushSizer) {
+         <div class="absolute bottom-[120px] left-5/9 -translate-x-1/2 flex flex-col">
+            <div class="flex">
+               <div class="bg-[#4841584D] rounded-[30px]" style="color: white; font-weight: 600; font-size: 12px; padding: 4px 10px; backdrop-filter: blur(20px);">Taille du flou</div>
+               <!-- <div class="bg-[#4841584D] rounded-full"
+               [style]="'border: 1px solid #FFFFFF; width: '+ brushSize() +'px; height: '+ brushSize() +'px;'"></div> -->
+            </div>
+            <div class="flex gap-[3px]">
+               <div class="pl-(--spacing-2) pr-(--spacing-2)"
+                  style="background-color: #484158; border-radius: 10px; backdrop-filter: blur(20px)">
+                  <mat-slider min="24" max="87">
+                     <input matSliderThumb [value]="brushSize()" (change)="onChangeBrushSize($event)">
+                  </mat-slider>
+               </div>
+               <div class="size-[36px] flex justify-center items-center bg-[#4841584D] rounded-full"
+                  style="backdrop-filter: blur(34px)" (click)="showBrushSizer = false;">
+                  <mat-icon svgIcon="close24x24-icon" class="!size-[24px]" style="color: white;"></mat-icon>
+               </div>
+            </div>
+         </div>
+         }
          <div
             class="actions absolute bottom-(--spacing-2) left-1/2 -translate-x-1/2 p-(--spacing-2) bg-[#10052E33] rounded-(--spacing-3) flex">
             <div class="action flex flex-col justify-center items-center cursor-pointer" (click)="onClickAction('blur')"
@@ -33,11 +54,13 @@
 
       <div class="w-full z-1 flex justify-between items-center">
          <div class="flex gap-(--spacing-1)">
-            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);" (click)="undo()" [disabled]="historyStack.length === 0">
+            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);" (click)="undo()"
+               [disabled]="historyStack.length === 0">
                <mat-icon svgIcon="icon-redo24x24" class="!size-[24px] scale-x-[-1]"
                   style="color: var(--color-14);"></mat-icon>
             </button>
-            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);" (click)="redo()" [disabled]="redoStack.length === 0">
+            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);" (click)="redo()"
+               [disabled]="redoStack.length === 0">
                <mat-icon svgIcon="icon-redo24x24" class="!size-[24px]" style="color: var(--color-14);"></mat-icon>
             </button>
          </div>
