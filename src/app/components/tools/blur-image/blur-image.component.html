@@ -1,23 +1,42 @@
+<input type="file" accept="image/*,android/allowCamera" (change)="handleImageUpload($event)" hidden #fileInput />
+@if (showTutorial && (fileInput.files && fileInput.files.length > 0)) {
+<div @fadeInWithDelay class="absolute h-screen flex justify-center z-10" style="background-color: #000000B3;">
+   <div class="flex flex-col justify-center items-center p-[65px]">
+      <div class="relative">
+         <img src="assets/images/blur-effect.svg" alt="hand" />
+         <div class="w-[127px] h-[110px]">
+            <img src="assets/images/hand.svg" alt="hand" class="absolute top-0 left-0" />
+         </div>
+      </div>
+      <h5 style="color: white; text-align: center; padding-bottom: 32px;">Glisse ton doigt sur l'image pour flouter.
+      </h5>
+      <button mat-flat-button style="color: #10052E; background-color: white; font-family: Nunito; font-weight: 700;
+          font-style: Bold; font-size: 18px; line-height: 28px; letter-spacing: 0%; text-align: center; height: 48px;"
+         (click)="onCloseTutorial()">Compris</button>
+   </div>
+</div>
+}
 <div class="flex flex-col h-screen p-(--spacing-3) gap-(--spacing-3) relative">
-   <input type="file" accept="image/*,android/allowCamera" (change)="handleImageUpload($event)" hidden #fileInput />
    <app-button-back link="/tools" class="fixed top-[16px] left-[32px] z-2"></app-button-back>
 
    <div class="flex flex-col items-center gap-(--spacing-2) h-full" [class]="{
-      'hidden': !(fileInput.files && fileInput.files.length > 0),
-   }">
+         'hidden': !(fileInput.files && fileInput.files.length > 0),
+      }">
       <div class="relative">
          <canvas #canvas class="w-full object-contain rounded-(--border-radius-1) z-1" [class]="{
-            'mt-[60px]': fileInput.files && fileInput.files.length > 0,
-         }" (mousedown)="startPainting($event)" (mousemove)="paint($event)" (mouseup)="stopPainting()"
+               'mt-[60px]': fileInput.files && fileInput.files.length > 0,
+            }" (mousedown)="startPainting($event)" (mousemove)="paint($event)" (mouseup)="stopPainting()"
             (mouseleave)="stopPainting()" (touchstart)="startPainting($event.touches[0])"
             (touchmove)="paint($event.touches[0])" (touchend)="stopPainting()">
          </canvas>
          @if (showBrushSizer) {
          <div class="absolute bottom-[120px] left-5/9 -translate-x-1/2 flex flex-col">
             <div class="flex">
-               <div class="bg-[#4841584D] rounded-[30px]" style="color: white; font-weight: 600; font-size: 12px; padding: 4px 10px; backdrop-filter: blur(20px);">Taille du flou</div>
+               <div class="bg-[#4841584D] rounded-[30px]"
+                  style="color: white; font-weight: 600; font-size: 12px; padding: 4px 10px; backdrop-filter: blur(20px);">
+                  Taille du flou</div>
                <!-- <div class="bg-[#4841584D] rounded-full"
-               [style]="'border: 1px solid #FFFFFF; width: '+ brushSize() +'px; height: '+ brushSize() +'px;'"></div> -->
+                  [style]="'border: 1px solid #FFFFFF; width: '+ brushSize() +'px; height: '+ brushSize() +'px;'"></div> -->
             </div>
             <div class="flex gap-[3px]">
                <div class="pl-(--spacing-2) pr-(--spacing-2)"
@@ -37,15 +56,15 @@
             class="actions absolute bottom-(--spacing-2) left-1/2 -translate-x-1/2 p-(--spacing-2) bg-[#10052E33] rounded-(--spacing-3) flex">
             <div class="action flex flex-col justify-center items-center cursor-pointer" (click)="onClickAction('blur')"
                [class]="{
-               'active': action === 'blur',
-            }">
+                  'active': action === 'blur',
+               }">
                <img src="assets/images/flouter.svg" class="image" />
                <div class="label">Flouter</div>
             </div>
             <div class="action flex flex-col justify-center items-center cursor-pointer"
                (click)="onClickAction('pixelate')" [class]="{
-               'active': action === 'pixelate',
-            }">
+                  'active': action === 'pixelate',
+               }">
                <img src="assets/images/pixelliser.svg" class="image" />
                <div class="label">Pixelliser</div>
             </div>

@@ -6,14 +6,30 @@ import { MatSliderModule } from '@angular/material/slider';
 import * as StackBlur from 'stackblur-canvas';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
+import { animate, style, transition, trigger } from '@angular/animations';
 
 type Action = 'blur' | 'pixelate';
+
+export const fadeInWithDelay = trigger('fadeInWithDelay', [
+   transition(':enter', [
+      style({
+         opacity: 0
+      }),
+      animate(
+         '200ms 800ms ease-out', // durée: 200ms | délai: 800ms
+         style({
+            opacity: 1
+         })
+      )
+   ])
+]);
 
 @Component({
    selector: 'app-blur-image',
    imports: [ButtonBackComponent, MatButtonModule, ButtonComponent, MatIconModule, MatMenuModule, MatSliderModule],
    templateUrl: './blur-image.component.html',
-   styleUrl: './blur-image.component.scss'
+   styleUrl: './blur-image.component.scss',
+   animations: [fadeInWithDelay]
 })
 export class BlurImageComponent {
    @ViewChild('canvas') canvasRef!: ElementRef<HTMLCanvasElement>;
@@ -31,6 +47,7 @@ export class BlurImageComponent {
    blurPercentages = signal([100, 75, 50, 25]);
    blurPercentage: number | null = null;
    showBrushSizer: boolean = true;
+   showTutorial: boolean = true;
 
    constructor() {
       // Initialize after view renders
@@ -46,6 +63,13 @@ export class BlurImageComponent {
             canvas.height = this.canvasSize().height;
          }
       });
+
+      localStorage.getItem('blur-tutorial') === 'true' ? this.showTutorial = false : this.showTutorial = true;
+   }
+
+   onCloseTutorial() {
+      localStorage.setItem('blur-tutorial', 'true');
+      this.showTutorial = false;
    }
 
    onChangeBrushSize(event: Event) {
