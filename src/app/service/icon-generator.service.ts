@@ -5,110 +5,68 @@ import { Injectable } from "@angular/core";
 })
 export class IconGeneratorService {
    private readonly STORAGE_KEY = "app-icon-preference";
-   private readonly WIDGET_ICON_SIZE = 192;
    private manifestLink: HTMLLinkElement | null = null;
+   private faviconLink: HTMLLinkElement | null = null;
 
    constructor() {
-      this.initializeIcon();
       this.setupManifestLink();
+      this.setupFaviconLink();
+      this.initializeIcon();
    }
 
    /**
     * Configure le lien vers le manifest
     */
    private setupManifestLink(): void {
-      // Supprimer l'ancien lien s'il existe
       this.manifestLink = document.querySelector('link[rel="manifest"]');
-      if (this.manifestLink) {
-         this.manifestLink.remove();
+      if (!this.manifestLink) {
+         this.manifestLink = document.createElement("link");
+         this.manifestLink.rel = "manifest";
+         document.head.appendChild(this.manifestLink);
       }
+   }
 
-      // Créer un nouveau lien
-      this.manifestLink = document.createElement("link");
-      this.manifestLink.rel = "manifest";
-      this.manifestLink.href = "/manifest.webmanifest";
-      document.head.appendChild(this.manifestLink);
+   private setupFaviconLink(): void {
+      this.faviconLink = document.querySelector('link[rel="icon"]');
+      if (!this.faviconLink) {
+         this.faviconLink = document.createElement("link");
+         this.faviconLink.rel = "icon";
+         this.faviconLink.type = "image/png";
+         document.head.appendChild(this.faviconLink);
+      }
    }
 
    /**
     * Initialise l'icône au démarrage de l'application
     */
    private async initializeIcon(): Promise<void> {
-      const savedIcon = localStorage.getItem(this.STORAGE_KEY);
-      if (savedIcon) {
-         await this.updateIcon(savedIcon, false);
-      }
+      const saved = localStorage.getItem(this.STORAGE_KEY);
+      const iconIndex = saved ? saved : "1"; // défaut: 1
+      await this.updateIcon(iconIndex, false);
    }
 
-   /**
-    * Génère l'icône PNG pour le widget PWA
-    */
-   async generateWidgetIcon(svgPath: string): Promise<Blob> {
-      return new Promise((resolve, reject) => {
-         const canvas = document.createElement("canvas");
-         const ctx = canvas.getContext("2d");
-         const img = new Image();
-
-         canvas.width = this.WIDGET_ICON_SIZE;
-         canvas.height = this.WIDGET_ICON_SIZE;
-
-         img.onload = () => {
-            if (ctx) {
-               // Dessiner un fond blanc
-               ctx.fillStyle = "#FFFFFF";
-               ctx.fillRect(0, 0, this.WIDGET_ICON_SIZE, this.WIDGET_ICON_SIZE);
-
-               // Dessiner l'image SVG
-               ctx.drawImage(
-                  img,
-                  0,
-                  0,
-                  this.WIDGET_ICON_SIZE,
-                  this.WIDGET_ICON_SIZE
-               );
-
-               // Convertir en blob PNG
-               canvas.toBlob((blob) => {
-                  if (blob) {
-                     resolve(blob);
-                  } else {
-                     reject(new Error("Impossible de générer l'icône"));
-                  }
-               }, "image/png");
-            }
-         };
-
-         img.onerror = () => reject(new Error("Impossible de charger le SVG"));
-         img.src = svgPath;
-      });
-   }
+   // plus de génération à la volée: on utilise les PNG statiques du dossier public/icons
 
    /**
     * Met à jour l'icône du widget PWA
     */
-   async updateIcon(
-      iconType: string,
-      notifyUser: boolean = true
-   ): Promise<void> {
+   async updateIcon(iconIndex: string, notifyUser: boolean = true): Promise<void> {
       try {
-         const iconPath = this.getIconPath(iconType);
-
-         // Mettre à jour le favicon immédiatement
-         this.updateFavicon(iconPath);
+         const manifestHref = `/manifest-icon${iconIndex}.webmanifest`;
+         const faviconHref = `/icons/Icone-FantomApp-${iconIndex}-192x192.png`;
 
          // Sauvegarder la préférence
-         localStorage.setItem(this.STORAGE_KEY, iconType);
+         localStorage.setItem(this.STORAGE_KEY, iconIndex);
 
-         // Générer l'icône du widget
-         const icon = await this.generateWidgetIcon(iconPath);
+         // Mettre à jour le favicon
+         this.updateFavicon(faviconHref);
 
-         // Sauvegarder dans IndexedDB
-         await this.saveIconToIndexedDB(icon);
+         // Mettre à jour le manifest
+         if (this.manifestLink) {
+            this.manifestLink.href = manifestHref + `?v=${Date.now()}`;
+         }
 
-         // Mettre à jour le manifest dynamiquement
-         await this.updateManifest(icon);
-
-         // Forcer la mise à jour du Service Worker
+         // Forcer la mise à jour du Service Worker (vider caches pour rafraîchir manifest)
          await this.updateServiceWorker();
 
          if (notifyUser) {
@@ -153,126 +111,27 @@ export class IconGeneratorService {
    /**
     * Sauvegarde l'icône dans IndexedDB
     */
-   private async saveIconToIndexedDB(icon: Blob): Promise<void> {
-      return new Promise((resolve, reject) => {
-         const request = indexedDB.open("FantomAppIcons", 1);
-
-         request.onerror = () =>
-            reject(new Error("Erreur d'ouverture IndexedDB"));
-
-         request.onupgradeneeded = (event: IDBVersionChangeEvent) => {
-            const db = (event.target as IDBOpenDBRequest).result;
-            if (!db.objectStoreNames.contains("icons")) {
-               db.createObjectStore("icons");
-            }
-         };
-
-         request.onsuccess = (event: Event) => {
-            const db = (event.target as IDBOpenDBRequest).result;
-            const transaction = db.transaction("icons", "readwrite");
-            const store = transaction.objectStore("icons");
-
-            // Sauvegarder l'icône
-            store.put(icon, "widget-icon");
-
-            transaction.oncomplete = () => {
-               db.close();
-               resolve();
-            };
-
-            transaction.onerror = () => {
-               db.close();
-               reject(new Error("Erreur de sauvegarde dans IndexedDB"));
-            };
-         };
-      });
-   }
+   // suppression de la persistance IndexedDB inutile pour ce cas
 
    /**
     * Met à jour le manifest PWA dynamiquement
     */
-   private async updateManifest(icon: Blob): Promise<void> {
-      // Créer un URL pour le blob
-      const iconUrl = URL.createObjectURL(icon);
-
-      const manifest = {
-         name: "FantomApp",
-         short_name: "FantomApp",
-         icons: [
-            {
-               src: iconUrl,
-               sizes: "192x192",
-               type: "image/png",
-               purpose: "maskable any",
-            },
-         ],
-      };
-
-      // Créer un blob pour le manifest
-      const manifestBlob = new Blob([JSON.stringify(manifest)], {
-         type: "application/json",
-      });
-      const manifestUrl = URL.createObjectURL(manifestBlob);
-
-      // Mettre à jour le lien du manifest
-      if (this.manifestLink) {
-         this.manifestLink.href = manifestUrl;
-      }
-
-      // Sauvegarder dans IndexedDB
-      return new Promise((resolve, reject) => {
-         const request = indexedDB.open("FantomAppIcons", 1);
-
-         request.onerror = () =>
-            reject(new Error("Erreur d'ouverture IndexedDB"));
-
-         request.onsuccess = (event: Event) => {
-            const db = (event.target as IDBOpenDBRequest).result;
-            const transaction = db.transaction("icons", "readwrite");
-            const store = transaction.objectStore("icons");
-
-            store.put(JSON.stringify(manifest), "manifest");
-
-            transaction.oncomplete = () => {
-               db.close();
-               resolve();
-            };
-
-            transaction.onerror = () => {
-               db.close();
-               reject(new Error("Erreur de sauvegarde du manifest"));
-            };
-         };
-      });
-   }
+   // plus de génération de manifest dynamique, on pointe vers des manifests statiques
 
    /**
     * Met à jour le favicon dynamiquement
     */
-   updateFavicon(svgPath: string): void {
-      // Supprimer l'ancien favicon
-      const existingFavicon = document.querySelector('link[rel="icon"]');
-      if (existingFavicon) {
-         existingFavicon.remove();
+   updateFavicon(href: string): void {
+      if (!this.faviconLink) {
+         this.setupFaviconLink();
       }
-
-      // Créer le nouveau favicon
-      const newFavicon = document.createElement("link");
-      newFavicon.rel = "icon";
-      newFavicon.href = svgPath;
-      document.head.appendChild(newFavicon);
+      if (this.faviconLink) {
+         this.faviconLink.href = href + `?v=${Date.now()}`;
+      }
    }
 
    /**
     * Retourne le chemin de l'icône selon le type
     */
-   private getIconPath(iconType: string): string {
-      const iconPaths: { [key: string]: string } = {
-         cnil: "assets/images/logo-CNIL-EU.svg",
-         fantome: "assets/images/famtome-app.svg",
-         rectangle: "assets/images/Rectangle 521.svg",
-      };
-
-      return iconPaths[iconType] || iconPaths["cnil"];
-   }
+   // plus de mapping SVG; on utilise les PNG du public/icons
 }

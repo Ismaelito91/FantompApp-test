@@ -13,6 +13,7 @@ import { PwaService } from "./service/pwa/pwa.service";
 import { SettingService } from "./service/setting.service";
 import { filter, map } from "rxjs";
 import { PreloadService } from "./service/preload.service";
+import { IconGeneratorService } from "./service/icon-generator.service";
 
 @Component({
    selector: "app-root",
@@ -41,6 +42,8 @@ export class AppComponent implements OnInit {
    hideHeader = false;
    hideFooter = false;
    private preloadService = inject(PreloadService);
+   // Force l'initialisation de l'IconGeneratorService au démarrage
+   private _iconGen = inject(IconGeneratorService);
 
    ngOnInit(): void {
       // On écoute les changements de route pour activer/masquer le header/footer

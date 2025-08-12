@@ -11,16 +11,13 @@ import { IconGeneratorService } from "../../../service/icon-generator.service";
    styleUrl: "./app-icon-selector.component.scss",
 })
 export class AppIconSelectorComponent implements OnInit {
-   private currentIcon: string = "cnil";
+   private currentIcon: string = "1";
 
    constructor(private iconGeneratorService: IconGeneratorService) {}
 
    ngOnInit(): void {
-      // Charger l'icône sauvegardée depuis le localStorage
       const savedIcon = localStorage.getItem("app-icon-preference");
-      if (savedIcon) {
-         this.currentIcon = savedIcon;
-      }
+      this.currentIcon = savedIcon ?? "1";
    }
 
    /**

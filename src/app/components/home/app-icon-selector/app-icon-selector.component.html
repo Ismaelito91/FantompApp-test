@@ -15,67 +15,40 @@
 
    <div class="icon-selector-block">
       <div class="icon-grid">
-         <!-- Icône CNIL EU -->
-         <!-- <div class="icon-container" [class.selected]="isIconSelected('cnil')">
-            <div
-               class="icon-item"
-               [class.selected]="isIconSelected('cnil')"
-               (click)="setIcon('cnil')"
-               role="button"
-               tabindex="0"
-               aria-label="Icône CNIL EU"
-            >
-               <img
-                  src="assets/images/logo-CNIL-EU.svg"
-                  alt="Icône CNIL EU"
-                  class="icon-image"
-               />
+         <div class="icon-container" [class.selected]="isIconSelected('1')">
+            <div class="icon-item" (click)="setIcon('1')" role="button" tabindex="0" aria-label="Icône FantomApp 1">
+               <img src="/icons/Icone-FantomApp-1-192x192.png" alt="Icône FantomApp 1" class="icon-image" />
             </div>
-            <div class="icon-title">CNIL</div>
-         </div> -->
-
-         <!-- Icône Fantôme App -->
-         <div
-            class="icon-container"
-            [class.selected]="isIconSelected('fantome')"
-         >
-            <div
-               class="icon-item"
-               [class.selected]="isIconSelected('fantome')"
-               (click)="setIcon('fantome')"
-               role="button"
-               tabindex="0"
-               aria-label="Icône Fantôme App"
-            >
-               <img
-                  src="assets/images/famtome-app.svg"
-                  alt="Icône Fantôme App"
-                  class="icon-image"
-               />
-            </div>
-            <div class="icon-title">Fantôme</div>
+            @if (isIconSelected('1')) {
+            <div class="icon-title"><mat-icon>check</mat-icon></div>
+            }
          </div>
 
-         <!-- Icône Rectangle -->
-         <div
-            class="icon-container"
-            [class.selected]="isIconSelected('rectangle')"
-         >
-            <div
-               class="icon-item"
-               [class.selected]="isIconSelected('rectangle')"
-               (click)="setIcon('rectangle')"
-               role="button"
-               tabindex="0"
-               aria-label="Icône Rectangle"
-            >
-               <img
-                  src="assets/images/Rectangle 521.svg"
-                  alt="Icône Rectangle"
-                  class="icon-image"
-               />
+         <div class="icon-container" [class.selected]="isIconSelected('2')">
+            <div class="icon-item" (click)="setIcon('2')" role="button" tabindex="0" aria-label="Icône FantomApp 2">
+               <img src="/icons/Icone-FantomApp-2-192x192.png" alt="Icône FantomApp 2" class="icon-image" />
             </div>
-            <div class="icon-title">Rectangle</div>
+            @if (isIconSelected('2')) {
+            <div class="icon-title"><mat-icon>check</mat-icon></div>
+            }
+         </div>
+
+         <div class="icon-container" [class.selected]="isIconSelected('3')">
+            <div class="icon-item" (click)="setIcon('3')" role="button" tabindex="0" aria-label="Icône FantomApp 3">
+               <img src="/icons/Icone-FantomApp-3-192x192.png" alt="Icône FantomApp 3" class="icon-image" />
+            </div>
+            @if (isIconSelected('3')) {
+            <div class="icon-title"><mat-icon>check</mat-icon></div>
+            }
+         </div>
+
+         <div class="icon-container" [class.selected]="isIconSelected('4')">
+            <div class="icon-item" (click)="setIcon('4')" role="button" tabindex="0" aria-label="Icône FantomApp 4">
+               <img src="/icons/Icone-FantomApp-4-192x192.png" alt="Icône FantomApp 4" class="icon-image" />
+            </div>
+            @if (isIconSelected('4')) {
+            <div class="icon-title"><mat-icon>check</mat-icon></div>
+            }
          </div>
       </div>
    </div>

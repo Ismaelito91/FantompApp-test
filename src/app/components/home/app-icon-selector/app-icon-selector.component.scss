@@ -45,11 +45,10 @@
    }
 
    .icon-selector-block {
-      width: calc(100% - var(--spacing-4));
+      width: 100%;
       max-width: none;
       padding: var(--spacing-6);
       height: auto;
-      min-height: 120px;
       border-radius: 20px;
       margin: 0 auto;
       background-color: var(--background-2);
@@ -57,7 +56,7 @@
 
    .icon-grid {
       display: flex;
-      gap: var(--spacing-8);
+      gap: var(--spacing-4);
       align-items: flex-start;
       justify-content: center;
       height: 100%;
@@ -69,13 +68,14 @@
       flex-direction: column;
       align-items: center;
       gap: var(--spacing-1);
-      padding: var(--spacing-2);
       flex-shrink: 0;
 
       &.selected {
          .icon-title {
-            background-color: var(--color-primary-800);
-            color: var(--color-neutral-light-background-1);
+            color: var(--color-primary-800);
+         }
+         .icon-item {
+            border: 2px solid var(--color-primary-800);
          }
       }
    }
@@ -89,7 +89,6 @@
       border: 2px solid transparent;
       overflow: hidden;
       position: relative;
-      background-color: var(--color-neutral-light-content-5);
 
 
       // Effet tactile pour mobile (au lieu de hover)
@@ -120,22 +119,21 @@
       font-family: var(--body-font-family);
       font-size: 12px;
       font-weight: var(--font-weight-body);
-      color: var(--color-neutral-light-content-1);
+      color: var(--color-primary-800);
       text-align: center;
       transition: all 0.2s ease;
    }
 
    // Support pour le mode sombre
    :host-context(.dark-theme) {
-      .icon-title {
-         color: var(--color-neutral-light-background-1);
-      }
 
       .icon-container {
          &.selected {
             .icon-title {
-               background-color: var(--color-primary-800);
-               color: var(--color-neutral-light-background-1);
+               color: var(--color-primary-800);
+            }
+            .icon-item {
+               border: 2px solid var(--color-primary-100);
             }
          }
       }
@@ -159,13 +157,8 @@
       }
 
       .icon-selector-block {
-         width: calc(100% - var(--spacing-4));
          max-width: none;
          padding: var(--spacing-2);
-      }
-
-      .icon-grid {
-         gap: var(--spacing-2);
       }
 
       .icon-item {
