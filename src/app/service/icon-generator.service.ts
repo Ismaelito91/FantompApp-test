@@ -45,8 +45,6 @@ export class IconGeneratorService {
       await this.updateIcon(iconIndex, false);
    }
 
-   // plus de génération à la volée: on utilise les PNG statiques du dossier public/icons
-
    /**
     * Met à jour l'icône du widget PWA
     */
@@ -109,16 +107,6 @@ export class IconGeneratorService {
    }
 
    /**
-    * Sauvegarde l'icône dans IndexedDB
-    */
-   // suppression de la persistance IndexedDB inutile pour ce cas
-
-   /**
-    * Met à jour le manifest PWA dynamiquement
-    */
-   // plus de génération de manifest dynamique, on pointe vers des manifests statiques
-
-   /**
     * Met à jour le favicon dynamiquement
     */
    updateFavicon(href: string): void {
@@ -130,8 +118,4 @@ export class IconGeneratorService {
       }
    }
 
-   /**
-    * Retourne le chemin de l'icône selon le type
-    */
-   // plus de mapping SVG; on utilise les PNG du public/icons
 }
