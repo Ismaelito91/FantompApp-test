@@ -1,11 +1,12 @@
 <input type="file" accept="image/*,android/allowCamera" (change)="handleImageUpload($event)" hidden #fileInput />
 @if (showTutorial && (fileInput.files && fileInput.files.length > 0)) {
-<div @fadeInWithDelay class="absolute h-screen flex justify-center z-10" style="background-color: #000000B3;">
+<div @fadeInWithDelay (@fadeInWithDelay.done)="onFadeInDone()" class="absolute h-screen flex justify-center z-10"
+   style="background-color: #000000B3;">
    <div class="flex flex-col justify-center items-center p-[65px]">
-      <div class="relative">
+      <div class="relative h-[220px]">
          <img src="assets/images/blur-effect.svg" alt="hand" />
-         <div class="w-[127px] h-[110px]">
-            <img src="assets/images/hand.svg" alt="hand" class="absolute top-0 left-0" />
+         <div [@moveFromTo]="handAnimationState" class="w-[127px] h-[110px] absolute top-[13px] left-[27px]">
+            <img src="assets/images/hand.svg" alt="hand" />
          </div>
       </div>
       <h5 style="color: white; text-align: center; padding-bottom: 32px;">Glisse ton doigt sur l'image pour flouter.

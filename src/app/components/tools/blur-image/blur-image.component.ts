@@ -1,3 +1,4 @@
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { afterNextRender, Component, effect, ElementRef, signal, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -6,7 +7,6 @@ import { MatSliderModule } from '@angular/material/slider';
 import * as StackBlur from 'stackblur-canvas';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
-import { animate, style, transition, trigger } from '@angular/animations';
 
 type Action = 'blur' | 'pixelate';
 
@@ -16,10 +16,25 @@ export const fadeInWithDelay = trigger('fadeInWithDelay', [
          opacity: 0
       }),
       animate(
-         '200ms 800ms ease-out', // durée: 200ms | délai: 800ms
+         '200ms 800ms ease-out',
          style({
             opacity: 1
          })
+      )
+   ])
+]);
+
+export const moveFromTo = trigger('moveFromTo', [
+   state('inactive', style({ transform: 'translate(-44px, -10px)' })),
+   state('active', style({ transform: 'translate(0,0)' })),
+   transition('inactive => active', [
+      animate(
+         '800ms ease-out',
+         keyframes([
+            style({ transform: 'translate(0, 0)', offset: 0.7 }),
+            style({ transform: 'translate(5px, 3px)', offset: 0.85 }),
+            style({ transform: 'translate(0, 0)', offset: 1 })
+         ])
       )
    ])
 ]);
@@ -29,7 +44,7 @@ export const fadeInWithDelay = trigger('fadeInWithDelay', [
    imports: [ButtonBackComponent, MatButtonModule, ButtonComponent, MatIconModule, MatMenuModule, MatSliderModule],
    templateUrl: './blur-image.component.html',
    styleUrl: './blur-image.component.scss',
-   animations: [fadeInWithDelay]
+   animations: [fadeInWithDelay, moveFromTo]
 })
 export class BlurImageComponent {
    @ViewChild('canvas') canvasRef!: ElementRef<HTMLCanvasElement>;
@@ -48,6 +63,7 @@ export class BlurImageComponent {
    blurPercentage: number | null = null;
    showBrushSizer: boolean = true;
    showTutorial: boolean = true;
+   handAnimationState = 'inactive';
 
    constructor() {
       // Initialize after view renders
@@ -67,6 +83,10 @@ export class BlurImageComponent {
       localStorage.getItem('blur-tutorial') === 'true' ? this.showTutorial = false : this.showTutorial = true;
    }
 
+   onFadeInDone() {
+      // Déclenche l'animation de la main après la fin du fadeIn
+      this.handAnimationState = 'active';
+   }
    onCloseTutorial() {
       localStorage.setItem('blur-tutorial', 'true');
       this.showTutorial = false;
