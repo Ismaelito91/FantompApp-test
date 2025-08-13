@@ -1,15 +1,17 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogActions, MatDialogClose, MatDialogContent } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { ActivatedRoute } from '@angular/router';
+import { ComponentStatus } from '../../../model/enum/component-status.enum';
+import { ComponentType } from '../../../model/enum/component-type.enum';
+import PageComponentModel from '../../../model/page-component.model';
+import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
+import { PageComponentUtilsService } from '../../../service/page-component-utils.service';
+import { PageComponentService } from '../../../service/page-component.service';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { Card9Component } from "../../design-system/card-9/card-9.component";
-import PageComponentModel from '../../../model/page-component.model';
-import { PageComponentService } from '../../../service/page-component.service';
-import { PageComponentUtilsService } from '../../../service/page-component-utils.service';
-import { ComponentType } from '../../../model/enum/component-type.enum';
-import { ComponentStatus } from '../../../model/enum/component-status.enum';
-import { ActivatedRoute } from '@angular/router';
-import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
+import { ButtonComponent } from '../../design-system/button/button.component';
 
 @Component({
    selector: 'app-view-all',
@@ -21,6 +23,7 @@ export class ViewAllComponent {
    private readonly pageComponentService = inject(PageComponentService);
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
    private readonly route = inject(ActivatedRoute);
+   readonly dialog = inject(MatDialog);
 
    rootPage = signal<PageComponentModel>({ id: 0, translations: [], childrenIdList: [] });
    page = signal<PageComponentModel | undefined | null>({ id: 0, translations: [], childrenIdList: [] });
@@ -35,6 +38,7 @@ export class ViewAllComponent {
       if (!this.pageComponentUtils.getComponentById(this.targetId)) {
          this.loadRootPage();
       }
+      this.openDialog();
    }
 
    private loadRootPage(): void {
@@ -58,4 +62,18 @@ export class ViewAllComponent {
    get sortedChildren() {
       return this.pageComponentUtils.getSortedChildren(this.page());
    }
+
+   openDialog() {
+      this.dialog.open(DialogElementsExampleDialog, {
+           backdropClass: 'blurred-backdrop'
+      });
+   }
 }
+
+@Component({
+   selector: 'dialog-elements-example-dialog',
+   templateUrl: 'dialog-tutorial.component.html',
+   imports: [MatDialogContent, MatDialogClose, MatButtonModule, ButtonComponent],
+   changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class DialogElementsExampleDialog { }

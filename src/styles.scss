@@ -437,6 +437,14 @@
          }
       }
    }
+
+   .blurred-backdrop {
+      background-color: rgba(0, 0, 0, 0.3);
+      /* semi-transparence */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      /* pour Safari */
+   }
 }
 
 // Dark overrides
