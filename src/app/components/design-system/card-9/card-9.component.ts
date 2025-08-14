@@ -18,4 +18,16 @@ export class Card9Component {
    get sortedChildren() {
       return this.pageComponentUtils.getSortedChildren(this.data());
    }
+
+   isOk(id: number) {
+      return localStorage.getItem('sm-section-' + id) === 'true';
+   }
+
+   onToggleOk(id: number) {
+      if (this.isOk(id)) {
+         localStorage.removeItem('sm-section-' + id);
+      } else {
+         localStorage.setItem('sm-section-' + id, 'true');
+      }
+   }
 }

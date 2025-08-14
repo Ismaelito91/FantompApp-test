@@ -38,7 +38,9 @@ export class ViewAllComponent {
       if (!this.pageComponentUtils.getComponentById(this.targetId)) {
          this.loadRootPage();
       }
-      this.openDialog();
+      if (localStorage.getItem('social-media-tutorial') !== 'true') {
+         this.openDialog();
+      }
    }
 
    private loadRootPage(): void {
@@ -64,8 +66,12 @@ export class ViewAllComponent {
    }
 
    openDialog() {
-      this.dialog.open(DialogElementsExampleDialog, {
-           backdropClass: 'blurred-backdrop'
+      const dialogRef = this.dialog.open(DialogElementsExampleDialog, {
+         backdropClass: 'blurred-backdrop'
+      });
+
+      dialogRef.afterClosed().subscribe(() => {
+         localStorage.setItem('social-media-tutorial', 'true');
       });
    }
 }
