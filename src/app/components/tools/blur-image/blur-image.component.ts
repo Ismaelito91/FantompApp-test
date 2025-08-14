@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
+import { TranslatePipe } from '@ngx-translate/core';
 import * as StackBlur from 'stackblur-canvas';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
@@ -41,7 +42,7 @@ export const moveFromTo = trigger('moveFromTo', [
 
 @Component({
    selector: 'app-blur-image',
-   imports: [ButtonBackComponent, MatButtonModule, ButtonComponent, MatIconModule, MatMenuModule, MatSliderModule],
+   imports: [ButtonBackComponent, MatButtonModule, ButtonComponent, MatIconModule, MatMenuModule, MatSliderModule, TranslatePipe],
    templateUrl: './blur-image.component.html',
    styleUrl: './blur-image.component.scss',
    animations: [fadeInWithDelay, moveFromTo]

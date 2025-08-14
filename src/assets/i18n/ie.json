@@ -17,7 +17,9 @@
       "HOME": "Home",
       "PROBLEM": "Problem",
       "TOOLS": "Tools",
-      "SECURE": "Secure me"
+      "SECURE": "Secure me",
+      "UNDERSTOOD": "Compris IE",
+      "DOWNLOAD": "Télécharger IE"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {
@@ -246,6 +248,19 @@
                "INVISIBLE": "INVISIBLE 👻 IE"
             },
             "NO_PERSONAL_INFO": "Aucune information personnelle ! IE"
+         }
+      },
+      "BLUR_IMAGE": {
+         "TITLE": "Anonymiser ma photo IE",
+         "DESCRIPTION": "Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne. IE",
+         "ADVICE": "💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée ! IE",
+         "UPLOAD_IMAGE": "Importer une photo 🤳 IE",
+         "BLUR": "Flouter IE",
+         "PIXELATE": "Pixelliser IE",
+         "ALL_BLUR": "Tout flouter IE",
+         "BRUSH_SIZE": "Taille du flou IE",
+         "TUTORIAL": {
+            "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. IE"
          }
       }
    }

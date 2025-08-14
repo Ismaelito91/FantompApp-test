@@ -17,7 +17,9 @@
       "HOME": "Home",
       "PROBLEM": "Problem",
       "TOOLS": "Tools",
-      "SECURE": "Secure me"
+      "SECURE": "Secure me",
+      "UNDERSTOOD": "Compris INT",
+      "DOWNLOAD": "Télécharger INT"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {
@@ -189,6 +191,19 @@
                "INVISIBLE": "INVISIBLE 👻 INT"
             },
             "NO_PERSONAL_INFO": "Aucune information personnelle ! INT"
+         }
+      },
+      "BLUR_IMAGE": {
+         "TITLE": "Anonymiser ma photo INT",
+         "DESCRIPTION": "Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne. INT",
+         "ADVICE": "💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée ! INT",
+         "UPLOAD_IMAGE": "Importer une photo 🤳 INT",
+         "BLUR": "Flouter INT",
+         "PIXELATE": "Pixelliser INT",
+         "ALL_BLUR": "Tout flouter INT",
+         "BRUSH_SIZE": "Taille du flou INT",
+         "TUTORIAL": {
+            "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. INT"
          }
       }
    }

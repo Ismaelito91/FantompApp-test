@@ -17,7 +17,9 @@
       "HOME": "Αρχική",
       "PROBLEM": "Πρόβλημα",
       "TOOLS": "Εργαλεία",
-      "SECURE": "Ασφάλεια"
+      "SECURE": "Ασφάλεια",
+      "UNDERSTOOD": "Compris GR",
+      "DOWNLOAD": "Télécharger GR"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {
@@ -177,6 +179,19 @@
                "INVISIBLE": "INVISIBLE 👻 GR"
             },
             "NO_PERSONAL_INFO": "Aucune information personnelle ! GR"
+         }
+      },
+      "BLUR_IMAGE": {
+         "TITLE": "Anonymiser ma photo GR",
+         "DESCRIPTION": "Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne. GR",
+         "ADVICE": "💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée ! GR",
+         "UPLOAD_IMAGE": "Importer une photo 🤳 GR",
+         "BLUR": "Flouter GR",
+         "PIXELATE": "Pixelliser GR",
+         "ALL_BLUR": "Tout flouter GR",
+         "BRUSH_SIZE": "Taille du flou GR",
+         "TUTORIAL": {
+            "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. GR"
          }
       }
    }

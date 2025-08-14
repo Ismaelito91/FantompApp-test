@@ -9,11 +9,11 @@
             <img src="assets/images/hand.svg" alt="hand" />
          </div>
       </div>
-      <h5 style="color: white; text-align: center; padding-bottom: 32px;">Glisse ton doigt sur l'image pour flouter.
-      </h5>
+      <h5 style="color: white; text-align: center; padding-bottom: 32px;">
+         {{ "TOOLS.BLUR_IMAGE.TUTORIAL.DESCRIPTION" | translate }}</h5>
       <button mat-flat-button style="color: #10052E; background-color: white; font-family: Nunito; font-weight: 700;
           font-style: Bold; font-size: 18px; line-height: 28px; letter-spacing: 0%; text-align: center; height: 48px;"
-         (click)="onCloseTutorial()">Compris</button>
+         (click)="onCloseTutorial()">{{ "COMMON.UNDERSTOOD" | translate }}</button>
    </div>
 </div>
 }
@@ -35,7 +35,8 @@
             <div class="flex">
                <div class="bg-[#4841584D] rounded-[30px]"
                   style="color: white; font-weight: 600; font-size: 12px; padding: 4px 10px; backdrop-filter: blur(20px);">
-                  Taille du flou</div>
+                  {{ "TOOLS.BLUR_IMAGE.BRUSH_SIZE" | translate }}
+               </div>
                <!-- <div class="bg-[#4841584D] rounded-full"
                   [style]="'border: 1px solid #FFFFFF; width: '+ brushSize() +'px; height: '+ brushSize() +'px;'"></div> -->
             </div>
@@ -60,14 +61,14 @@
                   'active': action === 'blur',
                }">
                <img src="assets/images/flouter.svg" class="image" />
-               <div class="label">Flouter</div>
+               <div class="label">{{ "TOOLS.BLUR_IMAGE.BLUR" | translate }}</div>
             </div>
             <div class="action flex flex-col justify-center items-center cursor-pointer"
                (click)="onClickAction('pixelate')" [class]="{
                   'active': action === 'pixelate',
                }">
                <img src="assets/images/pixelliser.svg" class="image" />
-               <div class="label">Pixelliser</div>
+               <div class="label">{{ "TOOLS.BLUR_IMAGE.PIXELATE" | translate }}</div>
             </div>
          </div>
       </div>
@@ -85,7 +86,7 @@
             </button>
          </div>
          <div>
-            <app-button label="Tout flouter" variant="secondary" size="sm"
+            <app-button [label]="'TOOLS.BLUR_IMAGE.ALL_BLUR' | translate" variant="secondary" size="sm"
                [iconAfterLabel]="{name: 'chevron16x16-icon', rotate: 90 }" [matMenuTriggerFor]="menu"></app-button>
             <mat-menu #menu="matMenu" yPosition="above">
                @for (percentage of blurPercentages(); track $index) {
@@ -102,8 +103,8 @@
       </div>
 
       <div class="w-full pl-(--spacing-3) pr-(--spacing-3) z-1">
-         <app-button label="Télécharger" variant="primary" [iconAfterLabel]="{name: 'icon-download24x24' }"
-            (click)="downloadImage()"></app-button>
+         <app-button [label]="'COMMON.DOWNLOAD' | translate" variant="primary"
+            [iconAfterLabel]="{name: 'icon-download24x24' }" (click)="downloadImage()"></app-button>
       </div>
    </div>
 
@@ -112,22 +113,18 @@
       <div class="ellipse-1"></div>
       <div class="ellipse-2"></div>
       <div class="flex flex-col gap-(--spacing-3) pt-[66px] pl-(--spacing-3) pr-(--spacing-3) z-1">
-         <h3 class="!text-(--color-19)">Anonymiser ma photo</h3>
-         <p class="text-(--color-4)">Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne.
-         </p>
+         <h3 class="!text-(--color-19)">{{ "TOOLS.BLUR_IMAGE.TITLE" | translate }}</h3>
+         <p class="text-(--color-4)">{{ "TOOLS.BLUR_IMAGE.DESCRIPTION" | translate }}</p>
       </div>
       <div class="image-container flex justify-center items-center h-full rounded-(--border-radius-3) z-1">
          <img src="assets/images/photo-illu.svg" alt="image-illu" class="h-[200px]" (click)="fileInput.click()" />
       </div>
       <div class="pl-(--spacing-3) pr-(--spacing-3) z-1">
-         <app-button label="Importer une photo 🤳" variant="primary" (click)="fileInput.click()"></app-button>
+         <app-button [label]="'TOOLS.BLUR_IMAGE.UPLOAD_IMAGE' | translate" variant="primary" (click)="fileInput.click()"></app-button>
       </div>
    </div>
 
-   <p
-      class="text-(length:--font-size-body-xs) text-(--color-14) font-(--font-weight-title) pt-(--spacing-2) pr-(--spacing-3) pb-(--spacing-2) pl-(--spacing-3) z-1">
-      💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas
-      ailleurs non floutée !
-   </p>
+   <p [innerHTML]="'TOOLS.BLUR_IMAGE.ADVICE' | translate"
+      class="text-(length:--font-size-body-xs) text-(--color-14) font-(--font-weight-title) pt-(--spacing-2) pr-(--spacing-3) pb-(--spacing-2) pl-(--spacing-3) z-1"></p>
    }
 </div>
