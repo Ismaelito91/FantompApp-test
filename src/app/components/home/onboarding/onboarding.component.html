@@ -77,14 +77,14 @@
             [@ghostAppear]="animationStates().ghost"
          >
             @if (!isDarkMode()) {
-            <!-- Mode clair -->
+
             <img
                src="assets/images/onboarding/switch-pancarte.svg"
                alt="Fantôme avec pancarte"
                class="ghost-character"
             />
             } @else {
-            <!-- Mode sombre -->
+
             <div class="ghost-dark-wrapper">
                <img
                   src="assets/images/switch-pancarte-dark.svg"
@@ -206,7 +206,6 @@
    <!-- ===== ÉTAPE 3 : DÉMONSTRATION OUTILS ===== -->
    @if (currentStep() === 3) {
    <div class="onboarding-step-three">
-      <!-- Fantôme triste pour l'étape 3 -->
       <div class="sad-ghost-wrapper illu-onboarding-ghost">
          <img
             src="assets/images/onboarding/illu-onboarding.svg"

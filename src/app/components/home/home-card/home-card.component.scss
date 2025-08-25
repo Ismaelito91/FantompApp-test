@@ -9,7 +9,7 @@
 .home-cards__main-title {
    line-height: var(--line-height-h5);
    color: var(--color-1);
-   margin-right: 16px;
+   margin-left: 16px;
    align-self: flex-start;
    margin-top: 70px;
 }
@@ -219,12 +219,14 @@
 .home-cards-problems-container {
    display: flex;
    flex-direction: column;
-   gap: var(--spacing-3);
    width: 100%;
    align-items: center;
    min-height: 300px;
-   padding-top: var(--spacing-4);
    padding-bottom: var(--spacing-4);
+
+   h5 {
+      margin-left: 16px;
+   }
 }
 
 .problems-cards-row {
@@ -446,9 +448,39 @@
    /* Carte pour le harcèlement */
 }
 
-.home-card-problem__arrow mat-icon,
+// Position relative pour les cartes parent
+.home-card-problem,
+.home-card-harassment {
+   position: relative;
+}
+
+// Styles pour les flèches des cartes problème et harcèlement
+.home-card-problem__arrow,
+.home-card-harassment__arrow {
+   display: flex;
+   width: 20px !important;
+   height: 18px !important;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   right: 0px;
+   top: 80%;
+   transform: translateY(-50%);
+   pointer-events: none;
+
+   mat-icon {
+      width: 24px !important;
+      height: 24px !important;
+      font-size: 24px !important;
+      transition: transform 0.2s ease;
+   }
+}
+
+// Couleurs par défaut (mode light)
+.home-card-problem__arrow mat-icon {
+   color: var(--color-27);
+}
+
 .home-card-harassment__arrow mat-icon {
-   width: 4px;
-   height: 8px;
-   font-size: 4px;
+   color: var(--color-28);
 }
