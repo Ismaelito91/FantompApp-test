@@ -27,8 +27,8 @@
    #app-info-title {
       font-weight: var(--font-weight-heading);
       letter-spacing: var(--letter-spacing-heading);
-
-      margin: 0 0 var(--spacing-2) 0;
+      margin-bottom: 10px;
+      margin-left: 20px;
    }
 
    .home-cards-container {
@@ -49,6 +49,7 @@
    #app-info-container {
       border-radius: var(--border-radius-2);
       padding: var(--spacing-3);
+      margin-left: 20px;
 
       // Structure liste pour l'accessibilité
       ul {
@@ -121,7 +122,6 @@
          align-items: center;
          justify-content: center;
          flex-shrink: 0;
-         
       }
 
       span {
