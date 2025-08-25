@@ -188,6 +188,8 @@ export class BlurImageComponent {
          StackBlur.canvasRGB(canvas, x - brushSize / 2, y - brushSize / 2, brushSize, brushSize, blurRadius);
       }
 
+      await this.delay(50);
+
       // 2. Compression destructive
       const finalBlob = await this.canvasToLowQualityBlob(canvas);
       return finalBlob;
