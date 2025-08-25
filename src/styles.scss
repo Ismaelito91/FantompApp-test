@@ -211,6 +211,7 @@
    --color-neutral-light-background-1: #ffffff;
    --color-neutral-light-background-1_30: #ffffff4d;
    --color-neutral-light-background-1_50: #ffffff80;
+   --color-neutral-light-background-1_60: #ffffff99;
    --color-neutral-light-background-1_70: #ffffffb2;
    --color-neutral-light-background-1_80: #ffffffcc;
    --color-neutral-light-background-2: #faf9fb;
@@ -224,7 +225,10 @@
    --color-neutral-light-content-5: #958fa3;
 
    --color-neutral-dark-background-1: #140d26;
+   --color-neutral-dark-background-1_30: #140d264d;
    --color-neutral-dark-background-2: #291e43;
+   --color-neutral-dark-background-2_30: #291e434d;
+   --color-neutral-dark-background-2_60: #291e4399;
    --color-neutral-dark-background-2_70: #291e43b2;
    --color-neutral-dark-background-2_80: #291e43cc;
    --color-neutral-dark-background-3: #443a5c;
@@ -266,6 +270,7 @@
       #ffffff 0%,
       rgba(255, 255, 255, 0.4) 100%
    );
+   --background-26: var(--color-neutral-light-background-1_60);
 
    --color-1: var(--color-neutral-light-content-2);
    --color-2: var(--color-primary-950);
@@ -513,6 +518,7 @@
       #140d26 29.29%,
       rgba(41, 30, 67, 0) 94.29%
    );
+
    --background-20: var(--color-neutral-dark-background-1);
    --background-21: var(--color-neutral-dark-background-3);
    --background-22: var(--color-neutral-dark-background-2);
@@ -523,6 +529,7 @@
       #140d26 0%,
       rgba(20, 13, 38, 0.4) 100%
    );
+   --background-26: var(--color-neutral-dark-background-1_30);
 
    --color-1: var(--color-neutral-light-background-2);
    --color-2: var(--color-neutral-light-background-2);

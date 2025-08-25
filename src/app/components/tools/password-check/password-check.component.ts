@@ -1,8 +1,16 @@
-import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { CommonModule, Location } from "@angular/common";
+import {
+   Component,
+   OnDestroy,
+   OnInit,
+   ElementRef,
+   ViewChild,
+} from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { Router } from "@angular/router";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonCloseComponent } from "../../design-system/button-close/button-close.component";
+import { BadgeComponent } from "../../design-system/badge/badge.component";
 
 export interface PasswordCrackingData {
    characters: number;
@@ -200,11 +208,6 @@ export class PasswordSecurityCalculator {
          strengthLevel,
       };
    }
-
-   /**
-    * Évalue la force d'un mot de passe basé sur sa longueur et sa composition
-    * Utilise le tableau Hive Systems 2025 pour déterminer le temps de craquage
-    */
    evaluatePasswordStrength(password: string): {
       length: number;
       type:
@@ -320,11 +323,15 @@ export const passwordCalculator = new PasswordSecurityCalculator();
       ButtonCloseComponent,
       FormsModule,
       CommonModule,
+      BadgeComponent,
    ],
    templateUrl: "./password-check.component.html",
    styleUrl: "./password-check.component.scss",
 })
 export class PasswordCheckComponent implements OnDestroy, OnInit {
+   @ViewChild("passwordInput", { static: false })
+   passwordInput!: ElementRef<HTMLInputElement>;
+
    password: string = "";
    result: string = "";
    category: string = "";
@@ -344,7 +351,7 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
    typewriterInterval: any;
    calculatedFontSize: number = 96; // Taille calculée en px
 
-   constructor() {
+   constructor(private router: Router, private location: Location) {
       // Vérifie si c'est la première fois que l'utilisateur utilise l'app
       const hasSeenOnboarding = localStorage.getItem(
          "password-check-onboarding-seen"
@@ -353,25 +360,21 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
    }
 
    ngOnInit() {
-      console.log("ngOnInit - hasSeenOnboarding:", this.hasSeenOnboarding);
-
       // Si c'est la première fois, affiche l'onboarding immédiatement
       if (!this.hasSeenOnboarding) {
-         console.log("Première visite - affichage de l'onboarding");
          // Afficher immédiatement
          this.showInfoModal = true;
          localStorage.setItem("password-check-onboarding-seen", "true");
-         console.log("Modal affichée immédiatement:", this.showInfoModal);
       }
    }
 
    // Suivi de chaque critère pour affichage des icônes
    criteria = [
-      { name: "Au moins 8 caractères", valid: false },
-      { name: "Une majuscule", valid: false },
-      { name: "Une minuscule", valid: false },
-      { name: "Un chiffre", valid: false },
-      { name: "Un caractère spécial", valid: false },
+      { name: "12 caractères minimum", valid: false },
+      { name: "1 majuscule au moins", valid: false },
+      { name: "1 minuscule au moins", valid: false },
+      { name: "1 chiffre au moins", valid: false },
+      { name: "1 caractère spécial au moins", valid: false },
    ];
 
    toggleShowPassword() {
@@ -380,7 +383,6 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
 
    async copyPassword() {
       if (!this.password) {
-         console.log("No password to copy");
          return;
       }
 
@@ -388,15 +390,9 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
          // Utilise l'API moderne du clipboard
          if (navigator.clipboard && window.isSecureContext) {
             await navigator.clipboard.writeText(this.password);
-            console.log("Password copied to clipboard successfully");
-         } else {
-            // Fallback pour les anciens navigateurs sans clipboard API
-            console.log(
-               "Clipboard API not available - password cannot be copied"
-            );
          }
       } catch (err) {
-         console.error("Failed to copy password:", err);
+         // Gestion silencieuse des erreurs de copie
       }
    }
 
@@ -424,19 +420,24 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
    }
 
    resetResults() {
+      // Nettoie d'abord les données sensibles
+      this.password = "";
       this.showPasswordResults = false;
       this.isRapidCracking = false;
       this.passwordResultLevel = "";
       this.result = "";
       this.message = "";
       this.category = "";
-      this.password = "";
       this.displayedMessage = "";
       this.fullMessage = "";
       this.calculatedFontSize = 96;
+      this.isInputFocused = false; // Remet l'input en état non-focus
       if (this.typewriterInterval) {
          clearInterval(this.typewriterInterval);
       }
+
+      // Retourne à la page précédente (d'où on est venu)
+      this.location.back();
    }
 
    // Calcule directement la taille en pixels - SIMPLE ET DIRECT
@@ -471,9 +472,6 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
       const finalSize = Math.round(baseSize * reduction);
       const result = Math.max(18, finalSize); // Minimum 18px
 
-      console.log(
-         `📏 Base: ${baseSize}px, Réduction: ${reduction}, Final: ${result}px`
-      );
       return result;
    }
 
@@ -499,37 +497,32 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
    }
 
    handleButtonClick() {
-      console.log("🔥 BUTTON CLICKED", {
-         isInputFocused: this.isInputFocused,
-         passwordLength: this.password.length,
-         password: this.password,
-         showPasswordResults: this.showPasswordResults,
-      });
-
-      // Si on affiche les résultats, "Renforcer mon mdp" ramène à l'état initial
+      // Si on affiche les résultats, "Renforcer mon mdp" ramène à l'état actif (input focus)
       if (this.showPasswordResults) {
-         console.log("🔄 Reinforce password - resetting to initial state");
-         this.resetResults();
+         this.showPasswordResults = false;
+         this.isInputFocused = true;
+         setTimeout(() => {
+            if (this.passwordInput) {
+               this.passwordInput.nativeElement.focus();
+            }
+         }, 100);
          return;
       }
 
       // Si il y a du texte dans l'input, tester le mot de passe (peu importe le focus)
       if (this.password.length > 0) {
-         console.log("✅ Testing password");
          this.checkPassword();
          return;
       }
 
       // Si pas de texte et input pas focus, montrer l'info sur les bons mots de passe
       if (this.password.length === 0 && !this.isInputFocused) {
-         console.log("ℹ️ Showing password info modal");
          this.togglePasswordInfoModal();
          return;
       }
 
       // Si pas de texte mais input focus, ne rien faire
       if (this.password.length === 0 && this.isInputFocused) {
-         console.log("❌ Input focused but empty - doing nothing");
          return;
       }
    }
@@ -539,7 +532,7 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
       this.showPasswordResults = true;
 
       // Vérification des critères de base pour l'affichage des icônes
-      this.criteria[0].valid = this.password.length >= 8;
+      this.criteria[0].valid = this.password.length >= 12;
       this.criteria[1].valid = /[A-Z]/.test(this.password);
       this.criteria[2].valid = /[a-z]/.test(this.password);
       this.criteria[3].valid = /[0-9]/.test(this.password);
@@ -571,7 +564,8 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
             hasNumbers &&
             hasSpecialChars;
 
-         const immediateTerms = ["Instantané", "minutes", "heures"];
+         const immediateTerms = ["Instantané"];
+         const rapidTerms = ["minutes", "heures"];
          const correctTerms = ["jour", "semaine", "mois"];
 
          let baseLevel = "";
@@ -581,6 +575,10 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
             )
          ) {
             baseLevel = "immediate"; // Le plus dangereux
+         } else if (
+            rapidTerms.some((term) => evaluation.crackingTime.includes(term))
+         ) {
+            baseLevel = "rapid"; // Rapide
          } else if (
             correctTerms.some((term) => evaluation.crackingTime.includes(term))
          ) {
@@ -602,6 +600,29 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
          this.message = "";
          this.category = "";
          this.isRapidCracking = false;
+      }
+   }
+
+   // Méthode pour déterminer le badge approprié selon le niveau de résultat
+   getBadgeInfo(): {
+      title: string;
+      variant: "success" | "danger" | "danger-light" | "info";
+   } | null {
+      if (!this.showPasswordResults || !this.passwordResultLevel) {
+         return null;
+      }
+
+      switch (this.passwordResultLevel) {
+         case "immediate":
+            return { title: "C'EST IMMÉDIAT ⚠️", variant: "danger" };
+         case "rapid":
+            return { title: "C'EST RAPIDE 😬", variant: "danger-light" };
+         case "correct":
+            return { title: "C'EST CORRECT 🙂", variant: "info" };
+         case "super":
+            return { title: "C'EST SUPER 😎", variant: "success" };
+         default:
+            return null;
       }
    }
 
