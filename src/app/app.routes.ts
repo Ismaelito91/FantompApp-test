@@ -54,21 +54,21 @@ export const routes: Routes = [
             path: "blur-image",
             component: BlurImageComponent,
             pathMatch: "full",
-            data: { hideHeader: true, hideFooter: true }
+            data: { hideHeader: true, hideFooter: true },
          },
          {
             path: "visibility-check",
             component: VisibilityCheckComponent,
             pathMatch: "full",
-            data: { hideHeader: true, hideFooter: true }
+            data: { hideHeader: true, hideFooter: true },
          },
          {
             path: "visibility-check/results",
             component: VisibilityResultsComponent,
             pathMatch: "full",
             data: { hideHeader: true, hideFooter: true },
-         }
-      ]
+         },
+      ],
    },
    {
       path: "problems",

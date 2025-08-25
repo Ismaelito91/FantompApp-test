@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
+import { ButtonCloseComponent } from "../../design-system/button-close/button-close.component";
 
 export interface PasswordCrackingData {
    characters: number;
@@ -70,80 +71,80 @@ export class PasswordSecurityCalculator {
          numbersOnly: { time: "2 heures" },
          lowercaseOnly: { time: "2 ans" },
          mixedCase: { time: "791 ans" },
-         numbersAndLetters: { time: "3k ans" },
-         allCharacters: { time: "11k ans" },
+         numbersAndLetters: { time: "3 000 ans" },
+         allCharacters: { time: "11 000 ans" },
       },
       {
          characters: 10,
          numbersOnly: { time: "1 jour" },
          lowercaseOnly: { time: "40 ans" },
-         mixedCase: { time: "41k ans" },
-         numbersAndLetters: { time: "238k ans" },
-         allCharacters: { time: "803k ans" },
+         mixedCase: { time: "41 000 ans" },
+         numbersAndLetters: { time: "238 000 ans" },
+         allCharacters: { time: "803 000 ans" },
       },
       {
          characters: 11,
          numbersOnly: { time: "1 semaine" },
-         lowercaseOnly: { time: "1k ans" },
-         mixedCase: { time: "2M ans" },
-         numbersAndLetters: { time: "14M ans" },
-         allCharacters: { time: "56M ans" },
+         lowercaseOnly: { time: "1 000 ans" },
+         mixedCase: { time: "2 millions d'années" },
+         numbersAndLetters: { time: "14 millions d'années" },
+         allCharacters: { time: "56 millions d'années" },
       },
       {
          characters: 12,
          numbersOnly: { time: "3 mois" },
-         lowercaseOnly: { time: "27k ans" },
-         mixedCase: { time: "111M ans" },
-         numbersAndLetters: { time: "917M ans" },
-         allCharacters: { time: "3Md ans" },
+         lowercaseOnly: { time: "27 000 ans" },
+         mixedCase: { time: "111 millions d'années" },
+         numbersAndLetters: { time: "917 millions d'années" },
+         allCharacters: { time: "3 milliards d'années" },
       },
       {
          characters: 13,
          numbersOnly: { time: "3 ans" },
-         lowercaseOnly: { time: "705k ans" },
-         mixedCase: { time: "5Md ans" },
-         numbersAndLetters: { time: "56Md ans" },
-         allCharacters: { time: "275Md ans" },
+         lowercaseOnly: { time: "705 000 ans" },
+         mixedCase: { time: "5 milliards d'années" },
+         numbersAndLetters: { time: "56 milliards d'années" },
+         allCharacters: { time: "275 milliards d'années" },
       },
       {
          characters: 14,
          numbersOnly: { time: "28 ans" },
-         lowercaseOnly: { time: "18M ans" },
-         mixedCase: { time: "300Md ans" },
-         numbersAndLetters: { time: "3Bn ans" },
-         allCharacters: { time: "19Bn ans" },
+         lowercaseOnly: { time: "18 millions d'années" },
+         mixedCase: { time: "300 milliards d'années" },
+         numbersAndLetters: { time: "3 billions d'années" },
+         allCharacters: { time: "19 billions d'années" },
       },
       {
          characters: 15,
          numbersOnly: { time: "284 ans" },
-         lowercaseOnly: { time: "477M ans" },
-         mixedCase: { time: "15Bn ans" },
-         numbersAndLetters: { time: "218Bn ans" },
-         allCharacters: { time: "1Bd ans" },
+         lowercaseOnly: { time: "477 millions d'années" },
+         mixedCase: { time: "15 billions d'années" },
+         numbersAndLetters: { time: "218 billions d'années" },
+         allCharacters: { time: "1 billion d'années" },
       },
       {
          characters: 16,
-         numbersOnly: { time: "2k ans" },
-         lowercaseOnly: { time: "12Md ans" },
-         mixedCase: { time: "812Bn ans" },
-         numbersAndLetters: { time: "13Bd ans" },
-         allCharacters: { time: "94Bd ans" },
+         numbersOnly: { time: "2 000 ans" },
+         lowercaseOnly: { time: "12 milliards d'années" },
+         mixedCase: { time: "812 billions d'années" },
+         numbersAndLetters: { time: "13 billions d'années" },
+         allCharacters: { time: "94 billions d'années" },
       },
       {
          characters: 17,
-         numbersOnly: { time: "28k ans" },
-         lowercaseOnly: { time: "322Md ans" },
-         mixedCase: { time: "42Bd ans" },
-         numbersAndLetters: { time: "840Bd ans" },
-         allCharacters: { time: "6Tn ans" },
+         numbersOnly: { time: "28 000 ans" },
+         lowercaseOnly: { time: "322 milliards d'années" },
+         mixedCase: { time: "42 billions d'années" },
+         numbersAndLetters: { time: "840 billions d'années" },
+         allCharacters: { time: "6 trillions d'années" },
       },
       {
          characters: 18,
-         numbersOnly: { time: "284k ans" },
-         lowercaseOnly: { time: "8Bn ans" },
-         mixedCase: { time: "2Tn ans" },
-         numbersAndLetters: { time: "52Tn ans" },
-         allCharacters: { time: "463Tn ans" },
+         numbersOnly: { time: "284 000 ans" },
+         lowercaseOnly: { time: "8 billions d'années" },
+         mixedCase: { time: "2 trillions d'années" },
+         numbersAndLetters: { time: "52 trillions d'années" },
+         allCharacters: { time: "463 trillions d'années" },
       },
    ];
 
@@ -316,6 +317,7 @@ export const passwordCalculator = new PasswordSecurityCalculator();
    selector: "app-password-check",
    imports: [
       ButtonBackComponent,
+      ButtonCloseComponent,
       FormsModule,
       CommonModule,
    ],
@@ -332,6 +334,15 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
    showPasswordInfoModal: boolean = false;
    hasSeenOnboarding: boolean = false;
    isInputFocused: boolean = false;
+   showPasswordResults: boolean = false;
+   isRapidCracking: boolean = false;
+   passwordResultLevel: string = ""; // "immediate", "correct", "super" (du plus bas au plus haut)
+
+   // Propriétés pour l'effet typewriter
+   displayedMessage: string = "";
+   fullMessage: string = "";
+   typewriterInterval: any;
+   calculatedFontSize: number = 96; // Taille calculée en px
 
    constructor() {
       // Vérifie si c'est la première fois que l'utilisateur utilise l'app
@@ -367,6 +378,28 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
       this.showPassword = !this.showPassword;
    }
 
+   async copyPassword() {
+      if (!this.password) {
+         console.log("No password to copy");
+         return;
+      }
+
+      try {
+         // Utilise l'API moderne du clipboard
+         if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(this.password);
+            console.log("Password copied to clipboard successfully");
+         } else {
+            // Fallback pour les anciens navigateurs sans clipboard API
+            console.log(
+               "Clipboard API not available - password cannot be copied"
+            );
+         }
+      } catch (err) {
+         console.error("Failed to copy password:", err);
+      }
+   }
+
    toggleInfoModal() {
       this.showInfoModal = !this.showInfoModal;
    }
@@ -382,13 +415,129 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
 
    onInputBlur() {
       this.isInputFocused = false;
+      this.showPasswordResults = false;
    }
 
    cancelInputFocus() {
       this.isInputFocused = false;
+      this.showPasswordResults = false;
+   }
+
+   resetResults() {
+      this.showPasswordResults = false;
+      this.isRapidCracking = false;
+      this.passwordResultLevel = "";
+      this.result = "";
+      this.message = "";
+      this.category = "";
+      this.password = "";
+      this.displayedMessage = "";
+      this.fullMessage = "";
+      this.calculatedFontSize = 96;
+      if (this.typewriterInterval) {
+         clearInterval(this.typewriterInterval);
+      }
+   }
+
+   // Calcule directement la taille en pixels - SIMPLE ET DIRECT
+   calculateSimpleFontSize(text: string): number {
+      const digitCount = (text.match(/\d/g) || []).length;
+      const letterCount = (text.match(/[a-zA-ZÀ-ÿ]/g) || []).length;
+      const totalRelevantChars = digitCount + letterCount;
+
+      // Détermine la taille de base
+      let baseSize = 96; // Par défaut lettres
+      if (totalRelevantChars > 0) {
+         const digitRatio = digitCount / totalRelevantChars;
+         baseSize = digitRatio > 0.5 ? 127 : 96; // Chiffres vs lettres
+      }
+
+      // Réduction selon la longueur
+      const length = text.length;
+      let reduction = 1; // Pas de réduction par défaut
+
+      if (length <= 3) {
+         reduction = 1; // 100%
+      } else if (length <= 8) {
+         reduction = 0.7; // 70%
+      } else if (length <= 15) {
+         reduction = 0.5; // 50%
+      } else if (length <= 25) {
+         reduction = 0.3; // 30%
+      } else {
+         reduction = 0.2; // 20%
+      }
+
+      const finalSize = Math.round(baseSize * reduction);
+      const result = Math.max(18, finalSize); // Minimum 18px
+
+      console.log(
+         `📏 Base: ${baseSize}px, Réduction: ${reduction}, Final: ${result}px`
+      );
+      return result;
+   }
+
+   // Effet typewriter lettre par lettre
+   startTypewriterEffect(text: string) {
+      this.fullMessage = text;
+      this.displayedMessage = "";
+      this.calculatedFontSize = this.calculateSimpleFontSize(text); // Calcul direct
+
+      if (this.typewriterInterval) {
+         clearInterval(this.typewriterInterval);
+      }
+
+      let currentIndex = 0;
+      this.typewriterInterval = setInterval(() => {
+         if (currentIndex < this.fullMessage.length) {
+            this.displayedMessage += this.fullMessage.charAt(currentIndex);
+            currentIndex++;
+         } else {
+            clearInterval(this.typewriterInterval);
+         }
+      }, 50); // 50ms entre chaque lettre
+   }
+
+   handleButtonClick() {
+      console.log("🔥 BUTTON CLICKED", {
+         isInputFocused: this.isInputFocused,
+         passwordLength: this.password.length,
+         password: this.password,
+         showPasswordResults: this.showPasswordResults,
+      });
+
+      // Si on affiche les résultats, "Renforcer mon mdp" ramène à l'état initial
+      if (this.showPasswordResults) {
+         console.log("🔄 Reinforce password - resetting to initial state");
+         this.resetResults();
+         return;
+      }
+
+      // Si il y a du texte dans l'input, tester le mot de passe (peu importe le focus)
+      if (this.password.length > 0) {
+         console.log("✅ Testing password");
+         this.checkPassword();
+         return;
+      }
+
+      // Si pas de texte et input pas focus, montrer l'info sur les bons mots de passe
+      if (this.password.length === 0 && !this.isInputFocused) {
+         console.log("ℹ️ Showing password info modal");
+         this.togglePasswordInfoModal();
+         return;
+      }
+
+      // Si pas de texte mais input focus, ne rien faire
+      if (this.password.length === 0 && this.isInputFocused) {
+         console.log("❌ Input focused but empty - doing nothing");
+         return;
+      }
    }
 
    checkPassword() {
+      // Afficher les résultats seulement quand on clique sur le bouton
+      this.showPasswordResults = true;
+
       // Vérification des critères de base pour l'affichage des icônes
       this.criteria[0].valid = this.password.length >= 8;
       this.criteria[1].valid = /[A-Z]/.test(this.password);
@@ -396,22 +545,70 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
       this.criteria[3].valid = /[0-9]/.test(this.password);
       this.criteria[4].valid = /[^A-Za-z0-9]/.test(this.password);
 
-      // Évaluation de la force du mot de passe avec le tableau Hive Systems 2025
       if (this.password.length > 0) {
          const evaluation = passwordCalculator.evaluatePasswordStrength(
             this.password
          );
          this.category = evaluation.strengthLevel;
-         this.message = `${evaluation.crackingTime} (${evaluation.type})`;
+         this.message = evaluation.crackingTime;
          this.result = `Niveau : ${this.category}`;
+
+         // Démarrer l'effet typewriter pour le message
+         setTimeout(() => {
+            this.startTypewriterEffect(evaluation.crackingTime);
+         }, 300); // Petit délai pour que l'interface se mette en place
+
+         // Vérification des critères de sécurité
+         const hasMinLength = this.password.length >= 12;
+         const hasUppercase = /[A-Z]/.test(this.password);
+         const hasLowercase = /[a-z]/.test(this.password);
+         const hasNumbers = /\d/.test(this.password);
+         const hasSpecialChars = /[^a-zA-Z0-9]/.test(this.password);
+         const allCriteriaValid =
+            hasMinLength &&
+            hasUppercase &&
+            hasLowercase &&
+            hasNumbers &&
+            hasSpecialChars;
+
+         const immediateTerms = ["Instantané", "minutes", "heures"];
+         const correctTerms = ["jour", "semaine", "mois"];
+
+         let baseLevel = "";
+         if (
+            immediateTerms.some((term) =>
+               evaluation.crackingTime.includes(term)
+            )
+         ) {
+            baseLevel = "immediate"; // Le plus dangereux
+         } else if (
+            correctTerms.some((term) => evaluation.crackingTime.includes(term))
+         ) {
+            baseLevel = "correct"; // Moyen
+         } else {
+            baseLevel = "super"; // Le plus sûr (années)
+         }
+
+         // Si le niveau serait "super" mais que tous les critères ne sont pas remplis, on descend d'un niveau
+         if (baseLevel === "super" && !allCriteriaValid) {
+            this.passwordResultLevel = "correct";
+            this.isRapidCracking = true;
+         } else {
+            this.passwordResultLevel = baseLevel;
+            this.isRapidCracking = baseLevel !== "super";
+         }
       } else {
          this.result = "";
          this.message = "";
          this.category = "";
+         this.isRapidCracking = false;
       }
    }
 
    ngOnDestroy() {
       this.password = "";
+      if (this.typewriterInterval) {
+         clearInterval(this.typewriterInterval);
+      }
    }
 }
