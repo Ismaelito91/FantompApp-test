@@ -64,6 +64,7 @@ export class BlurImageComponent {
    blurPercentage: number | null = null;
    showBrushSizer: boolean = true;
    showTutorial: boolean = true;
+   showControls: boolean = true;
    handAnimationState = 'inactive';
 
    constructor() {
@@ -157,6 +158,7 @@ export class BlurImageComponent {
    }
 
    startPainting(event: MouseEvent | Touch) {
+      this.showControls = false;
       this.saveState();
       this.isPainting = true;
       this.applyBlurEffect(event);
@@ -168,6 +170,7 @@ export class BlurImageComponent {
    }
 
    stopPainting() {
+      this.showControls = true;
       this.isPainting = false;
    }
 

@@ -30,6 +30,7 @@
             (mouseleave)="stopPainting()" (touchstart)="startPainting($event.touches[0])"
             (touchmove)="paint($event.touches[0])" (touchend)="stopPainting()">
          </canvas>
+         @if (showControls) {
          @if (showBrushSizer) {
          <div class="absolute bottom-[120px] left-5/9 -translate-x-1/2 flex flex-col">
             <div class="flex">
@@ -71,6 +72,7 @@
                <div class="label">{{ "TOOLS.BLUR_IMAGE.PIXELATE" | translate }}</div>
             </div>
          </div>
+         }
       </div>
 
       <div class="w-full z-1 flex justify-between items-center">
@@ -120,11 +122,13 @@
          <img src="assets/images/photo-illu.svg" alt="image-illu" class="h-[200px]" (click)="fileInput.click()" />
       </div>
       <div class="pl-(--spacing-3) pr-(--spacing-3) z-1">
-         <app-button [label]="'TOOLS.BLUR_IMAGE.UPLOAD_IMAGE' | translate" variant="primary" (click)="fileInput.click()"></app-button>
+         <app-button [label]="'TOOLS.BLUR_IMAGE.UPLOAD_IMAGE' | translate" variant="primary"
+            (click)="fileInput.click()"></app-button>
       </div>
    </div>
 
    <p [innerHTML]="'TOOLS.BLUR_IMAGE.ADVICE' | translate"
-      class="text-(length:--font-size-body-xs) text-(--color-14) font-(--font-weight-title) pt-(--spacing-2) pr-(--spacing-3) pb-(--spacing-2) pl-(--spacing-3) z-1"></p>
+      class="text-(length:--font-size-body-xs) text-(--color-14) font-(--font-weight-title) pt-(--spacing-2) pr-(--spacing-3) pb-(--spacing-2) pl-(--spacing-3) z-1">
+   </p>
    }
 </div>
