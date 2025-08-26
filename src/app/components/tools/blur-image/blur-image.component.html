@@ -41,13 +41,20 @@
                <!-- <div class="bg-[#4841584D] rounded-full"
                   [style]="'border: 1px solid #FFFFFF; width: '+ brushSize() +'px; height: '+ brushSize() +'px;'"></div> -->
             </div>
-            <div class="flex gap-[3px]">
+            <div class="flex gap-[3px] relative">
                <div class="pl-(--spacing-2) pr-(--spacing-2)"
                   style="background-color: #484158; border-radius: 10px; backdrop-filter: blur(20px)">
                   <mat-slider min="24" max="87">
                      <input matSliderThumb [value]="brushSize()" (change)="onChangeBrushSize($event)">
                   </mat-slider>
                </div>
+               <div style="position: absolute; top: 23px;" [style.left]="action === 'pixelate' ? '100px' : '23px'">
+                  <svg viewBox="-50 -50 100 100" width="24" height="24">
+                     <polygon points="0,50 43.3,-25 -43.3,-25" fill="#484158" stroke="#484158" stroke-width="6"
+                        stroke-linejoin="round" />
+                  </svg>
+               </div>
+
                <div class="size-[36px] flex justify-center items-center bg-[#4841584D] rounded-full"
                   style="backdrop-filter: blur(34px)" (click)="showBrushSizer = false;">
                   <mat-icon svgIcon="close24x24-icon" class="!size-[24px]" style="color: white;"></mat-icon>
