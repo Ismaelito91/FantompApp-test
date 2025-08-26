@@ -84,6 +84,8 @@ export class PreloadService {
       tap(preloadedData => {
         // Stocker les données préchargées
         this._preloadedData.set(preloadedData);
+        // suite démo du 26/08, on n'attend plus que les images soient préchargées avant de lancer la home page
+        this._isPreloaded.set(true);
 
         // Mettre à jour les maps de composants
         this.pageComponentUtils.updateComponentMap(preloadedData.problemsSection);
@@ -96,12 +98,12 @@ export class PreloadService {
         }).subscribe({
           next: () => {
             console.log("fin du pré-chargement");
-            this._isPreloaded.set(true);
+            //this._isPreloaded.set(true);
           },
           error: (error) => {
             console.error("Erreur lors du préchargement des images:", error);
             console.log("fin du pré-chargement (avec erreurs d'images)");
-            this._isPreloaded.set(true);
+            //this._isPreloaded.set(true);
           }
         });
       }),
