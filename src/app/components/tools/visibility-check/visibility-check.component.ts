@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from "@angular/material/icon";
-import { MatRadioChange, MatRadioModule } from "@angular/material/radio";
 import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
@@ -28,7 +28,7 @@ type Results = {
 }
 @Component({
    selector: 'app-visibility-check',
-   imports: [TranslatePipe, ButtonBackComponent, MatRadioModule, MatButtonModule,
+   imports: [TranslatePipe, ButtonBackComponent, MatCheckboxModule, MatButtonModule,
       StepperComponent, MatIconModule, ReactiveFormsModule],
    templateUrl: './visibility-check.component.html',
    styleUrl: './visibility-check.component.scss'
@@ -174,31 +174,37 @@ export class VisibilityCheckComponent {
       'bio_education_pro',
    ];
    formGroup = new FormGroup({
-      pseudo_identity: new FormControl(''),
-      pseudo_origin: new FormControl(''),
-      bio_empty: new FormControl(this.questions[1].sections[0].answers[0].title),
-      bio_identity: new FormControl(''),
-      bio_origin: new FormControl(''),
-      bio_digital_life: new FormControl(''),
-      bio_interest: new FormControl(''),
-      bio_education_pro: new FormControl(''),
+      pseudo_identity: new FormControl<string[]>([]),
+      pseudo_origin: new FormControl<string[]>([]),
+      bio_empty: new FormControl<string[]>([this.questions[1].sections[0].answers[0].title]),
+      bio_identity: new FormControl<string[]>([]),
+      bio_origin: new FormControl<string[]>([]),
+      bio_digital_life: new FormControl<string[]>([]),
+      bio_interest: new FormControl<string[]>([]),
+      bio_education_pro: new FormControl<string[]>([]),
    });
 
-   onRadioChange($event: MatRadioChange<string>) {
-      const name = $event.source.name;
-      const value = $event.value;
-      if (name === 'bio_empty' && value) {
-         this.formGroup.patchValue({
-            bio_identity: '',
-            bio_origin: '',
-            bio_digital_life: '',
-            bio_interest: '',
-            bio_education_pro: '',
-         });
-      } else if (this.bioKeys.includes(name)) {
-         this.formGroup.patchValue({
-            bio_empty: ''
-         });
+   isChecked(section: string, answer: string): boolean {
+      return this.formGroup.get(section)?.value?.includes(answer);
+   }
+
+   onCheckboxChange(section: string, answer: string, checked: boolean) {
+      const control = this.formGroup.get(section);
+      if (!control) return;
+
+      let values: string[] = control.value || [];
+      if (checked) {
+         values = [...values, answer];
+      } else {
+         values = values.filter(v => v !== answer);
+      }
+      control.setValue(values);
+
+      // logique spéciale "bio_empty"
+      if (section === 'bio_empty' && checked) {
+         this.bioKeys.forEach(key => this.formGroup.get(key)?.setValue([]));
+      } else if (this.bioKeys.includes(section)) {
+         this.formGroup.get('bio_empty')?.setValue([]);
       }
    }
 
@@ -213,14 +219,11 @@ export class VisibilityCheckComponent {
    }
 
    onClickResults() {
-      const formValues = this.formGroup.value as Record<string, string | null>;
+      const formValues = this.formGroup.value as Record<string, string[]>;
+
       const results: Results = {
-         pseudo: this.pseudoKeys
-            .map(key => formValues[key])
-            .filter(value => !!value) as string[],
-         bio: this.bioKeys
-            .map(key => formValues[key])
-            .filter(value => !!value) as string[],
+         pseudo: this.pseudoKeys.flatMap(key => formValues[key] || []),
+         bio: this.bioKeys.flatMap(key => formValues[key] || []),
       };
 
       this.router.navigate(['tools', 'visibility-check', 'results'], { state: { results } });

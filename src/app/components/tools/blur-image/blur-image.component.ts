@@ -191,8 +191,6 @@ export class BlurImageComponent {
          StackBlur.canvasRGB(canvas, x - brushSize / 2, y - brushSize / 2, brushSize, brushSize, blurRadius);
       }
 
-      await this.delay(50);
-
       // 2. Compression destructive
       const finalBlob = await this.canvasToLowQualityBlob(canvas);
       return finalBlob;
@@ -223,10 +221,6 @@ export class BlurImageComponent {
             ctx.fillRect(xx, yy, pixelSize, pixelSize);
          }
       }
-   }
-
-   private delay(ms: number): Promise<void> {
-      return new Promise(resolve => setTimeout(resolve, ms));
    }
 
    // Conversion en qualité très basse

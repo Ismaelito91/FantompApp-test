@@ -19,18 +19,19 @@
                @if (section.title) {
                <div class="font-[600] text-(--color-8)">{{ section.title | translate }}</div>
                }
-               <mat-radio-group [formControlName]="section.name" [name]="section.name" class="answers flex flex-col"
-                  (change)="onRadioChange($event)">
+               <div class="answers flex flex-col">
                   @for (answer of section.answers; track $index) {
-                  <mat-radio-button [disableRipple]="true" [value]="answer.title"
+                  <mat-checkbox [disableRipple]="true"
+                     [checked]="isChecked(section.name, answer.title)"
+                     (change)="onCheckboxChange(section.name, answer.title, $event.checked)"
                      class="answer flex items-center cursor-pointer">
-                     <span class="radio-title">{{ answer.title | translate }}</span>
+                     <span class="check-title">{{ answer.title | translate }}</span>
                      @if (answer.description) {
-                     <span class="radio-description ml-1">{{ answer.description | translate }}</span>
+                     <span class="check-description ml-1">{{ answer.description | translate }}</span>
                      }
-                  </mat-radio-button>
+                  </mat-checkbox>
                   }
-               </mat-radio-group>
+               </div>
             </div>
             }
          </div>
