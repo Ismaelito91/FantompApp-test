@@ -185,11 +185,11 @@ export class PasswordSecurityCalculator {
    ): {
       length: number;
       type:
-         | "numbersOnly"
-         | "lowercaseOnly"
-         | "mixedCase"
-         | "numbersAndLetters"
-         | "allCharacters";
+      | "numbersOnly"
+      | "lowercaseOnly"
+      | "mixedCase"
+      | "numbersAndLetters"
+      | "allCharacters";
       crackingTime: string;
       strengthLevel: string;
       color: string;
@@ -219,11 +219,11 @@ export class PasswordSecurityCalculator {
    evaluatePasswordStrength(password: string): {
       length: number;
       type:
-         | "numbersOnly"
-         | "lowercaseOnly"
-         | "mixedCase"
-         | "numbersAndLetters"
-         | "allCharacters";
+      | "numbersOnly"
+      | "lowercaseOnly"
+      | "mixedCase"
+      | "numbersAndLetters"
+      | "allCharacters";
       crackingTime: string;
       strengthLevel: string;
       color: string;
@@ -592,9 +592,9 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
                baseLevel = "rapid"; // Rouge = C'est rapide
                break;
             case "orange":
-            case "yellow":
                baseLevel = "correct"; // Orange/Jaune = Correct
                break;
+            case "yellow":
             case "green":
                baseLevel = "super"; // Vert = Super
                break;
