@@ -16,18 +16,23 @@ export interface PasswordCrackingData {
    characters: number;
    numbersOnly: {
       time: string;
+      color: string;
    };
    lowercaseOnly: {
       time: string;
+      color: string;
    };
    mixedCase: {
       time: string;
+      color: string;
    };
    numbersAndLetters: {
       time: string;
+      color: string;
    };
    allCharacters: {
       time: string;
+      color: string;
    };
 }
 
@@ -36,123 +41,123 @@ export class PasswordSecurityCalculator {
    public readonly crackingTimeData: PasswordCrackingData[] = [
       {
          characters: 4,
-         numbersOnly: { time: "Instantané" },
-         lowercaseOnly: { time: "Instantané" },
-         mixedCase: { time: "Instantané" },
-         numbersAndLetters: { time: "Instantané" },
-         allCharacters: { time: "Instantané" },
+         numbersOnly: { time: "Instantané", color: "purple" },
+         lowercaseOnly: { time: "Instantané", color: "purple" },
+         mixedCase: { time: "Instantané", color: "purple" },
+         numbersAndLetters: { time: "Instantané", color: "purple" },
+         allCharacters: { time: "Instantané", color: "purple" },
       },
       {
          characters: 5,
-         numbersOnly: { time: "Instantané" },
-         lowercaseOnly: { time: "Instantané" },
-         mixedCase: { time: "57 minutes" },
-         numbersAndLetters: { time: "2 heures" },
-         allCharacters: { time: "4 heures" },
+         numbersOnly: { time: "Instantané", color: "purple" },
+         lowercaseOnly: { time: "Instantané", color: "purple" },
+         mixedCase: { time: "57 minutes", color: "red" },
+         numbersAndLetters: { time: "2 heures", color: "red" },
+         allCharacters: { time: "4 heures", color: "red" },
       },
       {
          characters: 6,
-         numbersOnly: { time: "Instantané" },
-         lowercaseOnly: { time: "46 minutes" },
-         mixedCase: { time: "2 jours" },
-         numbersAndLetters: { time: "6 jours" },
-         allCharacters: { time: "2 semaines" },
+         numbersOnly: { time: "Instantané", color: "purple" },
+         lowercaseOnly: { time: "46 minutes", color: "red" },
+         mixedCase: { time: "2 jours", color: "red" },
+         numbersAndLetters: { time: "6 jours", color: "red" },
+         allCharacters: { time: "2 semaines", color: "red" },
       },
       {
          characters: 7,
-         numbersOnly: { time: "Instantané" },
-         lowercaseOnly: { time: "20 heures" },
-         mixedCase: { time: "4 mois" },
-         numbersAndLetters: { time: "1 an" },
-         allCharacters: { time: "2 ans" },
+         numbersOnly: { time: "Instantané", color: "purple" },
+         lowercaseOnly: { time: "20 heures", color: "red" },
+         mixedCase: { time: "4 mois", color: "red" },
+         numbersAndLetters: { time: "1 an", color: "red" },
+         allCharacters: { time: "2 ans", color: "orange" },
       },
       {
          characters: 8,
-         numbersOnly: { time: "Instantané" },
-         lowercaseOnly: { time: "3 semaines" },
-         mixedCase: { time: "15 ans" },
-         numbersAndLetters: { time: "62 ans" },
-         allCharacters: { time: "164 ans" },
+         numbersOnly: { time: "Instantané", color: "purple" },
+         lowercaseOnly: { time: "3 semaines", color: "red" },
+         mixedCase: { time: "15 ans", color: "orange" },
+         numbersAndLetters: { time: "62 ans", color: "orange" },
+         allCharacters: { time: "164 ans", color: "orange" },
       },
       {
          characters: 9,
-         numbersOnly: { time: "2 heures" },
-         lowercaseOnly: { time: "2 ans" },
-         mixedCase: { time: "791 ans" },
-         numbersAndLetters: { time: "3 000 ans" },
-         allCharacters: { time: "11 000 ans" },
+         numbersOnly: { time: "2 heures", color: "red" },
+         lowercaseOnly: { time: "2 ans", color: "orange" },
+         mixedCase: { time: "791 ans", color: "orange" },
+         numbersAndLetters: { time: "3 000 ans", color: "orange" },
+         allCharacters: { time: "11 000 ans", color: "orange" },
       },
       {
          characters: 10,
-         numbersOnly: { time: "1 jour" },
-         lowercaseOnly: { time: "40 ans" },
-         mixedCase: { time: "41 000 ans" },
-         numbersAndLetters: { time: "238 000 ans" },
-         allCharacters: { time: "803 000 ans" },
+         numbersOnly: { time: "1 jour", color: "red" },
+         lowercaseOnly: { time: "40 ans", color: "orange" },
+         mixedCase: { time: "41 000 ans", color: "orange" },
+         numbersAndLetters: { time: "238 000 ans", color: "yellow" },
+         allCharacters: { time: "803 000 ans", color: "yellow" },
       },
       {
          characters: 11,
-         numbersOnly: { time: "1 semaine" },
-         lowercaseOnly: { time: "1 000 ans" },
-         mixedCase: { time: "2 millions d'années" },
-         numbersAndLetters: { time: "14 millions d'années" },
-         allCharacters: { time: "56 millions d'années" },
+         numbersOnly: { time: "1 semaine", color: "red" },
+         lowercaseOnly: { time: "1 000 ans", color: "orange" },
+         mixedCase: { time: "2 millions d'années", color: "yellow" },
+         numbersAndLetters: { time: "14 millions d'années", color: "yellow" },
+         allCharacters: { time: "56 millions d'années", color: "yellow" },
       },
       {
          characters: 12,
-         numbersOnly: { time: "3 mois" },
-         lowercaseOnly: { time: "27 000 ans" },
-         mixedCase: { time: "111 millions d'années" },
-         numbersAndLetters: { time: "917 millions d'années" },
-         allCharacters: { time: "3 milliards d'années" },
+         numbersOnly: { time: "3 mois", color: "red" },
+         lowercaseOnly: { time: "27 000 ans", color: "orange" },
+         mixedCase: { time: "111 millions d'années", color: "yellow" },
+         numbersAndLetters: { time: "917 millions d'années", color: "yellow" },
+         allCharacters: { time: "3 milliards d'années", color: "yellow" },
       },
       {
          characters: 13,
-         numbersOnly: { time: "3 ans" },
-         lowercaseOnly: { time: "705 000 ans" },
-         mixedCase: { time: "5 milliards d'années" },
-         numbersAndLetters: { time: "56 milliards d'années" },
-         allCharacters: { time: "275 milliards d'années" },
+         numbersOnly: { time: "3 ans", color: "orange" },
+         lowercaseOnly: { time: "705 000 ans", color: "yellow" },
+         mixedCase: { time: "5 milliards d'années", color: "yellow" },
+         numbersAndLetters: { time: "56 milliards d'années", color: "green" },
+         allCharacters: { time: "275 milliards d'années", color: "green" },
       },
       {
          characters: 14,
-         numbersOnly: { time: "28 ans" },
-         lowercaseOnly: { time: "18 millions d'années" },
-         mixedCase: { time: "300 milliards d'années" },
-         numbersAndLetters: { time: "3 billions d'années" },
-         allCharacters: { time: "19 billions d'années" },
+         numbersOnly: { time: "28 ans", color: "orange" },
+         lowercaseOnly: { time: "18 millions d'années", color: "yellow" },
+         mixedCase: { time: "300 milliards d'années", color: "green" },
+         numbersAndLetters: { time: "3 billions d'années", color: "green" },
+         allCharacters: { time: "19 billions d'années", color: "green" },
       },
       {
          characters: 15,
-         numbersOnly: { time: "284 ans" },
-         lowercaseOnly: { time: "477 millions d'années" },
-         mixedCase: { time: "15 billions d'années" },
-         numbersAndLetters: { time: "218 billions d'années" },
-         allCharacters: { time: "1 billion d'années" },
+         numbersOnly: { time: "284 ans", color: "orange" },
+         lowercaseOnly: { time: "477 millions d'années", color: "yellow" },
+         mixedCase: { time: "15 billions d'années", color: "green" },
+         numbersAndLetters: { time: "218 billions d'années", color: "green" },
+         allCharacters: { time: "1 billion d'années", color: "green" },
       },
       {
          characters: 16,
-         numbersOnly: { time: "2 000 ans" },
-         lowercaseOnly: { time: "12 milliards d'années" },
-         mixedCase: { time: "812 billions d'années" },
-         numbersAndLetters: { time: "13 billions d'années" },
-         allCharacters: { time: "94 billions d'années" },
+         numbersOnly: { time: "2 000 ans", color: "orange" },
+         lowercaseOnly: { time: "12 milliards d'années", color: "green" },
+         mixedCase: { time: "812 billions d'années", color: "green" },
+         numbersAndLetters: { time: "13 billions d'années", color: "green" },
+         allCharacters: { time: "94 billions d'années", color: "green" },
       },
       {
          characters: 17,
-         numbersOnly: { time: "28 000 ans" },
-         lowercaseOnly: { time: "322 milliards d'années" },
-         mixedCase: { time: "42 billions d'années" },
-         numbersAndLetters: { time: "840 billions d'années" },
-         allCharacters: { time: "6 trillions d'années" },
+         numbersOnly: { time: "28 000 ans", color: "orange" },
+         lowercaseOnly: { time: "322 milliards d'années", color: "green" },
+         mixedCase: { time: "42 billions d'années", color: "green" },
+         numbersAndLetters: { time: "840 billions d'années", color: "green" },
+         allCharacters: { time: "6 trillions d'années", color: "green" },
       },
       {
          characters: 18,
-         numbersOnly: { time: "284 000 ans" },
-         lowercaseOnly: { time: "8 billions d'années" },
-         mixedCase: { time: "2 trillions d'années" },
-         numbersAndLetters: { time: "52 trillions d'années" },
-         allCharacters: { time: "463 trillions d'années" },
+         numbersOnly: { time: "284 000 ans", color: "yellow" },
+         lowercaseOnly: { time: "8 billions d'années", color: "green" },
+         mixedCase: { time: "2 trillions d'années", color: "green" },
+         numbersAndLetters: { time: "52 trillions d'années", color: "green" },
+         allCharacters: { time: "463 trillions d'années", color: "green" },
       },
    ];
 
@@ -187,6 +192,7 @@ export class PasswordSecurityCalculator {
          | "allCharacters";
       crackingTime: string;
       strengthLevel: string;
+      color: string;
    } {
       const data = this.getCrackingDataByLength(length);
 
@@ -196,6 +202,7 @@ export class PasswordSecurityCalculator {
             type,
             crackingTime: "Données non disponibles",
             strengthLevel,
+            color: "purple",
          };
       }
 
@@ -206,6 +213,7 @@ export class PasswordSecurityCalculator {
          type,
          crackingTime: crackingInfo.time,
          strengthLevel,
+         color: crackingInfo.color,
       };
    }
    evaluatePasswordStrength(password: string): {
@@ -218,6 +226,7 @@ export class PasswordSecurityCalculator {
          | "allCharacters";
       crackingTime: string;
       strengthLevel: string;
+      color: string;
    } {
       const length = password.length;
       const hasNumbers = /\d/.test(password);
@@ -343,7 +352,8 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
    isInputFocused: boolean = false;
    showPasswordResults: boolean = false;
    isRapidCracking: boolean = false;
-   passwordResultLevel: string = ""; // "immediate", "correct", "super" (du plus bas au plus haut)
+   passwordResultLevel: string = "";
+   showCopyNotification: boolean = false;
 
    // Propriétés pour l'effet typewriter
    displayedMessage: string = "";
@@ -390,9 +400,18 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
          // Utilise l'API moderne du clipboard
          if (navigator.clipboard && window.isSecureContext) {
             await navigator.clipboard.writeText(this.password);
+
+            // Afficher la notification de succès
+            this.showCopyNotification = true;
+
+            // Masquer la notification après 2 secondes
+            setTimeout(() => {
+               this.showCopyNotification = false;
+            }, 2000);
          }
       } catch (err) {
          // Gestion silencieuse des erreurs de copie
+         console.error("Erreur lors de la copie:", err);
       }
    }
 
@@ -564,30 +583,26 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
             hasNumbers &&
             hasSpecialChars;
 
-         const immediateTerms = ["Instantané"];
-         const rapidTerms = ["minutes", "heures"];
-         const correctTerms = ["jour", "semaine", "mois"];
-
          let baseLevel = "";
-         if (
-            immediateTerms.some((term) =>
-               evaluation.crackingTime.includes(term)
-            )
-         ) {
-            baseLevel = "immediate"; // Le plus dangereux
-         } else if (
-            rapidTerms.some((term) => evaluation.crackingTime.includes(term))
-         ) {
-            baseLevel = "rapid"; // Rapide
-         } else if (
-            correctTerms.some((term) => evaluation.crackingTime.includes(term))
-         ) {
-            baseLevel = "correct"; // Moyen
-         } else {
-            baseLevel = "super"; // Le plus sûr (années)
+         switch (evaluation.color) {
+            case "purple":
+               baseLevel = "immediate"; // Violet = Instantané
+               break;
+            case "red":
+               baseLevel = "rapid"; // Rouge = C'est rapide
+               break;
+            case "orange":
+            case "yellow":
+               baseLevel = "correct"; // Orange/Jaune = Correct
+               break;
+            case "green":
+               baseLevel = "super"; // Vert = Super
+               break;
+            default:
+               baseLevel = "correct"; // Par défaut si couleur inconnue
          }
 
-         // Si le niveau serait "super" mais que tous les critères ne sont pas remplis, on descend d'un niveau
+         // Si le niveau serait "super" mais que tous les critères ne sont pas remplis, on descend à "correct"
          if (baseLevel === "super" && !allCriteriaValid) {
             this.passwordResultLevel = "correct";
             this.isRapidCracking = true;
