@@ -592,11 +592,11 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
                baseLevel = "rapid"; // Rouge = C'est rapide
                break;
             case "orange":
-               baseLevel = "correct"; // Orange/Jaune = Correct
+               baseLevel = "correct"; // Orange = Correct
                break;
             case "yellow":
             case "green":
-               baseLevel = "super"; // Vert = Super
+               baseLevel = "super"; // Jaune/Vert = Super
                break;
             default:
                baseLevel = "correct"; // Par défaut si couleur inconnue
