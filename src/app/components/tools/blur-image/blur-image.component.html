@@ -38,13 +38,29 @@
                   style="color: white; font-weight: 600; font-size: 12px; padding: 4px 10px; backdrop-filter: blur(20px);">
                   {{ "TOOLS.BLUR_IMAGE.BRUSH_SIZE" | translate }}
                </div>
-               <!-- <div class="bg-[#4841584D] rounded-full"
-                  [style]="'border: 1px solid #FFFFFF; width: '+ brushSize() +'px; height: '+ brushSize() +'px;'"></div> -->
+               <div style="position: absolute; bottom: 65px;" [style.left]="brushSize() - 30 + 'px'">
+                  <svg [attr.width]="brushSize() - (brushSize() * 0.2)"
+                     [attr.height]="brushSize() - (brushSize() * 0.2)" viewBox="0 0 87 87" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <foreignObject x="-45" y="-45" width="177" height="177">
+                        <div xmlns="http://www.w3.org/1999/xhtml"
+                           style="backdrop-filter:blur(22.5px);clip-path:url(#bgblur_0_5426_17648_clip_path);height:100%;width:100%">
+                        </div>
+                     </foreignObject>
+                     <circle data-figma-bg-blur-radius="45" cx="43.5" cy="43.5" r="43" transform="rotate(90 43.5 43.5)"
+                        fill="white" fill-opacity="0.03" stroke="white" />
+                     <defs>
+                        <clipPath id="bgblur_0_5426_17648_clip_path" transform="translate(45 45)">
+                           <circle cx="43.5" cy="43.5" r="43" transform="rotate(90 43.5 43.5)" />
+                        </clipPath>
+                     </defs>
+                  </svg>
+               </div>
             </div>
             <div class="flex gap-[3px] relative">
                <div class="pl-(--spacing-2) pr-(--spacing-2)"
                   style="background-color: #484158; border-radius: 10px; backdrop-filter: blur(20px)">
-                  <mat-slider min="24" max="87">
+                  <mat-slider min="40" max="100">
                      <input matSliderThumb [value]="brushSize()" (change)="onChangeBrushSize($event)">
                   </mat-slider>
                </div>
@@ -96,7 +112,8 @@
          </div>
          <div>
             <app-button [label]="'TOOLS.BLUR_IMAGE.ALL_BLUR' | translate" variant="secondary" size="sm"
-               [iconAfterLabel]="{name: 'chevron16x16-icon', rotate: 90 }" [matMenuTriggerFor]="menu"></app-button>
+               [iconAfterLabel]="{name: 'chevron16x16-icon', rotate: menuTrigger.menuOpen ? 270 : 90 }"
+               #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu"></app-button>
             <mat-menu #menu="matMenu" yPosition="above">
                @for (percentage of blurPercentages(); track $index) {
                <button mat-menu-item (click)="onClickBlurPercent($event, percentage)"

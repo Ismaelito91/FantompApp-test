@@ -51,8 +51,8 @@ export class BlurImageComponent {
    @ViewChild('canvas') canvasRef!: ElementRef<HTMLCanvasElement>;
 
    // Reactive properties
-   brushSize = signal(50);
-   blurRadius = signal(10);
+   brushSize = signal(70);
+   blurRadius = 10;
    canvasSize = signal({ width: 0, height: 0 });
    private isPainting = false;
    private ctx!: CanvasRenderingContext2D;
@@ -62,7 +62,7 @@ export class BlurImageComponent {
    action: Action = 'blur';
    blurPercentages = signal([100, 75, 50, 25]);
    blurPercentage: number | null = null;
-   showBrushSizer: boolean = true;
+   showBrushSizer: boolean = false;
    showTutorial: boolean = true;
    showControls: boolean = true;
    handAnimationState = 'inactive';
@@ -179,16 +179,16 @@ export class BlurImageComponent {
       const rect = canvas.getBoundingClientRect();
       const scaleX = canvas.width / rect.width;
       const scaleY = canvas.height / rect.height;
-
       const x = (event.clientX - rect.left) * scaleX;
       const y = (event.clientY - rect.top) * scaleY;
       const brushSize = this.brushSize();
-      const blurRadius = this.blurRadius();
+      // const brushSizeX = brushSize * Math.floor(scaleX);
+      // const brushSizeY = brushSize * Math.floor(scaleY);
 
       if (this.action === 'pixelate') {
          this.pixelateRect(x - brushSize / 2, y - brushSize / 2, brushSize, 20); // ou pixelSize dynamique
       } else {
-         StackBlur.canvasRGB(canvas, x - brushSize / 2, y - brushSize / 2, brushSize, brushSize, blurRadius);
+         StackBlur.canvasRGB(canvas, x - brushSize / 2, y - brushSize / 2, brushSize, brushSize, this.blurRadius);
       }
 
       // 2. Compression destructive
@@ -196,7 +196,7 @@ export class BlurImageComponent {
       return finalBlob;
    }
 
-   pixelateRect(x: number, y: number, size: number, pixelSize: number) {
+   private pixelateRect(x: number, y: number, size: number, pixelSize: number) {
       const ctx = this.ctx;
 
       for (let yy = y; yy < y + size; yy += pixelSize) {
@@ -294,10 +294,11 @@ export class BlurImageComponent {
             height: imgBitmap.height
          });
 
+         const maxDimension = 1200;
          const canvas = this.canvasRef.nativeElement;
-         canvas.width = this.canvasSize().width;
-         canvas.height = this.canvasSize().height;
-
+         const scale = Math.min(1, maxDimension / Math.max(imgBitmap.width, imgBitmap.height));
+         canvas.width = imgBitmap.width * scale;
+         canvas.height = imgBitmap.height * scale;
          this.ctx.drawImage(imgBitmap, 0, 0, canvas.width, canvas.height);
       } catch (error) {
          console.error('Error loading image:', error);
