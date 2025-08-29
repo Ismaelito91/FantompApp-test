@@ -3,6 +3,7 @@ import { inject, Injectable } from "@angular/core";
 import PageComponentModel from "../model/page-component.model";
 import { Platform } from "@angular/cdk/platform";
 import { Device } from "../model/enum/device.enum";
+import { DeviceService } from "./device.service";
 
 @Injectable({
    providedIn: 'root'
@@ -11,18 +12,10 @@ export class PageComponentService {
 
    private readonly _http = inject(HttpClient);
    private readonly platform = inject(Platform);
+   private readonly deviceService = inject(DeviceService);
 
    getRootPageComponentsBySectionId(sectionId: number) {
-      const devicesHeader: Device[] = [];
-      if (this.platform.isBrowser) {
-         devicesHeader.push(Device.WEB);
-      }
-      if (this.platform.ANDROID) {
-         devicesHeader.push(Device.ANDROID);
-      }
-      if (this.platform.IOS) {
-         devicesHeader.push(Device.IOS);
-      }
+      const devicesHeader: Device[] = this.deviceService.getDevicesHeader(this.platform);
      
       return this._http.get<Record<string, PageComponentModel>>(`api/public/page-components/section/${sectionId}/root`,
          { headers: { 'X-Devices': devicesHeader } });

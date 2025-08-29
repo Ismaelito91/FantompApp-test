@@ -14,6 +14,7 @@ import { SettingService } from "./service/setting.service";
 import { filter, map } from "rxjs";
 import { PreloadService } from "./service/preload.service";
 import { IconGeneratorService } from "./service/icon-generator.service";
+import { DeviceService } from "./service/device.service";
 
 @Component({
    selector: "app-root",
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit {
    private pwaService = inject(PwaService);
    private router = inject(Router);
    private activatedRoute = inject(ActivatedRoute);
+   private deviceService = inject(DeviceService);
    hideHeader = false;
    hideFooter = false;
    private preloadService = inject(PreloadService);
@@ -46,6 +48,13 @@ export class AppComponent implements OnInit {
    private _iconGen = inject(IconGeneratorService);
 
    ngOnInit(): void {
+      // Appliquer les overrides via query params avant le preload
+      const url = new URL(window.location.href);
+      const deviceParam = url.searchParams.get("device");
+      const langParam = url.searchParams.get("lang");
+      this.languageService.setOverrideLang(langParam);
+      this.deviceService.setOverride(deviceParam);
+
       // On écoute les changements de route pour activer/masquer le header/footer
       this.router.events
          .pipe(

@@ -11,6 +11,18 @@ const defaultLang: SupportedLanguage = "FR";
 export class LanguageService {
    private currentLang = signal<SupportedLanguage>(defaultLang);
 
+   private overrideLang: SupportedLanguage | null = null;
+
+   public setOverrideLang(lang: string | null) {
+      const upper = (lang || '').toUpperCase();
+      if (upper !== null) {
+         this.overrideLang = upper as SupportedLanguage;
+         this.setLanguage(this.overrideLang);
+      } else {
+         this.overrideLang = null;
+      }
+   }
+
    public supportedLanguages: { code: SupportedLanguage; name: string }[] = Object.entries(CountryRegion).map(
       ([code, name]) => ({
          code: code as SupportedLanguage,
