@@ -15,7 +15,7 @@ export class LanguageService {
 
    public setOverrideLang(lang: string | null) {
       const upper = (lang || '').toUpperCase();
-      if (upper !== null) {
+      if (upper !== "") {
          this.overrideLang = upper as SupportedLanguage;
          this.setLanguage(this.overrideLang);
       } else {
