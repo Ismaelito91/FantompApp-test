@@ -45,6 +45,7 @@
                   </a>
                </li>
                <li>
+                  @if (shouldShowChangeIcon) {
                   <a
                      id="change-icon-item"
                      class="app-info-item"
@@ -73,6 +74,7 @@
                         focusable="false"
                      ></mat-icon>
                   </a>
+                  }
                </li>
                <li>
                   <button
