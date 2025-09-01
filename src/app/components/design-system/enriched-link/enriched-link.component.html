@@ -3,7 +3,7 @@
       <div class="flex flex-col justify-center tile-container">
          <div class="tile-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></div>
          <div class="flex items-center tile-body">
-            <img [src]="(data() | pageTranslation)?.image" class="tile-image" />
+            <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" class="tile-image" />
             <div class="tile-link" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
          </div>
       </div>

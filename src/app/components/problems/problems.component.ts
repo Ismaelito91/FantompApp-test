@@ -16,6 +16,7 @@ import { Card5Component } from "../design-system/card-5/card-5.component";
 import { Card6Component } from "../design-system/card-6/card-6.component";
 import { DividerComponent } from '../design-system/divider/divider.component';
 import { PageTranslationPipe } from '../../pipes/page-translation.pipe';
+import { Device } from '../../model/enum/device.enum';
 
 @Component({
    selector: 'app-problems',
@@ -35,6 +36,44 @@ export class ProblemsComponent implements OnInit, OnDestroy {
    private problemId = signal<number | null>(null);
    rootPage = signal<PageComponentModel>({ id: 0, translations: [], childrenIdList: [] });
    page = signal<PageComponentModel | null>({ id: 0, translations: [], childrenIdList: [] });
+   deleteContentProblem: PageComponentModel = {
+      id: 0,
+      type: ComponentType.CARD_1,
+      status: ComponentStatus.PUBLISHED,
+      code: "3.1_effacer_contenu",
+      position: 1,
+      translations: [
+         {
+            id: 0,
+            countryRegion: "FR",
+            devices: [Device.ANDROID, Device.IOS, Device.WEB],
+            firstTitle: "EFFACER UN CONTENU",
+            secondTitle: "Je fais effacer un contenu",
+            description: "Demander la suppression d'une photo ou vidéo te concernant",
+            staticImage: "assets/images/delete-content-problem.png"
+         }
+      ],
+      childrenIdList: []
+   };
+   hackingProblem: PageComponentModel = {
+      id: 0,
+      type: ComponentType.CARD_1,
+      status: ComponentStatus.PUBLISHED,
+      code: "3.2_piratage",
+      position: 2,
+      translations: [
+         {
+            id: 0,
+            countryRegion: "FR",
+            devices: [Device.ANDROID, Device.IOS, Device.WEB],
+            firstTitle: "PIRATAGE DE COMPTE",
+            secondTitle: "Je me suis fait pirater",
+            description: "Récupérer son compte ou autre chose",
+            staticImage: "assets/images/hacking-problem.png"
+         }
+      ],
+      childrenIdList: []
+   };
    ComponentType = ComponentType;
    ComponentStatus = ComponentStatus;
 
@@ -53,14 +92,13 @@ export class ProblemsComponent implements OnInit, OnDestroy {
 
    private loadProblem() {
       const problemIdUrl = this.route.firstChild?.snapshot.params['id'];
-         if (!Number.isNaN(parseInt(problemIdUrl))) {
-            this.problemId.set(parseInt(problemIdUrl));
-         } else {
-            this.problemId.set(null);
-         }
+      if (!Number.isNaN(parseInt(problemIdUrl))) {
+         this.problemId.set(parseInt(problemIdUrl));
+      } else {
+         this.problemId.set(null);
+      }
 
-         // this.page.set(this.findItemById(this.rootPage(), this.problemId()));
-         this.page.set(this.pageComponentUtils.getComponentById(this.problemId()!));
+      this.page.set(this.pageComponentUtils.getComponentById(this.problemId()!));
    }
 
    private loadRootPage(): void {

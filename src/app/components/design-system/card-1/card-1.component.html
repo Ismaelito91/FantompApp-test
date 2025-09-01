@@ -2,7 +2,7 @@
    <span class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></span>
    <div class="card-item-container flex flex-col">
       <div>
-         <img class="card-image" [src]="(data() | pageTranslation)?.image" alt="image" />
+         <img class="card-image" [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="image" />
       </div>
       <div class="flex justify-between items-center">
          <div>

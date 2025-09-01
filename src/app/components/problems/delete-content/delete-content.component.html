@@ -1,0 +1,64 @@
+<div class="delete-content-container">
+   <div class="header flex flex-col relative">
+      <app-button-back link="/tools" class="fixed top-[16px] z-1"></app-button-back>
+      <div class="flex justify-end">
+         <img src="assets/images/delete-content-picto.png" alt="image" class="!w-[77px] object-contain" />
+      </div>
+      <div class="details flex flex-col">
+         <h3>{{ "PROBLEMS.DELETE_CONTENT.TITLE" | translate }}</h3>
+         <p>{{ "PROBLEMS.DELETE_CONTENT.DESCRIPTION" | translate }}</p>
+      </div>
+   </div>
+   <form class="questions-container flex flex-col" [formGroup]="formGroup">
+      <app-stepper [currentStep]="currentStep" [totalSteps]="totalSteps"></app-stepper>
+      <div class="sections flex flex-col">
+         <h4 class="text-(--color-19)">{{ currentQuestion.title | translate }}</h4>
+         <div class="section-items flex flex-col">
+            @for (section of currentQuestion.sections; track section.name) {
+            <div class="section-item flex flex-col">
+               @if (section.title) {
+               <div class="font-[600] text-(--color-8)">{{ section.title | translate }}</div>
+               }
+               <mat-radio-group [formControlName]="section.name" [name]="section.name" class="answers flex flex-col"
+                  (change)="onRadioChange($event)">
+                  @for (answer of section.answers; track $index) {
+                  <mat-radio-button [disableRipple]="true" [value]="answer.title"
+                     class="answer flex items-center cursor-pointer">
+                     <span class="radio-title" [innerHTML]="answer.title | translate"></span>
+                     @if (answer.description) {
+                     <span class="radio-description ml-1">{{ answer.description | translate }}</span>
+                     }
+                  </mat-radio-button>
+                  }
+               </mat-radio-group>
+            </div>
+            }
+         </div>
+      </div>
+   </form>
+   <div class="controls fixed bottom-0 w-full flex">
+      @if(currentStep > 1) {
+      <button mat-flat-button class="prev-btn w-full" (click)="onClickPrevious()">
+         <div class="flex items-center gap-(--spacing-1)">
+            <mat-icon svgIcon="arrow24x24-icon" class="rotate-[180deg]"></mat-icon>
+            <span>{{ "COMMON.PREVIOUS" | translate }}</span>
+         </div>
+      </button>
+      }
+      @if(currentStep < totalSteps) { <button mat-flat-button class="next-btn w-full" (click)="onClickNext()">
+         <div class="flex items-center gap-(--spacing-1)">
+            <span>{{ "COMMON.NEXT" | translate }}</span>
+            <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
+         </div>
+         </button>
+         }
+         @if (currentStep === totalSteps) {
+         <button mat-flat-button class="submit-btn w-full" (click)="onClickResults()">
+            <div class="flex items-center gap-(--spacing-1)">
+               <span>{{ "COMMON.RESULTS" | translate }}</span>
+               <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
+            </div>
+         </button>
+         }
+   </div>
+</div>

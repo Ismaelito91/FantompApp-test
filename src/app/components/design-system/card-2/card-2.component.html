@@ -1,7 +1,7 @@
 <div class="card-container flex flex-col">
    <span class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></span>
    <div class="card-item-container flex">
-      <img class="card-image" [src]="(data() | pageTranslation)?.image" alt="image" />
+      <img class="card-image" [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="image" />
       <div class="flex justify-between items-center w-full">
          <div>
             <h5 [innerHTML]="(data() | pageTranslation)?.secondTitle | safeHtml"></h5>

@@ -11,10 +11,18 @@
    background-color: var(--background-6);
 }
 
+.problems-title-container {
+   position: relative;
+   background-image: url('../../../assets/images/problems-bg-1.png');
+   background-size: contain;
+   height: 210px;
+}
+
 .problems-title {
    height: 80px;
    margin-top: 40px;
    padding: 0 var(--spacing-3);
+   position: absolute;
 }
 
 .problems-items-container {

@@ -1,6 +1,6 @@
 <div class="flex flex-col h-full">
    <div class="flex-grow flex items-center justify-center overflow-hidden">
-      <img [src]="(data() | pageTranslation)?.image" alt="screen-image"
+      <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen-image"
          style="max-height: 100%; max-width: 100%; object-fit: contain;" />
    </div>
    <div class="flex flex-col" style="margin: 24px 32px;">

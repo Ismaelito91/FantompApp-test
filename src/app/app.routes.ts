@@ -1,18 +1,20 @@
 import { Routes } from "@angular/router";
-import { SplashScreenComponent } from "./components/splash-screen/splash-screen.component";
-import { HomeComponent } from "./components/home/home.component";
-import { UserAppConfigComponent } from "./components/home/user-app-config/user-app-config.component";
+import { ErrorComponent } from "./components/common/error/error.component";
 import { AppIconSelectorComponent } from "./components/home/app-icon-selector/app-icon-selector.component";
-import { ToolsComponent } from "./components/tools/tools.component";
+import { HomeComponent } from "./components/home/home.component";
+import { OnboardingComponent } from "./components/home/onboarding/onboarding.component";
+import { UserAppConfigComponent } from "./components/home/user-app-config/user-app-config.component";
+import { DeleteContentComponent } from "./components/problems/delete-content/delete-content.component";
+import { HackingComponent } from "./components/problems/hacking/hacking.component";
 import { ProblemsComponent } from "./components/problems/problems.component";
 import { SecureMyselfComponent } from "./components/secure-myself/secure-myself.component";
 import { ViewAllComponent } from "./components/secure-myself/view-all/view-all.component";
 import { ViewStepsComponent } from "./components/secure-myself/view-steps/view-steps.component";
-import { ErrorComponent } from "./components/common/error/error.component";
-import { OnboardingComponent } from "./components/home/onboarding/onboarding.component";
-import { PasswordCheckComponent } from "./components/tools/password-check/password-check.component";
-import { VisibilityCheckComponent } from "./components/tools/visibility-check/visibility-check.component";
+import { SplashScreenComponent } from "./components/splash-screen/splash-screen.component";
 import { BlurImageComponent } from "./components/tools/blur-image/blur-image.component";
+import { PasswordCheckComponent } from "./components/tools/password-check/password-check.component";
+import { ToolsComponent } from "./components/tools/tools.component";
+import { VisibilityCheckComponent } from "./components/tools/visibility-check/visibility-check.component";
 import { VisibilityResultsComponent } from "./components/tools/visibility-check/visibility-results/visibility-results.component";
 
 export const routes: Routes = [
@@ -73,12 +75,23 @@ export const routes: Routes = [
    {
       path: "problems",
       component: ProblemsComponent,
+      data: { hideHeader: true },
       children: [
          {
             path: ":id",
             component: ProblemsComponent,
+            data: { hideHeader: true },
          },
       ],
+   },
+   {
+      path: "delete-content",
+      component: DeleteContentComponent,
+      data: { hideHeader: true, hideFooter: false },
+   },
+   {
+      path: "hacking",
+      component: HackingComponent,
    },
    {
       path: "secure-myself",

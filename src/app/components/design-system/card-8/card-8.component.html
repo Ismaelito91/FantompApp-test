@@ -1,7 +1,7 @@
 <a [routerLink]="data().nextId ? `/secure-myself/${data().nextId}/steps` : null" class="flex flex-col card-container">
    <div class="card-preview">
       <span class="card-preview-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></span>
-      <img class="card-preview-image" [src]="(data() | pageTranslation)?.image" alt="screen image" />
+      <img class="card-preview-image" [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen image" />
    </div>
    <div class="flex items-center card-description">
       <span class="card-description-text" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></span>
