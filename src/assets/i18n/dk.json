@@ -194,5 +194,74 @@
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. DK"
          }
       }
+   },
+   "TOOLS": {
+      "PASSWORD_CHECK": {
+         "TITLE": "Jeg tester min adgangskode",
+         "DESCRIPTION": "Hvor lang tid tager det for en cyberkriminel at finde den?",
+         "CRIMINAL_GUESSES": "En cyberkriminel gætter den på:",
+         "ASSESSMENT_TEXT": "Din adgangskode har:",
+         "INPUT_LABEL": "Adgangskode",
+         "COPY_PASSWORD": "Kopier adgangskode",
+         "BADGES": {
+            "IMMEDIATE": "DET ER ØJEBLIKKELIGT ⚠️",
+            "RAPID": "DET ER HURTIGT 😬",
+            "CORRECT": "DET ER KORREKT 🙂",
+            "SUPER": "DET ER SUPER 😎"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "Minimum 12 tegn",
+            "UPPERCASE": "Mindst 1 stort bogstav",
+            "LOWERCASE": "Mindst 1 lille bogstav",
+            "DIGIT": "Mindst 1 tal",
+            "SPECIAL_CHAR": "Mindst 1 specielt tegn",
+            "CRITERIA_VALIDATED": "Kriterium valideret",
+            "CRITERIA_NOT_VALIDATED": "Kriterium ikke valideret"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "Hvad er en god adgangskode?",
+            "TEST_PASSWORD": "Test min adgangskode 🔒",
+            "STRENGTHEN_PASSWORD": "Styrk min adgangskode"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Hvordan virker det?",
+               "STEP_1": "🔐 <strong>Trin 1</strong>: Indtast din adgangskode i feltet.",
+               "STEP_2": "🧪 <strong>Trin 2</strong>: Klik på \"Test min adgangskode\".",
+               "STEP_3": "⏱️ <strong>Trin 3</strong>: Voilà! Se hvor lang tid en cyberkriminel kunne tage for at finde den... og få adgang til dine personlige data!",
+               "NOTE": "FantomApp gemmer ingen oplysninger.",
+               "UNDERSTOOD": "Forstået"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "En stærk adgangskode er:",
+               "CLOSE": "Luk",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 tegn",
+                  "UPPERCASE": "store bogstaver",
+                  "LOWERCASE": "små bogstaver",
+                  "SPECIAL_CHARS": "specielle tegn (*, @, !)"
+               },
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "🏴‍☠️ Cyberkriminelle bruger alle eksisterende orddatabaser på alle sprog.",
+                  "NO_DICTIONARY": "⚠️ Så brug ikke ordbogs-ord til at oprette din adgangskode"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Øjeblikkeligt",
+            "MINUTES": "minutter",
+            "HOURS": "timer",
+            "DAY": "dag",
+            "DAYS": "dage",
+            "WEEK": "uge",
+            "WEEKS": "uger",
+            "MONTHS": "måneder",
+            "YEARS": "år",
+            "MILLION_YEARS": "millioner år",
+            "BILLION_YEARS": "milliarder år",
+            "TRILLION_YEARS": "billioner år",
+            "QUADRILLION_YEARS": "trilliard år"
+         }
+      }
    }
 }

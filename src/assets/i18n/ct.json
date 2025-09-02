@@ -194,5 +194,74 @@
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. CT"
          }
       }
+   },
+   "TOOLS": {
+      "PASSWORD_CHECK": {
+         "TITLE": "Probo la meva contrasenya",
+         "DESCRIPTION": "Quant temps necessita un cibercriminal per trobar-la?",
+         "CRIMINAL_GUESSES": "Un cibercriminal l'endevina en:",
+         "ASSESSMENT_TEXT": "La teva contrasenya té:",
+         "INPUT_LABEL": "Contrasenya",
+         "COPY_PASSWORD": "Copiar contrasenya",
+         "BADGES": {
+            "IMMEDIATE": "ÉS IMMEDIAT ⚠️",
+            "RAPID": "ÉS RÀPID 😬",
+            "CORRECT": "ÉS CORRECTE 🙂",
+            "SUPER": "ÉS SÚPER 😎"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "12 caràcters mínim",
+            "UPPERCASE": "Almenys 1 majúscula",
+            "LOWERCASE": "Almenys 1 minúscula",
+            "DIGIT": "Almenys 1 número",
+            "SPECIAL_CHAR": "Almenys 1 caràcter especial",
+            "CRITERIA_VALIDATED": "Criteri validat",
+            "CRITERIA_NOT_VALIDATED": "Criteri no validat"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "Què és una bona contrasenya?",
+            "TEST_PASSWORD": "Provar la meva contrasenya 🔒",
+            "STRENGTHEN_PASSWORD": "Reforçar la meva contrasenya"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Com funciona?",
+               "STEP_1": "🔐 <strong>Pas 1</strong>: Escriu la teva contrasenya al camp.",
+               "STEP_2": "🧪 <strong>Pas 2</strong>: Fes clic a \"Provar la meva contrasenya\".",
+               "STEP_3": "⏱️ <strong>Pas 3</strong>: Voilà! Apareix quant temps podria trigar un cibercriminal a trobar-la... i accedir a les teves dades personals!",
+               "NOTE": "FantomApp no guarda cap informació.",
+               "UNDERSTOOD": "Entès"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Una contrasenya forta és:",
+               "CLOSE": "Tancar",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 caràcters",
+                  "UPPERCASE": "lletres majúscules",
+                  "LOWERCASE": "lletres minúscules",
+                  "SPECIAL_CHARS": "caràcters especials (*, @, !)"
+               },
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "🏴‍☠️ Els cibercriminals utilitzen totes les bases de dades de paraules existents en tots els idiomes.",
+                  "NO_DICTIONARY": "⚠️ Així que no facis servir cap paraula del diccionari per crear la teva contrasenya"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Instant",
+            "MINUTES": "minuts",
+            "HOURS": "hores",
+            "DAY": "dia",
+            "DAYS": "dies",
+            "WEEK": "setmana",
+            "WEEKS": "setmanes",
+            "MONTHS": "mesos",
+            "YEARS": "anys",
+            "MILLION_YEARS": "milions d'anys",
+            "BILLION_YEARS": "milers de milions d'anys",
+            "TRILLION_YEARS": "bilions d'anys",
+            "QUADRILLION_YEARS": "trillions d'anys"
+         }
+      }
    }
 }

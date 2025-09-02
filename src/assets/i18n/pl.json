@@ -194,5 +194,74 @@
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. PL"
          }
       }
+   },
+   "TOOLS": {
+      "PASSWORD_CHECK": {
+         "TITLE": "Testuję moje hasło",
+         "DESCRIPTION": "Ile czasu potrzebuje cyberprzestępca, żeby je znaleźć?",
+         "CRIMINAL_GUESSES": "Cyberprzestępca odgaduje je w:",
+         "ASSESSMENT_TEXT": "Twoje hasło ma:",
+         "INPUT_LABEL": "Hasło",
+         "COPY_PASSWORD": "Kopiuj hasło",
+         "BADGES": {
+            "IMMEDIATE": "TO NATYCHMIASTOWE ⚠️",
+            "RAPID": "TO SZYBKIE 😬",
+            "CORRECT": "TO POPRAWNE 🙂",
+            "SUPER": "TO SUPER 😎"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "Minimum 12 znaków",
+            "UPPERCASE": "Przynajmniej 1 wielka litera",
+            "LOWERCASE": "Przynajmniej 1 mała litera",
+            "DIGIT": "Przynajmniej 1 cyfra",
+            "SPECIAL_CHAR": "Przynajmniej 1 znak specjalny",
+            "CRITERIA_VALIDATED": "Kryterium spełnione",
+            "CRITERIA_NOT_VALIDATED": "Kryterium niespełnione"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "Czym jest dobre hasło?",
+            "TEST_PASSWORD": "Testuj moje hasło 🔒",
+            "STRENGTHEN_PASSWORD": "Wzmocnij moje hasło"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Jak to działa?",
+               "STEP_1": "🔐 <strong>Krok 1</strong>: Wpisz swoje hasło w polu.",
+               "STEP_2": "🧪 <strong>Krok 2</strong>: Kliknij \"Testuj moje hasło\".",
+               "STEP_3": "⏱️ <strong>Krok 3</strong>: Voilà! Pojawia się, ile czasu cyberprzestępca mógłby potrzebować, żeby je znaleźć... i uzyskać dostęp do twoich danych!",
+               "NOTE": "FantomApp nie przechowuje żadnych informacji.",
+               "UNDERSTOOD": "Rozumiem"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Silne hasło to:",
+               "CLOSE": "Zamknij",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 znaków",
+                  "UPPERCASE": "wielkie litery",
+                  "LOWERCASE": "małe litery",
+                  "SPECIAL_CHARS": "znaki specjalne (*, @, !)"
+               },
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "🏴‍☠️ Cyberprzestępcy używają wszystkich istniejących baz danych słów we wszystkich językach.",
+                  "NO_DICTIONARY": "⚠️ Więc nie używaj żadnych słów ze słownika do tworzenia hasła"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Natychmiastowe",
+            "MINUTES": "minut",
+            "HOURS": "godzin",
+            "DAY": "dzień",
+            "DAYS": "dni",
+            "WEEK": "tydzień",
+            "WEEKS": "tygodni",
+            "MONTHS": "miesięcy",
+            "YEARS": "lat",
+            "MILLION_YEARS": "milionów lat",
+            "BILLION_YEARS": "miliardów lat",
+            "TRILLION_YEARS": "trylionów lat",
+            "QUADRILLION_YEARS": "kwadrylionów lat"
+         }
+      }
    }
 }

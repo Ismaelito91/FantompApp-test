@@ -194,5 +194,74 @@
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. ES"
          }
       }
+   },
+   "TOOLS": {
+      "PASSWORD_CHECK": {
+         "TITLE": "Pruebo mi contraseña",
+         "DESCRIPTION": "¿Cuánto tiempo necesita un cibercriminal para encontrarla?",
+         "CRIMINAL_GUESSES": "Un cibercriminal la adivina en:",
+         "ASSESSMENT_TEXT": "Tu contraseña tiene:",
+         "INPUT_LABEL": "Contraseña",
+         "COPY_PASSWORD": "Copiar contraseña",
+         "BADGES": {
+            "IMMEDIATE": "ES INMEDIATO ⚠️",
+            "RAPID": "ES RÁPIDO 😬",
+            "CORRECT": "ES CORRECTO 🙂",
+            "SUPER": "ES SÚPER 😎"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "12 caracteres mínimo",
+            "UPPERCASE": "Al menos 1 mayúscula",
+            "LOWERCASE": "Al menos 1 minúscula",
+            "DIGIT": "Al menos 1 número",
+            "SPECIAL_CHAR": "Al menos 1 carácter especial",
+            "CRITERIA_VALIDATED": "Criterio validado",
+            "CRITERIA_NOT_VALIDATED": "Criterio no validado"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "¿Qué es una buena contraseña?",
+            "TEST_PASSWORD": "Probar mi contraseña 🔒",
+            "STRENGTHEN_PASSWORD": "Reforzar mi contraseña"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "¿Cómo funciona?",
+               "STEP_1": "🔐 <strong>Paso 1</strong>: Escribe tu contraseña en el campo.",
+               "STEP_2": "🧪 <strong>Paso 2</strong>: Haz clic en \"Probar mi contraseña\".",
+               "STEP_3": "⏱️ <strong>Paso 3</strong>: ¡Voilà! Aparece cuánto tiempo podría tardar un cibercriminal en encontrarla... ¡y acceder a tus datos personales!",
+               "NOTE": "FantomApp no guarda ninguna información.",
+               "UNDERSTOOD": "Entendido"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Una contraseña fuerte es:",
+               "CLOSE": "Cerrar",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 caracteres",
+                  "UPPERCASE": "letras mayúsculas",
+                  "LOWERCASE": "letras minúsculas",
+                  "SPECIAL_CHARS": "caracteres especiales (*, @, !)"
+               },
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "🏴‍☠️ Los cibercriminales usan todas las bases de datos de palabras que existen en todos los idiomas.",
+                  "NO_DICTIONARY": "⚠️ Así que no uses ninguna palabra del diccionario para crear tu contraseña"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Instantáneo",
+            "MINUTES": "minutos",
+            "HOURS": "horas",
+            "DAY": "día",
+            "DAYS": "días",
+            "WEEK": "semana",
+            "WEEKS": "semanas",
+            "MONTHS": "meses",
+            "YEARS": "años",
+            "MILLION_YEARS": "millones de años",
+            "BILLION_YEARS": "mil millones de años",
+            "TRILLION_YEARS": "billones de años",
+            "QUADRILLION_YEARS": "trillones de años"
+         }
+      }
    }
 }

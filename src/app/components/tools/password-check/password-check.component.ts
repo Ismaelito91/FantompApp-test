@@ -3,11 +3,13 @@ import {
    Component,
    OnDestroy,
    OnInit,
+   AfterViewInit,
    ElementRef,
    ViewChild,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonCloseComponent } from "../../design-system/button-close/button-close.component";
 import { BadgeComponent } from "../../design-system/badge/badge.component";
@@ -15,151 +17,240 @@ import { BadgeComponent } from "../../design-system/badge/badge.component";
 export interface PasswordCrackingData {
    characters: number;
    numbersOnly: {
-      time: string;
+      value: string;
+      unit: string;
       color: string;
    };
    lowercaseOnly: {
-      time: string;
+      value: string;
+      unit: string;
       color: string;
    };
    mixedCase: {
-      time: string;
+      value: string;
+      unit: string;
       color: string;
    };
    numbersAndLetters: {
-      time: string;
+      value: string;
+      unit: string;
       color: string;
    };
    allCharacters: {
-      time: string;
+      value: string;
+      unit: string;
       color: string;
    };
 }
-
-// Calculateur de sécurité des mots de passe basé sur le tableau Hive Systems 2025
 export class PasswordSecurityCalculator {
    public readonly crackingTimeData: PasswordCrackingData[] = [
       {
          characters: 4,
-         numbersOnly: { time: "Instantané", color: "purple" },
-         lowercaseOnly: { time: "Instantané", color: "purple" },
-         mixedCase: { time: "Instantané", color: "purple" },
-         numbersAndLetters: { time: "Instantané", color: "purple" },
-         allCharacters: { time: "Instantané", color: "purple" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
+         lowercaseOnly: { value: "", unit: "INSTANT", color: "purple" },
+         mixedCase: { value: "", unit: "INSTANT", color: "purple" },
+         numbersAndLetters: { value: "", unit: "INSTANT", color: "purple" },
+         allCharacters: { value: "", unit: "INSTANT", color: "purple" },
       },
       {
          characters: 5,
-         numbersOnly: { time: "Instantané", color: "purple" },
-         lowercaseOnly: { time: "Instantané", color: "purple" },
-         mixedCase: { time: "57 minutes", color: "red" },
-         numbersAndLetters: { time: "2 heures", color: "red" },
-         allCharacters: { time: "4 heures", color: "red" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
+         lowercaseOnly: { value: "", unit: "INSTANT", color: "purple" },
+         mixedCase: { value: "57", unit: "MINUTES", color: "red" },
+         numbersAndLetters: { value: "2", unit: "HOURS", color: "red" },
+         allCharacters: { value: "4", unit: "HOURS", color: "red" },
       },
       {
          characters: 6,
-         numbersOnly: { time: "Instantané", color: "purple" },
-         lowercaseOnly: { time: "46 minutes", color: "red" },
-         mixedCase: { time: "2 jours", color: "red" },
-         numbersAndLetters: { time: "6 jours", color: "red" },
-         allCharacters: { time: "2 semaines", color: "red" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
+         lowercaseOnly: { value: "", unit: "INSTANT", color: "purple" },
+         mixedCase: { value: "46", unit: "MINUTES", color: "red" },
+         numbersAndLetters: { value: "2", unit: "DAYS", color: "red" },
+         allCharacters: { value: "2", unit: "WEEKS", color: "red" },
       },
       {
          characters: 7,
-         numbersOnly: { time: "Instantané", color: "purple" },
-         lowercaseOnly: { time: "20 heures", color: "red" },
-         mixedCase: { time: "4 mois", color: "red" },
-         numbersAndLetters: { time: "1 an", color: "red" },
-         allCharacters: { time: "2 ans", color: "orange" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
+         lowercaseOnly: { value: "20", unit: "HOURS", color: "red" },
+         mixedCase: { value: "4", unit: "MONTHS", color: "red" },
+         numbersAndLetters: { value: "1", unit: "YEAR", color: "red" },
+         allCharacters: { value: "2", unit: "YEARS", color: "orange" },
       },
       {
          characters: 8,
-         numbersOnly: { time: "Instantané", color: "purple" },
-         lowercaseOnly: { time: "3 semaines", color: "red" },
-         mixedCase: { time: "15 ans", color: "orange" },
-         numbersAndLetters: { time: "62 ans", color: "orange" },
-         allCharacters: { time: "164 ans", color: "orange" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
+         lowercaseOnly: { value: "3", unit: "WEEKS", color: "red" },
+         mixedCase: { value: "15", unit: "YEARS", color: "orange" },
+         numbersAndLetters: { value: "62", unit: "YEARS", color: "orange" },
+         allCharacters: { value: "164", unit: "YEARS", color: "orange" },
       },
       {
          characters: 9,
-         numbersOnly: { time: "2 heures", color: "red" },
-         lowercaseOnly: { time: "2 ans", color: "orange" },
-         mixedCase: { time: "791 ans", color: "orange" },
-         numbersAndLetters: { time: "3 000 ans", color: "orange" },
-         allCharacters: { time: "11 000 ans", color: "orange" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
+         lowercaseOnly: { value: "2", unit: "HOURS", color: "red" },
+         mixedCase: { value: "791", unit: "YEARS", color: "orange" },
+         numbersAndLetters: { value: "3000", unit: "YEARS", color: "orange" },
+         allCharacters: { value: "11000", unit: "YEARS", color: "orange" },
       },
       {
          characters: 10,
-         numbersOnly: { time: "1 jour", color: "red" },
-         lowercaseOnly: { time: "40 ans", color: "orange" },
-         mixedCase: { time: "41 000 ans", color: "orange" },
-         numbersAndLetters: { time: "238 000 ans", color: "yellow" },
-         allCharacters: { time: "803 000 ans", color: "yellow" },
+         numbersOnly: { value: "1", unit: "DAYS", color: "red" },
+         lowercaseOnly: { value: "40", unit: "YEARS", color: "orange" },
+         mixedCase: { value: "41000", unit: "YEARS", color: "orange" },
+         numbersAndLetters: { value: "238000", unit: "YEARS", color: "yellow" },
+         allCharacters: { value: "803000", unit: "YEARS", color: "yellow" },
       },
       {
          characters: 11,
-         numbersOnly: { time: "1 semaine", color: "red" },
-         lowercaseOnly: { time: "1 000 ans", color: "orange" },
-         mixedCase: { time: "2 millions d'années", color: "yellow" },
-         numbersAndLetters: { time: "14 millions d'années", color: "yellow" },
-         allCharacters: { time: "56 millions d'années", color: "yellow" },
+         numbersOnly: { value: "1", unit: "WEEKS", color: "red" },
+         lowercaseOnly: { value: "1000", unit: "YEARS", color: "orange" },
+         mixedCase: { value: "2", unit: "MILLION_YEARS", color: "yellow" },
+         numbersAndLetters: {
+            value: "14",
+            unit: "MILLION_YEARS",
+            color: "yellow",
+         },
+         allCharacters: { value: "56", unit: "MILLION_YEARS", color: "yellow" },
       },
       {
          characters: 12,
-         numbersOnly: { time: "3 mois", color: "red" },
-         lowercaseOnly: { time: "27 000 ans", color: "orange" },
-         mixedCase: { time: "111 millions d'années", color: "yellow" },
-         numbersAndLetters: { time: "917 millions d'années", color: "yellow" },
-         allCharacters: { time: "3 milliards d'années", color: "yellow" },
+         numbersOnly: { value: "3", unit: "MONTHS", color: "red" },
+         lowercaseOnly: { value: "27000", unit: "YEARS", color: "orange" },
+         mixedCase: { value: "111", unit: "MILLION_YEARS", color: "yellow" },
+         numbersAndLetters: {
+            value: "917",
+            unit: "MILLION_YEARS",
+            color: "yellow",
+         },
+         allCharacters: { value: "3", unit: "BILLION_YEARS", color: "yellow" },
       },
       {
          characters: 13,
-         numbersOnly: { time: "3 ans", color: "orange" },
-         lowercaseOnly: { time: "705 000 ans", color: "yellow" },
-         mixedCase: { time: "5 milliards d'années", color: "yellow" },
-         numbersAndLetters: { time: "56 milliards d'années", color: "green" },
-         allCharacters: { time: "275 milliards d'années", color: "green" },
+         numbersOnly: { value: "3", unit: "YEARS", color: "orange" },
+         lowercaseOnly: { value: "705000", unit: "YEARS", color: "yellow" },
+         mixedCase: { value: "5", unit: "BILLION_YEARS", color: "yellow" },
+         numbersAndLetters: {
+            value: "56",
+            unit: "BILLION_YEARS",
+            color: "green",
+         },
+         allCharacters: { value: "275", unit: "BILLION_YEARS", color: "green" },
       },
       {
          characters: 14,
-         numbersOnly: { time: "28 ans", color: "orange" },
-         lowercaseOnly: { time: "18 millions d'années", color: "yellow" },
-         mixedCase: { time: "300 milliards d'années", color: "green" },
-         numbersAndLetters: { time: "3 billions d'années", color: "green" },
-         allCharacters: { time: "19 billions d'années", color: "green" },
+         numbersOnly: { value: "28", unit: "YEARS", color: "orange" },
+         lowercaseOnly: { value: "18", unit: "MILLION_YEARS", color: "yellow" },
+         mixedCase: { value: "300", unit: "BILLION_YEARS", color: "green" },
+         numbersAndLetters: {
+            value: "3",
+            unit: "TRILLION_YEARS",
+            color: "green",
+         },
+         allCharacters: { value: "19", unit: "TRILLION_YEARS", color: "green" },
       },
       {
          characters: 15,
-         numbersOnly: { time: "284 ans", color: "orange" },
-         lowercaseOnly: { time: "477 millions d'années", color: "yellow" },
-         mixedCase: { time: "15 billions d'années", color: "green" },
-         numbersAndLetters: { time: "218 billions d'années", color: "green" },
-         allCharacters: { time: "1 billion d'années", color: "green" },
+         numbersOnly: { value: "284", unit: "YEARS", color: "orange" },
+         lowercaseOnly: {
+            value: "477",
+            unit: "MILLION_YEARS",
+            color: "yellow",
+         },
+         mixedCase: { value: "15", unit: "TRILLION_YEARS", color: "green" },
+         numbersAndLetters: {
+            value: "218",
+            unit: "TRILLION_YEARS",
+            color: "green",
+         },
+         allCharacters: { value: "1", unit: "TRILLION_YEARS", color: "green" },
       },
       {
          characters: 16,
-         numbersOnly: { time: "2 000 ans", color: "orange" },
-         lowercaseOnly: { time: "12 milliards d'années", color: "green" },
-         mixedCase: { time: "812 billions d'années", color: "green" },
-         numbersAndLetters: { time: "13 billions d'années", color: "green" },
-         allCharacters: { time: "94 billions d'années", color: "green" },
+         numbersOnly: { value: "2000", unit: "YEARS", color: "orange" },
+         lowercaseOnly: { value: "12", unit: "BILLION_YEARS", color: "green" },
+         mixedCase: { value: "812", unit: "TRILLION_YEARS", color: "green" },
+         numbersAndLetters: {
+            value: "13",
+            unit: "TRILLION_YEARS",
+            color: "green",
+         },
+         allCharacters: { value: "94", unit: "TRILLION_YEARS", color: "green" },
       },
       {
          characters: 17,
-         numbersOnly: { time: "28 000 ans", color: "orange" },
-         lowercaseOnly: { time: "322 milliards d'années", color: "green" },
-         mixedCase: { time: "42 billions d'années", color: "green" },
-         numbersAndLetters: { time: "840 billions d'années", color: "green" },
-         allCharacters: { time: "6 trillions d'années", color: "green" },
+         numbersOnly: { value: "28000", unit: "YEARS", color: "orange" },
+         lowercaseOnly: { value: "322", unit: "BILLION_YEARS", color: "green" },
+         mixedCase: { value: "42", unit: "TRILLION_YEARS", color: "green" },
+         numbersAndLetters: {
+            value: "840",
+            unit: "TRILLION_YEARS",
+            color: "green",
+         },
+         allCharacters: {
+            value: "6",
+            unit: "QUADRILLION_YEARS",
+            color: "green",
+         },
       },
       {
          characters: 18,
-         numbersOnly: { time: "284 000 ans", color: "yellow" },
-         lowercaseOnly: { time: "8 billions d'années", color: "green" },
-         mixedCase: { time: "2 trillions d'années", color: "green" },
-         numbersAndLetters: { time: "52 trillions d'années", color: "green" },
-         allCharacters: { time: "463 trillions d'années", color: "green" },
+         numbersOnly: { value: "284000", unit: "YEARS", color: "yellow" },
+         lowercaseOnly: { value: "8", unit: "TRILLION_YEARS", color: "green" },
+         mixedCase: { value: "2", unit: "QUADRILLION_YEARS", color: "green" },
+         numbersAndLetters: {
+            value: "52",
+            unit: "QUADRILLION_YEARS",
+            color: "green",
+         },
+         allCharacters: {
+            value: "463",
+            unit: "QUADRILLION_YEARS",
+            color: "green",
+         },
       },
    ];
+
+   // Méthode pour traduire un temps de craquage
+   public translateTime(
+      value: string,
+      unit: string,
+      translateService: any
+   ): string {
+      if (unit === "INSTANT") {
+         const translated = translateService.instant(
+            "TOOLS.PASSWORD_CHECK.TIME_UNITS.INSTANT"
+         );
+         // Si la traduction n'est pas chargée, retourner une valeur par défaut
+         return translated === "TOOLS.PASSWORD_CHECK.TIME_UNITS.INSTANT"
+            ? "Instantané"
+            : translated;
+      }
+
+      const translatedUnit = translateService.instant(
+         `TOOLS.PASSWORD_CHECK.TIME_UNITS.${unit}`
+      );
+      // Si la traduction n'est pas chargée, retourner une valeur par défaut
+      if (translatedUnit === `TOOLS.PASSWORD_CHECK.TIME_UNITS.${unit}`) {
+         // Valeurs par défaut en français
+         const defaultUnits: { [key: string]: string } = {
+            MINUTES: "minutes",
+            HOURS: "heures",
+            DAY: "jour",
+            DAYS: "jours",
+            WEEK: "semaine",
+            WEEKS: "semaines",
+            MONTHS: "mois",
+            YEARS: "ans",
+            MILLION_YEARS: "millions d'années",
+            BILLION_YEARS: "milliards d'années",
+            TRILLION_YEARS: "billions d'années",
+         };
+         const defaultUnit = defaultUnits[unit] || unit.toLowerCase();
+         return value ? `${value} ${defaultUnit}` : defaultUnit;
+      }
+
+      return value ? `${value} ${translatedUnit}` : translatedUnit;
+   }
 
    getCrackingDataByLength(length: number): PasswordCrackingData | undefined {
       if (length < 4) {
@@ -185,12 +276,14 @@ export class PasswordSecurityCalculator {
    ): {
       length: number;
       type:
-      | "numbersOnly"
-      | "lowercaseOnly"
-      | "mixedCase"
-      | "numbersAndLetters"
-      | "allCharacters";
+         | "numbersOnly"
+         | "lowercaseOnly"
+         | "mixedCase"
+         | "numbersAndLetters"
+         | "allCharacters";
       crackingTime: string;
+      timeValue: string;
+      timeUnit: string;
       strengthLevel: string;
       color: string;
    } {
@@ -201,6 +294,8 @@ export class PasswordSecurityCalculator {
             length,
             type,
             crackingTime: "Données non disponibles",
+            timeValue: "",
+            timeUnit: "INSTANT",
             strengthLevel,
             color: "purple",
          };
@@ -211,7 +306,11 @@ export class PasswordSecurityCalculator {
       return {
          length,
          type,
-         crackingTime: crackingInfo.time,
+         crackingTime: crackingInfo.value
+            ? `${crackingInfo.value} ${crackingInfo.unit}`
+            : crackingInfo.unit,
+         timeValue: crackingInfo.value,
+         timeUnit: crackingInfo.unit,
          strengthLevel,
          color: crackingInfo.color,
       };
@@ -219,12 +318,14 @@ export class PasswordSecurityCalculator {
    evaluatePasswordStrength(password: string): {
       length: number;
       type:
-      | "numbersOnly"
-      | "lowercaseOnly"
-      | "mixedCase"
-      | "numbersAndLetters"
-      | "allCharacters";
+         | "numbersOnly"
+         | "lowercaseOnly"
+         | "mixedCase"
+         | "numbersAndLetters"
+         | "allCharacters";
       crackingTime: string;
+      timeValue: string;
+      timeUnit: string;
       strengthLevel: string;
       color: string;
    } {
@@ -333,11 +434,14 @@ export const passwordCalculator = new PasswordSecurityCalculator();
       FormsModule,
       CommonModule,
       BadgeComponent,
+      TranslateModule,
    ],
    templateUrl: "./password-check.component.html",
    styleUrl: "./password-check.component.scss",
 })
-export class PasswordCheckComponent implements OnDestroy, OnInit {
+export class PasswordCheckComponent
+   implements OnDestroy, OnInit, AfterViewInit
+{
    @ViewChild("passwordInput", { static: false })
    passwordInput!: ElementRef<HTMLInputElement>;
 
@@ -361,7 +465,11 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
    typewriterInterval: any;
    calculatedFontSize: number = 96; // Taille calculée en px
 
-   constructor(private router: Router, private location: Location) {
+   constructor(
+      private router: Router,
+      private location: Location,
+      private translateService: TranslateService
+   ) {
       // Vérifie si c'est la première fois que l'utilisateur utilise l'app
       const hasSeenOnboarding = localStorage.getItem(
          "password-check-onboarding-seen"
@@ -378,14 +486,63 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
       }
    }
 
+   ngAfterViewInit() {
+      // Attendre un peu et initialiser les critères quand tout est chargé
+      setTimeout(() => {
+         this.initializeCriteria();
+      }, 100);
+   }
+
+   private initializeCriteria() {
+      // Debug: vérifier si les traductions sont chargées
+      const testTranslation = this.translateService.instant(
+         "TOOLS.PASSWORD_CHECK.CRITERIA.MIN_LENGTH"
+      );
+
+      if (testTranslation === "TOOLS.PASSWORD_CHECK.CRITERIA.MIN_LENGTH") {
+         // Les traductions ne sont pas encore chargées, réessayer plus tard
+         setTimeout(() => {
+            this.initializeCriteria();
+         }, 200);
+         return;
+      }
+
+      this.criteria = [
+         {
+            name: this.translateService.instant(
+               "TOOLS.PASSWORD_CHECK.CRITERIA.MIN_LENGTH"
+            ),
+            valid: false,
+         },
+         {
+            name: this.translateService.instant(
+               "TOOLS.PASSWORD_CHECK.CRITERIA.UPPERCASE"
+            ),
+            valid: false,
+         },
+         {
+            name: this.translateService.instant(
+               "TOOLS.PASSWORD_CHECK.CRITERIA.LOWERCASE"
+            ),
+            valid: false,
+         },
+         {
+            name: this.translateService.instant(
+               "TOOLS.PASSWORD_CHECK.CRITERIA.DIGIT"
+            ),
+            valid: false,
+         },
+         {
+            name: this.translateService.instant(
+               "TOOLS.PASSWORD_CHECK.CRITERIA.SPECIAL_CHAR"
+            ),
+            valid: false,
+         },
+      ];
+   }
+
    // Suivi de chaque critère pour affichage des icônes
-   criteria = [
-      { name: "12 caractères minimum", valid: false },
-      { name: "1 majuscule au moins", valid: false },
-      { name: "1 minuscule au moins", valid: false },
-      { name: "1 chiffre au moins", valid: false },
-      { name: "1 caractère spécial au moins", valid: false },
-   ];
+   criteria: { name: string; valid: boolean }[] = [];
 
    toggleShowPassword() {
       this.showPassword = !this.showPassword;
@@ -455,8 +612,13 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
          clearInterval(this.typewriterInterval);
       }
 
-      // Retourne à la page précédente (d'où on est venu)
-      this.location.back();
+      // Redirection améliorée avec animation fluide
+      setTimeout(() => {
+         this.router.navigate(["/home"], {
+            replaceUrl: true,
+            state: { animation: "slideOut" },
+         });
+      }, 200);
    }
 
    // Calcule directement la taille en pixels - SIMPLE ET DIRECT
@@ -562,12 +724,20 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
             this.password
          );
          this.category = evaluation.strengthLevel;
-         this.message = evaluation.crackingTime;
+
+         // Traduire le temps de craquage
+         const translatedTime = passwordCalculator.translateTime(
+            evaluation.timeValue,
+            evaluation.timeUnit,
+            this.translateService
+         );
+
+         this.message = translatedTime;
          this.result = `Niveau : ${this.category}`;
 
          // Démarrer l'effet typewriter pour le message
          setTimeout(() => {
-            this.startTypewriterEffect(evaluation.crackingTime);
+            this.startTypewriterEffect(translatedTime);
          }, 300); // Petit délai pour que l'interface se mette en place
 
          // Vérification des critères de sécurité
@@ -629,13 +799,33 @@ export class PasswordCheckComponent implements OnDestroy, OnInit {
 
       switch (this.passwordResultLevel) {
          case "immediate":
-            return { title: "C'EST IMMÉDIAT ⚠️", variant: "danger" };
+            return {
+               title: this.translateService.instant(
+                  "TOOLS.PASSWORD_CHECK.BADGES.IMMEDIATE"
+               ),
+               variant: "danger",
+            };
          case "rapid":
-            return { title: "C'EST RAPIDE 😬", variant: "danger-light" };
+            return {
+               title: this.translateService.instant(
+                  "TOOLS.PASSWORD_CHECK.BADGES.RAPID"
+               ),
+               variant: "danger-light",
+            };
          case "correct":
-            return { title: "C'EST CORRECT 🙂", variant: "info" };
+            return {
+               title: this.translateService.instant(
+                  "TOOLS.PASSWORD_CHECK.BADGES.CORRECT"
+               ),
+               variant: "info",
+            };
          case "super":
-            return { title: "C'EST SUPER 😎", variant: "success" };
+            return {
+               title: this.translateService.instant(
+                  "TOOLS.PASSWORD_CHECK.BADGES.SUPER"
+               ),
+               variant: "success",
+            };
          default:
             return null;
       }

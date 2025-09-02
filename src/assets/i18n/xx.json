@@ -205,6 +205,73 @@
          "TUTORIAL": {
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. INT"
          }
+      },
+      "PASSWORD_CHECK": {
+         "TITLE": "I test my password",
+         "DESCRIPTION": "How long does it take a cybercriminal to find it?",
+         "CRIMINAL_GUESSES": "A cybercriminal guesses it in:",
+         "ASSESSMENT_TEXT": "Your password has:",
+         "INPUT_LABEL": "Password",
+         "COPY_PASSWORD": "Copy password",
+         "BADGES": {
+            "IMMEDIATE": "IT'S IMMEDIATE ⚠️",
+            "RAPID": "IT'S FAST 😬",
+            "CORRECT": "IT'S CORRECT 🙂",
+            "SUPER": "IT'S SUPER 😎"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "12 characters minimum",
+            "UPPERCASE": "At least 1 uppercase",
+            "LOWERCASE": "At least 1 lowercase",
+            "DIGIT": "At least 1 digit",
+            "SPECIAL_CHAR": "At least 1 special character",
+            "CRITERIA_VALIDATED": "Criteria validated",
+            "CRITERIA_NOT_VALIDATED": "Criteria not validated"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "What is a good password?",
+            "TEST_PASSWORD": "Test my password 🔒",
+            "STRENGTHEN_PASSWORD": "Strengthen my password"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "How does it work?",
+               "STEP_1": "🔐 <strong>Step 1</strong>: Type your password in the provided field.",
+               "STEP_2": "🧪 <strong>Step 2</strong>: Click on \"Test my password\".",
+               "STEP_3": "⏱️ <strong>Step 3</strong>: Voila! See how long a cybercriminal could take to find it... and access your personal data!",
+               "NOTE": "GhostApp does not store any information.",
+               "UNDERSTOOD": "Understood"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "A strong password is:",
+               "CLOSE": "Close",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 characters",
+                  "UPPERCASE": "uppercase letters",
+                  "LOWERCASE": "lowercase letters",
+                  "SPECIAL_CHARS": "special characters (*, @, !)"
+               },
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "🏴‍☠️ Cybercriminals use all existing word databases in all languages.",
+                  "NO_DICTIONARY": "⚠️ So don't use any dictionary words to create your password"
+               }
+            }
+         }
+      },
+      "TIME_UNITS": {
+         "INSTANT": "Instant",
+         "MINUTES": "minutes",
+         "HOURS": "hours",
+         "DAY": "day",
+         "DAYS": "days",
+         "WEEK": "week",
+         "WEEKS": "weeks",
+         "MONTHS": "months",
+         "YEARS": "years",
+         "MILLION_YEARS": "million years",
+         "BILLION_YEARS": "billion years",
+         "TRILLION_YEARS": "trillion years",
+         "QUADRILLION_YEARS": "quadrillion years"
       }
    }
 }

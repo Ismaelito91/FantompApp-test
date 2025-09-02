@@ -212,5 +212,74 @@
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. LU"
          }
       }
+   },
+   "TOOLS": {
+      "PASSWORD_CHECK": {
+         "TITLE": "Ech testen mäin Passwuert",
+         "DESCRIPTION": "Wiväl Zait brauch e Cyberkrimineller fir et ze fannen?",
+         "CRIMINAL_GUESSES": "E Cyberkrimineller eröt et an:",
+         "ASSESSMENT_TEXT": "Ärt Passwuert huet:",
+         "INPUT_LABEL": "Passwuert",
+         "COPY_PASSWORD": "Passwuert kopéieren",
+         "BADGES": {
+            "IMMEDIATE": "ET ASS DIREKT ⚠️",
+            "RAPID": "ET ASS GAU 😬",
+            "CORRECT": "ET ASS KORREKT 🙂",
+            "SUPER": "ET ASS SUPER 😎"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "Minimum 12 Zeechen",
+            "UPPERCASE": "Op z'mannst 1 grousse Buschtaf",
+            "LOWERCASE": "Op z'mannst 1 kläre Buschtaf",
+            "DIGIT": "Op z'mannst 1 Zuel",
+            "SPECIAL_CHAR": "Op z'mannst 1 speziellt Zeechen",
+            "CRITERIA_VALIDATED": "Kritère validéiert",
+            "CRITERIA_NOT_VALIDATED": "Kritère net validéiert"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "Wat ass e gutt Passwuert?",
+            "TEST_PASSWORD": "Mäin Passwuert testen 🔒",
+            "STRENGTHEN_PASSWORD": "Mäin Passwuert versärken"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Wéi funktionnéiert et?",
+               "STEP_1": "🔐 <strong>Schrëtt 1</strong>: Tippt ärt Passwuert an d'Feld.",
+               "STEP_2": "🧪 <strong>Schrëtt 2</strong>: Klickt op \"Mäin Passwuert testen\".",
+               "STEP_3": "⏱️ <strong>Schrëtt 3</strong>: Voilà! Et erscheint wiväl Zait e Cyberkrimineller kéint brauchen... an Zougang zu ären perséinlechen Daten kréien!",
+               "NOTE": "FantomApp späichert keng Informatioun.",
+               "UNDERSTOOD": "Verstan"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "E staark Passwuert ass:",
+               "CLOSE": "Zoumaachen",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 Zeechen",
+                  "UPPERCASE": "grousse Buschtawen",
+                  "LOWERCASE": "klär Buschtawen",
+                  "SPECIAL_CHARS": "speziell Zeechen (*, @, !)"
+               },
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "🏴‍☠️ Cyberkrimineller benotzen all existentéiert Wäerdatenbanken an allen Sproochen.",
+                  "NO_DICTIONARY": "⚠️ Benotzt also keng Wäerder aus dem Dictionnaire fir ärt Passwuert ze maachen"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Direkt",
+            "MINUTES": "Minutten",
+            "HOURS": "Stonnen",
+            "DAY": "Dag",
+            "DAYS": "Deeg",
+            "WEEK": "Woch",
+            "WEEKS": "Wochen",
+            "MONTHS": "Méint",
+            "YEARS": "Joer",
+            "MILLION_YEARS": "Milliounen Joer",
+            "BILLION_YEARS": "Milliarden Joer",
+            "TRILLION_YEARS": "Billiounen Joer",
+            "QUADRILLION_YEARS": "Quadrilliounen Joer"
+         }
+      }
    }
 }

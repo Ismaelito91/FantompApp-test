@@ -194,5 +194,74 @@
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. PT"
          }
       }
+   },
+   "TOOLS": {
+      "PASSWORD_CHECK": {
+         "TITLE": "Testo minha senha",
+         "DESCRIPTION": "Quanto tempo leva para um cibercriminoso encontrá-la?",
+         "CRIMINAL_GUESSES": "Um cibercriminoso a descobre em:",
+         "ASSESSMENT_TEXT": "Sua senha tem:",
+         "INPUT_LABEL": "Senha",
+         "COPY_PASSWORD": "Copiar senha",
+         "BADGES": {
+            "IMMEDIATE": "É IMEDIATO ⚠️",
+            "RAPID": "É RÁPIDO 😬",
+            "CORRECT": "ESTÁ CORRETO 🙂",
+            "SUPER": "É SUPER 😎"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "12 caracteres mínimo",
+            "UPPERCASE": "Pelo menos 1 maiúscula",
+            "LOWERCASE": "Pelo menos 1 minúscula",
+            "DIGIT": "Pelo menos 1 número",
+            "SPECIAL_CHAR": "Pelo menos 1 carácter especial",
+            "CRITERIA_VALIDATED": "Critério validado",
+            "CRITERIA_NOT_VALIDATED": "Critério não validado"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "O que é uma boa senha?",
+            "TEST_PASSWORD": "Testar minha senha 🔒",
+            "STRENGTHEN_PASSWORD": "Reforçar minha senha"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Como funciona?",
+               "STEP_1": "🔐 <strong>Etapa 1</strong>: Digite sua senha no campo.",
+               "STEP_2": "🧪 <strong>Etapa 2</strong>: Clique em \"Testar minha senha\".",
+               "STEP_3": "⏱️ <strong>Etapa 3</strong>: Voilà! Aparece quanto tempo um cibercriminoso poderia levar para encontrá-la... e acessar seus dados pessoais!",
+               "NOTE": "FantomApp não armazena nenhuma informação.",
+               "UNDERSTOOD": "Entendido"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Uma senha forte é:",
+               "CLOSE": "Fechar",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 caracteres",
+                  "UPPERCASE": "letras maiúsculas",
+                  "LOWERCASE": "letras minúsculas",
+                  "SPECIAL_CHARS": "caracteres especiais (*, @, !)"
+               },
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "🏴‍☠️ Os cibercriminosos usam todas as bases de dados de palavras que existem em todos os idiomas.",
+                  "NO_DICTIONARY": "⚠️ Então não use nenhuma palavra do dicionário para criar sua senha"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Instantâneo",
+            "MINUTES": "minutos",
+            "HOURS": "horas",
+            "DAY": "dia",
+            "DAYS": "dias",
+            "WEEK": "semana",
+            "WEEKS": "semanas",
+            "MONTHS": "meses",
+            "YEARS": "anos",
+            "MILLION_YEARS": "milhões de anos",
+            "BILLION_YEARS": "bilhões de anos",
+            "TRILLION_YEARS": "trilhões de anos",
+            "QUADRILLION_YEARS": "quatrilhões de anos"
+         }
+      }
    }
 }
