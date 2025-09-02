@@ -194,5 +194,74 @@
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. HU"
          }
       }
+   },
+   "TOOLS": {
+      "PASSWORD_CHECK": {
+         "TITLE": "Tesztelem a jelszavam",
+         "DESCRIPTION": "Mennyi idő alatt találja meg egy kiberbűnöző?",
+         "CRIMINAL_GUESSES": "Egy kiberbűnöző ennyi idő alatt kitalálja:",
+         "ASSESSMENT_TEXT": "A jelszavad tartalmaz:",
+         "INPUT_LABEL": "Jelszó",
+         "COPY_PASSWORD": "Jelszó másolása",
+         "BADGES": {
+            "IMMEDIATE": "AZONNALI ⚠️",
+            "RAPID": "GYORS 😬",
+            "CORRECT": "HELYES 🙂",
+            "SUPER": "SZUPER 😎"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "Minimum 12 karakter",
+            "UPPERCASE": "Legalább 1 nagybetű",
+            "LOWERCASE": "Legalább 1 kisbetű",
+            "DIGIT": "Legalább 1 szám",
+            "SPECIAL_CHAR": "Legalább 1 speciális karakter",
+            "CRITERIA_VALIDATED": "Kritérium teljesült",
+            "CRITERIA_NOT_VALIDATED": "Kritérium nem teljesült"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "Mi a jó jelszó?",
+            "TEST_PASSWORD": "Jelszó tesztelése 🔒",
+            "STRENGTHEN_PASSWORD": "Jelszó megerősítése"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Hogyan működik?",
+               "STEP_1": "🔐 <strong>1. lépés</strong>: Írd be a jelszavad a mezőbe.",
+               "STEP_2": "🧪 <strong>2. lépés</strong>: Kattints a \"Jelszó tesztelése\"-re.",
+               "STEP_3": "⏱️ <strong>3. lépés</strong>: Voilà! Megjeleník, mennyi idő alatt találhatná meg egy kiberbűnöző... és férhet hozzá a személyes adataidhoz!",
+               "NOTE": "A FantomApp nem tárol semmilyen információt.",
+               "UNDERSTOOD": "Megértettem"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Egy erős jelszó:",
+               "CLOSE": "Bezárás",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 karakter",
+                  "UPPERCASE": "nagybetűk",
+                  "LOWERCASE": "kisbetűk",
+                  "SPECIAL_CHARS": "speciális karakterek (*, @, !)"
+               },
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "🏴‍☠️ A kiberbűnözők minden létező szóadatbázist használnak minden nyelven.",
+                  "NO_DICTIONARY": "⚠️ Tehát ne használj szótári szavakat a jelszó létrehozásához"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Azonnali",
+            "MINUTES": "perc",
+            "HOURS": "óra",
+            "DAY": "nap",
+            "DAYS": "nap",
+            "WEEK": "hét",
+            "WEEKS": "hét",
+            "MONTHS": "hónap",
+            "YEARS": "év",
+            "MILLION_YEARS": "millió év",
+            "BILLION_YEARS": "milliárd év",
+            "TRILLION_YEARS": "trillió év",
+            "QUADRILLION_YEARS": "kvadrillió év"
+         }
+      }
    }
 }

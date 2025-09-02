@@ -27,8 +27,7 @@ export class LanguageService {
       ([code, name]) => ({
          code: code as SupportedLanguage,
          name,
-      })
-   );
+      }));
 
    constructor(private translateService: TranslateService) {
       this.initLanguage();
@@ -40,8 +39,12 @@ export class LanguageService {
 
    private initLanguage(): void {
       const savedLang = localStorage.getItem("lang") as SupportedLanguage;
-      const browserLang = this.translateService.getBrowserLang()?.toUpperCase() as SupportedLanguage;
-      const initialLang = savedLang || (this.isSupportedLanguage(browserLang) ? browserLang : defaultLang);
+      const browserLang = this.translateService
+         .getBrowserLang()
+         ?.toUpperCase() as SupportedLanguage;
+      const initialLang =
+         savedLang ||
+         (this.isSupportedLanguage(browserLang) ? browserLang : defaultLang);
 
       this.setLanguage(initialLang);
    }

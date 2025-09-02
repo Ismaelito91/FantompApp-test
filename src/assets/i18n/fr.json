@@ -321,6 +321,73 @@
          "TUTORIAL": {
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter."
          }
+      },
+      "PASSWORD_CHECK": {
+         "TITLE": "Je teste mon mot de passe",
+         "DESCRIPTION": "Combien de temps faut-il à un cybercriminel pour le trouver ?",
+         "CRIMINAL_GUESSES": "Un cybercriminel le devine en :",
+         "ASSESSMENT_TEXT": "Ton mot de passe a :",
+         "INPUT_LABEL": "Mot de passe",
+         "COPY_PASSWORD": "Copier le mot de passe",
+         "BADGES": {
+            "IMMEDIATE": "C'EST IMMÉDIAT ⚠️",
+            "RAPID": "C'EST RAPIDE 😬",
+            "CORRECT": "C'EST CORRECT 🙂",
+            "SUPER": "C'EST SUPER 😎"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "12 caractères minimum",
+            "UPPERCASE": "1 majuscule au moins",
+            "LOWERCASE": "1 minuscule au moins",
+            "DIGIT": "1 chiffre au moins",
+            "SPECIAL_CHAR": "1 caractère spécial au moins",
+            "CRITERIA_VALIDATED": "Critère validé",
+            "CRITERIA_NOT_VALIDATED": "Critère non validé"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "C'est quoi un bon mot de passe ?",
+            "TEST_PASSWORD": "Tester mon mot de passe 🔒",
+            "STRENGTHEN_PASSWORD": "Renforcer mon mot de passe"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Comment ça marche ?",
+               "STEP_1": "🔐 <strong>Étape 1</strong> : Tape ton mot de passe dans le champ prévu.",
+               "STEP_2": "🧪 <strong>Étape 2</strong> : Clique sur \"Tester mon mot de passe\".",
+               "STEP_3": "⏱️ <strong>Étape 3</strong> : Hop, apparaît en combien de temps un cybercriminel pourrait le trouver… et accéder à tes données personnelles !",
+               "NOTE": "FantomApp n'enregistre aucune information.",
+               "UNDERSTOOD": "Compris"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Un mot de passe solide c'est :",
+               "CLOSE": "Fermer",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 caractères",
+                  "UPPERCASE": "des majuscules",
+                  "LOWERCASE": "des minuscules",
+                  "SPECIAL_CHARS": "des caractères spéciaux (*, @, !)"
+               },
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "🏴‍☠️ Les cybercriminels utilisent toutes les bases de données de mots qui existent dans toutes les langues.",
+                  "NO_DICTIONARY": "⚠️ Donc n'utilises aucun mot du dictionnaire pour constituer ton mot de passe"
+               }
+            }
+         }
+      },
+      "TIME_UNITS": {
+         "INSTANT": "Instantané",
+         "MINUTES": "minutes",
+         "HOURS": "heures",
+         "DAY": "jour",
+         "DAYS": "jours",
+         "WEEK": "semaine",
+         "WEEKS": "semaines",
+         "MONTHS": "mois",
+         "YEARS": "ans",
+         "MILLION_YEARS": "millions d'années",
+         "BILLION_YEARS": "milliards d'années",
+         "TRILLION_YEARS": "billions d'années",
+         "QUADRILLION_YEARS": "trillions d'années"
       }
    }
 }

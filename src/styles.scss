@@ -271,6 +271,11 @@
       rgba(255, 255, 255, 0.4) 100%
    );
    --background-26: var(--color-neutral-light-background-1_60);
+   --background-27: linear-gradient(
+      180deg,
+      var(--color-neutral-light-background-1_70),
+      var(--color-neutral-light-background-1_30)
+   );
 
    --color-1: var(--color-neutral-light-content-2);
    --color-2: var(--color-primary-950);
@@ -530,6 +535,11 @@
       rgba(20, 13, 38, 0.4) 100%
    );
    --background-26: var(--color-neutral-dark-background-1_30);
+   --background-27: linear-gradient(
+      180deg,
+      var(--color-neutral-dark-background-1_70),
+      var(--color-neutral-dark-background-1_30)
+   );
 
    --color-1: var(--color-neutral-light-background-2);
    --color-2: var(--color-neutral-light-background-2);
