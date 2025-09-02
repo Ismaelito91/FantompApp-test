@@ -163,33 +163,9 @@
             }
          },
          "RESULTS": {
-            "TITLE": "Tes résultats",
-            "SUMMARY": {
-               "GOOD": {
-                  "TITLE": "Bien joué ! 🥷",
-                  "CONTENT": "Ton profil ne permet pas de savoir qui tu es dans la vie, sur les réseaux et aussi hors ligne."
-               },
-               "OK": {
-                  "TITLE": "Pas mal ! 🥸",
-                  "CONTENT": "Il y a encore quelques indices pour deviner qui tu es dans la vraie vie mais tu peux encore t’améliorer et divulguer moins d’informations sur toi."
-               },
-               "BAD": {
-                  "TITLE": "Prudence ! 🧐",
-                  "CONTENT": "Ton profil contient beaucoup d’informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie."
-               }
-            },
-            "PSEUDO": {
-               "TITLE": "Ton pseudo indique"
-            },
-            "BIO": {
-               "TITLE": "Ta bio indique"
-            },
-            "STATE": {
-               "PUBLIC": "PUBLIC 👀",
-               "DISCREET": "DISCRET 🙈️",
-               "INVISIBLE": "INVISIBLE 👻"
-            },
-            "NO_PERSONAL_INFO": "Aucune information personnelle !"
+            "REPORTED_CONTENT": {
+               "TITLE": "Tu as signalé le contenu ?"
+            }
          }
       }
    },

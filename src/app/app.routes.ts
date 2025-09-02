@@ -5,6 +5,10 @@ import { HomeComponent } from "./components/home/home.component";
 import { OnboardingComponent } from "./components/home/onboarding/onboarding.component";
 import { UserAppConfigComponent } from "./components/home/user-app-config/user-app-config.component";
 import { DeleteContentComponent } from "./components/problems/delete-content/delete-content.component";
+import { ReportedContentComponent } from "./components/problems/delete-content/reported-content/reported-content.component";
+import { ReportedViolentContentComponent } from "./components/problems/delete-content/reported-violent-content/reported-violent-content.component";
+import { UnreportedContentComponent } from "./components/problems/delete-content/unreported-content/unreported-content.component";
+import { UnreportedViolentContentComponent } from "./components/problems/delete-content/unreported-violent-content/unreported-violent-content.component";
 import { HackingComponent } from "./components/problems/hacking/hacking.component";
 import { ProblemsComponent } from "./components/problems/problems.component";
 import { SecureMyselfComponent } from "./components/secure-myself/secure-myself.component";
@@ -86,8 +90,34 @@ export const routes: Routes = [
    },
    {
       path: "delete-content",
-      component: DeleteContentComponent,
-      data: { hideHeader: true, hideFooter: false },
+      children: [
+         {
+            path: "",
+            component: DeleteContentComponent,
+            pathMatch: "full",
+            data: { hideFooter: false, hideHeader: true },
+         },
+         {
+            path: "reported-content",
+            component: ReportedContentComponent,
+            data: { hideFooter: false, hideHeader: true },
+         },
+         {
+            path: "unreported-content",
+            component: UnreportedContentComponent,
+            data: { hideFooter: false, hideHeader: true },
+         },
+         {
+            path: "reported-violent-content",
+            component: ReportedViolentContentComponent,
+            data: { hideFooter: false, hideHeader: true },
+         },
+         {
+            path: "unreported-violent-content",
+            component: UnreportedViolentContentComponent,
+            data: { hideFooter: false, hideHeader: true },
+         }
+      ]
    },
    {
       path: "hacking",

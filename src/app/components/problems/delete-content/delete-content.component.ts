@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { ButtonBackComponent } from '../../design-system/button-back/button-back.component';
-import { StepperComponent } from '../../design-system/stepper/stepper.component';
-import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { TranslatePipe } from '@ngx-translate/core';
-import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
+import { Router } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
+import { ButtonBackComponent } from '../../design-system/button-back/button-back.component';
+import { StepperComponent } from '../../design-system/stepper/stepper.component';
 
 
 type Question = {
@@ -124,6 +124,6 @@ export class DeleteContentComponent {
             .filter(value => !!value) as string[],
       };
 
-      this.router.navigate(['tools', 'visibility-check', 'results'], { state: { results } });
+      this.router.navigate(['delete-content', 'reported-content'], { state: { results } });
    }
 }
