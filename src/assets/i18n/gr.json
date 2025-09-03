@@ -203,6 +203,7 @@
          "ASSESSMENT_TEXT": "Ο κωδικός σου έχει:",
          "INPUT_LABEL": "Κωδικός",
          "COPY_PASSWORD": "Αντιγραφή κωδικού",
+         "COPIED": "Αντιγράφηκε!",
          "BADGES": {
             "IMMEDIATE": "ΕΙΝΑΙ ΆΜΕΣΟ ⚠️",
             "RAPID": "ΕΙΝΑΙ ΓΡΗΓΟΡΟ 😬",

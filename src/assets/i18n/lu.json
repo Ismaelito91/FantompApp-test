@@ -221,6 +221,7 @@
          "ASSESSMENT_TEXT": "Ärt Passwuert huet:",
          "INPUT_LABEL": "Passwuert",
          "COPY_PASSWORD": "Passwuert kopéieren",
+         "COPIED": "Kopéiert!",
          "BADGES": {
             "IMMEDIATE": "ET ASS DIREKT ⚠️",
             "RAPID": "ET ASS GAU 😬",

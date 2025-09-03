@@ -203,6 +203,7 @@
          "ASSESSMENT_TEXT": "Din adgangskode har:",
          "INPUT_LABEL": "Adgangskode",
          "COPY_PASSWORD": "Kopier adgangskode",
+         "COPIED": "Kopieret!",
          "BADGES": {
             "IMMEDIATE": "DET ER ØJEBLIKKELIGT ⚠️",
             "RAPID": "DET ER HURTIGT 😬",

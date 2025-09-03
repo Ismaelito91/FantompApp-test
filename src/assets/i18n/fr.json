@@ -305,6 +305,7 @@
          "ASSESSMENT_TEXT": "Ton mot de passe a :",
          "INPUT_LABEL": "Mot de passe",
          "COPY_PASSWORD": "Copier le mot de passe",
+         "COPIED": "Copié !",
          "BADGES": {
             "IMMEDIATE": "C'EST IMMÉDIAT ⚠️",
             "RAPID": "C'EST RAPIDE 😬",

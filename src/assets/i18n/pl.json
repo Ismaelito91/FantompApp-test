@@ -203,6 +203,7 @@
          "ASSESSMENT_TEXT": "Twoje hasło ma:",
          "INPUT_LABEL": "Hasło",
          "COPY_PASSWORD": "Kopiuj hasło",
+         "COPIED": "Skopiowane!",
          "BADGES": {
             "IMMEDIATE": "TO NATYCHMIASTOWE ⚠️",
             "RAPID": "TO SZYBKIE 😬",
