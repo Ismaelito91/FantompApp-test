@@ -203,6 +203,7 @@
          "ASSESSMENT_TEXT": "Tu contraseña tiene:",
          "INPUT_LABEL": "Contraseña",
          "COPY_PASSWORD": "Copiar contraseña",
+         "COPIED": "¡Copiado!",
          "BADGES": {
             "IMMEDIATE": "ES INMEDIATO ⚠️",
             "RAPID": "ES RÁPIDO 😬",

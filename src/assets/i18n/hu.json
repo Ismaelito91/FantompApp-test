@@ -203,6 +203,7 @@
          "ASSESSMENT_TEXT": "A jelszavad tartalmaz:",
          "INPUT_LABEL": "Jelszó",
          "COPY_PASSWORD": "Jelszó másolása",
+         "COPIED": "Másolva!",
          "BADGES": {
             "IMMEDIATE": "AZONNALI ⚠️",
             "RAPID": "GYORS 😬",
