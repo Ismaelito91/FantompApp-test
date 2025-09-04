@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonBackComponent } from '../../design-system/button-back/button-back.component';
 import { StepperComponent } from '../../design-system/stepper/stepper.component';
+import { ButtonComponent } from "../../design-system/button/button.component";
 
 
 type Question = {
@@ -21,7 +22,8 @@ type Section = {
 }
 type Answer = {
    title: string,
-   description?: string
+   description?: string,
+   value?: boolean
 }
 type Results = {
    pseudo: string[],
@@ -31,7 +33,7 @@ type Results = {
 @Component({
    selector: 'app-delete-content',
    imports: [TranslatePipe, ButtonBackComponent, MatRadioModule, MatButtonModule,
-      StepperComponent, MatIconModule, ReactiveFormsModule],
+      StepperComponent, MatIconModule, ReactiveFormsModule, ButtonComponent],
    templateUrl: './delete-content.component.html',
    styleUrl: './delete-content.component.scss'
 })
@@ -45,13 +47,15 @@ export class DeleteContentComponent {
          title: 'PROBLEMS.DELETE_CONTENT.PSEUDO.TITLE',
          sections: [
             {
-               name: 'pseudo_identity',
+               name: 'reported',
                answers: [
                   {
                      title: 'PROBLEMS.DELETE_CONTENT.PSEUDO.IDENTITY.ANSWERS.ANSWER_1_TITLE',
+                     value: true
                   },
                   {
                      title: 'PROBLEMS.DELETE_CONTENT.PSEUDO.IDENTITY.ANSWERS.ANSWER_2_TITLE',
+                     value: false
                   },
                ]
             },
@@ -62,13 +66,15 @@ export class DeleteContentComponent {
          title: 'PROBLEMS.DELETE_CONTENT.BIO.TITLE',
          sections: [
             {
-               name: 'bio_identity',
+               name: 'violent',
                answers: [
                   {
                      title: 'PROBLEMS.DELETE_CONTENT.BIO.IDENTITY.ANSWERS.ANSWER_1_TITLE',
+                     value: true
                   },
                   {
                      title: 'PROBLEMS.DELETE_CONTENT.BIO.IDENTITY.ANSWERS.ANSWER_2_TITLE',
+                     value: false
                   },
                ]
             },
@@ -76,32 +82,10 @@ export class DeleteContentComponent {
       }
    ]
    currentQuestion = this.questions[this.currentStep - 1]
-   pseudoKeys = ['pseudo_identity'];
-   bioKeys = ['bio_identity'];
    formGroup = new FormGroup({
-      pseudo_identity: new FormControl(''),
-      bio_identity: new FormControl(''),
+      reported: new FormControl(),
+      violent: new FormControl(),
    });
-
-   onRadioChange($event: MatRadioChange<string>) {
-      const name = $event.source.name;
-      const value = $event.value;
-
-      console.log(name, value);
-      // if (name === 'bio_empty' && value) {
-      //    this.formGroup.patchValue({
-      //       bio_identity: '',
-      //       bio_origin: '',
-      //       bio_digital_life: '',
-      //       bio_interest: '',
-      //       bio_education_pro: '',
-      //    });
-      // } else if (this.bioKeys.includes(name)) {
-      //    this.formGroup.patchValue({
-      //       bio_empty: ''
-      //    });
-      // }
-   }
 
    onClickNext() {
       this.currentStep++;
@@ -114,16 +98,17 @@ export class DeleteContentComponent {
    }
 
    onClickResults() {
-      const formValues = this.formGroup.value as Record<string, string | null>;
-      const results: Results = {
-         pseudo: this.pseudoKeys
-            .map(key => formValues[key])
-            .filter(value => !!value) as string[],
-         bio: this.bioKeys
-            .map(key => formValues[key])
-            .filter(value => !!value) as string[],
-      };
-
-      this.router.navigate(['delete-content', 'reported-content'], { state: { results } });
+      const reported = this.formGroup.value.reported;
+      const violent = this.formGroup.value.violent;
+      console.log(reported, violent);
+      if (reported === true && violent === true) {
+         this.router.navigate(['delete-content', 'reported-violent-content']);
+      } else if (reported === true && violent === false) {
+         this.router.navigate(['delete-content', 'reported-content']);
+      } else if (reported === false && violent === true) {
+         this.router.navigate(['delete-content', 'unreported-violent-content']);
+      } else if (reported === false && violent === false) {
+         this.router.navigate(['delete-content', 'unreported-content']);
+      }
    }
 }

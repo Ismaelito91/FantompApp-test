@@ -1,11 +1,11 @@
 <div class="flex flex-col card-container">
    <h5 class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h5>
-   <div class="card-description">
+   <div class="card-description" [ngClass]="{ 'bordered': bordered }" [style.background-color]="'var(' + bgColor() + ')'">
       @if ((data() | pageTranslation)?.description) {
          <div [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
-         <br />
       }
       <div class="card-children flex flex-col">
+         @if (sortedChildren.length > 0) { <br /> }
          @for (child of sortedChildren; track $index) {
             @switch (child.type) {
                @case (ComponentType.ENRICHED_LINK) {

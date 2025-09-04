@@ -1,4 +1,4 @@
-<div class="delete-content-container">
+<div class="reported-content-container">
    <div class="header flex flex-col relative">
       <app-button-back link="/tools" class="fixed top-[16px] z-1"></app-button-back>
       <div class="flex justify-end">
@@ -7,17 +7,46 @@
       <div class="details flex flex-col">
          <h3>{{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.TITLE" | translate }}</h3>
       </div>
-      <div class="flex flex-col gap-(--spacing-4)">
-         <app-card-5 [data]="t1"></app-card-5>
-         <app-divider></app-divider>
-
-         <div>
-            <h5>On te conseille d'adresser une plainte à la <a>CNIL</a> si : </h5>
+   </div>
+   <div class="flex flex-col gap-(--spacing-4)">
+      <app-card-5 [data]="card_1" [bordered]="true" bgColor="--background-12"></app-card-5>
+      <app-divider></app-divider>
+      <div class="flex flex-col gap-(--spacing-5)">
+         <h5 class="!pl-(--spacing-3) !pr-(--spacing-3)">On te conseille d'adresser une plainte à la
+            <span
+               matTooltip="Il s’agit de la Commission nationale de l'informatique et des libertés. C’est l’autorité en France qui t’aide à protéger ta vie privée sur Internet."
+               #tooltip="matTooltip" style="display: inline-flex; color: var(--color-24); cursor: pointer;">
+               <span style="text-decoration: underline;" (click)="tooltip.toggle()">CNIL</span><mat-icon
+                  svgIcon="icon-definition24x24" (click)="openDialog()"></mat-icon></span> si :
+         </h5>
+         <div class="flex flex-col bg-(--background-7) rounded-(--border-radius-2) pt-(--spacing-2) pb-(--spacing-2)">
+            <div class="flex justify-center items-center gap-[10px] p-(--spacing-2) pr-[3px]">
+               <div>
+                  <img src="assets/images/calendar-picto.svg" alt="calendar" class="!max-w-[43px] !min-w-[43px]" />
+               </div>
+               <div class="p-[10px]">Tu as contacté le réseau social et qu’il ne t’a pas répondu <strong>depuis au
+                     moins 1 mois</strong></div>
+            </div>
+            <div class="flex justify-center">
+               <span
+                  class="bg-(--color-24) pt-[4px] pb-[4px] pl-(--spacing-1) pr-(--spacing-1) rounded-(--border-radius-3) text-(--color-neutral-light-background-2)"
+                  style="font-weight: 700;">
+                  OU
+               </span>
+            </div>
+            <div class="flex justify-center items-center gap-[10px] p-(--spacing-2) pr-[3px]">
+               <div>
+                  <img src="assets/images/mail-picto.svg" alt="mail" class="!max-w-[43px] !min-w-[43px]" />
+               </div>
+               <div class="p-[10px]">Le réseau social t’a répondu mais la réponse est <strong>incomplète</strong> ou
+                  <strong>insatisfaisante</strong>.
+               </div>
+            </div>
          </div>
       </div>
    </div>
-   <div class="controls fixed bottom-0 w-full flex">
+   <div class="controls fixed bottom-0 left-0 w-full flex">
       <app-button [label]="'Adresser une plainte'" variant="primary" [iconAfterLabel]="{name: 'arrow24x24-icon' }"
-         class="w-full"></app-button>
+         class="w-full" (click)="goTo('delete-content/reported-content/complaint')"></app-button>
    </div>
 </div>

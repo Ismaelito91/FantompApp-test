@@ -164,7 +164,11 @@
          },
          "RESULTS": {
             "REPORTED_CONTENT": {
-               "TITLE": "Tu as signalé le contenu ?"
+               "TITLE": "Tu as signalé le contenu ?",
+               "COMPLAINT": {
+                  "TITLE": "Prépare des preuves",
+                  "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte."
+               }
             }
          }
       }

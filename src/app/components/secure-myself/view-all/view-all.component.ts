@@ -66,7 +66,7 @@ export class ViewAllComponent {
    }
 
    openDialog() {
-      const dialogRef = this.dialog.open(DialogElementsExampleDialog, {
+      const dialogRef = this.dialog.open(TutorialDialog, {
          backdropClass: 'blurred-backdrop'
       });
 
@@ -77,9 +77,9 @@ export class ViewAllComponent {
 }
 
 @Component({
-   selector: 'dialog-elements-example-dialog',
-   templateUrl: 'dialog-tutorial.component.html',
+   selector: 'tutorial-dialog',
+   templateUrl: 'tutorial-dialog.component.html',
    imports: [MatDialogContent, MatDialogClose, MatButtonModule, ButtonComponent],
    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DialogElementsExampleDialog { }
+export class TutorialDialog { }

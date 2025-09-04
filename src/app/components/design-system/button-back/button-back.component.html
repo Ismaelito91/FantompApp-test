@@ -1,3 +1,6 @@
-<button mat-fab class="!size-[48px]" style="border: var(--border) var(--color-13);" (click)="onClick()">
-   <mat-icon svgIcon="chevron24x24-icon" class="!size-[24px] rotate-180" style="color: var(--color-14);"></mat-icon>
+<button mat-fab [class]="{
+   'btn-lg': size() === 'lg',
+   'btn-md': size() === 'md',
+   'btn-sm': size() === 'sm'}" style="border: var(--border) var(--color-13);" (click)="onClick()">
+   <mat-icon svgIcon="chevron24x24-icon" class="rotate-180" style="color: var(--color-14);"></mat-icon>
 </button>

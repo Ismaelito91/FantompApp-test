@@ -9,12 +9,10 @@ import { Device } from '../../../../../model/enum/device.enum';
 import PageComponentModel from '../../../../../model/page-component.model';
 import { ButtonBackComponent } from '../../../../design-system/button-back/button-back.component';
 import { ButtonComponent } from "../../../../design-system/button/button.component";
-import { Card5Component } from "../../../../design-system/card-5/card-5.component";
-import { DividerComponent } from "../../../../design-system/divider/divider.component";
 
 @Component({
    selector: 'app-complaint',
-   imports: [ButtonBackComponent, TranslatePipe, Card5Component, DividerComponent, ButtonComponent, MatIconModule, MatTooltipModule],
+   imports: [ButtonBackComponent, TranslatePipe, ButtonComponent, MatIconModule, MatTooltipModule],
    templateUrl: './complaint.component.html',
    styleUrl: './complaint.component.scss'
 })

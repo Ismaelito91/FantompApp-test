@@ -20,6 +20,7 @@ import { PasswordCheckComponent } from "./components/tools/password-check/passwo
 import { ToolsComponent } from "./components/tools/tools.component";
 import { VisibilityCheckComponent } from "./components/tools/visibility-check/visibility-check.component";
 import { VisibilityResultsComponent } from "./components/tools/visibility-check/visibility-results/visibility-results.component";
+import { ComplaintComponent } from "./components/problems/delete-content/reported-content/complaint/complaint.component";
 
 export const routes: Routes = [
    {
@@ -99,23 +100,33 @@ export const routes: Routes = [
          },
          {
             path: "reported-content",
-            component: ReportedContentComponent,
-            data: { hideFooter: false, hideHeader: true },
+            children: [
+               {
+                  path: "",
+                  component: ReportedContentComponent,
+                  data: { hideFooter: true, hideHeader: true },
+               },
+               {
+                  path: "complaint",
+                  component: ComplaintComponent,
+                  data: { hideFooter: true, hideHeader: true },
+               }
+            ]
          },
          {
             path: "unreported-content",
             component: UnreportedContentComponent,
-            data: { hideFooter: false, hideHeader: true },
+            data: { hideFooter: true, hideHeader: true },
          },
          {
             path: "reported-violent-content",
             component: ReportedViolentContentComponent,
-            data: { hideFooter: false, hideHeader: true },
+            data: { hideFooter: true, hideHeader: true },
          },
          {
             path: "unreported-violent-content",
             component: UnreportedViolentContentComponent,
-            data: { hideFooter: false, hideHeader: true },
+            data: { hideFooter: true, hideHeader: true },
          }
       ]
    },

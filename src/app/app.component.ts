@@ -191,6 +191,14 @@ export class AppComponent implements OnInit {
             path: "assets/images/icon-download24x24.svg",
          },
          {
+            name: "icon-definition24x24",
+            path: "assets/images/icon-definition24x24.svg",
+         },
+         {
+            name: "icon-external-link24x24",
+            path: "assets/images/icon-external-link24x24.svg",
+         },
+         {
             name: "checkbox-selected16x16-icon",
             path: "assets/images/checkbox-selected16x16-icon.svg",
          },

@@ -2,6 +2,7 @@ import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { ButtonSize } from '../../../model/type/button-size.type';
 
 @Component({
    selector: 'app-button-close',
@@ -11,4 +12,5 @@ import { RouterLink } from '@angular/router';
 })
 export class ButtonCloseComponent {
    link = input.required<string>();
+   size = input<ButtonSize>('lg');
 }

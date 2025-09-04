@@ -80,23 +80,5 @@
       padding: 54px var(--spacing-5);
       background: var(--background-19);
       gap: var(--spacing-3);
-
-      .prev-btn,
-      .next-btn,
-      .submit-btn {
-         padding: 10px var(--spacing-4);
-      }
-
-      .next-btn,
-      .submit-btn {
-         --mdc-filled-button-container-color: var(--color-20);
-         --mdc-filled-button-label-text-color: var(--color-18);
-      }
-
-      .prev-btn {
-         --mdc-filled-button-container-color: var(--background-10);
-         --mdc-filled-button-label-text-color: var(--color-14);
-         border: var(--border) var(--background-3);
-      }
    }
 }

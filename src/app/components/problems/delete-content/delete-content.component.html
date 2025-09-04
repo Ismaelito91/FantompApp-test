@@ -19,10 +19,9 @@
                @if (section.title) {
                <div class="font-[600] text-(--color-8)">{{ section.title | translate }}</div>
                }
-               <mat-radio-group [formControlName]="section.name" [name]="section.name" class="answers flex flex-col"
-                  (change)="onRadioChange($event)">
+               <mat-radio-group [formControlName]="section.name" [name]="section.name" class="answers flex flex-col">
                   @for (answer of section.answers; track $index) {
-                  <mat-radio-button [disableRipple]="true" [value]="answer.title"
+                  <mat-radio-button [disableRipple]="true" [value]="answer.value"
                      class="answer flex items-center cursor-pointer">
                      <span class="radio-title" [innerHTML]="answer.title | translate"></span>
                      @if (answer.description) {
@@ -38,27 +37,16 @@
    </form>
    <div class="controls fixed bottom-0 w-full flex">
       @if(currentStep > 1) {
-      <button mat-flat-button class="prev-btn w-full" (click)="onClickPrevious()">
-         <div class="flex items-center gap-(--spacing-1)">
-            <mat-icon svgIcon="arrow24x24-icon" class="rotate-[180deg]"></mat-icon>
-            <span>{{ "COMMON.PREVIOUS" | translate }}</span>
-         </div>
-      </button>
+      <app-button [label]="'COMMON.PREVIOUS' | translate" variant="secondary"
+         [iconBeforeLabel]="{ name: 'arrow24x24-icon', rotate: 180 }" (click)="onClickPrevious()"
+         class="w-full"></app-button>
       }
-      @if(currentStep < totalSteps) { <button mat-flat-button class="next-btn w-full" (click)="onClickNext()">
-         <div class="flex items-center gap-(--spacing-1)">
-            <span>{{ "COMMON.NEXT" | translate }}</span>
-            <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
-         </div>
-         </button>
+      @if(currentStep < totalSteps) { <app-button [label]="'COMMON.NEXT' | translate" variant="primary"
+         [iconAfterLabel]="{ name: 'arrow24x24-icon' }" (click)="onClickNext()" class="w-full"></app-button>
          }
          @if (currentStep === totalSteps) {
-         <button mat-flat-button class="submit-btn w-full" (click)="onClickResults()">
-            <div class="flex items-center gap-(--spacing-1)">
-               <span>{{ "COMMON.NEXT" | translate }}</span>
-               <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
-            </div>
-         </button>
+         <app-button [label]="'COMMON.NEXT' | translate" variant="primary"
+            [iconAfterLabel]="{ name: 'arrow24x24-icon' }" (click)="onClickResults()" class="w-full"></app-button>
          }
    </div>
 </div>

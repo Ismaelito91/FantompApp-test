@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { ButtonSize } from '../../../model/type/button-size.type';
 
 @Component({
    selector: 'app-button-back',
@@ -9,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
    styleUrl: './button-back.component.scss'
 })
 export class ButtonBackComponent {
+   size = input<ButtonSize>('lg');
 
    onClick() {
       history.back();
