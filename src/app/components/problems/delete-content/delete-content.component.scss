@@ -5,7 +5,7 @@
    min-height: 100vh;
 
    .header {
-      padding: var(--spacing-3) var(--spacing-3) 36px var(--spacing-5);
+      padding: var(--spacing-3) var(--spacing-5) var(--spacing-4) var(--spacing-5);
       gap: 30px;
 
       .details {
@@ -75,9 +75,6 @@
    }
 
    .controls {
-      --mdc-filled-button-label-text-size: 18px;
-      --mdc-filled-button-container-height: auto;
-
       padding: 90px var(--spacing-5);
       background: var(--background-19);
       gap: var(--spacing-3);

@@ -1,25 +1,26 @@
 <div class="flex flex-col card-container">
    <h5 class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h5>
-   <div class="card-description" [ngClass]="{ 'bordered': bordered }" [style.background-color]="'var(' + bgColor() + ')'">
+   <div class="card-description" [ngClass]="{ 'bordered': bordered() }" [style.background-color]="'var(' + bgColor() + ')'">
       @if ((data() | pageTranslation)?.description) {
          <div [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
       }
-      <div class="card-children flex flex-col">
-         @if (sortedChildren.length > 0) { <br /> }
-         @for (child of sortedChildren; track $index) {
-            @switch (child.type) {
-               @case (ComponentType.ENRICHED_LINK) {
-                  <app-enriched-link [data]="child"></app-enriched-link>
-               }
-               @case (ComponentType.TILE_CALL) {
-                  <app-tile-call [data]="child"></app-tile-call>
-               }
-               @case (ComponentType.TILE_MESSAGE) {
-                  <app-tile-message [data]="child"></app-tile-message>
+      @if (sortedChildren.length > 0) {
+         <div class="card-children flex flex-col">
+            @for (child of sortedChildren; track $index) {
+               @switch (child.type) {
+                  @case (ComponentType.ENRICHED_LINK) {
+                     <app-enriched-link [data]="child"></app-enriched-link>
+                  }
+                  @case (ComponentType.TILE_CALL) {
+                     <app-tile-call [data]="child"></app-tile-call>
+                  }
+                  @case (ComponentType.TILE_MESSAGE) {
+                     <app-tile-message [data]="child"></app-tile-message>
+                  }
                }
             }
-         }
-      </div>
+         </div>
+      }
    </div>
 </div>
 

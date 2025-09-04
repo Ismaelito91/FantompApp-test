@@ -11,6 +11,7 @@
    border-top: var(--border) var(--color-5);
    box-sizing: border-box;
    background-color: var(--background-6);
+   max-width: var(--viewport-max-view);
 
    .nav-button {
       display: flex;
@@ -93,6 +94,7 @@
       }
 
       &.active-link {
+
          .icon-active,
          span {
             color: var(--color-8);

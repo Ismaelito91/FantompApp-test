@@ -4,11 +4,11 @@
    flex-direction: column;
    min-height: 100vh;
    padding: var(--spacing-3) var(--spacing-3) 100px var(--spacing-3);
+   gap: var(--spacing-5);
 
    .header {
       gap: 24px;
-      padding: var(--spacing-3);
-      padding-top: 0;
+      padding: 0 var(--spacing-3);
 
       .details {
          gap: var(--spacing-1);
@@ -16,9 +16,6 @@
    }
 
    .controls {
-      --mdc-filled-button-label-text-size: 18px;
-      --mdc-filled-button-container-height: auto;
-
       padding: 50px var(--spacing-5);
       background: var(--background-19);
       gap: var(--spacing-3);

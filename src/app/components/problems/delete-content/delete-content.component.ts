@@ -2,12 +2,12 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonBackComponent } from '../../design-system/button-back/button-back.component';
-import { StepperComponent } from '../../design-system/stepper/stepper.component';
 import { ButtonComponent } from "../../design-system/button/button.component";
+import { StepperComponent } from '../../design-system/stepper/stepper.component';
 
 
 type Question = {

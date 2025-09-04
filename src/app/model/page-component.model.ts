@@ -11,5 +11,6 @@ export default interface PageComponentModel {
    nextId?: number;
    parentId?: number;
    childrenIdList?: number[];
+   children?: PageComponentModel[];
    translations: PageComponentTranslationModel[];
 }

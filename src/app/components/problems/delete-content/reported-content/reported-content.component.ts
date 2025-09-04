@@ -25,7 +25,7 @@ export class ReportedContentComponent {
    private readonly router = inject(Router);
    readonly dialog = inject(MatDialog);
 
-   card_1: PageComponentModel = {
+   card_5: PageComponentModel = {
       id: 0,
       type: ComponentType.CARD_5,
       status: ComponentStatus.PUBLISHED,

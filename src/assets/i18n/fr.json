@@ -169,6 +169,10 @@
                   "TITLE": "Prépare des preuves",
                   "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte."
                }
+            },
+            "REPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ?",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni. "
             }
          }
       }
