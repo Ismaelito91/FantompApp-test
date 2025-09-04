@@ -1,0 +1,20 @@
+<svg width="289" height="235" viewBox="0 0 289 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_5709_9070" fill="white">
+<path d="M31 40C31 17.9086 48.9086 0 71 0H216C238.091 0 256 17.9086 256 40V235H31V40Z"/>
+</mask>
+<path d="M31 40C31 17.9086 48.9086 0 71 0H216C238.091 0 256 17.9086 256 40V235H31V40Z" fill="#F3F1FF"/>
+<path d="M23 40C23 13.4903 44.4903 -8 71 -8H216C242.51 -8 264 13.4903 264 40H248C248 22.3269 233.673 8 216 8H71C53.3269 8 39 22.3269 39 40H23ZM256 235H31H256ZM23 235V40C23 13.4903 44.4903 -8 71 -8V8C53.3269 8 39 22.3269 39 40V235H23ZM216 -8C242.51 -8 264 13.4903 264 40V235H248V40C248 22.3269 233.673 8 216 8V-8Z" fill="#420CC0" mask="url(#path-1-inside-1_5709_9070)"/>
+<rect x="26" y="89" width="9" height="44" rx="4.5" fill="#420CC0"/>
+<rect x="26" y="57" width="9" height="20" rx="4.5" fill="#420CC0"/>
+<rect x="250" y="89" width="9" height="44" rx="4.5" fill="#420CC0"/>
+<rect x="26" y="136" width="9" height="44" rx="4.5" fill="#420CC0"/>
+<rect x="63" y="67" width="161" height="101" rx="10" fill="#D5D1FF"/>
+<rect x="52" y="180" width="159" height="15" rx="7.5" fill="#D5D1FF"/>
+<rect x="52" y="202" width="83" height="15" rx="7.5" fill="#D5D1FF"/>
+<g style="mix-blend-mode:plus-darker" opacity="0.6">
+<circle cx="30" cy="111" r="30" fill="#937CFF"/>
+</g>
+<g style="mix-blend-mode:plus-darker" opacity="0.6">
+<circle cx="259" cy="111" r="30" fill="#937CFF"/>
+</g>
+</svg>
