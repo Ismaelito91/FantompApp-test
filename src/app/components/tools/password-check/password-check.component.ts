@@ -43,6 +43,7 @@ export interface PasswordCrackingData {
    };
 }
 export class PasswordSecurityCalculator {
+   // source : https://www.francenum.gouv.fr/magazine-du-numerique/combien-de-temps-un-pirate-met-il-pour-trouver-votre-mot-de-passe-comment 
    public readonly crackingTimeData: PasswordCrackingData[] = [
       {
          characters: 4,
@@ -244,6 +245,7 @@ export class PasswordSecurityCalculator {
             MILLION_YEARS: "millions d'années",
             BILLION_YEARS: "milliards d'années",
             TRILLION_YEARS: "billions d'années",
+            QUADRILLION_YEARS: "trillions d'années",
          };
          const defaultUnit = defaultUnits[unit] || unit.toLowerCase();
          return value ? `${value} ${defaultUnit}` : defaultUnit;
@@ -271,8 +273,7 @@ export class PasswordSecurityCalculator {
          | "lowercaseOnly"
          | "mixedCase"
          | "numbersAndLetters"
-         | "allCharacters",
-      strengthLevel: string
+         | "allCharacters"
    ): {
       length: number;
       type:
@@ -284,7 +285,6 @@ export class PasswordSecurityCalculator {
       crackingTime: string;
       timeValue: string;
       timeUnit: string;
-      strengthLevel: string;
       color: string;
    } {
       const data = this.getCrackingDataByLength(length);
@@ -296,7 +296,6 @@ export class PasswordSecurityCalculator {
             crackingTime: "Données non disponibles",
             timeValue: "",
             timeUnit: "INSTANT",
-            strengthLevel,
             color: "purple",
          };
       }
@@ -311,7 +310,6 @@ export class PasswordSecurityCalculator {
             : crackingInfo.unit,
          timeValue: crackingInfo.value,
          timeUnit: crackingInfo.unit,
-         strengthLevel,
          color: crackingInfo.color,
       };
    }
@@ -326,7 +324,6 @@ export class PasswordSecurityCalculator {
       crackingTime: string;
       timeValue: string;
       timeUnit: string;
-      strengthLevel: string;
       color: string;
    } {
       const length = password.length;
@@ -341,40 +338,55 @@ export class PasswordSecurityCalculator {
          | "mixedCase"
          | "numbersAndLetters"
          | "allCharacters";
-      let strengthLevel: string;
+
+      // 0. type par défaut
+      type = "lowercaseOnly";
 
       // 1. Chiffres uniquement
       if (hasNumbers && !hasLowercase && !hasUppercase && !hasSpecialChars) {
          type = "numbersOnly";
-         strengthLevel = "Très faible";
-         return this.getEvaluationResult(length, type, strengthLevel);
       }
 
       // 2. Minuscules uniquement
-      if (hasLowercase && !hasNumbers && !hasUppercase && !hasSpecialChars) {
+      // ou Majuscules uniquement 
+      // ou caractères spéciaux uniquement
+      if ((hasLowercase && !hasUppercase && !hasNumbers && !hasSpecialChars) 
+            || (!hasLowercase && hasUppercase && !hasNumbers && hasSpecialChars) 
+            || (!hasLowercase && !hasUppercase && !hasNumbers && hasSpecialChars) ) {
          type = "lowercaseOnly";
-         strengthLevel = "Faible";
-         return this.getEvaluationResult(length, type, strengthLevel);
       }
 
-      // 3. Majuscules et/ou minuscules (sans chiffres ni caractères spéciaux)
-      if ((hasLowercase || hasUppercase) && !hasNumbers && !hasSpecialChars) {
+      // 3. Majuscules et minuscules (sans chiffres ni caractères spéciaux)
+      // ou Majuscules et caractères spéciaux uniquement
+      // ou Majuscules et chiffres uniquement
+      // ou Minuscules et caractères spéciaux uniquement
+      // ou Minuscules et chiffres uniquement
+      // ou chiffres et caractères spéciaux uniquement
+      if ((hasLowercase && hasUppercase && !hasNumbers && !hasSpecialChars) 
+            || (!hasLowercase && hasUppercase && !hasNumbers && hasSpecialChars) 
+            || (!hasLowercase && hasUppercase && hasNumbers && !hasSpecialChars) 
+            || (hasLowercase && !hasUppercase && !hasNumbers && hasSpecialChars) 
+            || (hasLowercase && !hasUppercase && hasNumbers && !hasSpecialChars) 
+            || (!hasLowercase && !hasUppercase && hasNumbers && hasSpecialChars) ) {
          type = "mixedCase";
-         strengthLevel = "Moyen";
-         return this.getEvaluationResult(length, type, strengthLevel);
       }
 
-      // 4. Chiffres + lettres (sans caractères spéciaux)
-      if (hasNumbers && (hasLowercase || hasUppercase) && !hasSpecialChars) {
+      // 4. Chiffres + Majuscules et minuscules (sans caractères spéciaux)
+      // ou Chiffres + Majuscules et caractères spéciaux uniquement
+      // ou Chiffres + minuscules et caractères spéciaux uniquement
+      // ou minuscules et minuscules et caractères spéciaux uniquement
+      if ((hasNumbers && hasLowercase && hasUppercase && !hasSpecialChars)
+         || (hasNumbers && !hasLowercase && hasUppercase && hasSpecialChars)
+         || (hasNumbers && hasLowercase && !hasUppercase && hasSpecialChars)
+         || (!hasNumbers && hasLowercase && hasUppercase && hasSpecialChars)) {
          type = "numbersAndLetters";
-         strengthLevel = "Bon";
-         return this.getEvaluationResult(length, type, strengthLevel);
       }
 
       // 5. Tous types de caractères (par défaut)
-      type = "allCharacters";
-      strengthLevel = "Excellent";
-      return this.getEvaluationResult(length, type, strengthLevel);
+      if (hasNumbers && hasLowercase && hasUppercase && hasSpecialChars) {
+         type = "allCharacters";
+      }
+      return this.getEvaluationResult(length, type);
    }
 
    /**
@@ -446,8 +458,6 @@ export class PasswordCheckComponent
    passwordInput!: ElementRef<HTMLInputElement>;
 
    password: string = "";
-   result: string = "";
-   category: string = "";
    message: string = "";
    showPassword: boolean = false;
    showInfoModal: boolean = false;
@@ -601,9 +611,7 @@ export class PasswordCheckComponent
       this.showPasswordResults = false;
       this.isRapidCracking = false;
       this.passwordResultLevel = "";
-      this.result = "";
       this.message = "";
-      this.category = "";
       this.displayedMessage = "";
       this.fullMessage = "";
       this.calculatedFontSize = 96;
@@ -723,7 +731,6 @@ export class PasswordCheckComponent
          const evaluation = passwordCalculator.evaluatePasswordStrength(
             this.password
          );
-         this.category = evaluation.strengthLevel;
 
          // Traduire le temps de craquage
          const translatedTime = passwordCalculator.translateTime(
@@ -733,7 +740,6 @@ export class PasswordCheckComponent
          );
 
          this.message = translatedTime;
-         this.result = `Niveau : ${this.category}`;
 
          // Démarrer l'effet typewriter pour le message
          setTimeout(() => {
@@ -781,9 +787,7 @@ export class PasswordCheckComponent
             this.isRapidCracking = baseLevel !== "super";
          }
       } else {
-         this.result = "";
          this.message = "";
-         this.category = "";
          this.isRapidCracking = false;
       }
    }

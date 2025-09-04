@@ -50,7 +50,6 @@ export class PwaService {
       })));
     updatesAvailable.subscribe((update) => {
       console.log('update available');
-      console.log(update);
       this.appUpdateAvailable$.next(true);
       this.promptUserUpdate();
     });
