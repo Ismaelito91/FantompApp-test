@@ -307,6 +307,8 @@
       color: var(--color-1);
       transition: background-color 0.3s ease, color 0.3s ease;
       min-height: 100vh;
+      max-width: 600px;
+      margin: auto;
    }
 
    // Styles globaux pour tous les titres (h1 à h6)
