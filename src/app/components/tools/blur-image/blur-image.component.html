@@ -1,98 +1,213 @@
-<input type="file" accept="image/*,android/allowCamera" (change)="handleImageUpload($event)" hidden #fileInput />
+<input
+   type="file"
+   accept="image/*,android/allowCamera"
+   (change)="handleImageUpload($event)"
+   hidden
+   #fileInput
+/>
 @if (showTutorial && (fileInput.files && fileInput.files.length > 0)) {
-<div @fadeInWithDelay (@fadeInWithDelay.done)="onFadeInDone()" class="absolute h-screen flex justify-center z-10"
-   style="background-color: #000000B3;">
+<div
+   @fadeInWithDelay
+   (@fadeInWithDelay.done)="onFadeInDone()"
+   class="absolute h-screen flex justify-center z-10"
+   style="background-color: #000000b3"
+>
    <div class="flex flex-col justify-center items-center p-[65px]">
       <div class="relative h-[220px]">
          <img src="assets/images/blur-effect.svg" alt="blur-effect" />
-         <div [@moveFromTo]="handAnimationState" class="w-[127px] h-[110px] absolute top-[13px] left-[27px]">
+         <div
+            [@moveFromTo]="handAnimationState"
+            class="w-[127px] h-[110px] absolute top-[13px] left-[27px]"
+         >
             <img src="assets/images/hand.svg" alt="hand" />
          </div>
       </div>
-      <h5 style="color: white; text-align: center; padding-bottom: 32px;">
-         {{ "TOOLS.BLUR_IMAGE.TUTORIAL.DESCRIPTION" | translate }}</h5>
-      <button mat-flat-button style="color: #10052E; background-color: white; font-family: Nunito; font-weight: 700;
-          font-style: Bold; font-size: 18px; line-height: 28px; letter-spacing: 0%; text-align: center; height: 48px;"
-         (click)="onCloseTutorial()">{{ "COMMON.UNDERSTOOD" | translate }}</button>
+      <h5 style="color: white; text-align: center; padding-bottom: 32px">
+         {{ "TOOLS.BLUR_IMAGE.TUTORIAL.DESCRIPTION" | translate }}
+      </h5>
+      <button
+         mat-flat-button
+         style="
+            color: #10052e;
+            background-color: white;
+            font-family: Nunito;
+            font-weight: 700;
+            font-style: Bold;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0%;
+            text-align: center;
+            height: 48px;
+         "
+         (click)="onCloseTutorial()"
+      >
+         {{ "COMMON.UNDERSTOOD" | translate }}
+      </button>
    </div>
 </div>
 }
 <div class="flex flex-col h-screen p-(--spacing-3) gap-(--spacing-3) relative">
    <app-button-back class="fixed top-[16px] left-[32px] z-2"></app-button-back>
 
-   <div class="flex flex-col items-center gap-(--spacing-2) h-full" [class]="{
+   <div
+      class="flex flex-col items-center gap-(--spacing-2) h-full"
+      [class]="{
          'hidden': !(fileInput.files && fileInput.files.length > 0),
-      }">
+      }"
+   >
       <div class="relative">
-         <canvas #canvas class="w-full object-contain rounded-(--border-radius-1) z-1" [class]="{
+         <canvas
+            #canvas
+            class="w-full object-contain rounded-(--border-radius-1) z-1"
+            [class]="{
                'mt-[60px]': fileInput.files && fileInput.files.length > 0,
-            }" (mousedown)="startPainting($event)" (mousemove)="paint($event)" (mouseup)="stopPainting()"
-            (mouseleave)="stopPainting()" (touchstart)="startPainting($event.touches[0])"
-            (touchmove)="paint($event.touches[0])" (touchend)="stopPainting()">
+            }"
+            (mousedown)="startPainting($event)"
+            (mousemove)="paint($event)"
+            (mouseup)="stopPainting()"
+            (mouseleave)="stopPainting()"
+            (touchstart)="startPainting($event.touches[0])"
+            (touchmove)="paint($event.touches[0])"
+            (touchend)="stopPainting()"
+         >
          </canvas>
-         @if (showControls) {
-         @if (showBrushSizer) {
-         <div class="absolute bottom-[120px] left-5/9 -translate-x-1/2 flex flex-col">
+         @if (showControls) { @if (showBrushSizer) {
+         <div
+            class="absolute bottom-[120px] left-5/9 -translate-x-1/2 flex flex-col"
+         >
             <div class="flex">
-               <div class="bg-[#4841584D] rounded-[30px]"
-                  style="color: white; font-weight: 600; font-size: 12px; padding: 4px 10px; backdrop-filter: blur(20px);">
+               <div
+                  class="bg-[#4841584D] rounded-[30px]"
+                  style="
+                     color: white;
+                     font-weight: 600;
+                     font-size: 12px;
+                     padding: 4px 10px;
+                     backdrop-filter: blur(20px);
+                  "
+               >
                   {{ "TOOLS.BLUR_IMAGE.BRUSH_SIZE" | translate }}
                </div>
-               <div style="position: absolute; bottom: 65px;" [style.left]="brushSize() - 30 + 'px'">
-                  <svg [attr.width]="brushSize() - (brushSize() * 0.2)"
-                     [attr.height]="brushSize() - (brushSize() * 0.2)" viewBox="0 0 87 87" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
+               <div
+                  style="position: absolute; bottom: 65px"
+                  [style.left]="brushSize() - 30 + 'px'"
+               >
+                  <svg
+                     [attr.width]="brushSize() - brushSize() * 0.2"
+                     [attr.height]="brushSize() - brushSize() * 0.2"
+                     viewBox="0 0 87 87"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
                      <foreignObject x="-45" y="-45" width="177" height="177">
-                        <div xmlns="http://www.w3.org/1999/xhtml"
-                           style="backdrop-filter:blur(22.5px);clip-path:url(#bgblur_0_5426_17648_clip_path);height:100%;width:100%">
-                        </div>
+                        <div
+                           xmlns="http://www.w3.org/1999/xhtml"
+                           style="
+                              backdrop-filter: blur(22.5px);
+                              clip-path: url(#bgblur_0_5426_17648_clip_path);
+                              height: 100%;
+                              width: 100%;
+                           "
+                        ></div>
                      </foreignObject>
-                     <circle data-figma-bg-blur-radius="45" cx="43.5" cy="43.5" r="43" transform="rotate(90 43.5 43.5)"
-                        fill="white" fill-opacity="0.03" stroke="white" />
+                     <circle
+                        data-figma-bg-blur-radius="45"
+                        cx="43.5"
+                        cy="43.5"
+                        r="43"
+                        transform="rotate(90 43.5 43.5)"
+                        fill="white"
+                        fill-opacity="0.03"
+                        stroke="white"
+                     />
                      <defs>
-                        <clipPath id="bgblur_0_5426_17648_clip_path" transform="translate(45 45)">
-                           <circle cx="43.5" cy="43.5" r="43" transform="rotate(90 43.5 43.5)" />
+                        <clipPath
+                           id="bgblur_0_5426_17648_clip_path"
+                           transform="translate(45 45)"
+                        >
+                           <circle
+                              cx="43.5"
+                              cy="43.5"
+                              r="43"
+                              transform="rotate(90 43.5 43.5)"
+                           />
                         </clipPath>
                      </defs>
                   </svg>
                </div>
             </div>
             <div class="flex gap-[3px] relative">
-               <div class="pl-(--spacing-2) pr-(--spacing-2)"
-                  style="background-color: #484158; border-radius: 10px; backdrop-filter: blur(20px)">
+               <div
+                  class="pl-(--spacing-2) pr-(--spacing-2)"
+                  style="
+                     background-color: #484158;
+                     border-radius: 10px;
+                     backdrop-filter: blur(20px);
+                  "
+               >
                   <mat-slider min="40" max="100">
-                     <input matSliderThumb [value]="brushSize()" (change)="onChangeBrushSize($event)">
+                     <input
+                        matSliderThumb
+                        [value]="brushSize()"
+                        (change)="onChangeBrushSize($event)"
+                     />
                   </mat-slider>
                </div>
-               <div style="position: absolute; top: 23px;" [style.left]="action === 'pixelate' ? '100px' : '23px'">
+               <div
+                  style="position: absolute; top: 23px"
+                  [style.left]="action === 'pixelate' ? '100px' : '23px'"
+               >
                   <svg viewBox="-50 -50 100 100" width="24" height="24">
-                     <polygon points="0,50 43.3,-25 -43.3,-25" fill="#484158" stroke="#484158" stroke-width="6"
-                        stroke-linejoin="round" />
+                     <polygon
+                        points="0,50 43.3,-25 -43.3,-25"
+                        fill="#484158"
+                        stroke="#484158"
+                        stroke-width="6"
+                        stroke-linejoin="round"
+                     />
                   </svg>
                </div>
 
-               <div class="size-[36px] flex justify-center items-center bg-[#4841584D] rounded-full"
-                  style="backdrop-filter: blur(34px)" (click)="showBrushSizer = false;">
-                  <mat-icon svgIcon="close24x24-icon" class="!size-[24px]" style="color: white;"></mat-icon>
+               <div
+                  class="size-[36px] flex justify-center items-center bg-[#4841584D] rounded-full"
+                  style="backdrop-filter: blur(34px)"
+                  (click)="showBrushSizer = false"
+               >
+                  <mat-icon
+                     svgIcon="close24x24-icon"
+                     class="!size-[24px]"
+                     style="color: white"
+                  ></mat-icon>
                </div>
             </div>
          </div>
          }
          <div
-            class="actions absolute bottom-(--spacing-2) left-1/2 -translate-x-1/2 p-(--spacing-2) bg-[#10052E33] rounded-(--spacing-3) flex">
-            <div class="action flex flex-col justify-center items-center cursor-pointer" (click)="onClickAction('blur')"
+            class="actions absolute bottom-(--spacing-2) left-1/2 -translate-x-1/2 p-(--spacing-2) bg-[#10052E33] rounded-(--spacing-3) flex"
+         >
+            <div
+               class="action flex flex-col justify-center items-center cursor-pointer"
+               (click)="onClickAction('blur')"
                [class]="{
                   'active': action === 'blur',
-               }">
+               }"
+            >
                <img src="assets/images/flouter.svg" class="image" />
-               <div class="label">{{ "TOOLS.BLUR_IMAGE.BLUR" | translate }}</div>
+               <div class="label">
+                  {{ "TOOLS.BLUR_IMAGE.BLUR" | translate }}
+               </div>
             </div>
-            <div class="action flex flex-col justify-center items-center cursor-pointer"
-               (click)="onClickAction('pixelate')" [class]="{
+            <div
+               class="action flex flex-col justify-center items-center cursor-pointer"
+               (click)="onClickAction('pixelate')"
+               [class]="{
                   'active': action === 'pixelate',
-               }">
+               }"
+            >
                <img src="assets/images/pixelliser.svg" class="image" />
-               <div class="label">{{ "TOOLS.BLUR_IMAGE.PIXELATE" | translate }}</div>
+               <div class="label">
+                  {{ "TOOLS.BLUR_IMAGE.PIXELATE" | translate }}
+               </div>
             </div>
          </div>
          }
@@ -100,26 +215,58 @@
 
       <div class="w-full z-1 flex justify-between items-center">
          <div class="flex gap-(--spacing-1)">
-            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);" (click)="undo()"
-               [disabled]="historyStack.length === 0">
-               <mat-icon svgIcon="icon-redo24x24" class="!size-[24px] scale-x-[-1]"
-                  style="color: var(--color-14);"></mat-icon>
+            <button
+               mat-fab
+               class="!size-[40px]"
+               style="border: var(--border) var(--color-13)"
+               (click)="undo()"
+               [disabled]="historyStack.length === 0"
+            >
+               <mat-icon
+                  svgIcon="icon-redo24x24"
+                  class="!size-[24px] scale-x-[-1]"
+                  style="color: var(--color-14)"
+               ></mat-icon>
             </button>
-            <button mat-fab class="!size-[40px]" style="border: var(--border) var(--color-13);" (click)="redo()"
-               [disabled]="redoStack.length === 0">
-               <mat-icon svgIcon="icon-redo24x24" class="!size-[24px]" style="color: var(--color-14);"></mat-icon>
+            <button
+               mat-fab
+               class="!size-[40px]"
+               style="border: var(--border) var(--color-13)"
+               (click)="redo()"
+               [disabled]="redoStack.length === 0"
+            >
+               <mat-icon
+                  svgIcon="icon-redo24x24"
+                  class="!size-[24px]"
+                  style="color: var(--color-14)"
+               ></mat-icon>
             </button>
          </div>
          <div>
-            <app-button [label]="'TOOLS.BLUR_IMAGE.ALL_BLUR' | translate" variant="secondary" size="sm"
-               [iconAfterLabel]="{name: 'chevron16x16-icon', rotate: menuTrigger.menuOpen ? 270 : 90 }"
-               #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu"></app-button>
+            <app-button
+               [label]="'TOOLS.BLUR_IMAGE.ALL_BLUR' | translate"
+               variant="secondary"
+               size="sm"
+               [iconAfterLabel]="{
+                  name: 'chevron16x16-icon',
+                  rotate: menuTrigger.menuOpen ? 270 : 90
+               }"
+               #menuTrigger="matMenuTrigger"
+               [matMenuTriggerFor]="menu"
+            ></app-button>
             <mat-menu #menu="matMenu" yPosition="above">
                @for (percentage of blurPercentages(); track $index) {
-               <button mat-menu-item (click)="onClickBlurPercent($event, percentage)"
-                  [class]="{ 'active' : blurPercentage === percentage}">
+               <button
+                  mat-menu-item
+                  (click)="onClickBlurPercent($event, percentage)"
+                  [class]="{ active: blurPercentage === percentage }"
+               >
                   @if (blurPercentage === percentage) {
-                  <mat-icon svgIcon="icon-check24x24" class="!size-[24px]" style="color: var(--color-14);"></mat-icon>
+                  <mat-icon
+                     svgIcon="icon-check24x24"
+                     class="!size-[24px]"
+                     style="color: var(--color-14)"
+                  ></mat-icon>
                   }
                   <span>{{ percentage }} %</span>
                </button>
@@ -129,8 +276,12 @@
       </div>
 
       <div class="w-full pl-(--spacing-3) pr-(--spacing-3) z-1">
-         <app-button [label]="'COMMON.DOWNLOAD' | translate" variant="primary"
-            [iconAfterLabel]="{name: 'icon-download24x24' }" (click)="downloadImage()"></app-button>
+         <app-button
+            [label]="'COMMON.DOWNLOAD' | translate"
+            variant="primary"
+            [iconAfterLabel]="{ name: 'icon-download24x24' }"
+            (click)="downloadImage()"
+         ></app-button>
       </div>
    </div>
 
@@ -138,21 +289,37 @@
    <div class="flex flex-col h-full gap-(--spacing-5) z-1">
       <div class="ellipse-1"></div>
       <div class="ellipse-2"></div>
-      <div class="flex flex-col gap-(--spacing-3) pt-[66px] pl-(--spacing-3) pr-(--spacing-3) z-1">
-         <h3 class="!text-(--color-19)">{{ "TOOLS.BLUR_IMAGE.TITLE" | translate }}</h3>
-         <p class="text-(--color-4)">{{ "TOOLS.BLUR_IMAGE.DESCRIPTION" | translate }}</p>
+      <div
+         class="flex flex-col gap-(--spacing-3) pt-[66px] pl-(--spacing-3) pr-(--spacing-3) z-1"
+      >
+         <h3 class="!text-(--color-19)">
+            {{ "TOOLS.BLUR_IMAGE.TITLE" | translate }}
+         </h3>
+         <p class="text-(--color-4)">
+            {{ "TOOLS.BLUR_IMAGE.DESCRIPTION" | translate }}
+         </p>
       </div>
-      <div class="image-container flex justify-center items-center h-full rounded-(--border-radius-3) z-1">
-         <img src="assets/images/photo-illu.svg" alt="image-illu" class="h-[200px]" (click)="fileInput.click()" />
+      <div
+         class="image-container flex justify-center items-center h-full rounded-(--border-radius-3) z-1"
+      >
+         <img
+            src="assets/images/photo-illu.svg"
+            alt="image-illu"
+            class="h-[200px]"
+            (click)="fileInput.click()"
+         />
       </div>
       <div class="pl-(--spacing-3) pr-(--spacing-3) z-1">
-         <app-button [label]="'TOOLS.BLUR_IMAGE.UPLOAD_IMAGE' | translate" variant="primary"
-            (click)="fileInput.click()"></app-button>
+         <app-button
+            [label]="'TOOLS.BLUR_IMAGE.UPLOAD_IMAGE' | translate"
+            variant="primary"
+            (click)="fileInput.click()"
+         ></app-button>
       </div>
    </div>
-
-   <p [innerHTML]="'TOOLS.BLUR_IMAGE.ADVICE' | translate"
-      class="text-(length:--font-size-body-xs) text-(--color-14) font-(--font-weight-title) pt-(--spacing-2) pr-(--spacing-3) pb-(--spacing-2) pl-(--spacing-3) z-1">
-   </p>
+   <p
+      [innerHTML]="'TOOLS.BLUR_IMAGE.ADVICE' | translate"
+      class="text-(length:--font-size-body-xs) text-(--color-14) pt-(--spacing-2) pr-(--spacing-3) pb-(--spacing-2) pl-(--spacing-3) z-1"
+   ></p>
    }
 </div>
