@@ -1,4 +1,203 @@
 {
+   "APP": {
+      "TITLE": "Fantôme App",
+      "LOADING": "Loading...",
+      "ERROR": "Error loading application",
+      "INSTALL_APP": "Install app",
+      "NEW_VERSION_AVAILABLE": "New version available",
+      "UPDATE_APP": "Update app"
+   },
+   "COMMON": {
+      "SAVE": "Save",
+      "CANCEL": "Cancel",
+      "DELETE": "Delete",
+      "EDIT": "Edit",
+      "CLOSE": "Close",
+      "SEARCH": "Search",
+      "BACK": "Back",
+      "NEXT": "Next",
+      "PREVIOUS": "Previous",
+      "RESULTS": "Results",
+      "HOME": "Home",
+      "PROBLEM": "Problem",
+      "TOOLS": "Tools",
+      "SECURE": "Secure me",
+      "YES": "Yes",
+      "NO": "No",
+      "UNDERSTOOD": "Understood",
+      "DOWNLOAD": "Download"
+   },
+   "DESIGN_SYSTEM": {
+      "STEPPER": {
+         "DESCRIPTION": "Question {{ currentStep }} of {{ totalSteps }}"
+      }
+   },
+   "ONBOARDING": {
+      "CLOSE": "Close introduction",
+      "SKIP": "Skip",
+      "NEXT": "Next",
+      "PREVIOUS": "Previous",
+      "CONTINUE": "Continue",
+      "START_USING": "Start using",
+      "TAP_TO_CONTINUE": "Tap to continue",
+      "WELCOME_TO": "Welcome to",
+      "GHOST_MODE_EXPLANATION": "Here you navigate in ghost mode, nobody knows you're there. No information about you is recorded. You are free to explore how to protect your privacy.",
+      "PROGRESS": "Introduction progress",
+      "GO_TO_STEP": "Go to step",
+      "COMPLETED_STEP": "Completed step",
+      "CURRENT_STEP": "Current step",
+      "FUTURE_STEP": "Future step",
+      "STEP_INFO": "Step",
+      "OF": "of",
+      "BUBBLE": {
+         "WELCOME": "Hi! I'm here to accompany you in discovering the app!"
+      },
+      "WELCOME": {
+         "TITLE": "Welcome to Fantôme App!",
+         "DESCRIPTION": "Discover an application designed to protect your privacy and offer you an exceptional user experience. Let us present its main features."
+      },
+      "APPEARANCE": {
+         "TITLE": "Customize your experience",
+         "DESCRIPTION": "Adapt the application's appearance according to your preferences and environment.",
+         "FEATURE_1": "Choice between light, dark or automatic theme",
+         "FEATURE_2": "Adaptation according to your device settings",
+         "FEATURE_3": "Interface optimized for visual comfort"
+      },
+      "ICON_CHANGE": {
+         "TITLE": "Change the application icon",
+         "DESCRIPTION": "Customize the icon visible on your home screen for more discretion or aesthetics.",
+         "FEATURE_1": "Several icon designs available",
+         "FEATURE_2": "Instant and secure change",
+         "FEATURE_3": "Discretion option for your privacy"
+      },
+      "RESOURCES": {
+         "TITLE": "Access resources",
+         "DESCRIPTION": "Find all important information and useful tools at your fingertips.",
+         "FEATURE_1": "Complete application documentation",
+         "FEATURE_2": "Detailed user guides",
+         "FEATURE_3": "Online support and help"
+      },
+      "ACCESSIBILITY": {
+         "TITLE": "An application for everyone",
+         "DESCRIPTION": "Fantôme App is designed to be accessible to all users, regardless of their abilities.",
+         "FEATURE_1": "Interface compatible with screen readers",
+         "FEATURE_2": "Optimized keyboard navigation",
+         "FEATURE_3": "Compliance with RGAA accessibility standards"
+      },
+      "READY": {
+         "TITLE": "You are ready!",
+         "DESCRIPTION": "You now know the main features of Fantôme App. Fully enjoy your secure and personalized experience."
+      }
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Appearance",
+      "SUBTITLE": "Choose your preferred display theme.",
+      "THEME": {
+         "LABEL": "Theme",
+         "DEFAULT": "default",
+         "LIGHT": "light",
+         "DARK": "dark",
+         "SYSTEM_SETTINGS": "Use the same setting as the phone"
+      }
+   },
+   "APP_ICON_SELECTOR": {
+      "TITLE": "Application icon",
+      "SUBTITLE": "Customize your application's visible icon.",
+      "DEFAULT": "Default icon",
+      "DEFAULT_DESC": "The original application icon",
+      "GHOST": "Ghost icon",
+      "GHOST_DESC": "A mysterious and discreet version",
+      "DARK": "Dark icon",
+      "DARK_DESC": "Perfect for night users",
+      "COLORFUL": "Colorful icon",
+      "COLORFUL_DESC": "A vibrant and joyful version"
+   },
+   "LANGUAGES": {
+      "FR": "French",
+      "EN": "English",
+      "PT": "Portuguese",
+      "ES": "Spanish",
+      "CA": "Catalan",
+      "PL": "Polish",
+      "DA": "Danish",
+      "EL": "Greek",
+      "HU": "Hungarian"
+   },
+   "HOME": {
+      "GREETING": "Hello 👋 How can we help you?",
+      "WELCOME": "Welcome to the Fantôme application",
+      "APP_INFO_TITLE": "Application information",
+      "APPEARANCE": "Appearance",
+      "CHANGE_ICON": "Change icon",
+      "RESOURCES": "Resources",
+      "WHAT_IS_APP": "What is this app?",
+      "RIGHTS": "I have rights",
+      "ACCESSIBILITY": "FantomApp for everyone (Accessibility)",
+      "TUTORIAL": "Review welcome tutorial",
+      "CARDS": {
+         "MAIN_TITLE": "I protect my social networks",
+         "PASSWORD_CHECK": {
+            "TITLE": "I test my password",
+            "DESCRIPTION": "How long does a cybercriminal take to find it?"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "I anonymize<br />my photo",
+            "DESCRIPTION": "Blur my profile<br />photo"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "I have an online problem",
+            "DELETE_CONTENT": {
+               "TITLE": "I want to delete content"
+            },
+            "HARASSMENT": {
+               "TITLE": "I experience cyberbullying"
+            }
+         }
+      }
+   },
+   "VERSION": {
+      "FRONTEND": "Frontend Version",
+      "BACKEND": "Backend Version",
+      "FRONTEND_VALUE": "Frontend Version: {{version}}",
+      "BACKEND_VALUE": "Backend Version: {{version}}"
+   },
+   "PROBLEMS": {
+      "DELETE_CONTENT": {
+         "TITLE": "I want to delete content",
+         "DESCRIPTION": "A photo, video, comment where you appear is problematic? Deleting it takes time but we will help you go all the way 🗑",
+         "PSEUDO": {
+            "TITLE": "Have you reported the content to the social network?",
+            "IDENTITY": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Yes, <strong>I have already reported the content</strong>",
+                  "ANSWER_2_TITLE": "No, <strong>I have not yet reported the content</strong>"
+               }
+            }
+         },
+         "BIO": {
+            "TITLE": "Is it violent content or representing you nude?",
+            "IDENTITY": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Yes",
+                  "ANSWER_2_TITLE": "No"
+               }
+            }
+         },
+         "RESULTS": {
+            "REPORTED_CONTENT": {
+               "TITLE": "Have you reported the content?",
+               "COMPLAINT": {
+                  "TITLE": "Prepare evidence",
+                  "DESCRIPTION": "Keep photos of each step, they will be useful for filing a complaint."
+               }
+            },
+            "REPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Is it violent content or representing you nude?",
+               "DESCRIPTION": "The distribution of violent or sexual content without your consent is very serious and the person responsible can be punished."
+            }
+         }
+      }
+   },
    "TOOLS": {
       "PASSWORD_CHECK": {
          "TITLE": "I'm testing my password",

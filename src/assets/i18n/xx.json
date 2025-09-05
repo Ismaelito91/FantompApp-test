@@ -61,6 +61,7 @@
       "HU": "Hungarian"
    },
    "HOME": {
+      "GREETING": "Hello 👋 How can we help you?",
       "WELCOME": "Welcome to Ghost App",
       "APP_INFO_TITLE": "Application Information",
       "APPEARANCE": "Appearance",
@@ -69,7 +70,27 @@
       "WHAT_IS_APP": "What is this app?",
       "RIGHTS": "I have rights",
       "ACCESSIBILITY": "FantomApp for everyone (Accessibility)",
-      "TUTORIAL": "Review welcome tutorial"
+      "TUTORIAL": "Review welcome tutorial",
+      "CARDS": {
+         "MAIN_TITLE": "I protect my social networks",
+         "PASSWORD_CHECK": {
+            "TITLE": "I test my password",
+            "DESCRIPTION": "How long does a cybercriminal take to find it?"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "I anonymize<br />my photo",
+            "DESCRIPTION": "Blur my profile<br />photo"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "I have an online problem",
+            "DELETE_CONTENT": {
+               "TITLE": "I want to delete content"
+            },
+            "HARASSMENT": {
+               "TITLE": "I experience cyberbullying"
+            }
+         }
+      }
    },
    "VERSION": {
       "FRONTEND": "Frontend Version",

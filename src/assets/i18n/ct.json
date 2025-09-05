@@ -49,6 +49,7 @@
       "HU": "Hongarès"
    },
    "HOME": {
+      "GREETING": "Bonjour 👋 Comment peut-on t'aider ? CT",
       "WELCOME": "Benvingut a l'aplicació Fantôme",
       "APP_INFO_TITLE": "Informació de l'aplicació",
       "APPEARANCE": "Aparença",
@@ -57,7 +58,27 @@
       "WHAT_IS_APP": "Què és aquesta aplicació?",
       "RIGHTS": "Tinc drets",
       "ACCESSIBILITY": "FantomApp per a tothom (Accessibilitat)",
-      "TUTORIAL": "Revisar tutorial de benvinguda"
+      "TUTORIAL": "Revisar tutorial de benvinguda",
+      "CARDS": {
+         "MAIN_TITLE": "Je protège mes réseaux sociaux CT",
+         "PASSWORD_CHECK": {
+            "TITLE": "Je teste mon mot de passe CT",
+            "DESCRIPTION": "En combien de temps un cybercriminel le trouve ? CT"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "J'anonymise<br />ma photo CT",
+            "DESCRIPTION": "Flouter ma photo<br />de profil CT"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "J'ai un problème en ligne CT",
+            "DELETE_CONTENT": {
+               "TITLE": "Je veux faire effacer un contenu CT"
+            },
+            "HARASSMENT": {
+               "TITLE": "Je vis du cyberharcèlement CT"
+            }
+         }
+      }
    },
    "VERSION": {
       "FRONTEND": "Versió Frontend",

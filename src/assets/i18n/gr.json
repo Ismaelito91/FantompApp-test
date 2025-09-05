@@ -49,6 +49,7 @@
       "HU": "Ουγγρικά"
    },
    "HOME": {
+      "GREETING": "Bonjour 👋 Comment peut-on t'aider ? GR",
       "WELCOME": "Καλώς ήρθατε στην εφαρμογή Fantôme",
       "APP_INFO_TITLE": "Πληροφορίες εφαρμογής",
       "APPEARANCE": "Εμφάνιση",
@@ -57,7 +58,27 @@
       "WHAT_IS_APP": "Τι είναι αυτή η εφαρμογή;",
       "RIGHTS": "Έχω δικαιώματα",
       "ACCESSIBILITY": "FantomApp για όλους (Προσβασιμότητα)",
-      "TUTORIAL": "Επανεξέταση του tutorial καλωσορίσματος"
+      "TUTORIAL": "Επανεξέταση του tutorial καλωσορίσματος",
+      "CARDS": {
+         "MAIN_TITLE": "Je protège mes réseaux sociaux GR",
+         "PASSWORD_CHECK": {
+            "TITLE": "Je teste mon mot de passe GR",
+            "DESCRIPTION": "En combien de temps un cybercriminel le trouve ? GR"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "J'anonymise<br />ma photo GR",
+            "DESCRIPTION": "Flouter ma photo<br />de profil GR"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "J'ai un problème en ligne GR",
+            "DELETE_CONTENT": {
+               "TITLE": "Je veux faire effacer un contenu GR"
+            },
+            "HARASSMENT": {
+               "TITLE": "Je vis du cyberharcèlement GR"
+            }
+         }
+      }
    },
    "VERSION": {
       "FRONTEND": "Έκδοση Frontend",

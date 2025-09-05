@@ -49,6 +49,7 @@
       "HU": "Húngaro"
    },
    "HOME": {
+      "GREETING": "Olá 👋 Como podemos te ajudar?",
       "WELCOME": "Bem-vindo ao Aplicativo Fantasma",
       "APP_INFO_TITLE": "Informações da aplicação",
       "APPEARANCE": "Aparência",
@@ -57,7 +58,27 @@
       "WHAT_IS_APP": "O que é este aplicativo?",
       "RIGHTS": "Eu tenho direitos",
       "ACCESSIBILITY": "FantomApp para todos (Acessibilidade)",
-      "TUTORIAL": "Revisar tutorial de boas-vindas"
+      "TUTORIAL": "Revisar tutorial de boas-vindas",
+      "CARDS": {
+         "MAIN_TITLE": "Protejo as minhas redes sociais",
+         "PASSWORD_CHECK": {
+            "TITLE": "Testo a minha senha",
+            "DESCRIPTION": "Quanto tempo um cibercriminoso leva para a encontrar?"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "Anonimizo<br />a minha foto",
+            "DESCRIPTION": "Desfocar a minha foto<br />de perfil"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "Tenho um problema online",
+            "DELETE_CONTENT": {
+               "TITLE": "Quero apagar um conteúdo"
+            },
+            "HARASSMENT": {
+               "TITLE": "Vivo ciberbullying"
+            }
+         }
+      }
    },
    "VERSION": {
       "FRONTEND": "Versão Frontend",
