@@ -1,21 +1,26 @@
-import { Component } from '@angular/core';
-import { ButtonBackComponent } from "../../../design-system/button-back/button-back.component";
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
-import { DividerComponent } from "../../../design-system/divider/divider.component";
-import { Card4Component } from "../../../design-system/card-4/card-4.component";
-import PageComponentModel from '../../../../model/page-component.model';
-import { ComponentType } from '../../../../model/enum/component-type.enum';
 import { ComponentStatus } from '../../../../model/enum/component-status.enum';
+import { ComponentType } from '../../../../model/enum/component-type.enum';
 import { Device } from '../../../../model/enum/device.enum';
+import PageComponentModel from '../../../../model/page-component.model';
+import { ButtonBackComponent } from "../../../design-system/button-back/button-back.component";
+import { ButtonComponent } from "../../../design-system/button/button.component";
+import { Card4Component } from "../../../design-system/card-4/card-4.component";
 import { Card5Component } from "../../../design-system/card-5/card-5.component";
+import { DividerComponent } from "../../../design-system/divider/divider.component";
 
 @Component({
-   selector: 'app-reported-violent-content',
-   imports: [ButtonBackComponent, TranslatePipe, DividerComponent, Card4Component, Card5Component],
-   templateUrl: './reported-violent-content.component.html',
-   styleUrl: './reported-violent-content.component.scss'
+   selector: 'app-violent-content',
+   imports: [ButtonBackComponent, TranslatePipe, DividerComponent, Card4Component, Card5Component, ButtonComponent],
+   templateUrl: './violent-content.component.html',
+   styleUrl: './violent-content.component.scss'
 })
-export class ReportedViolentContentComponent {
+export class ViolentContentComponent {
+   private readonly router = inject(Router);
+   reported: boolean = false;
+
    card_4: PageComponentModel = {
       id: 0,
       type: ComponentType.CARD_4,
@@ -136,4 +141,14 @@ export class ReportedViolentContentComponent {
          }
       ]
    };
+
+   constructor() {
+      const state = history.state as { reported: boolean };
+      this.reported = state.reported;
+   }
+
+   goTo() {
+      const url = this.reported ? "/delete-content/reported-content" : "/delete-content/unreported-content";
+      this.router.navigate([url]);
+   }
 }

@@ -101,14 +101,14 @@ export class DeleteContentComponent {
       const reported = this.formGroup.value.reported;
       const violent = this.formGroup.value.violent;
       console.log(reported, violent);
-      if (reported === true && violent === true) {
-         this.router.navigate(['delete-content', 'reported-violent-content']);
-      } else if (reported === true && violent === false) {
-         this.router.navigate(['delete-content', 'reported-content']);
-      } else if (reported === false && violent === true) {
-         this.router.navigate(['delete-content', 'unreported-violent-content']);
-      } else if (reported === false && violent === false) {
-         this.router.navigate(['delete-content', 'unreported-content']);
+      if (violent) {
+         this.router.navigate(['delete-content', 'violent-content'], { state: { reported } });
+      } else {
+         if (reported) {
+            this.router.navigate(['delete-content', 'reported-content']);
+         } else {
+            this.router.navigate(['delete-content', 'unreported-content']);
+         }
       }
    }
 }

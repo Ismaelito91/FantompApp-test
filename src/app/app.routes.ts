@@ -6,9 +6,8 @@ import { OnboardingComponent } from "./components/home/onboarding/onboarding.com
 import { UserAppConfigComponent } from "./components/home/user-app-config/user-app-config.component";
 import { DeleteContentComponent } from "./components/problems/delete-content/delete-content.component";
 import { ReportedContentComponent } from "./components/problems/delete-content/reported-content/reported-content.component";
-import { ReportedViolentContentComponent } from "./components/problems/delete-content/reported-violent-content/reported-violent-content.component";
+import { ViolentContentComponent } from "./components/problems/delete-content/violent-content/violent-content.component";
 import { UnreportedContentComponent } from "./components/problems/delete-content/unreported-content/unreported-content.component";
-import { UnreportedViolentContentComponent } from "./components/problems/delete-content/unreported-violent-content/unreported-violent-content.component";
 import { HackingComponent } from "./components/problems/hacking/hacking.component";
 import { ProblemsComponent } from "./components/problems/problems.component";
 import { SecureMyselfComponent } from "./components/secure-myself/secure-myself.component";
@@ -80,7 +79,6 @@ export const routes: Routes = [
    {
       path: "problems",
       component: ProblemsComponent,
-      data: { hideHeader: true },
       children: [
          {
             path: ":id",
@@ -119,13 +117,8 @@ export const routes: Routes = [
             data: { hideFooter: true, hideHeader: true },
          },
          {
-            path: "reported-violent-content",
-            component: ReportedViolentContentComponent,
-            data: { hideFooter: true, hideHeader: true },
-         },
-         {
-            path: "unreported-violent-content",
-            component: UnreportedViolentContentComponent,
+            path: "violent-content",
+            component: ViolentContentComponent,
             data: { hideFooter: true, hideHeader: true },
          }
       ]
