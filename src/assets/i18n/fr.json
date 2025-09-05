@@ -173,6 +173,9 @@
             "REPORTED_VIOLENT_CONTENT": {
                "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ?",
                "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni. "
+            },
+            "UNREPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Tu n’as pas encore signalé le contenu ?"
             }
          }
       }

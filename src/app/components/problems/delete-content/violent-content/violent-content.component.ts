@@ -50,7 +50,7 @@ export class ViolentContentComponent {
             countryRegion: "FR",
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
             firstTitle: "Trouver du soutien",
-            description: "Tu peux en parler à tes parents, un ami, un membre de ta famille, un professeur ou à un adulte dans lequel tu as confiance. 🤝 Des professionnels peuvent aussi t’aider au 3018. Anonyme, confidentiel et gratuit de 9h00 à 23h00, 7j/7. Appelle jusqu’à ce que tu aies une réponse.",
+            description: "Tu peux en parler à tes parents, un ami, un membre de ta famille, un professeur ou à un adulte dans lequel tu as confiance. 🤝 Des <strong>professionnels</strong> peuvent aussi t’aider au <strong>3018</strong>. Anonyme, confidentiel et gratuit de 9h00 à 23h00, 7j/7. <span class=\"text-(--color-24)\"><strong>Appelle jusqu’à ce que tu aies une réponse</strong>.</span>",
          }
       ],
       children: [
