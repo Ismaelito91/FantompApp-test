@@ -389,50 +389,6 @@ export class PasswordSecurityCalculator {
       return this.getEvaluationResult(length, type);
    }
 
-   /**
-    * Génère des recommandations pour améliorer un mot de passe
-    */
-   generatePasswordRecommendations(password: string): string[] {
-      const recommendations: string[] = [];
-
-      if (password.length < 12) {
-         recommendations.push(
-            "Utilisez au moins 12 caractères pour une sécurité optimale"
-         );
-      }
-
-      if (!/\d/.test(password)) {
-         recommendations.push("Ajoutez des chiffres à votre mot de passe");
-      }
-
-      if (!/[a-z]/.test(password)) {
-         recommendations.push("Incluez des lettres minuscules");
-      }
-
-      if (!/[A-Z]/.test(password)) {
-         recommendations.push("Incluez des lettres majuscules");
-      }
-
-      if (!/[^a-zA-Z0-9]/.test(password)) {
-         recommendations.push("Ajoutez des caractères spéciaux (!@#$%^&*)");
-      }
-
-      return recommendations;
-   }
-
-   /**
-    * Retourne toutes les données formatées pour l'affichage en tableau
-    */
-   getFormattedTableData(): any[] {
-      return this.crackingTimeData.map((data) => ({
-         characters: data.characters,
-         numbersOnly: data.numbersOnly,
-         lowercaseOnly: data.lowercaseOnly,
-         mixedCase: data.mixedCase,
-         numbersAndLetters: data.numbersAndLetters,
-         allCharacters: data.allCharacters,
-      }));
-   }
 }
 
 // Instance exportée pour utilisation dans les composants Angular
