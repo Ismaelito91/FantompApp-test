@@ -47,7 +47,10 @@ function initSettings(_settingsService: SettingService) {
 export const appConfig: ApplicationConfig = {
    providers: [
       provideZoneChangeDetection({ eventCoalescing: true }),
-      provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
+      // retrait withViewTransitions pour fix problème Aie Aie Aie
+      // si ouverture tutorial dialog sur me securiser sur chromium
+      //provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
+      provideRouter(routes, withComponentInputBinding()),
       provideHttpClient(withInterceptors([apiInterceptor])),
       provideAnimations(), // Configuration des animations Angular
       provideAppInitializer(() => initSettings(inject(SettingService))),
