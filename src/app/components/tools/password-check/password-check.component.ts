@@ -374,7 +374,7 @@ export class PasswordSecurityCalculator {
       // 4. Chiffres + Majuscules et minuscules (sans caractères spéciaux)
       // ou Chiffres + Majuscules et caractères spéciaux uniquement
       // ou Chiffres + minuscules et caractères spéciaux uniquement
-      // ou minuscules et minuscules et caractères spéciaux uniquement
+      // ou minuscules et majuscules et caractères spéciaux uniquement
       if ((hasNumbers && hasLowercase && hasUppercase && !hasSpecialChars)
          || (hasNumbers && !hasLowercase && hasUppercase && hasSpecialChars)
          || (hasNumbers && hasLowercase && !hasUppercase && hasSpecialChars)
