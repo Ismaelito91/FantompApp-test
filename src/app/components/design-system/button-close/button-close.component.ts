@@ -11,6 +11,6 @@ import { ButtonSize } from '../../../model/type/button-size.type';
    styleUrl: './button-close.component.scss'
 })
 export class ButtonCloseComponent {
-   link = input.required<string>();
+   link = input<string>();
    size = input<ButtonSize>('lg');
 }

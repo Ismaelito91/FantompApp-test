@@ -576,13 +576,8 @@ export class PasswordCheckComponent
          clearInterval(this.typewriterInterval);
       }
 
-      // Redirection améliorée avec animation fluide
-      setTimeout(() => {
-         this.router.navigate(["/home"], {
-            replaceUrl: true,
-            state: { animation: "slideOut" },
-         });
-      }, 200);
+      // retour en arrière
+      history.back();
    }
 
    // Calcule directement la taille en pixels - SIMPLE ET DIRECT
