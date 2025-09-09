@@ -5,7 +5,7 @@
       <div class="flex justify-between items-center w-full">
          <div>
             <h5 [innerHTML]="(data() | pageTranslation)?.secondTitle | safeHtml"></h5>
-            <span [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></span>
+            <span class="card-description" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></span>
          </div>
          <div>
             <mat-icon [svgIcon]="isDarkMode() ? 'chevron24x24-icon-dark' : 'chevron24x24-icon-light'"></mat-icon>
