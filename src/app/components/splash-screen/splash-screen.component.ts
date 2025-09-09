@@ -55,8 +55,6 @@ export class SplashScreenComponent implements OnInit {
    }
 
    ngOnInit(): void {
-      this.ensureViewportMeta();
-      
       // Déclencher le délai minimum
       setTimeout(() => {
          this.minimumTimeElapsed.set(true);
@@ -85,17 +83,4 @@ export class SplashScreenComponent implements OnInit {
       });
    }
 
-   private ensureViewportMeta(): void {
-      let viewportMeta = this.document.querySelector('meta[name="viewport"]');
-      if (!viewportMeta) {
-         viewportMeta = this.renderer.createElement("meta");
-         this.renderer.setAttribute(viewportMeta, "name", "viewport");
-         this.renderer.appendChild(this.document.head, viewportMeta);
-      }
-      this.renderer.setAttribute(
-         viewportMeta,
-         "content",
-         "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
-      );
-   }
 }
