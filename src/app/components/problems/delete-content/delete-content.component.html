@@ -41,10 +41,10 @@
          [iconBeforeLabel]="{ name: 'arrow24x24-icon', rotate: 180 }" (click)="onClickPrevious()"
          class="w-full"></app-button>
       }
-      @if(currentStep < totalSteps) { <app-button [label]="'COMMON.NEXT' | translate" variant="primary"
+      @if(currentStep < totalSteps && formGroup.value.reported != null) { <app-button [label]="'COMMON.NEXT' | translate" variant="primary"
          [iconAfterLabel]="{ name: 'arrow24x24-icon' }" (click)="onClickNext()" class="w-full"></app-button>
          }
-         @if (currentStep === totalSteps) {
+         @if (currentStep === totalSteps && formGroup.value.violent != null) {
          <app-button [label]="'COMMON.NEXT' | translate" variant="primary"
             [iconAfterLabel]="{ name: 'arrow24x24-icon' }" (click)="onClickResults()" class="w-full"></app-button>
          }
