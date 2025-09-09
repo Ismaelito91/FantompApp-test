@@ -79,6 +79,9 @@ export class ProblemsComponent implements OnInit, OnDestroy {
 
    ngOnInit(): void {
       this.loadRootPage();
+      // Initialisation pour l'URL courante
+      this.loadProblem();
+
       this.sub = this.router.events
          .pipe(filter(event => event instanceof NavigationEnd))
          .subscribe((event: NavigationEnd) => {
@@ -94,11 +97,27 @@ export class ProblemsComponent implements OnInit, OnDestroy {
       const problemIdUrl = this.route.firstChild?.snapshot.params['id'];
       if (!Number.isNaN(parseInt(problemIdUrl))) {
          this.problemId.set(parseInt(problemIdUrl));
+         let targetPage = this.pageComponentUtils.getComponentById(this.problemId()!);
+         if (!targetPage) {
+            this.pageComponentService.getRootPageComponentsBySectionId(1).subscribe({
+               next: (data) => {
+                  this.pageComponentUtils.updateComponentMap(data);
+                  let rootPage = this.pageComponentUtils.findRootPage(1);
+                  targetPage = this.pageComponentUtils.getComponentById(this.problemId()!);
+                  if (rootPage) {
+                     this.rootPage.set(rootPage);
+                     this.page.set(targetPage);
+                  }
+               },
+               error: (err) => console.error('Erreur lors du chargement des problèmes', err)
+            });
+         } else {
+            this.page.set(targetPage);
+         }
       } else {
          this.problemId.set(null);
+         this.page.set(this.rootPage());
       }
-
-      this.page.set(this.pageComponentUtils.getComponentById(this.problemId()!));
    }
 
    private loadRootPage(): void {
