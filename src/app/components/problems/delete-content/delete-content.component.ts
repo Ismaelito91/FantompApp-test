@@ -9,7 +9,6 @@ import { ButtonBackComponent } from '../../design-system/button-back/button-back
 import { ButtonComponent } from "../../design-system/button/button.component";
 import { StepperComponent } from '../../design-system/stepper/stepper.component';
 
-
 type Question = {
    image?: string,
    title: string,
@@ -25,10 +24,6 @@ type Answer = {
    description?: string,
    value?: boolean
 }
-type Results = {
-   pseudo: string[],
-   bio: string[]
-}
 
 @Component({
    selector: 'app-delete-content',
@@ -43,18 +38,17 @@ export class DeleteContentComponent {
    totalSteps = 2;
    questions: Question[] = [
       {
-         image: 'assets/images/pseudo-illu.svg',
-         title: 'PROBLEMS.DELETE_CONTENT.PSEUDO.TITLE',
+         title: 'PROBLEMS.DELETE_CONTENT.REPORTED.TITLE',
          sections: [
             {
                name: 'reported',
                answers: [
                   {
-                     title: 'PROBLEMS.DELETE_CONTENT.PSEUDO.IDENTITY.ANSWERS.ANSWER_1_TITLE',
+                     title: 'PROBLEMS.DELETE_CONTENT.REPORTED.NONE.ANSWERS.ANSWER_1_TITLE',
                      value: true
                   },
                   {
-                     title: 'PROBLEMS.DELETE_CONTENT.PSEUDO.IDENTITY.ANSWERS.ANSWER_2_TITLE',
+                     title: 'PROBLEMS.DELETE_CONTENT.REPORTED.NONE.ANSWERS.ANSWER_2_TITLE',
                      value: false
                   },
                ]
@@ -62,18 +56,17 @@ export class DeleteContentComponent {
          ]
       },
       {
-         image: 'assets/images/bio-illu.svg',
-         title: 'PROBLEMS.DELETE_CONTENT.BIO.TITLE',
+         title: 'PROBLEMS.DELETE_CONTENT.VIOLENT.TITLE',
          sections: [
             {
                name: 'violent',
                answers: [
                   {
-                     title: 'PROBLEMS.DELETE_CONTENT.BIO.IDENTITY.ANSWERS.ANSWER_1_TITLE',
+                     title: 'PROBLEMS.DELETE_CONTENT.VIOLENT.NONE.ANSWERS.ANSWER_1_TITLE',
                      value: true
                   },
                   {
-                     title: 'PROBLEMS.DELETE_CONTENT.BIO.IDENTITY.ANSWERS.ANSWER_2_TITLE',
+                     title: 'PROBLEMS.DELETE_CONTENT.VIOLENT.NONE.ANSWERS.ANSWER_2_TITLE',
                      value: false
                   },
                ]

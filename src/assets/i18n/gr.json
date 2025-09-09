@@ -88,6 +88,69 @@
       "FRONTEND_VALUE": "Έκδοση Frontend: {{version}}",
       "BACKEND_VALUE": "Έκδοση Backend: {{version}}"
    },
+   "PROBLEMS": {
+      "DELETE_CONTENT": {
+         "TITLE": "Je fais effacer un contenu GR",
+         "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L’effacer prend du temps mais nous allons t’aider à aller jusqu’au bout 🗑 GR",
+         "REPORTED": {
+            "TITLE": "As-tu signalé le contenu auprès du réseau social ? GR",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Oui, <strong>j’ai déjà signalé le contenu</strong> GR",
+                  "ANSWER_2_TITLE": "Non, <strong>je n’ai pas encore signalé le contenu</strong> GR"
+               }
+            }
+         },
+         "VIOLENT": {
+            "TITLE": "Est ce qu'il s'agit d'un contenu violent ou te représentant nu·e ? GR",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Oui GR",
+                  "ANSWER_2_TITLE": "Non GR"
+               }
+            }
+         },
+         "RESULTS": {
+            "REPORTED_CONTENT": {
+               "TITLE": "Tu as signalé le contenu ? GR",
+               "COMPLAINT": {
+                  "TITLE": "Prépare des preuves GR",
+                  "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte. GR"
+               }
+            },
+            "REPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? GR",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  GR"
+            },
+            "UNREPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Tu n’as pas encore signalé le contenu ? GR"
+            }
+         }
+      },
+      "HACKING": {
+         "TITLE": "Je me suis fait pirater GR",
+         "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté. GR",
+         "SITUATION": {
+            "TITLE": "Quelle est ta situation ? GR",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "J’ai <strong>encore accès</strong> à mon compte GR",
+                  "ANSWER_2_TITLE": "Je n’ai <strong>plus accès</strong> à mon compte GR"
+               }
+            }
+         },
+         "RESULTS": {
+            "HAVE_ACCES": {
+               "TITLE": "Tu as signalé le contenu ? GR",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  GR"
+            },
+            "NO_ACCESS": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? GR",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  GR"
+            }
+         }
+      }
+   },
    "TOOLS": {
       "TITLE": "Outils GR",
       "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe GR",
@@ -216,9 +279,7 @@
          "TUTORIAL": {
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. GR"
          }
-      }
-   },
-   "TOOLS": {
+      },
       "PASSWORD_CHECK": {
          "TITLE": "Δοκιμάζω τον κωδικό μου",
          "DESCRIPTION": "Πόσο χρόνο χρειάζεται ένας κυβερνοεγκληματίας για να τον βρει;",

@@ -88,6 +88,69 @@
       "FRONTEND_VALUE": "Versão Frontend: {{version}}",
       "BACKEND_VALUE": "Versão Backend: {{version}}"
    },
+   "PROBLEMS": {
+      "DELETE_CONTENT": {
+         "TITLE": "Je fais effacer un contenu PT",
+         "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L’effacer prend du temps mais nous allons t’aider à aller jusqu’au bout 🗑 PT",
+         "REPORTED": {
+            "TITLE": "As-tu signalé le contenu auprès du réseau social ? PT",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Oui, <strong>j’ai déjà signalé le contenu</strong> PT",
+                  "ANSWER_2_TITLE": "Non, <strong>je n’ai pas encore signalé le contenu</strong> PT"
+               }
+            }
+         },
+         "VIOLENT": {
+            "TITLE": "Est ce qu'il s'agit d'un contenu violent ou te représentant nu·e ? PT",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Oui PT",
+                  "ANSWER_2_TITLE": "Non PT"
+               }
+            }
+         },
+         "RESULTS": {
+            "REPORTED_CONTENT": {
+               "TITLE": "Tu as signalé le contenu ? PT",
+               "COMPLAINT": {
+                  "TITLE": "Prépare des preuves PT",
+                  "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte. PT"
+               }
+            },
+            "REPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? PT",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  PT"
+            },
+            "UNREPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Tu n’as pas encore signalé le contenu ? PT"
+            }
+         }
+      },
+      "HACKING": {
+         "TITLE": "Je me suis fait pirater PT",
+         "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté. PT",
+         "SITUATION": {
+            "TITLE": "Quelle est ta situation ? PT",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "J’ai <strong>encore accès</strong> à mon compte PT",
+                  "ANSWER_2_TITLE": "Je n’ai <strong>plus accès</strong> à mon compte PT"
+               }
+            }
+         },
+         "RESULTS": {
+            "HAVE_ACCES": {
+               "TITLE": "Tu as signalé le contenu ? PT",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  PT"
+            },
+            "NO_ACCESS": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? PT",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  PT"
+            }
+         }
+      }
+   },
    "TOOLS": {
       "TITLE": "Outils PT",
       "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe PT",
@@ -216,9 +279,7 @@
          "TUTORIAL": {
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. PT"
          }
-      }
-   },
-   "TOOLS": {
+      },
       "PASSWORD_CHECK": {
          "TITLE": "Testo minha senha",
          "DESCRIPTION": "Quanto tempo leva para um cibercriminoso encontrá-la?",

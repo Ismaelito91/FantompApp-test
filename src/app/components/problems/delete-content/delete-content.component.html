@@ -16,7 +16,9 @@
       </div>
    </div>
    <form class="questions-container flex flex-col" [formGroup]="formGroup">
-      <app-stepper [currentStep]="currentStep" [totalSteps]="totalSteps"></app-stepper>
+      @if (totalSteps > 1) {
+         <app-stepper [currentStep]="currentStep" [totalSteps]="totalSteps"></app-stepper>
+      }
       <div class="sections flex flex-col">
          <h4 class="text-(--color-19)">{{ currentQuestion.title | translate }}</h4>
          <div class="section-items flex flex-col">

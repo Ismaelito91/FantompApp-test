@@ -167,18 +167,18 @@
       "DELETE_CONTENT": {
          "TITLE": "Je fais effacer un contenu",
          "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L’effacer prend du temps mais nous allons t’aider à aller jusqu’au bout 🗑",
-         "PSEUDO": {
+         "REPORTED": {
             "TITLE": "As-tu signalé le contenu auprès du réseau social ?",
-            "IDENTITY": {
+            "NONE": {
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Oui, <strong>j’ai déjà signalé le contenu</strong>",
                   "ANSWER_2_TITLE": "Non, <strong>je n’ai pas encore signalé le contenu</strong>"
                }
             }
          },
-         "BIO": {
+         "VIOLENT": {
             "TITLE": "Est ce qu'il s'agit d'un contenu violent ou te représentant nu·e ?",
-            "IDENTITY": {
+            "NONE": {
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Oui",
                   "ANSWER_2_TITLE": "Non"
@@ -199,6 +199,29 @@
             },
             "UNREPORTED_VIOLENT_CONTENT": {
                "TITLE": "Tu n’as pas encore signalé le contenu ?"
+            }
+         }
+      },
+      "HACKING": {
+         "TITLE": "Je me suis fait pirater",
+         "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté.",
+         "SITUATION": {
+            "TITLE": "Quelle est ta situation ?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "J’ai <strong>encore accès</strong> à mon compte",
+                  "ANSWER_2_TITLE": "Je n’ai <strong>plus accès</strong> à mon compte"
+               }
+            }
+         },
+         "RESULTS": {
+            "HAVE_ACCES": {
+               "TITLE": "Tu as signalé le contenu ?",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni. "
+            },
+            "NO_ACCESS": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ?",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni. "
             }
          }
       }
@@ -383,22 +406,22 @@
                   "NO_DICTIONARY": "⚠️ Donc n'utilises aucun mot du dictionnaire pour constituer ton mot de passe"
                }
             }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Instantané",
+            "MINUTES": "minutes",
+            "HOURS": "heures",
+            "DAY": "jour",
+            "DAYS": "jours",
+            "WEEK": "semaine",
+            "WEEKS": "semaines",
+            "MONTHS": "mois",
+            "YEARS": "ans",
+            "MILLION_YEARS": "millions d'années",
+            "BILLION_YEARS": "milliards d'années",
+            "TRILLION_YEARS": "billions d'années",
+            "QUADRILLION_YEARS": "trillions d'années"
          }
-      },
-      "TIME_UNITS": {
-         "INSTANT": "Instantané",
-         "MINUTES": "minutes",
-         "HOURS": "heures",
-         "DAY": "jour",
-         "DAYS": "jours",
-         "WEEK": "semaine",
-         "WEEKS": "semaines",
-         "MONTHS": "mois",
-         "YEARS": "ans",
-         "MILLION_YEARS": "millions d'années",
-         "BILLION_YEARS": "milliards d'années",
-         "TRILLION_YEARS": "billions d'années",
-         "QUADRILLION_YEARS": "trillions d'années"
       }
    }
 }

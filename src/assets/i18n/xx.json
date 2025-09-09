@@ -100,6 +100,69 @@
       "FRONTEND_VALUE": "Frontend Version: {{version}}",
       "BACKEND_VALUE": "Backend Version: {{version}}"
    },
+      "PROBLEMS": {
+      "DELETE_CONTENT": {
+         "TITLE": "Je fais effacer un contenu INT",
+         "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L’effacer prend du temps mais nous allons t’aider à aller jusqu’au bout 🗑 INT",
+         "REPORTED": {
+            "TITLE": "As-tu signalé le contenu auprès du réseau social ? INT",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Oui, <strong>j’ai déjà signalé le contenu</strong> INT",
+                  "ANSWER_2_TITLE": "Non, <strong>je n’ai pas encore signalé le contenu</strong> INT"
+               }
+            }
+         },
+         "VIOLENT": {
+            "TITLE": "Est ce qu'il s'agit d'un contenu violent ou te représentant nu·e ? INT",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Oui INT",
+                  "ANSWER_2_TITLE": "Non INT"
+               }
+            }
+         },
+         "RESULTS": {
+            "REPORTED_CONTENT": {
+               "TITLE": "Tu as signalé le contenu ? INT",
+               "COMPLAINT": {
+                  "TITLE": "Prépare des preuves INT",
+                  "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte. INT"
+               }
+            },
+            "REPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? INT",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  INT"
+            },
+            "UNREPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Tu n’as pas encore signalé le contenu ? INT"
+            }
+         }
+      },
+      "HACKING": {
+         "TITLE": "Je me suis fait pirater INT",
+         "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté. INT",
+         "SITUATION": {
+            "TITLE": "Quelle est ta situation ? INT",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "J’ai <strong>encore accès</strong> à mon compte INT",
+                  "ANSWER_2_TITLE": "Je n’ai <strong>plus accès</strong> à mon compte INT"
+               }
+            }
+         },
+         "RESULTS": {
+            "HAVE_ACCES": {
+               "TITLE": "Tu as signalé le contenu ? INT",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  INT"
+            },
+            "NO_ACCESS": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? INT",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  INT"
+            }
+         }
+      }
+   },
    "TOOLS": {
       "TITLE": "Outils INT",
       "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe INT",
@@ -280,22 +343,22 @@
                   "NO_DICTIONARY": "⚠️ So don't use any dictionary words to create your password"
                }
             }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Instant",
+            "MINUTES": "minutes",
+            "HOURS": "hours",
+            "DAY": "day",
+            "DAYS": "days",
+            "WEEK": "week",
+            "WEEKS": "weeks",
+            "MONTHS": "months",
+            "YEARS": "years",
+            "MILLION_YEARS": "million years",
+            "BILLION_YEARS": "billion years",
+            "TRILLION_YEARS": "trillion years",
+            "QUADRILLION_YEARS": "quadrillion years"
          }
-      },
-      "TIME_UNITS": {
-         "INSTANT": "Instant",
-         "MINUTES": "minutes",
-         "HOURS": "hours",
-         "DAY": "day",
-         "DAYS": "days",
-         "WEEK": "week",
-         "WEEKS": "weeks",
-         "MONTHS": "months",
-         "YEARS": "years",
-         "MILLION_YEARS": "million years",
-         "BILLION_YEARS": "billion years",
-         "TRILLION_YEARS": "trillion years",
-         "QUADRILLION_YEARS": "quadrillion years"
       }
    }
 }

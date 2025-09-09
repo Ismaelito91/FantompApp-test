@@ -88,6 +88,69 @@
       "FRONTEND_VALUE": "Frontend-version: {{version}}",
       "BACKEND_VALUE": "Backend-version: {{version}}"
    },
+   "PROBLEMS": {
+      "DELETE_CONTENT": {
+         "TITLE": "Je fais effacer un contenu DK",
+         "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L’effacer prend du temps mais nous allons t’aider à aller jusqu’au bout 🗑 DK",
+         "REPORTED": {
+            "TITLE": "As-tu signalé le contenu auprès du réseau social ? DK",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Oui, <strong>j’ai déjà signalé le contenu</strong> DK",
+                  "ANSWER_2_TITLE": "Non, <strong>je n’ai pas encore signalé le contenu</strong> DK"
+               }
+            }
+         },
+         "VIOLENT": {
+            "TITLE": "Est ce qu'il s'agit d'un contenu violent ou te représentant nu·e ? DK",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Oui DK",
+                  "ANSWER_2_TITLE": "Non DK"
+               }
+            }
+         },
+         "RESULTS": {
+            "REPORTED_CONTENT": {
+               "TITLE": "Tu as signalé le contenu ? DK",
+               "COMPLAINT": {
+                  "TITLE": "Prépare des preuves DK",
+                  "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte. DK"
+               }
+            },
+            "REPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? DK",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  DK"
+            },
+            "UNREPORTED_VIOLENT_CONTENT": {
+               "TITLE": "Tu n’as pas encore signalé le contenu ? DK"
+            }
+         }
+      },
+      "HACKING": {
+         "TITLE": "Je me suis fait pirater DK",
+         "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté. DK",
+         "SITUATION": {
+            "TITLE": "Quelle est ta situation ? DK",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "J’ai <strong>encore accès</strong> à mon compte DK",
+                  "ANSWER_2_TITLE": "Je n’ai <strong>plus accès</strong> à mon compte DK"
+               }
+            }
+         },
+         "RESULTS": {
+            "HAVE_ACCES": {
+               "TITLE": "Tu as signalé le contenu ? DK",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  DK"
+            },
+            "NO_ACCESS": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? DK",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  DK"
+            }
+         }
+      }
+   },
    "TOOLS": {
       "TITLE": "Outils DK",
       "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe DK",
@@ -216,9 +279,7 @@
          "TUTORIAL": {
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. DK"
          }
-      }
-   },
-   "TOOLS": {
+      },
       "PASSWORD_CHECK": {
          "TITLE": "Jeg tester min adgangskode",
          "DESCRIPTION": "Hvor lang tid tager det for en cyberkriminel at finde den?",

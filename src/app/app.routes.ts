@@ -20,6 +20,8 @@ import { ToolsComponent } from "./components/tools/tools.component";
 import { VisibilityCheckComponent } from "./components/tools/visibility-check/visibility-check.component";
 import { VisibilityResultsComponent } from "./components/tools/visibility-check/visibility-results/visibility-results.component";
 import { ComplaintComponent } from "./components/problems/delete-content/reported-content/complaint/complaint.component";
+import { HaveAccessComponent } from "./components/problems/hacking/have-access/have-access.component";
+import { NoAccessComponent } from "./components/problems/hacking/no-access/no-access.component";
 
 export const routes: Routes = [
    {
@@ -94,7 +96,7 @@ export const routes: Routes = [
             path: "",
             component: DeleteContentComponent,
             pathMatch: "full",
-            data: { hideFooter: false, hideHeader: true },
+            data: { hideFooter: true, hideHeader: true },
          },
          {
             path: "reported-content",
@@ -125,7 +127,24 @@ export const routes: Routes = [
    },
    {
       path: "hacking",
-      component: HackingComponent,
+      children: [
+         {
+            path: "",
+            component: HackingComponent,
+            pathMatch: "full",
+            data: { hideFooter: true, hideHeader: true },
+         },
+         {
+            path: "have-access",
+            component: HaveAccessComponent,
+            data: { hideFooter: true, hideHeader: true },
+         },
+         {
+            path: "no-access",
+            component: NoAccessComponent,
+            data: { hideFooter: true, hideHeader: true },
+         }
+      ]
    },
    {
       path: "secure-myself",

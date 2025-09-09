@@ -1,0 +1,82 @@
+.delete-content-container {
+   background: var(--background-6);
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+
+   .header {
+      padding: var(--spacing-3) var(--spacing-5) var(--spacing-4) var(--spacing-5);
+      gap: 30px;
+
+      .details {
+         gap: var(--spacing-1);
+      }
+   }
+
+   .questions-container {
+      background-color: var(--background-7);
+      border-radius: var(--border-radius-5) var(--border-radius-5) 0 0;
+      padding: var(--spacing-5);
+      gap: var(--spacing-5);
+      flex: 1;
+
+      .sections {
+         gap: var(--spacing-5);
+
+         .section-items {
+            gap: var(--spacing-5);
+
+            .section-item {
+               gap: var(--spacing-1);
+
+               .answers {
+                  gap: var(--spacing-3);
+
+                  .answer {
+                     background-color: var(--background-2);
+                     gap: 10px;
+                     min-height: 83px;
+                     padding: 20px var(--spacing-3);
+                     border-radius: var(--border-radius-2);
+
+                     --mat-radio-label-text-font: var(--body-font-family);
+                     --mat-radio-label-text-size: var(--font-size-body-md);
+                     --mat-radio-label-text-weight: var(--font-weight-body);
+                     --mat-radio-label-text-line-height: var(--line-height-body);
+                     --mat-radio-label-text-tracking: var(--letter-spacing-body);
+
+                     width: 100%;
+
+                     .radio-title {
+                        color: var(--color-3);
+                     }
+
+                     .radio-description {
+                        color: var(--color-5);
+                     }
+
+                     &:hover,
+                     &.mat-mdc-radio-checked {
+                        background-color: var(--background-3);
+
+                        .radio-title {
+                           color: var(--color-neutral-light-content-1);
+                        }
+
+                        .radio-description {
+                           color: var(--color-neutral-light-content-4);
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   .controls {
+      padding: 90px var(--spacing-5);
+      background: var(--background-19);
+      gap: var(--spacing-3);
+   }
+}
