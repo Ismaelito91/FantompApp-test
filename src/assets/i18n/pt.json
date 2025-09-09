@@ -19,7 +19,9 @@
       "TOOLS": "Ferramentas",
       "SECURE": "Me proteger",
       "UNDERSTOOD": "Compris PT",
-      "DOWNLOAD": "Télécharger PT"
+      "DOWNLOAD": "Télécharger PT",
+      "COPY": "Copier PT",
+      "COPIED": "Copié ! PT"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {

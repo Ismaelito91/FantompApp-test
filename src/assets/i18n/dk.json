@@ -19,7 +19,9 @@
       "TOOLS": "Værktøjer",
       "SECURE": "Sikre mig",
       "UNDERSTOOD": "Compris DK",
-      "DOWNLOAD": "Télécharger DK"
+      "DOWNLOAD": "Télécharger DK",
+      "COPY": "Copier DK",
+      "COPIED": "Copié ! DK"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {

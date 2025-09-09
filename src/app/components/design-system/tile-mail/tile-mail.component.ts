@@ -4,10 +4,11 @@ import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
 import { MatIconModule } from '@angular/material/icon';
 import { ButtonComponent } from "../button/button.component";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-tile-mail',
-   imports: [PageTranslationPipe, SafeHtmlPipe, MatIconModule, ButtonComponent],
+   imports: [PageTranslationPipe, SafeHtmlPipe, MatIconModule, ButtonComponent, TranslatePipe],
    templateUrl: './tile-mail.component.html',
    styleUrl: './tile-mail.component.scss'
 })

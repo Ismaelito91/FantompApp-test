@@ -25,7 +25,9 @@
       "YES": "Oui",
       "NO": "Non",
       "UNDERSTOOD": "Compris LU",
-      "DOWNLOAD": "Télécharger LU"
+      "DOWNLOAD": "Télécharger LU",
+      "COPY": "Copier LU",
+      "COPIED": "Copié ! LU"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {

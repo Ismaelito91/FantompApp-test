@@ -19,7 +19,9 @@
       "TOOLS": "Eszközök",
       "SECURE": "Biztonság",
       "UNDERSTOOD": "Compris HU",
-      "DOWNLOAD": "Télécharger HU"
+      "DOWNLOAD": "Télécharger HU",
+      "COPY": "Copier HU",
+      "COPIED": "Copié ! HU"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {

@@ -19,7 +19,9 @@
       "TOOLS": "Εργαλεία",
       "SECURE": "Ασφάλεια",
       "UNDERSTOOD": "Compris GR",
-      "DOWNLOAD": "Télécharger GR"
+      "DOWNLOAD": "Télécharger GR",
+      "COPY": "Copier GR",
+      "COPIED": "Copié ! GR"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {

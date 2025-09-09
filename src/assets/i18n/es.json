@@ -19,7 +19,9 @@
       "TOOLS": "Herramientas",
       "SECURE": "Asegurarme",
       "UNDERSTOOD": "Compris ES",
-      "DOWNLOAD": "Télécharger ES"
+      "DOWNLOAD": "Télécharger ES",
+      "COPY": "Copier ES",
+      "COPIED": "Copié ! ES"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {

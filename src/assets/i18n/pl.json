@@ -19,7 +19,9 @@
       "TOOLS": "Narzędzia",
       "SECURE": "Zabezpiecz mnie",
       "UNDERSTOOD": "Compris PL",
-      "DOWNLOAD": "Télécharger PL"
+      "DOWNLOAD": "Télécharger PL",
+      "COPY": "Copier PL",
+      "COPIED": "Copié ! PL"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {

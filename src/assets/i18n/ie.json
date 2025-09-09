@@ -25,7 +25,9 @@
       "YES": "Yes",
       "NO": "No",
       "UNDERSTOOD": "Understood",
-      "DOWNLOAD": "Download"
+      "DOWNLOAD": "Download",
+      "COPY": "Copy",
+      "COPIED": "Copied !"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {

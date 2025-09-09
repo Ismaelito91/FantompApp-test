@@ -19,7 +19,9 @@
       "TOOLS": "Tools",
       "SECURE": "Secure me",
       "UNDERSTOOD": "Compris INT",
-      "DOWNLOAD": "Télécharger INT"
+      "DOWNLOAD": "Télécharger INT",
+      "COPY": "Copier INT",
+      "COPIED": "Copié ! INT"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {

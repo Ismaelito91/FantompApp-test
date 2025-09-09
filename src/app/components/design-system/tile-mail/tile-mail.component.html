@@ -2,9 +2,9 @@
    <p title="tile-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></p>
    <div class="tile-body">
       <p class="mail">{{ (data() | pageTranslation)?.secondTitle }}</p>
-      <app-button variant="tertiary" size="sm" label="Copier" [iconAfterLabel]="{name: 'icon-copy16x16'}" (click)="copy()"></app-button>
+      <app-button variant="tertiary" size="sm" [label]="'COMMON.COPY' | translate" [iconAfterLabel]="{name: 'icon-copy16x16'}" (click)="copy()"></app-button>
    </div>
    @if (showCopyNotification) {
-      <div class="absolute bottom-[2px] right-[45px]" style="font-size: 14px;">Copié !</div>
+      <div class="absolute bottom-[2px] right-[45px]" style="font-size: 14px;">{{ 'COMMON.COPIED' | translate }}</div>
    } 
 </div>

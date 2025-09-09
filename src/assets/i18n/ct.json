@@ -19,7 +19,9 @@
       "TOOLS": "Eines",
       "SECURE": "Assegurar-me",
       "UNDERSTOOD": "Compris CT",
-      "DOWNLOAD": "Télécharger CT"
+      "DOWNLOAD": "Télécharger CT",
+      "COPY": "Copier CT",
+      "COPIED": "Copié ! CT"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {
