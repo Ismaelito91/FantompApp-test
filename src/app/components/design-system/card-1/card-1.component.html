@@ -4,7 +4,7 @@
       <div>
          <img class="card-image" [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="image" />
       </div>
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center pl-(--spacing-2)">
          <div>
             <h5 [innerHTML]="(data() | pageTranslation)?.secondTitle | safeHtml"></h5>
             <span class="card-description" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></span>
