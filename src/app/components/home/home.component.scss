@@ -8,6 +8,7 @@
       align-items: center;
       gap: calc(1rem + 1vw);
       padding: var(--spacing-3);
+      padding-bottom: 100px;
 
       &::before {
          content: "";
