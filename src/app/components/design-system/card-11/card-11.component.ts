@@ -1,10 +1,11 @@
 import { Component, input } from '@angular/core';
 import PageComponentModel from '../../../model/page-component.model';
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
+import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 
 @Component({
    selector: 'app-card-11',
-   imports: [PageTranslationPipe],
+   imports: [PageTranslationPipe, SafeHtmlPipe],
    templateUrl: './card-11.component.html',
    styleUrl: './card-11.component.scss'
 })

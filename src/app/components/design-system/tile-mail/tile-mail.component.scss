@@ -1,0 +1,23 @@
+.tile-main {
+   background-color: var(--background-2);
+   padding: 22px var(--spacing-3);
+   border-radius: var(--border-radius-3);
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-1);
+
+   .tile-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--spacing-1);
+
+      .mail {
+         width: 100%;
+         text-align: center;
+         background-color: var(--background-28);
+         padding: 4px 10px;
+         border-radius: var(--border-radius-3);
+      }
+   }
+}

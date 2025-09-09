@@ -1,0 +1,16 @@
+<div class="card-container">
+   @if ((data() | pageTranslation)?.firstTitle) {
+      <h5 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h5>
+   }
+   @if (sortedChildren.length > 0) {
+      <div class="card-children flex flex-col">
+         @for (child of sortedChildren; track $index) {
+            @switch (child.type) {
+               @case (ComponentType.CARD_15) {
+                  <app-card-15 [data]="child"></app-card-15>
+               }
+            }
+         }
+      </div>
+   }
+</div>

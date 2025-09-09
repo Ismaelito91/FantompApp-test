@@ -48,13 +48,13 @@
    --font-size-body-xs: 12px;
 
    // Hauteurs de ligne
-   --line-height-h1: 100%;
-   --line-height-h2: 100%;
-   --line-height-h3: 100%;
-   --line-height-h4: 100%;
+   --line-height-h1: normal;
+   --line-height-h2: normal;
+   --line-height-h3: normal;
+   --line-height-h4: normal;
    --line-height-h5: 25px;
    --line-height-h6: 22.6px;
-   --line-height-body: 100%;
+   --line-height-body: 21.8px;
 
    // Bordures
    --border: solid 1px;
@@ -269,6 +269,7 @@
    --background-27: linear-gradient(180deg,
          var(--color-neutral-light-background-1_70),
          var(--color-neutral-light-background-1_30));
+   --background-28: var(--color-neutral-light-background-3);
 
    --color-1: var(--color-neutral-light-content-2);
    --color-2: var(--color-primary-950);
@@ -524,6 +525,7 @@
    --background-27: linear-gradient(180deg,
       var(--color-neutral-dark-background-1_70),
       var(--color-neutral-dark-background-1_30));
+   --background-28: var(--color-neutral-dark-background-4);
 
    --color-1: var(--color-neutral-light-background-2);
    --color-2: var(--color-neutral-light-background-2);

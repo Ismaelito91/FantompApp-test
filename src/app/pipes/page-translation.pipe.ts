@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform, inject } from '@angular/core';
+import { Injectable, Pipe, PipeTransform, inject } from '@angular/core';
 import PageComponentTranslationModel from '../model/page-component-translation.model';
 import PageComponentModel from '../model/page-component.model';
 import { LanguageService } from '../service/language.service';
@@ -7,6 +7,9 @@ import { LanguageService } from '../service/language.service';
    name: 'pageTranslation',
    standalone: true,
    pure: false // IMPORTANT pour que ça se mette à jour quand la langue change
+})
+@Injectable({
+  providedIn: 'root',
 })
 export class PageTranslationPipe implements PipeTransform {
    private languageService = inject(LanguageService);

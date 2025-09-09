@@ -6,7 +6,7 @@
       <div class="tile-container flex justify-between items-center">
          <div class="flex items-center tile-body">
             <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" class="tile-image" />
-            <h3 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h3>
+            <h3 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml" class="tile-title"></h3>
          </div>
          <div>
             <mat-icon [svgIcon]="isDarkMode() ? 'icon-phone-dark' : 'icon-phone-light'"></mat-icon>

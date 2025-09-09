@@ -1,0 +1,26 @@
+.card-container {
+   display: flex;
+   flex-direction: column;
+   background-color: var(--background-7);
+   padding: var(--spacing-3);
+   border-radius: var(--border-radius-2);
+   gap: var(--spacing-3);
+
+   .card-title {
+      display: flex;
+      gap: 9px;
+   }
+
+   .card-children {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-3);
+
+      ::ng-deep app-button {
+          button {
+            width: auto !important;
+         }
+      }
+   }
+}
+

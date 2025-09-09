@@ -8,6 +8,17 @@
    border-radius: var(--border-radius-3);
 }
 
+.tile-body {
+   width: 100%;
+   overflow: auto;
+}
+
+.tile-title {
+   text-overflow: ellipsis;
+   overflow: hidden;
+   width: 100%;
+   white-space: nowrap;
+}
 
 .tile-image {
    margin-right: var(--spacing-2);
@@ -15,3 +26,4 @@
    height: 38px;
    object-fit: contain;
 }
+

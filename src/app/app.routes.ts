@@ -114,7 +114,7 @@ export const routes: Routes = [
          {
             path: "unreported-content",
             component: UnreportedContentComponent,
-            data: { hideFooter: true, hideHeader: true },
+            data: { hideFooter: true, hideHeader: false },
          },
          {
             path: "violent-content",

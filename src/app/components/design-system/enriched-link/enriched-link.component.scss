@@ -5,11 +5,16 @@
 }
 
 .tile-container {
+   overflow: auto;
    gap: 6px;
 }
 
 .tile-title {
    font-weight: var(--font-weight-title);
+   text-overflow: ellipsis;
+   overflow: hidden;
+   width: 90%;
+   white-space: nowrap;
 }
 
 .tile-link {
@@ -19,6 +24,7 @@
    overflow: hidden;
    width: 90%;
    white-space: nowrap;
+   text-decoration: underline;
 }
 
 .tile-image {
