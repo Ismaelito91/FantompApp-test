@@ -49,6 +49,7 @@
       "HU": "Ungarsk"
    },
    "HOME": {
+      "GREETING": "Bonjour 👋 Comment peut-on t'aider ? DK",
       "WELCOME": "Velkommen til Fantôme-appen",
       "APP_INFO_TITLE": "Applikationsinformation",
       "APPEARANCE": "Udseende",
@@ -57,7 +58,27 @@
       "WHAT_IS_APP": "Hvad er denne app?",
       "RIGHTS": "Jeg har rettigheder",
       "ACCESSIBILITY": "FantomApp for alle (Tilgængelighed)",
-      "TUTORIAL": "Gennemgå velkomst tutorial"
+      "TUTORIAL": "Gennemgå velkomst tutorial",
+      "CARDS": {
+         "MAIN_TITLE": "Je protège mes réseaux sociaux DK",
+         "PASSWORD_CHECK": {
+            "TITLE": "Je teste mon mot de passe DK",
+            "DESCRIPTION": "En combien de temps un cybercriminel le trouve ? DK"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "J'anonymise<br />ma photo DK",
+            "DESCRIPTION": "Flouter ma photo<br />de profil DK"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "J'ai un problème en ligne DK",
+            "DELETE_CONTENT": {
+               "TITLE": "Je veux faire effacer un contenu DK"
+            },
+            "HARASSMENT": {
+               "TITLE": "Je vis du cyberharcèlement DK"
+            }
+         }
+      }
    },
    "VERSION": {
       "FRONTEND": "Frontend-version",

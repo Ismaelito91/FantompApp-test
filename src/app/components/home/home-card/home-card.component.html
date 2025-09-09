@@ -1,6 +1,8 @@
 <div class="home-cards-container">
    <!-- Titre principal -->
-   <h5 class="home-cards__main-title">Je protège mes réseaux sociaux</h5>
+   <h5 class="home-cards__main-title">
+      {{ "HOME.CARDS.MAIN_TITLE" | translate }}
+   </h5>
 
    <!-- Première carte : Mot de passe (structure harmonisée) -->
    <div
@@ -23,9 +25,11 @@
             class="tools-item-img"
          />
          <div class="tools-item-text flex flex-col">
-            <h6 class="tools-item-title">Je teste mon mot de passe</h6>
+            <h6 class="tools-item-title">
+               {{ "HOME.CARDS.PASSWORD_CHECK.TITLE" | translate }}
+            </h6>
             <p class="tools-item-description">
-               En combien de temps un cybercriminel le trouve ?
+               {{ "HOME.CARDS.PASSWORD_CHECK.DESCRIPTION" | translate }}
             </p>
          </div>
       </div>
@@ -56,14 +60,14 @@
             />
          </div>
          <div class="home-card-anonym__text-content">
-            <h3 class="home-card-anonym__subtitle">
-               J'anonymise<br />
-               ma photo
-            </h3>
-            <p class="home-card-anonym__description">
-               Flouter ma photo<br />
-               de profil
-            </p>
+            <h3
+               class="home-card-anonym__subtitle"
+               [innerHTML]="'HOME.CARDS.BLUR_IMAGE.TITLE' | translate"
+            ></h3>
+            <p
+               class="home-card-anonym__description"
+               [innerHTML]="'HOME.CARDS.BLUR_IMAGE.DESCRIPTION' | translate"
+            ></p>
          </div>
          <div class="home-card-anonym__arrow">
             <mat-icon
@@ -119,7 +123,9 @@
    <!-- Section des cartes de problèmes -->
 
    <div class="home-cards-problems-container">
-      <h5 class="home-cards__section-title">J'ai un problème en ligne</h5>
+      <h5 class="home-cards__section-title">
+         {{ "HOME.CARDS.PROBLEMS.SECTION_TITLE" | translate }}
+      </h5>
 
       <div class="problems-cards-row">
          <div
@@ -133,7 +139,7 @@
             <div class="home-card-problem__bg-container"></div>
             <div class="home-card-problem__text-content">
                <h3 class="home-card-problem__subtitle">
-                  Je veux effacer un contenu
+                  {{ "HOME.CARDS.PROBLEMS.DELETE_CONTENT.TITLE" | translate }}
                </h3>
             </div>
             <div class="home-card-problem__arrow">
@@ -155,7 +161,7 @@
             <div class="home-card-harassment__bg-container"></div>
             <div class="home-card-harassment__text-content">
                <h6 class="home-card-harassment__subtitle">
-                  Je vis du cyber-harcèlement
+                  {{ "HOME.CARDS.PROBLEMS.HARASSMENT.TITLE" | translate }}
                </h6>
             </div>
             <div class="home-card-harassment__arrow">

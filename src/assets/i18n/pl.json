@@ -49,6 +49,7 @@
       "HU": "Węgierski"
    },
    "HOME": {
+      "GREETING": "Bonjour 👋 Comment peut-on t'aider ? PL",
       "WELCOME": "Witamy w aplikacji Fantôme",
       "APP_INFO_TITLE": "Informacje o aplikacji",
       "APPEARANCE": "Wygląd",
@@ -57,7 +58,27 @@
       "WHAT_IS_APP": "Czym jest ta aplikacja?",
       "RIGHTS": "Mam prawa",
       "ACCESSIBILITY": "FantomApp dla wszystkich (Dostępność)",
-      "TUTORIAL": "Przejrzyj samouczek powitalny"
+      "TUTORIAL": "Przejrzyj samouczek powitalny",
+      "CARDS": {
+         "MAIN_TITLE": "Je protège mes réseaux sociaux PL",
+         "PASSWORD_CHECK": {
+            "TITLE": "Je teste mon mot de passe PL",
+            "DESCRIPTION": "En combien de temps un cybercriminel le trouve ? PL"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "J'anonymise<br />ma photo PL",
+            "DESCRIPTION": "Flouter ma photo<br />de profil PL"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "J'ai un problème en ligne PL",
+            "DELETE_CONTENT": {
+               "TITLE": "Je veux faire effacer un contenu PL"
+            },
+            "HARASSMENT": {
+               "TITLE": "Je vis du cyberharcèlement PL"
+            }
+         }
+      }
    },
    "VERSION": {
       "FRONTEND": "Wersja Frontend",

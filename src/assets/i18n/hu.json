@@ -49,6 +49,7 @@
       "HU": "Magyar"
    },
    "HOME": {
+      "GREETING": "Bonjour 👋 Comment peut-on t'aider ? HU",
       "WELCOME": "Üdvözöljük a Fantôme alkalmazásban",
       "APP_INFO_TITLE": "Alkalmazás információ",
       "APPEARANCE": "Megjelenés",
@@ -57,7 +58,27 @@
       "WHAT_IS_APP": "Mi ez az alkalmazás?",
       "RIGHTS": "Jogaim vannak",
       "ACCESSIBILITY": "FantomApp mindenkinek (Akadálymentesség)",
-      "TUTORIAL": "Üdvözlő útmutató áttekintése"
+      "TUTORIAL": "Üdvözlő útmutató áttekintése",
+      "CARDS": {
+         "MAIN_TITLE": "Je protège mes réseaux sociaux HU",
+         "PASSWORD_CHECK": {
+            "TITLE": "Je teste mon mot de passe HU",
+            "DESCRIPTION": "En combien de temps un cybercriminel le trouve ? HU"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "J'anonymise<br />ma photo HU",
+            "DESCRIPTION": "Flouter ma photo<br />de profil HU"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "J'ai un problème en ligne HU",
+            "DELETE_CONTENT": {
+               "TITLE": "Je veux faire effacer un contenu HU"
+            },
+            "HARASSMENT": {
+               "TITLE": "Je vis du cyberharcèlement HU"
+            }
+         }
+      }
    },
    "VERSION": {
       "FRONTEND": "Frontend verzió",

@@ -2,13 +2,14 @@ import { Component, OnInit, computed, inject, effect } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router, RouterModule } from "@angular/router";
 import { MatIconModule } from "@angular/material/icon";
+import { TranslatePipe } from "@ngx-translate/core";
 import { GhostAnimationService } from "../../../service/ghost-animation.service";
 import { PreloadService } from "../../../service/preload.service";
 
 @Component({
    selector: "app-home-card",
    standalone: true,
-   imports: [CommonModule, RouterModule, MatIconModule],
+   imports: [CommonModule, RouterModule, MatIconModule, TranslatePipe],
    templateUrl: "./home-card.component.html",
    styleUrls: ["./home-card.component.scss"],
 })
@@ -41,7 +42,7 @@ export class HomeCardComponent implements OnInit {
    navigateTo(url: string): void {
       this.router.navigate([url]);
    }
-   
+
    navigateToTools(): void {
       this.router.navigate(["/tools"]);
    }
