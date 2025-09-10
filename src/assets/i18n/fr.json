@@ -195,7 +195,7 @@
             },
             "REPORTED_VIOLENT_CONTENT": {
                "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ?",
-               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni. "
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni."
             },
             "UNREPORTED_VIOLENT_CONTENT": {
                "TITLE": "Tu n’as pas encore signalé le contenu ?"
@@ -215,13 +215,12 @@
             }
          },
          "RESULTS": {
-            "HAVE_ACCES": {
-               "TITLE": "Tu as signalé le contenu ?",
-               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni. "
+            "HAVE_ACCESS": {
+               "TITLE": "J’ai encore accès à mon compte",
+               "DESCRIPTION": "Quelques gestes pour reprendre le contrôle de son compte"
             },
             "NO_ACCESS": {
-               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ?",
-               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni. "
+               "TITLE": "Je n’ai plus accès à mon compte"
             }
          }
       }

@@ -1,0 +1,15 @@
+<div class="no-access-recommendations-container">
+   <div class="header flex flex-col relative">
+      <app-button-back class="fixed top-[16px] z-2"></app-button-back>
+      <div class="flex justify-end">
+         <img src="assets/images/no-access-picto.png" alt="image" class="!w-[60px] !h-[74px] object-contain" />
+      </div>
+      <div class="details flex flex-col">
+         <h3>{{ "PROBLEMS.HACKING.RESULTS.NO_ACCESS.TITLE" | translate }}</h3>
+      </div>
+   </div>
+   <div class="content flex flex-col gap-(--spacing-4)">
+      <app-card-13 [data]="card_13"></app-card-13>
+      <app-card-16 [data]="card_16"></app-card-16>
+   </div>
+</div>

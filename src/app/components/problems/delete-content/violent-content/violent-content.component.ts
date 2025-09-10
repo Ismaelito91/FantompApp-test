@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ComponentStatus } from '../../../../model/enum/component-status.enum';
 import { ComponentType } from '../../../../model/enum/component-type.enum';
 import { Device } from '../../../../model/enum/device.enum';
 import PageComponentModel from '../../../../model/page-component.model';
+import { UtilsService } from '../../../../service/utils.service';
 import { ButtonBackComponent } from "../../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../../design-system/button/button.component";
 import { Card4Component } from "../../../design-system/card-4/card-4.component";
@@ -18,7 +18,7 @@ import { DividerComponent } from "../../../design-system/divider/divider.compone
    styleUrl: './violent-content.component.scss'
 })
 export class ViolentContentComponent {
-   private readonly router = inject(Router);
+   readonly utilsService = inject(UtilsService);
    reported: boolean = false;
 
    card_4: PageComponentModel = {
@@ -145,10 +145,5 @@ export class ViolentContentComponent {
    constructor() {
       const state = history.state as { reported: boolean };
       this.reported = state.reported;
-   }
-
-   goTo() {
-      const url = this.reported ? "/delete-content/reported-content" : "/delete-content/unreported-content";
-      this.router.navigate([url]);
    }
 }

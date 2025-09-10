@@ -32,6 +32,6 @@
       </div>
       <div class="controls fixed bottom-0 left-0 w-full flex">
          <app-button [label]="'Accéder au formulaire'" variant="primary" [iconAfterLabel]="{name: 'icon-external-link24x24' }"
-            class="w-full" (click)="goToExternal('https://www.cnil.fr')"></app-button>
+            class="w-full" (click)="utilsService.goToExternal('https://www.cnil.fr')"></app-button>
       </div>
    </div>

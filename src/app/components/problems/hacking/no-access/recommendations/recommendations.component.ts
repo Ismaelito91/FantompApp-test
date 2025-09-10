@@ -1,24 +1,23 @@
 import { Component } from '@angular/core';
-import { ButtonBackComponent } from "../../../design-system/button-back/button-back.component";
 import { TranslatePipe } from '@ngx-translate/core';
-import { DividerComponent } from "../../../design-system/divider/divider.component";
-import { Card16Component } from "../../../design-system/card-16/card-16.component";
-import { ComponentType } from '../../../../model/enum/component-type.enum';
-import { ComponentStatus } from '../../../../model/enum/component-status.enum';
-import PageComponentModel from '../../../../model/page-component.model';
-import { Device } from '../../../../model/enum/device.enum';
+import { ButtonBackComponent } from "../../../../design-system/button-back/button-back.component";
+import { Card13Component } from "../../../../design-system/card-13/card-13.component";
+import PageComponentModel from '../../../../../model/page-component.model';
+import { ComponentType } from '../../../../../model/enum/component-type.enum';
+import { ComponentStatus } from '../../../../../model/enum/component-status.enum';
+import { Device } from '../../../../../model/enum/device.enum';
+import { Card16Component } from "../../../../design-system/card-16/card-16.component";
 
 @Component({
-   selector: 'app-have-access',
-   imports: [ButtonBackComponent, TranslatePipe, DividerComponent, Card16Component],
-   templateUrl: './have-access.component.html',
-   styleUrl: './have-access.component.scss'
+   selector: 'app-recommendations',
+   imports: [ButtonBackComponent, TranslatePipe, Card13Component, Card16Component],
+   templateUrl: './recommendations.component.html',
+   styleUrl: './recommendations.component.scss'
 })
-export class HaveAccessComponent {
-
-   card_16_1: PageComponentModel = {
+export class RecommendationsComponent {
+   card_13: PageComponentModel = {
       id: 0,
-      type: ComponentType.CARD_16,
+      type: ComponentType.CARD_13,
       status: ComponentStatus.PUBLISHED,
       code: "code",
       position: 1,
@@ -27,84 +26,13 @@ export class HaveAccessComponent {
             id: 0,
             countryRegion: "FR",
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "À faire tout de suite ⏱️",
-            secondTitle: "danger",
-            description: "IMPORTANT",
-         }
-      ],
-      children: [
-         {
-            id: 0,
-            type: ComponentType.CARD_17,
-            status: ComponentStatus.PUBLISHED,
-            code: "code",
-            position: 1,
-            translations: [
-               {
-                  id: 0,
-                  countryRegion: "FR",
-                  devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Changer son mot de passe",
-                  description: "Constitue immédiatement un mot de passe fort",
-                  staticImage: "assets/images/reco-password-change-illu.jpg"
-               }
-            ]
-         },
-         {
-            id: 0,
-            type: ComponentType.CARD_17,
-            status: ComponentStatus.PUBLISHED,
-            code: "code",
-            position: 1,
-            translations: [
-               {
-                  id: 0,
-                  countryRegion: "FR",
-                  devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Activer la double authentification",
-                  description: "Ajoute un code de sécurité en plus",
-                  staticImage: "assets/images/reco-double-auth-illu.jpg"
-               }
-            ]
-         },
-         {
-            id: 0,
-            type: ComponentType.CARD_17,
-            status: ComponentStatus.PUBLISHED,
-            code: "code",
-            position: 1,
-            translations: [
-               {
-                  id: 0,
-                  countryRegion: "FR",
-                  devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Vérifier ses informations",
-                  description: "Regarde si ton mail et ton numéro n’ont pas été changés",
-                  staticImage: "assets/images/reco-infos-illu.jpg"
-               }
-            ]
-         },
-         {
-            id: 0,
-            type: ComponentType.CARD_17,
-            status: ComponentStatus.PUBLISHED,
-            code: "code",
-            position: 1,
-            translations: [
-               {
-                  id: 0,
-                  countryRegion: "FR",
-                  devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Vérifier qui est connecté à son compte",
-                  description: "Voir si des appareils inconnus sont connectés à ton compte",
-                  staticImage: "assets/images/reco-localisation-illu.jpg"
-               }
-            ]
+            firstTitle: "👍 Suivre ces recommandations",
+            description: "Même si tu n’as plus accès à ton compte, tu peux encore agir. Ces gestes t’aideront à te protéger et éviter que ça se reproduise.",
          }
       ]
    };
 
-   card_16_2: PageComponentModel = {
+   card_16: PageComponentModel = {
       id: 0,
       type: ComponentType.CARD_16,
       status: ComponentStatus.PUBLISHED,
@@ -115,9 +43,6 @@ export class HaveAccessComponent {
             id: 0,
             countryRegion: "FR",
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "À faire plus tard",
-            secondTitle: "secondary",
-            description: "SECONDAIRE",
          }
       ],
       children: [

@@ -1,0 +1,22 @@
+.tag {
+   display: inline-block;
+   font-weight: var(--font-weight-title);
+   font-size: var(--font-size-body-xs);
+   padding: 2px var(--spacing-1);
+   border-radius: 12px;
+}
+
+.tag-primary {
+   color: var(--color-primary-800);
+   background-color: var(--color-primary-200);
+}
+
+.tag-secondary {
+   color: var(--color-primary-700);
+   background-color: var(--color-blue-200);
+}
+
+.tag-danger {
+   color: var(--color-red-700);
+   background-color: var(--color-red-100);
+}

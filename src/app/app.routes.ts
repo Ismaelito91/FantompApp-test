@@ -22,6 +22,7 @@ import { VisibilityResultsComponent } from "./components/tools/visibility-check/
 import { ComplaintComponent } from "./components/problems/delete-content/reported-content/complaint/complaint.component";
 import { HaveAccessComponent } from "./components/problems/hacking/have-access/have-access.component";
 import { NoAccessComponent } from "./components/problems/hacking/no-access/no-access.component";
+import { RecommendationsComponent } from "./components/problems/hacking/no-access/recommendations/recommendations.component";
 
 export const routes: Routes = [
    {
@@ -141,8 +142,18 @@ export const routes: Routes = [
          },
          {
             path: "no-access",
-            component: NoAccessComponent,
-            data: { hideFooter: true, hideHeader: true },
+            children: [
+               {
+                  path: "",
+                  component: NoAccessComponent,
+                  data: { hideFooter: true, hideHeader: true }
+               },
+               {
+                  path: "recommendations",
+                  component: RecommendationsComponent,
+                  data: { hideFooter: true, hideHeader: true }
+               }
+            ]
          }
       ]
    },

@@ -17,6 +17,7 @@
    </div>
    <div class="controls fixed bottom-0 left-0 w-full flex">
       <app-button [label]="reported ? 'Adresser une plainte à la CNIL' : 'Signaler le contenu'" variant="primary"
-         [iconAfterLabel]="{ name: 'arrow24x24-icon' }" class="w-full" (click)="goTo()"></app-button>
+         [iconAfterLabel]="{ name: 'arrow24x24-icon' }" class="w-full"
+         (click)="utilsService.goTo(reported ? '/delete-content/reported-content' : '/delete-content/unreported-content')"></app-button>
    </div>
 </div>

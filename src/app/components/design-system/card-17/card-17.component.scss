@@ -1,0 +1,16 @@
+.card-container {
+   background-color: var(--background-2);
+   padding: var(--spacing-2);
+   gap: var(--spacing-2);
+   border-radius: var(--border-radius-2);
+
+   .card-title {
+      color: var(--color-3);
+      font-weight: var(--font-weight-title);
+   }
+
+   .card-description {
+      color: var(--color-9);
+      font-size: var(--font-size-body-sm);
+   }
+}
