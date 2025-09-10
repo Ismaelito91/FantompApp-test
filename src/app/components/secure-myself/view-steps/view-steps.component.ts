@@ -1,7 +1,7 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal, ViewEncapsulation } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild, AfterViewInit, inject, signal, ViewEncapsulation } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { register } from 'swiper/element/bundle';
+import { register, SwiperContainer } from 'swiper/element/bundle';
 import { Swiper } from 'swiper/types';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import PageComponentModel from '../../../model/page-component.model';
@@ -23,7 +23,7 @@ register();
    schemas: [CUSTOM_ELEMENTS_SCHEMA],
    encapsulation: ViewEncapsulation.None,
 })
-export class ViewStepsComponent {
+export class ViewStepsComponent implements AfterViewInit {
    private readonly pageComponentService = inject(PageComponentService);
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
    private readonly route = inject(ActivatedRoute);
@@ -33,11 +33,54 @@ export class ViewStepsComponent {
    ComponentType = ComponentType;
    ComponentStatus = ComponentStatus;
    targetId = 0;
+   @ViewChild('swiper', { static: true }) swiperEl?: ElementRef<SwiperContainer>;
 
    ngOnInit(): void {
       console.log(+this.route.snapshot.params['id']);
       this.targetId = +this.route.snapshot.params['id'];
       this.loadRootPage();
+   }
+
+   ngAfterViewInit(): void {
+      this.injectPaginationStylesIntoShadowDom();
+   }
+
+   private injectPaginationStylesIntoShadowDom(): void {
+      const host = this.swiperEl?.nativeElement as any;
+      const shadow: ShadowRoot | undefined = host?.shadowRoot as ShadowRoot | undefined;
+      if (!shadow || !('adoptedStyleSheets' in shadow)) {
+         // Fallback: si le shadowRoot n'est pas encore prêt, on réessaie après init Swiper
+         try {
+            host?.addEventListener('afterinit', () => this.injectPaginationStylesIntoShadowDom(), { once: true });
+         } catch {}
+         return;
+      }
+      let childrenNumber = this.sortedChildren.length;
+      let width = childrenNumber*20;
+      if (width === 0) {
+         width = 5*20;
+      }
+      const sheet = new CSSStyleSheet();
+      sheet.replaceSync(`
+         .swiper-pagination {
+            width: ${width}px !important;
+         }
+      `);
+
+      const sheets = Array.from(shadow.adoptedStyleSheets || []);
+      shadow.adoptedStyleSheets = [...sheets, sheet];
+   }
+
+   onkeydown(event: KeyboardEvent) {
+      if (event.key === 'ArrowLeft') {
+         this.swiperEl?.nativeElement.swiper.slidePrev();
+      } else if (event.key === 'ArrowRight') {
+         this.swiperEl?.nativeElement.swiper.slideNext();
+      } else if (event.key === 'Enter' || event.key === ' ') {
+         // let targetElement = event.target as HTMLElement;
+         // let index = Array.prototype.indexOf.call(targetElement.parentNode?.children, targetElement);
+         // this.swiperEl?.nativeElement.swiper.slideTo(index);
+      }
    }
 
    private loadRootPage(): void {

@@ -175,7 +175,7 @@ export const routes: Routes = [
             path: ":id/steps",
             component: ViewStepsComponent,
             pathMatch: "full",
-            data: { hideFooter: true },
+            data: { hideFooter: true , hideHeader: true },
          },
       ],
    },
