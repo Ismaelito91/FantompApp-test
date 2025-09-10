@@ -53,6 +53,12 @@ export class HomeCardComponent implements OnInit {
       ]);
    }
 
+   navigateToDelete(): void {
+      this.router.navigate([
+         "/delete-content",
+      ]);
+   }
+
    onKeyDown(event: KeyboardEvent): void {
       if (event.key === "Enter" || event.key === " ") {
          event.preventDefault();
@@ -64,6 +70,13 @@ export class HomeCardComponent implements OnInit {
       if (event.key === "Enter" || event.key === " ") {
          event.preventDefault();
          this.navigateToHarassment();
+      }
+   }
+
+   onKeyDownDelete(event: KeyboardEvent): void {
+      if (event.key === "Enter" || event.key === " ") {
+         event.preventDefault();
+         this.navigateToDelete();
       }
    }
 

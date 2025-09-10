@@ -1,172 +1,164 @@
-:host {
-   #home-container {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
+#home-container {
+   position: relative;
+   width: 100%;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: var(--spacing-5);
+   padding: var(--spacing-3);
+   padding-bottom: 100px;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(150px + 5vw);
+      height: calc(150px + 5vw);
+      background-color: var(--color-primary-300);
+      border-radius: 50%;
+      filter: blur(calc(80px + 3vw));
+      z-index: -1;
+      pointer-events: none;
+   }
+}
+
+.home-greeting {
+   margin-left: var(--spacing-3);
+}
+
+#app-info-title {
+   font-weight: var(--font-weight-heading);
+   letter-spacing: var(--letter-spacing-heading);
+   margin-bottom: calc(6px + 0.5vw);
+   font-size: var(--font-size-h5);
+}
+
+.app-info {
+   width: 100%;
+}
+
+#app-info-parent {
+   width: 100%;
+   background-color: var(--background-4);
+   border-radius: var(--border-radius-2);
+}
+
+#app-info-container {
+   border-radius: var(--border-radius-2);
+   padding: var(--spacing-3);
+
+   // Structure liste pour l'accessibilité
+   ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
       display: flex;
       flex-direction: column;
+      gap: var(--spacing-1);
+   }
+
+   li {
+      margin: 0;
+      padding: 0;
+   }
+}
+
+.app-info-item {
+   display: flex;
+   align-items: center;
+   padding: calc(0.3rem + 0.2vw) calc(0.5rem + 0.5vw);
+   cursor: pointer;
+   transition: all 0.2s ease;
+   border-radius: var(--border-radius-1);
+   border: none; // Pour les boutons
+   background: none; // Pour les boutons
+   width: 100%; // Pour les boutons
+   text-align: left; // Pour les boutons
+   text-decoration: none; // Pour les liens
+   color: inherit; // Pour les liens
+
+   &:hover,
+   &:focus {
+      opacity: 0.8;
+      outline-offset: 2px;
+   }
+
+   // Amélioration du focus pour l'accessibilité
+   &:focus-visible {
+      outline-offset: 2px;
+      box-shadow: 0 0 0 1px var(--focus-ring-color, rgba(0, 123, 255, 0.25));
+   }
+
+   // Support pour les lecteurs d'écran
+   &:active {
+      transform: translateY(1px);
+   }
+
+   // Force la taille uniforme pour toutes les icônes principales (non-arrow)
+   mat-icon:not(.arrow) {
+      width: calc(14px + 0.3vw) !important;
+      height: calc(14px + 0.3vw) !important;
+      min-width: calc(14px + 0.3vw) !important;
+      min-height: calc(14px + 0.3vw) !important;
+      margin-right: calc(0.5rem + 0.3vw);
+      pointer-events: none;
+      display: flex !important;
       align-items: center;
-      gap: calc(1rem + 1vw);
-      padding: var(--spacing-3);
-      padding-bottom: 100px;
-
-      &::before {
-         content: "";
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: calc(150px + 5vw);
-         height: calc(150px + 5vw);
-         background-color: var(--color-primary-300);
-         border-radius: 50%;
-         filter: blur(calc(80px + 3vw));
-         z-index: -1;
-         pointer-events: none;
-      }
+      justify-content: center;
+      flex-shrink: 0;
    }
 
-   #app-info-title {
-      font-weight: var(--font-weight-heading);
-      letter-spacing: var(--letter-spacing-heading);
-      margin-bottom: calc(6px + 0.5vw);
-      margin-left: calc(12px + 1vw);
-      font-size: calc(1rem + 0.3vw);
-   }
-
-   .home-cards-container {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-4);
-      width: 100%;
+   // Règles spécifiques pour les flèches
+   mat-icon.arrow {
+      width: calc(14px + 0.3vw) !important;
+      height: calc(14px + 0.3vw) !important;
+      margin-left: auto;
+      margin-right: 0;
+      display: flex !important;
       align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
    }
 
-   .app-info {
-      width: 100%;
+   span {
+      font-family: var(--body-font-family);
+      font-weight: var(--font-weight-body);
+      font-size: calc(0.9rem + 0.2vw);
+      line-height: var(--line-height-body);
+      letter-spacing: var(--letter-spacing-body);
+      pointer-events: none; // Empêche le texte d'intercepter les événements
+      flex-grow: 1;
    }
+}
 
-   #app-info-parent {
-      width: 100%;
-      background-color: var(--background-4);
-      border-radius: var(--border-radius-2);
+#tutorial-item {
+   mat-icon.arrow {
+      display: none; // Pas de flèche pour le dernier élément
    }
+}
 
-   #app-info-container {
-      border-radius: var(--border-radius-2);
-      padding: var(--spacing-3);
-      margin-left: calc(12px + 1vw);
-
-      // Structure liste pour l'accessibilité
-      ul {
-         list-style: none;
-         margin: 0;
-         padding: 0;
-         display: flex;
-         flex-direction: column;
-         gap: var(--spacing-1);
-      }
-
-      li {
-         margin: 0;
-         padding: 0;
-      }
-   }
-
+// Styles spécifiques pour les modes à contraste élevé
+@media (prefers-contrast: high) {
    .app-info-item {
-      display: flex;
-      align-items: center;
-      padding: calc(0.3rem + 0.2vw) calc(0.5rem + 0.5vw);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      border-radius: var(--border-radius-1);
-      border: none; // Pour les boutons
-      background: none; // Pour les boutons
-      width: 100%; // Pour les boutons
-      text-align: left; // Pour les boutons
-      text-decoration: none; // Pour les liens
-      color: inherit; // Pour les liens
+      border: 2px solid currentColor;
 
       &:hover,
       &:focus {
-         opacity: 0.8;
-         outline-offset: 2px;
+         background-color: var(--color-neutral-light-content-1);
+         color: var(--color-neutral-dark-content-1);
       }
+   }
+}
 
-      // Amélioration du focus pour l'accessibilité
-      &:focus-visible {
-         outline-offset: 2px;
-         box-shadow: 0 0 0 1px var(--focus-ring-color, rgba(0, 123, 255, 0.25));
-      }
+// Support pour les animations réduites
+@media (prefers-reduced-motion: reduce) {
+   .app-info-item {
+      transition: none;
 
-      // Support pour les lecteurs d'écran
       &:active {
-         transform: translateY(1px);
-      }
-
-      // Force la taille uniforme pour toutes les icônes principales (non-arrow)
-      mat-icon:not(.arrow) {
-         width: calc(14px + 0.3vw) !important;
-         height: calc(14px + 0.3vw) !important;
-         min-width: calc(14px + 0.3vw) !important;
-         min-height: calc(14px + 0.3vw) !important;
-         margin-right: calc(0.5rem + 0.3vw);
-         pointer-events: none;
-         display: flex !important;
-         align-items: center;
-         justify-content: center;
-         flex-shrink: 0;
-      }
-
-      // Règles spécifiques pour les flèches
-      mat-icon.arrow {
-         width: calc(14px + 0.3vw) !important;
-         height: calc(14px + 0.3vw) !important;
-         margin-left: auto;
-         margin-right: 0;
-         display: flex !important;
-         align-items: center;
-         justify-content: center;
-         flex-shrink: 0;
-      }
-
-      span {
-         font-family: var(--body-font-family);
-         font-weight: var(--font-weight-body);
-         font-size: calc(0.9rem + 0.2vw);
-         line-height: var(--line-height-body);
-         letter-spacing: var(--letter-spacing-body);
-         pointer-events: none; // Empêche le texte d'intercepter les événements
-         flex-grow: 1;
-      }
-   }
-
-   #tutorial-item {
-      mat-icon.arrow {
-         display: none; // Pas de flèche pour le dernier élément
-      }
-   }
-
-   // Styles spécifiques pour les modes à contraste élevé
-   @media (prefers-contrast: high) {
-      .app-info-item {
-         border: 2px solid currentColor;
-
-         &:hover,
-         &:focus {
-            background-color: var(--color-neutral-light-content-1);
-            color: var(--color-neutral-dark-content-1);
-         }
-      }
-   }
-
-   // Support pour les animations réduites
-   @media (prefers-reduced-motion: reduce) {
-      .app-info-item {
-         transition: none;
-
-         &:active {
-            transform: none;
-         }
+         transform: none;
       }
    }
 }

@@ -25,10 +25,10 @@
             class="tools-item-img"
          />
          <div class="tools-item-text flex flex-col">
-            <h6 class="tools-item-title">
+            <h6 class="social-card-title">
                {{ "HOME.CARDS.PASSWORD_CHECK.TITLE" | translate }}
             </h6>
-            <p class="tools-item-description">
+            <p class="social-card-description">
                {{ "HOME.CARDS.PASSWORD_CHECK.DESCRIPTION" | translate }}
             </p>
          </div>
@@ -61,11 +61,11 @@
          </div>
          <div class="home-card-anonym__text-content">
             <h3
-               class="home-card-anonym__subtitle"
+               class="social-card-title"
                [innerHTML]="'HOME.CARDS.BLUR_IMAGE.TITLE' | translate"
             ></h3>
             <p
-               class="home-card-anonym__description"
+               class="social-card-description"
                [innerHTML]="'HOME.CARDS.BLUR_IMAGE.DESCRIPTION' | translate"
             ></p>
          </div>
@@ -133,20 +133,24 @@
             class="home-card-problem delete-content-card"
             role="button"
             tabindex="0"
-            (click)="navigateToTools()"
-            (keydown)="onKeyDown($event)"
+            (click)="navigateToDelete()"
+            (keydown)="onKeyDownDelete($event)"
          >
-            <div class="home-card-problem__bg-container"></div>
-            <div class="home-card-problem__text-content">
-               <h3 class="home-card-problem__subtitle">
-                  {{ "HOME.CARDS.PROBLEMS.DELETE_CONTENT.TITLE" | translate }}
-               </h3>
+            <div class="problem-bg-container">
+               <img class="img-bg" src="assets/images/effacer-contenu.png" alt="">
             </div>
-            <div class="home-card-problem__arrow">
-               <mat-icon
-                  svgIcon="chevron24x24-icon"
-                  class="!size-[24px]"
-               ></mat-icon>
+            <div class="problem-text-content">
+               <div class="home-card-problem__text-content">
+                  <h3 class="home-card-subtitle home-card-delete-content__subtitle">
+                     {{ "HOME.CARDS.PROBLEMS.DELETE_CONTENT.TITLE" | translate }}
+                  </h3>
+               </div>
+               <div class="home-card-problem__arrow">
+                  <mat-icon
+                     svgIcon="chevron24x24-icon"
+                     class="!size-[24px]"
+                  ></mat-icon>
+               </div>
             </div>
          </div>
 
@@ -158,17 +162,21 @@
             (click)="navigateToHarassment()"
             (keydown)="onKeyDownHarassment($event)"
          >
-            <div class="home-card-harassment__bg-container"></div>
-            <div class="home-card-harassment__text-content">
-               <h6 class="home-card-harassment__subtitle">
-                  {{ "HOME.CARDS.PROBLEMS.HARASSMENT.TITLE" | translate }}
-               </h6>
+            <div class="problem-bg-container">
+               <img class="img-bg" src="assets/images/harcelement-contenu.png" alt="">
             </div>
-            <div class="home-card-harassment__arrow">
-               <mat-icon
-                  svgIcon="chevron24x24-icon"
-                  class="!size-[24px]"
-               ></mat-icon>
+            <div class="problem-text-content">
+               <div class="home-card-problem__text-content">
+                  <h6 class="home-card-subtitle home-card-harassment__subtitle">
+                     {{ "HOME.CARDS.PROBLEMS.HARASSMENT.TITLE" | translate }}
+                  </h6>
+               </div>
+               <div class="home-card-harassment__arrow">
+                  <mat-icon
+                     svgIcon="chevron24x24-icon"
+                     class="!size-[24px]"
+                  ></mat-icon>
+               </div>
             </div>
          </div>
       </div>

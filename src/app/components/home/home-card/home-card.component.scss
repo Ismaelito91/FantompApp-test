@@ -8,10 +8,9 @@
 .home-cards__main-title {
    line-height: var(--line-height-h5);
    color: var(--color-1);
-   margin-left: calc(16px + 1vw);
    align-self: flex-start;
-   margin-top: calc(0px + 3vh);
-   font-size: calc(1rem + 0.3vw);
+   margin-top: var(--spacing-2);
+   font-size: var(--font-size-h5);
 }
 
 /* Style spécifique pour le titre des problèmes */
@@ -27,8 +26,7 @@
    align-self: flex-start;
    margin-top: calc(1rem + 0.5vw);
    margin-bottom: calc(0.5rem + 0.2vw);
-   font-size: calc(1rem + 0.3vw);
-   margin-left: calc(16px + 1vw);
+   font-size: var(--font-size-h5);
 }
 
 //  Carte mot de passe (tools-item)
@@ -77,16 +75,16 @@
    gap: calc(0.2rem + 0.1vw);
 }
 
-.tools-item-title {
+.social-card-title {
    color: var(--color-neutral-light-background-1);
-   font-size: calc(1rem + 0.2vw);
+   font-size: var(--font-size-h6);
    font-weight: 600;
    margin: 0;
 }
 
-.tools-item-description {
+.social-card-description {
    color: var(--color-neutral-light-background-3);
-   font-size: calc(0.85rem + 0.15vw);
+   font-size: var(--font-size-body-sm);
    margin: 0;
 }
 
@@ -194,19 +192,6 @@
    font-weight: bold;
 }
 
-.home-card-anonym__subtitle {
-   color: var(--color-neutral-light-background-1);
-   font-size: calc(1rem + 0.2vw);
-   font-weight: 600;
-   margin: 0;
-}
-
-.home-card-anonym__description {
-   color: var(--color-neutral-light-background-3);
-   font-size: calc(0.85rem + 0.15vw);
-   margin: 0;
-}
-
 /* =====================
    Cartes de problèmes et harcèlement
    ===================== */
@@ -214,21 +199,18 @@
    display: flex;
    flex-direction: column;
    width: 100%;
-   align-items: center;
 }
 
 .problems-cards-row {
    display: flex;
    flex-direction: row;
-   justify-content: center;
-   align-items: center;
    gap: calc(10px + 0.5vw);
    width: 100%;
 }
 
 .home-card-problem,
 .home-card-harassment {
-   padding: calc(0.5rem + 0.3vw);
+   padding: 6px;
    background-color: var(--background-13);
 
    border-radius: var(--border-radius-2);
@@ -237,10 +219,7 @@
    display: flex;
    flex-direction: column;
    cursor: pointer;
-   width: calc(140px + 10vw);
-   height: calc(170px + 6vw);
    transition: transform 0.2s ease-in-out;
-   flex-shrink: 0;
 }
 
 .home-card-problem:hover,
@@ -254,103 +233,43 @@
    outline-offset: 2px;
 }
 
-.home-card-problem__main,
-.home-card-harassment__main {
-   background: var(--background-4);
-   border: 2px solid var(--background-4);
-   border-radius: 16px;
-   padding: 4px;
-   transition: box-shadow 0.2s ease-in-out;
-   width: 177px;
-   height: 212px;
-   box-sizing: border-box;
-}
-
-.home-card-problem__bg-container {
-   width: 100%;
+.problem-bg-container {
    height: 67%;
-   border-radius: var(--border-radius-2);
-   overflow: hidden;
-   // position: absolute;
-   top: 0;
-   left: 0;
-   background-image: url("../../../../assets/images/effacer-contenu.png");
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
 }
 
-.home-card-harassment__bg-container {
+.img-bg {
    width: 100%;
-   height: 67%;
+   height: 100%;
    border-radius: var(--border-radius-2);
-   overflow: hidden;
-   // position: absolute;
-   top: 0;
-   left: 0;
-   background-image: url("../../../../assets/images/harcelement-contenu.png");
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
+   object-fit: fill;
 }
 
-.home-card-problem__image-container,
-.home-card-harassment__image-container {
-   position: absolute;
-   top: 0;
-   right: var(--spacing-2);
-   width: 165px;
-   height: 134px;
-   display: flex;
+.problem-text-content {
+   height: 33%;
+   justify-content: space-between;
    align-items: center;
-   justify-content: center;
-}
-
-.home-card-problem__text-content,
-.home-card-harassment__text-content {
-   position: absolute;
-   bottom: calc(15px + 0.5vw);
-   left: calc(0.5rem + 0.3vw);
-   right: calc(0.5rem + 0.3vw);
-   z-index: 1;
    display: flex;
-   flex-direction: column;
-   gap: calc(0.2rem + 0.1vw);
+   margin-top: 6px;
+   margin-bottom: 10px;
 }
 
-.home-card-problem__text-content {
-   color: var(--color-21);
-   top: calc(63% + 2vw);
-}
-
-.home-card-harassment__text-content {
-   color: var(--color-20);
-   top: calc(63% + 2vw);
-}
-
-.home-card-problem__subtitle {
+.home-card-subtitle {
    font-weight: 500;
-   font-size: calc(15px + 0.3vw);
-   letter-spacing: 0%;
+   font-size: var(--font-size-h6);
    margin: 0;
    padding: 0;
-   line-height: calc(19px + 0.4vw);
+   line-height: var(--line-height-h6);
    justify-content: space-between;
+   align-items: center;
    overflow-wrap: break-word;
+   word-break: break-word;
    bottom: 10px;
+}
+.home-card-delete-content__subtitle {
    color: var(--color-21);
 }
 
 .home-card-harassment__subtitle {
-   font-weight: 500;
-   font-size: calc(15px + 0.3vw);
-   letter-spacing: 0%;
-   margin: 0;
-   padding: 0;
-   line-height: calc(19px + 0.4vw);
-   justify-content: space-between;
-   overflow-wrap: break-word;
-   bottom: 10px;
    color: var(--color-20);
 }
 
@@ -436,9 +355,6 @@
    height: 18px !important;
    align-items: center;
    justify-content: center;
-   position: absolute;
-   right: 0px;
-   top: 80%;
    transform: translateY(-50%);
    pointer-events: none;
 
