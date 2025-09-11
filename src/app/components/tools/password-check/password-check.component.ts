@@ -552,8 +552,10 @@ export class PasswordCheckComponent
    }
 
    onInputBlur() {
-      this.isInputFocused = false;
-      this.showPasswordResults = false;
+      if (this.password.length === 0) {
+         this.isInputFocused = false;
+         this.showPasswordResults = false;
+      }
    }
 
    cancelInputFocus() {
