@@ -8,7 +8,8 @@
    <div
       id="password-check-tool"
       class="tools-item flex justify-between items-center cursor-pointer"
-      [routerLink]="'/tools/password-check'"
+      (click)="navigateToPasswordCheck()"
+      (keydown)="onKeyDownPasswordCheck($event)"
       tabindex="0"
       role="button"
    >
@@ -47,8 +48,8 @@
       class="home-card-anonym"
       role="button"
       tabindex="0"
-      (click)="navigateTo('tools/blur-image')"
-      (keydown)="onKeyDown($event)"
+      (click)="navigateToBlurImage()"
+      (keydown)="onKeyDownAnonym($event)"
       id="blur-image-tool"
    >
       <div class="home-card-anonym__content">

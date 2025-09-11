@@ -59,11 +59,23 @@ export class HomeCardComponent implements OnInit {
       ]);
    }
 
-   onKeyDown(event: KeyboardEvent): void {
+   onKeyDownAnonym(event: KeyboardEvent): void {
       if (event.key === "Enter" || event.key === " ") {
          event.preventDefault();
-         this.navigateToTools();
+         this.navigateTo('tools/blur-image');
       }
+   }
+   onKeyDownPasswordCheck(event: KeyboardEvent): void {
+      if (event.key === "Enter" || event.key === " ") {
+         event.preventDefault();
+         this.navigateTo('tools/password-check');
+      }
+   }
+   navigateToBlurImage(): void {
+      this.navigateTo('tools/blur-image');
+   }
+   navigateToPasswordCheck(): void {
+      this.navigateTo('tools/password-check');
    }
 
    onKeyDownHarassment(event: KeyboardEvent): void {

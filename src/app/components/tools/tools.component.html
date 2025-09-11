@@ -3,7 +3,11 @@
    <h1 class="tools-title">{{ "TOOLS.TITLE" | translate }}</h1>
    <div class="tools-items flex flex-col">
       <div id="password-check-tool" class="tools-item flex justify-between items-center cursor-pointer"
-         (click)="onClickTool('password-check')">
+         (click)="onClickTool('password-check')"
+         role="button"
+         tabindex="0"
+         (keydown.enter)="onClickTool('password-check')"
+         >
          <div class="tools-item-body flex items-center">
             <img src="assets/images/password-check-tool-img.png" alt="image" class="tools-item-img" />
             <div class="tools-item-text flex flex-col">
@@ -17,7 +21,11 @@
          </div>
       </div>
       <div id="blur-image-tool" class="tools-item flex justify-between items-center cursor-pointer"
-         (click)="onClickTool('blur-image')">
+         (click)="onClickTool('blur-image')"
+         role="button"
+         tabindex="0"
+         (keydown.enter)="onClickTool('blur-image')"
+         >
          <div class="tools-item-body flex items-center">
             <img src="assets/images/blur-image-tool-img.png" alt="image" class="tools-item-img" />
             <div class="tools-item-text flex flex-col">
@@ -31,7 +39,11 @@
          </div>
       </div>
       <div id="visibility-check-tool" class="tools-item flex justify-between items-center cursor-pointer"
-         (click)="onClickTool('visibility-check')">
+         (click)="onClickTool('visibility-check')"
+         role="button"
+         tabindex="0"
+         (keydown.enter)="onClickTool('visibility-check')"
+         >
          <div class="tools-item-body flex items-center">
             <img src="assets/images/visibility-check-tool-img.png" alt="image" class="tools-item-img" />
             <div class="tools-item-text flex flex-col">

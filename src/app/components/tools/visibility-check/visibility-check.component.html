@@ -36,7 +36,7 @@
          </div>
       </div>
    </form>
-   <div class="controls fixed bottom-0 w-full flex">
+   <div class="controls fixed bottom-0 w-full flex" style="max-width: 600px;">
       @if(currentStep > 1) {
       <app-button [label]="'COMMON.PREVIOUS' | translate" variant="secondary"
          [iconBeforeLabel]="{ name: 'arrow24x24-icon', rotate: 180 }" (click)="onClickPrevious()"
