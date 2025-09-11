@@ -10,7 +10,7 @@ export class ImagePreloadService {
   private preloadedImages = new Set<string>();
 
   private readonly staticRessources = [
-    'assets/images/anonym-img.svg',
+    'assets/images/anonym-img.png',
     'assets/images/blur-image-tool-bg.jpg'
     // à compléter avec tous les assets statiques à la fin du projet
   ];

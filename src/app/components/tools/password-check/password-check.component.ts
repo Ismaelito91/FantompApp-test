@@ -639,6 +639,7 @@ export class PasswordCheckComponent
    }
 
    handleButtonClick() {
+      this.isInputFocused = false;
       // Si on affiche les résultats, "Renforcer mon mdp" ramène à l'état actif (input focus)
       if (this.showPasswordResults) {
          this.showPasswordResults = false;
