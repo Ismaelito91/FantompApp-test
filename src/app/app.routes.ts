@@ -23,6 +23,7 @@ import { ComplaintComponent } from "./components/problems/delete-content/reporte
 import { HaveAccessComponent } from "./components/problems/hacking/have-access/have-access.component";
 import { NoAccessComponent } from "./components/problems/hacking/no-access/no-access.component";
 import { RecommendationsComponent } from "./components/problems/hacking/no-access/recommendations/recommendations.component";
+import { ActionsComponent } from "./components/problems/hacking/actions/actions.component";
 
 export const routes: Routes = [
    {
@@ -137,8 +138,18 @@ export const routes: Routes = [
          },
          {
             path: "have-access",
-            component: HaveAccessComponent,
-            data: { hideFooter: true, hideHeader: true },
+            children: [
+               {
+                  path: "",
+                  component: HaveAccessComponent,
+                  data: { hideFooter: true, hideHeader: true },
+               },
+               {
+                  path: ":id/actions",
+                  component: ActionsComponent,
+                  data: { hideFooter: true, hideHeader: true },
+               }
+            ]
          },
          {
             path: "no-access",
@@ -175,7 +186,7 @@ export const routes: Routes = [
             path: ":id/steps",
             component: ViewStepsComponent,
             pathMatch: "full",
-            data: { hideFooter: true , hideHeader: true },
+            data: { hideFooter: true, hideHeader: true },
          },
       ],
    },

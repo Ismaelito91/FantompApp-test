@@ -1,12 +1,13 @@
 import { Component, inject, input } from '@angular/core';
 import { ComponentType } from '../../../model/enum/component-type.enum';
 import PageComponentModel from '../../../model/page-component.model';
-import { PageComponentUtilsService } from '../../../service/page-component-utils.service';
+import { TagUnclickableVariant } from '../../../model/type/tag-unclickable-variant.type';
 import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
 import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
-import { TagUnclickableComponent } from "../tag-unclickable/tag-unclickable.component";
+import { PageComponentUtilsService } from '../../../service/page-component-utils.service';
+import { UtilsService } from '../../../service/utils.service';
 import { Card17Component } from "../card-17/card-17.component";
-import { TagUnclickableVariant } from '../../../model/type/tag-unclickable-variant.type';
+import { TagUnclickableComponent } from "../tag-unclickable/tag-unclickable.component";
 
 @Component({
    selector: 'app-card-16',
@@ -16,6 +17,7 @@ import { TagUnclickableVariant } from '../../../model/type/tag-unclickable-varia
 })
 export class Card16Component {
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
+   readonly utilsService = inject(UtilsService);
    data = input.required<PageComponentModel>();
    ComponentType = ComponentType;
 

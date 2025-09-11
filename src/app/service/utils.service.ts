@@ -11,6 +11,11 @@ export class UtilsService {
       this.router.navigate([url]);
    }
 
+   goToWithState(url: string | null, state: any) {
+      if (!url) return;
+      this.router.navigate([url], { state });
+   }
+
    goToExternal(url: string) {
       window.open(url, '_blank');
    }

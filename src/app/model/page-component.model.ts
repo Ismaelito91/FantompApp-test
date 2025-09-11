@@ -9,6 +9,7 @@ export default interface PageComponentModel {
    status?: ComponentStatus;
    position?: number;
    nextId?: number;
+   next?: PageComponentModel;
    parentId?: number;
    childrenIdList?: number[];
    children?: PageComponentModel[];

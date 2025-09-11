@@ -13,7 +13,8 @@
       @for (child of sortedChildren; track $index) {
          @switch (child.type) {
             @case (ComponentType.CARD_17) {
-               <app-card-17 [data]="child"></app-card-17>
+               <app-card-17 [data]="child" (click)="utilsService.goToWithState(child.nextId ? `/hacking/have-access/${child.nextId}/actions`
+               : child.next ? `/hacking/have-access/${child.next.id}/actions`: null, child.next)"></app-card-17>
             }
          }
       }
