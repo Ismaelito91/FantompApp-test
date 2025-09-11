@@ -35,6 +35,8 @@ export class ViewStepsComponent implements AfterViewInit {
    targetId = 0;
    @ViewChild('swiper', { static: true }) swiperEl?: ElementRef<SwiperContainer>;
 
+   private pendingFocusDirection: 'prev' | 'next' | null = null;
+
    ngOnInit(): void {
       console.log(+this.route.snapshot.params['id']);
       this.targetId = +this.route.snapshot.params['id'];
@@ -43,6 +45,7 @@ export class ViewStepsComponent implements AfterViewInit {
 
    ngAfterViewInit(): void {
       this.injectPaginationStylesIntoShadowDom();
+      this.bindSwiperFocusEvents();
    }
 
    private injectPaginationStylesIntoShadowDom(): void {
@@ -71,16 +74,56 @@ export class ViewStepsComponent implements AfterViewInit {
       shadow.adoptedStyleSheets = [...sheets, sheet];
    }
 
+   private bindSwiperFocusEvents(): void {
+      const host = this.swiperEl?.nativeElement as any;
+      const register = () => {
+         try {
+            const instance: Swiper | undefined = host?.swiper as Swiper | undefined;
+            instance?.on('slideChangeTransitionEnd', () => this.applyPendingFocus());
+         } catch {}
+      };
+      if (host?.swiper) {
+         register();
+      } else {
+         try {
+            host?.addEventListener('afterinit', register, { once: true });
+         } catch {}
+      }
+   }
+
+   private applyPendingFocus(): void {
+      const direction = this.pendingFocusDirection;
+      this.pendingFocusDirection = null;
+      if (!direction) return;
+      setTimeout(() => this.focusArrowButton(direction), 0);
+   }
+
+   private focusArrowButton(direction: 'prev' | 'next'): void {
+      const host = this.swiperEl?.nativeElement as HTMLElement | undefined;
+      if (!host) return;
+      const activeSlide = host.querySelector('swiper-slide.swiper-slide-active') as HTMLElement | null;
+      if (!activeSlide) return;
+      const selector = direction === 'prev' ? 'button[aria-label="Previous"]' : 'button[aria-label="Next"]';
+      const btn = activeSlide.querySelector(selector) as HTMLButtonElement | null;
+      btn?.focus();
+   }
+
    onkeydown(event: KeyboardEvent) {
       if (event.key === 'ArrowLeft') {
          this.swiperEl?.nativeElement.swiper.slidePrev();
       } else if (event.key === 'ArrowRight') {
          this.swiperEl?.nativeElement.swiper.slideNext();
-      } else if (event.key === 'Enter' || event.key === ' ') {
-         // let targetElement = event.target as HTMLElement;
-         // let index = Array.prototype.indexOf.call(targetElement.parentNode?.children, targetElement);
-         // this.swiperEl?.nativeElement.swiper.slideTo(index);
       }
+   }
+
+   arrowNext() {
+      this.pendingFocusDirection = 'next';
+      this.swiperEl?.nativeElement?.swiper?.slideNext();
+   }
+   
+   arrowPrev() {
+      this.pendingFocusDirection = 'prev';
+      this.swiperEl?.nativeElement?.swiper?.slidePrev();
    }
 
    private loadRootPage(): void {

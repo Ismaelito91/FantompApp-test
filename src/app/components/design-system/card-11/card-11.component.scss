@@ -1,3 +1,27 @@
 .card-11-description {
    margin: 24px 32px 48px 32px;
 }
+
+.card-11-img {
+   max-height: 80%;
+}
+
+.nav-btn {
+   padding: calc(var(--spacing) * 2);
+   background-color: var(--color-primary-50);
+   border-radius: calc(infinity * 1px);
+   z-index: 10;
+   position: absolute;
+   //border: var(--border) var(--color-13);
+   color: var(--color-neutral-light-content-2);
+   width: 44px;
+   height: 44px;
+}
+
+.previous-btn {
+   left: calc(var(--spacing) * 2);
+}
+
+.next-btn {
+   right: calc(var(--spacing) * 2);
+}

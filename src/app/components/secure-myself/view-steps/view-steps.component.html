@@ -9,7 +9,9 @@
       [pagination]="{ clickable: false }" class="h-full"   >
       @for (child of sortedChildren; track $index) {
          <swiper-slide class="!h-full">
-            <app-card-11 [data]="child" [index]="$index"></app-card-11>
+            <app-card-11 [data]="child" [index]="$index" [maxIndex]="(sortedChildren.length - 1)"
+               (prev)="arrowPrev()"
+               (next)="arrowNext()"></app-card-11>
          </swiper-slide>
       }
    </swiper-container>
