@@ -118,7 +118,7 @@ export const routes: Routes = [
          {
             path: "unreported-content",
             component: UnreportedContentComponent,
-            data: { hideFooter: true, hideHeader: false },
+            data: { hideFooter: true, hideHeader: true },
          },
          {
             path: "violent-content",
@@ -180,7 +180,7 @@ export const routes: Routes = [
             path: ":id",
             component: ViewAllComponent,
             pathMatch: "full",
-            data: { hideFooter: true },
+            data: { hideFooter: true, hideHeader: true },
          },
          {
             path: ":id/steps",

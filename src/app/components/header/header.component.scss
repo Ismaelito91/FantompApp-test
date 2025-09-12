@@ -1,0 +1,108 @@
+.app-header-toolbar {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  background: transparent;
+  padding: 0;
+  align-items: flex-start;
+  max-height: 32px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+  z-index: 1001;
+}
+
+.lang-trigger {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--background-2);
+  box-shadow: var(--shadow-1);
+  border-radius: 8px;
+  max-height: 32px;
+  
+  &:focus-visible {
+    outline: 2px solid var(--color-3);
+    outline-offset: 2px;
+  }
+  &:active {
+      opacity: 0.7;
+  }
+  .flag-img {
+    border-radius: 2px;
+    object-fit: cover; 
+  }
+  .chevron {
+    font-size: 18px;
+  }
+}
+
+::ng-deep .mat-mdc-menu-panel.lang-menu {
+  width: auto;
+  max-width: none;
+  border-radius: 10px;
+}
+.lang-menu-panel {
+  max-height: 70vh;
+  overflow: auto;
+  padding: 4px 0;
+  background: var(--background-2);
+  box-shadow: var(--shadow-1);
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  font-family: var(--body-font-family);
+  font-size: var(--font-size-body-md);
+  font-weight: var(--font-weight-body);
+
+  .flag-img {
+    width: 20px;
+    height: 14px;
+    border-radius: 2px;
+    object-fit: cover;
+    margin-right: 8px;
+  }
+  .language {
+    color: var(--color-3);
+  }
+  .country {
+    color: var(--color-5);
+    margin-right: 8px;
+  }
+  .radio {    
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #5b3bdc;
+    box-sizing: border-box;
+    margin-left: auto;
+    &.selected {
+      background: radial-gradient(circle at center, #5b3bdc 50%, transparent 51%);
+    }
+  }
+}
+::ng-deep .cdk-overlay-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+
+// .lang-item .radio.selected {
+//   background: radial-gradient(circle at center, #5b3bdc 50%, transparent 51%);
+// }
+
+

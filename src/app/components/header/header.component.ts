@@ -1,13 +1,10 @@
-import { TitleCasePipe } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
-import { MatMenuModule } from "@angular/material/menu";
+import { MatMenu, MatMenuModule, MatMenuTrigger } from "@angular/material/menu";
 import { MatToolbarModule } from "@angular/material/toolbar";
-import { ThemeService } from "../../service/theme.service";
 import { MatButtonModule } from "@angular/material/button";
 import { TranslateModule } from "@ngx-translate/core";
 import { LanguageService } from "../../service/language.service";
-import { MatDividerModule } from "@angular/material/divider";
 import { RouterModule } from "@angular/router";
 
 @Component({
@@ -17,21 +14,28 @@ import { RouterModule } from "@angular/router";
       MatIconModule,
       MatToolbarModule,
       MatMenuModule,
-      TitleCasePipe,
       MatButtonModule,
       TranslateModule,
-      MatDividerModule,
       RouterModule,
    ],
    templateUrl: "./header.component.html",
+   styleUrl: "./header.component.scss",
 })
 export class HeaderComponent implements OnInit {
+
    constructor(
-      public _themeService: ThemeService,
       public _languageService: LanguageService
    ) {}
 
    ngOnInit(): void {
-      // This method is empty as per the original code
+      
+   }
+
+   // Fournit l'URL du drapeau de la langue courante
+   get currentFlagUrl(): string {
+      const current = this._languageService.supportedLanguages.find(
+         l => l.code === this._languageService.language()
+      );
+      return current?.flagUrl || '';
    }
 }

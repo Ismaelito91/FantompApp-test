@@ -1,43 +1,33 @@
-<mat-toolbar>
-   <div class="flex justify-end items-center w-full">
-      <div class="flex gap-2">
-         <!-- Sélecteur de langue -->
-         <button mat-icon-button [mat-menu-trigger-for]="languageMenu">
-            <mat-icon>language</mat-icon>
-         </button>
-         <!-- Sélecteur de thème -->
-         <button mat-icon-button [mat-menu-trigger-for]="themeMenu">
-            <mat-icon>{{ _themeService.selectedTheme()?.icon }}</mat-icon>
-         </button>
-      </div>
+<mat-toolbar class="app-header-toolbar">
+   <div class="header-right">
+      <button #menuTrigger="matMenuTrigger" class="lang-trigger" mat-button [mat-menu-trigger-for]="languageMenu">
+         @if (currentFlagUrl) {
+            <img class="flag-img" [src]="currentFlagUrl" alt="flag" />
+         } @else {
+            <img class="flag-img" src="assets/flags/xx.png" alt="flag" />
+         }
+         @if (!menuTrigger.menuOpen) {
+            <mat-icon class="chevron" iconPositionEnd>expand_more</mat-icon>
+         } @else {
+            <mat-icon class="chevron" iconPositionEnd>expand_less</mat-icon>
+         }
+      </button>
    </div>
 
-   <!-- Menu pour les langues -->
-   <mat-menu #languageMenu="matMenu">
-      @for (lang of _languageService.supportedLanguages; track lang.code) {
-      <button
-         [class.selected-theme]="_languageService.language() === lang.code"
-         mat-menu-item
-         (click)="_languageService.setLanguage(lang.code)"
-      >
-         <span>{{ lang.name }}</span>
-      </button>
-      }
-   </mat-menu>
-
-   <!-- Menu pour les thèmes -->
-   <mat-menu #themeMenu="matMenu">
-      @for (theme of _themeService.getThemes(); track theme.name) {
-      <button
-         [class.selected-theme]="
-            _themeService.selectedTheme()?.name === theme.name
-         "
-         mat-menu-item
-         (click)="_themeService.setTheme(theme.name)"
-      >
-         <mat-icon>{{ theme.icon }}</mat-icon>
-         <span>{{ theme.name | titlecase }}</span>
-      </button>
-      }
+   <mat-menu #languageMenu="matMenu" class="lang-menu" style="width: auto;">
+      <div class="lang-menu-panel">
+         @for (lang of _languageService.supportedLanguages; track lang.code) {
+         <button mat-menu-item class="lang-item" (click)="_languageService.setLanguage(lang.code)">
+            <div class="lang-item">
+               @if (lang.flagUrl) {
+                  <img class="flag-img" [src]="lang.flagUrl" alt="flag" />
+               }
+               <span class="language">{{ lang.languageName }}</span>
+               <span class="country">&nbsp;⸱&nbsp;{{ lang.countryName }}</span>
+               <span class="radio" [class.selected]="_languageService.language() === lang.code"></span>
+            </div>
+         </button>
+         }
+      </div>
    </mat-menu>
 </mat-toolbar>
