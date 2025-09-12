@@ -436,7 +436,15 @@
          container-shape: var(--border-radius-1),
          container-elevation-shadow: var(--shadow-1),
       ));
-
+   .toolbar-nav {
+      @include mat.button-overrides((
+         pressed-state-layer-opacity: 0,
+         focus-state-layer-opacity: 0,
+         hover-state-layer-opacity: 0,
+         text-ripple-color:var(--background-6),
+      ));
+   }
+   
    .mat-mdc-menu-panel {
       margin: 14px 0;
 
