@@ -15,7 +15,7 @@ swiper-container::part(pagination) {
    flex-wrap: wrap;
    flex-direction: row;
    background-color: var(--color-primary-50);
-   width: 60px !important;
+   width: fit-content !important;
    height: 24px !important;
    border-radius: var(--border-radius-6);
    position:relative;

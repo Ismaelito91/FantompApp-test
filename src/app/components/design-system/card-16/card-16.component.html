@@ -14,7 +14,7 @@
          @switch (child.type) {
             @case (ComponentType.CARD_17) {
                <app-card-17 [data]="child" (click)="utilsService.goToWithState(child.nextId ? `/hacking/have-access/${child.nextId}/actions`
-               : child.next ? `/hacking/have-access/${child.next.id}/actions`: null, child.next)"></app-card-17>
+               : child.next ? `/hacking/have-access/${child.next.id}/actions`: null, {  page: child.next, index: $index })"></app-card-17>
             }
          }
       }

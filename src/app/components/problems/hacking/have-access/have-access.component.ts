@@ -45,7 +45,7 @@ export class HaveAccessComponent {
             translations: [{
                id: 0,
                firstTitle: "Activer la double authentification",
-               description: "La double authentification ajoute une protection en plus à ton compte.Même si quelqu’un découvre ton mot de passe, il ne pourra pas se connecter sans un deuxième code (reçu par SMS ou via une appli).<br />👉 C’est comme une deuxième serrure sur ta porte.",
+               description: "La double authentification ajoute une protection en plus à ton compte. Même si quelqu’un découvre ton mot de passe, il ne pourra pas se connecter sans un deuxième code (reçu par SMS ou via une appli).<br />👉 C’est comme une deuxième serrure sur ta porte.",
                staticImage: "assets/images/reco-double-auth-cover.png"
             }]
          },

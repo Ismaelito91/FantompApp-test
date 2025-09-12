@@ -2,8 +2,7 @@
    <app-button-back class="view-header-btn"></app-button-back>
    <div class="view-header-title text-center" [innerHTML]="(page() | pageTranslation)?.firstTitle"></div>
 
-   <swiper-container #swiper class="flex-1" slides-per-view="1" 
-      [pagination]="{ clickable: false }" class="h-full">
+   <swiper-container #swiper class="flex-1" init="false" class="h-full">
       @for (child of sortedChildren; track $index) {
          <swiper-slide class="!h-full">
             @switch (child.type) {

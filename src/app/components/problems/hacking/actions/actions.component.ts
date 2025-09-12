@@ -32,6 +32,7 @@ export class ActionsComponent {
    ComponentType = ComponentType;
    ComponentStatus = ComponentStatus;
    targetId = 0;
+   initialSlide: number = 0;
    @ViewChild('swiper', { static: true }) swiperEl?: ElementRef<SwiperContainer>;
 
    private pendingFocusDirection: 'prev' | 'next' | null = null;
@@ -39,14 +40,26 @@ export class ActionsComponent {
    ngOnInit(): void {
       this.targetId = +this.route.snapshot.params['id'];
       if (this.targetId === 0) {
-         const page = history.state as PageComponentModel;
-         this.page.set(page)
+         const state = history.state as { page: PageComponentModel, index: number };
+         this.page.set(state.page)
+         this.initialSlide = state.index;
       } else {
          this.loadRootPage();
       }
    }
 
    ngAfterViewInit(): void {
+      const swiperEl = this.swiperEl?.nativeElement as any;
+
+      if (swiperEl) {
+         Object.assign(swiperEl, {
+            slidesPerView: 1,
+            initialSlide: this.initialSlide,
+            pagination: { clickable: false },
+         });
+
+         swiperEl.initialize(); // TS ne râle plus avec le cast
+      }
       this.injectPaginationStylesIntoShadowDom();
       this.bindSwiperFocusEvents();
    }
