@@ -83,11 +83,11 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    border: 2px solid #5b3bdc;
+    border: 2px solid var(--color-primary-800);
     box-sizing: border-box;
     margin-left: auto;
     &.selected {
-      background: radial-gradient(circle at center, #5b3bdc 50%, transparent 51%);
+      background: radial-gradient(circle at center, var(--color-primary-800) 50%, transparent 50%);
     }
   }
 }
@@ -100,9 +100,13 @@
   z-index: 999;
   backdrop-filter: blur(4px);
 }
+::ng-deep .mat-mdc-menu-item-text {
+  flex-direction: column;
+}
 
-// .lang-item .radio.selected {
-//   background: radial-gradient(circle at center, #5b3bdc 50%, transparent 51%);
-// }
-
-
+.divider {
+  margin: 0 !important;
+  border-top-width: 2px !important;
+  border-top-style: solid !important;
+  border-top-color: var(--color-neutral-light-background-4) !important;
+}

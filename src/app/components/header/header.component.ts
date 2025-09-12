@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
-import { MatMenu, MatMenuModule, MatMenuTrigger } from "@angular/material/menu";
+import { MatMenuModule } from "@angular/material/menu";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
+import { MatDividerModule } from "@angular/material/divider";
 import { TranslateModule } from "@ngx-translate/core";
 import { LanguageService } from "../../service/language.service";
 import { RouterModule } from "@angular/router";
@@ -17,6 +18,7 @@ import { RouterModule } from "@angular/router";
       MatButtonModule,
       TranslateModule,
       RouterModule,
+      MatDividerModule,
    ],
    templateUrl: "./header.component.html",
    styleUrl: "./header.component.scss",
@@ -28,7 +30,7 @@ export class HeaderComponent implements OnInit {
    ) {}
 
    ngOnInit(): void {
-      
+
    }
 
    // Fournit l'URL du drapeau de la langue courante
