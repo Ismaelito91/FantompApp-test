@@ -1,0 +1,23 @@
+<div class="flex flex-col h-full">
+   <div class="flex items-center justify-center relative">
+      @if (index() > 0) {
+      <button mat-fab aria-label="Previous" class=" nav-btn previous-btn" (click)="prev.emit()">
+         <mat-icon svgIcon="arrow24x24-icon" class="rotate-180"></mat-icon>
+      </button>
+      }
+      <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen-image"
+         style="max-height: 100%; max-width: 100%; object-fit: contain;" />
+      @if (index() < maxIndex()) {
+      <button mat-fab aria-label="Next" class="nav-btn next-btn" (click)="next.emit()">
+         <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
+      </button>
+      }
+   </div>
+   <div class="flex flex-col gap-(--spacing-4) p-(--spacing-5) pt-0">
+      <app-tag-unclickable variant="secondary" label="SECONDAIRE"></app-tag-unclickable>
+      <div class="card-19-description flex flex-col">
+         <h6 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h6>
+         <div [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
+      </div>
+   </div>
+</div>

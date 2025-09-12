@@ -42,7 +42,7 @@ export class RecommendationsComponent {
       children: [
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
             position: 1,
             translations: [{
@@ -54,7 +54,7 @@ export class RecommendationsComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{
@@ -66,7 +66,7 @@ export class RecommendationsComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{
@@ -78,7 +78,7 @@ export class RecommendationsComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{
@@ -90,7 +90,7 @@ export class RecommendationsComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{

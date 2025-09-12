@@ -1,11 +1,6 @@
 .view-steps-container {
    background-color: var(--background-9);
    height: calc(100vh);
-   padding-top: var(--spacing-2);
-}
-
-swiper-container {
-   height: calc(100vh - 150px);
 }
 
 swiper-container::part(pagination) {
@@ -15,35 +10,37 @@ swiper-container::part(pagination) {
    flex-wrap: wrap;
    flex-direction: row;
    background-color: var(--color-primary-50);
-   width: 60px !important;
+   width: fit-content !important;
    height: 24px !important;
    border-radius: var(--border-radius-6);
-   position:relative;
-   bottom: 32px !important;
+   position: relative;
+   bottom: 56px !important;
    margin: auto;
 }
+
 swiper-container::part(bullet) {
-   background-color:var(--color-primary-400);
+   background-color: var(--color-primary-400);
 }
+
 swiper-container::part(bullet-active) {
    width: 12px;
    height: 12px;
-   background-color:var(--color-neutral-light-content-2);
-}
-
-.view-header {
-   margin: 16px 90px;
+   background-color: var(--color-neutral-light-content-2);
 }
 
 .view-header-btn {
    position: absolute;
    left: 32px;
+   top: 16px;
+   z-index: 2;
 }
 
 .view-header-title {
-   color: var(--color-9);
-}
-
-.view-header-description {
-   color: var(--color-neutral-light-content-5);
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   top: 32px;
+   z-index: 2;
+   color: var(--color-neutral-light-content-2);
+   font-weight: var(--font-weight-title);
 }

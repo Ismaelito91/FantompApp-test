@@ -1,9 +1,5 @@
 .card-18-description {
-   margin: 24px 32px 48px 32px;
-}
-
-.card-11-img {
-   max-height: 80%;
+   gap: var(--spacing-3);
 }
 
 .nav-btn {
@@ -12,7 +8,6 @@
    border-radius: calc(infinity * 1px);
    z-index: 10;
    position: absolute;
-   //border: var(--border) var(--color-13);
    color: var(--color-neutral-light-content-2);
    width: 44px;
    height: 44px;
@@ -24,4 +19,56 @@
 
 .next-btn {
    right: calc(var(--spacing) * 2);
+}
+
+.tools-item {
+   padding: 4px;
+   gap: 19px;
+   background-size: cover;
+   border: 4px solid var(--background-4);
+   border-radius: var(--border-radius-4);
+   box-shadow: var(--shadow-1);
+   position: relative;
+}
+
+#password-check-tool {
+   background-image: url('../../../../assets/images/password-check-tool-bg.png');
+}
+
+.tools-item::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #10052E66;
+   opacity: 0;
+   transition: opacity 0.2s ease;
+   pointer-events: none;
+   z-index: 1;
+   border-radius: var(--border-radius-3);
+}
+
+.tools-item:active::after {
+   opacity: 1;
+}
+
+.tools-item-body {
+   gap: var(--spacing-2);
+}
+
+.tools-item-img {
+   min-width: 116px;
+   max-width: 116px;
+   height: 92px;
+   object-fit: contain;
+}
+
+.tools-item-text {
+   gap: var(--spacing-1);
+}
+
+.tools-item-title {
+   color: var(--color-neutral-light-background-1);
 }

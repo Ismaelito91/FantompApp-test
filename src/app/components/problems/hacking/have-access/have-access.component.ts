@@ -16,7 +16,7 @@ import { Device } from '../../../../model/enum/device.enum';
 })
 export class HaveAccessComponent {
 
-   card_16_1_next = {
+   card_16_1_next : PageComponentModel = {
       id: 0,
       status: ComponentStatus.PUBLISHED,
       translations: [{
@@ -26,9 +26,10 @@ export class HaveAccessComponent {
       children: [
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_18,
             status: ComponentStatus.PUBLISHED,
             position: 1,
+            showPasswordCheckBtn: true,
             translations: [{
                id: 0,
                firstTitle: "Changer son mot de passe",
@@ -38,7 +39,7 @@ export class HaveAccessComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_18,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{
@@ -50,7 +51,7 @@ export class HaveAccessComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_18,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{
@@ -62,7 +63,7 @@ export class HaveAccessComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_18,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{
@@ -75,7 +76,7 @@ export class HaveAccessComponent {
       ]
    }
 
-   card_16_2_next = {
+   card_16_2_next : PageComponentModel = {
       id: 0,
       status: ComponentStatus.PUBLISHED,
       translations: [{
@@ -85,7 +86,7 @@ export class HaveAccessComponent {
       children: [
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
             position: 1,
             translations: [{
@@ -97,7 +98,7 @@ export class HaveAccessComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{
@@ -109,7 +110,7 @@ export class HaveAccessComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{
@@ -121,7 +122,7 @@ export class HaveAccessComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{
@@ -133,7 +134,7 @@ export class HaveAccessComponent {
          },
          {
             id: 0,
-            type: ComponentType.CARD_11,
+            type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
             position: 2,
             translations: [{

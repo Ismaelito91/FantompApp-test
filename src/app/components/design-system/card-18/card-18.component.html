@@ -1,23 +1,44 @@
 <div class="flex flex-col h-full">
-   <div class="flex-grow flex items-center justify-center overflow-hidden relative">
+   <div class="flex items-center justify-center relative">
       @if (index() > 0) {
-      <button mat-fab aria-label="Previous" class="previous-btn nav-btn" (click)="prev.emit()">
+      <button mat-fab aria-label="Previous" class=" nav-btn previous-btn" (click)="prev.emit()">
          <mat-icon svgIcon="arrow24x24-icon" class="rotate-180"></mat-icon>
       </button>
       }
       <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen-image"
          style="max-height: 100%; max-width: 100%; object-fit: contain;" />
       @if (index() < maxIndex()) {
-      <button mat-fab aria-label="Next" class="next-btn nav-btn" (click)="next.emit()">
+      <button mat-fab aria-label="Next" class="nav-btn next-btn" (click)="next.emit()">
          <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
       </button>
       }
    </div>
-   <div class="flex flex-col" class="card-18-description">
-      <div class="flex" style="gap: 8px">
-         <h6 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h6>
+   <div class="flex flex-col gap-(--spacing-4) p-(--spacing-5) pt-0">
+      <app-tag-unclickable variant="danger" label="IMPORTANT"></app-tag-unclickable>
+      <div class="flex flex-col gap-(--spacing-3)">
+         <div class="card-18-description flex flex-col">
+            <h6 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h6>
+            <div [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
+         </div>
+         @if (data().showPasswordCheckBtn) {
+            <div id="password-check-tool" class="tools-item flex justify-between items-center cursor-pointer"
+               (click)="utilsService.goTo('tools/password-check')"
+               role="button"
+               tabindex="0"
+               (keydown.enter)="utilsService.goTo('tools/password-check')"
+               >
+               <div class="tools-item-body flex items-center">
+                  <img src="assets/images/password-check-tool-img.png" alt="image" class="tools-item-img" />
+                  <div class="tools-item-text flex flex-col">
+                     <h4 class="tools-item-title">{{ "TOOLS.PASSWORD_CHECK_TITLE" | translate }}</h4>
+                  </div>
+               </div>
+               <div>
+                  <mat-icon svgIcon="chevron24x24-icon" class="!size-[24px]"
+                     style="color: var(--color-neutral-light-background-1)"></mat-icon>
+               </div>
+            </div>
+         }
       </div>
-      <div [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
    </div>
-
 </div>

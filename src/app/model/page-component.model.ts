@@ -14,4 +14,6 @@ export default interface PageComponentModel {
    childrenIdList?: number[];
    children?: PageComponentModel[];
    translations: PageComponentTranslationModel[];
+
+   showPasswordCheckBtn?: boolean;
 }

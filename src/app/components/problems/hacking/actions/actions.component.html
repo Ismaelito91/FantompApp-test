@@ -1,17 +1,23 @@
 <div class="view-steps-container flex flex-col" (keydown)="onkeydown($event)">
-   <div class="flex flex-col justify-center items-center view-header">
-      <app-button-back class="view-header-btn"></app-button-back>
-      <div class="text-center view-header-title" [innerHTML]="(page() | pageTranslation)?.firstTitle"></div>
-      <div class="text-center view-header-description" [innerHTML]="(page() | pageTranslation)?.description"></div>
-   </div>
+   <app-button-back class="view-header-btn"></app-button-back>
+   <div class="view-header-title text-center" [innerHTML]="(page() | pageTranslation)?.firstTitle"></div>
 
    <swiper-container #swiper class="flex-1" slides-per-view="1" 
       [pagination]="{ clickable: false }" class="h-full">
       @for (child of sortedChildren; track $index) {
          <swiper-slide class="!h-full">
-            <app-card-18 [data]="child" [index]="$index" [maxIndex]="(sortedChildren.length - 1)"
-               (prev)="arrowPrev()"
-               (next)="arrowNext()"></app-card-18>
+            @switch (child.type) {
+               @case (ComponentType.CARD_18) {
+                  <app-card-18 [data]="child" [index]="$index" [maxIndex]="(sortedChildren.length - 1)"
+                     (prev)="arrowPrev()"
+                     (next)="arrowNext()"></app-card-18>
+               }
+               @case (ComponentType.CARD_19) {
+                  <app-card-19 [data]="child" [index]="$index" [maxIndex]="(sortedChildren.length - 1)"
+                     (prev)="arrowPrev()"
+                     (next)="arrowNext()"></app-card-19>
+               }
+            }
          </swiper-slide>
       }
    </swiper-container>
