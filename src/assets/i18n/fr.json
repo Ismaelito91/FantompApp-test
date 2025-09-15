@@ -205,6 +205,27 @@
       "HACKING": {
          "TITLE": "Je me suis fait pirater",
          "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté.",
+         "TUTORIAL": {
+            "P1": {
+               "EMOJI": "❌",
+               "CONTENT": "Mon compte s'est <strong>déconnecté</strong> tout seul et je n'arrive plus à y accéder"
+            },
+            "P2": {
+               "EMOJI": "🖼️",
+               "CONTENT": "Du <strong>contenu</strong> est apparu sur mon feed mais ce n'est pas moi qui l'ai publié"
+            },
+            "P3": {
+               "EMOJI": "🔒",
+               "CONTENT": "Mon <strong>mot de passe</strong> ne fonctionne plus"
+            },
+            "P4": {
+               "EMOJI": "📩",
+               "CONTENT": "Mes amis ont été contactés soit disant par moi mais ce n'est pas moi qui leur aient envoyé un <strong>message</strong>"
+            },
+            "P5": {
+               "CONTENT": "<strong>Alors ton compte a peut-être été piraté</strong>"
+            }
+         },
          "SITUATION": {
             "TITLE": "Quelle est ta situation ?",
             "NONE": {
