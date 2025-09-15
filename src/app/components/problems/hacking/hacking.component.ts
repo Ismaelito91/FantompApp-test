@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { animate, style, transition, trigger } from '@angular/animations';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { Router } from '@angular/router';
@@ -23,13 +24,56 @@ type Answer = {
    value?: boolean
 }
 
+export const fadeInWithDelay = trigger('fadeInWithDelay', [
+   transition(':enter', [
+      style({
+         opacity: 0
+      }),
+      animate(
+         '200ms 800ms ease-out',
+         style({
+            opacity: 1
+         })
+      )
+   ])
+]);
+
+export const fromBottomRight = trigger('fromBottomRight', [
+   transition(':enter', [
+      style({ opacity: 0, transform: 'translate(30px, 30px)' }),
+      animate('500ms 300ms ease-out', style({ opacity: 1, transform: 'translate(0, 0)' })),
+   ]),
+]);
+
+export const fromBottomLeft = trigger('fromBottomLeft', [
+   transition(':enter', [
+      style({ opacity: 0, transform: 'translate(-30px, 30px)' }),
+      animate('500ms 300ms ease-out', style({ opacity: 1, transform: 'translate(0, 0)' })),
+   ]),
+]);
+
+export const fadeInBtnWithDelay = trigger('fadeInBtnWithDelay', [
+   transition(':enter', [
+      style({
+         opacity: 0
+      }),
+      animate(
+         '500ms 300ms ease-out',
+         style({
+            opacity: 1
+         })
+      )
+   ])
+]);
+
 @Component({
    selector: 'app-hacking',
    imports: [ButtonBackComponent, ButtonComponent, MatRadioModule, ReactiveFormsModule, TranslatePipe, StepperComponent],
    templateUrl: './hacking.component.html',
-   styleUrl: './hacking.component.scss'
+   styleUrl: './hacking.component.scss',
+   animations: [fadeInWithDelay, fromBottomRight, fromBottomLeft, fadeInBtnWithDelay]
 })
-export class HackingComponent {
+export class HackingComponent implements OnInit {
    private readonly router = inject(Router);
    currentStep = 1;
    totalSteps = 1;
@@ -57,6 +101,27 @@ export class HackingComponent {
    formGroup = new FormGroup({
       have_access: new FormControl(),
    });
+   showTutorial: boolean = true;
+   showBox1 = false;
+   showBox2 = false;
+   showBox3 = false;
+   onFadeInDone() {
+      this.showBox1 = true;
+   }
+
+   onBox1Done() {
+      this.showBox2 = true;
+      this.showBox3 = true;
+   }
+
+   ngOnInit(): void {
+      localStorage.getItem('hacking-tutorial') === 'true' ? this.showTutorial = false : this.showTutorial = true;
+   }
+
+   onCloseTutorial() {
+      localStorage.setItem('hacking-tutorial', 'true');
+      this.showTutorial = false;
+   }
 
    onClickResults() {
       const have_access = this.formGroup.value.have_access;

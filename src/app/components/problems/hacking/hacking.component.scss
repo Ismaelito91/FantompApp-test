@@ -1,3 +1,33 @@
+.speech-box-1, .speech-box-2 {
+  position: relative;
+}
+
+.speech-box-1::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: -3px;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--background-4);
+  transform: skewX(60deg);
+}
+
+.speech-box-2::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: -14px;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--color-primary-100);
+  transform: skewX(-73deg);
+}
+
 .hacking-container {
    background: var(--background-6);
    display: flex;
