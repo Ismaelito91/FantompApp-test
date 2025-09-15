@@ -13,9 +13,10 @@ import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import {ButtonCloseComponent} from "../button-close/button-close.component";
 import {DividerComponent} from "../divider/divider.component";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 import {ComponentStatus} from "../../../model/enum/component-status.enum";
 import {Device} from "../../../model/enum/device.enum";
-import {animate, state, style, transition, trigger} from "@angular/animations";
+import {TemplateMessageComponent} from "../template-message/template-message.component";
 
 @Component({
    selector: 'app-card-15',
@@ -26,7 +27,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 export class Card15Component {
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
    private readonly dialog = inject(MatDialog);
-   private dialogRef?: MatDialogRef<InstaDialog>;
+   private dialogRef?: MatDialogRef<SnapchatDialog>;
    data = input.required<PageComponentModel>();
    ComponentType = ComponentType;
    
@@ -35,7 +36,7 @@ export class Card15Component {
    }
 
    openDialog(): void {
-      this.dialog.open(InstaDialog, {
+      this.dialog.open(SnapchatDialog, {
          width: '100vw',
          maxWidth: '100vw',
          panelClass: 'card-15-slide-dialog'
@@ -43,12 +44,14 @@ export class Card15Component {
    }
   
 }
+
+
 @Component({
-   selector: 'insta-dialog',
-   templateUrl: 'insta-dialog.html',
-   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent],
+   selector: 'snapchat-dialog',
+   templateUrl: 'snapchat-dialog.html',
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TileMailComponent, TemplateMessageComponent],
    changeDetection: ChangeDetectionStrategy.OnPush,
-   styleUrl: './insta-dialog.scss',
+   styleUrl: './snapchat-dialog.scss',
    animations: [
       trigger('slideUpDown', [
          state('open', style({ transform: 'translateY(0)', opacity: 1 })),
@@ -63,21 +66,43 @@ export class Card15Component {
       ])
    ]
 })
-export class InstaDialog {
-   private dialogRef = inject(MatDialogRef<InstaDialog>);
+export class SnapchatDialog {
+   private dialogRef = inject(MatDialogRef<SnapchatDialog>);
    animationState: 'open' | 'closed' = 'open';
-   enriched_link: PageComponentModel =
+   tile_mail: PageComponentModel =
       {
          id: 0,
-         type: ComponentType.ENRICHED_LINK,
+         type: ComponentType.TILE_MAIL,
          status: ComponentStatus.PUBLISHED,
          translations: [{
             id: 0,
             countryRegion: "FR",
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "Signaler une violation de votre vie privée sur Instagram ou Threads",
-            description: "https://help.instagram.com/contact/1716697545776727",
-            staticImage: "assets/images/instagram-2.png",
+            firstTitle: "Contacter Snapchat par mail",
+            secondTitle: "dpo@snapchat.com",
+         }],
+      };
+   template_message: PageComponentModel =
+      {
+         id: 0,
+         type: ComponentType.TEMPLATE_MESSAGE,
+         status: ComponentStatus.PUBLISHED,
+         translations: [{
+            id: 0,
+            countryRegion: "FR",
+            devices: [Device.ANDROID, Device.IOS, Device.WEB],
+            firstTitle:"📝 Exemple de mail à envoyer",
+            description:"Madame, Monsieur,\n" +
+               "\n" +
+               "Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :\n" +
+               "[Lien(s) Url du contenu à supprimer]\n" +
+               "Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n" +
+               "[description des informations à supprimer] .\n" +
+               "Je souhaite que ces informations soient supprimées car :\n" +
+               "[motif de la suppression]\n" +
+               "Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les moteurs de recherche (article 17.2 du RGPD).\n" +
+               "Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n" +
+               "Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
          }],
       };
 

@@ -1,0 +1,20 @@
+.template-main {
+   gap: var(--spacing-3);
+}
+
+.template-container {
+   background-color: var(--background-2);
+   margin: 13px 16px;
+   border-radius: var(--border-radius-3);
+}
+ 
+.template-title {
+   margin-left: var(--spacing-5);
+   margin-right: var(--spacing-5);
+   font-size: var(--font-size-body-lg);
+}
+.template-content {
+   padding: 30px 28px;
+   font-size: var(--font-size-body-md);
+   font-family: var(--body-font-family);
+}

@@ -1,0 +1,9 @@
+<div class="template-main flex flex-col ">
+   <div class=" flex flex-col">
+      <h3 class="template-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h3>
+      <div class="template-container flex flex-col">
+         <span class="template-content" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></span>
+         <app-button variant="primary" size="lg" label="Copier l'exemple" [iconAfterLabel]="{name: 'icon-copy16x16'}" (click)="copy()"></app-button>
+      </div>
+   </div>
+</div>
