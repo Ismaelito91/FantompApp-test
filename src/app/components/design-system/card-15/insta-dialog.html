@@ -1,0 +1,44 @@
+<div [@slideUpDown]="animationState"
+     (@slideUpDown.done)="onAnimationDone($event)"
+     class="instagram-report-content-container no-default-animation-dialog custom-dialog-backdrop">
+   <div class="header relative flex justify-center items-center h-16">
+      <div class="z-10">
+         <img src="assets/images/form-picto.png" alt="picto-formulaire" class="!w-[77.5px] !h-[96px] object-contain picto" />
+      </div>
+      <app-button-close class="absolute right-4" (click)="closeDialog()"></app-button-close>
+   </div>
+   <div class="content flex flex-col">
+      <div class="details flex flex-col gap(--spacing-3)">
+         <h3>Comment remplir le formulaire ? - Instagram</h3>
+         <span>Voici ce qu’il faut faire pour remplir le formulaire ci-dessous:</span>
+         <app-enriched-link [data]="enriched_link"></app-enriched-link>
+      </div>
+      <app-divider class="divider"></app-divider>
+      <div class="flex flex-col gap-(--spacing-4)">
+         <div class="flex flex-col">
+            <h6 class="title-form">1. Sélectionner le pays où on habite</h6>
+            <img class="image" src="assets/images/instagram-form-screen1.png">
+         </div>
+         <div class="flex flex-col">
+            <h6 class="title-form">2. Écrire son nom et prénom</h6>
+            <img class="image" src="assets/images/instagram-form-screen2.png">
+         </div>
+         <div class="flex flex-col">
+            <h6 class="title-form">3. Écrire son adresse e-mail</h6>
+            <img class="image" src="assets/images/instagram-form-screen3.png">
+         </div>
+         <div class="flex flex-col">
+            <h6 class="title-form">4. Sélectionner “Moi-même” à la question “Pour qui faites-vous ce signalement ?”</h6>
+            <img class="image" src="assets/images/instagram-form-screen4.png">
+         </div>
+         <div class="flex flex-col">
+            <h6 class="title-form">5. Sélectionner “Oui, j’ai moins de 18 ans”</h6>
+            <img class="image" src="assets/images/instagram-form-screen5.png">
+         </div>
+         <div class="flex flex-col">
+            <h6 class="title-form">6. Coller l’URL (l’adresse de la page) du contenu à signaler.</h6>
+            <img class="image" src="assets/images/instagram-form-screen6.png">
+         </div>
+      </div>
+   </div>
+</div>

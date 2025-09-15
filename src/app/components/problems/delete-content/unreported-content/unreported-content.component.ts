@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core';
 import { ButtonBackComponent } from "../../../design-system/button-back/button-back.component";
 import { TranslatePipe } from '@ngx-translate/core';
 import { DividerComponent } from "../../../design-system/divider/divider.component";
@@ -11,6 +11,10 @@ import { Card1Component } from "../../../design-system/card-1/card-1.component";
 import { Card14Component } from "../../../design-system/card-14/card-14.component";
 import { LanguageService } from '../../../../service/language.service';
 import { CountryRegion } from '../../../../model/enum/country-region.enum';
+import {MatDialog, MatDialogClose, MatDialogContent} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {ButtonCloseComponent} from "../../../design-system/button-close/button-close.component";
+import {TutorialDialog} from "../reported-content/reported-content.component";
 
 @Component({
    selector: 'app-unreported-content',

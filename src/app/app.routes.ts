@@ -20,10 +20,12 @@ import { ToolsComponent } from "./components/tools/tools.component";
 import { VisibilityCheckComponent } from "./components/tools/visibility-check/visibility-check.component";
 import { VisibilityResultsComponent } from "./components/tools/visibility-check/visibility-results/visibility-results.component";
 import { ComplaintComponent } from "./components/problems/delete-content/reported-content/complaint/complaint.component";
-import { HaveAccessComponent } from "./components/problems/hacking/have-access/have-access.component";
-import { NoAccessComponent } from "./components/problems/hacking/no-access/no-access.component";
-import { RecommendationsComponent } from "./components/problems/hacking/no-access/recommendations/recommendations.component";
-import { ActionsComponent } from "./components/problems/hacking/actions/actions.component";
+import {NoAccessComponent} from "./components/problems/hacking/no-access/no-access.component";
+import {
+   RecommendationsComponent
+} from "./components/problems/hacking/no-access/recommendations/recommendations.component";
+import {ActionsComponent} from "./components/problems/hacking/actions/actions.component";
+import {HaveAccessComponent} from "./components/problems/hacking/have-access/have-access.component";
 
 export const routes: Routes = [
    {
