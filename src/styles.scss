@@ -482,6 +482,22 @@
       backdrop-filter: blur(8px);
    }
 
+   .card-15-slide-dialog .mdc-dialog__container {
+      animation: slideUp 500ms ease-out;
+   }
+
+   @keyframes slideUp {
+      from {
+         transform: translateY(100%);
+         opacity: 0;
+      }
+
+      to {
+         transform: translateY(0);
+         opacity: 1;
+      }
+   }
+
    @include mat.tooltip-overrides((container-color: var(--color-24),
          container-shape: 20px,
          supporting-text-color: var(--color-neutral-light-background-1),

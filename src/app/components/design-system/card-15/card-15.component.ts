@@ -1,4 +1,4 @@
-import { Component, inject, input, ViewEncapsulation } from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, input, ViewEncapsulation} from '@angular/core';
 import { ComponentType } from '../../../model/enum/component-type.enum';
 import PageComponentModel from '../../../model/page-component.model';
 import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
@@ -9,6 +9,13 @@ import { TileCallComponent } from "../tile-call/tile-call.component";
 import { TileMessageComponent } from "../tile-message/tile-message.component";
 import { ButtonComponent } from "../button/button.component";
 import { TileMailComponent } from "../tile-mail/tile-mail.component";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {ButtonCloseComponent} from "../button-close/button-close.component";
+import {DividerComponent} from "../divider/divider.component";
+import {ComponentStatus} from "../../../model/enum/component-status.enum";
+import {Device} from "../../../model/enum/device.enum";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
    selector: 'app-card-15',
@@ -18,10 +25,69 @@ import { TileMailComponent } from "../tile-mail/tile-mail.component";
 })
 export class Card15Component {
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
+   private readonly dialog = inject(MatDialog);
+   private dialogRef?: MatDialogRef<InstaDialog>;
    data = input.required<PageComponentModel>();
    ComponentType = ComponentType;
-
+   
    get sortedChildren() {
       return this.pageComponentUtils.getSortedChildren(this.data());
+   }
+
+   openDialog(): void {
+      this.dialog.open(InstaDialog, {
+         width: '100vw',
+         maxWidth: '100vw',
+         panelClass: 'card-15-slide-dialog'
+      });
+   }
+  
+}
+@Component({
+   selector: 'insta-dialog',
+   templateUrl: 'insta-dialog.html',
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent],
+   changeDetection: ChangeDetectionStrategy.OnPush,
+   styleUrl: './insta-dialog.scss',
+   animations: [
+      trigger('slideUpDown', [
+         state('open', style({ transform: 'translateY(0)', opacity: 1 })),
+         state('closed', style({ transform: 'translateY(100%)', opacity: 0 })),
+         transition('void => open', [
+            style({ transform: 'translateY(100%)', opacity: 0 }),
+            animate('500ms ease-out')
+         ]),
+         transition('open => closed', [
+            animate('500ms ease-in')
+         ]),
+      ])
+   ]
+})
+export class InstaDialog {
+   private dialogRef = inject(MatDialogRef<InstaDialog>);
+   animationState: 'open' | 'closed' = 'open';
+   enriched_link: PageComponentModel =
+      {
+         id: 0,
+         type: ComponentType.ENRICHED_LINK,
+         status: ComponentStatus.PUBLISHED,
+         translations: [{
+            id: 0,
+            countryRegion: "FR",
+            devices: [Device.ANDROID, Device.IOS, Device.WEB],
+            firstTitle: "Signaler une violation de votre vie privée sur Instagram ou Threads",
+            description: "https://help.instagram.com/contact/1716697545776727",
+            staticImage: "assets/images/instagram-2.png",
+         }],
+      };
+
+   closeDialog() {
+      this.animationState = 'closed';
+   }
+
+   onAnimationDone(event: any) {
+      if (this.animationState === 'closed') {
+         setTimeout(() => this.dialogRef.close(), 50);
+      }
    }
 }
