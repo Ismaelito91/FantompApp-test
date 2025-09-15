@@ -58,7 +58,7 @@ export class ActionsComponent {
             pagination: { clickable: false },
          });
 
-         swiperEl.initialize(); // TS ne râle plus avec le cast
+         swiperEl.initialize();
       }
       this.injectPaginationStylesIntoShadowDom();
       this.bindSwiperFocusEvents();
