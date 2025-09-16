@@ -4,11 +4,12 @@
 
 .nav-btn {
    padding: calc(var(--spacing) * 2);
-   background-color: var(--color-primary-50);
+   background-color: var(--background-12);
+   border: var(--border) var(--color-13);
    border-radius: calc(infinity * 1px);
    z-index: 10;
    position: absolute;
-   color: var(--color-neutral-light-content-2);
+   color: var(--color-14);
    width: 44px;
    height: 44px;
 }
