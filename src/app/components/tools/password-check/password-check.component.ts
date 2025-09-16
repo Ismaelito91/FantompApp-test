@@ -43,7 +43,7 @@ export interface PasswordCrackingData {
    };
 }
 export class PasswordSecurityCalculator {
-   // source : https://www.francenum.gouv.fr/magazine-du-numerique/combien-de-temps-un-pirate-met-il-pour-trouver-votre-mot-de-passe-comment 
+   // source : https://www.francenum.gouv.fr/magazine-du-numerique/combien-de-temps-un-pirate-met-il-pour-trouver-votre-mot-de-passe-comment
    public readonly crackingTimeData: PasswordCrackingData[] = [
       {
          characters: 4,
@@ -97,9 +97,17 @@ export class PasswordSecurityCalculator {
          characters: 10,
          numbersOnly: { value: "1", unit: "DAYS", color: "red" },
          lowercaseOnly: { value: "40", unit: "YEARS", color: "orange" },
-         mixedCase: { value: "41000", unit: "YEARS", color: "orange" },
-         numbersAndLetters: { value: "238000", unit: "YEARS", color: "yellow" },
-         allCharacters: { value: "803000", unit: "YEARS", color: "yellow" },
+         mixedCase: { value: "41000", unit: "THOUSAND_YEARS", color: "orange" },
+         numbersAndLetters: {
+            value: "238",
+            unit: "THOUSAND_YEARS",
+            color: "yellow",
+         },
+         allCharacters: {
+            value: "803",
+            unit: "THOUSAND_YEARS",
+            color: "yellow",
+         },
       },
       {
          characters: 11,
@@ -116,7 +124,11 @@ export class PasswordSecurityCalculator {
       {
          characters: 12,
          numbersOnly: { value: "3", unit: "MONTHS", color: "red" },
-         lowercaseOnly: { value: "27000", unit: "YEARS", color: "orange" },
+         lowercaseOnly: {
+            value: "27",
+            unit: "THOUSAND_YEARS",
+            color: "orange",
+         },
          mixedCase: { value: "111", unit: "MILLION_YEARS", color: "yellow" },
          numbersAndLetters: {
             value: "917",
@@ -128,7 +140,11 @@ export class PasswordSecurityCalculator {
       {
          characters: 13,
          numbersOnly: { value: "3", unit: "YEARS", color: "orange" },
-         lowercaseOnly: { value: "705000", unit: "YEARS", color: "yellow" },
+         lowercaseOnly: {
+            value: "705",
+            unit: "THOUSAND_YEARS",
+            color: "yellow",
+         },
          mixedCase: { value: "5", unit: "BILLION_YEARS", color: "yellow" },
          numbersAndLetters: {
             value: "56",
@@ -167,7 +183,7 @@ export class PasswordSecurityCalculator {
       },
       {
          characters: 16,
-         numbersOnly: { value: "2000", unit: "YEARS", color: "orange" },
+         numbersOnly: { value: "2", unit: "THOUSAND_YEARS", color: "orange" },
          lowercaseOnly: { value: "12", unit: "BILLION_YEARS", color: "green" },
          mixedCase: { value: "812", unit: "TRILLION_YEARS", color: "green" },
          numbersAndLetters: {
@@ -179,7 +195,7 @@ export class PasswordSecurityCalculator {
       },
       {
          characters: 17,
-         numbersOnly: { value: "28000", unit: "YEARS", color: "orange" },
+         numbersOnly: { value: "28", unit: "THOUSAND_YEARS", color: "orange" },
          lowercaseOnly: { value: "322", unit: "BILLION_YEARS", color: "green" },
          mixedCase: { value: "42", unit: "TRILLION_YEARS", color: "green" },
          numbersAndLetters: {
@@ -195,7 +211,7 @@ export class PasswordSecurityCalculator {
       },
       {
          characters: 18,
-         numbersOnly: { value: "284000", unit: "YEARS", color: "yellow" },
+         numbersOnly: { value: "284", unit: "THOUSAND_YEARS", color: "yellow" },
          lowercaseOnly: { value: "8", unit: "TRILLION_YEARS", color: "green" },
          mixedCase: { value: "2", unit: "QUADRILLION_YEARS", color: "green" },
          numbersAndLetters: {
@@ -242,6 +258,7 @@ export class PasswordSecurityCalculator {
             WEEKS: "semaines",
             MONTHS: "mois",
             YEARS: "ans",
+            THOUSAND_YEARS: "milliers d'années",
             MILLION_YEARS: "millions d'années",
             BILLION_YEARS: "milliards d'années",
             TRILLION_YEARS: "billions d'années",
@@ -348,11 +365,13 @@ export class PasswordSecurityCalculator {
       }
 
       // 2. Minuscules uniquement
-      // ou Majuscules uniquement 
+      // ou Majuscules uniquement
       // ou caractères spéciaux uniquement
-      if ((hasLowercase && !hasUppercase && !hasNumbers && !hasSpecialChars) 
-            || (!hasLowercase && hasUppercase && !hasNumbers && hasSpecialChars) 
-            || (!hasLowercase && !hasUppercase && !hasNumbers && hasSpecialChars) ) {
+      if (
+         (hasLowercase && !hasUppercase && !hasNumbers && !hasSpecialChars) ||
+         (!hasLowercase && hasUppercase && !hasNumbers && hasSpecialChars) ||
+         (!hasLowercase && !hasUppercase && !hasNumbers && hasSpecialChars)
+      ) {
          type = "lowercaseOnly";
       }
 
@@ -362,12 +381,14 @@ export class PasswordSecurityCalculator {
       // ou Minuscules et caractères spéciaux uniquement
       // ou Minuscules et chiffres uniquement
       // ou chiffres et caractères spéciaux uniquement
-      if ((hasLowercase && hasUppercase && !hasNumbers && !hasSpecialChars) 
-            || (!hasLowercase && hasUppercase && !hasNumbers && hasSpecialChars) 
-            || (!hasLowercase && hasUppercase && hasNumbers && !hasSpecialChars) 
-            || (hasLowercase && !hasUppercase && !hasNumbers && hasSpecialChars) 
-            || (hasLowercase && !hasUppercase && hasNumbers && !hasSpecialChars) 
-            || (!hasLowercase && !hasUppercase && hasNumbers && hasSpecialChars) ) {
+      if (
+         (hasLowercase && hasUppercase && !hasNumbers && !hasSpecialChars) ||
+         (!hasLowercase && hasUppercase && !hasNumbers && hasSpecialChars) ||
+         (!hasLowercase && hasUppercase && hasNumbers && !hasSpecialChars) ||
+         (hasLowercase && !hasUppercase && !hasNumbers && hasSpecialChars) ||
+         (hasLowercase && !hasUppercase && hasNumbers && !hasSpecialChars) ||
+         (!hasLowercase && !hasUppercase && hasNumbers && hasSpecialChars)
+      ) {
          type = "mixedCase";
       }
 
@@ -375,10 +396,12 @@ export class PasswordSecurityCalculator {
       // ou Chiffres + Majuscules et caractères spéciaux uniquement
       // ou Chiffres + minuscules et caractères spéciaux uniquement
       // ou minuscules et majuscules et caractères spéciaux uniquement
-      if ((hasNumbers && hasLowercase && hasUppercase && !hasSpecialChars)
-         || (hasNumbers && !hasLowercase && hasUppercase && hasSpecialChars)
-         || (hasNumbers && hasLowercase && !hasUppercase && hasSpecialChars)
-         || (!hasNumbers && hasLowercase && hasUppercase && hasSpecialChars)) {
+      if (
+         (hasNumbers && hasLowercase && hasUppercase && !hasSpecialChars) ||
+         (hasNumbers && !hasLowercase && hasUppercase && hasSpecialChars) ||
+         (hasNumbers && hasLowercase && !hasUppercase && hasSpecialChars) ||
+         (!hasNumbers && hasLowercase && hasUppercase && hasSpecialChars)
+      ) {
          type = "numbersAndLetters";
       }
 
@@ -388,7 +411,6 @@ export class PasswordSecurityCalculator {
       }
       return this.getEvaluationResult(length, type);
    }
-
 }
 
 // Instance exportée pour utilisation dans les composants Angular
@@ -427,9 +449,14 @@ export class PasswordCheckComponent
 
    // Propriétés pour l'effet typewriter
    displayedMessage: string = "";
-   fullMessage: string = "";
    typewriterInterval: any;
-   calculatedFontSize: number = 96; // Taille calculée en px
+
+   // Propriétés pour affichage séparé
+   numberPart: string = "";
+   unitPart: string = "";
+   shouldSplit: boolean = false;
+   displayedNumberPart: string = "";
+   displayedUnitPart: string = "";
 
    constructor(
       private router: Router,
@@ -449,6 +476,7 @@ export class PasswordCheckComponent
          // Afficher immédiatement
          this.showInfoModal = true;
          localStorage.setItem("password-check-onboarding-seen", "true");
+         this.hasSeenOnboarding = true; // Mettre à jour la variable
       }
    }
 
@@ -571,8 +599,11 @@ export class PasswordCheckComponent
       this.passwordResultLevel = "";
       this.message = "";
       this.displayedMessage = "";
-      this.fullMessage = "";
-      this.calculatedFontSize = 96;
+      this.numberPart = "";
+      this.unitPart = "";
+      this.shouldSplit = false;
+      this.displayedNumberPart = "";
+      this.displayedUnitPart = "";
       this.isInputFocused = false; // Remet l'input en état non-focus
       if (this.typewriterInterval) {
          clearInterval(this.typewriterInterval);
@@ -582,60 +613,83 @@ export class PasswordCheckComponent
       history.back();
    }
 
-   // Calcule directement la taille en pixels - SIMPLE ET DIRECT
-   calculateSimpleFontSize(text: string): number {
-      const digitCount = (text.match(/\d/g) || []).length;
-      const letterCount = (text.match(/[a-zA-ZÀ-ÿ]/g) || []).length;
-      const totalRelevantChars = digitCount + letterCount;
-
-      // Détermine la taille de base
-      let baseSize = 96; // Par défaut lettres
-      if (totalRelevantChars > 0) {
-         const digitRatio = digitCount / totalRelevantChars;
-         baseSize = digitRatio > 0.5 ? 127 : 96; // Chiffres vs lettres
-      }
-
-      // Réduction selon la longueur
-      const length = text.length;
-      let reduction = 1; // Pas de réduction par défaut
-
-      if (length <= 3) {
-         reduction = 1; // 100%
-      } else if (length <= 8) {
-         reduction = 0.7; // 70%
-      } else if (length <= 15) {
-         reduction = 0.5; // 50%
-      } else if (length <= 25) {
-         reduction = 0.3; // 30%
-      } else {
-         reduction = 0.2; // 20%
-      }
-
-      const finalSize = Math.round(baseSize * reduction);
-      const result = Math.max(18, finalSize); // Minimum 18px
-
-      return result;
-   }
-
    // Effet typewriter lettre par lettre
    startTypewriterEffect(text: string) {
-      this.fullMessage = text;
       this.displayedMessage = "";
-      this.calculatedFontSize = this.calculateSimpleFontSize(text); // Calcul direct
+
+      // Séparer le texte en nombre et unité
+      this.splitNumberAndUnit(text);
 
       if (this.typewriterInterval) {
          clearInterval(this.typewriterInterval);
       }
 
+      if (this.shouldSplit) {
+         // Animation pour affichage séparé
+         this.startSplitTypewriter();
+      } else {
+         // Animation normale
+         this.startNormalTypewriter();
+      }
+   }
+
+   // Animation typewriter normale
+   startNormalTypewriter() {
+      // Pour l'affichage normal, on utilise le texte complet stocké dans numberPart
+      const fullText = this.numberPart;
       let currentIndex = 0;
       this.typewriterInterval = setInterval(() => {
-         if (currentIndex < this.fullMessage.length) {
-            this.displayedMessage += this.fullMessage.charAt(currentIndex);
+         if (currentIndex < fullText.length) {
+            this.displayedMessage += fullText.charAt(currentIndex);
             currentIndex++;
          } else {
             clearInterval(this.typewriterInterval);
          }
-      }, 50); // 50ms entre chaque lettre
+      }, 50);
+   }
+
+   // Animation typewriter pour affichage séparé
+   startSplitTypewriter() {
+      this.displayedNumberPart = "";
+      this.displayedUnitPart = "";
+
+      let numberIndex = 0;
+      let unitIndex = 0;
+      let isAnimatingNumber = true;
+
+      this.typewriterInterval = setInterval(() => {
+         if (isAnimatingNumber && numberIndex < this.numberPart.length) {
+            // Animer le nombre d'abord
+            this.displayedNumberPart += this.numberPart.charAt(numberIndex);
+            numberIndex++;
+         } else if (isAnimatingNumber) {
+            // Passer à l'animation de l'unité
+            isAnimatingNumber = false;
+         } else if (unitIndex < this.unitPart.length) {
+            // Animer l'unité
+            this.displayedUnitPart += this.unitPart.charAt(unitIndex);
+            unitIndex++;
+         } else {
+            // Arrêter l'animation
+            clearInterval(this.typewriterInterval);
+         }
+      }, 50);
+   }
+
+   // Sépare le texte en nombre et unité
+   splitNumberAndUnit(text: string) {
+      // Regex pour détecter un nombre au début + unité après
+      const match = text.match(/^(\d+(?:[.,]\d+)?)\s*(.+)$/);
+
+      if (match) {
+         this.numberPart = match[1]; // Le nombre
+         this.unitPart = match[2]; // L'unité
+         this.shouldSplit = true;
+      } else {
+         this.numberPart = text;
+         this.unitPart = "";
+         this.shouldSplit = false;
+      }
    }
 
    handleButtonClick() {
