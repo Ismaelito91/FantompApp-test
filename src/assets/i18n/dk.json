@@ -342,6 +342,7 @@
             "WEEKS": "uger",
             "MONTHS": "måneder",
             "YEARS": "år",
+            "THOUSAND_YEARS": "milliers d'années DK",
             "MILLION_YEARS": "millioner år",
             "BILLION_YEARS": "milliarder år",
             "TRILLION_YEARS": "billioner år",

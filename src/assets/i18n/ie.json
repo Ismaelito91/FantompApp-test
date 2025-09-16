@@ -416,6 +416,7 @@
             "WEEKS": "weeks",
             "MONTHS": "months",
             "YEARS": "years",
+            "THOUSAND_YEARS": "milliers d'années IE",
             "MILLION_YEARS": "million years",
             "BILLION_YEARS": "billion years",
             "TRILLION_YEARS": "trillion years",

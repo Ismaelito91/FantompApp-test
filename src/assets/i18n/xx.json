@@ -100,7 +100,7 @@
       "FRONTEND_VALUE": "Frontend Version: {{version}}",
       "BACKEND_VALUE": "Backend Version: {{version}}"
    },
-      "PROBLEMS": {
+   "PROBLEMS": {
       "DELETE_CONTENT": {
          "TITLE": "Je fais effacer un contenu INT",
          "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L’effacer prend du temps mais nous allons t’aider à aller jusqu’au bout 🗑 INT",
@@ -354,6 +354,7 @@
             "WEEKS": "weeks",
             "MONTHS": "months",
             "YEARS": "years",
+            "THOUSAND_YEARS": "milliers d'années XX",
             "MILLION_YEARS": "million years",
             "BILLION_YEARS": "billion years",
             "TRILLION_YEARS": "trillion years",

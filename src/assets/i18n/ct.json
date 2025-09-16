@@ -342,6 +342,7 @@
             "WEEKS": "setmanes",
             "MONTHS": "mesos",
             "YEARS": "anys",
+            "THOUSAND_YEARS": "milliers d'années CT",
             "MILLION_YEARS": "milions d'anys",
             "BILLION_YEARS": "milers de milions d'anys",
             "TRILLION_YEARS": "bilions d'anys",
