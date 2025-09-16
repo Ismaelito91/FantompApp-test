@@ -27,7 +27,7 @@ import {TemplateMessageComponent} from "../template-message/template-message.com
 export class Card15Component {
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
    private readonly dialog = inject(MatDialog);
-   private dialogRef?: MatDialogRef<TiktokDialog>;
+   private dialogRef?: MatDialogRef<FacebookDialog>;
    data = input.required<PageComponentModel>();
    ComponentType = ComponentType;
 
@@ -36,7 +36,7 @@ export class Card15Component {
    }
 
    openDialog(): void {
-      this.dialog.open(TiktokDialog, {
+      this.dialog.open(FacebookDialog, {
          width: '100vw',
          maxWidth: '100vw',
          panelClass: 'card-15-slide-dialog'
@@ -47,11 +47,11 @@ export class Card15Component {
 
 
 @Component({
-   selector: 'tiktok-dialog',
-   templateUrl: 'tiktok-dialog.html',
-   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TemplateMessageComponent, EnrichedLinkComponent],
+   selector: 'facebook-dialog',
+   templateUrl: 'facebook-dialog.html',
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent],
    changeDetection: ChangeDetectionStrategy.OnPush,
-   styleUrl: './tiktok-dialog.scss',
+   styleUrl: './facebook-dialog.scss',
    animations: [
       trigger('slideUpDown', [
          state('open', style({transform: 'translateY(0)', opacity: 1})),
@@ -66,8 +66,8 @@ export class Card15Component {
       ])
    ]
 })
-export class TiktokDialog {
-   private dialogRef = inject(MatDialogRef<TiktokDialog>);
+export class FacebookDialog {
+   private dialogRef = inject(MatDialogRef<FacebookDialog>);
    animationState: 'open' | 'closed' = 'open';
 
    enriched_link: PageComponentModel = {
@@ -78,35 +78,12 @@ export class TiktokDialog {
          id: 0,
          countryRegion: "FR",
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
-         firstTitle: "Envoyer une demande liée à la confidentialité",
-         description: "https://www.tiktok.com/legal/report/privacy/webform/fr",
-         staticImage: "assets/images/tiktok.png",
+         firstTitle: "Formulaires de contact",
+         description: "https://fr-fr.facebook.com/help/contact/954059743194940",
+         staticImage: "assets/images/facebook.png",
       }],
    };
-
-   template_message: PageComponentModel =
-      {
-         id: 0,
-         type: ComponentType.TEMPLATE_MESSAGE,
-         status: ComponentStatus.PUBLISHED,
-         translations: [{
-            id: 0,
-            countryRegion: "FR",
-            devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "📝 Exemple de mail à envoyer",
-            description: "Madame, Monsieur,\n" +
-               "\n" +
-               "Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :\n" +
-               "[Lien(s) Url du contenu à supprimer]\n" +
-               "Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n" +
-               "[description des informations à supprimer] .\n" +
-               "Je souhaite que ces informations soient supprimées car :\n" +
-               "[motif de la suppression]\n" +
-               "Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les moteurs de recherche (article 17.2 du RGPD).\n" +
-               "Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n" +
-               "Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
-         }],
-      };
+   
 
    closeDialog() {
       this.animationState = 'closed';
