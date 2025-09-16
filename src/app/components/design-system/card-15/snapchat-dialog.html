@@ -7,7 +7,7 @@
       </div>
       <app-button-close class="absolute right-4" (click)="closeDialog()"></app-button-close>
    </div>
-   <div class="content flex flex-col">
+   <div class="flex flex-col">
       <div class="details flex flex-col gap(--spacing-3)">
          <h3 class="">Exemple de mail - Snapchat</h3>
          <span>Pour effectuer une demande d’effacement, tu peux contacter le délégué à la protection des données (DPO).</span>
@@ -15,8 +15,6 @@
          <app-tile-mail [data]="tile_mail"></app-tile-mail>
       </div>
       <app-divider class="divider"></app-divider>
-      <div class="flex flex-col gap-(--spacing-4)">
-            <app-template-message [data]="template_message"></app-template-message>
-      </div>
+      <app-template-message [data]="template_message"></app-template-message>
    </div>
 </div>
