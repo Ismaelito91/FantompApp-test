@@ -1,0 +1,46 @@
+.instagram-report-content-container {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   padding-bottom: 48px;
+   gap: var(--spacing-5);
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   .header {
+      background: var(--background-1);
+      gap: 24px;
+      padding: var(--spacing-3) var(--spacing-5) 0 var(--spacing-5);
+      margin-bottom: 20px;
+   }
+   .picto {
+      margin-top: 40px;
+   }
+
+   .details {
+      gap: var(--spacing-3);
+      padding-left: var(--spacing-3);
+      padding-right: var(--spacing-3);
+   }
+   .divider{
+      padding-top: var(--spacing-5);
+      padding-bottom: var(--spacing-5);
+   }
+
+   .content {
+      padding: 0 var(--spacing-3);
+      margin-top: 20px;
+   }
+   .image {
+      padding-top: var(--spacing-3);
+      padding-bottom: var(--spacing-3);
+      border-radius: var(--border-radius-2);
+      color: var(--color-10);
+      gap: 10px;
+      background-color: transparent;
+   }
+   .title-form{
+      padding: var(--spacing-2) var(--spacing-3);
+      font-size: 23px;
+      color: var(--color-8);
+   }
+}

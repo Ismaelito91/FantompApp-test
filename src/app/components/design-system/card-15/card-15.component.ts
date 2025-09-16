@@ -27,7 +27,7 @@ import {TemplateMessageComponent} from "../template-message/template-message.com
 export class Card15Component {
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
    private readonly dialog = inject(MatDialog);
-   private dialogRef?: MatDialogRef<SnapchatDialog>;
+   private dialogRef?: MatDialogRef<XDialog>;
    data = input.required<PageComponentModel>();
    ComponentType = ComponentType;
    
@@ -36,7 +36,7 @@ export class Card15Component {
    }
 
    openDialog(): void {
-      this.dialog.open(SnapchatDialog, {
+      this.dialog.open(XDialog, {
          width: '100vw',
          maxWidth: '100vw',
          panelClass: 'card-15-slide-dialog'
@@ -47,11 +47,11 @@ export class Card15Component {
 
 
 @Component({
-   selector: 'snapchat-dialog',
-   templateUrl: 'snapchat-dialog.html',
-   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TileMailComponent, TemplateMessageComponent],
+   selector: 'x-dialog',
+   templateUrl: 'x-dialog.html',
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent, TemplateMessageComponent],
    changeDetection: ChangeDetectionStrategy.OnPush,
-   styleUrl: './snapchat-dialog.scss',
+   styleUrl: './x-dialog.scss',
    animations: [
       trigger('slideUpDown', [
          state('open', style({ transform: 'translateY(0)', opacity: 1 })),
@@ -66,20 +66,21 @@ export class Card15Component {
       ])
    ]
 })
-export class SnapchatDialog {
-   private dialogRef = inject(MatDialogRef<SnapchatDialog>);
+export class XDialog {
+   private dialogRef = inject(MatDialogRef<XDialog>);
    animationState: 'open' | 'closed' = 'open';
-   tile_mail: PageComponentModel =
+   enriched_link: PageComponentModel =
       {
          id: 0,
-         type: ComponentType.TILE_MAIL,
+         type: ComponentType.ENRICHED_LINK,
          status: ComponentStatus.PUBLISHED,
          translations: [{
             id: 0,
             countryRegion: "FR",
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "Contacter Snapchat par mail",
-            secondTitle: "dpo@snapchat.com",
+            firstTitle: "Demandes liées à la politique de confidentialité de X",
+            description: "https://help.x.com/fr/forms/privacy/question",
+            staticImage: "assets/images/x.png",
          }],
       };
    template_message: PageComponentModel =
