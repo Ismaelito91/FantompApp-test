@@ -1,10 +1,14 @@
 <a [href]="((data() | pageTranslation)?.description | stripHtml)" target="_blank">
    <div class="flex justify-between tile-main">
       <div class="flex flex-col justify-center tile-container">
-         <div class="tile-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></div>
+         @if ((data() | pageTranslation)?.firstTitle) {
+            <div class="tile-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></div>
+         }
          <div class="flex items-center tile-body">
             <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" class="tile-image" />
-            <div class="tile-link" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
+            @if ((data() | pageTranslation)?.description) {
+               <div class="tile-link" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></div>
+            }
          </div>
       </div>
       <div class="flex items-center">

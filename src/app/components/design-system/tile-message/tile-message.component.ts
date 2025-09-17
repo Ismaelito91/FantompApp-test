@@ -5,10 +5,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { StripHtmlPipe } from '../../../pipes/strip-html.pipe';
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-tile-message',
-   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe, PageTranslationPipe],
+   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe, PageTranslationPipe, TranslatePipe],
    templateUrl: './tile-message.component.html',
    styleUrl: './tile-message.component.scss'
 })

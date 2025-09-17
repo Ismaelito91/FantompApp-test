@@ -14,11 +14,15 @@
       }
    </div>
    <div class="flex flex-col gap-(--spacing-4) p-(--spacing-5) pt-0">
-      <app-tag-unclickable variant="danger" label="IMPORTANT"></app-tag-unclickable>
+      <app-tag-unclickable variant="danger" [label]="'DESIGN_SYSTEM.TAG_UNCLICKABLE.IMPORTANT' | translate"></app-tag-unclickable>
       <div class="flex flex-col gap-(--spacing-3)">
          <div class="card-18-description flex flex-col">
-            <h6 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h6>
-            <div [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
+            @if ((data() | pageTranslation)?.firstTitle) {
+               <h6 [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h6>
+            }
+            @if ((data() | pageTranslation)?.description) {
+               <div [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></div>
+            }
          </div>
          @if (data().showPasswordCheckBtn) {
             <div id="password-check-tool" class="tools-item flex justify-between items-center cursor-pointer"

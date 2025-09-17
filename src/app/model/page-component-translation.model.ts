@@ -3,7 +3,7 @@ import { CountryRegion } from "./enum/country-region.enum";
 
 export default interface PageComponentTranslationModel {
    id: number
-   countryRegion?: keyof typeof CountryRegion
+   countryRegion: keyof typeof CountryRegion
    devices?: Device[]
    firstTitle?: string | null;
    secondTitle?: string | null;

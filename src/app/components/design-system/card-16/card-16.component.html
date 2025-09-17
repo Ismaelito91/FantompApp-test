@@ -2,10 +2,10 @@
    @if ((data() | pageTranslation)?.firstTitle || (data() | pageTranslation)?.secondTitle) {
       <div class="flex justify-between">
          @if((data() | pageTranslation)?.firstTitle) {
-            <h5 class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h5>
+            <h5 class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h5>
          }
          @if((data() | pageTranslation)?.secondTitle){
-            <app-tag-unclickable [variant]="toVariant((data() | pageTranslation)?.secondTitle!)" [label]="(data() | pageTranslation)?.description!"></app-tag-unclickable>
+            <app-tag-unclickable [variant]="toVariant((data() | pageTranslation)?.secondTitle! | translate)" [label]="(data() | pageTranslation)?.description! | translate"></app-tag-unclickable>
          }
       </div>
    }

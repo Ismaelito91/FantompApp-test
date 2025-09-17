@@ -1,365 +1,375 @@
 {
-   "APP": {
-      "TITLE": "Ghost App",
-      "LOADING": "Loading...",
-      "ERROR": "Error loading application"
-   },
-   "COMMON": {
-      "SAVE": "Save",
-      "CANCEL": "Cancel",
-      "DELETE": "Delete",
-      "EDIT": "Edit",
-      "SEARCH": "Search",
-      "BACK": "Back",
-      "NEXT": "Next",
-      "PREVIOUS": "Previous",
-      "RESULTS": "Résultats INT",
-      "HOME": "Home",
-      "PROBLEM": "Problem",
-      "TOOLS": "Tools",
-      "SECURE": "Secure me",
-      "UNDERSTOOD": "Compris INT",
-      "DOWNLOAD": "Télécharger INT",
-      "COPY": "Copier INT",
-      "COPIED": "Copié ! INT"
-   },
-   "DESIGN_SYSTEM": {
-      "STEPPER": {
-         "DESCRIPTION": "Question {{ currentStep }} sur {{ totalSteps }} INT"
-      }
-   },
-   "USER_CONFIG_APP": {
-      "TITLE": "Appearance",
-      "SUBTITLE": "Choose your preferred display theme.",
-      "THEME": {
-         "LABEL": "Theme",
-         "DEFAULT": "default",
-         "LIGHT": "light",
-         "DARK": "dark",
-         "SYSTEM_SETTINGS": "Use the same settings as your phone"
-      }
-   },
-   "APP_ICON_SELECTOR": {
-      "TITLE": "Application Icon",
-      "SUBTITLE": "Customize your app's visible icon.",
-      "DEFAULT": "Default Icon",
-      "DEFAULT_DESC": "The original app icon",
-      "GHOST": "Ghost Icon",
-      "GHOST_DESC": "A mysterious and discreet version",
-      "DARK": "Dark Icon",
-      "DARK_DESC": "Perfect for night users",
-      "COLORFUL": "Colorful Icon",
-      "COLORFUL_DESC": "A vibrant and joyful version"
-   },
-   "LANGUAGES": {
-      "FR": "French",
-      "EN": "English",
-      "PT": "Portuguese",
-      "ES": "Spanish",
-      "CA": "Catalan",
-      "PL": "Polish",
-      "DA": "Danish",
-      "EL": "Greek",
-      "HU": "Hungarian"
-   },
-   "HOME": {
-      "GREETING": "Hello 👋 How can we help you?",
-      "WELCOME": "Welcome to Ghost App",
-      "APP_INFO_TITLE": "Application Information",
-      "APPEARANCE": "Appearance",
-      "CHANGE_ICON": "Change Icon",
-      "RESOURCES": "Resources",
-      "WHAT_IS_APP": "What is this app?",
-      "RIGHTS": "I have rights",
-      "ACCESSIBILITY": "FantomApp for everyone (Accessibility)",
-      "TUTORIAL": "Review welcome tutorial",
-      "CARDS": {
-         "MAIN_TITLE": "I protect my social networks",
-         "PASSWORD_CHECK": {
-            "TITLE": "I test my password",
-            "DESCRIPTION": "How long does a cybercriminal take to find it?"
-         },
-         "BLUR_IMAGE": {
-            "TITLE": "I anonymize<br />my photo",
-            "DESCRIPTION": "Blur my profile<br />photo"
-         },
-         "PROBLEMS": {
-            "SECTION_TITLE": "I have an online problem",
-            "DELETE_CONTENT": {
-               "TITLE": "I want to delete content"
-            },
-            "HARASSMENT": {
-               "TITLE": "I experience cyberbullying"
-            }
-         }
-      }
-   },
-   "VERSION": {
-      "FRONTEND": "Frontend Version",
-      "BACKEND": "Backend Version",
-      "FRONTEND_VALUE": "Frontend Version: {{version}}",
-      "BACKEND_VALUE": "Backend Version: {{version}}"
-   },
-   "PROBLEMS": {
-      "DELETE_CONTENT": {
-         "TITLE": "Je fais effacer un contenu INT",
-         "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L’effacer prend du temps mais nous allons t’aider à aller jusqu’au bout 🗑 INT",
-         "REPORTED": {
-            "TITLE": "As-tu signalé le contenu auprès du réseau social ? INT",
-            "NONE": {
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "Oui, <strong>j’ai déjà signalé le contenu</strong> INT",
-                  "ANSWER_2_TITLE": "Non, <strong>je n’ai pas encore signalé le contenu</strong> INT"
-               }
-            }
-         },
-         "VIOLENT": {
-            "TITLE": "Est ce qu'il s'agit d'un contenu violent ou te représentant nu·e ? INT",
-            "NONE": {
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "Oui INT",
-                  "ANSWER_2_TITLE": "Non INT"
-               }
-            }
-         },
-         "RESULTS": {
-            "REPORTED_CONTENT": {
-               "TITLE": "Tu as signalé le contenu ? INT",
-               "COMPLAINT": {
-                  "TITLE": "Prépare des preuves INT",
-                  "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte. INT"
-               }
-            },
-            "REPORTED_VIOLENT_CONTENT": {
-               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? INT",
-               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  INT"
-            },
-            "UNREPORTED_VIOLENT_CONTENT": {
-               "TITLE": "Tu n’as pas encore signalé le contenu ? INT"
-            }
-         }
-      },
-      "HACKING": {
-         "TITLE": "Je me suis fait pirater INT",
-         "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté. INT",
-         "SITUATION": {
-            "TITLE": "Quelle est ta situation ? INT",
-            "NONE": {
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "J’ai <strong>encore accès</strong> à mon compte INT",
-                  "ANSWER_2_TITLE": "Je n’ai <strong>plus accès</strong> à mon compte INT"
-               }
-            }
-         },
-         "RESULTS": {
-            "HAVE_ACCES": {
-               "TITLE": "Tu as signalé le contenu ? INT",
-               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  INT"
-            },
-            "NO_ACCESS": {
-               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? INT",
-               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  INT"
-            }
-         }
-      }
-   },
-   "TOOLS": {
-      "TITLE": "Outils INT",
-      "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe INT",
-      "PASSWORD_CHECK_DESCRIPTION": "En combien de temps un cybercriminel le trouve ? INT",
-      "BLUR_IMAGE_TITLE": "J'anonymise ma photo INT",
-      "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil INT",
-      "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité INT",
-      "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? INT",
-      "VISIBILITY_CHECK": {
-         "TITLE": "Je teste ma visibilité INT",
-         "DESCRIPTION": "Peut-on m'identifier à partir de mon pseudo et ma bio ? INT",
-         "PSEUDO": {
-            "TITLE": "Que contient ton pseudo ? INT",
-            "IDENTITY": {
-               "TITLE": "🪪 Identité INT",
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier INT",
-                  "ANSWER_1_DESCRIPTION": "(exemple : Martin) INT",
-                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé. INT",
-                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1) INT",
-                  "ANSWER_3_TITLE": "Mon surnom INT",
-                  "ANSWER_4_TITLE": "Ma date de naissance INT"
-               }
-            },
-            "ORIGIN": {
-               "TITLE": "🗺️ Origine géographique ou culturelle INT",
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "Mon code postal INT",
-                  "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300) INT",
-                  "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine INT",
-                  "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.) INT"
-               }
-            }
-         },
-         "BIO": {
-            "TITLE": "Que contient ta bio ? INT",
-            "EMPTY": {
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "Je n’ai rien écrit dans ma bio INT"
-               }
-            },
-            "IDENTITY": {
-               "TITLE": "🪪 Identité INT",
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier INT",
-                  "ANSWER_1_DESCRIPTION": "(exemple : Martin) INT",
-                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé. INT",
-                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1) INT",
-                  "ANSWER_3_TITLE": "Mon surnom INT",
-                  "ANSWER_4_TITLE": "Ma date de naissance INT"
-               }
-            },
-            "ORIGIN": {
-               "TITLE": "🗺️ Origine géographique ou culturelle INT",
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "Mon code postal INT",
-                  "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300) INT",
-                  "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine INT",
-                  "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.) INT"
-               }
-            },
-            "DIGITAL_LIFE": {
-               "TITLE": "👥 Vie numérique INT",
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "Les liens vers mes autres réseaux. INT",
-                  "ANSWER_1_DESCRIPTION": "(Twitter, Instagram, TikTok, LinkedIn). INT",
-                  "ANSWER_2_TITLE": "Les comptes de mon entourage INT",
-                  "ANSWER_2_DESCRIPTION": "(Amis, relations amoureuses...) INT"
-               }
-            },
-            "INTEREST": {
-               "TITLE": "🎭 Centres d’intérêt INT",
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "Un lien vers mon club ou une association où je participe. INT",
-                  "ANSWER_1_DESCRIPTION": "(ex : @VolleyNantes) INT"
-               }
-            },
-            "EDUCATION_PRO": {
-               "TITLE": "🏫 Éducation ou profession INT",
-               "ANSWERS": {
-                  "ANSWER_1_TITLE": "Une mention de mon établissement ou de mon entreprise. INT",
-                  "ANSWER_2_TITLE": "Mes compétences INT",
-                  "ANSWER_2_DESCRIPTION": "(Apprenti pâtissier, Étudiant en médecine…) INT"
-               }
-            }
-         },
-         "RESULTS": {
-            "TITLE": "Tes résultats INT",
-            "SUMMARY": {
-               "GOOD": {
-                  "TITLE": "Bien joué ! 🥷 INT",
-                  "CONTENT": "Ton profil ne permet pas de savoir qui tu es dans la vie, sur les réseaux et aussi hors ligne. INT"
-               },
-               "OK": {
-                  "TITLE": "Pas mal ! 🥸 INT",
-                  "CONTENT": "Il y a encore quelques indices pour deviner qui tu es dans la vraie vie mais tu peux encore t’améliorer et divulguer moins d’informations sur toi. INT"
-               },
-               "BAD": {
-                  "TITLE": "Prudence ! 🧐 INT",
-                  "CONTENT": "Ton profil contient beaucoup d’informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie. INT"
-               }
-            },
-            "PSEUDO": {
-               "TITLE": "Ton pseudo indique INT"
-            },
-            "BIO": {
-               "TITLE": "Ta bio indique INT"
-            },
-            "STATE": {
-               "PUBLIC": "PUBLIC 👀 INT",
-               "DISCREET": "DISCRET 🙈️ INT",
-               "INVISIBLE": "INVISIBLE 👻 INT"
-            },
-            "NO_PERSONAL_INFO": "Aucune information personnelle ! INT"
-         }
+  "APP": {
+    "TITLE": "Ghost App",
+    "LOADING": "Loading...",
+    "ERROR": "Error loading application"
+  },
+  "COMMON": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "DELETE": "Delete",
+    "EDIT": "Edit",
+    "SEARCH": "Search",
+    "BACK": "Back",
+    "NEXT": "Next",
+    "PREVIOUS": "Previous",
+    "RESULTS": "Résultats INT",
+    "HOME": "Home",
+    "PROBLEM": "Problem",
+    "TOOLS": "Tools",
+    "SECURE": "Secure me",
+    "UNDERSTOOD": "Compris INT",
+    "DOWNLOAD": "Télécharger INT",
+    "COPY": "Copier INT",
+    "COPIED": "Copié ! INT"
+  },
+  "DESIGN_SYSTEM": {
+    "STEPPER": {
+      "DESCRIPTION": "Question {{ currentStep }} sur {{ totalSteps }} INT"
+    }
+  },
+  "USER_CONFIG_APP": {
+    "TITLE": "Appearance",
+    "SUBTITLE": "Choose your preferred display theme.",
+    "THEME": {
+      "LABEL": "Theme",
+      "DEFAULT": "default",
+      "LIGHT": "light",
+      "DARK": "dark",
+      "SYSTEM_SETTINGS": "Use the same settings as your phone"
+    }
+  },
+  "APP_ICON_SELECTOR": {
+    "TITLE": "Application Icon",
+    "SUBTITLE": "Customize your app's visible icon.",
+    "DEFAULT": "Default Icon",
+    "DEFAULT_DESC": "The original app icon",
+    "GHOST": "Ghost Icon",
+    "GHOST_DESC": "A mysterious and discreet version",
+    "DARK": "Dark Icon",
+    "DARK_DESC": "Perfect for night users",
+    "COLORFUL": "Colorful Icon",
+    "COLORFUL_DESC": "A vibrant and joyful version"
+  },
+  "LANGUAGES": {
+    "FR": "French",
+    "EN": "English",
+    "PT": "Portuguese",
+    "ES": "Spanish",
+    "CA": "Catalan",
+    "PL": "Polish",
+    "DA": "Danish",
+    "EL": "Greek",
+    "HU": "Hungarian"
+  },
+  "HOME": {
+    "GREETING": "Hello 👋 How can we help you?",
+    "WELCOME": "Welcome to Ghost App",
+    "APP_INFO_TITLE": "Application Information",
+    "APPEARANCE": "Appearance",
+    "CHANGE_ICON": "Change Icon",
+    "RESOURCES": "Resources",
+    "WHAT_IS_APP": "What is this app?",
+    "RIGHTS": "I have rights",
+    "ACCESSIBILITY": "FantomApp for everyone (Accessibility)",
+    "TUTORIAL": "Review welcome tutorial",
+    "CARDS": {
+      "MAIN_TITLE": "I protect my social networks",
+      "PASSWORD_CHECK": {
+        "TITLE": "I test my password",
+        "DESCRIPTION": "How long does a cybercriminal take to find it?"
       },
       "BLUR_IMAGE": {
-         "TITLE": "Anonymiser ma photo INT",
-         "DESCRIPTION": "Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne. INT",
-         "ADVICE": "💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée ! INT",
-         "UPLOAD_IMAGE": "Importer une photo 🤳 INT",
-         "BLUR": "Flouter INT",
-         "PIXELATE": "Pixelliser INT",
-         "ALL_BLUR": "Tout flouter INT",
-         "BRUSH_SIZE": "Taille du flou INT",
-         "TUTORIAL": {
-            "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. INT"
-         }
+        "TITLE": "I anonymize<br />my photo",
+        "DESCRIPTION": "Blur my profile<br />photo"
       },
-      "PASSWORD_CHECK": {
-         "TITLE": "I test my password",
-         "DESCRIPTION": "How long does it take a cybercriminal to find it?",
-         "CRIMINAL_GUESSES": "A cybercriminal guesses it in:",
-         "ASSESSMENT_TEXT": "Your password has:",
-         "INPUT_LABEL": "Password",
-         "COPY_PASSWORD": "Copy password",
-         "COPIED": "Copied!",
-         "BADGES": {
-            "IMMEDIATE": "IT'S IMMEDIATE ⚠️",
-            "RAPID": "IT'S FAST 😬",
-            "CORRECT": "IT'S CORRECT 🙂",
-            "SUPER": "IT'S SUPER 😎"
-         },
-         "CRITERIA": {
-            "MIN_LENGTH": "12 characters minimum",
-            "UPPERCASE": "At least 1 uppercase",
-            "LOWERCASE": "At least 1 lowercase",
-            "DIGIT": "At least 1 digit",
-            "SPECIAL_CHAR": "At least 1 special character",
-            "CRITERIA_VALIDATED": "Criteria validated",
-            "CRITERIA_NOT_VALIDATED": "Criteria not validated"
-         },
-         "BUTTONS": {
-            "WHAT_IS_GOOD_PASSWORD": "What is a good password?",
-            "TEST_PASSWORD": "Test my password 🔒",
-            "STRENGTHEN_PASSWORD": "Strengthen my password"
-         },
-         "MODALS": {
-            "ONBOARDING": {
-               "TITLE": "How does it work?",
-               "STEP_1": "🔐 <strong>Step 1</strong>: Type your password in the provided field.",
-               "STEP_2": "🧪 <strong>Step 2</strong>: Click on \"Test my password\".",
-               "STEP_3": "⏱️ <strong>Step 3</strong>: Voila! See how long a cybercriminal could take to find it... and access your personal data!",
-               "NOTE": "GhostApp does not store any information.",
-               "UNDERSTOOD": "Understood"
-            },
-            "PASSWORD_INFO": {
-               "TITLE": "A strong password is:",
-               "CLOSE": "Close",
-               "REQUIREMENTS": {
-                  "LENGTH": "12 characters",
-                  "UPPERCASE": "uppercase letters",
-                  "LOWERCASE": "lowercase letters",
-                  "SPECIAL_CHARS": "special characters (*, @, !)"
-               },
-               "WARNINGS": {
-                  "CRIMINALS_USE_DB": "🏴‍☠️ Cybercriminals use all existing word databases in all languages.",
-                  "NO_DICTIONARY": "⚠️ So don't use any dictionary words to create your password"
-               }
-            }
-         },
-         "TIME_UNITS": {
-            "INSTANT": "Instant",
-            "MINUTES": "minutes",
-            "HOURS": "hours",
-            "DAY": "day",
-            "DAYS": "days",
-            "WEEK": "week",
-            "WEEKS": "weeks",
-            "MONTHS": "months",
-            "YEARS": "years",
-            "THOUSAND_YEARS": "milliers d'années XX",
-            "MILLION_YEARS": "million years",
-            "BILLION_YEARS": "billion years",
-            "TRILLION_YEARS": "trillion years",
-            "QUADRILLION_YEARS": "quadrillion years"
-         }
+      "PROBLEMS": {
+        "SECTION_TITLE": "I have an online problem",
+        "DELETE_CONTENT": {
+          "TITLE": "I want to delete content"
+        },
+        "HARASSMENT": {
+          "TITLE": "I experience cyberbullying"
+        }
       }
-   }
+    }
+  },
+  "VERSION": {
+    "FRONTEND": "Frontend Version",
+    "BACKEND": "Backend Version",
+    "FRONTEND_VALUE": "Frontend Version: {{version}}",
+    "BACKEND_VALUE": "Backend Version: {{version}}"
+  },
+  "PROBLEMS": {
+    "DELETE_CONTENT": {
+      "TITLE": "Je fais effacer un contenu INT",
+      "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L’effacer prend du temps mais nous allons t’aider à aller jusqu’au bout 🗑 INT",
+      "REPORTED": {
+        "TITLE": "As-tu signalé le contenu auprès du réseau social ? INT",
+        "NONE": {
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "Oui, <strong>j’ai déjà signalé le contenu</strong> INT",
+            "ANSWER_2_TITLE": "Non, <strong>je n’ai pas encore signalé le contenu</strong> INT"
+          }
+        }
+      },
+      "VIOLENT": {
+        "TITLE": "Est ce qu'il s'agit d'un contenu violent ou te représentant nu·e ? INT",
+        "NONE": {
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "Oui INT",
+            "ANSWER_2_TITLE": "Non INT"
+          }
+        }
+      },
+      "RESULTS": {
+        "REPORTED_CONTENT": {
+          "TITLE": "Tu as signalé le contenu ? INT",
+          "COMPLAINT": {
+            "TITLE": "Prépare des preuves INT",
+            "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte. INT"
+          }
+        },
+        "REPORTED_VIOLENT_CONTENT": {
+          "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? INT",
+          "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  INT"
+        },
+        "UNREPORTED_VIOLENT_CONTENT": {
+          "TITLE": "Tu n’as pas encore signalé le contenu ? INT"
+        }
+      }
+    },
+    "HACKING": {
+      "TITLE": "Je me suis fait pirater INT",
+      "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté. INT",
+      "SITUATION": {
+        "TITLE": "Quelle est ta situation ? INT",
+        "NONE": {
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "J’ai <strong>encore accès</strong> à mon compte INT",
+            "ANSWER_2_TITLE": "Je n’ai <strong>plus accès</strong> à mon compte INT"
+          }
+        }
+      },
+      "RESULTS": {
+        "HAVE_ACCESS": {
+          "TITLE": "Tu as signalé le contenu ? INT",
+          "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  INT",
+          "ACTIONS": {
+            "IMMEDIATELY": {
+              "TITLE": ""
+            },
+            "LATER": {
+              "A2": {
+                "TITLE": ""
+              }
+            }
+          }
+        },
+        "NO_ACCESS": {
+          "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ? INT",
+          "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.  INT"
+        }
+      }
+    }
+  },
+  "TOOLS": {
+    "TITLE": "Outils INT",
+    "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe INT",
+    "PASSWORD_CHECK_DESCRIPTION": "En combien de temps un cybercriminel le trouve ? INT",
+    "BLUR_IMAGE_TITLE": "J'anonymise ma photo INT",
+    "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil INT",
+    "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité INT",
+    "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ? INT",
+    "VISIBILITY_CHECK": {
+      "TITLE": "Je teste ma visibilité INT",
+      "DESCRIPTION": "Peut-on m'identifier à partir de mon pseudo et ma bio ? INT",
+      "PSEUDO": {
+        "TITLE": "Que contient ton pseudo ? INT",
+        "IDENTITY": {
+          "TITLE": "🪪 Identité INT",
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier INT",
+            "ANSWER_1_DESCRIPTION": "(exemple : Martin) INT",
+            "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé. INT",
+            "ANSWER_2_DESCRIPTION": "(exemple: Mrt1) INT",
+            "ANSWER_3_TITLE": "Mon surnom INT",
+            "ANSWER_4_TITLE": "Ma date de naissance INT"
+          }
+        },
+        "ORIGIN": {
+          "TITLE": "🗺️ Origine géographique ou culturelle INT",
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "Mon code postal INT",
+            "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300) INT",
+            "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine INT",
+            "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.) INT"
+          }
+        }
+      },
+      "BIO": {
+        "TITLE": "Que contient ta bio ? INT",
+        "EMPTY": {
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "Je n’ai rien écrit dans ma bio INT"
+          }
+        },
+        "IDENTITY": {
+          "TITLE": "🪪 Identité INT",
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier INT",
+            "ANSWER_1_DESCRIPTION": "(exemple : Martin) INT",
+            "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé. INT",
+            "ANSWER_2_DESCRIPTION": "(exemple: Mrt1) INT",
+            "ANSWER_3_TITLE": "Mon surnom INT",
+            "ANSWER_4_TITLE": "Ma date de naissance INT"
+          }
+        },
+        "ORIGIN": {
+          "TITLE": "🗺️ Origine géographique ou culturelle INT",
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "Mon code postal INT",
+            "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300) INT",
+            "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine INT",
+            "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.) INT"
+          }
+        },
+        "DIGITAL_LIFE": {
+          "TITLE": "👥 Vie numérique INT",
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "Les liens vers mes autres réseaux. INT",
+            "ANSWER_1_DESCRIPTION": "(Twitter, Instagram, TikTok, LinkedIn). INT",
+            "ANSWER_2_TITLE": "Les comptes de mon entourage INT",
+            "ANSWER_2_DESCRIPTION": "(Amis, relations amoureuses...) INT"
+          }
+        },
+        "INTEREST": {
+          "TITLE": "🎭 Centres d’intérêt INT",
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "Un lien vers mon club ou une association où je participe. INT",
+            "ANSWER_1_DESCRIPTION": "(ex : @VolleyNantes) INT"
+          }
+        },
+        "EDUCATION_PRO": {
+          "TITLE": "🏫 Éducation ou profession INT",
+          "ANSWERS": {
+            "ANSWER_1_TITLE": "Une mention de mon établissement ou de mon entreprise. INT",
+            "ANSWER_2_TITLE": "Mes compétences INT",
+            "ANSWER_2_DESCRIPTION": "(Apprenti pâtissier, Étudiant en médecine…) INT"
+          }
+        }
+      },
+      "RESULTS": {
+        "TITLE": "Tes résultats INT",
+        "SUMMARY": {
+          "GOOD": {
+            "TITLE": "Bien joué ! 🥷 INT",
+            "CONTENT": "Ton profil ne permet pas de savoir qui tu es dans la vie, sur les réseaux et aussi hors ligne. INT"
+          },
+          "OK": {
+            "TITLE": "Pas mal ! 🥸 INT",
+            "CONTENT": "Il y a encore quelques indices pour deviner qui tu es dans la vraie vie mais tu peux encore t’améliorer et divulguer moins d’informations sur toi. INT"
+          },
+          "BAD": {
+            "TITLE": "Prudence ! 🧐 INT",
+            "CONTENT": "Ton profil contient beaucoup d’informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie. INT"
+          }
+        },
+        "PSEUDO": {
+          "TITLE": "Ton pseudo indique INT"
+        },
+        "BIO": {
+          "TITLE": "Ta bio indique INT"
+        },
+        "STATE": {
+          "PUBLIC": "PUBLIC 👀 INT",
+          "DISCREET": "DISCRET 🙈️ INT",
+          "INVISIBLE": "INVISIBLE 👻 INT"
+        },
+        "NO_PERSONAL_INFO": "Aucune information personnelle ! INT"
+      }
+    },
+    "BLUR_IMAGE": {
+      "TITLE": "Anonymiser ma photo INT",
+      "DESCRIPTION": "Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne. INT",
+      "ADVICE": "💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée ! INT",
+      "UPLOAD_IMAGE": "Importer une photo 🤳 INT",
+      "BLUR": "Flouter INT",
+      "PIXELATE": "Pixelliser INT",
+      "ALL_BLUR": "Tout flouter INT",
+      "BRUSH_SIZE": "Taille du flou INT",
+      "TUTORIAL": {
+        "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter. INT"
+      }
+    },
+    "PASSWORD_CHECK": {
+      "TITLE": "I test my password",
+      "DESCRIPTION": "How long does it take a cybercriminal to find it?",
+      "CRIMINAL_GUESSES": "A cybercriminal guesses it in:",
+      "ASSESSMENT_TEXT": "Your password has:",
+      "INPUT_LABEL": "Password",
+      "COPY_PASSWORD": "Copy password",
+      "COPIED": "Copied!",
+      "BADGES": {
+        "IMMEDIATE": "IT'S IMMEDIATE ⚠️",
+        "RAPID": "IT'S FAST 😬",
+        "CORRECT": "IT'S CORRECT 🙂",
+        "SUPER": "IT'S SUPER 😎"
+      },
+      "CRITERIA": {
+        "MIN_LENGTH": "12 characters minimum",
+        "UPPERCASE": "At least 1 uppercase",
+        "LOWERCASE": "At least 1 lowercase",
+        "DIGIT": "At least 1 digit",
+        "SPECIAL_CHAR": "At least 1 special character",
+        "CRITERIA_VALIDATED": "Criteria validated",
+        "CRITERIA_NOT_VALIDATED": "Criteria not validated"
+      },
+      "BUTTONS": {
+        "WHAT_IS_GOOD_PASSWORD": "What is a good password?",
+        "TEST_PASSWORD": "Test my password 🔒",
+        "STRENGTHEN_PASSWORD": "Strengthen my password"
+      },
+      "MODALS": {
+        "ONBOARDING": {
+          "TITLE": "How does it work?",
+          "STEP_1": "🔐 <strong>Step 1</strong>: Type your password in the provided field.",
+          "STEP_2": "🧪 <strong>Step 2</strong>: Click on \"Test my password\".",
+          "STEP_3": "⏱️ <strong>Step 3</strong>: Voila! See how long a cybercriminal could take to find it... and access your personal data!",
+          "NOTE": "GhostApp does not store any information.",
+          "UNDERSTOOD": "Understood"
+        },
+        "PASSWORD_INFO": {
+          "TITLE": "A strong password is:",
+          "CLOSE": "Close",
+          "REQUIREMENTS": {
+            "LENGTH": "12 characters",
+            "UPPERCASE": "uppercase letters",
+            "LOWERCASE": "lowercase letters",
+            "SPECIAL_CHARS": "special characters (*, @, !)"
+          },
+          "WARNINGS": {
+            "CRIMINALS_USE_DB": "🏴‍☠️ Cybercriminals use all existing word databases in all languages.",
+            "NO_DICTIONARY": "⚠️ So don't use any dictionary words to create your password"
+          }
+        }
+      },
+      "TIME_UNITS": {
+        "INSTANT": "Instant",
+        "MINUTES": "minutes",
+        "HOURS": "hours",
+        "DAY": "day",
+        "DAYS": "days",
+        "WEEK": "week",
+        "WEEKS": "weeks",
+        "MONTHS": "months",
+        "YEARS": "years",
+        "THOUSAND_YEARS": "milliers d'années XX",
+        "MILLION_YEARS": "million years",
+        "BILLION_YEARS": "billion years",
+        "TRILLION_YEARS": "trillion years",
+        "QUADRILLION_YEARS": "quadrillion years"
+      }
+    }
+  }
 }

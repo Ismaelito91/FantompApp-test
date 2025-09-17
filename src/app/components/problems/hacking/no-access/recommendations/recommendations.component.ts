@@ -26,19 +26,16 @@ export class RecommendationsComponent {
             id: 0,
             countryRegion: "FR",
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "👍 Suivre ces recommandations",
-            description: "Même si tu n’as plus accès à ton compte, tu peux encore agir. Ces gestes t’aideront à te protéger et éviter que ça se reproduise.",
+            firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.TITLE",
+            description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.DESCRIPTION",
          }
       ]
    };
 
-   card_16_next = {
+   card_16_next : PageComponentModel = {
       id: 0,
       status: ComponentStatus.PUBLISHED,
-      translations: [{
-         id: 0,
-         firstTitle: "À faire plus tard",
-      }],
+      translations: [],
       children: [
          {
             id: 0,
@@ -47,8 +44,9 @@ export class RecommendationsComponent {
             position: 1,
             translations: [{
                id: 0,
-               firstTitle: "Prévenir ses amis et contacts",
-               description: "📢 Préviens tes contacts (amis, famille, etc.) que ton compte a été piraté.<br />⚠️ Ils pourraient recevoir des messages de la personne qui se fait passer pour toi. Dis-leur de ne pas répondre et de ne pas cliquer sur les liens.",
+               countryRegion: "FR",
+               firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A1.TITLE",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A1.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-prevent-cover.png"
             }]
          },
@@ -59,8 +57,9 @@ export class RecommendationsComponent {
             position: 2,
             translations: [{
                id: 0,
-               firstTitle: "Changer ses autres mots de passe",
-               description: "Si tu utilises le même mot de passe sur d’autres sites ou applis, modifie-le aussi là-bas.<br />👉 Ça évite que d’autres comptes soient piratés à leur tour.",
+               countryRegion: "FR",
+               firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A2.TITLE",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A2.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-other-passwords-cover.png"
             }]
          },
@@ -68,11 +67,12 @@ export class RecommendationsComponent {
             id: 0,
             type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
-            position: 2,
+            position: 3,
             translations: [{
                id: 0,
-               firstTitle: "Prévenir la banque",
-               description: "💳 Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, j’en parle tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vit e, et bloquer la carte si nécessaire pour éviter tout vol.",
+               countryRegion: "FR",
+               firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.TITLE",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-bank-cover.png"
             }]
          },
@@ -80,11 +80,12 @@ export class RecommendationsComponent {
             id: 0,
             type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
-            position: 2,
+            position: 4,
             translations: [{
                id: 0,
-               firstTitle: "Mettre en place un gestionnaire de mot de passe",
-               description: "🔐 Un gestionnaire de mots de passe, c’est une application ou un outil de ton téléphone qui garde tous tes mots de passe en sécurité.Il peut aussi en créer des très solides pour chaque site ou appli, et les remplir automatiquement quand tu te connectes.<br />👉 C’est comme un coffre-fort numérique pour tous tes comptes.",
+               countryRegion: "FR",
+               firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A4.TITLE",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-password-manager-cover.png"
             }]
          },
@@ -92,11 +93,12 @@ export class RecommendationsComponent {
             id: 0,
             type: ComponentType.CARD_19,
             status: ComponentStatus.PUBLISHED,
-            position: 2,
+            position: 5,
             translations: [{
                id: 0,
-               firstTitle: "Ne jamais partager ses mots de passe",
-               description: "Quelqu’un pourrait lire tes messages, publier à ta place ou te voler ton compte.<br />Ton mot de passe, c’est perso — comme le code de ton téléphone.",
+               countryRegion: "FR",
+               firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A5.TITLE",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A5.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-no-share-password-cover.png"
             }]
          }
@@ -109,13 +111,7 @@ export class RecommendationsComponent {
       status: ComponentStatus.PUBLISHED,
       code: "code",
       position: 1,
-      translations: [
-         {
-            id: 0,
-            countryRegion: "FR",
-            devices: [Device.ANDROID, Device.IOS, Device.WEB],
-         }
-      ],
+      translations: [],
       children: [
          {
             id: 0,
@@ -129,8 +125,8 @@ export class RecommendationsComponent {
                   id: 0,
                   countryRegion: "FR",
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Prévenir ses amis et contacts",
-                  description: "Ils pourraient recevoir des messages bizarres",
+                  firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A1.TITLE",
+                  description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A1.SHORT_DESCRIPTION",
                   staticImage: "assets/images/reco-prevent-illu.jpg"
                }
             ]
@@ -140,15 +136,15 @@ export class RecommendationsComponent {
             type: ComponentType.CARD_17,
             status: ComponentStatus.PUBLISHED,
             code: "code",
-            position: 1,
+            position: 2,
             next: this.card_16_next,
             translations: [
                {
                   id: 0,
                   countryRegion: "FR",
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Changer ses autres mots de passe",
-                  description: "Protège tes autres comptes",
+                  firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A2.TITLE",
+                  description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A2.SHORT_DESCRIPTION",
                   staticImage: "assets/images/reco-other-passwords-illu.jpg"
                }
             ]
@@ -158,15 +154,15 @@ export class RecommendationsComponent {
             type: ComponentType.CARD_17,
             status: ComponentStatus.PUBLISHED,
             code: "code",
-            position: 1,
+            position: 3,
             next: this.card_16_next,
             translations: [
                {
                   id: 0,
                   countryRegion: "FR",
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Prévenir la banque ",
-                  description: "Agir si tes infos bancaires étaient sur ton compte",
+                  firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.TITLE",
+                  description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.SHORT_DESCRIPTION",
                   staticImage: "assets/images/reco-bank-illu.jpg"
                }
             ]
@@ -176,15 +172,15 @@ export class RecommendationsComponent {
             type: ComponentType.CARD_17,
             status: ComponentStatus.PUBLISHED,
             code: "code",
-            position: 1,
+            position: 4,
             next: this.card_16_next,
             translations: [
                {
                   id: 0,
                   countryRegion: "FR",
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Utiliser un gestionnaire de mot de passe",
-                  description: "Pour sécuriser tes mots de passe",
+                  firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A4.TITLE",
+                  description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A4.SHORT_DESCRIPTION",
                   staticImage: "assets/images/reco-password-manager-illu.jpg"
                }
             ]
@@ -194,15 +190,15 @@ export class RecommendationsComponent {
             type: ComponentType.CARD_17,
             status: ComponentStatus.PUBLISHED,
             code: "code",
-            position: 1,
+            position: 5,
             next: this.card_16_next,
             translations: [
                {
                   id: 0,
                   countryRegion: "FR",
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Ne jamais partager ses mots de passe",
-                  description: "Le mieux est de les garder pour soi",
+                  firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A5.TITLE",
+                  description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A5.SHORT_DESCRIPTION",
                   staticImage: "assets/images/reco-no-share-password-illu.jpg"
                }
             ]

@@ -13,10 +13,11 @@ import { PageComponentService } from '../../../../service/page-component.service
 import { ButtonBackComponent } from '../../../design-system/button-back/button-back.component';
 import { Card18Component } from '../../../design-system/card-18/card-18.component';
 import { Card19Component } from "../../../design-system/card-19/card-19.component";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-actions',
-   imports: [MatIconModule, MatButtonModule, ButtonBackComponent, PageTranslationPipe, Card18Component, Card19Component],
+   imports: [TranslatePipe, MatIconModule, MatButtonModule, ButtonBackComponent, PageTranslationPipe, Card18Component, Card19Component],
    templateUrl: './actions.component.html',
    styleUrl: './actions.component.scss',
    schemas: [CUSTOM_ELEMENTS_SCHEMA],

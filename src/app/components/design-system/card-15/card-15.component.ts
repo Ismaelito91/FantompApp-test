@@ -17,10 +17,11 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 import {ComponentStatus} from "../../../model/enum/component-status.enum";
 import {Device} from "../../../model/enum/device.enum";
 import {TemplateMessageComponent} from "../template-message/template-message.component";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-card-15',
-   imports: [PageTranslationPipe, SafeHtmlPipe, EnrichedLinkComponent, TileCallComponent, TileMessageComponent, ButtonComponent, TileMailComponent],
+   imports: [PageTranslationPipe, SafeHtmlPipe, EnrichedLinkComponent, TileCallComponent, TileMessageComponent, ButtonComponent, TileMailComponent, TranslatePipe],
    templateUrl: './card-15.component.html',
    styleUrl: './card-15.component.scss'
 })

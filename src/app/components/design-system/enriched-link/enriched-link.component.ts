@@ -5,10 +5,11 @@ import { StripHtmlPipe } from '../../../pipes/strip-html.pipe';
 import { ThemeService } from '../../../service/theme.service';
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-enriched-link',
-   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe, PageTranslationPipe],
+   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe, PageTranslationPipe, TranslatePipe],
    templateUrl: './enriched-link.component.html',
    styleUrl: './enriched-link.component.scss'
 })

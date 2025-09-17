@@ -1,12 +1,16 @@
-<div class="card-container flex items-center">
+<div class="card-container flex items-center cursor-pointer">
    <div>
       <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" 
       alt="reco-image" class="!min-w-[56px] !min-h-[56px] !max-w-[56px] !max-h-[56px] object-contain rounded-(--border-radius-1)">
    </div>
    <div class="flex items-center">
       <div class="flex flex-col">
-         <p class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></p>
-         <p class="card-description" [innerHTML]="(data() | pageTranslation)?.description| safeHtml"></p>
+         @if ((data() | pageTranslation)?.firstTitle) {
+            <p class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></p>
+         }
+         @if((data() | pageTranslation)?.description) {
+            <p class="card-description" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></p>
+         }
       </div>
       <div>
          <mat-icon [svgIcon]="isDarkMode() ? 'chevron24x24-icon-dark' : 'chevron24x24-icon-light'"></mat-icon>

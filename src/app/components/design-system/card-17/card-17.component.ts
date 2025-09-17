@@ -4,10 +4,11 @@ import PageComponentModel from '../../../model/page-component.model';
 import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
 import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 import { ThemeService } from '../../../service/theme.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-card-17',
-   imports: [PageTranslationPipe, SafeHtmlPipe, MatIconModule],
+   imports: [PageTranslationPipe, SafeHtmlPipe, MatIconModule, TranslatePipe],
    templateUrl: './card-17.component.html',
    styleUrl: './card-17.component.scss'
 })

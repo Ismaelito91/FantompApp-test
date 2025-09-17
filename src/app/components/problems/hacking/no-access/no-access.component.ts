@@ -30,8 +30,8 @@ export class NoAccessComponent {
             id: 0,
             countryRegion: "FR",
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "✉️ Contacter le réseau social",
-            description: "Commence par contacter le réseau social pour dire que ton compte a été piraté.<br />➡️ Clique sur le lien du réseau que tu utilises.",
+            firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.CONTACT.TITLE",
+            description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.CONTACT.DESCRIPTION",
          }
       ]
    };
@@ -44,7 +44,7 @@ export class NoAccessComponent {
          id: 0,
          countryRegion: "FR",
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
-         firstTitle: "Instagram",
+         firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.INSTAGRAM.TITLE",
          staticImage: "assets/images/instagram.png",
       }],
       children: [
@@ -56,8 +56,8 @@ export class NoAccessComponent {
                id: 0,
                countryRegion: "FR",
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "Faire une demande d’assistance Instagram",
-               description: "https://www.instagram.com/hacked/",
+               firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.INSTAGRAM.LINK.TITLE",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.INSTAGRAM.LINK.DESCRIPTION",
                staticImage: "assets/images/instagram-2.png",
             }],
          }
@@ -71,7 +71,7 @@ export class NoAccessComponent {
          id: 0,
          countryRegion: "FR",
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
-         firstTitle: "Snapchat",
+         firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.SNAPCHAT.TITLE",
          staticImage: "assets/images/snapchat.png",
       }],
       children: [
@@ -83,8 +83,8 @@ export class NoAccessComponent {
                id: 0,
                countryRegion: "FR",
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "Envoyer une demande – Assistance Snapchat",
-               description: "https://help.snapchat.com/hc/fr-fr/requests/new",
+               firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.SNAPCHAT.LINK.TITLE",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.SNAPCHAT.LINK.DESCRIPTION",
                staticImage: "assets/images/snapchat.png",
             }],
          }]
@@ -98,7 +98,7 @@ export class NoAccessComponent {
          id: 0,
          countryRegion: "FR",
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
-         firstTitle: "TikTok",
+         firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.TIKTOK.TITLE",
          staticImage: "assets/images/tiktok.png",
       }],
       children: [
@@ -110,8 +110,8 @@ export class NoAccessComponent {
                id: 0,
                countryRegion: "FR",
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "Signaler un problème | TikTok",
-               description: "https://www.tiktok.com/legal/report/feedback",
+               firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.TIKTOK.LINK.TITLE",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.TIKTOK.LINK.DESCRIPTION",
                staticImage: "assets/images/tiktok.png",
             }],
          }
@@ -126,7 +126,7 @@ export class NoAccessComponent {
          id: 0,
          countryRegion: "FR",
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
-         firstTitle: "X",
+         firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.X.TITLE",
          staticImage: "assets/images/x.png",
       }],
       children: [
@@ -138,8 +138,8 @@ export class NoAccessComponent {
                id: 0,
                countryRegion: "FR",
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "Le compte est piraté ou compromis",
-               description: "https://help.x.com/fr/forms/account-access/regain-access/hacked-or-compromised",
+               firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.X.LINK.TITLE",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.X.LINK.DESCRIPTION",
                staticImage: "assets/images/x.png",
             }],
          }
@@ -154,7 +154,7 @@ export class NoAccessComponent {
          id: 0,
          countryRegion: "FR",
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
-         firstTitle: "Facebook",
+         firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.FACEBOOK.TITLE",
          staticImage: "assets/images/facebook.png",
       }],
       children: [
@@ -166,8 +166,8 @@ export class NoAccessComponent {
                id: 0,
                countryRegion: "FR",
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "Comment effacer une conversation de mon fil d'actualités de Chat sur Snapchat ?",
-               description: "https://www.facebook.com/hacked?ref=helpcenter",
+               firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.FACEBOOK.LINK.TITLE",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.FACEBOOK.LINK.DESCRIPTION",
                staticImage: "assets/images/facebook.png",
             }],
          }

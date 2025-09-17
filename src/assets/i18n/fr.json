@@ -32,6 +32,10 @@
    "DESIGN_SYSTEM": {
       "STEPPER": {
          "DESCRIPTION": "Question {{ currentStep }} sur {{ totalSteps }}"
+      },
+      "TAG_UNCLICKABLE": {
+         "IMPORTANT": "IMPORTANT",
+         "SECONDARY": "SECONDAIRE"
       }
    },
    "ONBOARDING": {
@@ -157,12 +161,6 @@
          }
       }
    },
-   "VERSION": {
-      "FRONTEND": "Version Frontend",
-      "BACKEND": "Version Backend",
-      "FRONTEND_VALUE": "Version Frontend : {{version}}",
-      "BACKEND_VALUE": "Version Backend : {{version}}"
-   },
    "PROBLEMS": {
       "DELETE_CONTENT": {
          "TITLE": "Je fais effacer un contenu",
@@ -238,10 +236,137 @@
          "RESULTS": {
             "HAVE_ACCESS": {
                "TITLE": "J’ai encore accès à mon compte",
-               "DESCRIPTION": "Quelques gestes pour reprendre le contrôle de son compte"
+               "DESCRIPTION": "Quelques gestes pour reprendre le contrôle de son compte",
+               "ACTIONS": {
+                  "IMMEDIATELY": {
+                     "TITLE": "À faire tout de suite ⏱️",
+                     "A1": {
+                        "TITLE": "Changer son mot de passe",
+                        "SHORT_DESCRIPTION": "Constitue immédiatement un mot de passe fort",
+                        "LONG_DESCRIPTION": "Crée tout de suite un mot de passe solide pour ton compte. FantomApp peut t’aider à vérifier si ton mot de passe est facilement trouvable."
+                     },
+                     "A2": {
+                        "TITLE": "Activer la double authentification",
+                        "SHORT_DESCRIPTION": "Ajoute un code de sécurité en plus",
+                        "LONG_DESCRIPTION": "La double authentification ajoute une protection en plus à ton compte. Même si quelqu’un découvre ton mot de passe, il ne pourra pas se connecter sans un deuxième code (reçu par SMS ou via une appli).<br />👉 C’est comme une deuxième serrure sur ta porte."
+                     },
+                     "A3": {
+                        "TITLE": "Vérifier ses informations",
+                        "SHORT_DESCRIPTION": "Regarde si ton mail et ton numéro n’ont pas été changés",
+                        "LONG_DESCRIPTION": "📲 Contact, publications, infos bancaires, si tu les avais indiquées, ont-elles été modifiées ?<br /><br />Si tu vois un numéro ou une adresse que tu ne connais pas :<ul style='list-style: disc; margin-left: 2rem;'><li>Fais une capture d’écran pour garder une preuve</li><li>Modifie-les tout de suite</li></ul>"
+                     },
+                     "A4": {
+                        "TITLE": "Vérifier qui est connecté à son compte",
+                        "SHORT_DESCRIPTION": "Voir si des appareils inconnus sont connectés à ton compte",
+                        "LONG_DESCRIPTION": "Va dans les paramètres de ton compte et déconnecte tous les appareils jusqu'ici autorisés.<br />❌ Si tu vois un appareil ou une connexion que tu ne reconnais pas :<ul style='list-style: disc; margin-left: 2rem;'><li>Fais une capture d’écran pour garder une preuve</li><li>Déconnecte-le tout de suite</li></ul>"
+                     }
+                  },
+                  "LATER": {
+                     "TITLE": "À faire plus tard",
+                     "A1": {
+                        "TITLE": "Prévenir ses amis et contacts",
+                        "SHORT_DESCRIPTION": "Ils pourraient recevoir des messages bizarres",
+                        "LONG_DESCRIPTION": "📢 Préviens tes contacts (amis, famille, etc.) que ton compte a été piraté.<br />⚠️ Ils pourraient recevoir des messages de la personne qui se fait passer pour toi. Dis-leur de ne pas répondre et de ne pas cliquer sur les liens."
+                     },
+                     "A2": {
+                        "TITLE": "Changer ses autres mots de passe",
+                        "SHORT_DESCRIPTION": "Protège tes autres comptes",
+                        "LONG_DESCRIPTION": "Si tu utilises le même mot de passe sur d’autres sites ou applis, modifie-le aussi là-bas.<br />👉 Ça évite que d’autres comptes soient piratés à leur tour."
+                     },
+                     "A3": {
+                        "TITLE": "Prévenir la banque",
+                        "SHORT_DESCRIPTION": "Agir si tes infos bancaires étaient sur ton compte",
+                        "LONG_DESCRIPTION": "💳 Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, j’en parle tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vit e, et bloquer la carte si nécessaire pour éviter tout vol."
+                     },
+                     "A4": {
+                        "TITLE": "Utiliser un gestionnaire de mot de passe",
+                        "SHORT_DESCRIPTION": "Pour sécuriser tes mots de passe",
+                        "LONG_DESCRIPTION": "🔐 Un gestionnaire de mots de passe, c’est une application ou un outil de ton téléphone qui garde tous tes mots de passe en sécurité.Il peut aussi en créer des très solides pour chaque site ou appli, et les remplir automatiquement quand tu te connectes.<br />👉 C’est comme un coffre-fort numérique pour tous tes comptes."
+                     },
+                     "A5": {
+                        "TITLE": "Ne jamais partager ses mots de passe",
+                        "SHORT_DESCRIPTION": "Le mieux est de les garder pour soi",
+                        "LONG_DESCRIPTION": "Quelqu’un pourrait lire tes messages, publier à ta place ou te voler ton compte.<br />Ton mot de passe, c’est perso — comme le code de ton téléphone."
+                     }
+                  }
+               }
             },
             "NO_ACCESS": {
-               "TITLE": "Je n’ai plus accès à mon compte"
+               "TITLE": "Je n’ai plus accès à mon compte",
+               "CONTACT": {
+                  "TITLE": "✉️ Contacter le réseau social",
+                  "DESCRIPTION": "Commence par contacter le réseau social pour dire que ton compte a été piraté.<br />➡️ Clique sur le lien du réseau que tu utilises."
+               },
+               "SOCIAL_MEDIA": {
+                  "INSTAGRAM": {
+                     "TITLE": "Instagram",
+                     "LINK": {
+                        "TITLE": "Faire une demande d’assistance Instagram",
+                        "DESCRIPTION": "https://www.instagram.com/hacked/"
+                     }
+                  },
+                  "SNAPCHAT": {
+                     "TITLE": "Snapchat",
+                     "LINK": {
+                        "TITLE": "Envoyer une demande – Assistance Snapchat",
+                        "DESCRIPTION": "https://help.snapchat.com/hc/fr-fr/requests/new"
+                     }
+                  },
+                  "TIKTOK": {
+                     "TITLE": "TikTok",
+                     "LINK": {
+                        "TITLE": "Signaler un problème | TikTok",
+                        "DESCRIPTION": "https://www.tiktok.com/legal/report/feedback"
+                     }
+                  },
+                  "X": {
+                     "TITLE": "X",
+                     "LINK": {
+                        "TITLE": "Le compte est piraté ou compromis",
+                        "DESCRIPTION": "https://help.x.com/fr/forms/account-access/regain-access/hacked-or-compromised"
+                     }
+                  },
+                  "FACEBOOK": {
+                     "TITLE": "Facebook",
+                     "LINK": {
+                        "TITLE": "Faire une demande d’assistance Facebook",
+                        "DESCRIPTION": "https://www.facebook.com/hacked?ref=helpcenter"
+                     }
+                  }
+               },
+               "RECOMMENDATIONS": {
+                  "TITLE": "👍 Suivre ces recommandations",
+                  "DESCRIPTION": "Même si tu n’as plus accès à ton compte, tu peux encore agir. Ces gestes t’aideront à te protéger et éviter que ça se reproduise.",
+                  "ACTIONS": {
+                     "LATER": {
+                        "A1": {
+                           "TITLE": "Prévenir ses amis et contacts",
+                           "SHORT_DESCRIPTION": "Ils pourraient recevoir des messages bizarres",
+                           "LONG_DESCRIPTION": "📢 Préviens tes contacts (amis, famille, etc.) que ton compte a été piraté.<br />⚠️ Ils pourraient recevoir des messages de la personne qui se fait passer pour toi. Dis-leur de ne pas répondre et de ne pas cliquer sur les liens."
+                        },
+                        "A2": {
+                           "TITLE": "Changer ses autres mots de passe",
+                           "SHORT_DESCRIPTION": "Protège tes autres comptes",
+                           "LONG_DESCRIPTION": "Si tu utilises le même mot de passe sur d’autres sites ou applis, modifie-le aussi là-bas.<br />👉 Ça évite que d’autres comptes soient piratés à leur tour."
+                        },
+                        "A3": {
+                           "TITLE": "Prévenir la banque",
+                           "SHORT_DESCRIPTION": "Agir si tes infos bancaires étaient sur ton compte",
+                           "LONG_DESCRIPTION": "💳 Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, j’en parle tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vit e, et bloquer la carte si nécessaire pour éviter tout vol."
+                        },
+                        "A4": {
+                           "TITLE": "Utiliser un gestionnaire de mot de passe",
+                           "SHORT_DESCRIPTION": "Pour sécuriser tes mots de passe",
+                           "LONG_DESCRIPTION": "🔐 Un gestionnaire de mots de passe, c’est une application ou un outil de ton téléphone qui garde tous tes mots de passe en sécurité.Il peut aussi en créer des très solides pour chaque site ou appli, et les remplir automatiquement quand tu te connectes.<br />👉 C’est comme un coffre-fort numérique pour tous tes comptes."
+                        },
+                        "A5": {
+                           "TITLE": "Ne jamais partager ses mots de passe",
+                           "SHORT_DESCRIPTION": "Le mieux est de les garder pour soi",
+                           "LONG_DESCRIPTION": "Quelqu’un pourrait lire tes messages, publier à ta place ou te voler ton compte.<br />Ton mot de passe, c’est perso — comme le code de ton téléphone."
+                        }
+                     }
+                  }
+               }
             }
          }
       }

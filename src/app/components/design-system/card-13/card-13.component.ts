@@ -1,14 +1,13 @@
 import { Component, inject, input } from '@angular/core';
-import { ComponentStatus } from '../../../model/enum/component-status.enum';
-import { ComponentType } from '../../../model/enum/component-type.enum';
 import PageComponentModel from '../../../model/page-component.model';
 import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
 import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 import { PageComponentUtilsService } from '../../../service/page-component-utils.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-card-13',
-   imports: [PageTranslationPipe, SafeHtmlPipe],
+   imports: [PageTranslationPipe, SafeHtmlPipe, TranslatePipe],
    templateUrl: './card-13.component.html',
    styleUrl: './card-13.component.scss'
 })

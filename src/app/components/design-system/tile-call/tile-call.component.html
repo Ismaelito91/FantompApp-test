@@ -1,12 +1,14 @@
-<a [href]="`tel:${((data() | pageTranslation)?.firstTitle | stripHtml)}`">
+<a [href]="(data() | pageTranslation)?.firstTitle ? `tel:${((data() | pageTranslation)?.firstTitle! | translate | stripHtml)}` : null">
    <div class="flex flex-col tile-main">
       @if ((data() | pageTranslation)?.description) {
-         <div [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
+         <div [innerHTML]="(data() | pageTranslation)?.description! | translate| safeHtml"></div>
       }
       <div class="tile-container flex justify-between items-center">
          <div class="flex items-center tile-body">
             <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" class="tile-image" />
-            <h3 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml" class="tile-title"></h3>
+            @if ((data() | pageTranslation)?.firstTitle) {
+               <h3 [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml" class="tile-title"></h3>
+            }
          </div>
          <div>
             <mat-icon [svgIcon]="isDarkMode() ? 'icon-phone-dark' : 'icon-phone-light'"></mat-icon>

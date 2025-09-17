@@ -14,10 +14,14 @@
       }
    </div>
    <div class="flex flex-col gap-(--spacing-4) p-(--spacing-5) pt-0">
-      <app-tag-unclickable variant="secondary" label="SECONDAIRE"></app-tag-unclickable>
+      <app-tag-unclickable variant="secondary" [label]="'DESIGN_SYSTEM.TAG_UNCLICKABLE.SECONDARY' | translate"></app-tag-unclickable>
       <div class="card-19-description flex flex-col">
-         <h6 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h6>
-         <div [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
+         @if ((data() | pageTranslation)?.firstTitle) {
+            <h6 [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h6>
+         }
+         @if ((data() | pageTranslation)?.description) {
+            <div [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></div>
+         }
       </div>
    </div>
 </div>

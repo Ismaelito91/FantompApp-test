@@ -8,10 +8,11 @@ import { PageComponentUtilsService } from '../../../service/page-component-utils
 import { UtilsService } from '../../../service/utils.service';
 import { Card17Component } from "../card-17/card-17.component";
 import { TagUnclickableComponent } from "../tag-unclickable/tag-unclickable.component";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-card-16',
-   imports: [PageTranslationPipe, SafeHtmlPipe, TagUnclickableComponent, Card17Component],
+   imports: [PageTranslationPipe, SafeHtmlPipe, TagUnclickableComponent, Card17Component, TranslatePipe],
    templateUrl: './card-16.component.html',
    styleUrl: './card-16.component.scss'
 })

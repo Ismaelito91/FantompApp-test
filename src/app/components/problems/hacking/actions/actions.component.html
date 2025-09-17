@@ -1,6 +1,8 @@
 <div class="view-steps-container flex flex-col" (keydown)="onkeydown($event)">
    <app-button-back class="view-header-btn"></app-button-back>
-   <div class="view-header-title text-center" [innerHTML]="(page() | pageTranslation)?.firstTitle"></div>
+   @if ((page() | pageTranslation)?.firstTitle){
+      <div class="view-header-title text-center" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate"></div>
+   }
 
    <swiper-container #swiper class="flex-1" init="false" class="h-full">
       @for (child of sortedChildren; track $index) {
