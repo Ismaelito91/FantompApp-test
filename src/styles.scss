@@ -310,6 +310,10 @@
    --color-26: transparent;
    --color-27: var(--color-red-950);
    --color-28: var(--color-blue-950);
+   --color-29: var(--color-orange-950);
+   --color-30: var(--color-orange-950);
+   --color-31: var(--color-neutral-light-content-2);
+   --color-32: var(--color-green-950);
 
    body {
       font-family: var(--body-font-family);
@@ -610,4 +614,9 @@
    --color-26: var(--color-pink-800);
    --color-27: var(--color-neutral-light-background-4);
    --color-28: var(--color-neutral-light-background-4);
+
+   --color-29: var(--color-neutral-light-background-2);
+   --color-30: var(--color-neutral-light-background-2);
+   --color-31: var(--color-neutral-light-background-2);
+   --color-32: var(--color-neutral-light-background-2);
 }
