@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonBackComponent } from "../../../../design-system/button-back/button-back.component";
 import { Card13Component } from "../../../../design-system/card-13/card-13.component";
@@ -7,6 +7,7 @@ import { ComponentType } from '../../../../../model/enum/component-type.enum';
 import { ComponentStatus } from '../../../../../model/enum/component-status.enum';
 import { Device } from '../../../../../model/enum/device.enum';
 import { Card16Component } from "../../../../design-system/card-16/card-16.component";
+import { LanguageService } from '../../../../../service/language.service';
 
 @Component({
    selector: 'app-recommendations',
@@ -15,6 +16,8 @@ import { Card16Component } from "../../../../design-system/card-16/card-16.compo
    styleUrl: './recommendations.component.scss'
 })
 export class RecommendationsComponent {
+   private readonly languageService = inject(LanguageService);
+
    card_13: PageComponentModel = {
       id: 0,
       type: ComponentType.CARD_13,
@@ -24,7 +27,7 @@ export class RecommendationsComponent {
       translations: [
          {
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
             firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.TITLE",
             description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.DESCRIPTION",
@@ -32,7 +35,7 @@ export class RecommendationsComponent {
       ]
    };
 
-   card_16_next : PageComponentModel = {
+   card_16_next: PageComponentModel = {
       id: 0,
       status: ComponentStatus.PUBLISHED,
       translations: [],
@@ -44,7 +47,7 @@ export class RecommendationsComponent {
             position: 1,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A1.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A1.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-prevent-cover.png"
@@ -57,7 +60,7 @@ export class RecommendationsComponent {
             position: 2,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A2.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A2.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-other-passwords-cover.png"
@@ -70,7 +73,7 @@ export class RecommendationsComponent {
             position: 3,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-bank-cover.png"
@@ -83,7 +86,7 @@ export class RecommendationsComponent {
             position: 4,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A4.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-password-manager-cover.png"
@@ -96,7 +99,7 @@ export class RecommendationsComponent {
             position: 5,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A5.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A5.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-no-share-password-cover.png"
@@ -123,7 +126,7 @@ export class RecommendationsComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A1.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A1.SHORT_DESCRIPTION",
@@ -141,7 +144,7 @@ export class RecommendationsComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A2.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A2.SHORT_DESCRIPTION",
@@ -159,7 +162,7 @@ export class RecommendationsComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.SHORT_DESCRIPTION",
@@ -177,7 +180,7 @@ export class RecommendationsComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A4.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A4.SHORT_DESCRIPTION",
@@ -195,7 +198,7 @@ export class RecommendationsComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A5.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A5.SHORT_DESCRIPTION",

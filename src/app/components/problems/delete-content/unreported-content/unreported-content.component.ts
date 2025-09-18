@@ -32,7 +32,7 @@ export class UnreportedContentComponent {
       status: ComponentStatus.PUBLISHED,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
          firstTitle: "Contacts des réseaux sociaux"
       }],
@@ -43,7 +43,7 @@ export class UnreportedContentComponent {
             status: ComponentStatus.PUBLISHED,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "Instagram",
                staticImage: "assets/images/instagram.png",
@@ -55,7 +55,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Signaler une violation de votre vie privée sur Instagram ou Threads",
                      description: "https://help.instagram.com/contact/1716697545776727",
@@ -68,7 +68,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Comment remplir le formulaire ?",
                   }],
@@ -81,7 +81,7 @@ export class UnreportedContentComponent {
             status: ComponentStatus.PUBLISHED,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "Snapchat",
                staticImage: "assets/images/snapchat.png",
@@ -93,7 +93,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Envoyer une demande – Assistance Snapchat",
                      description: "https://help.snapchat.com/hc/fr-fr/requests/new",
@@ -106,7 +106,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Contacter Snapchat par mail",
                      secondTitle: "dpo@snapchat.com",
@@ -118,7 +118,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Voir un exemple de mail",
                   }],
@@ -131,7 +131,7 @@ export class UnreportedContentComponent {
             status: ComponentStatus.PUBLISHED,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "TikTok",
                staticImage: "assets/images/tiktok.png",
@@ -143,7 +143,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Envoyer une demande liée à la confidentialité",
                      description: "https://www.tiktok.com/legal/report/privacy/webform/fr",
@@ -156,7 +156,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Comment remplir le formulaire ?",
                   }],
@@ -169,7 +169,7 @@ export class UnreportedContentComponent {
             status: ComponentStatus.PUBLISHED,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "X",
                staticImage: "assets/images/x.png",
@@ -181,7 +181,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Demandes liées à la politique de confidentialité de X",
                      description: "https://help.x.com/fr/forms/privacy/question",
@@ -194,7 +194,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Comment remplir le formulaire ?",
                   }],
@@ -207,7 +207,7 @@ export class UnreportedContentComponent {
             status: ComponentStatus.PUBLISHED,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "Facebook",
                staticImage: "assets/images/facebook.png",
@@ -219,7 +219,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Formulaires de contact",
                      description: "https://fr-fr.facebook.com/help/contact/954059743194940",
@@ -232,7 +232,7 @@ export class UnreportedContentComponent {
                   status: ComponentStatus.PUBLISHED,
                   translations: [{
                      id: 0,
-                     countryRegion: "FR",
+                     countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
                      firstTitle: "Comment remplir le formulaire ?",
                   }],
@@ -258,7 +258,7 @@ export class UnreportedContentComponent {
          translations: [
             {
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "❗️La première étape est de signaler au réseau social",
                secondTitle: this.getLocaleDateFromLang('FR', dateAfterMonth),

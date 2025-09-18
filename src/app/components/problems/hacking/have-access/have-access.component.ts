@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ButtonBackComponent } from "../../../design-system/button-back/button-back.component";
 import { TranslatePipe } from '@ngx-translate/core';
 import { DividerComponent } from "../../../design-system/divider/divider.component";
@@ -7,6 +7,7 @@ import { ComponentType } from '../../../../model/enum/component-type.enum';
 import { ComponentStatus } from '../../../../model/enum/component-status.enum';
 import PageComponentModel from '../../../../model/page-component.model';
 import { Device } from '../../../../model/enum/device.enum';
+import { LanguageService } from '../../../../service/language.service';
 
 @Component({
    selector: 'app-have-access',
@@ -15,13 +16,14 @@ import { Device } from '../../../../model/enum/device.enum';
    styleUrl: './have-access.component.scss'
 })
 export class HaveAccessComponent {
+   private readonly languageService = inject(LanguageService);
 
    card_16_1_next : PageComponentModel = {
       id: 0,
       status: ComponentStatus.PUBLISHED,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.TITLE",
       }],
       children: [
@@ -33,7 +35,7 @@ export class HaveAccessComponent {
             showPasswordCheckBtn: true,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A1.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A1.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-password-change-cover.png"
@@ -46,7 +48,7 @@ export class HaveAccessComponent {
             position: 2,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A2.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A2.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-double-auth-cover.png"
@@ -59,7 +61,7 @@ export class HaveAccessComponent {
             position: 3,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A3.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A3.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-infos-cover.png"
@@ -72,7 +74,7 @@ export class HaveAccessComponent {
             position: 4,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A4.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A4.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-localisation-cover.png"
@@ -86,7 +88,7 @@ export class HaveAccessComponent {
       status: ComponentStatus.PUBLISHED,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.TITLE",
       }],
       children: [
@@ -97,7 +99,7 @@ export class HaveAccessComponent {
             position: 1,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A1.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A1.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-prevent-cover.png"
@@ -110,7 +112,7 @@ export class HaveAccessComponent {
             position: 2,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A2.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A2.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-other-passwords-cover.png"
@@ -123,7 +125,7 @@ export class HaveAccessComponent {
             position: 3,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A3.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A3.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-bank-cover.png"
@@ -136,7 +138,7 @@ export class HaveAccessComponent {
             position: 4,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A4.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A3.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-password-manager-cover.png"
@@ -149,7 +151,7 @@ export class HaveAccessComponent {
             position: 5,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A5.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A5.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-no-share-password-cover.png"
@@ -167,7 +169,7 @@ export class HaveAccessComponent {
       translations: [
          {
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
             firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.TITLE",
             secondTitle: "danger",
@@ -185,7 +187,7 @@ export class HaveAccessComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A1.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A1.SHORT_DESCRIPTION",
@@ -203,7 +205,7 @@ export class HaveAccessComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A2.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A2.SHORT_DESCRIPTION",
@@ -221,7 +223,7 @@ export class HaveAccessComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A3.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A3.SHORT_DESCRIPTION",
@@ -239,7 +241,7 @@ export class HaveAccessComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A4.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.IMMEDIATELY.A4.SHORT_DESCRIPTION",
@@ -259,7 +261,7 @@ export class HaveAccessComponent {
       translations: [
          {
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
             firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.TITLE",
             secondTitle: "secondary",
@@ -277,7 +279,7 @@ export class HaveAccessComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A1.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A1.SHORT_DESCRIPTION",
@@ -295,7 +297,7 @@ export class HaveAccessComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A2.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A2.SHORT_DESCRIPTION",
@@ -313,7 +315,7 @@ export class HaveAccessComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A3.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A3.SHORT_DESCRIPTION",
@@ -331,7 +333,7 @@ export class HaveAccessComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A4.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A4.SHORT_DESCRIPTION",
@@ -349,7 +351,7 @@ export class HaveAccessComponent {
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
                   firstTitle: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A5.TITLE",
                   description: "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A5.SHORT_DESCRIPTION",

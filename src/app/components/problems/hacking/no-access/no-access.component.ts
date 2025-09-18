@@ -9,6 +9,7 @@ import { Card15Component } from "../../../design-system/card-15/card-15.componen
 import { ButtonComponent } from "../../../design-system/button/button.component";
 import { Card13Component } from "../../../design-system/card-13/card-13.component";
 import { UtilsService } from '../../../../service/utils.service';
+import { LanguageService } from '../../../../service/language.service';
 
 @Component({
    selector: 'app-no-access',
@@ -18,6 +19,7 @@ import { UtilsService } from '../../../../service/utils.service';
 })
 export class NoAccessComponent {
    readonly utilsService = inject(UtilsService);
+   private readonly languageService = inject(LanguageService);
 
    card_13: PageComponentModel = {
       id: 0,
@@ -28,7 +30,7 @@ export class NoAccessComponent {
       translations: [
          {
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
             firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.CONTACT.TITLE",
             description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.CONTACT.DESCRIPTION",
@@ -42,7 +44,7 @@ export class NoAccessComponent {
       status: ComponentStatus.PUBLISHED,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
          firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.INSTAGRAM.TITLE",
          staticImage: "assets/images/instagram.png",
@@ -54,7 +56,7 @@ export class NoAccessComponent {
             status: ComponentStatus.PUBLISHED,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.INSTAGRAM.LINK.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.INSTAGRAM.LINK.DESCRIPTION",
@@ -69,7 +71,7 @@ export class NoAccessComponent {
       status: ComponentStatus.PUBLISHED,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
          firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.SNAPCHAT.TITLE",
          staticImage: "assets/images/snapchat.png",
@@ -81,7 +83,7 @@ export class NoAccessComponent {
             status: ComponentStatus.PUBLISHED,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.SNAPCHAT.LINK.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.SNAPCHAT.LINK.DESCRIPTION",
@@ -96,7 +98,7 @@ export class NoAccessComponent {
       status: ComponentStatus.PUBLISHED,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
          firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.TIKTOK.TITLE",
          staticImage: "assets/images/tiktok.png",
@@ -108,7 +110,7 @@ export class NoAccessComponent {
             status: ComponentStatus.PUBLISHED,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.TIKTOK.LINK.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.TIKTOK.LINK.DESCRIPTION",
@@ -124,7 +126,7 @@ export class NoAccessComponent {
       status: ComponentStatus.PUBLISHED,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
          firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.X.TITLE",
          staticImage: "assets/images/x.png",
@@ -136,7 +138,7 @@ export class NoAccessComponent {
             status: ComponentStatus.PUBLISHED,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.X.LINK.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.X.LINK.DESCRIPTION",
@@ -152,7 +154,7 @@ export class NoAccessComponent {
       status: ComponentStatus.PUBLISHED,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
          firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.FACEBOOK.TITLE",
          staticImage: "assets/images/facebook.png",
@@ -164,7 +166,7 @@ export class NoAccessComponent {
             status: ComponentStatus.PUBLISHED,
             translations: [{
                id: 0,
-               countryRegion: "FR",
+               countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.FACEBOOK.LINK.TITLE",
                description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.SOCIAL_MEDIA.FACEBOOK.LINK.DESCRIPTION",
@@ -180,7 +182,7 @@ export class NoAccessComponent {
       status: ComponentStatus.PUBLISHED,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
          firstTitle: "Contacts des réseaux sociaux"
       }],

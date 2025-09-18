@@ -20,7 +20,7 @@ export class PageTranslationPipe implements PipeTransform {
 
       return (
          page.translations.find(t => t.countryRegion === lang) ||
-         page.translations[0] || // Sinon premiere translation
+         page.translations.find(t => t.countryRegion === 'FR') || // Sinon FR translation par défaut
          null // Sinon rien
       );
    }

@@ -5,9 +5,12 @@ import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/rout
 import { filter, Subscription } from 'rxjs';
 import { ComponentStatus } from '../../model/enum/component-status.enum';
 import { ComponentType } from '../../model/enum/component-type.enum';
+import { Device } from '../../model/enum/device.enum';
 import PageComponentModel from '../../model/page-component.model';
-import { PageComponentService } from '../../service/page-component.service';
+import { PageTranslationPipe } from '../../pipes/page-translation.pipe';
+import { LanguageService } from '../../service/language.service';
 import { PageComponentUtilsService } from '../../service/page-component-utils.service';
+import { PageComponentService } from '../../service/page-component.service';
 import { Card1Component } from "../design-system/card-1/card-1.component";
 import { Card2Component } from "../design-system/card-2/card-2.component";
 import { Card3Component } from "../design-system/card-3/card-3.component";
@@ -15,8 +18,6 @@ import { Card4Component } from "../design-system/card-4/card-4.component";
 import { Card5Component } from "../design-system/card-5/card-5.component";
 import { Card6Component } from "../design-system/card-6/card-6.component";
 import { DividerComponent } from '../design-system/divider/divider.component';
-import { PageTranslationPipe } from '../../pipes/page-translation.pipe';
-import { Device } from '../../model/enum/device.enum';
 
 @Component({
    selector: 'app-problems',
@@ -27,9 +28,9 @@ import { Device } from '../../model/enum/device.enum';
    styleUrl: './problems.component.scss'
 })
 export class ProblemsComponent implements OnInit, OnDestroy {
-
    private readonly pageComponentService = inject(PageComponentService);
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
+   private readonly languageService = inject(LanguageService);
    private readonly router = inject(Router);
    private readonly route = inject(ActivatedRoute);
    private sub!: Subscription;
@@ -45,15 +46,14 @@ export class ProblemsComponent implements OnInit, OnDestroy {
       translations: [
          {
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "EFFACER UN CONTENU",
-            secondTitle: "Je fais effacer un contenu",
-            description: "Demander la suppression d'une photo ou vidéo te concernant",
+            firstTitle: "PROBLEMS.DELETE_CONTENT.CARD.FIRST_TITLE",
+            secondTitle: "PROBLEMS.DELETE_CONTENT.CARD.SECOND_TITLE",
+            description: "PROBLEMS.DELETE_CONTENT.CARD.DESCRIPTION",
             staticImage: "assets/images/delete-content-problem.png"
          }
-      ],
-      childrenIdList: []
+      ]
    };
    hackingProblem: PageComponentModel = {
       id: 0,
@@ -64,15 +64,14 @@ export class ProblemsComponent implements OnInit, OnDestroy {
       translations: [
          {
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "PIRATAGE DE COMPTE",
-            secondTitle: "Je me suis fait pirater",
-            description: "Récupérer son compte ou autre chose",
+            firstTitle: "PROBLEMS.HACKING.CARD.FIRST_TITLE",
+            secondTitle: "PROBLEMS.HACKING.CARD.SECOND_TITLE",
+            description: "PROBLEMS.HACKING.CARD.DESCRIPTION",
             staticImage: "assets/images/hacking-problem.png"
          }
-      ],
-      childrenIdList: []
+      ]
    };
    ComponentType = ComponentType;
    ComponentStatus = ComponentStatus;

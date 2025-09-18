@@ -5,8 +5,8 @@
          <img src="assets/images/warning-picto.png" alt="image" class="!w-[87px] !h-[75px] object-contain" />
       </div>
       <div class="details flex flex-col">
-         <h3>{{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_VIOLENT_CONTENT.TITLE" | translate }}</h3>
-         <p>{{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_VIOLENT_CONTENT.DESCRIPTION" | translate }}</p>
+         <h3>{{ "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.TITLE" | translate }}</h3>
+         <p>{{ "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.DESCRIPTION" | translate }}</p>
       </div>
    </div>
    <div class="content flex flex-col gap-(--spacing-4)">
@@ -16,7 +16,7 @@
       <app-card-5 [data]="card_5_2"></app-card-5>
    </div>
    <div class="controls fixed bottom-0 left-0 w-full flex">
-      <app-button [label]="reported ? 'Adresser une plainte à la CNIL' : 'Signaler le contenu'" variant="primary"
+      <app-button [label]="(reported ? 'PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.BUTTON.REPORTED' : 'PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.BUTTON.UNREPORTED') | translate" variant="primary"
          [iconAfterLabel]="{ name: 'arrow24x24-icon' }" class="w-full"
          (click)="utilsService.goTo(reported ? '/delete-content/reported-content' : '/delete-content/unreported-content')"></app-button>
    </div>

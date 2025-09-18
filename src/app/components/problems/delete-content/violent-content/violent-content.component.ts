@@ -10,6 +10,7 @@ import { ButtonComponent } from "../../../design-system/button/button.component"
 import { Card4Component } from "../../../design-system/card-4/card-4.component";
 import { Card5Component } from "../../../design-system/card-5/card-5.component";
 import { DividerComponent } from "../../../design-system/divider/divider.component";
+import { LanguageService } from '../../../../service/language.service';
 
 @Component({
    selector: 'app-violent-content',
@@ -19,21 +20,21 @@ import { DividerComponent } from "../../../design-system/divider/divider.compone
 })
 export class ViolentContentComponent {
    readonly utilsService = inject(UtilsService);
+   private readonly languageService = inject(LanguageService);
    reported: boolean = false;
 
    card_4: PageComponentModel = {
       id: 0,
       type: ComponentType.CARD_4,
       status: ComponentStatus.PUBLISHED,
-      code: "code",
       position: 1,
       translations: [
          {
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "Tu n’es pas seul",
-            description: "La situation peut être très compliquée à vivre pour toi, mais dans la vie, on est jamais seul ! Il y a des solutions pour changer les choses et des personnes pour t’accompagner dans cette mésaventure.",
+            firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P1.TITLE",
+            description: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P1.DESCRIPTION",
          }
       ],
    };
@@ -42,15 +43,14 @@ export class ViolentContentComponent {
       id: 0,
       type: ComponentType.CARD_5,
       status: ComponentStatus.PUBLISHED,
-      code: "code",
       position: 2,
       translations: [
          {
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "Trouver du soutien",
-            description: "Tu peux en parler à tes parents, un ami, un membre de ta famille, un professeur ou à un adulte dans lequel tu as confiance. 🤝 Des <strong>professionnels</strong> peuvent aussi t’aider au <strong>3018</strong>. Anonyme, confidentiel et gratuit de 9h00 à 23h00, 7j/7. <span class=\"text-(--color-24)\"><strong>Appelle jusqu’à ce que tu aies une réponse</strong>.</span>",
+            firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P2.TITLE",
+            description: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P2.DESCRIPTION",
          }
       ],
       children: [
@@ -58,15 +58,14 @@ export class ViolentContentComponent {
             id: 0,
             type: ComponentType.ENRICHED_LINK,
             status: ComponentStatus.PUBLISHED,
-            code: "code",
             position: 1,
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Parler avec le 3018",
-                  description: "https://e-enfance.org/besoin-daide/",
+                  firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P2.LINK.TITLE",
+                  description: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P2.LINK.DESCRIPTION",
                   staticImage: "assets/images/3018.png"
                }
             ],
@@ -75,14 +74,13 @@ export class ViolentContentComponent {
             id: 0,
             type: ComponentType.TILE_CALL,
             status: ComponentStatus.PUBLISHED,
-            code: "code",
-            position: 1,
+            position: 2,
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "3018",
+                  firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P2.CALL.TITLE",
                   staticImage: "assets/images/3018.png"
                }
             ],
@@ -91,14 +89,13 @@ export class ViolentContentComponent {
             id: 0,
             type: ComponentType.TILE_MESSAGE,
             status: ComponentStatus.PUBLISHED,
-            code: "code",
-            position: 1,
+            position: 3,
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "3018",
+                  firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P2.MESSAGE.TITLE",
                   staticImage: "assets/images/whatsapp.png"
                }
             ],
@@ -110,15 +107,14 @@ export class ViolentContentComponent {
       id: 0,
       type: ComponentType.CARD_5,
       status: ComponentStatus.PUBLISHED,
-      code: "code",
-      position: 2,
+      position: 3,
       translations: [
          {
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "Déposer plainte",
-            description: "La plainte permet de signaler à la justice les faits dont tu es victime. Tu peux déposer plainte en allant voir la police ou la gendarmerie, ou par courrier.",
+            firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P3.TITLE",
+            description: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P3.DESCRIPTION",
          }
       ],
       children: [
@@ -126,15 +122,14 @@ export class ViolentContentComponent {
             id: 0,
             type: ComponentType.ENRICHED_LINK,
             status: ComponentStatus.PUBLISHED,
-            code: "code",
             position: 1,
             translations: [
                {
                   id: 0,
-                  countryRegion: "FR",
+                  countryRegion: this.languageService.language(),
                   devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "Ma Sécurité | Ma Sécurité",
-                  description: "https://www.masecurite.interieur.gouv.fr/fr",
+                  firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P3.LINK.TITLE",
+                  description: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P3.LINK.DESCRIPTION",
                   staticImage: "assets/images/mariane.png"
                }
             ],

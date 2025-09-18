@@ -8,6 +8,7 @@
       "UPDATE_APP": "Mettre à jour l'application"
    },
    "COMMON": {
+      "ORGANISATION": "CNIL",
       "SAVE": "Enregistrer",
       "CANCEL": "Annuler",
       "DELETE": "Supprimer",
@@ -27,7 +28,8 @@
       "UNDERSTOOD": "Compris",
       "DOWNLOAD": "Télécharger",
       "COPY": "Copier",
-      "COPIED": "Copié !"
+      "COPIED": "Copié !",
+      "OR": "OU"
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {
@@ -118,17 +120,6 @@
       "COLORFUL": "Icône colorée",
       "COLORFUL_DESC": "Une version vibrante et joyeuse"
    },
-   "LANGUAGES": {
-      "FR": "Français",
-      "EN": "Anglais",
-      "PT": "Portugais",
-      "ES": "Espagnol",
-      "CA": "Catalan",
-      "PL": "Polonais",
-      "DA": "Danois",
-      "EL": "Grec",
-      "HU": "Hongrois"
-   },
    "HOME": {
       "GREETING": "Bonjour 👋 Comment peut-on t'aider ?",
       "WELCOME": "Bienvenue sur l'application Fantôme",
@@ -163,6 +154,11 @@
    },
    "PROBLEMS": {
       "DELETE_CONTENT": {
+         "CARD": {
+            "FIRST_TITLE": "EFFACER UN CONTENU",
+            "SECOND_TITLE": "Je fais effacer un contenu",
+            "DESCRIPTION": "Demander la suppression d'une photo ou vidéo te concernant"
+         },
          "TITLE": "Je fais effacer un contenu",
          "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L’effacer prend du temps mais nous allons t’aider à aller jusqu’au bout 🗑",
          "REPORTED": {
@@ -186,21 +182,67 @@
          "RESULTS": {
             "REPORTED_CONTENT": {
                "TITLE": "Tu as signalé le contenu ?",
+               "P1": {
+                  "DESCRIPTION": "✅ Bravo, tu as eu un <strong>très bon réflexe</strong> en signalant le contenu à la plateforme. <br /><br />✅ Les réseaux sociaux reçoivent beaucoup de signalements et la modération prend du temps. Mais <strong>même sans réponse immédiate</strong> ton signalement est important."
+               },
+               "P2": {
+                  "TITLE_PART1": "On te conseille d'adresser une plainte à la ",
+                  "TITLE_PART2": " si :",
+                  "TOOLTIP": "Il s’agit de la Commission nationale de l'informatique et des libertés. C’est l’autorité en France qui t’aide à protéger ta vie privée sur Internet.",
+                  "DESCRIPTION1": "Tu as contacté le réseau social et qu’il ne t’a pas répondu <strong>depuis au moins 1 mois</strong>",
+                  "DESCRIPTION2": "Le réseau social t’a répondu mais la réponse est <strong>incomplète</strong> ou <strong>insatisfaisante</strong>."
+               },
+               "BUTTON": "Adresser une plainte",
                "COMPLAINT": {
                   "TITLE": "Prépare des preuves",
                   "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte."
                }
             },
-            "REPORTED_VIOLENT_CONTENT": {
-               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ?",
-               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni."
-            },
-            "UNREPORTED_VIOLENT_CONTENT": {
+            "UNREPORTED_CONTENT": {
                "TITLE": "Tu n’as pas encore signalé le contenu ?"
+            },
+            "VIOLENT_CONTENT": {
+               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ?",
+               "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.",
+               "P1": {
+                  "TITLE": "Tu n’es pas seul·e",
+                  "DESCRIPTION": "La situation peut être très compliquée à vivre pour toi, mais dans la vie, on est jamais seul ! Il y a des solutions pour changer les choses et des personnes pour t’accompagner dans cette mésaventure."
+               },
+               "P2": {
+                  "TITLE": "Trouver du soutien",
+                  "DESCRIPTION": "Tu peux en parler à tes parents, un ami, un membre de ta famille, un professeur ou à un adulte dans lequel tu as confiance. 🤝 Des <strong>professionnels</strong> peuvent aussi t’aider au <strong>3018</strong>. Anonyme, confidentiel et gratuit de 9h00 à 23h00, 7j/7. <span class=\"text-(--color-24)\"><strong>Appelle jusqu’à ce que tu aies une réponse</strong>.</span>",
+                  "LINK": {
+                     "TITLE": "Parler avec le 3018",
+                     "DESCRIPTION": "https://e-enfance.org/besoin-daide/"
+                  },
+                  "CALL": {
+                     "TITLE": "3018"
+                  },
+                  "MESSAGE": {
+                     "TITLE": "3018"
+                  }
+               },
+               "P3": {
+                  "TITLE": "Déposer plainte",
+                  "DESCRIPTION": "La plainte permet de signaler à la justice les faits dont tu es victime. Tu peux déposer plainte en allant voir la police ou la gendarmerie, ou par courrier.",
+                  "LINK": {
+                     "TITLE": "Ma Sécurité | Ma Sécurité",
+                     "DESCRIPTION": "https://www.masecurite.interieur.gouv.fr/fr"
+                  }
+               },
+               "BUTTON": {
+                  "REPORTED": "Adresser une plainte à la CNIL",
+                  "UNREPORTED": "Signaler le contenu"
+               }
             }
          }
       },
       "HACKING": {
+         "CARD": {
+            "FIRST_TITLE": "PIRATAGE DE COMPTE",
+            "SECOND_TITLE": "Je me suis fait pirater",
+            "DESCRIPTION": "Récupérer son compte ou autre chose"
+         },
          "TITLE": "Je me suis fait pirater",
          "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté.",
          "TUTORIAL": {
