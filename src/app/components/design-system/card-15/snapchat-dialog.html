@@ -1,6 +1,6 @@
 <div [@slideUpDown]="animationState"
      (@slideUpDown.done)="onAnimationDone($event)"
-     class="snapchat-report-content-container">
+     class="snapchat-container">
    <div class="header relative flex justify-center items-center h-16">
       <div class="z-10">
          <img src="assets/images/picto-contact-mail.png" alt="picto-contact-mail" class="!w-[77.5px] !h-[96px] object-contain picto" />
@@ -8,9 +8,9 @@
       <app-button-close class="absolute right-4" (click)="closeDialog()"></app-button-close>
    </div>
    <div class="flex flex-col">
-      <div class="details flex flex-col gap(--spacing-3)">
-         <h3 class="">Exemple de mail - Snapchat</h3>
-         <span>Pour effectuer une demande d’effacement, tu peux contacter le délégué à la protection des données (DPO).</span>
+      <div class="details flex flex-col gap-[13px]">
+         <h3 class="description">Exemple de mail - Snapchat</h3>
+         <span class="description">Pour effectuer une demande d’effacement, tu peux contacter le délégué à la protection des données (DPO).</span>
          <h6 class="title">✉️ Adresse mail du contact indiqué</h6>
          <app-tile-mail [data]="tile_mail"></app-tile-mail>
       </div>

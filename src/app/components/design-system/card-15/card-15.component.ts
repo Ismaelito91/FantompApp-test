@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject, input, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, input} from '@angular/core';
 import {ComponentType} from '../../../model/enum/component-type.enum';
 import PageComponentModel from '../../../model/page-component.model';
 import {PageTranslationPipe} from '../../../pipes/page-translation.pipe';
@@ -17,7 +17,8 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 import {ComponentStatus} from "../../../model/enum/component-status.enum";
 import {Device} from "../../../model/enum/device.enum";
 import {TemplateMessageComponent} from "../template-message/template-message.component";
-import { TranslatePipe } from '@ngx-translate/core';
+import {TranslatePipe} from '@ngx-translate/core';
+import {SocialMedias} from "../../../model/enum/socialMedias.enum";
 
 @Component({
    selector: 'app-card-15',
@@ -28,7 +29,6 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class Card15Component {
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
    private readonly dialog = inject(MatDialog);
-   private dialogRef?: MatDialogRef<FacebookDialog>;
    data = input.required<PageComponentModel>();
    ComponentType = ComponentType;
 
@@ -36,14 +36,32 @@ export class Card15Component {
       return this.pageComponentUtils.getSortedChildren(this.data());
    }
 
-   openDialog(): void {
-      this.dialog.open(FacebookDialog, {
-         width: '100vw',
-         maxWidth: '100vw',
-         panelClass: 'card-15-slide-dialog'
-      });
+   openDialogs(child: PageComponentModel): void {
+      if (child?.socialMedia === SocialMedias.FACEBOOK) {
+         this.openDialog(FacebookDialog);
+      } else if (child?.socialMedia === SocialMedias.INSTAGRAM) {
+         this.openDialog(InstaDialog);
+      } else if (child?.socialMedia === SocialMedias.TIKTOK) {
+         this.openDialog(TiktokDialog);
+      } else if (child?.socialMedia === SocialMedias.SNAPCHAT) {
+         this.openDialog(SnapchatDialog);
+      } else if (child?.socialMedia === SocialMedias.X) {
+         this.openDialog(XDialog);
+      }else {
+         console.warn('Aucun dialog ne correspond aux données');
+      }
    }
+   
 
+   private openDialog(dialogComponent: any): void {
+      this.dialog.open(dialogComponent,
+         {
+            width: '100vw',
+            maxWidth: '100vw',
+            panelClass: 'card-15-slide-dialog'
+         });
+   }
+   
 }
 
 
@@ -75,6 +93,7 @@ export class FacebookDialog {
       id: 0,
       type: ComponentType.ENRICHED_LINK,
       status: ComponentStatus.PUBLISHED,
+      socialMedia: SocialMedias.FACEBOOK,
       translations: [{
          id: 0,
          countryRegion: "FR",
@@ -85,6 +104,274 @@ export class FacebookDialog {
       }],
    };
    
+
+   closeDialog() {
+      this.animationState = 'closed';
+   }
+
+   onAnimationDone(event: any) {
+      if (this.animationState === 'closed') {
+         setTimeout(() => this.dialogRef.close(), 50);
+      }
+   }
+}
+
+@Component({
+   selector: 'snapchat-dialog',
+   templateUrl: 'snapchat-dialog.html',
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TileMailComponent, TemplateMessageComponent],
+   changeDetection: ChangeDetectionStrategy.OnPush,
+   styleUrl: './snapchat-dialog.scss',
+   animations: [
+      trigger('slideUpDown', [
+         state('open', style({ transform: 'translateY(0)', opacity: 1 })),
+         state('closed', style({ transform: 'translateY(100%)', opacity: 0 })),
+         transition('void => open', [
+            style({ transform: 'translateY(100%)', opacity: 0 }),
+            animate('500ms ease-out')
+         ]),
+         transition('open => closed', [
+            animate('500ms ease-in')
+         ]),
+      ])
+   ]
+})
+export class SnapchatDialog {
+   private dialogRef = inject(MatDialogRef<SnapchatDialog>);
+   animationState: 'open' | 'closed' = 'open';
+   tile_mail: PageComponentModel =
+      {
+         id: 0,
+         type: ComponentType.TILE_MAIL,
+         status: ComponentStatus.PUBLISHED,
+         socialMedia: SocialMedias.SNAPCHAT,
+         translations: [{
+            id: 0,
+            countryRegion: "FR",
+            devices: [Device.ANDROID, Device.IOS, Device.WEB],
+            secondTitle: "dpo@snapchat.com",
+         }],
+      };
+   template_message: PageComponentModel =
+      {
+         id: 0,
+         type: ComponentType.TEMPLATE_MESSAGE,
+         status: ComponentStatus.PUBLISHED,
+         translations: [{
+            id: 0,
+            countryRegion: "FR",
+            devices: [Device.ANDROID, Device.IOS, Device.WEB],
+            firstTitle:"📝 Exemple de mail à envoyer",
+            description:"Madame, Monsieur,\n" +
+               "\n" +
+               "Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :\n" +
+               "[Lien(s) Url du contenu à supprimer]\n" +
+               "Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n" +
+               "[description des informations à supprimer] .\n" +
+               "Je souhaite que ces informations soient supprimées car :\n" +
+               "[motif de la suppression]\n" +
+               "Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les moteurs de recherche (article 17.2 du RGPD).\n" +
+               "Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n" +
+               "Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
+         }],
+      };
+
+   closeDialog() {
+      this.animationState = 'closed';
+   }
+
+   onAnimationDone(event: any) {
+      if (this.animationState === 'closed') {
+         setTimeout(() => this.dialogRef.close(), 50);
+      }
+   }
+}
+
+@Component({
+   selector: 'tiktok-dialog',
+   templateUrl: 'tiktok-dialog.html',
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TemplateMessageComponent, EnrichedLinkComponent],
+   changeDetection: ChangeDetectionStrategy.OnPush,
+   styleUrl: './tiktok-dialog.scss',
+   animations: [
+      trigger('slideUpDown', [
+         state('open', style({transform: 'translateY(0)', opacity: 1})),
+         state('closed', style({transform: 'translateY(100%)', opacity: 0})),
+         transition('void => open', [
+            style({transform: 'translateY(100%)', opacity: 0}),
+            animate('500ms ease-out')
+         ]),
+         transition('open => closed', [
+            animate('500ms ease-in')
+         ]),
+      ])
+   ]
+})
+export class TiktokDialog {
+   private dialogRef = inject(MatDialogRef<TiktokDialog>);
+   animationState: 'open' | 'closed' = 'open';
+
+   enriched_link: PageComponentModel = {
+      id: 0,
+      type: ComponentType.ENRICHED_LINK,
+      status: ComponentStatus.PUBLISHED,
+      socialMedia: SocialMedias.TIKTOK,
+      translations: [{
+         id: 0,
+         countryRegion: "FR",
+         devices: [Device.ANDROID, Device.IOS, Device.WEB],
+         firstTitle: "Envoyer une demande liée à la confidentialité",
+         description: "https://www.tiktok.com/legal/report/privacy/webform/fr",
+         staticImage: "assets/images/tiktok.png",
+      }],
+   };
+
+   template_message: PageComponentModel =
+      {
+         id: 0,
+         type: ComponentType.TEMPLATE_MESSAGE,
+         status: ComponentStatus.PUBLISHED,
+         translations: [{
+            id: 0,
+            countryRegion: "FR",
+            devices: [Device.ANDROID, Device.IOS, Device.WEB],
+            firstTitle: "📝 Exemple de mail à envoyer",
+            description: "Madame, Monsieur,\n" +
+               "\n" +
+               "Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :\n" +
+               "[Lien(s) Url du contenu à supprimer]\n" +
+               "Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n" +
+               "[description des informations à supprimer] .\n" +
+               "Je souhaite que ces informations soient supprimées car :\n" +
+               "[motif de la suppression]\n" +
+               "Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les moteurs de recherche (article 17.2 du RGPD).\n" +
+               "Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n" +
+               "Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
+         }],
+      };
+
+   closeDialog() {
+      this.animationState = 'closed';
+   }
+
+   onAnimationDone(event: any) {
+      if (this.animationState === 'closed') {
+         setTimeout(() => this.dialogRef.close(), 50);
+      }
+   }
+}
+
+@Component({
+   selector: 'insta-dialog',
+   templateUrl: 'insta-dialog.html',
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent],
+   changeDetection: ChangeDetectionStrategy.OnPush,
+   styleUrl: './insta-dialog.scss',
+   animations: [
+      trigger('slideUpDown', [
+         state('open', style({ transform: 'translateY(0)', opacity: 1 })),
+         state('closed', style({ transform: 'translateY(100%)', opacity: 0 })),
+         transition('void => open', [
+            style({ transform: 'translateY(100%)', opacity: 0 }),
+            animate('500ms ease-out')
+         ]),
+         transition('open => closed', [
+            animate('500ms ease-in')
+         ]),
+      ])
+   ]
+})
+export class InstaDialog {
+   private dialogRef = inject(MatDialogRef<InstaDialog>);
+   animationState: 'open' | 'closed' = 'open';
+   enriched_link: PageComponentModel =
+      {
+         id: 0,
+         type: ComponentType.ENRICHED_LINK,
+         status: ComponentStatus.PUBLISHED,
+         socialMedia: SocialMedias.INSTAGRAM,
+         translations: [{
+            id: 0,
+            countryRegion: "FR",
+            devices: [Device.ANDROID, Device.IOS, Device.WEB],
+            firstTitle: "Signaler une violation de votre vie privée sur Instagram ou Threads",
+            description: "https://help.instagram.com/contact/1716697545776727",
+            staticImage: "assets/images/instagram-2.png",
+         }],
+      };
+
+   closeDialog() {
+      this.animationState = 'closed';
+   }
+
+   onAnimationDone(event: any) {
+      if (this.animationState === 'closed') {
+         setTimeout(() => this.dialogRef.close(), 50);
+      }
+   }
+}
+
+@Component({
+   selector: 'x-dialog',
+   templateUrl: 'x-dialog.html',
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent, TemplateMessageComponent],
+   changeDetection: ChangeDetectionStrategy.OnPush,
+   styleUrl: './x-dialog.scss',
+   animations: [
+      trigger('slideUpDown', [
+         state('open', style({ transform: 'translateY(0)', opacity: 1 })),
+         state('closed', style({ transform: 'translateY(100%)', opacity: 0 })),
+         transition('void => open', [
+            style({ transform: 'translateY(100%)', opacity: 0 }),
+            animate('500ms ease-out')
+         ]),
+         transition('open => closed', [
+            animate('500ms ease-in')
+         ]),
+      ])
+   ]
+})
+export class XDialog {
+   private dialogRef = inject(MatDialogRef<XDialog>);
+   animationState: 'open' | 'closed' = 'open';
+   enriched_link: PageComponentModel =
+      {
+         id: 0,
+         type: ComponentType.ENRICHED_LINK,
+         status: ComponentStatus.PUBLISHED,
+         socialMedia: SocialMedias.X,
+         translations: [{
+            id: 0,
+            countryRegion: "FR",
+            devices: [Device.ANDROID, Device.IOS, Device.WEB],
+            firstTitle: "Demandes liées à la politique de confidentialité de X",
+            description: "https://help.x.com/fr/forms/privacy/question",
+            staticImage: "assets/images/x.png",
+         }],
+      };
+   template_message: PageComponentModel =
+      {
+         id: 0,
+         type: ComponentType.TEMPLATE_MESSAGE,
+         status: ComponentStatus.PUBLISHED,
+         translations: [{
+            id: 0,
+            countryRegion: "FR",
+            devices: [Device.ANDROID, Device.IOS, Device.WEB],
+            firstTitle:"📝 Exemple de mail à envoyer",
+            description:"Madame, Monsieur,\n" +
+               "\n" +
+               "Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :\n" +
+               "[Lien(s) Url du contenu à supprimer]\n" +
+               "Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n" +
+               "[description des informations à supprimer] .\n" +
+               "Je souhaite que ces informations soient supprimées car :\n" +
+               "[motif de la suppression]\n" +
+               "Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les moteurs de recherche (article 17.2 du RGPD).\n" +
+               "Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n" +
+               "Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
+         }],
+      };
 
    closeDialog() {
       this.animationState = 'closed';

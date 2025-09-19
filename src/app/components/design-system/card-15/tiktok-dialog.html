@@ -1,6 +1,6 @@
 <<div [@slideUpDown]="animationState"
       (@slideUpDown.done)="onAnimationDone($event)"
-      class="tiktok-report-content-container">
+      class="tiktok-container">
    <div class="header relative flex justify-center items-center h-16">
       <div class="z-10">
          <img src="assets/images/form-picto.png" alt="picto-formulaire" class="!w-[77.5px] !h-[96px] object-contain picto" />
@@ -17,27 +17,27 @@
       <div class="flex flex-col gap-(--spacing-4)">
          <div class="flex flex-col">
             <h6 class="title-form">1. Fais des captures d’écran</h6>
-            <img class="image" src="assets/images/tiktok-form-screen1.png">
+            <img alt="tiktok-form-screen1" class="image" src="assets/images/tiktok-form-screen1.png">
          </div>
          <div class="flex flex-col">
             <h6 class="title-form">2. Sélectionner le pays où on habite</h6>
-            <img class="image" src="assets/images/tiktok-form-screen2.png">
+            <img alt="tiktok-form-screen2" class="image" src="assets/images/tiktok-form-screen2.png">
          </div>
          <div class="flex flex-col">
             <h6 class="title-form">3. Écrire son nom d’utilisateur TikTok</h6>
-            <img class="image" src="assets/images/tiktok-form-screen3.png">
+            <img alt="tiktok-form-screen3" class="image" src="assets/images/tiktok-form-screen3.png">
          </div>
          <div class="flex flex-col">
             <h6 class="title-form">4. Sélectionner “Mes données TikTok” dans “Quelle est ta demande ou préoccupation ?”</h6>
-            <img class="image" src="assets/images/tiktok-form-screen4.png">
+            <img alt="tiktok-form-screen4" class="image" src="assets/images/tiktok-form-screen4.png">
          </div>
          <div class="flex flex-col">
             <h6 class="title-form">5. Sélectionner “J’ai une question sur l’exercice de mes droits” dans “Sélectionne une sous-catégorie”</h6>
-            <img class="image" src="assets/images/tiktok-form-screen5.png">
+            <img alt="tiktok-form-screen5" class="image" src="assets/images/tiktok-form-screen5.png">
          </div>
          <div class="flex flex-col">
             <h6 class="title-form">6. Copier/coller le modèle ci-dessous dans “Décris ta demande” et le remplacer avec ce qui nous concerne.</h6>
-            <img class="image" src="assets/images/tiktok-form-screen6.png">
+            <img alt="tiktok-form-screen6" class="image" src="assets/images/tiktok-form-screen6.png">
          </div>
       </div>
       <app-template-message [data]="template_message"></app-template-message>
