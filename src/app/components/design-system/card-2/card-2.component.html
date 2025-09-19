@@ -1,11 +1,17 @@
 <div class="card-container flex flex-col">
-   <span class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></span>
+   @if ((data() | pageTranslation)?.firstTitle) {
+      <span class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></span>
+   }
    <div class="card-item-container flex">
       <img class="card-image" [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="image" />
       <div class="flex justify-between items-center w-full">
-         <div>
-            <h5 [innerHTML]="(data() | pageTranslation)?.secondTitle | safeHtml"></h5>
-            <span class="card-description" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></span>
+         <div class="flex flex-col">
+            @if ((data() | pageTranslation)?.secondTitle) {
+               <h5 [innerHTML]="(data() | pageTranslation)?.secondTitle! | translate | safeHtml"></h5>
+            }
+            @if ((data() | pageTranslation)?.description) {
+               <span class="card-description" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></span>
+            }
          </div>
          <div>
             <mat-icon [svgIcon]="isDarkMode() ? 'chevron24x24-icon-dark' : 'chevron24x24-icon-light'"></mat-icon>

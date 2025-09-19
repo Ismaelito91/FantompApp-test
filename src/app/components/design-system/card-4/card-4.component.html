@@ -3,8 +3,7 @@
       <h5 class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h5>
    }
    <div class="card-body">
-      <img class="card-image" src="assets/images/switch-triste-light.svg" alt="switch-triste" />
-      <span class="card-heart">💜</span>
+      <img class="card-image" src="assets/images/switch-sad.png" alt="switch-sad" />
       @if ((data() | pageTranslation)?.description) {
          <div class="card-description" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></div>
       }
