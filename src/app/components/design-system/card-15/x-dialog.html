@@ -1,6 +1,6 @@
 <div [@slideUpDown]="animationState"
      (@slideUpDown.done)="onAnimationDone($event)"
-     class="instagram-report-content-container no-default-animation-dialog custom-dialog-backdrop">
+     class="x-container">
    <div class="header relative flex justify-center items-center h-16">
       <div class="z-10">
          <img src="assets/images/form-picto.png" alt="picto-formulaire" class="!w-[77.5px] !h-[96px] object-contain picto" />
@@ -17,15 +17,15 @@
       <div class="flex flex-col gap-(--spacing-4)">
          <div class="flex flex-col">
             <h6 class="title-form">1. Sélectionner “Je souhaite poser une question” dans “Comment pouvons-nous vous aider ?”</h6>
-            <img class="image" src="assets/images/x-form-screen1.png">
+            <img alt="x-form-screen1" class="image" src="assets/images/x-form-screen1.png">
          </div>
          <div class="flex flex-col">
             <h6 class="title-form">2. Sélectionner “De la suppression de données” dans “Veuillez nous en dire plus”</h6>
-            <img class="image" src="assets/images/x-form-screen2.png">
+            <img alt="x-form-screen2" class="image" src="assets/images/x-form-screen2.png">
          </div>
          <div class="flex flex-col">
             <h6 class="title-form">3. Copier/coller le modèle ci-dessous dans “Veuillez saisir votre question” et le remplacer avec ce qui nous concerne.</h6>
-            <img class="image" src="assets/images/x-form-screen3.png">
+            <img alt="x-form-screen3" class="image" src="assets/images/x-form-screen3.png">
          </div>
          <app-template-message [data]="template_message"></app-template-message>
       </div>

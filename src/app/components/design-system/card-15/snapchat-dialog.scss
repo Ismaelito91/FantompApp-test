@@ -1,11 +1,11 @@
-.snapchat-report-content-container {
+.snapchat-container {
    display: flex;
+   background: var(--background-1);
    flex-direction: column;
    height: 100vh;
    padding-bottom: var(--spacing-8);
    gap: var(--spacing-5);
    .header {
-      background: var(--background-1);
       gap: var(--spacing-4);
       padding: var(--spacing-3) var(--spacing-5) 0 var(--spacing-5);
       margin-bottom: 20px;
@@ -13,21 +13,33 @@
    .picto {
       margin-top: var(--spacing-6);
    }
-   .title{
-      padding-left: var(--spacing-3);
-      padding-right: var(--spacing-3);
-      font-size: var(--font-size-h6);
-      font-family: var(--heading-font-family);
+   .description {
+      padding-left: 13px;
+      padding-right: 13px;
    }
-   .details {
-      gap: var(--spacing-3);
-      padding-left: var(--spacing-3);
-      padding-right: var(--spacing-3);
+   ::ng-deep app-tile-mail .tile-main {
+      padding: 16px;
    }
-   .divider {
-      padding-top: var(--spacing-5);
-      padding-bottom: var(--spacing-5);
-      margin-left: var(--spacing-5);
-      margin-right: var(--spacing-5);
+   app-template-message {
+      background: var(--background-1);
+      padding-left: 16px;
+      padding-right: 16px;
    }
+}
+.title{
+   padding-left: var(--spacing-3);
+   padding-right: var(--spacing-3);
+   font-size: var(--font-size-h6);
+   font-family: var(--heading-font-family);
+}
+.details {
+   gap: var(--spacing-3);
+   padding-left: var(--spacing-3);
+   padding-right: var(--spacing-3);
+}
+.divider {
+   padding-top: var(--spacing-5);
+   padding-bottom: var(--spacing-5);
+   margin-left: var(--spacing-5);
+   margin-right: var(--spacing-5);
 }

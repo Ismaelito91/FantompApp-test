@@ -1,6 +1,7 @@
 import { ComponentStatus } from "./enum/component-status.enum";
 import { ComponentType } from "./enum/component-type.enum";
 import PageComponentTranslationModel from "./page-component-translation.model";
+import {SocialMedias} from "./enum/socialMedias.enum";
 
 export default interface PageComponentModel {
    id?: number;
@@ -14,6 +15,7 @@ export default interface PageComponentModel {
    childrenIdList?: number[];
    children?: PageComponentModel[];
    translations: PageComponentTranslationModel[];
+   socialMedia?: SocialMedias;
 
    showPasswordCheckBtn?: boolean;
 }
