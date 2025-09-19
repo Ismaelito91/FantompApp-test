@@ -1,6 +1,6 @@
 <div class="card-container">
    @if ((data() | pageTranslation)?.firstTitle) {
-      <h5 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h5>
+      <h5 [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h5>
    }
    @if (sortedChildren.length > 0) {
       <div class="card-children flex flex-col">

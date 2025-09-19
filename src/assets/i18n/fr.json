@@ -193,13 +193,85 @@
                   "DESCRIPTION2": "Le réseau social t’a répondu mais la réponse est <strong>incomplète</strong> ou <strong>insatisfaisante</strong>."
                },
                "BUTTON": "Adresser une plainte",
+               "TUTORIAL": {
+                  "P1": {
+                     "TITLE": "Quel est le rôle de la <span class='text-(--color-24)'>CNIL</span> ?",
+                     "DESCRIPTION": "Le rôle de la Commission nationale de l'Informatique et des Libertés est de préserver les libertés des personnes. Elle conseille et contrôle l’utilisation des données personnelles par les entreprises, les administrations et les associations."
+                  },
+                  "P2": {
+                     "TITLE": "Pourquoi il faut attendre une réponse <span class='text-(--color-24)'>1 mois</span> ? ⏱️",
+                     "DESCRIPTION": "C'est le délai légal. Ça veut dire que la loi laisse 1 mois à la plateforme pour te répondre (c'est le Règlement Général sur la Protection des Données ou RGPD)."
+                  },
+                  "P3": {
+                     "TITLE": "C’est quoi une réponse <span class='text-(--color-24)'>incomplète ou fausse</span> ? 📝",
+                     "DESCRIPTION": "La plateforme n'a pas pris en compte toute ta demande ou bien sa réponse ne correspond pas à ce que tu as demandé."
+                  }
+               },
                "COMPLAINT": {
                   "TITLE": "Prépare des preuves",
-                  "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte."
+                  "DESCRIPTION": "Conserve des photos de chaque étape, elles seront utiles pour déposer plainte.",
+                  "P1": {
+                     "TITLE": "Exemples de captures d’écran :",
+                     "DESCRIPTION": "🛑 <strong>Le contenu à supprimer</strong><br />Capture du texte, de la photo ou de la vidéo qui pose problème<br /> <br />🌍 <strong>L’adresse du site</strong><br />Lien vers le site (URL)<br /> <br />ℹ️ <strong>Des informations sur la personne qui a posté le contenu</strong><br />Lien vers le profil de la personne<br /><br />✉️ <strong>Ta demande de suppression</strong><br />- Capture du message où tu demandes la suppression<br />- Capture de la réponse (s’il y a)"
+                  },
+                  "BUTTON": "Accéder au formulaire"
                }
             },
             "UNREPORTED_CONTENT": {
-               "TITLE": "Tu n’as pas encore signalé le contenu ?"
+               "TITLE": "Tu n’as pas encore signalé le contenu ?",
+               "P1": {
+                  "TITLE": "❗️La première étape est de signaler au réseau social",
+                  "DESCRIPTION": "Garde bien toutes les preuves de ton signalement.  Si le réseau social ne répond pas au bout d’<strong>1 mois</strong>, tu peux porter plainte auprès de la CNIL le :"
+               },
+               "CONTACTS": {
+                  "TITLE": "Contacts des réseaux sociaux",
+                  "SOCIAL_MEDIA": {
+                     "INSTAGRAM": {
+                        "TITLE": "Instagram",
+                        "LINK": {
+                           "TITLE": "Signaler une violation de votre vie privée sur Instagram ou Threads",
+                           "DESCRIPTION": "https://help.instagram.com/contact/1716697545776727"
+                        },
+                        "BUTTON": "Comment remplir le formulaire ?"
+                     },
+                     "SNAPCHAT": {
+                        "TITLE": "Snapchat",
+                        "LINK": {
+                           "TITLE": "Envoyer une demande – Assistance Snapchat",
+                           "DESCRIPTION": "https://help.snapchat.com/hc/fr-fr/requests/new"
+                        },
+                        "MAIL": {
+                           "TITLE": "Contacter Snapchat par mail",
+                           "DESCRIPTION": "dpo@snapchat.com"
+                        },
+                        "BUTTON": "Voir un exemple de mail"
+                     },
+                     "TIKTOK": {
+                        "TITLE": "TikTok",
+                        "LINK": {
+                           "TITLE": "Envoyer une demande liée à la confidentialité",
+                           "DESCRIPTION": "https://www.tiktok.com/legal/report/privacy/webform/fr"
+                        },
+                        "BUTTON": "Comment remplir le formulaire ?"
+                     },
+                     "X": {
+                        "TITLE": "X",
+                        "LINK": {
+                           "TITLE": "Demandes liées à la politique de confidentialité de X",
+                           "DESCRIPTION": "https://help.x.com/fr/forms/privacy/question"
+                        },
+                        "BUTTON": "Comment remplir le formulaire ?"
+                     },
+                     "FACEBOOK": {
+                        "TITLE": "Facebook",
+                        "LINK": {
+                           "TITLE": "Formulaires de contact",
+                           "DESCRIPTION": "https://fr-fr.facebook.com/help/contact/954059743194940"
+                        },
+                        "BUTTON": "Comment remplir le formulaire ?"
+                     }
+                  }
+               }
             },
             "VIOLENT_CONTENT": {
                "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ?",
@@ -609,6 +681,14 @@
             "BILLION_YEARS": "milliards d'années",
             "TRILLION_YEARS": "billions d'années",
             "QUADRILLION_YEARS": "trillions d'années"
+         }
+      }
+   },
+   "SECURE_MYSELF": {
+      "VIEW_ALL": {
+         "TUTORIAL": {
+            "TITLE": "Comment ça marche ?",
+            "DESCRIPTION": "Lorsque tu as changé un paramètre, coche le badge <strong>pour te souvenir</strong> de ce que tu as sécurisé sur ton compte !"
          }
       }
    }

@@ -1,20 +1,15 @@
-import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core';
-import { ButtonBackComponent } from "../../../design-system/button-back/button-back.component";
+import { Component, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { DividerComponent } from "../../../design-system/divider/divider.component";
-import { Card12Component } from "../../../design-system/card-12/card-12.component";
-import PageComponentModel from '../../../../model/page-component.model';
-import { ComponentType } from '../../../../model/enum/component-type.enum';
 import { ComponentStatus } from '../../../../model/enum/component-status.enum';
-import { Device } from '../../../../model/enum/device.enum';
-import { Card1Component } from "../../../design-system/card-1/card-1.component";
-import { Card14Component } from "../../../design-system/card-14/card-14.component";
-import { LanguageService } from '../../../../service/language.service';
+import { ComponentType } from '../../../../model/enum/component-type.enum';
 import { CountryRegion } from '../../../../model/enum/country-region.enum';
-import {MatDialog, MatDialogClose, MatDialogContent} from "@angular/material/dialog";
-import {MatButtonModule} from "@angular/material/button";
-import {ButtonCloseComponent} from "../../../design-system/button-close/button-close.component";
-import {TutorialDialog} from "../reported-content/reported-content.component";
+import { Device } from '../../../../model/enum/device.enum';
+import PageComponentModel from '../../../../model/page-component.model';
+import { LanguageService } from '../../../../service/language.service';
+import { ButtonBackComponent } from "../../../design-system/button-back/button-back.component";
+import { Card12Component } from "../../../design-system/card-12/card-12.component";
+import { Card14Component } from "../../../design-system/card-14/card-14.component";
+import { DividerComponent } from "../../../design-system/divider/divider.component";
 
 @Component({
    selector: 'app-unreported-content',
@@ -34,7 +29,7 @@ export class UnreportedContentComponent {
          id: 0,
          countryRegion: this.languageService.language(),
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
-         firstTitle: "Contacts des réseaux sociaux"
+         firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.TITLE"
       }],
       children: [
          {
@@ -45,7 +40,7 @@ export class UnreportedContentComponent {
                id: 0,
                countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "Instagram",
+               firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.INSTAGRAM.TITLE",
                staticImage: "assets/images/instagram.png",
             }],
             children: [
@@ -57,8 +52,8 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Signaler une violation de votre vie privée sur Instagram ou Threads",
-                     description: "https://help.instagram.com/contact/1716697545776727",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.INSTAGRAM.LINK.TITLE",
+                     description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.INSTAGRAM.LINK.DESCRIPTION",
                      staticImage: "assets/images/instagram-2.png",
                   }],
                },
@@ -70,7 +65,7 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Comment remplir le formulaire ?",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.INSTAGRAM.BUTTON",
                   }],
                }
             ]
@@ -83,7 +78,7 @@ export class UnreportedContentComponent {
                id: 0,
                countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "Snapchat",
+               firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.SNAPCHAT.TITLE",
                staticImage: "assets/images/snapchat.png",
             }],
             children: [
@@ -95,8 +90,8 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Envoyer une demande – Assistance Snapchat",
-                     description: "https://help.snapchat.com/hc/fr-fr/requests/new",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.SNAPCHAT.LINK.TITLE",
+                     description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.SNAPCHAT.LINK.DESCRIPTION",
                      staticImage: "assets/images/snapchat.png",
                   }],
                },
@@ -108,8 +103,8 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Contacter Snapchat par mail",
-                     secondTitle: "dpo@snapchat.com",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.SNAPCHAT.MAIL.TITLE",
+                     secondTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.SNAPCHAT.MAIL.DESCRIPTION",
                   }],
                },
                {
@@ -120,7 +115,7 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Voir un exemple de mail",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.SNAPCHAT.BUTTON",
                   }],
                }
             ]
@@ -133,7 +128,7 @@ export class UnreportedContentComponent {
                id: 0,
                countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "TikTok",
+               firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.TIKTOK.TITLE",
                staticImage: "assets/images/tiktok.png",
             }],
             children: [
@@ -145,8 +140,8 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Envoyer une demande liée à la confidentialité",
-                     description: "https://www.tiktok.com/legal/report/privacy/webform/fr",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.TIKTOK.LINK.TITLE",
+                     description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.TIKTOK.LINK.DESCRIPTION",
                      staticImage: "assets/images/tiktok.png",
                   }],
                },
@@ -158,7 +153,7 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Comment remplir le formulaire ?",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.TIKTOK.BUTTON",
                   }],
                }
             ]
@@ -171,7 +166,7 @@ export class UnreportedContentComponent {
                id: 0,
                countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "X",
+               firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.X.TITLE",
                staticImage: "assets/images/x.png",
             }],
             children: [
@@ -183,8 +178,8 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Demandes liées à la politique de confidentialité de X",
-                     description: "https://help.x.com/fr/forms/privacy/question",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.X.LINK.TITLE",
+                     description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.X.LINK.DESCRIPTION",
                      staticImage: "assets/images/x.png",
                   }],
                },
@@ -196,7 +191,7 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Comment remplir le formulaire ?",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.X.BUTTON",
                   }],
                }
             ]
@@ -209,7 +204,7 @@ export class UnreportedContentComponent {
                id: 0,
                countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "Facebook",
+               firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.FACEBOOK.TITLE",
                staticImage: "assets/images/facebook.png",
             }],
             children: [
@@ -221,8 +216,8 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Formulaires de contact",
-                     description: "https://fr-fr.facebook.com/help/contact/954059743194940",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.FACEBOOK.LINK.TITLE",
+                     description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.FACEBOOK.LINK.DESCRIPTION",
                      staticImage: "assets/images/facebook.png",
                   }],
                },
@@ -234,7 +229,7 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "Comment remplir le formulaire ?",
+                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.FACEBOOK.BUTTON",
                   }],
                }
             ]
@@ -253,38 +248,22 @@ export class UnreportedContentComponent {
          id: 0,
          type: ComponentType.CARD_12,
          status: ComponentStatus.PUBLISHED,
-         code: "code",
          position: 1,
          translations: [
             {
                id: 0,
                countryRegion: this.languageService.language(),
                devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "❗️La première étape est de signaler au réseau social",
-               secondTitle: this.getLocaleDateFromLang('FR', dateAfterMonth),
-               description: "Garde bien toutes les preuves de ton signalement.  Si le réseau social ne répond pas au bout d’<strong>1 mois</strong>, tu peux porter plainte auprès de la CNIL le :",
-            },
-            {
-               id: 0,
-               countryRegion: "IE",
-               devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "❗️La première étape est de signaler au réseau social IE",
-               secondTitle: this.getLocaleDateFromLang('IE', dateAfterMonth),
-               description: "Garde bien toutes les preuves de ton signalement.  Si le réseau social ne répond pas au bout d’<strong>1 mois</strong>, tu peux porter plainte auprès de la CNIL le : IE",
-            },
-            {
-               id: 0,
-               countryRegion: "HU",
-               devices: [Device.ANDROID, Device.IOS, Device.WEB],
-               firstTitle: "❗️La première étape est de signaler au réseau social HU",
-               secondTitle: this.getLocaleDateFromLang('HU', dateAfterMonth),
-               description: "Garde bien toutes les preuves de ton signalement.  Si le réseau social ne répond pas au bout d’<strong>1 mois</strong>, tu peux porter plainte auprès de la CNIL le : HU",
+               firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.P1.TITLE",
+               secondTitle: this.getLocaleDateFromLang(dateAfterMonth),
+               description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.P1.DESCRIPTION",
             }
          ]
       };
    }
 
-   getLocaleDateFromLang(lang: keyof typeof CountryRegion, date: Date): string {
+   getLocaleDateFromLang(date: Date): string {
+      const lang = this.languageService.language();
       let locale: string;
       switch (lang) {
          case 'FR':

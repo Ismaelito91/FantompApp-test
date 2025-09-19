@@ -12,6 +12,7 @@ import { PageComponentService } from '../../../service/page-component.service';
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { Card9Component } from "../../design-system/card-9/card-9.component";
 import { ButtonComponent } from '../../design-system/button/button.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-view-all',
@@ -79,7 +80,7 @@ export class ViewAllComponent {
 @Component({
    selector: 'tutorial-dialog',
    templateUrl: 'tutorial-dialog.component.html',
-   imports: [MatDialogContent, MatDialogClose, MatButtonModule, ButtonComponent],
+   imports: [MatDialogContent, MatDialogClose, MatButtonModule, ButtonComponent, TranslatePipe],
    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TutorialDialog { }

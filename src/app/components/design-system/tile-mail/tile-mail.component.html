@@ -1,6 +1,6 @@
 <div class="tile-main relative">
    @if ((data() | pageTranslation)?.firstTitle) {
-      <p title="tile-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></p>
+      <p class="tile-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></p>
    }
    <div class="tile-body">
       @if ((data() | pageTranslation)?.secondTitle) {

@@ -14,24 +14,11 @@
          <img src="assets/images/screenshot-action.svg" alt="screenshot" class="!w-full !h-[235px]" />
       </div>
       <div class="flex flex-col gap-(--spacing-3)">
-         <h5 class="!pl-(--spacing-3) !pr-(--spacing-3)">Exemples de captures d’écran :</h5>
-         <p class="bg-(--background-4) p-(--spacing-3) rounded-(--border-radius-2)" style="font-weight: 500;">
-            🛑 <strong>Le contenu à supprimer</strong><br />Capture du texte, de la photo ou de la vidéo qui pose problème
-            <br /> <br />
-            🌍 <strong>L’adresse du site</strong><br />Lien vers le site (URL)
-            <br />
-            <br />
-            ℹ️ <strong>Des informations sur la personne qui a posté le contenu</strong><br />Lien vers le profil de la personne
-            <br />
-            <br />
-            ✉️ <strong>Ta demande de suppression</strong>
-            <br />- Capture du message où tu demandes
-            la suppression
-            <br />- Capture de la réponse (s’il y a)
-         </p>
+         <h5 class="!pl-(--spacing-3) !pr-(--spacing-3)" [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.P1.TITLE' | translate"></h5>
+         <p class="bg-(--background-4) p-(--spacing-3) rounded-(--border-radius-2)" style="font-weight: 500;" [innerHtml]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.P1.DESCRIPTION' | translate"></p>
       </div>
       <div class="controls fixed bottom-0 left-0 w-full flex">
-         <app-button [label]="'Accéder au formulaire'" variant="primary" [iconAfterLabel]="{name: 'icon-external-link24x24' }"
+         <app-button [label]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.BUTTON' | translate" variant="primary" [iconAfterLabel]="{name: 'icon-external-link24x24' }"
             class="w-full" (click)="utilsService.goToExternal('https://www.cnil.fr')"></app-button>
       </div>
    </div>

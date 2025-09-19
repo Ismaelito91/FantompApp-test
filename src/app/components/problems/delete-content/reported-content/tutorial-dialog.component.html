@@ -3,30 +3,21 @@
       class="!flex flex-col gap-(--spacing-5) !pt-(--spacing-4) !pr-(--spacing-3) !pb-(--spacing-4) !pl-(--spacing-3)">
       <div class="flex flex-col gap-(--spacing-3)">
          <div class="flex flex-col gap-(--spacing-2)">
-            <app-button-close link="/delete-content/reported-content" size="sm" style="position: absolute; top: 24px; right: 24px;" mat-dialog-close></app-button-close>
-            <h5>Quel est le rôle de la <span class="text-(--color-24)">CNIL</span> ?</h5>
-            <p
-               style="color: var(--color-9); font-family: var(--body-font-family); font-weight: var(--font-weight-body); font-size: var(--font-size-body-md); line-height: var(--line-height-body); letter-spacing: var(--letter-spacing-body);">
-               Le rôle de la Commission nationale de l'Informatique et des Libertés est de préserver les libertés des
-               personnes. Elle conseille et contrôle l’utilisation des données personnelles par les entreprises, les
-               administrations et les associations.
-            </p>
+            <app-button-close link="/delete-content/reported-content" size="sm"
+               style="position: absolute; top: 24px; right: 24px;" mat-dialog-close></app-button-close>
+            <h5 [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.TUTORIAL.P1.TITLE' | translate"></h5>
+            <p style="color: var(--color-9); font-family: var(--body-font-family); font-weight: var(--font-weight-body); font-size: var(--font-size-body-md); line-height: var(--line-height-body); letter-spacing: var(--letter-spacing-body);"
+               [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.TUTORIAL.P1.DESCRIPTION' | translate"></p>
          </div>
          <div class="flex flex-col gap-(--spacing-2)">
-            <h5>Pourquoi il faut attendre une réponse <span class="text-(--color-24)">1 mois</span> ? ⏱</h5>
-            <p
-               style="color: var(--color-9); font-family: var(--body-font-family); font-weight: var(--font-weight-body); font-size: var(--font-size-body-md); line-height: var(--line-height-body); letter-spacing: var(--letter-spacing-body);">
-               C'est le délai légal. Ça veut dire que la loi laisse 1 mois à la plateforme pour te répondre (c'est le
-               Règlement Général sur la Protection des Données ou RGPD).
-            </p>
+            <h5 [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.TUTORIAL.P2.TITLE' | translate"></h5>
+            <p style="color: var(--color-9); font-family: var(--body-font-family); font-weight: var(--font-weight-body); font-size: var(--font-size-body-md); line-height: var(--line-height-body); letter-spacing: var(--letter-spacing-body);"
+               [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.TUTORIAL.P2.DESCRIPTION' | translate"></p>
          </div>
          <div class="flex flex-col gap-(--spacing-2)">
-            <h5>C’est quoi une réponse <span class="text-(--color-24)">incomplète ou fausse</span> ? 📝</h5>
-            <p
-               style="color: var(--color-9); font-family: var(--body-font-family); font-weight: var(--font-weight-body); font-size: var(--font-size-body-md); line-height: var(--line-height-body); letter-spacing: var(--letter-spacing-body);">
-               La plateforme n'a pas pris en compte toute ta demande ou bien sa réponse ne correspond pas à ce que tu as
-               demandé.
-            </p>
+            <h5 [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.TUTORIAL.P3.TITLE' | translate"></h5>
+            <p style="color: var(--color-9); font-family: var(--body-font-family); font-weight: var(--font-weight-body); font-size: var(--font-size-body-md); line-height: var(--line-height-body); letter-spacing: var(--letter-spacing-body);"
+               [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.TUTORIAL.P3.DESCRIPTION' | translate"></p>
          </div>
       </div>
    </mat-dialog-content>

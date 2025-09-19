@@ -52,7 +52,7 @@ export class ReportedContentComponent {
 @Component({
    selector: 'tutorial-dialog',
    templateUrl: 'tutorial-dialog.component.html',
-   imports: [MatDialogContent, MatDialogClose, MatButtonModule, ButtonCloseComponent],
+   imports: [MatDialogContent, MatDialogClose, MatButtonModule, ButtonCloseComponent, TranslatePipe],
    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TutorialDialog { }
