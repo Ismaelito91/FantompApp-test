@@ -1,24 +1,25 @@
-import {ChangeDetectionStrategy, Component, inject, input} from '@angular/core';
-import {ComponentType} from '../../../model/enum/component-type.enum';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { ComponentType } from '../../../model/enum/component-type.enum';
 import PageComponentModel from '../../../model/page-component.model';
-import {PageTranslationPipe} from '../../../pipes/page-translation.pipe';
-import {SafeHtmlPipe} from '../../../pipes/safe-html.pipe';
-import {PageComponentUtilsService} from '../../../service/page-component-utils.service';
-import {EnrichedLinkComponent} from "../enriched-link/enriched-link.component";
-import {TileCallComponent} from "../tile-call/tile-call.component";
-import {TileMessageComponent} from "../tile-message/tile-message.component";
-import {ButtonComponent} from "../button/button.component";
-import {TileMailComponent} from "../tile-mail/tile-mail.component";
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {MatButtonModule} from "@angular/material/button";
-import {ButtonCloseComponent} from "../button-close/button-close.component";
-import {DividerComponent} from "../divider/divider.component";
-import {animate, state, style, transition, trigger} from "@angular/animations";
-import {ComponentStatus} from "../../../model/enum/component-status.enum";
-import {Device} from "../../../model/enum/device.enum";
-import {TemplateMessageComponent} from "../template-message/template-message.component";
-import {TranslatePipe} from '@ngx-translate/core';
-import {SocialMedias} from "../../../model/enum/socialMedias.enum";
+import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
+import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
+import { PageComponentUtilsService } from '../../../service/page-component-utils.service';
+import { EnrichedLinkComponent } from "../enriched-link/enriched-link.component";
+import { TileCallComponent } from "../tile-call/tile-call.component";
+import { TileMessageComponent } from "../tile-message/tile-message.component";
+import { ButtonComponent } from "../button/button.component";
+import { TileMailComponent } from "../tile-mail/tile-mail.component";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { MatButtonModule } from "@angular/material/button";
+import { ButtonCloseComponent } from "../button-close/button-close.component";
+import { DividerComponent } from "../divider/divider.component";
+import { animate, state, style, transition, trigger } from "@angular/animations";
+import { ComponentStatus } from "../../../model/enum/component-status.enum";
+import { Device } from "../../../model/enum/device.enum";
+import { TemplateMessageComponent } from "../template-message/template-message.component";
+import { TranslatePipe } from '@ngx-translate/core';
+import { SocialMedias } from "../../../model/enum/socialMedias.enum";
+import { LanguageService } from '../../../service/language.service';
 
 @Component({
    selector: 'app-card-15',
@@ -47,11 +48,11 @@ export class Card15Component {
          this.openDialog(SnapchatDialog);
       } else if (child?.socialMedia === SocialMedias.X) {
          this.openDialog(XDialog);
-      }else {
+      } else {
          console.warn('Aucun dialog ne correspond aux données');
       }
    }
-   
+
 
    private openDialog(dialogComponent: any): void {
       this.dialog.open(dialogComponent,
@@ -61,22 +62,22 @@ export class Card15Component {
             panelClass: 'card-15-slide-dialog'
          });
    }
-   
+
 }
 
 
 @Component({
    selector: 'facebook-dialog',
    templateUrl: 'facebook-dialog.html',
-   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent],
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent, TranslatePipe],
    changeDetection: ChangeDetectionStrategy.OnPush,
    styleUrl: './facebook-dialog.scss',
    animations: [
       trigger('slideUpDown', [
-         state('open', style({transform: 'translateY(0)', opacity: 1})),
-         state('closed', style({transform: 'translateY(100%)', opacity: 0})),
+         state('open', style({ transform: 'translateY(0)', opacity: 1 })),
+         state('closed', style({ transform: 'translateY(100%)', opacity: 0 })),
          transition('void => open', [
-            style({transform: 'translateY(100%)', opacity: 0}),
+            style({ transform: 'translateY(100%)', opacity: 0 }),
             animate('500ms ease-out')
          ]),
          transition('open => closed', [
@@ -87,6 +88,8 @@ export class Card15Component {
 })
 export class FacebookDialog {
    private dialogRef = inject(MatDialogRef<FacebookDialog>);
+   private readonly languageService = inject(LanguageService);
+
    animationState: 'open' | 'closed' = 'open';
 
    enriched_link: PageComponentModel = {
@@ -96,14 +99,14 @@ export class FacebookDialog {
       socialMedia: SocialMedias.FACEBOOK,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
-         firstTitle: "Formulaires de contact",
-         description: "https://fr-fr.facebook.com/help/contact/954059743194940",
+         firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.FACEBOOK.ENRICHED_LINK.TITLE",
+         description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.FACEBOOK.ENRICHED_LINK.DESCRIPTION",
          staticImage: "assets/images/facebook.png",
       }],
    };
-   
+
 
    closeDialog() {
       this.animationState = 'closed';
@@ -119,7 +122,7 @@ export class FacebookDialog {
 @Component({
    selector: 'snapchat-dialog',
    templateUrl: 'snapchat-dialog.html',
-   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TileMailComponent, TemplateMessageComponent],
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TileMailComponent, TemplateMessageComponent, TranslatePipe],
    changeDetection: ChangeDetectionStrategy.OnPush,
    styleUrl: './snapchat-dialog.scss',
    animations: [
@@ -138,6 +141,7 @@ export class FacebookDialog {
 })
 export class SnapchatDialog {
    private dialogRef = inject(MatDialogRef<SnapchatDialog>);
+   private readonly languageService = inject(LanguageService);
    animationState: 'open' | 'closed' = 'open';
    tile_mail: PageComponentModel =
       {
@@ -147,7 +151,7 @@ export class SnapchatDialog {
          socialMedia: SocialMedias.SNAPCHAT,
          translations: [{
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
             secondTitle: "dpo@snapchat.com",
          }],
@@ -159,20 +163,10 @@ export class SnapchatDialog {
          status: ComponentStatus.PUBLISHED,
          translations: [{
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle:"📝 Exemple de mail à envoyer",
-            description:"Madame, Monsieur,\n" +
-               "\n" +
-               "Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :\n" +
-               "[Lien(s) Url du contenu à supprimer]\n" +
-               "Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n" +
-               "[description des informations à supprimer] .\n" +
-               "Je souhaite que ces informations soient supprimées car :\n" +
-               "[motif de la suppression]\n" +
-               "Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les moteurs de recherche (article 17.2 du RGPD).\n" +
-               "Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n" +
-               "Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
+            firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TEMPLATE_MESSAGE.TITLE",
+            description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TEMPLATE_MESSAGE.DESCRIPTION",
          }],
       };
 
@@ -190,15 +184,15 @@ export class SnapchatDialog {
 @Component({
    selector: 'tiktok-dialog',
    templateUrl: 'tiktok-dialog.html',
-   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TemplateMessageComponent, EnrichedLinkComponent],
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TemplateMessageComponent, EnrichedLinkComponent, TranslatePipe],
    changeDetection: ChangeDetectionStrategy.OnPush,
    styleUrl: './tiktok-dialog.scss',
    animations: [
       trigger('slideUpDown', [
-         state('open', style({transform: 'translateY(0)', opacity: 1})),
-         state('closed', style({transform: 'translateY(100%)', opacity: 0})),
+         state('open', style({ transform: 'translateY(0)', opacity: 1 })),
+         state('closed', style({ transform: 'translateY(100%)', opacity: 0 })),
          transition('void => open', [
-            style({transform: 'translateY(100%)', opacity: 0}),
+            style({ transform: 'translateY(100%)', opacity: 0 }),
             animate('500ms ease-out')
          ]),
          transition('open => closed', [
@@ -209,6 +203,7 @@ export class SnapchatDialog {
 })
 export class TiktokDialog {
    private dialogRef = inject(MatDialogRef<TiktokDialog>);
+   private readonly languageService = inject(LanguageService);
    animationState: 'open' | 'closed' = 'open';
 
    enriched_link: PageComponentModel = {
@@ -218,10 +213,10 @@ export class TiktokDialog {
       socialMedia: SocialMedias.TIKTOK,
       translations: [{
          id: 0,
-         countryRegion: "FR",
+         countryRegion: this.languageService.language(),
          devices: [Device.ANDROID, Device.IOS, Device.WEB],
-         firstTitle: "Envoyer une demande liée à la confidentialité",
-         description: "https://www.tiktok.com/legal/report/privacy/webform/fr",
+         firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TIKTOK.ENRICHED_LINK.TITLE",
+         description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TIKTOK.ENRICHED_LINK.DESCRIPTION",
          staticImage: "assets/images/tiktok.png",
       }],
    };
@@ -233,20 +228,10 @@ export class TiktokDialog {
          status: ComponentStatus.PUBLISHED,
          translations: [{
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "📝 Exemple de mail à envoyer",
-            description: "Madame, Monsieur,\n" +
-               "\n" +
-               "Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :\n" +
-               "[Lien(s) Url du contenu à supprimer]\n" +
-               "Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n" +
-               "[description des informations à supprimer] .\n" +
-               "Je souhaite que ces informations soient supprimées car :\n" +
-               "[motif de la suppression]\n" +
-               "Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les moteurs de recherche (article 17.2 du RGPD).\n" +
-               "Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n" +
-               "Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
+            firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TEMPLATE_MESSAGE.TITLE",
+            description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TEMPLATE_MESSAGE.DESCRIPTION",
          }],
       };
 
@@ -264,7 +249,7 @@ export class TiktokDialog {
 @Component({
    selector: 'insta-dialog',
    templateUrl: 'insta-dialog.html',
-   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent],
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent, TranslatePipe],
    changeDetection: ChangeDetectionStrategy.OnPush,
    styleUrl: './insta-dialog.scss',
    animations: [
@@ -283,6 +268,7 @@ export class TiktokDialog {
 })
 export class InstaDialog {
    private dialogRef = inject(MatDialogRef<InstaDialog>);
+   private readonly languageService = inject(LanguageService);
    animationState: 'open' | 'closed' = 'open';
    enriched_link: PageComponentModel =
       {
@@ -292,10 +278,10 @@ export class InstaDialog {
          socialMedia: SocialMedias.INSTAGRAM,
          translations: [{
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "Signaler une violation de votre vie privée sur Instagram ou Threads",
-            description: "https://help.instagram.com/contact/1716697545776727",
+            firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.INSTAGRAM.ENRICHED_LINK.TITLE",
+            description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.INSTAGRAM.ENRICHED_LINK.DESCRIPTION",
             staticImage: "assets/images/instagram-2.png",
          }],
       };
@@ -314,7 +300,7 @@ export class InstaDialog {
 @Component({
    selector: 'x-dialog',
    templateUrl: 'x-dialog.html',
-   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent, TemplateMessageComponent],
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, EnrichedLinkComponent, TemplateMessageComponent, TranslatePipe],
    changeDetection: ChangeDetectionStrategy.OnPush,
    styleUrl: './x-dialog.scss',
    animations: [
@@ -333,6 +319,7 @@ export class InstaDialog {
 })
 export class XDialog {
    private dialogRef = inject(MatDialogRef<XDialog>);
+   private readonly languageService = inject(LanguageService);
    animationState: 'open' | 'closed' = 'open';
    enriched_link: PageComponentModel =
       {
@@ -342,10 +329,10 @@ export class XDialog {
          socialMedia: SocialMedias.X,
          translations: [{
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle: "Demandes liées à la politique de confidentialité de X",
-            description: "https://help.x.com/fr/forms/privacy/question",
+            firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TIKTOK.ENRICHED_LINK.TITLE",
+            description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TIKTOK.ENRICHED_LINK.DESCRIPTION",
             staticImage: "assets/images/x.png",
          }],
       };
@@ -356,20 +343,10 @@ export class XDialog {
          status: ComponentStatus.PUBLISHED,
          translations: [{
             id: 0,
-            countryRegion: "FR",
+            countryRegion: this.languageService.language(),
             devices: [Device.ANDROID, Device.IOS, Device.WEB],
-            firstTitle:"📝 Exemple de mail à envoyer",
-            description:"Madame, Monsieur,\n" +
-               "\n" +
-               "Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :\n" +
-               "[Lien(s) Url du contenu à supprimer]\n" +
-               "Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :\n" +
-               "[description des informations à supprimer] .\n" +
-               "Je souhaite que ces informations soient supprimées car :\n" +
-               "[motif de la suppression]\n" +
-               "Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les moteurs de recherche (article 17.2 du RGPD).\n" +
-               "Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).\n" +
-               "Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
+            firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TEMPLATE_MESSAGE.TITLE",
+            description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TEMPLATE_MESSAGE.DESCRIPTION",
          }],
       };
 

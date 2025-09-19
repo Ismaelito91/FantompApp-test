@@ -1,7 +1,11 @@
 <div class="template-main flex flex-col">
-      <h3 class="template-title" >📝 Exemple de mail à envoyer</h3>
+      @if ((template_message | pageTranslation)?.firstTitle){
+      <h3 class="template-title" [innerHTML]="(template_message | pageTranslation)?.firstTitle! | translate | safeHtml " ></h3>
+      }
       <div class="template-container flex flex-col">
-         <span class="template-content" [innerHTML]="(template_message | pageTranslation)?.description | safeHtml"></span>
+         @if ((template_message | pageTranslation)?.description){
+            <span class="template-content" [innerHTML]="(template_message | pageTranslation)?.description! | translate | safeHtml "></span>
+         }
          <app-button variant="primary" size="lg" label="Copier l'exemple" [iconAfterLabel]="{name: 'icon-copy16x16'}" (click)="copy()"></app-button>
       </div>
 </div>
