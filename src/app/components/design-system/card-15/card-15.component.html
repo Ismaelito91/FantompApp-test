@@ -24,17 +24,17 @@
                }
                @case (ComponentType.BUTTON_PRIMARY) {
                   @if ((child | pageTranslation)?.firstTitle) {
-                     <app-button variant="primary" [label]="(child | pageTranslation)?.firstTitle!" size="sm" (click)="openDialogs(child)" class="flex justify-end"></app-button>
+                     <app-button variant="primary" [label]="(child | pageTranslation)?.firstTitle! | translate" size="sm" (click)="openDialogs(child)" class="flex justify-end"></app-button>
                   }
                }
                @case (ComponentType.BUTTON_SECONDARY) {
                   @if ((child | pageTranslation)?.firstTitle) {
-                     <app-button variant="secondary" [label]="(child | pageTranslation)?.firstTitle!" size="sm" (click)="openDialogs(child)" class="flex justify-end"></app-button>
+                     <app-button variant="secondary" [label]="(child | pageTranslation)?.firstTitle! | translate" size="sm" (click)="openDialogs(child)" class="flex justify-end"></app-button>
                   }
                }
                @case (ComponentType.BUTTON_TERTIARY) {
                   @if ((child | pageTranslation)?.firstTitle) {
-                     <app-button variant="tertiary" [label]="(child | pageTranslation)?.firstTitle!" size="sm" (click)="openDialogs(child)" class="flex justify-end"></app-button>
+                     <app-button variant="tertiary" [label]="(child | pageTranslation)?.firstTitle! | translate" size="sm" (click)="openDialogs(child)" class="flex justify-end"></app-button>
                   }
                }
             }

@@ -271,6 +271,118 @@
                         "BUTTON": "Comment remplir le formulaire ?"
                      }
                   }
+               },
+               "FACEBOOK": {
+                  "TITLE": "Comment remplir le formulaire ? - Facebook",
+                  "DESCRIPTION": "Voici ce qu’il faut faire pour remplir le formulaire ci-dessous:",
+                  "P1": {
+                     "TITLE": "1. Sélectionner le pays où on habite dans “Veuillez sélectionner un pays”"
+                  },
+                  "P2": {
+                     "TITLE": "2. Écrire son nom et prénom"
+                  },
+                  "P3": {
+                     "TITLE": "3. Écrire son adresse e-mail"
+                  },
+                  "P4": {
+                     "TITLE": "4. Sélectionner “Ma vie privée” dans “Qui est la personne dont la vie privée n’a pas été respectée”"
+                  },
+                  "P5": {
+                     "TITLE": "5. Sélectionner “Oui” pour “Avez-vous moins de 18 ans”"
+                  },
+                  "P6": {
+                     "TITLE": "6. Sélectionner “Oui” si on a l’URL du contenu à signaler"
+                  },
+                  "P7": {
+                     "TITLE": "7. Indiquer le type de contenu dont il s’agit"
+                  },
+                  "P8": {
+                     "TITLE": "8. Coller l’URL du contenu à signaler"
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Formulaires de contact",
+                     "DESCRIPTION": "https://fr-fr.facebook.com/help/contact/954059743194940"
+                  }
+               },
+               "INSTAGRAM": {
+                  "TITLE": "Comment remplir le formulaire ? - Instagram",
+                  "DESCRIPTION": "Voici ce qu’il faut faire pour remplir le formulaire ci-dessous:",
+                  "P1": {
+                     "TITLE": "1. Sélectionner le pays où on habite"
+                  },
+                  "P2": {
+                     "TITLE": "2. Écrire son nom et prénom"
+                  },
+                  "P3": {
+                     "TITLE": "3. Écrire son adresse e-mail"
+                  },
+                  "P4": {
+                     "TITLE": "4. Sélectionner “Moi-même” à la question “Pour qui faites-vous ce signalement ?”"
+                  },
+                  "P5": {
+                     "TITLE": "5. Sélectionner “Oui, j’ai moins de 18 ans”"
+                  },
+                  "P6": {
+                     "TITLE": "6. Coller l’URL (l’adresse de la page) du contenu à signaler."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Signaler une violation de votre vie privée sur Instagram ou Threads",
+                     "DESCRIPTION": "https://help.instagram.com/contact/1716697545776727"
+                  }
+               },
+               "X": {
+                  "TITLE": "Comment remplir le formulaire ? - X",
+                  "DESCRIPTION": "Voici ce qu’il faut faire pour remplir le formulaire ci-dessous:",
+                  "P1": {
+                     "TITLE": "1. Sélectionner “Je souhaite poser une question” dans “Comment pouvons-nous vous aider ?”"
+                  },
+                  "P2": {
+                     "TITLE": "2. Sélectionner “De la suppression de données” dans “Veuillez nous en dire plus”"
+                  },
+                  "P3": {
+                     "TITLE": "3. Copier/coller le modèle ci-dessous dans “Veuillez saisir votre question” et le remplacer avec ce qui nous concerne."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Demandes liées à la politique de confidentialité de X",
+                     "DESCRIPTION": "https://help.x.com/fr/forms/privacy/question"
+                  }
+               },
+               "TIKTOK": {
+                  "TITLE": "Comment remplir le formulaire ? - TikTok",
+                  "DESCRIPTION": "Voici ce qu’il faut faire pour remplir le formulaire ci-dessous:",
+                  "P1": {
+                     "TITLE": "1. Fais des captures d’écran"
+                  },
+                  "P2": {
+                     "TITLE": "2. Sélectionner le pays où on habite"
+                  },
+                  "P3": {
+                     "TITLE": "3. Écrire son nom d’utilisateur TikTok"
+                  },
+                  "P4": {
+                     "TITLE": "4. Sélectionner “Mes données TikTok” dans “Quelle est ta demande ou préoccupation ?”"
+                  },
+                  "P5": {
+                     "TITLE": "5. Sélectionner “J’ai une question sur l’exercice de mes droits” dans “Sélectionne une sous-catégorie”"
+                  },
+                  "P6": {
+                     "TITLE": "6. Copier/coller le modèle ci-dessous dans “Décris ta demande” et le remplacer avec ce qui nous concerne."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Demandes liées à la politique de confidentialité de X",
+                     "DESCRIPTION": "https://help.x.com/fr/forms/privacy/question"
+                  }
+               },
+               "SNAPCHAT": {
+                  "TITLE": "Exemple de mail - Snapchat",
+                  "DESCRIPTION": "Pour effectuer une demande d’effacement, tu peux contacter le délégué à la protection des données (DPO).",
+                  "P1": {
+                     "TITLE": "\uD83D\uDCDD Adresse mail du contact indiqué"
+                  }
+               },
+               "TEMPLATE_MESSAGE": {
+                  "TITLE": "\uD83D\uDCDD Exemple de mail à envoyer",
+                  "DESCRIPTION": "Madame, Monsieur,<br><br>Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :<br><span style=\"color: var(--color-24);\">[Lien(s) Url du contenu à supprimer]</span><br>Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :<br><span style=\"color: var(--color-24);\">[description des informations à supprimer]</span> .<br>Je souhaite que ces informations soient supprimées car :<br><span style=\"color: var(--color-24);\">[motif de la suppression]</span><br>Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les moteurs de recherche (article 17.2 du RGPD).<br>Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).<br>Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
                }
             },
             "VIOLENT_CONTENT": {
