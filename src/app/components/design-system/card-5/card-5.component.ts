@@ -9,9 +9,10 @@ import { EnrichedLinkComponent } from "../enriched-link/enriched-link.component"
 import { TileCallComponent } from "../tile-call/tile-call.component";
 import { TileMessageComponent } from "../tile-message/tile-message.component";
 import { TranslatePipe } from '@ngx-translate/core';
+import { Card13Component } from "../card-13/card-13.component";
 @Component({
    selector: 'app-card-5',
-   imports: [TileCallComponent, TileMessageComponent, EnrichedLinkComponent, SafeHtmlPipe, PageTranslationPipe, TranslatePipe],
+   imports: [TileCallComponent, TileMessageComponent, EnrichedLinkComponent, SafeHtmlPipe, PageTranslationPipe, TranslatePipe, Card13Component],
    templateUrl: './card-5.component.html',
    styleUrl: './card-5.component.scss'
 })

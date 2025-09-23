@@ -89,7 +89,7 @@ export const routes: Routes = [
          {
             path: ":id",
             component: ProblemsComponent,
-            data: { hideHeader: true },
+            data: { hideHeader: true, hideFooter: true },
          },
       ],
    },

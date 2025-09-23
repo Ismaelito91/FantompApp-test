@@ -1,31 +1,44 @@
-.problems-container {
-   padding-bottom: 100px;
-}
-
-
 .page-1 {
-   background-color: var(--background-5);
+   padding-bottom: 100px;
+
+   .problems-title-container {
+      position: relative;
+      background-image: url('../../../assets/images/problems-bg-1.png');
+      background-size: cover;
+      height: 210px;
+   }
+
+   .problems-title {
+      height: 80px;
+      margin-top: var(--spacing-6);
+      padding: 0 var(--spacing-3);
+      padding-right: 100px;
+   }
+
+   .problems-items-container {
+      gap: var(--spacing-5);
+      padding: 0 var(--spacing-3);
+   }
+
 }
 
 .page-2 {
    background-color: var(--background-6);
-}
+   min-height: 100vh;
+   padding-bottom: var(--spacing-5);
 
-.problems-title-container {
-   position: relative;
-   background-image: url('../../../assets/images/problems-bg-1.png');
-   background-size: cover;
-   height: 210px;
-}
+   .problems-title {
+      padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
+   }
 
-.problems-title {
-   height: 80px;
-   margin-top: var(--spacing-6);
-   padding: 0 var(--spacing-3);
-   padding-right: 100px;
-}
+   .image-cover {
+      height: 323px;
+      object-fit: cover;
+   }
 
-.problems-items-container {
-   gap: var(--spacing-5);
-   padding: 0 var(--spacing-3);
+   .problems-items-container {
+      gap: var(--spacing-5);
+      padding: 0 var(--spacing-3);
+   }
+
 }

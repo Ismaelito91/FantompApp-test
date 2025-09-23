@@ -4,6 +4,23 @@
    gap: var(--spacing-4);
 }
 
+.card-title {
+   padding-left: var(--spacing-3);
+   padding-right: var(--spacing-3);
+}
+
 .card-children {
    gap: var(--spacing-4);
+}
+
+.card-description {
+   padding-left: var(--spacing-3);
+   padding-right: var(--spacing-3);
+
+   ::ng-deep {
+      a {
+         color: var(--color-8);
+         text-decoration: underline;
+      }
+   }
 }

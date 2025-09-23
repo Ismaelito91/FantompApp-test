@@ -1,6 +1,6 @@
 @switch(page()?.type) {
    @case (ComponentType.PAGE_1) {
-      <div class="problems-container flex flex-col">
+      <div class="problems-container flex flex-col page-1">
          <div class="problems-title-container">
             <h1 class="problems-title" [innerHTML]="(page() | pageTranslation)?.firstTitle"></h1>
          </div>
@@ -30,7 +30,8 @@
    }
    @case (ComponentType.PAGE_2) {
       <div class="problems-container flex flex-col page-2">
-         <img [src]="(page() | pageTranslation)?.image" alt="image" />
+         <app-button-back class="fixed top-(--spacing-3) left-(--spacing-5) z-2"></app-button-back>
+         <img [src]="(page() | pageTranslation)?.image" alt="image" class="image-cover"/>
          <h3 class="problems-title" [innerHTML]="(page() | pageTranslation)?.firstTitle"></h3>
          <div class="problems-items-container flex flex-col">
             @for (problem of sortedChildren; track $index) {
@@ -53,6 +54,11 @@
                   @case (ComponentType.CARD_6) {
                      <a [routerLink]="problem.nextId ? `/problems/${problem.nextId}` : null">
                         <app-card-6 [data]="problem"></app-card-6>
+                     </a>
+                  }
+                  @case (ComponentType.CARD_14) {
+                     <a [routerLink]="problem.nextId ? `/problems/${problem.nextId}` : null">
+                        <app-card-14 [data]="problem"></app-card-14>
                      </a>
                   }
                   @case (ComponentType.DIVIDER) {

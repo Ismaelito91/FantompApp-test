@@ -18,12 +18,14 @@ import { Card4Component } from "../design-system/card-4/card-4.component";
 import { Card5Component } from "../design-system/card-5/card-5.component";
 import { Card6Component } from "../design-system/card-6/card-6.component";
 import { DividerComponent } from '../design-system/divider/divider.component';
+import { ButtonBackComponent } from "../design-system/button-back/button-back.component";
+import { Card14Component } from "../design-system/card-14/card-14.component";
 
 @Component({
    selector: 'app-problems',
    standalone: true,
    imports: [Card1Component, RouterLink, MatButtonModule, MatIconModule, Card2Component, Card3Component,
-      Card4Component, Card5Component, Card6Component, DividerComponent, PageTranslationPipe],
+    Card4Component, Card5Component, Card6Component, DividerComponent, PageTranslationPipe, ButtonBackComponent, Card14Component],
    templateUrl: './problems.component.html',
    styleUrl: './problems.component.scss'
 })
