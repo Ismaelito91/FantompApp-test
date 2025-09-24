@@ -4,10 +4,12 @@ import { Device } from "../model/enum/device.enum";
 @Injectable({ providedIn: 'root' })
 export class DeviceService {
    private overrideDevice: Device | null = null;
+   private readonly storageKey = 'overrideDevice';
 
    setOverride(device: string | null | undefined) {
       const upper = (device || '').toUpperCase();
       if (upper === Device.WEB || upper === Device.ANDROID || upper === Device.IOS) {
+         sessionStorage.setItem(this.storageKey,upper);
          this.overrideDevice = upper as Device;
       } else {
          this.overrideDevice = null;
@@ -17,6 +19,8 @@ export class DeviceService {
    getDevicesHeader(platform: { isBrowser: boolean; ANDROID: boolean; IOS: boolean; }): Device[] {
       if (this.overrideDevice) {
          return [this.overrideDevice];
+      } else if(sessionStorage.getItem(this.storageKey)){
+         return [sessionStorage.getItem(this.storageKey) as Device];
       }
       const devicesHeader: Device[] = [];
       if (platform.isBrowser) devicesHeader.push(Device.WEB);

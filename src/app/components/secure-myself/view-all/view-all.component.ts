@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogActions, MatDialogClose, MatDialogContent } from '@angular/material/dialog';
+import { MatDialog, MatDialogClose, MatDialogContent } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute } from '@angular/router';
 import { ComponentStatus } from '../../../model/enum/component-status.enum';
@@ -46,7 +46,8 @@ export class ViewAllComponent {
 
    private loadRootPage(): void {
       let rootPage = this.pageComponentUtils.getComponentById(this.targetId);
-      if (!rootPage) {
+      
+      if (!rootPage || sessionStorage.getItem('overrideDevice')) {
 
          this.pageComponentService.getRootPageComponentsBySectionId(2).subscribe({
             next: (data) => {
