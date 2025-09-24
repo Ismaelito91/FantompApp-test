@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
 import { ErrorComponent } from "./components/common/error/error.component";
 import { AppIconSelectorComponent } from "./components/home/app-icon-selector/app-icon-selector.component";
+import { AppInfoComponent } from "./components/home/app-info/app-info.component";
 import { HomeComponent } from "./components/home/home.component";
 import { OnboardingComponent } from "./components/home/onboarding/onboarding.component";
 import { UserAppConfigComponent } from "./components/home/user-app-config/user-app-config.component";
@@ -20,12 +21,10 @@ import { ToolsComponent } from "./components/tools/tools.component";
 import { VisibilityCheckComponent } from "./components/tools/visibility-check/visibility-check.component";
 import { VisibilityResultsComponent } from "./components/tools/visibility-check/visibility-results/visibility-results.component";
 import { ComplaintComponent } from "./components/problems/delete-content/reported-content/complaint/complaint.component";
-import {NoAccessComponent} from "./components/problems/hacking/no-access/no-access.component";
-import {
-   RecommendationsComponent
-} from "./components/problems/hacking/no-access/recommendations/recommendations.component";
-import {ActionsComponent} from "./components/problems/hacking/actions/actions.component";
-import {HaveAccessComponent} from "./components/problems/hacking/have-access/have-access.component";
+import { NoAccessComponent } from "./components/problems/hacking/no-access/no-access.component";
+import { RecommendationsComponent } from "./components/problems/hacking/no-access/recommendations/recommendations.component";
+import { ActionsComponent } from "./components/problems/hacking/actions/actions.component";
+import { HaveAccessComponent } from "./components/problems/hacking/have-access/have-access.component";
 
 export const routes: Routes = [
    {
@@ -39,6 +38,11 @@ export const routes: Routes = [
    {
       path: "home",
       component: HomeComponent,
+   },
+   {
+      path: "app-info",
+      component: AppInfoComponent,
+      data: { hideHeader: true },
    },
    {
       path: "user-app-config",
@@ -114,8 +118,8 @@ export const routes: Routes = [
                   path: "complaint",
                   component: ComplaintComponent,
                   data: { hideFooter: true, hideHeader: true },
-               }
-            ]
+               },
+            ],
          },
          {
             path: "unreported-content",
@@ -126,8 +130,8 @@ export const routes: Routes = [
             path: "violent-content",
             component: ViolentContentComponent,
             data: { hideFooter: true, hideHeader: true },
-         }
-      ]
+         },
+      ],
    },
    {
       path: "hacking",
@@ -150,8 +154,8 @@ export const routes: Routes = [
                   path: ":id/actions",
                   component: ActionsComponent,
                   data: { hideFooter: true, hideHeader: true },
-               }
-            ]
+               },
+            ],
          },
          {
             path: "no-access",
@@ -159,16 +163,16 @@ export const routes: Routes = [
                {
                   path: "",
                   component: NoAccessComponent,
-                  data: { hideFooter: true, hideHeader: true }
+                  data: { hideFooter: true, hideHeader: true },
                },
                {
                   path: "recommendations",
                   component: RecommendationsComponent,
-                  data: { hideFooter: true, hideHeader: true }
-               }
-            ]
-         }
-      ]
+                  data: { hideFooter: true, hideHeader: true },
+               },
+            ],
+         },
+      ],
    },
    {
       path: "secure-myself",
