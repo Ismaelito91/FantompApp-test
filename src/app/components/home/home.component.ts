@@ -35,7 +35,7 @@ export class HomeComponent {
    onboardingService = inject(OnboardingService);
    _settingService = inject(SettingService);
    private platform = inject(Platform);
-   
+
    public shouldShowChangeIcon = false;
 
    isDarkMode = computed(() => {
@@ -49,9 +49,7 @@ export class HomeComponent {
 
    constructor() {
       this.shouldShowChangeIcon =
-         this.platform.isBrowser &&
-         !this.platform.IOS &&
-         !this.isTwa();
+         this.platform.isBrowser && !this.platform.IOS && !this.isTwa();
    }
 
    get frontendVersion() {
@@ -101,30 +99,24 @@ export class HomeComponent {
 
    navigateToResources(): void {
       // TODO: Implémenter la navigation vers les ressources
-      console.log("Navigation vers les ressources");
       // this.router.navigate(['/resources']);
    }
 
    navigateToWhatIsApp(): void {
       // Lance l'onboarding quand l'utilisateur clique sur "C'est quoi cette app ?"
-      console.log("Lancement de l'onboarding via \"C'est quoi cette app\"");
       this.onboardingService.showOnboarding();
    }
 
    navigateToRights(): void {
-      // TODO: Implémenter la navigation vers les droits
-      console.log("Navigation vers les droits");
-      // this.router.navigate(['/rights']);
+      this.router.navigate(["/user-rights"]);
    }
 
    navigateToAccessibility(): void {
       // TODO: Implémenter la navigation vers l'accessibilité
-      console.log("Navigation vers l'accessibilité");
       // this.router.navigate(['/accessibility']);
    }
 
    navigateToTutorial(): void {
-      console.log("Navigation vers le tutoriel");
       this.onboardingService.showOnboarding();
    }
 
@@ -132,7 +124,7 @@ export class HomeComponent {
       if (typeof window === "undefined") {
          return false;
       }
-      if (document?.referrer?.includes('android-app:')) {
+      if (document?.referrer?.includes("android-app:")) {
          return true;
       }
       try {

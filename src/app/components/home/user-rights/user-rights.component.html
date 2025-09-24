@@ -1,0 +1,118 @@
+<div class="user-rights-container" role="main">
+   <div class="back-btn">
+      <app-button-back size="md"></app-button-back>
+   </div>
+   <div class="user-rights-content">
+      <h2 class="user-rights-title">
+         {{ "HOME.USER_RIGHTS.TITLE" | translate }}
+      </h2>
+      <div class="user-rights-text-title flex flex-col gap-(--spacing-3)">
+         <p>{{ "HOME.USER_RIGHTS.INTRO.PARAGRAPH_1" | translate }}</p>
+         <p>{{ "HOME.USER_RIGHTS.INTRO.PARAGRAPH_2" | translate }}</p>
+      </div>
+   </div>
+   <div class="user-rights-cards-container">
+      <div class="user-rights-card-incognito flex flex-col gap-(--spacing-4)">
+         <div class="app-info-image">
+            <img
+               src="assets/images/user-rights-incognito.svg"
+               [alt]="'HOME.USER_RIGHTS.CARDS.INCOGNITO.ALT' | translate"
+               class="illustration"
+            />
+         </div>
+         <div
+            class="user-rights-card-incognito-content flex flex-col gap-(--spacing-3)"
+         >
+            <h5 class="user-rights-card-incognito-title">
+               {{ "HOME.USER_RIGHTS.CARDS.INCOGNITO.TITLE" | translate }}
+            </h5>
+            <p
+               class="user-rights-card-incognito-text"
+               [innerHTML]="
+                  'HOME.USER_RIGHTS.CARDS.INCOGNITO.PARAGRAPH_1' | translate
+               "
+            ></p>
+            <p
+               [innerHTML]="
+                  'HOME.USER_RIGHTS.CARDS.INCOGNITO.PARAGRAPH_2' | translate
+               "
+            ></p>
+         </div>
+      </div>
+      <div class="user-rights-card-data-info flex flex-col gap-(--spacing-4)">
+         <div class="app-info-image">
+            <img
+               src="assets/images/data-info.svg"
+               [alt]="'HOME.USER_RIGHTS.CARDS.DATA_INFO.ALT' | translate"
+               class="illustration"
+            />
+         </div>
+         <div
+            class="user-rights-card-data-info-content flex flex-col gap-(--spacing-3)"
+         >
+            <h5 class="user-rights-card-data-info-title">
+               {{ "HOME.USER_RIGHTS.CARDS.DATA_INFO.TITLE" | translate }}
+            </h5>
+            <p
+               class="user-rights-card-data-info-text"
+               [innerHTML]="
+                  'HOME.USER_RIGHTS.CARDS.DATA_INFO.PARAGRAPH' | translate
+               "
+            ></p>
+         </div>
+      </div>
+      <div
+         class="user-rights-card-right-to-object flex flex-col gap-(--spacing-4)"
+      >
+         <div class="app-info-image">
+            <img
+               src="assets/images/right-to-object.svg"
+               [alt]="'HOME.USER_RIGHTS.CARDS.RIGHT_TO_OBJECT.ALT' | translate"
+               class="illustration"
+            />
+         </div>
+         <div
+            class="user-rights-card-right-to-object-content flex flex-col gap-(--spacing-3)"
+         >
+            <h5 class="user-rights-card-right-to-object-title">
+               {{ "HOME.USER_RIGHTS.CARDS.RIGHT_TO_OBJECT.TITLE" | translate }}
+            </h5>
+            <p
+               class="user-rights-card-right-to-object-text"
+               [innerHTML]="
+                  'HOME.USER_RIGHTS.CARDS.RIGHT_TO_OBJECT.PARAGRAPH' | translate
+               "
+            ></p>
+         </div>
+      </div>
+      <div
+         class="user-rights-card-right-to-portability flex flex-col gap-(--spacing-4)"
+      >
+         <div class="app-info-image">
+            <img
+               src="assets/images/right-to-portability.svg"
+               [alt]="'HOME.USER_RIGHTS.CARDS.PORTABILITY.ALT' | translate"
+               class="illustration"
+            />
+         </div>
+         <div
+            class="user-rights-card-right-to-portability-content flex flex-col gap-(--spacing-3)"
+         >
+            <h5 class="user-rights-card-right-to-portability-title">
+               {{ "HOME.USER_RIGHTS.CARDS.PORTABILITY.TITLE" | translate }}
+            </h5>
+            <p
+               class="user-rights-card-right-to-portability-text"
+               [innerHTML]="
+                  'HOME.USER_RIGHTS.CARDS.PORTABILITY.PARAGRAPH_1' | translate
+               "
+            ></p>
+            <p
+               [innerHTML]="
+                  'HOME.USER_RIGHTS.CARDS.PORTABILITY.PARAGRAPH_2' | translate
+               "
+            ></p>
+         </div>
+      </div>
+   </div>
+</div>
