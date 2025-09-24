@@ -1,0 +1,32 @@
+<div class="app-info-container" role="main">
+   <!-- Bouton retour -->
+   <div class="back-btn">
+      <app-button-back size="md"></app-button-back>
+   </div>
+
+   <!-- Contenu global avec padding uniforme -->
+   <div class="app-info-content">
+      <h1 class="app-info-title">{{ "HOME.APP_INFO.TITLE" | translate }}</h1>
+
+      <div class="app-info-text">
+         <p>
+            {{ "HOME.APP_INFO.DESCRIPTION_1" | translate }}
+         </p>
+
+         <p>
+            {{ "HOME.APP_INFO.DESCRIPTION_2" | translate }}
+         </p>
+
+         <p [innerHTML]="'HOME.APP_INFO.DESCRIPTION_3' | translate"></p>
+      </div>
+
+      <!-- Image principale -->
+      <div class="app-info-image">
+         <img
+            src="assets/images/app-info.svg"
+            alt="Illustration FantomApp"
+            class="illustration"
+         />
+      </div>
+   </div>
+</div>

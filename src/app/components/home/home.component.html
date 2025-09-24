@@ -106,13 +106,13 @@
                   </button>
                </li>
                <li>
-                  <button
+                  <a
                      id="what-is-app-item"
                      class="app-info-item"
-                     type="button"
+                     routerLink="/app-info"
+                     role="button"
+                     tabindex="0"
                      [attr.aria-label]="'HOME.WHAT_IS_APP' | translate"
-                     (click)="navigateToWhatIsApp()"
-                     (keydown)="onKeyDownButton($event, 'what-is-app')"
                   >
                      <mat-icon
                         [svgIcon]="
@@ -132,7 +132,7 @@
                         aria-hidden="true"
                         focusable="false"
                      ></mat-icon>
-                  </button>
+                  </a>
                </li>
                <li>
                   <button

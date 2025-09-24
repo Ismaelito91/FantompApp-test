@@ -131,6 +131,12 @@
       "RIGHTS": "J'ai des droits",
       "ACCESSIBILITY": "FantomApp pour tous (Accessibilité)",
       "TUTORIAL": "Revoir le tutoriel de bienvenue",
+      "APP_INFO": {
+         "TITLE": "C'est quoi cette app ?",
+         "DESCRIPTION_1": "FantomApp t'aide en cas de problème, te donne des outils pour protéger ta vie privée en ligne et te fournit des tutos pour préserver tes données sur les principaux réseaux sociaux que tu peux utiliser.",
+         "DESCRIPTION_2": "Lorsque tu utilises cette app, tu n'es pas tracé et aucune donnée te concernant n'est exploitée.",
+         "DESCRIPTION_3": "L'application est produite par <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">la CNIL</a> (Commission nationale de l'informatique et des libertés), et financée par la Commission Européenne."
+      },
       "CARDS": {
          "MAIN_TITLE": "Je protège mes réseaux sociaux",
          "PASSWORD_CHECK": {
