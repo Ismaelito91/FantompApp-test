@@ -15,10 +15,19 @@ export class PageComponentService {
    private readonly deviceService = inject(DeviceService);
 
    getRootPageComponentsBySectionId(sectionId: number) {
-      const devicesHeader: Device[] = this.deviceService.getDevicesHeader(this.platform);
-     
-      return this._http.get<Record<string, PageComponentModel>>(`api/public/page-components/section/${sectionId}/root`,
-         { headers: { 'X-Devices': devicesHeader } });
+      let devicesHeader: Device[];
+
+      const override = sessionStorage.getItem('overrideDevice');
+      if (override === Device.WEB || override === Device.ANDROID || override === Device.IOS) {
+         devicesHeader = [override as Device];
+      } else {
+         devicesHeader = this.deviceService.getDevicesHeader(this.platform);
+      }
+
+      return this._http.get<Record<string, PageComponentModel>>(
+         `api/public/page-components/section/${sectionId}/root`,
+         { headers: { 'X-Devices': devicesHeader } }
+      );
    }
 
    getHomePageLinkIds() {
