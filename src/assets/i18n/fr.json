@@ -156,6 +156,37 @@
                "TITLE": "Je vis du cyber-harcèlement"
             }
          }
+      },
+      "USER_RIGHTS": {
+         "TITLE": "J'ai des droits",
+         "INTRO": {
+            "PARAGRAPH_1": "Quel que soit ton âge, tu as des droits et notamment, le droit à la protection de tes données personnelles et de ta vie privée.",
+            "PARAGRAPH_2": "En ligne, tu peux décider de ce qu'on voit de toi, et de ce que les réseaux font avec tes informations."
+         },
+         "CARDS": {
+            "INCOGNITO": {
+               "TITLE": "🗑️ Le droit à l'effacement : Rester incognito",
+               "PARAGRAPH_1": "En ligne, tu as le droit de demander <b>l'effacement et le déréférencement</b> de tes données. Concrètement, si tu veux qu'une photo, une vidéo, un texte de toi, ton nom, ton prénom ou d'autres éléments de tes données personnelles soient supprimés ou ne remontent plus dans les requêtes des moteurs de recherche, tu peux en faire la demande aux sites concernés.",
+               "PARAGRAPH_2": "Tu pourras t'adresser directement au site ou à la plateforme, et si ceux-ci ne répondent pas à ta demande sous 1 mois, tu pourras t'adresser à la CNIL (la Commission Nationale de l'Informatique et des Libertés) afin qu'elle te vienne en aide.",
+               "ALT": "Illustration User Rights Card Incognito"
+            },
+            "DATA_INFO": {
+               "TITLE": "ℹ️ Le droit d'information : qui fait quoi avec mes données",
+               "PARAGRAPH": "Tu as le droit de savoir ce que les sites, jeux, applications et autres plateformes font, <b>veulent faire ou comptent faire avec tes données</b> perso.",
+               "ALT": "Illustration User Rights Card Data Info"
+            },
+            "RIGHT_TO_OBJECT": {
+               "TITLE": "❌ Le droit d'opposition : reste maître de tes données",
+               "PARAGRAPH": "Tu as le droit de <b>t'opposer à l'utilisation de tes données</b> par des sites ou applications (sauf dans certains cas très précis prévus par la loi).",
+               "ALT": "Illustration User Rights Card Right To Object"
+            },
+            "PORTABILITY": {
+               "TITLE": "🧳 Le droit à la portabilité : où je veux, quand je veux !",
+               "PARAGRAPH_1": "Tu as même le droit d'emporter <b>tes données et de les utiliser ailleurs,</b> « en mode » « cliquer et emporter » ! C'est la portabilité.",
+               "PARAGRAPH_2": "Tu les récupères et les utilises ailleurs, chez un concurrent, si tu veux. Cela vaut pour tes photos, audios ou vidéos, ou pour tes cours sur une application de prise de notes sur ordinateur..",
+               "ALT": "Illustration User Rights Card Right To Object"
+            }
+         }
       }
    },
    "PROBLEMS": {

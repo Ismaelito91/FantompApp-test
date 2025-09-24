@@ -25,6 +25,7 @@ import { NoAccessComponent } from "./components/problems/hacking/no-access/no-ac
 import { RecommendationsComponent } from "./components/problems/hacking/no-access/recommendations/recommendations.component";
 import { ActionsComponent } from "./components/problems/hacking/actions/actions.component";
 import { HaveAccessComponent } from "./components/problems/hacking/have-access/have-access.component";
+import { UserRightsComponent } from "./components/home/user-rights/user-rights.component";
 
 export const routes: Routes = [
    {
@@ -42,6 +43,11 @@ export const routes: Routes = [
    {
       path: "app-info",
       component: AppInfoComponent,
+      data: { hideHeader: true },
+   },
+   {
+      path: "user-rights",
+      component: UserRightsComponent,
       data: { hideHeader: true },
    },
    {
