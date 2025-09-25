@@ -1,25 +1,26 @@
+import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { MatButtonModule } from "@angular/material/button";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { TranslatePipe } from '@ngx-translate/core';
+import { ComponentStatus } from "../../../model/enum/component-status.enum";
 import { ComponentType } from '../../../model/enum/component-type.enum';
+import { Device } from "../../../model/enum/device.enum";
+import { SocialMedias } from "../../../model/enum/socialMedias.enum";
 import PageComponentModel from '../../../model/page-component.model';
 import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
 import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
-import { PageComponentUtilsService } from '../../../service/page-component-utils.service';
-import { EnrichedLinkComponent } from "../enriched-link/enriched-link.component";
-import { TileCallComponent } from "../tile-call/tile-call.component";
-import { TileMessageComponent } from "../tile-message/tile-message.component";
-import { ButtonComponent } from "../button/button.component";
-import { TileMailComponent } from "../tile-mail/tile-mail.component";
-import { MatDialog, MatDialogRef } from "@angular/material/dialog";
-import { MatButtonModule } from "@angular/material/button";
-import { ButtonCloseComponent } from "../button-close/button-close.component";
-import { DividerComponent } from "../divider/divider.component";
-import { animate, state, style, transition, trigger } from "@angular/animations";
-import { ComponentStatus } from "../../../model/enum/component-status.enum";
-import { Device } from "../../../model/enum/device.enum";
-import { TemplateMessageComponent } from "../template-message/template-message.component";
-import { TranslatePipe } from '@ngx-translate/core';
-import { SocialMedias } from "../../../model/enum/socialMedias.enum";
 import { LanguageService } from '../../../service/language.service';
+import { PageComponentUtilsService } from '../../../service/page-component-utils.service';
+import { ButtonCloseComponent } from "../button-close/button-close.component";
+import { ButtonComponent } from "../button/button.component";
+import { DividerComponent } from "../divider/divider.component";
+import { EnrichedLinkComponent } from "../enriched-link/enriched-link.component";
+import { ModalFullComponent } from '../modal-full/modal-full.component';
+import { TemplateMessageComponent } from "../template-message/template-message.component";
+import { TileCallComponent } from "../tile-call/tile-call.component";
+import { TileMailComponent } from "../tile-mail/tile-mail.component";
+import { TileMessageComponent } from "../tile-message/tile-message.component";
 
 @Component({
    selector: 'app-card-15',
@@ -38,29 +39,35 @@ export class Card15Component {
    }
 
    openDialogs(child: PageComponentModel): void {
-      if (child?.socialMedia === SocialMedias.FACEBOOK) {
-         this.openDialog(FacebookDialog);
-      } else if (child?.socialMedia === SocialMedias.INSTAGRAM) {
-         this.openDialog(InstaDialog);
-      } else if (child?.socialMedia === SocialMedias.TIKTOK) {
-         this.openDialog(TiktokDialog);
-      } else if (child?.socialMedia === SocialMedias.SNAPCHAT) {
-         this.openDialog(SnapchatDialog);
-      } else if (child?.socialMedia === SocialMedias.X) {
-         this.openDialog(XDialog);
+      if (child.modalId) {
+         const modalPage = this.pageComponentUtils.getComponentById(child.modalId);
+         this.openDialog(ModalFullComponent, modalPage);
       } else {
-         console.warn('Aucun dialog ne correspond aux données');
+         if (child?.socialMedia === SocialMedias.FACEBOOK) {
+            this.openDialog(FacebookDialog, null);
+         } else if (child?.socialMedia === SocialMedias.INSTAGRAM) {
+            this.openDialog(InstaDialog, null);
+         } else if (child?.socialMedia === SocialMedias.TIKTOK) {
+            this.openDialog(TiktokDialog, null);
+         } else if (child?.socialMedia === SocialMedias.SNAPCHAT) {
+            this.openDialog(SnapchatDialog, null);
+         } else if (child?.socialMedia === SocialMedias.X) {
+            this.openDialog(XDialog, null);
+         } else {
+            console.warn('Aucun dialog ne correspond aux données');
+         }
       }
    }
 
 
-   private openDialog(dialogComponent: any): void {
-      this.dialog.open(dialogComponent,
-         {
+   private openDialog(DialogComponent: any, data: PageComponentModel | null): void {
+      this.dialog.open(DialogComponent, {
             width: '100vw',
             maxWidth: '100vw',
-            panelClass: 'card-15-slide-dialog'
-         });
+            panelClass: 'card-15-slide-dialog',
+            data
+         }
+      );
    }
 
 }

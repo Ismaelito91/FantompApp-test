@@ -1,7 +1,7 @@
 import { ComponentStatus } from "./enum/component-status.enum";
 import { ComponentType } from "./enum/component-type.enum";
 import PageComponentTranslationModel from "./page-component-translation.model";
-import {SocialMedias} from "./enum/socialMedias.enum";
+import { SocialMedias } from "./enum/socialMedias.enum";
 
 export default interface PageComponentModel {
    id?: number;
@@ -11,6 +11,8 @@ export default interface PageComponentModel {
    position?: number;
    nextId?: number;
    next?: PageComponentModel;
+   modalId?: number;
+   modal?: PageComponentModel;
    parentId?: number;
    childrenIdList?: number[];
    children?: PageComponentModel[];

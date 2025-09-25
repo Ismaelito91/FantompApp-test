@@ -1,0 +1,20 @@
+<div [@slideUpDown]="animationState" (@slideUpDown.done)="onAnimationDone($event)" class="instagram-container">
+   <div class="header relative flex justify-center items-center h-16">
+      <div class="z-10">
+         <img [src]="(data | pageTranslation)?.image || (data | pageTranslation)?.staticImage"
+            alt="picto-formulaire" class="!w-[77.5px] !h-[96px] object-contain picto" />
+      </div>
+      <app-button-close class="absolute right-4" (click)="closeDialog()"></app-button-close>
+   </div>
+   <div class="content flex flex-col">
+      <div class="details flex flex-col gap(--spacing-3)">
+         @if ((data | pageTranslation)?.firstTitle) {
+            <h3 [innerHTML]="(data | pageTranslation)?.firstTitle! | translate | safeHtml"></h3>
+         }
+         @if ((data | pageTranslation)?.description) {
+            <span [innerHTML]="(data | pageTranslation)?.description! | translate | safeHtml"></span>
+         }
+      </div>
+      <app-divider class="divider"></app-divider>
+   </div>
+</div>
