@@ -1,6 +1,6 @@
-# Fantome App Frontend
+# FantomApp Frontend
 
-Ce module contient le client web du projet Fantome App. Il est écrit en Angular.
+Ce module contient le client web du projet FantomApp. Il est écrit en Angular.
 
 ## Installation pour le développeur
 

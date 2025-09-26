@@ -1,14 +1,19 @@
-<div class="tile-main relative">
+<div class="flex flex-col gap-(--spacing-2)">
    @if ((data() | pageTranslation)?.firstTitle) {
-      <p class="tile-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></p>
+      <h6 [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h6>
    }
-   <div class="tile-body">
+   <div class="tile-main relative">
       @if ((data() | pageTranslation)?.secondTitle) {
-         <p class="mail">{{ (data() | pageTranslation)?.secondTitle! | translate }}</p>
+         <p class="tile-title" [innerHTML]="(data() | pageTranslation)?.secondTitle! | translate | safeHtml"></p>
       }
-      <app-button variant="tertiary" size="sm" [label]="'COMMON.COPY' | translate" [iconAfterLabel]="{name: 'icon-copy16x16'}" (click)="copy()"></app-button>
+      <div class="tile-body">
+         @if ((data() | pageTranslation)?.description) {
+            <p class="mail" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></p>
+         }
+         <app-button variant="tertiary" size="sm" [label]="'COMMON.COPY' | translate" [iconAfterLabel]="{name: 'icon-copy16x16'}" (click)="copy()"></app-button>
+      </div>
+      @if (showCopyNotification) {
+         <div class="absolute bottom-[2px] right-[45px]" style="font-size: 14px;">{{ 'COMMON.COPIED' | translate }}</div>
+      } 
    </div>
-   @if (showCopyNotification) {
-      <div class="absolute bottom-[2px] right-[45px]" style="font-size: 14px;">{{ 'COMMON.COPIED' | translate }}</div>
-   } 
 </div>

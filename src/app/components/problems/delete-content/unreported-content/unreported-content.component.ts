@@ -105,8 +105,8 @@ export class UnreportedContentComponent {
                      id: 0,
                      countryRegion: this.languageService.language(),
                      devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                     firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.SNAPCHAT.MAIL.TITLE",
-                     secondTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.SNAPCHAT.MAIL.DESCRIPTION",
+                     secondTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.SNAPCHAT.MAIL.TITLE",
+                     description: "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.CONTACTS.SOCIAL_MEDIA.SNAPCHAT.MAIL.DESCRIPTION",
                   }],
                },
                {

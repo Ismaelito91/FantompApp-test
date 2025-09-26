@@ -8,11 +8,17 @@ import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { ButtonCloseComponent } from "../button-close/button-close.component";
 import { DividerComponent } from "../divider/divider.component";
+import { PageComponentUtilsService } from "../../../service/page-component-utils.service";
+import { EnrichedLinkComponent } from "../enriched-link/enriched-link.component";
+import { ComponentType } from "../../../model/enum/component-type.enum";
+import { Card20Component } from "../card-20/card-20.component";
+import { TemplateMessageComponent } from "../template-message/template-message.component";
+import { TileMailComponent } from "../tile-mail/tile-mail.component";
 
 @Component({
    selector: 'app-modal-full',
    templateUrl: 'modal-full.component.html',
-   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TranslatePipe, PageTranslationPipe, SafeHtmlPipe],
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TranslatePipe, PageTranslationPipe, SafeHtmlPipe, EnrichedLinkComponent, Card20Component, TemplateMessageComponent, TileMailComponent],
    changeDetection: ChangeDetectionStrategy.OnPush,
    styleUrl: './modal-full.component.scss',
    animations: [
@@ -32,8 +38,10 @@ import { DividerComponent } from "../divider/divider.component";
 export class ModalFullComponent {
    readonly data: PageComponentModel = inject(MAT_DIALOG_DATA);
    private dialogRef = inject(MatDialogRef<ModalFullComponent>);
+   private pageComponentUtils = inject(PageComponentUtilsService);
    animationState: 'open' | 'closed' = 'open';
-
+   ComponentType = ComponentType;
+   
    closeDialog() {
       this.animationState = 'closed';
    }
@@ -42,5 +50,9 @@ export class ModalFullComponent {
       if (this.animationState === 'closed') {
          setTimeout(() => this.dialogRef.close(), 50);
       }
+   }
+
+   get sortedChildren() {
+      return this.pageComponentUtils.getSortedChildren(this.data);
    }
 }

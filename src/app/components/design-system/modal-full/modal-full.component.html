@@ -1,12 +1,9 @@
-<div [@slideUpDown]="animationState" (@slideUpDown.done)="onAnimationDone($event)" class="instagram-container">
-   <div class="header relative flex justify-center items-center h-16">
-      <div class="z-10">
-         <img [src]="(data | pageTranslation)?.image || (data | pageTranslation)?.staticImage"
-            alt="picto-formulaire" class="!w-[77.5px] !h-[96px] object-contain picto" />
+<div [@slideUpDown]="animationState" (@slideUpDown.done)="onAnimationDone($event)" class="modal-full-container relative">
+   <div class="flex flex-col gap-(--spacing-5)">
+      <div class="flex justify-center items-center">
+         <img [src]="(data | pageTranslation)?.image || (data | pageTranslation)?.staticImage" alt="picto-formulaire" class="!max-w-[108px] !max-h-[96px] object-contain" />
+         <app-button-close class="absolute top-(--spacing-4) right-(--spacing-3) z-1" (click)="closeDialog()"></app-button-close>
       </div>
-      <app-button-close class="absolute right-4" (click)="closeDialog()"></app-button-close>
-   </div>
-   <div class="content flex flex-col">
       <div class="details flex flex-col gap(--spacing-3)">
          @if ((data | pageTranslation)?.firstTitle) {
             <h3 [innerHTML]="(data | pageTranslation)?.firstTitle! | translate | safeHtml"></h3>
@@ -15,6 +12,28 @@
             <span [innerHTML]="(data | pageTranslation)?.description! | translate | safeHtml"></span>
          }
       </div>
-      <app-divider class="divider"></app-divider>
    </div>
+   @if (sortedChildren.length > 0) {
+      <div class="card-children flex flex-col">
+         @for (child of sortedChildren; track $index) {
+            @switch (child.type) {
+               @case (ComponentType.ENRICHED_LINK) {
+                  <app-enriched-link [data]="child"></app-enriched-link>
+               }
+               @case (ComponentType.DIVIDER) {
+                  <app-divider></app-divider>
+               }
+               @case (ComponentType.CARD_20) {
+                  <app-card-20 [data]="child"></app-card-20>
+               }
+               @case (ComponentType.TEMPLATE_MESSAGE) {
+                  <app-template-message [data]="child"></app-template-message>
+               }
+               @case (ComponentType.TILE_MAIL) {
+                  <app-tile-mail [data]="child"></app-tile-mail>
+               }
+            }
+         }
+      </div>
+   }
 </div>

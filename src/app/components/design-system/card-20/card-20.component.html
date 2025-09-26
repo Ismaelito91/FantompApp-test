@@ -1,0 +1,6 @@
+<div class="flex flex-col card-container">
+   @if ((data() | pageTranslation)?.firstTitle) {
+      <h6 class="title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h6>
+   }
+   <img class="image" [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen-image" />
+</div>

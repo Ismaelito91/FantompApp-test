@@ -38,6 +38,9 @@
       "TAG_UNCLICKABLE": {
          "IMPORTANT": "IMPORTANT",
          "SECONDARY": "SECONDAIRE"
+      },
+      "TEMPLATE_MESSAGE": {
+         "BUTTON": "Copier l'exemple"
       }
    },
    "ONBOARDING": {

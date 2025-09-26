@@ -19,4 +19,10 @@ export class UtilsService {
    goToExternal(url: string) {
       window.open(url, '_blank');
    }
+
+   htmlToTextViaElement(html: string) {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || '';
+   }
 }

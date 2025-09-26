@@ -5,6 +5,7 @@ import { PageTranslationPipe } from '../../../pipes/page-translation.pipe';
 import { MatIconModule } from '@angular/material/icon';
 import { ButtonComponent } from "../button/button.component";
 import { TranslatePipe } from '@ngx-translate/core';
+import { UtilsService } from '../../../service/utils.service';
 
 @Component({
    selector: 'app-tile-mail',
@@ -14,13 +15,14 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class TileMailComponent {
    private readonly pageTranslationPipe = inject(PageTranslationPipe);
+   private readonly utilsService = inject(UtilsService);
    data = input.required<PageComponentModel>();
    showCopyNotification = false;
 
    async copy() {
       try {
          if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(this.pageTranslationPipe.transform(this.data())?.secondTitle!);
+            await navigator.clipboard.writeText(this.utilsService.htmlToTextViaElement(this.pageTranslationPipe.transform(this.data())?.description!));
             this.showCopyNotification = true;
 
             setTimeout(() => {

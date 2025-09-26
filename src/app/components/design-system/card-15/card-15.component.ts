@@ -64,12 +64,11 @@ export class Card15Component {
       this.dialog.open(DialogComponent, {
             width: '100vw',
             maxWidth: '100vw',
-            panelClass: 'card-15-slide-dialog',
+            panelClass: 'modal-slideup',
             data
          }
       );
    }
-
 }
 
 

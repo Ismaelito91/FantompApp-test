@@ -1,19 +1,12 @@
 .template-main {
-   gap: var(--spacing-5);
+   gap: var(--spacing-3);
 }
 
 .template-container {
    gap: var(--spacing-4);
-   
-   margin: 13px 16px;
    border-radius: var(--border-radius-3);
 }
- 
-.template-title {
-   padding-left: var(--spacing-3);
-   padding-right: var(--spacing-3);
-   font-size: var(--font-size-body-lg);
-}
+
 .template-content {
    background-color: var(--background-2);
    border-radius: var(--border-radius-3);
@@ -21,4 +14,16 @@
    gap: var(--spacing-5);
    font-size: var(--font-size-body-md);
    font-family: var(--body-font-family);
+
+   ::ng-deep {
+      ul {
+         list-style: disc !important;
+         margin-left: 2rem;
+      }
+
+      a {
+         color: var(--color-8);
+         text-decoration: underline;
+      }
+   }
 }

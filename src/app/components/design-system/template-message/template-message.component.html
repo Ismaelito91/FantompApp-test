@@ -1,11 +1,11 @@
 <div class="template-main flex flex-col">
-      @if ((template_message | pageTranslation)?.firstTitle){
-      <h3 class="template-title" [innerHTML]="(template_message | pageTranslation)?.firstTitle! | translate | safeHtml " ></h3>
+      @if ((data() | pageTranslation)?.firstTitle){
+         <h6 class="template-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml" ></h6>
       }
       <div class="template-container flex flex-col">
-         @if ((template_message | pageTranslation)?.description){
-            <span class="template-content" [innerHTML]="(template_message | pageTranslation)?.description! | translate | safeHtml "></span>
+         @if ((data() | pageTranslation)?.description){
+            <span class="template-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml "></span>
          }
-         <app-button variant="primary" size="lg" label="Copier l'exemple" [iconAfterLabel]="{name: 'icon-copy16x16'}" (click)="copy()"></app-button>
+         <app-button variant="primary" size="lg" [label]="'DESIGN_SYSTEM.TEMPLATE_MESSAGE.BUTTON' | translate" [iconAfterLabel]="{name: 'icon-copy16x16'}" (click)="copy()"></app-button>
       </div>
 </div>
