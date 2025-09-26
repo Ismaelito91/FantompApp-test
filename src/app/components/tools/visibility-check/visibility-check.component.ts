@@ -1,38 +1,46 @@
-import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { Component, inject } from "@angular/core";
+import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatIconModule } from "@angular/material/icon";
-import { Router } from '@angular/router';
-import { TranslatePipe } from '@ngx-translate/core';
+import { Router } from "@angular/router";
+import { TranslatePipe } from "@ngx-translate/core";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { StepperComponent } from "../../design-system/stepper/stepper.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
 
 type Question = {
-   image: string,
-   title: string,
-   sections: Section[]
-}
+   image: string;
+   title: string;
+   sections: Section[];
+};
 type Section = {
-   name: string,
-   title?: string,
-   answers: Answer[]
-}
+   name: string;
+   title?: string;
+   answers: Answer[];
+};
 type Answer = {
-   title: string,
-   description?: string
-}
+   title: string;
+   description?: string;
+};
 type Results = {
-   pseudo: string[],
-   bio: string[]
-}
+   pseudo: string[];
+   bio: string[];
+};
 @Component({
-   selector: 'app-visibility-check',
-   imports: [TranslatePipe, ButtonBackComponent, MatCheckboxModule, MatButtonModule,
-    StepperComponent, MatIconModule, ReactiveFormsModule, ButtonComponent],
-   templateUrl: './visibility-check.component.html',
-   styleUrl: './visibility-check.component.scss'
+   selector: "app-visibility-check",
+   imports: [
+      TranslatePipe,
+      ButtonBackComponent,
+      MatCheckboxModule,
+      MatButtonModule,
+      StepperComponent,
+      MatIconModule,
+      ReactiveFormsModule,
+      ButtonComponent,
+   ],
+   templateUrl: "./visibility-check.component.html",
+   styleUrl: "./visibility-check.component.scss",
 })
 export class VisibilityCheckComponent {
    private readonly router = inject(Router);
@@ -40,144 +48,158 @@ export class VisibilityCheckComponent {
    totalSteps = 2;
    questions: Question[] = [
       {
-         image: 'assets/images/pseudo-illu.svg',
-         title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.TITLE',
+         image: "assets/images/pseudo-illu.svg",
+         title: "TOOLS.VISIBILITY_CHECK.PSEUDO.TITLE",
          sections: [
             {
-               name: 'pseudo_identity',
-               title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.TITLE',
+               name: "pseudo_identity",
+               title: "TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.TITLE",
                answers: [
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_1_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_1_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_1_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_1_DESCRIPTION",
                   },
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_2_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_2_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_2_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_2_DESCRIPTION",
                   },
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_3_TITLE',
+                     title: "TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_3_TITLE",
                   },
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_4_TITLE',
-                  }
-               ]
+                     title: "TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_4_TITLE",
+                  },
+               ],
             },
             {
-               name: 'pseudo_origin',
-               title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.TITLE',
+               name: "pseudo_origin",
+               title: "TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.TITLE",
                answers: [
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_1_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_1_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_1_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_1_DESCRIPTION",
                   },
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_2_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_2_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_2_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.PSEUDO.ORIGIN.ANSWERS.ANSWER_2_DESCRIPTION",
                   },
-               ]
-            }
-         ]
+               ],
+            },
+         ],
       },
       {
-         image: 'assets/images/bio-illu.svg',
-         title: 'TOOLS.VISIBILITY_CHECK.BIO.TITLE',
+         image: "assets/images/bio-illu.svg",
+         title: "TOOLS.VISIBILITY_CHECK.BIO.TITLE",
          sections: [
             {
-               name: 'bio_empty',
+               name: "bio_empty",
                answers: [
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.EMPTY.ANSWERS.ANSWER_1_TITLE',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.EMPTY.ANSWERS.ANSWER_1_TITLE",
                   },
-               ]
+               ],
             },
             {
-               name: 'bio_identity',
-               title: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.TITLE',
+               name: "bio_identity",
+               title: "TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.TITLE",
                answers: [
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_1_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_1_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_1_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_1_DESCRIPTION",
                   },
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_2_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_2_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_2_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_2_DESCRIPTION",
                   },
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_3_TITLE',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_3_TITLE",
                   },
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_4_TITLE',
-                  }
-               ]
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_4_TITLE",
+                  },
+               ],
             },
             {
-               name: 'bio_origin',
-               title: 'TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.TITLE',
+               name: "bio_origin",
+               title: "TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.TITLE",
                answers: [
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_1_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_1_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_1_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_1_DESCRIPTION",
                   },
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_2_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_2_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_2_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.BIO.ORIGIN.ANSWERS.ANSWER_2_DESCRIPTION",
                   },
-               ]
+               ],
             },
             {
-               name: 'bio_digital_life',
-               title: 'TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.TITLE',
+               name: "bio_digital_life",
+               title: "TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.TITLE",
                answers: [
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_1_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_1_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_1_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_1_DESCRIPTION",
                   },
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_2_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_2_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_2_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.BIO.DIGITAL_LIFE.ANSWERS.ANSWER_2_DESCRIPTION",
                   },
-               ]
+               ],
             },
             {
-               name: 'bio_interest',
-               title: 'TOOLS.VISIBILITY_CHECK.BIO.INTEREST.TITLE',
+               name: "bio_interest",
+               title: "TOOLS.VISIBILITY_CHECK.BIO.INTEREST.TITLE",
                answers: [
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.INTEREST.ANSWERS.ANSWER_1_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.BIO.INTEREST.ANSWERS.ANSWER_1_TITLE',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.INTEREST.ANSWERS.ANSWER_1_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.BIO.INTEREST.ANSWERS.ANSWER_1_TITLE",
                   },
-               ]
+               ],
             },
             {
-               name: 'bio_education_pro',
-               title: 'TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.TITLE',
+               name: "bio_education_pro",
+               title: "TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.TITLE",
                answers: [
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.ANSWERS.ANSWER_1_TITLE',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.ANSWERS.ANSWER_1_TITLE",
                   },
                   {
-                     title: 'TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.ANSWERS.ANSWER_2_TITLE',
-                     description: 'TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.ANSWERS.ANSWER_2_DESCRIPTION',
+                     title: "TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.ANSWERS.ANSWER_2_TITLE",
+                     description:
+                        "TOOLS.VISIBILITY_CHECK.BIO.EDUCATION_PRO.ANSWERS.ANSWER_2_DESCRIPTION",
                   },
-               ]
+               ],
             },
-         ]
-      }
-   ]
-   currentQuestion = this.questions[this.currentStep - 1]
-   pseudoKeys = ['pseudo_identity', 'pseudo_origin'];
+         ],
+      },
+   ];
+   currentQuestion = this.questions[this.currentStep - 1];
+   pseudoKeys = ["pseudo_identity", "pseudo_origin"];
    bioKeys = [
-      'bio_identity',
-      'bio_origin',
-      'bio_digital_life',
-      'bio_interest',
-      'bio_education_pro',
+      "bio_identity",
+      "bio_origin",
+      "bio_digital_life",
+      "bio_interest",
+      "bio_education_pro",
    ];
    formGroup = new FormGroup({
       pseudo_identity: new FormControl<string[]>([]),
       pseudo_origin: new FormControl<string[]>([]),
-      bio_empty: new FormControl<string[]>([this.questions[1].sections[0].answers[0].title]),
+      bio_empty: new FormControl<string[]>([
+         this.questions[1].sections[0].answers[0].title,
+      ]),
       bio_identity: new FormControl<string[]>([]),
       bio_origin: new FormControl<string[]>([]),
       bio_digital_life: new FormControl<string[]>([]),
@@ -197,36 +219,38 @@ export class VisibilityCheckComponent {
       if (checked) {
          values = [...values, answer];
       } else {
-         values = values.filter(v => v !== answer);
+         values = values.filter((v) => v !== answer);
       }
       control.setValue(values);
 
       // logique spéciale "bio_empty"
-      if (section === 'bio_empty' && checked) {
-         this.bioKeys.forEach(key => this.formGroup.get(key)?.setValue([]));
+      if (section === "bio_empty" && checked) {
+         this.bioKeys.forEach((key) => this.formGroup.get(key)?.setValue([]));
       } else if (this.bioKeys.includes(section)) {
-         this.formGroup.get('bio_empty')?.setValue([]);
+         this.formGroup.get("bio_empty")?.setValue([]);
       }
    }
 
    onClickNext() {
       this.currentStep++;
-      this.currentQuestion = this.questions[this.currentStep - 1]
+      this.currentQuestion = this.questions[this.currentStep - 1];
    }
 
    onClickPrevious() {
       this.currentStep--;
-      this.currentQuestion = this.questions[this.currentStep - 1]
+      this.currentQuestion = this.questions[this.currentStep - 1];
    }
 
    onClickResults() {
       const formValues = this.formGroup.value as Record<string, string[]>;
 
       const results: Results = {
-         pseudo: this.pseudoKeys.flatMap(key => formValues[key] || []),
-         bio: this.bioKeys.flatMap(key => formValues[key] || []),
+         pseudo: this.pseudoKeys.flatMap((key) => formValues[key] || []),
+         bio: this.bioKeys.flatMap((key) => formValues[key] || []),
       };
 
-      this.router.navigate(['tools', 'visibility-check', 'results'], { state: { results } });
+      this.router.navigate(["tools", "visibility-check", "results"], {
+         state: { results },
+      });
    }
 }

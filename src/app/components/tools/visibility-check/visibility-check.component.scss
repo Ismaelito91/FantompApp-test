@@ -1,6 +1,10 @@
 .visibility-check-container {
    height: 100%;
-   background: linear-gradient(354.89deg, var(--background-17) 4.1%, var(--background-18) 95.9%);
+   background: linear-gradient(
+      354.89deg,
+      var(--background-17) 4.1%,
+      var(--background-18) 95.9%
+   );
 
    .header {
       padding: var(--spacing-3) var(--spacing-3) 36px var(--spacing-5);
@@ -44,14 +48,33 @@
                      --mat-checkbox-label-text-font: var(--body-font-family);
                      --mat-checkbox-label-text-size: var(--font-size-body-md);
                      --mat-checkbox-label-text-weight: var(--font-weight-body);
-                     --mat-checkbox-label-text-line-height: var(--line-height-body);
-                     --mat-checkbox-label-text-tracking: var(--letter-spacing-body);
+                     --mat-checkbox-label-text-line-height: var(
+                        --line-height-body
+                     );
+                     --mat-checkbox-label-text-tracking: var(
+                        --letter-spacing-body
+                     );
+
                      .check-title {
                         color: var(--color-3);
                      }
 
                      .check-description {
                         color: var(--color-5);
+                     }
+
+                     ::ng-deep
+                        .mdc-checkbox__native-control:enabled:not(:checked)
+                        ~ .mdc-checkbox__background {
+                        border-color: var(--color-8) !important;
+                        background-color: transparent !important;
+                     }
+
+                     ::ng-deep
+                        .mdc-checkbox__native-control:enabled:checked
+                        ~ .mdc-checkbox__background {
+                        border-color: var(--background-29) !important;
+                        background-color: var(--background-29) !important;
                      }
 
                      &:hover,
