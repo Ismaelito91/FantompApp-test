@@ -37,6 +37,15 @@ export class PageComponentUtilsService {
       return this.componentMap.get(id) ?? null;
    }
 
+   getComponentByCode(code: string): PageComponentModel | null {
+      for (const component of this.componentMap.values()) {
+         if (component.code === code) {
+            return component;
+         }
+      }
+      return null;
+   }
+
    /**
     * Trie les enfants d'un composant par position
     * @param component Le composant dont on veut trier les enfants

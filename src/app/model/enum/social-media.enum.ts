@@ -1,4 +1,4 @@
-export enum SocialMedias {
+export enum SocialMedia {
    INSTAGRAM = "Instagram",
    SNAPCHAT = "Snapchat",
    FACEBOOK = "Facebook",

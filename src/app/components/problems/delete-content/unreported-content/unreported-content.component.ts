@@ -1,16 +1,15 @@
-import {Component, inject} from '@angular/core';
-import {ButtonBackComponent} from "../../../design-system/button-back/button-back.component";
-import {TranslatePipe} from '@ngx-translate/core';
-import {DividerComponent} from "../../../design-system/divider/divider.component";
-import {Card12Component} from "../../../design-system/card-12/card-12.component";
+import { Component, inject } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { ComponentStatus } from '../../../../model/enum/component-status.enum';
+import { ComponentType } from '../../../../model/enum/component-type.enum';
+import { Device } from '../../../../model/enum/device.enum';
+import { SocialMedia } from "../../../../model/enum/social-media.enum";
 import PageComponentModel from '../../../../model/page-component.model';
-import {ComponentType} from '../../../../model/enum/component-type.enum';
-import {ComponentStatus} from '../../../../model/enum/component-status.enum';
-import {Device} from '../../../../model/enum/device.enum';
-import {Card14Component} from "../../../design-system/card-14/card-14.component";
-import {LanguageService} from '../../../../service/language.service';
-import {CountryRegion} from '../../../../model/enum/country-region.enum';
-import {SocialMedias} from "../../../../model/enum/socialMedias.enum";
+import { LanguageService } from '../../../../service/language.service';
+import { ButtonBackComponent } from "../../../design-system/button-back/button-back.component";
+import { Card12Component } from "../../../design-system/card-12/card-12.component";
+import { Card14Component } from "../../../design-system/card-14/card-14.component";
+import { DividerComponent } from "../../../design-system/divider/divider.component";
 
 @Component({
    selector: 'app-unreported-content',
@@ -62,7 +61,7 @@ export class UnreportedContentComponent {
                   id: 0,
                   type: ComponentType.BUTTON_SECONDARY,
                   status: ComponentStatus.PUBLISHED,
-                  socialMedia: SocialMedias.INSTAGRAM,
+                  socialMedia: SocialMedia.INSTAGRAM,
                   translations: [{
                      id: 0,
                      countryRegion: this.languageService.language(),
@@ -113,7 +112,7 @@ export class UnreportedContentComponent {
                   id: 0,
                   type: ComponentType.BUTTON_SECONDARY,
                   status: ComponentStatus.PUBLISHED,
-                  socialMedia: SocialMedias.SNAPCHAT,
+                  socialMedia: SocialMedia.SNAPCHAT,
                   translations: [{
                      id: 0,
                      countryRegion: this.languageService.language(),
@@ -152,7 +151,7 @@ export class UnreportedContentComponent {
                   id: 0,
                   type: ComponentType.BUTTON_SECONDARY,
                   status: ComponentStatus.PUBLISHED,
-                  socialMedia: SocialMedias.TIKTOK,
+                  socialMedia: SocialMedia.TIKTOK,
                   translations: [{
                      id: 0,
                      countryRegion: this.languageService.language(),
@@ -191,7 +190,7 @@ export class UnreportedContentComponent {
                   id: 0,
                   type: ComponentType.BUTTON_SECONDARY,
                   status: ComponentStatus.PUBLISHED,
-                  socialMedia: SocialMedias.X,
+                  socialMedia: SocialMedia.X,
                   translations: [{
                      id: 0,
                      countryRegion: this.languageService.language(),
@@ -230,7 +229,7 @@ export class UnreportedContentComponent {
                   id: 0,
                   type: ComponentType.BUTTON_SECONDARY,
                   status: ComponentStatus.PUBLISHED,
-                  socialMedia: SocialMedias.FACEBOOK,
+                  socialMedia: SocialMedia.FACEBOOK,
                   translations: [{
                      id: 0,
                      countryRegion: this.languageService.language(),
