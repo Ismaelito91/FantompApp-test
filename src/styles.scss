@@ -518,6 +518,10 @@
          opacity: 1;
       }
    }
+
+   .snackbar-neutral {
+      --mdc-snackbar-supporting-text-font: var(--body-font-family);
+   }
 }
 
 // Dark overrides

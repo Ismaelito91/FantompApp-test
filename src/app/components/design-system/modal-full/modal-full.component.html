@@ -1,7 +1,7 @@
 <div [@slideUpDown]="animationState" (@slideUpDown.done)="onAnimationDone($event)" class="modal-full-container relative">
    <div class="flex flex-col gap-(--spacing-5)">
       <div class="flex justify-center items-center">
-         <img [src]="(data | pageTranslation)?.image || (data | pageTranslation)?.staticImage" alt="picto-formulaire" class="!max-w-[108px] !max-h-[96px] object-contain" />
+         <img [src]="(data | pageTranslation)?.image || (data | pageTranslation)?.staticImage" alt="picto" class="!max-w-[108px] !max-h-[96px] object-contain" />
          <app-button-close class="absolute top-(--spacing-4) right-(--spacing-3) z-1" (click)="closeDialog()"></app-button-close>
       </div>
       <div class="details flex flex-col gap(--spacing-3)">
