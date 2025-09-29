@@ -1,4 +1,4 @@
-FROM bitnami/nginx:1.27.4
+FROM bitnamisecure/nginx:latest
 
 # Set working directory inside container
 WORKDIR /app
