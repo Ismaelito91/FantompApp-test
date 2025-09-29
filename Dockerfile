@@ -1,4 +1,4 @@
-FROM bitnamisecure/nginx:latest
+FROM nginx:alpine
 
 # Set working directory inside container
 WORKDIR /app
