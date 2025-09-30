@@ -253,4 +253,20 @@ export class VisibilityCheckComponent {
          state: { results },
       });
    }
+
+   forceCheckboxSelection(
+      event: Event,
+      sectionName: string,
+      answerTitle: string
+   ) {
+      // Empêcher la double exécution si le clic est déjà sur l'input checkbox
+      const target = event.target as HTMLElement;
+      if (target.tagName === "INPUT") {
+         return;
+      }
+
+      // Récupérer l'état actuel et inverser la sélection
+      const isCurrentlyChecked = this.isChecked(sectionName, answerTitle);
+      this.onCheckboxChange(sectionName, answerTitle, !isCurrentlyChecked);
+   }
 }

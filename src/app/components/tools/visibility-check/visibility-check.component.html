@@ -42,8 +42,14 @@
                            $event.checked
                         )
                      "
-                     style="color: var(--color-8)"
-                     class="answer flex items-center cursor-pointer"
+                     (click)="
+                        forceCheckboxSelection(
+                           $event,
+                           section.name,
+                           answer.title
+                        )
+                     "
+                     class="answer flex items-center cursor-pointer checkbox-custom"
                   >
                      <span class="check-title">{{
                         answer.title | translate
