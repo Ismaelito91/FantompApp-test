@@ -1,36 +1,44 @@
-import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatRadioModule } from '@angular/material/radio';
-import { Router } from '@angular/router';
-import { TranslatePipe } from '@ngx-translate/core';
-import { ButtonBackComponent } from '../../design-system/button-back/button-back.component';
+import { Component, inject } from "@angular/core";
+import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatRadioModule } from "@angular/material/radio";
+import { Router } from "@angular/router";
+import { TranslatePipe } from "@ngx-translate/core";
+import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
-import { StepperComponent } from '../../design-system/stepper/stepper.component';
+import { StepperComponent } from "../../design-system/stepper/stepper.component";
 
 type Question = {
-   image?: string,
-   title: string,
-   sections: Section[]
-}
+   image?: string;
+   title: string;
+   sections: Section[];
+};
 type Section = {
-   name: string,
-   title?: string,
-   answers: Answer[]
-}
+   name: string;
+   title?: string;
+   answers: Answer[];
+};
 type Answer = {
-   title: string,
-   description?: string,
-   value?: boolean
-}
+   title: string;
+   description?: string;
+   value?: boolean;
+};
 
 @Component({
-   selector: 'app-delete-content',
-   imports: [TranslatePipe, ButtonBackComponent, MatRadioModule, MatButtonModule,
-      StepperComponent, MatIconModule, ReactiveFormsModule, ButtonComponent],
-   templateUrl: './delete-content.component.html',
-   styleUrl: './delete-content.component.scss'
+   selector: "app-delete-content",
+   imports: [
+      TranslatePipe,
+      ButtonBackComponent,
+      MatRadioModule,
+      MatButtonModule,
+      StepperComponent,
+      MatIconModule,
+      ReactiveFormsModule,
+      ButtonComponent,
+   ],
+   templateUrl: "./delete-content.component.html",
+   styleUrl: "./delete-content.component.scss",
 })
 export class DeleteContentComponent {
    private readonly router = inject(Router);
@@ -38,43 +46,43 @@ export class DeleteContentComponent {
    totalSteps = 2;
    questions: Question[] = [
       {
-         title: 'PROBLEMS.DELETE_CONTENT.REPORTED.TITLE',
+         title: "PROBLEMS.DELETE_CONTENT.REPORTED.TITLE",
          sections: [
             {
-               name: 'reported',
+               name: "reported",
                answers: [
                   {
-                     title: 'PROBLEMS.DELETE_CONTENT.REPORTED.NONE.ANSWERS.ANSWER_1_TITLE',
-                     value: true
+                     title: "PROBLEMS.DELETE_CONTENT.REPORTED.NONE.ANSWERS.ANSWER_1_TITLE",
+                     value: true,
                   },
                   {
-                     title: 'PROBLEMS.DELETE_CONTENT.REPORTED.NONE.ANSWERS.ANSWER_2_TITLE',
-                     value: false
+                     title: "PROBLEMS.DELETE_CONTENT.REPORTED.NONE.ANSWERS.ANSWER_2_TITLE",
+                     value: false,
                   },
-               ]
+               ],
             },
-         ]
+         ],
       },
       {
-         title: 'PROBLEMS.DELETE_CONTENT.VIOLENT.TITLE',
+         title: "PROBLEMS.DELETE_CONTENT.VIOLENT.TITLE",
          sections: [
             {
-               name: 'violent',
+               name: "violent",
                answers: [
                   {
-                     title: 'PROBLEMS.DELETE_CONTENT.VIOLENT.NONE.ANSWERS.ANSWER_1_TITLE',
-                     value: true
+                     title: "PROBLEMS.DELETE_CONTENT.VIOLENT.NONE.ANSWERS.ANSWER_1_TITLE",
+                     value: true,
                   },
                   {
-                     title: 'PROBLEMS.DELETE_CONTENT.VIOLENT.NONE.ANSWERS.ANSWER_2_TITLE',
-                     value: false
+                     title: "PROBLEMS.DELETE_CONTENT.VIOLENT.NONE.ANSWERS.ANSWER_2_TITLE",
+                     value: false,
                   },
-               ]
+               ],
             },
-         ]
-      }
-   ]
-   currentQuestion = this.questions[this.currentStep - 1]
+         ],
+      },
+   ];
+   currentQuestion = this.questions[this.currentStep - 1];
    formGroup = new FormGroup({
       reported: new FormControl(),
       violent: new FormControl(),
@@ -82,12 +90,12 @@ export class DeleteContentComponent {
 
    onClickNext() {
       this.currentStep++;
-      this.currentQuestion = this.questions[this.currentStep - 1]
+      this.currentQuestion = this.questions[this.currentStep - 1];
    }
 
    onClickPrevious() {
       this.currentStep--;
-      this.currentQuestion = this.questions[this.currentStep - 1]
+      this.currentQuestion = this.questions[this.currentStep - 1];
    }
 
    onClickResults() {
@@ -95,13 +103,26 @@ export class DeleteContentComponent {
       const violent = this.formGroup.value.violent;
       console.log(reported, violent);
       if (violent) {
-         this.router.navigate(['delete-content', 'violent-content'], { state: { reported } });
+         this.router.navigate(["delete-content", "violent-content"], {
+            state: { reported },
+         });
       } else {
          if (reported) {
-            this.router.navigate(['delete-content', 'reported-content']);
+            this.router.navigate(["delete-content", "reported-content"]);
          } else {
-            this.router.navigate(['delete-content', 'unreported-content']);
+            this.router.navigate(["delete-content", "unreported-content"]);
          }
       }
+   }
+
+   forceRadioSelection(event: Event, sectionName: string, value: any) {
+      // Empêcher la double exécution si le clic est déjà sur l'input radio
+      const target = event.target as HTMLElement;
+      if (target.tagName === "INPUT") {
+         return;
+      }
+
+      // Forcer la sélection de la valeur
+      this.formGroup.get(sectionName)?.setValue(value);
    }
 }
