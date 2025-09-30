@@ -808,13 +808,14 @@
                "CLOSE": "Fermer",
                "REQUIREMENTS": {
                   "LENGTH": "12 caractères",
+                  "DIGITS": "1 ou des nombres",
                   "UPPERCASE": "des majuscules",
                   "LOWERCASE": "des minuscules",
                   "SPECIAL_CHARS": "des caractères spéciaux (*, @, !)"
                },
                "WARNINGS": {
-                  "CRIMINALS_USE_DB": "🏴‍☠️ Les cybercriminels utilisent toutes les bases de données de mots qui existent dans toutes les langues.",
-                  "NO_DICTIONARY": "⚠️ Donc n'utilises aucun mot du dictionnaire pour constituer ton mot de passe"
+                  "CRIMINALS_USE_DB": "🏴‍☠️ Les cybercriminels utilisent toutes les <strong>bases de données de mots</strong> qui existent dans toutes les langues.",
+                  "NO_DICTIONARY": "⚠️ Donc n'utilises aucun ,<strong>mot du dictionnaire, ton prénom, ou ton nom</strong> pour constituer ton mot de passe"
                }
             }
          },
