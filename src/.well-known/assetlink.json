@@ -1,0 +1,8 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+        "namespace": "android_app",
+        "package_name": "agency.aot.fantome_app.sandbox.twa",
+        "sha256_cert_fingerprints": ["41:56:6E:62:84:7A:BF:F3:37:F7:4E:F5:11:68:9B:E9:7D:74:53:A9:03:BE:44:5C:B7:0E:8F:BB:79:5F:3A:33"]
+    }
+}]
