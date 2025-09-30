@@ -1,4 +1,43 @@
 <mat-toolbar class="app-header-toolbar">
+   @if(isVisible()) {
+      <div class="header-right">
+         <button #deviceMenuTrigger="matMenuTrigger" class="lang-trigger" mat-button [mat-menu-trigger-for]="deviceMenu">
+            <mat-icon>📱</mat-icon>
+            @if (!deviceMenuTrigger.menuOpen) {
+               <mat-icon class="chevron" iconPositionEnd>expand_more</mat-icon>
+            } @else {
+               <mat-icon class="chevron" iconPositionEnd>expand_less</mat-icon>
+            }
+         </button>
+      </div>
+   
+      <mat-menu #deviceMenu="matMenu" class="lang-menu" style="width: auto;">
+         <div class="lang-menu-panel">
+            <button mat-menu-item class="lang-item" (click)="setDevice(Device.IOS)">
+               <div class="lang-item">
+                  <span class="language">IOS</span>
+                  <span class="radio" [class.selected]="selectedDevice === Device.IOS"></span>
+               </div>
+               <mat-divider class="divider"></mat-divider>
+            </button>
+            <button mat-menu-item class="lang-item" (click)="setDevice(Device.ANDROID)">
+               <div class="lang-item">
+                  <span class="language">Android</span>
+                  <span class="radio" [class.selected]="selectedDevice === Device.ANDROID"></span>
+               </div>
+               <mat-divider class="divider"></mat-divider>
+            </button>
+            <button mat-menu-item class="lang-item" (click)="setDevice(Device.WEB)">
+               <div class="lang-item web">
+                  <span class="language">Web</span>
+                  <span class="radio" [class.selected]="selectedDevice === Device.WEB"></span>
+               </div>
+               <mat-divider class="divider"></mat-divider>
+            </button>
+         </div>
+      </mat-menu>
+   }
+
    <div class="header-right">
       <button #languageMenuTrigger="matMenuTrigger" class="lang-trigger" mat-button [mat-menu-trigger-for]="languageMenu">
          @if (currentFlagUrl) {
@@ -31,43 +70,4 @@
          }
       </div>
    </mat-menu>
-   @if(isVisible()){
-   <div class="header-right">
-      <button #deviceMenuTrigger="matMenuTrigger" class="lang-trigger" mat-button [mat-menu-trigger-for]="deviceMenu">
-         <mat-icon>📱</mat-icon>
-         @if (!deviceMenuTrigger.menuOpen) {
-            <mat-icon class="chevron" iconPositionEnd>expand_more</mat-icon>
-         } @else {
-            <mat-icon class="chevron" iconPositionEnd>expand_less</mat-icon>
-         }
-      </button>
-   </div>
-
-   
-      <mat-menu #deviceMenu="matMenu" class="lang-menu" style="width: auto;">
-         <div class="lang-menu-panel">
-            <button mat-menu-item class="lang-item" (click)="setDevice(Device.IOS)">
-               <div class="lang-item">
-                  <span class="language">IOS</span>
-                  <span class="radio" [class.selected]="selectedDevice === Device.IOS"></span>
-               </div>
-               <mat-divider class="divider"></mat-divider>
-            </button>
-            <button mat-menu-item class="lang-item" (click)="setDevice(Device.ANDROID)">
-               <div class="lang-item">
-                  <span class="language">Android</span>
-                  <span class="radio" [class.selected]="selectedDevice === Device.ANDROID"></span>
-               </div>
-               <mat-divider class="divider"></mat-divider>
-            </button>
-            <button mat-menu-item class="lang-item" (click)="setDevice(Device.WEB)">
-               <div class="lang-item web">
-                  <span class="language">Web</span>
-                  <span class="radio" [class.selected]="selectedDevice === Device.WEB"></span>
-               </div>
-               <mat-divider class="divider"></mat-divider>
-            </button>
-         </div>
-      </mat-menu>
-   }
 </mat-toolbar>
