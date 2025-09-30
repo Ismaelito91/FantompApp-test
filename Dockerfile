@@ -1,4 +1,4 @@
-FROM nginx:1.28.0-alpine3.21-slim
+FROM bitnamilegacy/nginx:1.29.1
 
 # Set working directory inside container
 WORKDIR /app
