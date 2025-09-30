@@ -2,38 +2,66 @@
    <div class="header flex flex-col relative">
       <app-button-back class="fixed top-[16px] z-1"></app-button-back>
       <div class="flex justify-end">
-         <img src="assets/images/delete-content-picto.png" alt="image" class="!w-[74px] !h-[77px] object-contain" />
+         <img
+            src="assets/images/delete-content-picto.png"
+            alt="image"
+            class="!w-[74px] !h-[77px] object-contain"
+         />
       </div>
       <div class="details flex flex-col">
          <h3>{{ "PROBLEMS.DELETE_CONTENT.TITLE" | translate }}</h3>
-         <p class="transition-all duration-500 ease-in-out"
+         <p
+            class="transition-all duration-500 ease-in-out"
             [class.max-h-0]="currentStep !== 1"
             [class.opacity-0]="currentStep !== 1"
             [class.max-h-40]="currentStep === 1"
-            [class.opacity-100]="currentStep === 1">
+            [class.opacity-100]="currentStep === 1"
+         >
             {{ "PROBLEMS.DELETE_CONTENT.DESCRIPTION" | translate }}
          </p>
       </div>
    </div>
    <form class="questions-container flex flex-col" [formGroup]="formGroup">
       @if (totalSteps > 1) {
-         <app-stepper [currentStep]="currentStep" [totalSteps]="totalSteps"></app-stepper>
+      <app-stepper
+         [currentStep]="currentStep"
+         [totalSteps]="totalSteps"
+      ></app-stepper>
       }
       <div class="sections flex flex-col">
-         <h4 class="text-(--color-19)">{{ currentQuestion.title | translate }}</h4>
+         <h4 class="text-(--color-19)">
+            {{ currentQuestion.title | translate }}
+         </h4>
          <div class="section-items flex flex-col">
             @for (section of currentQuestion.sections; track section.name) {
             <div class="section-item flex flex-col">
                @if (section.title) {
-               <div class="font-[600] text-(--color-8)">{{ section.title | translate }}</div>
+               <div class="font-[600] text-(--color-8)">
+                  {{ section.title | translate }}
+               </div>
                }
-               <mat-radio-group [formControlName]="section.name" [name]="section.name" class="answers flex flex-col">
+               <mat-radio-group
+                  [formControlName]="section.name"
+                  [name]="section.name"
+                  class="answers flex flex-col cursor-pointer"
+               >
                   @for (answer of section.answers; track $index) {
-                  <mat-radio-button [disableRipple]="true" [value]="answer.value"
-                     class="answer flex items-center cursor-pointer">
-                     <span class="radio-title" [innerHTML]="answer.title | translate"></span>
+                  <mat-radio-button
+                     [disableRipple]="true"
+                     [value]="answer.value"
+                     class="answer flex items-center"
+                     (click)="
+                        forceRadioSelection($event, section.name, answer.value)
+                     "
+                  >
+                     <span
+                        class="radio-title"
+                        [innerHTML]="answer.title | translate"
+                     ></span>
                      @if (answer.description) {
-                     <span class="radio-description ml-1">{{ answer.description | translate }}</span>
+                     <span class="radio-description ml-1">{{
+                        answer.description | translate
+                     }}</span>
                      }
                   </mat-radio-button>
                   }
@@ -45,17 +73,29 @@
    </form>
    <div class="controls fixed bottom-0 w-full flex">
       @if(currentStep > 1) {
-         <app-button [label]="'COMMON.PREVIOUS' | translate" variant="secondary"
-            [iconBeforeLabel]="{ name: 'arrow24x24-icon', rotate: 180 }" (click)="onClickPrevious()"
-            class="w-full"></app-button>
-      }
-      @if(currentStep < totalSteps && formGroup.value.reported != null) { 
-         <app-button [label]="'COMMON.NEXT' | translate" variant="primary"
-            [iconAfterLabel]="{ name: 'arrow24x24-icon' }" (click)="onClickNext()" class="w-full"></app-button>
-      }
-      @if (currentStep === totalSteps && formGroup.value.violent != null) {
-         <app-button [label]="'COMMON.NEXT' | translate" variant="primary"
-            [iconAfterLabel]="{ name: 'arrow24x24-icon' }" (click)="onClickResults()" class="w-full"></app-button>
+      <app-button
+         [label]="'COMMON.PREVIOUS' | translate"
+         variant="secondary"
+         [iconBeforeLabel]="{ name: 'arrow24x24-icon', rotate: 180 }"
+         (click)="onClickPrevious()"
+         class="w-full"
+      ></app-button>
+      } @if(currentStep < totalSteps && formGroup.value.reported != null) {
+      <app-button
+         [label]="'COMMON.NEXT' | translate"
+         variant="primary"
+         [iconAfterLabel]="{ name: 'arrow24x24-icon' }"
+         (click)="onClickNext()"
+         class="w-full"
+      ></app-button>
+      } @if (currentStep === totalSteps && formGroup.value.violent != null) {
+      <app-button
+         [label]="'COMMON.NEXT' | translate"
+         variant="primary"
+         [iconAfterLabel]="{ name: 'arrow24x24-icon' }"
+         (click)="onClickResults()"
+         class="w-full"
+      ></app-button>
       }
    </div>
 </div>
