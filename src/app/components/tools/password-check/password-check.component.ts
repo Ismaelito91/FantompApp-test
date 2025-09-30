@@ -487,6 +487,17 @@ export class PasswordCheckComponent
       }, 100);
    }
 
+   private activateInput() {
+      // Activer l'input automatiquement
+      this.isInputFocused = true;
+      // Focus sur l'input après un petit délai pour s'assurer que l'élément est rendu
+      setTimeout(() => {
+         if (this.passwordInput) {
+            this.passwordInput.nativeElement.focus();
+         }
+      }, 200);
+   }
+
    private initializeCriteria() {
       // Debug: vérifier si les traductions sont chargées
       const testTranslation = this.translateService.instant(
@@ -576,6 +587,15 @@ export class PasswordCheckComponent
 
    // Gestion du focus pour l'animation
    onInputFocus() {
+      // Si on affiche les résultats, reproduire le comportement du bouton "Renforcer mon mdp"
+      if (this.showPasswordResults) {
+         this.showPasswordResults = false;
+         this.isInputFocused = true;
+         // Focus maintenu automatiquement car l'utilisateur vient de cliquer sur l'input
+         return;
+      }
+
+      // Comportement normal quand pas de résultats affichés
       this.isInputFocused = true;
    }
 
@@ -587,6 +607,24 @@ export class PasswordCheckComponent
    }
 
    cancelInputFocus() {
+      // Si il y a du contenu dans l'input, le supprimer d'abord
+      if (this.password.length > 0) {
+         this.password = "";
+         // Nettoyer aussi les données liées aux résultats
+         this.showPasswordResults = false;
+         this.message = "";
+         this.displayedMessage = "";
+         this.numberPart = "";
+         this.unitPart = "";
+         this.shouldSplit = false;
+         this.displayedNumberPart = "";
+         this.displayedUnitPart = "";
+         if (this.typewriterInterval) {
+            clearInterval(this.typewriterInterval);
+         }
+      }
+
+      // Si pas de contenu, désactiver le focus comme avant
       this.isInputFocused = false;
       this.showPasswordResults = false;
    }
