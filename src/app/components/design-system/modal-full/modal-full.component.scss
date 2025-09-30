@@ -7,6 +7,7 @@
    overflow: scroll;
    min-height: 100vh;
    height: 100vh;
+   max-width: var(--max-width-viewport);
 
    .details {
       gap: var(--spacing-3);

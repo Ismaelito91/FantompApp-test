@@ -17,7 +17,7 @@
          <h5 class="!pl-(--spacing-3) !pr-(--spacing-3)" [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.P1.TITLE' | translate"></h5>
          <p class="bg-(--background-4) p-(--spacing-3) rounded-(--border-radius-2)" style="font-weight: 500;" [innerHtml]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.P1.DESCRIPTION' | translate"></p>
       </div>
-      <div class="controls fixed bottom-0 left-0 w-full flex">
+      <div class="controls fixed bottom-0 w-full flex">
          <app-button [label]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.BUTTON' | translate" variant="primary" [iconAfterLabel]="{name: 'icon-external-link24x24' }"
             class="w-full" (click)="utilsService.goToExternal('https://www.cnil.fr')"></app-button>
       </div>

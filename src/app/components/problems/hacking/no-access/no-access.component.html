@@ -16,7 +16,7 @@
       <app-card-15 [data]="card_15_4"></app-card-15>
       <app-card-15 [data]="card_15_5"></app-card-15>
    </div>
-   <div class="controls fixed bottom-0 w-full flex">
+   <div class="controls fixed max-w-(--max-width-viewport) bottom-0 w-full flex">
       <app-button [label]="'COMMON.NEXT' | translate" variant="primary" [iconAfterLabel]="{ name: 'arrow24x24-icon' }" class="w-full" (click)="utilsService.goTo('hacking/no-access/recommendations')"></app-button>
    </div>
 </div>

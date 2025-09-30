@@ -30,7 +30,7 @@
    }
    @case (ComponentType.PAGE_2) {
       <div class="problems-container flex flex-col page-2">
-         <app-button-back class="fixed top-(--spacing-3) left-(--spacing-5) z-2"></app-button-back>
+         <app-button-back class="fixed top-(--spacing-3) pl-(--spacing-5) z-2"></app-button-back>
          <img [src]="(page() | pageTranslation)?.image" alt="image" class="image-cover"/>
          <h3 class="problems-title" [innerHTML]="(page() | pageTranslation)?.firstTitle"></h3>
          <div class="problems-items-container flex flex-col">

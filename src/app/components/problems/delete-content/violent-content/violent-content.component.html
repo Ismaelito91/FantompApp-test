@@ -15,7 +15,7 @@
       <app-card-5 [data]="card_5_1"></app-card-5>
       <app-card-5 [data]="card_5_2"></app-card-5>
    </div>
-   <div class="controls fixed bottom-0 left-0 w-full flex">
+   <div class="controls fixed max-w-(--max-width-viewport) bottom-0 w-full flex">
       <app-button [label]="(reported ? 'PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.BUTTON.REPORTED' : 'PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.BUTTON.UNREPORTED') | translate" variant="primary"
          [iconAfterLabel]="{ name: 'arrow24x24-icon' }" class="w-full"
          (click)="utilsService.goTo(reported ? '/delete-content/reported-content' : '/delete-content/unreported-content')"></app-button>

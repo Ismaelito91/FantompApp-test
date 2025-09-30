@@ -9,7 +9,7 @@
    gap: 6px;
 }
 
-.tile-title {
+.tile-title, .tile-title p {
    font-weight: var(--font-weight-title);
    text-overflow: ellipsis;
    overflow: hidden;

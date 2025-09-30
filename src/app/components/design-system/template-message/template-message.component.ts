@@ -31,7 +31,6 @@ export class TemplateMessageComponent {
          if (navigator.clipboard && window.isSecureContext) {
             await navigator.clipboard.writeText(this.utilsService.htmlToTextViaElement(this.pageTranslationPipe.transform(this.data())?.description!));
 
-            // alert("Copié !");
             this.snackBar.open(this.translateService.instant('COMMON.COPIED'), this.translateService.instant('COMMON.CLOSE'), {
                duration: 1000, // durée en ms
                horizontalPosition: 'center',

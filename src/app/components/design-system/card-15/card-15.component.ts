@@ -67,7 +67,7 @@ export class Card15Component {
       if (data) {
          this.dialog.open(DialogComponent, {
             width: '100vw',
-            maxWidth: '100vw',
+            maxWidth: 'var(--max-width-viewport)',
             panelClass: 'modal-slideup',
             data
          });

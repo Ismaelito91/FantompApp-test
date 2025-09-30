@@ -9,7 +9,7 @@
 <div
    @fadeInWithDelay
    (@fadeInWithDelay.done)="onFadeInDone()"
-   class="absolute h-screen flex justify-center z-10"
+   class="absolute h-screen flex justify-center z-10 w-full max-w-(--max-width-viewport)"
    style="background-color: #000000b3"
 >
    <div class="flex flex-col justify-center items-center p-[65px]">
@@ -47,7 +47,7 @@
 </div>
 }
 <div class="flex flex-col h-screen p-(--spacing-3) gap-(--spacing-3) relative">
-   <app-button-back class="fixed top-[16px] left-[32px] z-2"></app-button-back>
+   <app-button-back class="fixed top-[16px] pl-(--spacing-3) z-2"></app-button-back>
 
    <div
       class="flex flex-col items-center gap-(--spacing-2) h-full"
@@ -305,7 +305,7 @@
          <img
             src="assets/images/photo-illu.svg"
             alt="image-illu"
-            class="h-[200px]"
+            class="h-[200px] cursor-pointer"
             (click)="fileInput.click()"
          />
       </div>
