@@ -78,7 +78,7 @@ export class VisibilityResultsComponent implements OnInit {
       this.results = state.results;
       if (this.results.pseudo.length === 0) {
          this.pseudoBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.INVISIBLE', variant: 'success' };
-      } else if (this.results.pseudo.length <= 2) {
+      } else if (this.results.pseudo.length <= 2 && !this.results.pseudo.find((v) => v === "TOOLS.VISIBILITY_CHECK.PSEUDO.IDENTITY.ANSWERS.ANSWER_1_TITLE")) {
          this.pseudoBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.DISCREET', variant: 'info' };
       } else {
          this.pseudoBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.PUBLIC', variant: 'danger-light' };
@@ -86,7 +86,7 @@ export class VisibilityResultsComponent implements OnInit {
 
       if (this.results.bio.length === 0) {
          this.bioBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.INVISIBLE', variant: 'success' };
-      } else if (this.results.bio.length <= 2) {
+      } else if (this.results.bio.length <= 2 && !this.results.bio.find((v) => v === "TOOLS.VISIBILITY_CHECK.BIO.IDENTITY.ANSWERS.ANSWER_1_TITLE")) {
          this.bioBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.DISCREET', variant: 'info' };
       } else {
          this.bioBadge = { title: 'TOOLS.VISIBILITY_CHECK.RESULTS.STATE.PUBLIC', variant: 'danger-light' };
