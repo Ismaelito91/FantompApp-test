@@ -10,11 +10,19 @@
 }
 
 .tile-title {
+   display: block;
    font-weight: var(--font-weight-title);
    text-overflow: ellipsis;
    overflow: hidden;
-   width: 90%;
+   width: 100%;
    white-space: nowrap;
+
+   ::ng-deep p {
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+   }
 }
 
 .tile-link {
@@ -22,9 +30,17 @@
    color: var(--color-5);
    text-overflow: ellipsis;
    overflow: hidden;
-   width: 90%;
+   width: 100%;
    white-space: nowrap;
    text-decoration: underline;
+
+   ::ng-deep p {
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+   }
+
 }
 
 .tile-image {
