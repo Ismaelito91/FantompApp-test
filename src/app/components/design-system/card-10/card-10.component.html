@@ -2,7 +2,7 @@
    class="flex justify-between items-center card-container">
    <div class="flex items-center" style="gap: 12px">
       <img class="card-image" [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen-image" />
-      <div class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle"></div>
+      <div class="card-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle"></div>
    </div>
    <mat-icon svgIcon="chevron16x16-icon" class="!size-[16px]"></mat-icon>
 </a>

@@ -1,17 +1,3 @@
-.card-container {
-   ::ng-deep {
-      ul {
-         list-style: disc !important;
-         margin-left: 2rem;
-      }
-
-      a {
-         color: var(--color-8);
-         text-decoration: underline;
-      }
-   }
-}
-
 .card-header {
    margin: 0 var(--spacing-5);
 }

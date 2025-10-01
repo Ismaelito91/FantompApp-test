@@ -529,6 +529,18 @@
    .snackbar-neutral {
       --mdc-snackbar-supporting-text-font: var(--body-font-family);
    }
+
+   .ckeditor-content {
+      ul {
+         list-style: disc !important;
+         margin-left: 2rem;
+      }
+
+      a {
+         color: var(--color-8);
+         text-decoration: underline;
+      }
+   }
 }
 
 // Dark overrides

@@ -6,10 +6,10 @@
       </div>
       <div class="details flex flex-col gap(--spacing-3)">
          @if ((data | pageTranslation)?.firstTitle) {
-            <h3 [innerHTML]="(data | pageTranslation)?.firstTitle! | translate | safeHtml"></h3>
+            <h3 class="ckeditor-content" [innerHTML]="(data | pageTranslation)?.firstTitle! | translate | safeHtml"></h3>
          }
          @if ((data | pageTranslation)?.description) {
-            <span [innerHTML]="(data | pageTranslation)?.description! | translate | safeHtml"></span>
+            <span class="ckeditor-content" [innerHTML]="(data | pageTranslation)?.description! | translate | safeHtml"></span>
          }
       </div>
    </div>

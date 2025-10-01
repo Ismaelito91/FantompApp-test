@@ -1,11 +1,11 @@
 <div class="flex flex-col card-container">
    @if ((data() | pageTranslation)?.firstTitle) {
-      <h5 class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h5>
+      <h5 class="card-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h5>
    }
    <div class="card-body">
       <img class="card-image" src="assets/images/switch-sad.png" alt="switch-sad" />
       @if ((data() | pageTranslation)?.description) {
-         <div class="card-description" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></div>
+         <div class="card-description ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></div>
       }
    </div>
 </div>

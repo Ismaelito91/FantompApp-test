@@ -16,8 +16,8 @@
    <div class="flex flex-col" class="card-11-description">
       <div class="flex" style="gap: 8px">
          <h6>{{index() + 1}}.</h6>
-         <h6 [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h6>
+         <h6 class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle | safeHtml"></h6>
       </div>
-      <div [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
+      <div class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
    </div>
 </div>

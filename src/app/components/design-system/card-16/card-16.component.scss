@@ -15,16 +15,4 @@
       flex-direction: column;
       gap: var(--spacing-3);
    }
-
-   ::ng-deep {
-      ul {
-         list-style: disc !important;
-         margin-left: 2rem;
-      }
-
-      a {
-         color: var(--color-8);
-         text-decoration: underline;
-      }
-   }
 }

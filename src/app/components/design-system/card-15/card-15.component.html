@@ -1,9 +1,8 @@
 <div class="card-container">
    <div class="card-title">
-      <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage"
-         alt="image" class="!size-[24px]"/>
+      <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="image" class="!size-[24px]"/>
       @if ((data() | pageTranslation)?.firstTitle) {
-         <h6 [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h6>
+         <h6 class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h6>
       }
    </div>
    @if (sortedChildren.length > 0) {

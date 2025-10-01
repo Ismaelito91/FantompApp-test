@@ -9,6 +9,7 @@
    height: 100vh;
    max-width: var(--max-width-viewport);
 
+
    .details {
       gap: var(--spacing-3);
       padding-left: var(--spacing-3);
@@ -26,18 +27,5 @@
       flex-direction: column;
       gap: var(--spacing-4);
       padding-bottom: 48px;
-
-   }
-
-   ::ng-deep {
-      ul {
-         list-style: disc !important;
-         margin-left: 2rem;
-      }
-
-      a {
-         color: var(--color-8);
-         text-decoration: underline;
-      }
    }
 }

@@ -1,10 +1,10 @@
 <div class="flex flex-col card-container">
    @if ((data() | pageTranslation)?.firstTitle) {
-      <h5 class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h5>
+      <h5 class="card-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h5>
    }
    <div class="card-description">
       @if ((data() | pageTranslation)?.description) {
-         <div [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></div>
+         <div class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></div>
       }
       @if (sortedChildren.length > 0) {
          <div class="card-children flex flex-col">

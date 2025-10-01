@@ -4,18 +4,6 @@
    border-radius: 16px;
    gap: 12px;
    box-shadow: var(--shadow-1);
-
-   ::ng-deep {
-      ul {
-         list-style: disc !important;
-         margin-left: 2rem;
-      }
-
-      a {
-         color: var(--color-8);
-         text-decoration: underline;
-      }
-   }
 }
 
 .card-image {

@@ -6,7 +6,7 @@
       <img class="card-preview-image" [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen image" />
    </div>
    <div class="flex items-center card-description">
-      <span class="card-description-text" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></span>
+      <span class="card-description-text ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></span>
       <mat-icon svgIcon="chevron16x16-icon"></mat-icon>
    </div>
 </a>

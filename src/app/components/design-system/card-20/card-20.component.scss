@@ -8,16 +8,4 @@
       border: 1px solid var(--color-33);
       border-radius: var(--border-radius-2);
    }
-
-   ::ng-deep {
-      ul {
-         list-style: disc !important;
-         margin-left: 2rem;
-      }
-
-      a {
-         color: var(--color-8);
-         text-decoration: underline;
-      }
-   }
 }

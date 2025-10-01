@@ -1,14 +1,14 @@
 <div class="flex flex-col card-container">
    @if ((data() | pageTranslation)?.firstTitle) {
-      <h6 class="card-title" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h6>
+      <h6 class="card-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml"></h6>
    }
    @if ((data() | pageTranslation)?.description) {
-      <div [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></div>
+      <div class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml"></div>
    }
    @if((data() | pageTranslation)?.secondTitle) {
       <div class="flex bg-(--color-primary-200) pt-[6px] pb-[6px] pl-[11px] pr-[11px] gap-(--spacing-1) justify-center items-center rounded-[13px] font-semibold text-(--color-primary-800)">
          <img src="assets/images/calendar-picto.svg" alt="calendar" class="!size-[24px]">
-         <p [innerHTML]="(data() | pageTranslation)?.secondTitle! | translate | safeHtml"></p>
+         <p class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.secondTitle! | translate | safeHtml"></p>
       </div>
    }
 </div>

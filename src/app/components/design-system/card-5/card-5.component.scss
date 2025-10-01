@@ -1,18 +1,6 @@
 .card-container {
    gap: var(--spacing-2);
 
-   ::ng-deep {
-      ul {
-         list-style: disc !important;
-         margin-left: 2rem;
-      }
-
-      a {
-         color: var(--color-8);
-         text-decoration: underline;
-      }
-   }
-
    .card-title {
       color: var(--color-3);
       padding-left: var(--spacing-3);
