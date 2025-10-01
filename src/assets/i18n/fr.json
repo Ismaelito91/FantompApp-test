@@ -776,7 +776,7 @@
          "COPIED": "Copié !",
          "BADGES": {
             "IMMEDIATE": "C'EST IMMÉDIAT ⚠️",
-            "RAPID": "C'EST RAPIDE 😬",
+            "RAPID": "MAIS C'EST PAS TOP😬",
             "CORRECT": "C'EST CORRECT 🙂",
             "SUPER": "C'EST SUPER 😎"
          },
@@ -833,7 +833,8 @@
             "MILLION_YEARS": "millions d'années",
             "BILLION_YEARS": "milliards d'années",
             "TRILLION_YEARS": "billions d'années",
-            "QUADRILLION_YEARS": "trillions d'années"
+            "QUADRILLION_YEARS": "trillions d'années",
+            "QUINTILLION_YEARS": "quintillions d'années"
          }
       }
    },

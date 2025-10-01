@@ -42,44 +42,44 @@ export interface PasswordCrackingData {
       color: string;
    };
 }
+
 export class PasswordSecurityCalculator {
-   // source : https://www.francenum.gouv.fr/magazine-du-numerique/combien-de-temps-un-pirate-met-il-pour-trouver-votre-mot-de-passe-comment
    public readonly crackingTimeData: PasswordCrackingData[] = [
       {
          characters: 4,
-         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
-         lowercaseOnly: { value: "", unit: "INSTANT", color: "purple" },
-         mixedCase: { value: "", unit: "INSTANT", color: "purple" },
-         numbersAndLetters: { value: "", unit: "INSTANT", color: "purple" },
-         allCharacters: { value: "", unit: "INSTANT", color: "purple" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "red" },
+         lowercaseOnly: { value: "", unit: "INSTANT", color: "red" },
+         mixedCase: { value: "", unit: "INSTANT", color: "red" },
+         numbersAndLetters: { value: "", unit: "INSTANT", color: "red" },
+         allCharacters: { value: "", unit: "INSTANT", color: "red" },
       },
       {
          characters: 5,
-         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
-         lowercaseOnly: { value: "", unit: "INSTANT", color: "purple" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "red" },
+         lowercaseOnly: { value: "", unit: "INSTANT", color: "red" },
          mixedCase: { value: "57", unit: "MINUTES", color: "red" },
          numbersAndLetters: { value: "2", unit: "HOURS", color: "red" },
          allCharacters: { value: "4", unit: "HOURS", color: "red" },
       },
       {
          characters: 6,
-         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
-         lowercaseOnly: { value: "", unit: "INSTANT", color: "purple" },
-         mixedCase: { value: "46", unit: "MINUTES", color: "red" },
-         numbersAndLetters: { value: "2", unit: "DAYS", color: "red" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "red" },
+         lowercaseOnly: { value: "46", unit: "MINUTES", color: "red" },
+         mixedCase: { value: "2", unit: "DAYS", color: "red" },
+         numbersAndLetters: { value: "6", unit: "DAYS", color: "red" },
          allCharacters: { value: "2", unit: "WEEKS", color: "red" },
       },
       {
          characters: 7,
-         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "red" },
          lowercaseOnly: { value: "20", unit: "HOURS", color: "red" },
-         mixedCase: { value: "4", unit: "MONTHS", color: "red" },
-         numbersAndLetters: { value: "1", unit: "YEAR", color: "red" },
+         mixedCase: { value: "4", unit: "MONTHS", color: "orange" },
+         numbersAndLetters: { value: "1", unit: "YEAR", color: "orange" },
          allCharacters: { value: "2", unit: "YEARS", color: "orange" },
       },
       {
          characters: 8,
-         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
+         numbersOnly: { value: "", unit: "INSTANT", color: "red" },
          lowercaseOnly: { value: "3", unit: "WEEKS", color: "red" },
          mixedCase: { value: "15", unit: "YEARS", color: "orange" },
          numbersAndLetters: { value: "62", unit: "YEARS", color: "orange" },
@@ -87,8 +87,8 @@ export class PasswordSecurityCalculator {
       },
       {
          characters: 9,
-         numbersOnly: { value: "", unit: "INSTANT", color: "purple" },
-         lowercaseOnly: { value: "2", unit: "HOURS", color: "red" },
+         numbersOnly: { value: "2", unit: "HOURS", color: "red" },
+         lowercaseOnly: { value: "2", unit: "YEARS", color: "orange" },
          mixedCase: { value: "791", unit: "YEARS", color: "orange" },
          numbersAndLetters: { value: "3000", unit: "YEARS", color: "orange" },
          allCharacters: { value: "11000", unit: "YEARS", color: "orange" },
@@ -101,41 +101,41 @@ export class PasswordSecurityCalculator {
          numbersAndLetters: {
             value: "238",
             unit: "THOUSAND_YEARS",
-            color: "yellow",
+            color: "orange",
          },
          allCharacters: {
             value: "803",
             unit: "THOUSAND_YEARS",
-            color: "yellow",
+            color: "orange",
          },
       },
       {
          characters: 11,
          numbersOnly: { value: "1", unit: "WEEKS", color: "red" },
          lowercaseOnly: { value: "1000", unit: "YEARS", color: "orange" },
-         mixedCase: { value: "2", unit: "MILLION_YEARS", color: "yellow" },
+         mixedCase: { value: "2", unit: "MILLION_YEARS", color: "orange" },
          numbersAndLetters: {
             value: "14",
             unit: "MILLION_YEARS",
-            color: "yellow",
+            color: "orange",
          },
-         allCharacters: { value: "56", unit: "MILLION_YEARS", color: "yellow" },
+         allCharacters: { value: "56", unit: "MILLION_YEARS", color: "orange" },
       },
       {
          characters: 12,
-         numbersOnly: { value: "3", unit: "MONTHS", color: "red" },
+         numbersOnly: { value: "3", unit: "MONTHS", color: "orange" },
          lowercaseOnly: {
             value: "27",
             unit: "THOUSAND_YEARS",
             color: "orange",
          },
-         mixedCase: { value: "111", unit: "MILLION_YEARS", color: "yellow" },
+         mixedCase: { value: "111", unit: "MILLION_YEARS", color: "blue" },
          numbersAndLetters: {
             value: "917",
             unit: "MILLION_YEARS",
-            color: "yellow",
+            color: "blue",
          },
-         allCharacters: { value: "3", unit: "BILLION_YEARS", color: "yellow" },
+         allCharacters: { value: "3", unit: "BILLION_YEARS", color: "green" },
       },
       {
          characters: 13,
@@ -143,25 +143,25 @@ export class PasswordSecurityCalculator {
          lowercaseOnly: {
             value: "705",
             unit: "THOUSAND_YEARS",
-            color: "yellow",
+            color: "orange",
          },
-         mixedCase: { value: "5", unit: "BILLION_YEARS", color: "yellow" },
+         mixedCase: { value: "5", unit: "BILLION_YEARS", color: "blue" },
          numbersAndLetters: {
             value: "56",
             unit: "BILLION_YEARS",
-            color: "green",
+            color: "blue",
          },
          allCharacters: { value: "275", unit: "BILLION_YEARS", color: "green" },
       },
       {
          characters: 14,
          numbersOnly: { value: "28", unit: "YEARS", color: "orange" },
-         lowercaseOnly: { value: "18", unit: "MILLION_YEARS", color: "yellow" },
-         mixedCase: { value: "300", unit: "BILLION_YEARS", color: "green" },
+         lowercaseOnly: { value: "18", unit: "MILLION_YEARS", color: "orange" },
+         mixedCase: { value: "300", unit: "BILLION_YEARS", color: "blue" },
          numbersAndLetters: {
             value: "3",
             unit: "TRILLION_YEARS",
-            color: "green",
+            color: "blue",
          },
          allCharacters: { value: "19", unit: "TRILLION_YEARS", color: "green" },
       },
@@ -171,63 +171,70 @@ export class PasswordSecurityCalculator {
          lowercaseOnly: {
             value: "477",
             unit: "MILLION_YEARS",
-            color: "yellow",
+            color: "orange",
          },
-         mixedCase: { value: "15", unit: "TRILLION_YEARS", color: "green" },
+         mixedCase: { value: "15", unit: "TRILLION_YEARS", color: "blue" },
          numbersAndLetters: {
             value: "218",
             unit: "TRILLION_YEARS",
+            color: "blue",
+         },
+         allCharacters: {
+            value: "1",
+            unit: "QUADRILLION_YEARS",
             color: "green",
          },
-         allCharacters: { value: "1", unit: "TRILLION_YEARS", color: "green" },
       },
       {
          characters: 16,
          numbersOnly: { value: "2", unit: "THOUSAND_YEARS", color: "orange" },
-         lowercaseOnly: { value: "12", unit: "BILLION_YEARS", color: "green" },
-         mixedCase: { value: "812", unit: "TRILLION_YEARS", color: "green" },
+         lowercaseOnly: { value: "12", unit: "BILLION_YEARS", color: "orange" },
+         mixedCase: { value: "812", unit: "TRILLION_YEARS", color: "blue" },
          numbersAndLetters: {
             value: "13",
             unit: "TRILLION_YEARS",
-            color: "green",
+            color: "blue",
          },
-         allCharacters: { value: "94", unit: "TRILLION_YEARS", color: "green" },
+         allCharacters: { value: "94", unit: "", color: "green" },
       },
       {
          characters: 17,
          numbersOnly: { value: "28", unit: "THOUSAND_YEARS", color: "orange" },
-         lowercaseOnly: { value: "322", unit: "BILLION_YEARS", color: "green" },
-         mixedCase: { value: "42", unit: "TRILLION_YEARS", color: "green" },
+         lowercaseOnly: {
+            value: "322",
+            unit: "BILLION_YEARS",
+            color: "orange",
+         },
+         mixedCase: { value: "42", unit: "QUADRILLION_YEARS", color: "blue" },
          numbersAndLetters: {
             value: "840",
-            unit: "TRILLION_YEARS",
-            color: "green",
+            unit: "QUADRILLION_YEARS",
+            color: "blue",
          },
          allCharacters: {
             value: "6",
-            unit: "QUADRILLION_YEARS",
+            unit: "QUINTILLION_YEARS",
             color: "green",
          },
       },
       {
          characters: 18,
-         numbersOnly: { value: "284", unit: "THOUSAND_YEARS", color: "yellow" },
-         lowercaseOnly: { value: "8", unit: "TRILLION_YEARS", color: "green" },
-         mixedCase: { value: "2", unit: "QUADRILLION_YEARS", color: "green" },
+         numbersOnly: { value: "284", unit: "THOUSAND_YEARS", color: "orange" },
+         lowercaseOnly: { value: "8", unit: "TRILLION_YEARS", color: "orange" },
+         mixedCase: { value: "2", unit: "QUADRILLION_YEARS", color: "blue" },
          numbersAndLetters: {
             value: "52",
             unit: "QUADRILLION_YEARS",
-            color: "green",
+            color: "blue",
          },
          allCharacters: {
             value: "463",
-            unit: "QUADRILLION_YEARS",
+            unit: "QUINTILLION_YEARS",
             color: "green",
          },
       },
    ];
 
-   // Méthode pour traduire un temps de craquage
    public translateTime(
       value: string,
       unit: string,
@@ -237,7 +244,6 @@ export class PasswordSecurityCalculator {
          const translated = translateService.instant(
             "TOOLS.PASSWORD_CHECK.TIME_UNITS.INSTANT"
          );
-         // Si la traduction n'est pas chargée, retourner une valeur par défaut
          return translated === "TOOLS.PASSWORD_CHECK.TIME_UNITS.INSTANT"
             ? "Instantané"
             : translated;
@@ -246,9 +252,7 @@ export class PasswordSecurityCalculator {
       const translatedUnit = translateService.instant(
          `TOOLS.PASSWORD_CHECK.TIME_UNITS.${unit}`
       );
-      // Si la traduction n'est pas chargée, retourner une valeur par défaut
       if (translatedUnit === `TOOLS.PASSWORD_CHECK.TIME_UNITS.${unit}`) {
-         // Valeurs par défaut en français
          const defaultUnits: { [key: string]: string } = {
             MINUTES: "minutes",
             HOURS: "heures",
@@ -263,6 +267,7 @@ export class PasswordSecurityCalculator {
             BILLION_YEARS: "milliards d'années",
             TRILLION_YEARS: "billions d'années",
             QUADRILLION_YEARS: "trillions d'années",
+            QUINTILLION_YEARS: "quadrillions d'années",
          };
          const defaultUnit = defaultUnits[unit] || unit.toLowerCase();
          return value ? `${value} ${defaultUnit}` : defaultUnit;
@@ -313,7 +318,7 @@ export class PasswordSecurityCalculator {
             crackingTime: "Données non disponibles",
             timeValue: "",
             timeUnit: "INSTANT",
-            color: "purple",
+            color: "red",
          };
       }
 
@@ -330,6 +335,7 @@ export class PasswordSecurityCalculator {
          color: crackingInfo.color,
       };
    }
+
    evaluatePasswordStrength(password: string): {
       length: number;
       type:
@@ -356,17 +362,12 @@ export class PasswordSecurityCalculator {
          | "numbersAndLetters"
          | "allCharacters";
 
-      // 0. type par défaut
       type = "lowercaseOnly";
 
-      // 1. Chiffres uniquement
       if (hasNumbers && !hasLowercase && !hasUppercase && !hasSpecialChars) {
          type = "numbersOnly";
       }
 
-      // 2. Minuscules uniquement
-      // ou Majuscules uniquement
-      // ou caractères spéciaux uniquement
       if (
          (hasLowercase && !hasUppercase && !hasNumbers && !hasSpecialChars) ||
          (!hasLowercase && hasUppercase && !hasNumbers && hasSpecialChars) ||
@@ -375,12 +376,6 @@ export class PasswordSecurityCalculator {
          type = "lowercaseOnly";
       }
 
-      // 3. Majuscules et minuscules (sans chiffres ni caractères spéciaux)
-      // ou Majuscules et caractères spéciaux uniquement
-      // ou Majuscules et chiffres uniquement
-      // ou Minuscules et caractères spéciaux uniquement
-      // ou Minuscules et chiffres uniquement
-      // ou chiffres et caractères spéciaux uniquement
       if (
          (hasLowercase && hasUppercase && !hasNumbers && !hasSpecialChars) ||
          (!hasLowercase && hasUppercase && !hasNumbers && hasSpecialChars) ||
@@ -392,10 +387,6 @@ export class PasswordSecurityCalculator {
          type = "mixedCase";
       }
 
-      // 4. Chiffres + Majuscules et minuscules (sans caractères spéciaux)
-      // ou Chiffres + Majuscules et caractères spéciaux uniquement
-      // ou Chiffres + minuscules et caractères spéciaux uniquement
-      // ou minuscules et majuscules et caractères spéciaux uniquement
       if (
          (hasNumbers && hasLowercase && hasUppercase && !hasSpecialChars) ||
          (hasNumbers && !hasLowercase && hasUppercase && hasSpecialChars) ||
@@ -405,7 +396,6 @@ export class PasswordSecurityCalculator {
          type = "numbersAndLetters";
       }
 
-      // 5. Tous types de caractères (par défaut)
       if (hasNumbers && hasLowercase && hasUppercase && hasSpecialChars) {
          type = "allCharacters";
       }
@@ -413,7 +403,6 @@ export class PasswordSecurityCalculator {
    }
 }
 
-// Instance exportée pour utilisation dans les composants Angular
 export const passwordCalculator = new PasswordSecurityCalculator();
 
 @Component({
@@ -807,18 +796,17 @@ export class PasswordCheckComponent
 
          let baseLevel = "";
          switch (evaluation.color) {
-            case "purple":
-               baseLevel = "immediate"; // Violet = Instantané
-               break;
             case "red":
-               baseLevel = "rapid"; // Rouge = C'est rapide
+               baseLevel = "immediate";
                break;
             case "orange":
-               baseLevel = "correct"; // Orange = Correct
+               baseLevel = "rapid";
                break;
-            case "yellow":
+            case "blue":
+               baseLevel = "correct";
+               break;
             case "green":
-               baseLevel = "super"; // Jaune/Vert = Super
+               baseLevel = "super";
                break;
             default:
                baseLevel = "correct"; // Par défaut si couleur inconnue
