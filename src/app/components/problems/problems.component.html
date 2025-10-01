@@ -23,6 +23,9 @@
                         <app-card-2 [data]="problem"></app-card-2>
                      </a>
                   }
+                  @case (ComponentType.DIVIDER) {
+                     <app-divider />
+                  }
                }
             }
          </div>
