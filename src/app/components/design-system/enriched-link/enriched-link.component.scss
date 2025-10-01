@@ -2,6 +2,18 @@
    background-color: var(--background-2);
    border-radius: var(--border-radius-3);
    padding: var(--spacing-3);
+
+   ::ng-deep {
+      ul {
+         list-style: disc !important;
+         margin-left: 2rem;
+      }
+
+      a {
+         color: var(--color-8);
+         text-decoration: underline;
+      }
+   }
 }
 
 .tile-container {
@@ -9,7 +21,8 @@
    gap: 6px;
 }
 
-.tile-title, .tile-title p {
+.tile-title,
+.tile-title p {
    font-weight: var(--font-weight-title);
    text-overflow: ellipsis;
    overflow: hidden;

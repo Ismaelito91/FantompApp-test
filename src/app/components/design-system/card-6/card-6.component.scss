@@ -4,4 +4,16 @@
    border-radius: var(--border-radius-2);
    color: var(--color-primary-800);
    font-size: var(--font-size-body-sm);
+
+   ::ng-deep {
+      ul {
+         list-style: disc !important;
+         margin-left: 2rem;
+      }
+
+      a {
+         color: var(--color-8);
+         text-decoration: underline;
+      }
+   }
 }

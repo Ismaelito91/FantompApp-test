@@ -15,7 +15,8 @@
       padding-right: var(--spacing-3);
    }
 
-   app-enriched-link, app-tile-mail {
+   app-enriched-link,
+   app-tile-mail {
       padding-left: var(--spacing-3);
       padding-right: var(--spacing-3);
    }
@@ -26,5 +27,17 @@
       gap: var(--spacing-4);
       padding-bottom: 48px;
 
+   }
+
+   ::ng-deep {
+      ul {
+         list-style: disc !important;
+         margin-left: 2rem;
+      }
+
+      a {
+         color: var(--color-8);
+         text-decoration: underline;
+      }
    }
 }

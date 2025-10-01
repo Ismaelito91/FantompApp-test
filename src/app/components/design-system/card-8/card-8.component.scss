@@ -7,6 +7,18 @@
    gap: var(--spacing-1);
    background-color: var(--background-2);
    border-radius: 12px;
+
+   ::ng-deep {
+      ul {
+         list-style: disc !important;
+         margin-left: 2rem;
+      }
+
+      a {
+         color: var(--color-8);
+         text-decoration: underline;
+      }
+   }
 }
 
 .card-preview {

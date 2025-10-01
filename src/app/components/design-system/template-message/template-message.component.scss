@@ -1,5 +1,17 @@
 .template-main {
    gap: var(--spacing-3);
+
+   ::ng-deep {
+      ul {
+         list-style: disc !important;
+         margin-left: 2rem;
+      }
+
+      a {
+         color: var(--color-8);
+         text-decoration: underline;
+      }
+   }
 }
 
 .template-container {
@@ -14,16 +26,4 @@
    gap: var(--spacing-5);
    font-size: var(--font-size-body-md);
    font-family: var(--body-font-family);
-
-   ::ng-deep {
-      ul {
-         list-style: disc !important;
-         margin-left: 2rem;
-      }
-
-      a {
-         color: var(--color-8);
-         text-decoration: underline;
-      }
-   }
 }

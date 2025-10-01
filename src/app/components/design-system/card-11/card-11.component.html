@@ -1,4 +1,4 @@
-<div class="flex flex-col h-full">
+<div class="flex flex-col h-full card-container">
    <div class="flex-grow flex items-center justify-center overflow-hidden relative">
       @if (index() > 0) {
       <button mat-fab aria-label="Previous" class="previous-btn nav-btn" (click)="prev.emit()">
@@ -20,5 +20,4 @@
       </div>
       <div [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></div>
    </div>
-
 </div>
