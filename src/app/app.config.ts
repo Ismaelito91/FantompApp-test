@@ -1,27 +1,26 @@
+import { HttpClient, provideHttpClient, withInterceptors } from "@angular/common/http";
 import {
+   APP_INITIALIZER,
    ApplicationConfig,
+   enableProdMode,
+   importProvidersFrom,
    inject,
    isDevMode,
-   provideZoneChangeDetection,
    provideAppInitializer,
-   enableProdMode,
-   APP_INITIALIZER,
+   provideZoneChangeDetection,
 } from "@angular/core";
-import { provideRouter, withComponentInputBinding, withViewTransitions } from "@angular/router";
-import { provideHttpClient, withInterceptors } from "@angular/common/http";
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 import { provideAnimations } from "@angular/platform-browser/animations";
-import { routes } from "./app.routes";
-import { apiInterceptor } from "./interceptor/api.interceptor";
+import { provideRouter, withComponentInputBinding, withInMemoryScrolling } from "@angular/router";
 import { provideServiceWorker } from "@angular/service-worker";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { HttpClient } from "@angular/common/http";
-import { importProvidersFrom } from "@angular/core";
-import { SettingService } from "./service/setting.service";
 import { catchError, EMPTY, tap } from "rxjs";
 import { environment } from "../environments/environment";
-import { MatIconRegistry } from "@angular/material/icon";
-import { DomSanitizer } from "@angular/platform-browser";
+import { routes } from "./app.routes";
+import { apiInterceptor } from "./interceptor/api.interceptor";
+import { SettingService } from "./service/setting.service";
 if (environment.production) {
    enableProdMode();
 }
@@ -50,7 +49,13 @@ export const appConfig: ApplicationConfig = {
       // retrait withViewTransitions pour fix problème Aie Aie Aie
       // si ouverture tutorial dialog sur me securiser sur chromium
       //provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
-      provideRouter(routes, withComponentInputBinding()),
+      provideRouter(
+         routes,
+         withInMemoryScrolling({
+            scrollPositionRestoration: 'enabled', // remet en haut automatiquement
+         }),
+         withComponentInputBinding()
+      ),
       provideHttpClient(withInterceptors([apiInterceptor])),
       provideAnimations(), // Configuration des animations Angular
       provideAppInitializer(() => initSettings(inject(SettingService))),
