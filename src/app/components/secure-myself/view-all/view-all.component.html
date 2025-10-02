@@ -1,7 +1,10 @@
 <div class="view-all-container">
-   <div class="flex justify-between" style="padding: 32px;">
-      <app-button-back></app-button-back>
-      <img [src]="(page() | pageTranslation)?.image" alt="image" class="!size-[112px] object-contain"/>
+   <div class="fixed bg-(image:--background-31) h-[110px] w-full z-100"></div>
+   <div class="flex z-101" style="padding: 32px;">
+      <app-button-back class="fixed top-[16px] z-103"></app-button-back>
+      <div class="flex justify-end w-full z-102">
+         <img [src]="(page() | pageTranslation)?.image" alt="image" class="!size-[112px] object-contain"/>
+      </div>
    </div>
    <h2 style="margin: 18px 25px;" [innerHTML]="(page() | pageTranslation)?.firstTitle"></h2>
    @for (child of sortedChildren; track $index) {
