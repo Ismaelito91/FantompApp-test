@@ -101,7 +101,6 @@ export class DeleteContentComponent {
    onClickResults() {
       const reported = this.formGroup.value.reported;
       const violent = this.formGroup.value.violent;
-      console.log(reported, violent);
       if (violent) {
          this.router.navigate(["delete-content", "violent-content"], {
             state: { reported },
