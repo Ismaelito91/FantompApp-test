@@ -84,22 +84,7 @@ export class ViolentContentComponent {
                   staticImage: "assets/images/3018.png"
                }
             ],
-         },
-         {
-            id: 0,
-            type: ComponentType.TILE_MESSAGE,
-            status: ComponentStatus.PUBLISHED,
-            position: 3,
-            translations: [
-               {
-                  id: 0,
-                  countryRegion: this.languageService.language(),
-                  devices: [Device.ANDROID, Device.IOS, Device.WEB],
-                  firstTitle: "PROBLEMS.DELETE_CONTENT.RESULTS.VIOLENT_CONTENT.P2.MESSAGE.TITLE",
-                  staticImage: "assets/images/whatsapp.png"
-               }
-            ],
-         },
+         }
       ]
    };
 
