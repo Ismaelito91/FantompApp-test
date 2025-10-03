@@ -1,12 +1,17 @@
 <a [routerLink]="data().nextId ? `/secure-myself/${data().nextId}/steps` : null" class="flex flex-col card-container">
    <div class="card-preview">
       @if ((data() | pageTranslation)?.firstTitle){
-         <app-tag-unclickable [label]="(data() | pageTranslation)?.firstTitle!" class="card-preview-title"></app-tag-unclickable>
+      <app-tag-unclickable [label]="(data() | pageTranslation)?.firstTitle!"
+         class="card-preview-title"></app-tag-unclickable>
       }
-      <img class="card-preview-image" [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen image" />
+      <img class="card-preview-image"
+         [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen image" />
    </div>
    <div class="flex items-center card-description">
-      <span class="card-description-text ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></span>
-      <mat-icon svgIcon="chevron16x16-icon"></mat-icon>
+      <span class="card-description-text ckeditor-content"
+         [innerHTML]="(data() | pageTranslation)?.description | safeHtml"></span>
+      <div>
+         <mat-icon svgIcon="chevron16x16-icon" class="!size-[14px]"></mat-icon>
+      </div>
    </div>
 </a>
