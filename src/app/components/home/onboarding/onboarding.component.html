@@ -26,37 +26,33 @@
          <div class="top-section">
             <!-- Bulle de bienvenue -->
             <div
-               class="speech-bubble welcome-bubble"
+               class="welcome-bubble"
                [@slideInUp]="animationStates().welcome"
             >
                <div class="bubble-content">
-                  <div class="welcome-header">
-                     <span class="welcome-text">{{
-                        "ONBOARDING.WELCOME_TO" | translate
-                     }}</span>
-                     <!-- Logo FantomApp dans la bulle de bienvenue -->
-                     <div class="app-branding">
-                        @if (!isDarkMode()) {
-                        <img
-                           src="assets/images/onboarding/logo-fantomapp.svg"
-                           alt="Logo Fantomapp"
-                           class="app-logo"
-                        />
-                        } @else {
-                        <img
-                           src="assets/images/logo-fantomapp-dark.svg"
-                           alt="Logo Fantomapp dark"
-                           class="app-logo"
-                        />
-                        }
-                     </div>
-                  </div>
+                  <span class="welcome-text">{{
+                     "ONBOARDING.WELCOME_TO" | translate
+                  }}</span>
+                  <!-- Logo FantomApp dans la bulle de bienvenue -->
+                  @if (!isDarkMode()) {
+                  <img
+                     src="assets/images/onboarding/logo-fantomapp.svg"
+                     alt="Logo Fantomapp"
+                     class="app-logo"
+                  />
+                  } @else {
+                  <img
+                     src="assets/images/logo-fantomapp-dark.svg"
+                     alt="Logo Fantomapp dark"
+                     class="app-logo"
+                  />
+                  }
                </div>
             </div>
 
             <!-- Bulle explicative -->
             <div
-               class="speech-bubble explanation-bubble"
+               class="explanation-bubble"
                [@slideInUp]="animationStates().explanation"
             >
                <div class="bubble-content">
@@ -141,7 +137,7 @@
          <img
             src="assets/images/onboarding/Switch-triste-img.svg"
             alt="Fantôme triste"
-            class="ghost-character"
+            class="sad-ghost-character"
          />
       </div>
 
