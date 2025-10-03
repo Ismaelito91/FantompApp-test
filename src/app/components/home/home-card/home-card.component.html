@@ -60,22 +60,24 @@
                class="home-card-anonym__image"
             />
          </div>
-         <div class="home-card-anonym__text-content">
-            <h3
-               class="social-card-title"
-               [innerHTML]="'HOME.CARDS.BLUR_IMAGE.TITLE' | translate"
-            ></h3>
-            <p
-               class="social-card-description"
-               [innerHTML]="'HOME.CARDS.BLUR_IMAGE.DESCRIPTION' | translate"
-            ></p>
-         </div>
-         <div class="home-card-anonym__arrow">
-            <mat-icon
-               svgIcon="chevron24x24-icon"
-               class="!size-[24px]"
-               style="color: var(--color-neutral-light-background-1)"
-            ></mat-icon>
+         <div class="flex items-center gap-(--spacing-1)">
+            <div class="home-card-anonym__text-content">
+               <h3
+                  class="social-card-title"
+                  [innerHTML]="'HOME.CARDS.BLUR_IMAGE.TITLE' | translate"
+               ></h3>
+               <p
+                  class="social-card-description"
+                  [innerHTML]="'HOME.CARDS.BLUR_IMAGE.DESCRIPTION' | translate"
+               ></p>
+            </div>
+            <div class="home-card-anonym__arrow">
+               <mat-icon
+                  svgIcon="chevron24x24-icon"
+                  class="!size-[24px]"
+                  style="color: var(--color-neutral-light-background-1)"
+               ></mat-icon>
+            </div>
          </div>
       </div>
 

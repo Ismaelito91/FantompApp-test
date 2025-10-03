@@ -111,7 +111,7 @@
    Carte anonymisation
    ===================== */
 .home-card-anonym {
-   padding: calc(18px + 0.5vw) calc(4px + 0.2vw);
+   padding: var(--spacing-2) var(--spacing-3);
    background-size: cover;
    border: calc(4px + 0.1vw) solid var(--background-4);
    border-radius: var(--border-radius-4);
@@ -137,7 +137,6 @@
 #blur-image-tool {
    background-image: url("../../../../assets/images/bg-blur-img.png");
    width: calc(170px + 8vw);
-   height: calc(140px + 6vw);
 }
 
 .home-card-anonym > *:not(.home-card-anonym-bg) {
@@ -153,14 +152,9 @@
 }
 
 .home-card-anonym__image-container {
-   position: absolute;
-   top: 4px;
-   right: 2px;
-   width: calc(60px + 2vw);
-   height: calc(60px + 2vw);
    display: flex;
    align-items: center;
-   justify-content: center;
+   justify-content: end;
 }
 
 .home-card-anonym__image {
@@ -171,18 +165,11 @@
 }
 
 .home-card-anonym__text-content {
-   position: absolute;
-   bottom: calc(0.5rem + 0.3vw);
-   left: calc(0.5rem + 0.3vw);
    display: flex;
    flex-direction: column;
-   gap: calc(0.2rem + 0.1vw);
 }
 
 .home-card-anonym__arrow {
-   position: absolute;
-   bottom: 50px;
-   right: 10px;
    width: 24px;
    height: 24px;
    opacity: 1;

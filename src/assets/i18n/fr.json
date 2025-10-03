@@ -147,8 +147,8 @@
             "DESCRIPTION": "En combien de temps un cybercriminel le trouve ?"
          },
          "BLUR_IMAGE": {
-            "TITLE": "J'anonymise<br />ma photo",
-            "DESCRIPTION": "Flouter ma photo<br />de profil"
+            "TITLE": "Je floute ma photo",
+            "DESCRIPTION": "Anonymiser ma photo de profil"
          },
          "PROBLEMS": {
             "SECTION_TITLE": "J'ai un problème en ligne",
@@ -638,8 +638,8 @@
       "TITLE": "Outils",
       "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe",
       "PASSWORD_CHECK_DESCRIPTION": "En combien de temps un cybercriminel le trouve ?",
-      "BLUR_IMAGE_TITLE": "J'anonymise ma photo",
-      "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil",
+      "BLUR_IMAGE_TITLE": "Je floute ma photo",
+      "BLUR_IMAGE_DESCRIPTION": "Anonymiser ma photo de profil",
       "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité",
       "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ?",
       "VISIBILITY_CHECK": {
