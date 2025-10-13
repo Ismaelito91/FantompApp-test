@@ -471,15 +471,6 @@ export class PasswordCheckComponent
          this.showInfoModal = true;
          localStorage.setItem("password-check-onboarding-seen", "true");
          this.hasSeenOnboarding = true;
-
-         // Annoncer l'ouverture du tutoriel
-         setTimeout(() => {
-            this.announceToScreenReader(
-               this.translateService.instant(
-                  "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.TUTORIAL_OPENED"
-               )
-            );
-         }, 500);
       }
    }
 
@@ -560,38 +551,6 @@ export class PasswordCheckComponent
 
    toggleShowPassword() {
       this.showPassword = !this.showPassword;
-
-      // Annoncer le changement d'état
-      const message = this.showPassword
-         ? this.translateService.instant(
-              "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.PASSWORD_SHOWN"
-           )
-         : this.translateService.instant(
-              "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.PASSWORD_HIDDEN"
-           );
-      this.announceToScreenReader(message);
-   }
-
-   toggleCommonWords(event?: Event) {
-      // Empêcher la propagation de l'événement pour éviter de perdre le focus
-      if (event) {
-         event.preventDefault();
-         event.stopPropagation();
-      }
-
-      this.containsCommonWords = !this.containsCommonWords;
-      
-      // Mettre à jour le critère "Pas d'indice facile" en temps réel
-      if (this.criteria && this.criteria.length >= 6) {
-         this.criteria[5].valid = !this.containsCommonWords;
-      }
-
-      // S'assurer que le focus reste sur l'input après avoir cliqué sur le checkbox
-      setTimeout(() => {
-         if (this.passwordInput) {
-            this.passwordInput.nativeElement.focus();
-         }
-      }, 0);
    }
 
    toggleCommonWords(event?: Event) {
@@ -650,13 +609,6 @@ export class PasswordCheckComponent
             // Afficher la notification de succès
             this.showCopyNotification = true;
 
-            // Annoncer la copie réussie
-            this.announceToScreenReader(
-               this.translateService.instant(
-                  "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.PASSWORD_COPIED"
-               )
-            );
-
             // Masquer la notification après 2 secondes
             setTimeout(() => {
                this.showCopyNotification = false;
@@ -665,13 +617,6 @@ export class PasswordCheckComponent
       } catch (err) {
          // Gestion silencieuse des erreurs de copie
          console.error("Erreur lors de la copie:", err);
-
-         // Annoncer l'échec de la copie
-         this.announceToScreenReader(
-            this.translateService.instant(
-               "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.COPY_FAILED"
-            )
-         );
       }
    }
 
@@ -729,32 +674,6 @@ export class PasswordCheckComponent
             event.preventDefault();
          }
       }
-   }
-
-   // Annonce vocale pour les changements d'état
-   private announceToScreenReader(message: string) {
-      // Créer un élément temporaire pour les annonces
-      const announcement = document.createElement("div");
-      announcement.setAttribute("aria-live", "polite");
-      announcement.setAttribute("aria-atomic", "true");
-      announcement.className = "sr-only";
-      announcement.style.position = "absolute";
-      announcement.style.left = "-10000px";
-      announcement.style.width = "1px";
-      announcement.style.height = "1px";
-      announcement.style.overflow = "hidden";
-
-      document.body.appendChild(announcement);
-
-      // Ajouter le message
-      setTimeout(() => {
-         announcement.textContent = message;
-      }, 100);
-
-      // Nettoyer après annonce
-      setTimeout(() => {
-         document.body.removeChild(announcement);
-      }, 3000);
    }
 
    // Gestion du focus pour l'animation
