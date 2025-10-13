@@ -616,6 +616,27 @@ export class PasswordCheckComponent
       }, 0);
    }
 
+   toggleCommonWords(event?: Event) {
+      // Empêcher la propagation de l'événement pour éviter de perdre le focus
+      if (event) {
+         event.preventDefault();
+         event.stopPropagation();
+      }
+
+      this.containsCommonWords = !this.containsCommonWords;
+      // Mettre à jour le critère "Pas d'indice facile" en temps réel
+      if (this.criteria && this.criteria.length >= 6) {
+         this.criteria[5].valid = !this.containsCommonWords;
+      }
+
+      // S'assurer que le focus reste sur l'input après avoir cliqué sur le checkbox
+      setTimeout(() => {
+         if (this.passwordInput) {
+            this.passwordInput.nativeElement.focus();
+         }
+      }, 0);
+   }
+
    async copyPassword() {
       if (!this.password) {
          return;
@@ -929,21 +950,25 @@ export class PasswordCheckComponent
          // PRIORITÉ ABSOLUE : Si le checkbox "mots courants" est coché, forcer le résultat à "instantané"
          if (this.containsCommonWords) {
             // Forcer le résultat le plus faible (instantané) - AUCUNE autre condition ne peut l'annuler
-            this.message = this.translateService.instant("TOOLS.PASSWORD_CHECK.TIME_UNITS.INSTANT");
+            this.message = this.translateService.instant(
+               "TOOLS.PASSWORD_CHECK.TIME_UNITS.INSTANT"
+            );
             this.passwordResultLevel = "immediate";
             this.isRapidCracking = true;
-            
+
             // Démarrer l'effet typewriter pour "Instantané"
             setTimeout(() => {
                this.startTypewriterEffect(this.message);
             }, 300);
-            
+
             // IMPORTANT : Sortir immédiatement de la fonction pour éviter toute autre évaluation
             return;
          }
 
          // Comportement normal SEULEMENT si le checkbox n'est pas coché
-         const evaluation = passwordCalculator.evaluatePasswordStrength(this.password);
+         const evaluation = passwordCalculator.evaluatePasswordStrength(
+            this.password
+         );
 
          // Traduire le temps de craquage
          const translatedTime = passwordCalculator.translateTime(
@@ -959,12 +984,6 @@ export class PasswordCheckComponent
             this.startTypewriterEffect(translatedTime);
          }, 300);
 
-         setTimeout(() => {
-            this.announceToScreenReader(resultMessage);
-            this.startTypewriterEffect(translatedTime);
-         }, 300);
-
-         // ...existing level calculation code...
          const hasMinLength = this.password.length >= 12;
          const hasUppercase = /[A-Z]/.test(this.password);
          const hasLowercase = /[a-z]/.test(this.password);
