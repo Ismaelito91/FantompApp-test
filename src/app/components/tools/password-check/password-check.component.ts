@@ -594,6 +594,28 @@ export class PasswordCheckComponent
       }, 0);
    }
 
+   toggleCommonWords(event?: Event) {
+      // Empêcher la propagation de l'événement pour éviter de perdre le focus
+      if (event) {
+         event.preventDefault();
+         event.stopPropagation();
+      }
+
+      this.containsCommonWords = !this.containsCommonWords;
+      
+      // Mettre à jour le critère "Pas d'indice facile" en temps réel
+      if (this.criteria && this.criteria.length >= 6) {
+         this.criteria[5].valid = !this.containsCommonWords;
+      }
+
+      // S'assurer que le focus reste sur l'input après avoir cliqué sur le checkbox
+      setTimeout(() => {
+         if (this.passwordInput) {
+            this.passwordInput.nativeElement.focus();
+         }
+      }, 0);
+   }
+
    async copyPassword() {
       if (!this.password) {
          return;
