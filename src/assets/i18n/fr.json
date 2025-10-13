@@ -767,8 +767,9 @@
          "TITLE": "Je teste mon mot de passe",
          "DESCRIPTION": "Combien de temps faut-il à un cybercriminel pour le trouver ?",
          "CRIMINAL_GUESSES": "Un cybercriminel le devine en :",
-         "ASSESSMENT_TEXT": "Ton mot de passe a :",
+         "ASSESSMENT_TEXT": "Ton mot de passe :",
          "INPUT_LABEL": "Mot de passe",
+         "CHECKBOX_LABEL": "Contient mon prénom, nom, ou des mots courants",
          "COPY_PASSWORD": "Copier le mot de passe",
          "COPIED": "Copié !",
          "BADGES": {
@@ -783,6 +784,7 @@
             "LOWERCASE": "1 minuscule au moins",
             "DIGIT": "1 chiffre au moins",
             "SPECIAL_CHAR": "1 caractère spécial au moins",
+            "NO_EASY_CLUES": "Pas d'indice facile (nom, prénom, mot courant)",
             "CRITERIA_VALIDATED": "Critère validé",
             "CRITERIA_NOT_VALIDATED": "Critère non validé"
          },

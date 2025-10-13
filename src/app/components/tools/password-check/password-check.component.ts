@@ -11,6 +11,7 @@ import {
 import { FormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonCloseComponent } from "../../design-system/button-close/button-close.component";
 import { BadgeComponent } from "../../design-system/badge/badge.component";
@@ -415,6 +416,7 @@ export const passwordCalculator = new PasswordSecurityCalculator();
       CommonModule,
       BadgeComponent,
       TranslateModule,
+      MatCheckboxModule,
    ],
    templateUrl: "./password-check.component.html",
    styleUrl: "./password-check.component.scss",
@@ -436,6 +438,9 @@ export class PasswordCheckComponent
    isRapidCracking: boolean = false;
    passwordResultLevel: string = "";
    showCopyNotification: boolean = false;
+
+   // Propriété pour le checkbox des mots courants
+   containsCommonWords: boolean = false;
 
    // Propriétés pour l'effet typewriter
    displayedMessage: string = "";
@@ -541,6 +546,12 @@ export class PasswordCheckComponent
             ),
             valid: false,
          },
+         {
+            name: this.translateService.instant(
+               "TOOLS.PASSWORD_CHECK.CRITERIA.NO_EASY_CLUES"
+            ),
+            valid: true, // Initialisé à true car par défaut on n'a pas d'indices faciles
+         },
       ];
    }
 
@@ -559,6 +570,28 @@ export class PasswordCheckComponent
               "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.PASSWORD_HIDDEN"
            );
       this.announceToScreenReader(message);
+   }
+
+   toggleCommonWords(event?: Event) {
+      // Empêcher la propagation de l'événement pour éviter de perdre le focus
+      if (event) {
+         event.preventDefault();
+         event.stopPropagation();
+      }
+
+      this.containsCommonWords = !this.containsCommonWords;
+      
+      // Mettre à jour le critère "Pas d'indice facile" en temps réel
+      if (this.criteria && this.criteria.length >= 6) {
+         this.criteria[5].valid = !this.containsCommonWords;
+      }
+
+      // S'assurer que le focus reste sur l'input après avoir cliqué sur le checkbox
+      setTimeout(() => {
+         if (this.passwordInput) {
+            this.passwordInput.nativeElement.focus();
+         }
+      }, 0);
    }
 
    async copyPassword() {
@@ -867,11 +900,30 @@ export class PasswordCheckComponent
       this.criteria[2].valid = /[a-z]/.test(this.password);
       this.criteria[3].valid = /[0-9]/.test(this.password);
       this.criteria[4].valid = /[^A-Za-z0-9]/.test(this.password);
+      // Nouveau critère : valide si le checkbox n'est PAS coché
+      this.criteria[5].valid = !this.containsCommonWords;
 
       if (this.password.length > 0) {
-         const evaluation = passwordCalculator.evaluatePasswordStrength(
-            this.password
-         );
+         // PRIORITÉ ABSOLUE : Si le checkbox "mots courants" est coché, forcer le résultat à "instantané"
+         if (this.containsCommonWords) {
+            // Forcer le résultat le plus faible (instantané) - AUCUNE autre condition ne peut l'annuler
+            this.message = this.translateService.instant("TOOLS.PASSWORD_CHECK.TIME_UNITS.INSTANT");
+            this.passwordResultLevel = "immediate";
+            this.isRapidCracking = true;
+            
+            // Démarrer l'effet typewriter pour "Instantané"
+            setTimeout(() => {
+               this.startTypewriterEffect(this.message);
+            }, 300);
+            
+            // IMPORTANT : Sortir immédiatement de la fonction pour éviter toute autre évaluation
+            return;
+         }
+
+         // Comportement normal SEULEMENT si le checkbox n'est pas coché
+         const evaluation = passwordCalculator.evaluatePasswordStrength(this.password);
+
+         // Traduire le temps de craquage
          const translatedTime = passwordCalculator.translateTime(
             evaluation.timeValue,
             evaluation.timeUnit,
@@ -880,16 +932,10 @@ export class PasswordCheckComponent
 
          this.message = translatedTime;
 
-         // Annoncer les résultats aux lecteurs d'écran
-         const validCriteria = this.criteria.filter((c) => c.valid).length;
-         const resultMessage = this.translateService.instant(
-            "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.RESULTS_ANNOUNCED",
-            {
-               time: translatedTime,
-               validCriteria: validCriteria,
-               totalCriteria: this.criteria.length,
-            }
-         );
+         // Démarrer l'effet typewriter pour le message
+         setTimeout(() => {
+            this.startTypewriterEffect(translatedTime);
+         }, 300);
 
          setTimeout(() => {
             this.announceToScreenReader(resultMessage);
