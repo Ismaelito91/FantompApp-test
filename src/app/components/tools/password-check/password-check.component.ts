@@ -6,6 +6,7 @@ import {
    AfterViewInit,
    ElementRef,
    ViewChild,
+   HostListener,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -462,10 +463,18 @@ export class PasswordCheckComponent
    ngOnInit() {
       // Si c'est la première fois, affiche l'onboarding immédiatement
       if (!this.hasSeenOnboarding) {
-         // Afficher immédiatement
          this.showInfoModal = true;
          localStorage.setItem("password-check-onboarding-seen", "true");
-         this.hasSeenOnboarding = true; // Mettre à jour la variable
+         this.hasSeenOnboarding = true;
+
+         // Annoncer l'ouverture du tutoriel
+         setTimeout(() => {
+            this.announceToScreenReader(
+               this.translateService.instant(
+                  "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.TUTORIAL_OPENED"
+               )
+            );
+         }, 500);
       }
    }
 
@@ -540,6 +549,16 @@ export class PasswordCheckComponent
 
    toggleShowPassword() {
       this.showPassword = !this.showPassword;
+
+      // Annoncer le changement d'état
+      const message = this.showPassword
+         ? this.translateService.instant(
+              "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.PASSWORD_SHOWN"
+           )
+         : this.translateService.instant(
+              "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.PASSWORD_HIDDEN"
+           );
+      this.announceToScreenReader(message);
    }
 
    async copyPassword() {
@@ -555,6 +574,13 @@ export class PasswordCheckComponent
             // Afficher la notification de succès
             this.showCopyNotification = true;
 
+            // Annoncer la copie réussie
+            this.announceToScreenReader(
+               this.translateService.instant(
+                  "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.PASSWORD_COPIED"
+               )
+            );
+
             // Masquer la notification après 2 secondes
             setTimeout(() => {
                this.showCopyNotification = false;
@@ -563,15 +589,96 @@ export class PasswordCheckComponent
       } catch (err) {
          // Gestion silencieuse des erreurs de copie
          console.error("Erreur lors de la copie:", err);
+
+         // Annoncer l'échec de la copie
+         this.announceToScreenReader(
+            this.translateService.instant(
+               "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.COPY_FAILED"
+            )
+         );
       }
    }
 
    toggleInfoModal() {
       this.showInfoModal = !this.showInfoModal;
+
+      if (!this.showInfoModal) {
+         // Remettre le focus sur l'élément principal après fermeture
+         setTimeout(() => {
+            if (this.passwordInput) {
+               this.passwordInput.nativeElement.focus();
+            }
+         }, 100);
+      }
    }
 
    togglePasswordInfoModal() {
       this.showPasswordInfoModal = !this.showPasswordInfoModal;
+
+      if (!this.showPasswordInfoModal) {
+         // Remettre le focus sur l'élément principal après fermeture
+         setTimeout(() => {
+            if (this.passwordInput) {
+               this.passwordInput.nativeElement.focus();
+            }
+         }, 100);
+      }
+   }
+
+   // Gestion de la navigation au clavier pour l'accessibilité
+   @HostListener("keydown", ["$event"])
+   onKeyDown(event: KeyboardEvent) {
+      // Fermer les modales avec Échap
+      if (event.key === "Escape") {
+         if (this.showInfoModal) {
+            this.toggleInfoModal();
+            event.preventDefault();
+         } else if (this.showPasswordInfoModal) {
+            this.togglePasswordInfoModal();
+            event.preventDefault();
+         } else if (this.isInputFocused) {
+            this.cancelInputFocus();
+            event.preventDefault();
+         }
+      }
+
+      // Activer le bouton principal avec Entrée ou Espace
+      if (
+         (event.key === "Enter" || event.key === " ") &&
+         event.target === document.activeElement
+      ) {
+         const target = event.target as HTMLElement;
+         if (target.classList.contains("password-info-button")) {
+            this.handleButtonClick();
+            event.preventDefault();
+         }
+      }
+   }
+
+   // Annonce vocale pour les changements d'état
+   private announceToScreenReader(message: string) {
+      // Créer un élément temporaire pour les annonces
+      const announcement = document.createElement("div");
+      announcement.setAttribute("aria-live", "polite");
+      announcement.setAttribute("aria-atomic", "true");
+      announcement.className = "sr-only";
+      announcement.style.position = "absolute";
+      announcement.style.left = "-10000px";
+      announcement.style.width = "1px";
+      announcement.style.height = "1px";
+      announcement.style.overflow = "hidden";
+
+      document.body.appendChild(announcement);
+
+      // Ajouter le message
+      setTimeout(() => {
+         announcement.textContent = message;
+      }, 100);
+
+      // Nettoyer après annonce
+      setTimeout(() => {
+         document.body.removeChild(announcement);
+      }, 3000);
    }
 
    // Gestion du focus pour l'animation
@@ -752,7 +859,6 @@ export class PasswordCheckComponent
    }
 
    checkPassword() {
-      // Afficher les résultats seulement quand on clique sur le bouton
       this.showPasswordResults = true;
 
       // Vérification des critères de base pour l'affichage des icônes
@@ -766,8 +872,6 @@ export class PasswordCheckComponent
          const evaluation = passwordCalculator.evaluatePasswordStrength(
             this.password
          );
-
-         // Traduire le temps de craquage
          const translatedTime = passwordCalculator.translateTime(
             evaluation.timeValue,
             evaluation.timeUnit,
@@ -776,12 +880,23 @@ export class PasswordCheckComponent
 
          this.message = translatedTime;
 
-         // Démarrer l'effet typewriter pour le message
-         setTimeout(() => {
-            this.startTypewriterEffect(translatedTime);
-         }, 300); // Petit délai pour que l'interface se mette en place
+         // Annoncer les résultats aux lecteurs d'écran
+         const validCriteria = this.criteria.filter((c) => c.valid).length;
+         const resultMessage = this.translateService.instant(
+            "TOOLS.PASSWORD_CHECK.ACCESSIBILITY.RESULTS_ANNOUNCED",
+            {
+               time: translatedTime,
+               validCriteria: validCriteria,
+               totalCriteria: this.criteria.length,
+            }
+         );
 
-         // Vérification des critères de sécurité
+         setTimeout(() => {
+            this.announceToScreenReader(resultMessage);
+            this.startTypewriterEffect(translatedTime);
+         }, 300);
+
+         // ...existing level calculation code...
          const hasMinLength = this.password.length >= 12;
          const hasUppercase = /[A-Z]/.test(this.password);
          const hasLowercase = /[a-z]/.test(this.password);
@@ -809,10 +924,9 @@ export class PasswordCheckComponent
                baseLevel = "super";
                break;
             default:
-               baseLevel = "correct"; // Par défaut si couleur inconnue
+               baseLevel = "correct";
          }
 
-         // Si le niveau serait "super" mais que tous les critères ne sont pas remplis, on descend à "correct"
          if (baseLevel === "super" && !allCriteriaValid) {
             this.passwordResultLevel = "correct";
             this.isRapidCracking = true;
