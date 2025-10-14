@@ -340,13 +340,17 @@ export class BlurImageComponent {
          const arrayBuffer = await new Response(file).arrayBuffer();
          const imgBitmap = await createImageBitmap(new Blob([arrayBuffer]));
 
-         // Dimensions maximales pour garantir que l'image reste entièrement visible
-         const MAX_WIDTH = 350; // Largeur maximale adaptée au viewport mobile
-         const MAX_HEIGHT = 380; // Hauteur maximale pour éviter le scroll
+         // Dimensions maximales basées sur le viewport (en pourcentages)
+         const MAX_WIDTH = Math.floor(window.innerWidth * 0.85); // 85% de la largeur de l'écran
+         const MAX_HEIGHT = Math.floor(window.innerHeight * 0.5); // 50% de la hauteur de l'écran
+
+         // Assurer des minimums et maximums raisonnables
+         const finalMaxWidth = Math.min(Math.max(MAX_WIDTH, 300), 500); // Entre 300px et 500px
+         const finalMaxHeight = Math.min(Math.max(MAX_HEIGHT, 250), 450); // Entre 250px et 450px
 
          // Calculer le ratio de redimensionnement pour respecter les limites
-         const widthRatio = MAX_WIDTH / imgBitmap.width;
-         const heightRatio = MAX_HEIGHT / imgBitmap.height;
+         const widthRatio = finalMaxWidth / imgBitmap.width;
+         const heightRatio = finalMaxHeight / imgBitmap.height;
 
          // Prendre le plus petit ratio pour que l'image tienne dans les deux dimensions
          const scale = Math.min(widthRatio, heightRatio, 1); // Ne jamais agrandir (max 1)
@@ -369,6 +373,8 @@ export class BlurImageComponent {
          this.redoStack = [];
          this.saveState();
 
+         console.log(`Viewport: ${window.innerWidth}x${window.innerHeight}`);
+         console.log(`Max calculées: ${finalMaxWidth}x${finalMaxHeight}`);
          console.log(
             `Image redimensionnée de ${imgBitmap.width}x${imgBitmap.height} à ${finalWidth}x${finalHeight}`
          );
