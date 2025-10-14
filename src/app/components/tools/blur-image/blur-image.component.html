@@ -1,6 +1,6 @@
 <input
    type="file"
-   accept="image/*,android/allowCamera"
+   accept="image/png,image/jpeg,android/allowCamera"
    (change)="handleImageUpload($event)"
    hidden
    #fileInput
@@ -47,7 +47,9 @@
 </div>
 }
 <div class="flex flex-col h-screen p-(--spacing-3) gap-(--spacing-3) relative">
-   <app-button-back class="fixed top-[16px] pl-(--spacing-3) z-2"></app-button-back>
+   <app-button-back
+      class="fixed top-[16px] pl-(--spacing-3) z-2"
+   ></app-button-back>
 
    <div
       class="flex flex-col items-center gap-(--spacing-2) h-full"
@@ -58,7 +60,8 @@
       <div class="relative">
          <canvas
             #canvas
-            class="w-full object-contain rounded-(--border-radius-1) z-1"
+            class="w-full object-contain rounded-(--border-radius-1) z-1 max-h-[60vh] min-h-[300px]"
+            style="touch-action: none"
             [class]="{
                'mt-[60px]': fileInput.files && fileInput.files.length > 0,
             }"
@@ -66,8 +69,10 @@
             (mousemove)="paint($event)"
             (mouseup)="stopPainting()"
             (mouseleave)="stopPainting()"
-            (touchstart)="startPainting($event.touches[0])"
-            (touchmove)="paint($event.touches[0])"
+            (touchstart)="
+               startPainting($event.touches[0]); $event.preventDefault()
+            "
+            (touchmove)="paint($event.touches[0]); $event.preventDefault()"
             (touchend)="stopPainting()"
          >
          </canvas>
