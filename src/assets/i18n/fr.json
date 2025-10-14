@@ -452,7 +452,7 @@
                   }
                },
                "BUTTON": {
-                  "REPORTED": "Adresser une plainte à la CNIL",
+                  "REPORTED": "Adresser une plainte",
                   "UNREPORTED": "Signaler le contenu"
                }
             }
