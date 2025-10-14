@@ -341,12 +341,12 @@ export class BlurImageComponent {
          const imgBitmap = await createImageBitmap(new Blob([arrayBuffer]));
 
          // Dimensions maximales basées sur le viewport (en pourcentages)
-         const MAX_WIDTH = Math.floor(window.innerWidth * 0.85); // 85% de la largeur de l'écran
-         const MAX_HEIGHT = Math.floor(window.innerHeight * 0.5); // 50% de la hauteur de l'écran
+         const MAX_WIDTH = Math.floor(window.innerWidth * 0.95); // 95% de la largeur de l'écran (plus large)
+         const MAX_HEIGHT = Math.floor(window.innerHeight * 0.65); // 65% de la hauteur de l'écran (plus haut)
 
          // Assurer des minimums et maximums raisonnables
-         const finalMaxWidth = Math.min(Math.max(MAX_WIDTH, 300), 500); // Entre 300px et 500px
-         const finalMaxHeight = Math.min(Math.max(MAX_HEIGHT, 250), 450); // Entre 250px et 450px
+         const finalMaxWidth = Math.min(Math.max(MAX_WIDTH, 350), 600); // Entre 350px et 600px
+         const finalMaxHeight = Math.min(Math.max(MAX_HEIGHT, 300), 550); // Entre 300px et 550px
 
          // Calculer le ratio de redimensionnement pour respecter les limites
          const widthRatio = finalMaxWidth / imgBitmap.width;
