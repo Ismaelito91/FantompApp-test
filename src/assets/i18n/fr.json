@@ -417,11 +417,11 @@
                   "TITLE": "Exemple de mail - Snapchat",
                   "DESCRIPTION": "Pour effectuer une demande d’effacement, tu peux contacter le délégué à la protection des données (DPO).",
                   "P1": {
-                     "TITLE": "\uD83D\uDCDD Adresse mail du contact indiqué"
+                     "TITLE": "📝 Adresse mail du contact indiqué"
                   }
                },
                "TEMPLATE_MESSAGE": {
-                  "TITLE": "\uD83D\uDCDD Exemple de mail à envoyer",
+                  "TITLE": "📝 Exemple de mail à envoyer",
                   "DESCRIPTION": "Madame, Monsieur,<br><br>Des informations me concernant sont actuellement diffusées sur votre site internet sur les pages suivantes :<br><span style=\"color: var(--color-24);\">[Lien(s) Url du contenu à supprimer]</span><br>Aussi, en application des articles 21.1 et 17.1.c. du Règlement général sur la protection des données (RGPD), je vous remercie de supprimer les données personnelles suivantes me concernant :<br><span style=\"color: var(--color-24);\">[description des informations à supprimer]</span> .<br>Je souhaite que ces informations soient supprimées car :<br><span style=\"color: var(--color-24);\">[motif de la suppression]</span><br>Je vous remercie également de faire le nécessaire pour que ces pages ne soient plus référencées par les moteurs de recherche (article 17.2 du RGPD).<br>Vous voudrez bien me faire parvenir votre réponse dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de ma demande (article 12.3 du RGPD).<br>Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées."
                }
             },
