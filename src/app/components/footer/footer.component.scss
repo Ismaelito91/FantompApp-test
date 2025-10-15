@@ -3,39 +3,24 @@
    bottom: 0;
    z-index: 1000;
    display: flex;
-   justify-content: space-around;
-   align-items: stretch;
    width: 100%;
-   height: calc(var(--spacing-10) + var(--spacing-3));
-   padding: 0;
-   border-top: var(--border) var(--background-6);
-   box-sizing: border-box;
+   height: 110px;
    background-color: var(--background-6);
-   max-width: var(--max-width-viewport);
 
    .nav-button {
+      cursor: pointer;
+      position: relative;
+      height: 50%;
+      width: 90px;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+      flex: 1;
+      color: var(--color-5);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: var(--spacing-1) var(--spacing-1);
-      height: 100%;
-      position: relative;
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      flex: 1;
-      text-align: center;
-      border-radius: 16px;
-      color: var(--color-5);
-      &:focus-visible {
-         outline: 2px solid var(--color-3);
-         outline-offset: -2px;
-      }
-      &:active {
-         color: var(--color-3);
-      }
+
       .icon-container {
          position: relative;
          width: 24px;
@@ -43,17 +28,14 @@
          display: flex;
          align-items: center;
          justify-content: center;
-         margin: 0 auto var(--spacing-1) auto;
+         flex-shrink: 0; /* Empêche l'icône de se rétrécir */
+         margin: 0 auto; /* Centre l'icône horizontalement */
       }
 
       mat-icon {
          font-size: 24px;
          width: 24px;
          height: 24px;
-         min-width: 24px;
-         min-height: 24px;
-         max-width: 24px;
-         max-height: 24px;
          display: flex;
          align-items: center;
          justify-content: center;
@@ -75,13 +57,10 @@
 
       span {
          font-size: var(--font-size-body-xs);
-         font-weight: var(--font-weight-body);
-         text-align: center;
-         line-height: var(--line-height-body);
-         transition: color 0.3s ease, font-weight 0.3s ease;
          white-space: nowrap;
          display: block;
          margin: 0 auto;
+         text-align: center;
       }
 
       &.active-link {
@@ -100,7 +79,6 @@
       }
 
       &.active-link {
-
          .icon-active,
          span {
             color: var(--color-8);
@@ -154,13 +132,5 @@
             color: var(--color-8);
          }
       }
-   }
-}
-
-// Styles spécifiques pour le mode sombre
-:host-context(.dark-theme) {
-   .toolbar-nav {
-      background-color: var(--color-neutral-dark-background-1);
-      border-top-color: var(--color-neutral-dark-background-3);
    }
 }
