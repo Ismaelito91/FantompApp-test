@@ -8,10 +8,11 @@ import { PageComponentService } from '../../service/page-component.service';
 import { PageComponentUtilsService } from '../../service/page-component-utils.service';
 import { Card7Component } from "../design-system/card-7/card-7.component";
 import { DividerComponent } from "../design-system/divider/divider.component";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
    selector: 'app-secure-myself',
-   imports: [Card7Component, DividerComponent, SafeHtmlPipe, DividerComponent, Card7Component, PageTranslationPipe],
+   imports: [Card7Component, DividerComponent, SafeHtmlPipe, DividerComponent, Card7Component, PageTranslationPipe, TranslatePipe],
    templateUrl: './secure-myself.component.html',
    styleUrl: './secure-myself.component.scss'
 })

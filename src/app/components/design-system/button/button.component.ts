@@ -4,10 +4,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { ButtonSize } from '../../../model/type/button-size.type';
 import { ButtonVariant } from '../../../model/type/button-variant.type';
 import { IconInfo } from '../../../model/type/icon-info.type';
+import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 
 @Component({
    selector: 'app-button',
-   imports: [MatButtonModule, MatIconModule],
+   imports: [MatButtonModule, MatIconModule, SafeHtmlPipe],
    templateUrl: './button.component.html',
    styleUrl: './button.component.scss'
 })

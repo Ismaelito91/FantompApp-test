@@ -6,10 +6,10 @@
       </div>
       <div class="details flex flex-col gap(--spacing-3)">
          @if ((data | pageTranslation)?.firstTitle) {
-            <h3 class="ckeditor-content" [innerHTML]="(data | pageTranslation)?.firstTitle! | translate | safeHtml"></h3>
+            <h3 class="ckeditor-content" [innerHTML]="(data | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></h3>
          }
          @if ((data | pageTranslation)?.description) {
-            <span class="ckeditor-content" [innerHTML]="(data | pageTranslation)?.description! | translate | safeHtml"></span>
+            <span class="ckeditor-content" [innerHTML]="(data | pageTranslation)?.description! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></span>
          }
       </div>
    </div>

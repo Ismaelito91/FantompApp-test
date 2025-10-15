@@ -7,10 +7,11 @@ import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 import { UtilsService } from '../../../service/utils.service';
 import { TagUnclickableComponent } from "../tag-unclickable/tag-unclickable.component";
+import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
 
 @Component({
    selector: 'app-card-18',
-   imports: [PageTranslationPipe, SafeHtmlPipe, MatIconModule, MatButtonModule, TagUnclickableComponent, TranslatePipe],
+   imports: [PageTranslationPipe, SafeHtmlPipe, MatIconModule, MatButtonModule, TagUnclickableComponent, TranslatePipe, ReplaceStringDarkPipe],
    templateUrl: './card-18.component.html',
    styleUrl: './card-18.component.scss'
 })

@@ -6,6 +6,7 @@ import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { ButtonComponent } from "../button/button.component";
 import { UtilsService } from '../../../service/utils.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
 
 @Component({
    selector: 'app-template-message',
@@ -13,7 +14,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
       PageTranslationPipe,
       SafeHtmlPipe,
       ButtonComponent,
-      TranslatePipe
+      TranslatePipe,
+      ReplaceStringDarkPipe
    ],
    templateUrl: './template-message.component.html',
    styleUrl: './template-message.component.scss'

@@ -13,10 +13,12 @@ import { ModalFullComponent } from '../modal-full/modal-full.component';
 import { TileCallComponent } from "../tile-call/tile-call.component";
 import { TileMailComponent } from "../tile-mail/tile-mail.component";
 import { TileMessageComponent } from "../tile-message/tile-message.component";
+import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
 
 @Component({
    selector: 'app-card-15',
-   imports: [PageTranslationPipe, SafeHtmlPipe, EnrichedLinkComponent, TileCallComponent, TileMessageComponent, ButtonComponent, TileMailComponent, TranslatePipe],
+   imports: [PageTranslationPipe, SafeHtmlPipe, EnrichedLinkComponent, TileCallComponent, 
+      TileMessageComponent, ButtonComponent, TileMailComponent, TranslatePipe, ReplaceStringDarkPipe],
    templateUrl: './card-15.component.html',
    styleUrl: './card-15.component.scss'
 })

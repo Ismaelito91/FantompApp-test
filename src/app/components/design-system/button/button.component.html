@@ -14,7 +14,7 @@
     ' scaleY(' + (iconBeforeLabel()?.scaleY || 1) + ')'
   "></mat-icon>
       }
-      <span [innerHTML]="label()"></span>
+      <span [innerHTML]="label() | safeHtml"></span>
       @if (iconAfterLabel()) {
       <mat-icon [svgIcon]="iconAfterLabel()!.name" [style.transform]="
     'rotate(' + (iconAfterLabel()?.rotate || 0) + 'deg)' +

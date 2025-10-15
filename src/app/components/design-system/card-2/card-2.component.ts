@@ -5,10 +5,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 import { TranslatePipe } from '@ngx-translate/core';
+import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
 
 @Component({
    selector: 'app-card-2',
-   imports: [MatIconModule, SafeHtmlPipe, PageTranslationPipe, TranslatePipe],
+   imports: [MatIconModule, SafeHtmlPipe, PageTranslationPipe, TranslatePipe, ReplaceStringDarkPipe],
    templateUrl: './card-2.component.html',
    styleUrl: './card-2.component.scss'
 })

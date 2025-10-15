@@ -6,10 +6,11 @@ import { StripHtmlPipe } from "../../../pipes/strip-html.pipe";
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 import { TranslatePipe } from '@ngx-translate/core';
+import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
 
 @Component({
    selector: 'app-tile-call',
-   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe, PageTranslationPipe, TranslatePipe],
+   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe, PageTranslationPipe, TranslatePipe, ReplaceStringDarkPipe],
    templateUrl: './tile-call.component.html',
    styleUrl: './tile-call.component.scss'
 })

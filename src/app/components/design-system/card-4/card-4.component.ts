@@ -3,10 +3,11 @@ import PageComponentModel from '../../../model/page-component.model';
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 import { TranslatePipe } from '@ngx-translate/core';
+import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
 
 @Component({
   selector: 'app-card-4',
-  imports: [SafeHtmlPipe, PageTranslationPipe, TranslatePipe],
+  imports: [SafeHtmlPipe, PageTranslationPipe, TranslatePipe, ReplaceStringDarkPipe],
   templateUrl: './card-4.component.html',
   styleUrl: './card-4.component.scss'
 })

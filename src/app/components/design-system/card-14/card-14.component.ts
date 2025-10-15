@@ -6,10 +6,11 @@ import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 import { Card15Component } from "../card-15/card-15.component";
 import { ComponentType } from '../../../model/enum/component-type.enum';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
 
 @Component({
   selector: 'app-card-14',
-  imports: [PageTranslationPipe, SafeHtmlPipe, Card15Component, TranslatePipe],
+  imports: [PageTranslationPipe, SafeHtmlPipe, Card15Component, TranslatePipe, ReplaceStringDarkPipe],
   templateUrl: './card-14.component.html',
   styleUrl: './card-14.component.scss'
 })

@@ -1,5 +1,7 @@
 <div class="secure-myself-container">
-   <h1 class="secure-myself-title" [innerHTML]="(page() | pageTranslation)?.firstTitle | safeHtml"></h1>
+   @if ((page() | pageTranslation)?.firstTitle) {
+      <h1 class="secure-myself-title" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></h1>
+   }
    <div class="flex flex-col secure-myself-children">
       @for (child of sortedChildren; track $index) {
          @switch (child.type) {

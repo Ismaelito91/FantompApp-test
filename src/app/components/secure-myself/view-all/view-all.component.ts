@@ -13,10 +13,11 @@ import { ButtonBackComponent } from "../../design-system/button-back/button-back
 import { Card9Component } from "../../design-system/card-9/card-9.component";
 import { ButtonComponent } from '../../design-system/button/button.component';
 import { TranslatePipe } from '@ngx-translate/core';
+import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 
 @Component({
    selector: 'app-view-all',
-   imports: [MatIconModule, MatButtonModule, Card9Component, ButtonBackComponent, PageTranslationPipe],
+   imports: [MatIconModule, MatButtonModule, Card9Component, ButtonBackComponent, PageTranslationPipe, TranslatePipe, SafeHtmlPipe],
    templateUrl: './view-all.component.html',
    styleUrl: './view-all.component.scss'
 })

@@ -6,7 +6,9 @@
          <img [src]="(page() | pageTranslation)?.image" alt="image" class="!size-[112px] object-contain"/>
       </div>
    </div>
-   <h2 style="margin: 18px 25px;" [innerHTML]="(page() | pageTranslation)?.firstTitle"></h2>
+   @if ((page() | pageTranslation)?.firstTitle) {
+      <h2 style="margin: 18px 25px;" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></h2>
+   }
    @for (child of sortedChildren; track $index) {
       <app-card-9 [data]="child"></app-card-9>
    }

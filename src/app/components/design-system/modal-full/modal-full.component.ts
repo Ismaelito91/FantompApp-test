@@ -14,11 +14,13 @@ import { ComponentType } from "../../../model/enum/component-type.enum";
 import { Card20Component } from "../card-20/card-20.component";
 import { TemplateMessageComponent } from "../template-message/template-message.component";
 import { TileMailComponent } from "../tile-mail/tile-mail.component";
+import { ReplaceStringDarkPipe } from "../../../pipes/replace-string-dark.pipe";
 
 @Component({
    selector: 'app-modal-full',
    templateUrl: 'modal-full.component.html',
-   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TranslatePipe, PageTranslationPipe, SafeHtmlPipe, EnrichedLinkComponent, Card20Component, TemplateMessageComponent, TileMailComponent],
+   imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TranslatePipe, PageTranslationPipe, 
+      SafeHtmlPipe, EnrichedLinkComponent, Card20Component, TemplateMessageComponent, TileMailComponent, ReplaceStringDarkPipe],
    changeDetection: ChangeDetectionStrategy.OnPush,
    styleUrl: './modal-full.component.scss',
    animations: [

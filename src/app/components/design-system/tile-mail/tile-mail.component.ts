@@ -6,10 +6,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { ButtonComponent } from "../button/button.component";
 import { TranslatePipe } from '@ngx-translate/core';
 import { UtilsService } from '../../../service/utils.service';
+import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
 
 @Component({
    selector: 'app-tile-mail',
-   imports: [PageTranslationPipe, SafeHtmlPipe, MatIconModule, ButtonComponent, TranslatePipe],
+   imports: [PageTranslationPipe, SafeHtmlPipe, MatIconModule, ButtonComponent, TranslatePipe, ReplaceStringDarkPipe],
    templateUrl: './tile-mail.component.html',
    styleUrl: './tile-mail.component.scss'
 })

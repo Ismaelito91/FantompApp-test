@@ -1,10 +1,10 @@
 <div class="template-main flex flex-col">
       @if ((data() | pageTranslation)?.firstTitle){
-         <h6 class="template-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | safeHtml" ></h6>
+         <h6 class="template-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml" ></h6>
       }
       <div class="template-container flex flex-col">
          @if ((data() | pageTranslation)?.description){
-            <span class="template-content ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | safeHtml "></span>
+            <span class="template-content ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml "></span>
          }
          <app-button variant="primary" size="lg" [label]="'DESIGN_SYSTEM.TEMPLATE_MESSAGE.BUTTON' | translate" [iconAfterLabel]="{name: 'icon-copy16x16'}" (click)="copy()"></app-button>
       </div>

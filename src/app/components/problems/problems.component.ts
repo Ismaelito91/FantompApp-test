@@ -20,12 +20,16 @@ import { Card6Component } from "../design-system/card-6/card-6.component";
 import { DividerComponent } from '../design-system/divider/divider.component';
 import { ButtonBackComponent } from "../design-system/button-back/button-back.component";
 import { Card14Component } from "../design-system/card-14/card-14.component";
+import { TranslatePipe } from '@ngx-translate/core';
+import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 
 @Component({
    selector: 'app-problems',
    standalone: true,
    imports: [Card1Component, RouterLink, MatButtonModule, MatIconModule, Card2Component, Card3Component,
-    Card4Component, Card5Component, Card6Component, DividerComponent, PageTranslationPipe, ButtonBackComponent, Card14Component],
+      Card4Component, Card5Component, Card6Component, DividerComponent, PageTranslationPipe, ButtonBackComponent, Card14Component,
+      TranslatePipe, SafeHtmlPipe
+   ],
    templateUrl: './problems.component.html',
    styleUrl: './problems.component.scss'
 })
