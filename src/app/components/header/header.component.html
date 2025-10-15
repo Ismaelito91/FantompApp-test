@@ -2,7 +2,7 @@
    @if(isVisible()) {
       <div class="header-right">
          <button #deviceMenuTrigger="matMenuTrigger" class="lang-trigger" mat-button [mat-menu-trigger-for]="deviceMenu">
-            <mat-icon>📱</mat-icon>
+            <mat-icon class="!size-[24px] !m-0">📱</mat-icon>
             @if (!deviceMenuTrigger.menuOpen) {
                <mat-icon class="chevron" iconPositionEnd>expand_more</mat-icon>
             } @else {
@@ -41,9 +41,9 @@
    <div class="header-right">
       <button #languageMenuTrigger="matMenuTrigger" class="lang-trigger" mat-button [mat-menu-trigger-for]="languageMenu">
          @if (currentFlagUrl) {
-            <img class="flag-img" [src]="currentFlagUrl" alt="flag"/>
+            <img class="flag-img !size-[24px] !m-0" [src]="currentFlagUrl" alt="flag"/>
          } @else {
-            <img class="flag-img" src="assets/flags/xx.png" alt="flag"/>
+            <mat-icon class="!size-[24px] !m-0">🌐</mat-icon>
          }
          @if (!languageMenuTrigger.menuOpen) {
             <mat-icon class="chevron" iconPositionEnd>expand_more</mat-icon>
@@ -60,6 +60,8 @@
                <div class="lang-item">
                   @if (lang.flagUrl) {
                      <img class="flag-img" [src]="lang.flagUrl" alt="flag"/>
+                  } @else {
+                     <mat-icon class="!text-[20px] !mr-[6px] ml-[-2px]">🌐</mat-icon>
                   }
                   <span class="language">{{ lang.languageName }}</span>
                   <span class="country">&nbsp;⸱&nbsp;{{ lang.countryName }}</span>
