@@ -23,7 +23,11 @@ swiper-container::part(pagination) {
    margin: auto;
 }
 swiper-container::part(bullet) {
-   background-color:var(--color-primary-400);
+   width: 8px;
+   height: 8px;
+   background-color: transparent;
+   border: var(--border) var(--color-neutral-light-content-2);
+   opacity: 1;
 }
 swiper-container::part(bullet-active) {
    width: 12px;
