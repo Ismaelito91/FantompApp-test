@@ -19,8 +19,8 @@ swiper-container::part(pagination) {
 }
 
 swiper-container::part(bullet) {
-   width: 8px;
-   height: 8px;
+   width: 6px;
+   height: 6px;
    background-color: transparent;
    border: var(--border) var(--color-neutral-light-content-2);
    opacity: 1;
