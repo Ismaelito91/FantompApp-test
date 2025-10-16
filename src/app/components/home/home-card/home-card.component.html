@@ -62,10 +62,10 @@
          </div>
          <div class="flex items-center gap-(--spacing-1)">
             <div class="home-card-anonym__text-content">
-               <h3
+               <h6
                   class="social-card-title"
                   [innerHTML]="'HOME.CARDS.BLUR_IMAGE.TITLE' | translate"
-               ></h3>
+               ></h6>
                <p
                   class="social-card-description"
                   [innerHTML]="'HOME.CARDS.BLUR_IMAGE.DESCRIPTION' | translate"
@@ -125,12 +125,12 @@
 
    <!-- Section des cartes de problèmes -->
 
-   <div class="home-cards-problems-container">
+   <div class="home-cards-problems-container mt-(--spacing-3) gap-(--spacing-3)">
       <h5 class="home-cards__section-title">
          {{ "HOME.CARDS.PROBLEMS.SECTION_TITLE" | translate }}
       </h5>
 
-      <div class="problems-cards-row">
+      <div class="problems-cards-row flex gap-[14px]">
          <div
             id="delete-content-tool"
             class="home-card-problem delete-content-card"

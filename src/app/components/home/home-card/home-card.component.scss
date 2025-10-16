@@ -1,16 +1,12 @@
 .home-cards-container {
    display: flex;
    flex-direction: column;
-   gap: calc(0.5rem + 0.5vw);
+   gap: var(--spacing-3);
    width: 100%;
 }
 
 .home-cards__main-title {
-   line-height: var(--line-height-h5);
-   color: var(--color-1);
-   align-self: flex-start;
    margin-top: var(--spacing-2);
-   font-size: var(--font-size-h5);
 }
 
 /* Style spécifique pour le titre des problèmes */
@@ -18,21 +14,9 @@
    color: var(--color-15);
 }
 
-.home-cards__section-title {
-   line-height: var(--line-height-h5);
-   color: var(--color-15);
-   margin: 0;
-   padding: 0;
-   align-self: flex-start;
-   margin-top: calc(1rem + 0.5vw);
-   margin-bottom: calc(0.5rem + 0.2vw);
-   font-size: var(--font-size-h5);
-}
-
 //  Carte mot de passe (tools-item)
-
 .tools-item {
-   padding: calc(18px + 0.5vw) calc(4px + 0.2vw);
+   padding: 28px 6px;
    border: calc(4px + 0.1vw) solid var(--background-4);
    border-radius: var(--border-radius-4);
    box-shadow: var(--shadow-1);
@@ -77,9 +61,6 @@
 
 .social-card-title {
    color: var(--color-neutral-light-background-1);
-   font-size: var(--font-size-h6);
-   font-weight: 600;
-   margin: 0;
 }
 
 .social-card-description {
@@ -185,13 +166,6 @@
 .home-cards-problems-container {
    display: flex;
    flex-direction: column;
-   width: 100%;
-}
-
-.problems-cards-row {
-   display: flex;
-   flex-direction: row;
-   gap: calc(10px + 0.5vw);
    width: 100%;
 }
 

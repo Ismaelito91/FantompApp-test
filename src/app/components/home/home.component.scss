@@ -7,7 +7,7 @@
    align-items: center;
    gap: var(--spacing-5);
    padding: var(--spacing-3);
-   padding-bottom: 100px;
+   padding-bottom: 120px;
 
    &::before {
       content: "";
@@ -26,17 +26,6 @@
 
 .home-greeting {
    margin-top: 38px;
-}
-
-#app-info-title {
-   font-weight: var(--font-weight-heading);
-   letter-spacing: var(--letter-spacing-heading);
-   margin-bottom: calc(6px + 0.5vw);
-   font-size: var(--font-size-h5);
-}
-
-.app-info {
-   width: 100%;
 }
 
 #app-info-parent {

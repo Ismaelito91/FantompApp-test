@@ -1,11 +1,11 @@
 <main id="home-container" role="main" aria-labelledby="app-info-title">
    <div class="home-greeting">
-      <h1>{{ "HOME.GREETING" | translate }}</h1>
+      <h1 class="!text-(--color-1)">{{ "HOME.GREETING" | translate }}</h1>
    </div>
 
    <!-- Composant home-card -->
    <app-home-card></app-home-card>
-   <div class="app-info">
+   <div class="app-info w-full flex flex-col gap-(--spacing-3)">
       <h5 id="app-info-title">{{ "HOME.APP_INFO_TITLE" | translate }}</h5>
       <div id="app-info-parent">
          <nav
