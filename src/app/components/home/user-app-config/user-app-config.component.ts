@@ -1,11 +1,11 @@
 import { Component, inject, OnInit } from "@angular/core";
-import { ThemeService, ThemeType } from "../../../service/theme.service";
-import { MatRadioModule } from "@angular/material/radio";
-import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
-import { RouterLink } from "@angular/router";
+import { MatIconModule } from "@angular/material/icon";
+import { MatRadioModule } from "@angular/material/radio";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { firstValueFrom } from "rxjs";
+import { ThemeService, ThemeType } from "../../../service/theme.service";
+import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 
 @Component({
    selector: "app-user-app-config",
@@ -16,14 +16,14 @@ import { firstValueFrom } from "rxjs";
       MatRadioModule,
       MatIconModule,
       MatButtonModule,
-      RouterLink,
       TranslateModule,
+      ButtonBackComponent
    ],
 })
 export class UserAppConfigComponent implements OnInit {
    private translateService = inject(TranslateService);
 
-   constructor(public themeService: ThemeService) {}
+   constructor(public themeService: ThemeService) { }
 
    async ngOnInit() {
       try {

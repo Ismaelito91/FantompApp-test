@@ -20,17 +20,6 @@
       flex-direction: column;
    }
 
-   .back-btn {
-      margin-bottom: var(--spacing-4);
-      width: fit-content;
-
-      mat-icon {
-         width: 24px;
-         height: 24px;
-         font-size: 24px;
-      }
-   }
-
    #config-description {
       font-family: var(--body-font-family);
       font-size: var(--font-size-body-md);
