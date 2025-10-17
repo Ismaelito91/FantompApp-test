@@ -242,6 +242,7 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
     * Ferme l'onboarding sans le marquer comme terminé
     */
    closeOnboarding(): void {
+      this.onboardingService.completeOnboarding();
       this.onboardingService.hideOnboarding();
       this.router.navigate(["/home"]);
    }
