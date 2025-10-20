@@ -288,6 +288,7 @@
       #ffffff 0%,
       rgba(255, 255, 255, 0) 100%
    );
+   --background-32: var(--color-neutral-light-content-3);
 
    --color-1: var(--color-neutral-light-content-2);
    --color-2: var(--color-primary-950);
@@ -643,6 +644,7 @@
       #140d26 0%,
       rgba(20, 13, 38, 0) 100%
    );
+   --background-32: var(--color-neutral-light-background-3);
 
    --color-1: var(--color-neutral-light-background-2);
    --color-2: var(--color-neutral-light-background-2);
