@@ -18,7 +18,7 @@ swiper-container::part(pagination) {
    width: fit-content !important;
    height: 24px !important;
    border-radius: var(--border-radius-6);
-   position:relative;
+   position: relative;
    bottom: 32px !important;
    margin: auto;
 }
@@ -32,7 +32,7 @@ swiper-container::part(bullet) {
 swiper-container::part(bullet-active) {
    width: 12px;
    height: 12px;
-   background-color:var(--color-neutral-light-content-2);
+   background-color: var(--color-neutral-light-content-2);
 }
 
 .view-header {
@@ -45,9 +45,12 @@ swiper-container::part(bullet-active) {
 }
 
 .view-header-title {
-   color: var(--color-9);
+   font-weight: bold;
+   .p {
+      color: var(--color-34);
+   }
 }
 
 .view-header-description {
-   color: var(--color-neutral-light-content-5);
+   color: var(--color-36);
 }
