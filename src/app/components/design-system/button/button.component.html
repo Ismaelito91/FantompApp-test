@@ -5,7 +5,7 @@
    'primary': variant() === 'primary',
    'secondary': variant() === 'secondary',
    'tertiary': variant() === 'tertiary',
-}">
+}" (click)="handleClick()">
    <div class="flex items-center gap-(--spacing-1)">
       @if (iconBeforeLabel()) {
       <mat-icon [svgIcon]="iconBeforeLabel()!.name" [style.transform]="

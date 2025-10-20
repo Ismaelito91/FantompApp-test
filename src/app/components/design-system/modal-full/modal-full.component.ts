@@ -18,6 +18,7 @@ import { ReplaceStringDarkPipe } from "../../../pipes/replace-string-dark.pipe";
 
 @Component({
    selector: 'app-modal-full',
+   standalone: true,
    templateUrl: 'modal-full.component.html',
    imports: [MatButtonModule, ButtonCloseComponent, DividerComponent, TranslatePipe, PageTranslationPipe, 
       SafeHtmlPipe, EnrichedLinkComponent, Card20Component, TemplateMessageComponent, TileMailComponent, ReplaceStringDarkPipe],
