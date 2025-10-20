@@ -43,6 +43,7 @@
 
    .chevron {
       font-size: 18px;
+      color: var(--background-32);
    }
 }
 
@@ -96,7 +97,11 @@
       margin-left: auto;
 
       &.selected {
-         background: radial-gradient(circle at center, var(--color-8) 50%, transparent 50%);
+         background: radial-gradient(
+            circle at center,
+            var(--color-8) 50%,
+            transparent 50%
+         );
       }
    }
 }
