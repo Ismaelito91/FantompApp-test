@@ -1,5 +1,10 @@
 import { Component, OnInit, inject } from "@angular/core";
-import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from "@angular/router";
+import {
+   ActivatedRoute,
+   NavigationEnd,
+   Router,
+   RouterOutlet,
+} from "@angular/router";
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
@@ -58,7 +63,7 @@ export class AppComponent implements OnInit {
       // On écoute les changements de route pour activer/masquer le header/footer
       this.router.events
          .pipe(
-            filter(event => event instanceof NavigationEnd),
+            filter((event) => event instanceof NavigationEnd),
             map(() => {
                let route = this.activatedRoute.firstChild;
                while (route?.firstChild) {
@@ -66,12 +71,12 @@ export class AppComponent implements OnInit {
                }
                return route;
             }),
-            filter(route => !!route),
-            map(route => route!.snapshot.data)
+            filter((route) => !!route),
+            map((route) => route!.snapshot.data)
          )
-         .subscribe(data => {
-            this.hideFooter = data['hideFooter'] ?? false;
-            this.hideHeader = data['hideHeader'] ?? false;
+         .subscribe((data) => {
+            this.hideFooter = data["hideFooter"] ?? false;
+            this.hideHeader = data["hideHeader"] ?? false;
          });
 
       // Définir les langues disponibles
@@ -157,11 +162,11 @@ export class AppComponent implements OnInit {
          // Icônes Outils pour le mode sombre
          {
             name: "tools-dark-inactive",
-            path: "assets/images/dark/icon-tools.svg",
+            path: "assets/images/toolbar/dark/icon-tools-dark.svg",
          },
          {
             name: "tools-dark-active",
-            path: "assets/images/dark/icon-tools-page.svg",
+            path: "assets/images/toolbar/dark/actif/icon-tools-dark-actif.svg",
          },
       ];
 
@@ -173,6 +178,10 @@ export class AppComponent implements OnInit {
          {
             name: "chevron24x24-icon",
             path: "assets/images/chevron24x24-icon.svg",
+         },
+         {
+            name: "icone-tools",
+            path: "assets/images/icone-tools.svg",
          },
          {
             name: "close24x24-icon",
@@ -193,7 +202,7 @@ export class AppComponent implements OnInit {
          {
             name: "icon-copy16x16",
             path: "assets/images/icon-copy16x16.svg",
-         },         
+         },
          {
             name: "icon-definition24x24",
             path: "assets/images/icon-definition24x24.svg",
@@ -229,11 +238,11 @@ export class AppComponent implements OnInit {
          // Icônes Outils pour le mode clair
          {
             name: "tools-clear-inactive",
-            path: "assets/images/clear/icon-tools-clear.svg",
+            path: "assets/images/toolbar/clear/icon-tools-clear.svg",
          },
          {
             name: "tools-clear-active",
-            path: "assets/images/clear/icon-tools-page-clear.svg",
+            path: "assets/images/toolbar/clear/actif/icon-tools-clear-actif.svg",
          },
       ];
 
