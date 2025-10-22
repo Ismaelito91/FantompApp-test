@@ -8,8 +8,14 @@
          class="nav-button home-button"
       >
          <div class="icon-container">
-            <mat-icon svgIcon="home-icon" class="icon-inactive"></mat-icon>
-            <mat-icon svgIcon="home-icon-filled" class="icon-active"></mat-icon>
+            <mat-icon
+               [svgIcon]="homeIconInactive"
+               class="icon-inactive icon-dynamic"
+            ></mat-icon>
+            <mat-icon
+               [svgIcon]="homeIconActive"
+               class="icon-active icon-dynamic"
+            ></mat-icon>
          </div>
          <span>{{ "COMMON.HOME" | translate }}</span>
       </button>
@@ -23,10 +29,13 @@
          [class.force-active]="isProblemIconActive"
       >
          <div class="icon-container">
-            <mat-icon svgIcon="problem-icon" class="icon-inactive"></mat-icon>
             <mat-icon
-               svgIcon="problem-icon-filled"
-               class="icon-active"
+               [svgIcon]="problemIconInactive"
+               class="icon-inactive icon-dynamic"
+            ></mat-icon>
+            <mat-icon
+               [svgIcon]="problemIconActive"
+               class="icon-active icon-dynamic"
             ></mat-icon>
          </div>
          <span>{{ "COMMON.PROBLEM" | translate }}</span>
@@ -42,12 +51,14 @@
       >
          <div class="icon-container">
             <mat-icon
-               [svgIcon]="toolsInactiveIcon"
-               class="icon-inactive"
+               [svgIcon]="toolsIconInactive"
+               class="icon-inactive icon-dynamic"
+               [attr.data-icon]="toolsIconInactive"
             ></mat-icon>
             <mat-icon
-               [svgIcon]="toolsActiveIcon"
-               class="icon-active"
+               [svgIcon]="toolsIconActive"
+               class="icon-active icon-dynamic"
+               [attr.data-icon]="toolsIconActive"
             ></mat-icon>
          </div>
          <span>{{ "COMMON.TOOLS" | translate }}</span>
@@ -62,10 +73,13 @@
          [class.force-active]="isSecureMyselfIconActive"
       >
          <div class="icon-container">
-            <mat-icon svgIcon="securiser-icon" class="icon-inactive"></mat-icon>
             <mat-icon
-               svgIcon="securiser-icon-filled"
-               class="icon-active"
+               [svgIcon]="secureIconInactive"
+               class="icon-inactive icon-dynamic"
+            ></mat-icon>
+            <mat-icon
+               [svgIcon]="secureIconActive"
+               class="icon-active icon-dynamic"
             ></mat-icon>
          </div>
          <span>{{ "COMMON.SECURE" | translate }}</span>
