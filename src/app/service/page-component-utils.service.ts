@@ -28,6 +28,10 @@ export class PageComponentUtilsService {
             if (value.type === ComponentType.PAGE_3) {
                return value;
             }
+         } else if (3 === sectionId) {
+            if (value.type === ComponentType.PAGE_RESOURCES) {
+               return value;
+            }
          }
       }
       return null;

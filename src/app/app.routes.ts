@@ -26,6 +26,7 @@ import { RecommendationsComponent } from "./components/problems/hacking/no-acces
 import { ActionsComponent } from "./components/problems/hacking/actions/actions.component";
 import { HaveAccessComponent } from "./components/problems/hacking/have-access/have-access.component";
 import { UserRightsComponent } from "./components/home/user-rights/user-rights.component";
+import { ResourcesComponent } from "./components/home/resources/resources.component";
 
 export const routes: Routes = [
    {
@@ -44,6 +45,18 @@ export const routes: Routes = [
       path: "app-info",
       component: AppInfoComponent,
       data: { hideHeader: true },
+   },
+   {
+      path: "resources",
+      component: ResourcesComponent,
+      data: { hideHeader: true, hideFooter: true },
+      children: [
+         {
+            path: ":id",
+            component: ResourcesComponent,
+            data: { hideHeader: true, hideFooter: true },
+         },
+      ],
    },
    {
       path: "user-rights",

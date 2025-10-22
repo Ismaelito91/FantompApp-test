@@ -98,8 +98,7 @@ export class HomeComponent {
    }
 
    navigateToResources(): void {
-      // TODO: Implémenter la navigation vers les ressources
-      // this.router.navigate(['/resources']);
+      this.router.navigate(['/resources']);
    }
 
    navigateToWhatIsApp(): void {
