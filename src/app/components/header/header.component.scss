@@ -62,6 +62,16 @@
    box-shadow: var(--shadow-1);
 }
 
+/* Force flag images inside the language menu panel to 16x16. Use ::ng-deep
+   to reach elements rendered in the overlay and add !important to beat
+   other global rules. */
+::ng-deep .lang-menu-panel .flag-img,
+::ng-deep .mat-mdc-menu-panel.lang-menu .lang-item .flag-img,
+::ng-deep .cdk-overlay-container .lang-menu-panel .flag-img {
+   width: 16px !important;
+   height: 16px !important;
+}
+
 .lang-item {
    display: flex;
    align-items: center;
