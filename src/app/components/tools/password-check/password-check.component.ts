@@ -456,7 +456,8 @@ export class PasswordCheckComponent
    constructor(
       private router: Router,
       private location: Location,
-      private translateService: TranslateService
+      private translateService: TranslateService,
+      private hostEl: ElementRef
    ) {
       // Vérifie si c'est la première fois que l'utilisateur utilise l'app
       const hasSeenOnboarding = localStorage.getItem(
@@ -471,6 +472,11 @@ export class PasswordCheckComponent
          this.showInfoModal = true;
          localStorage.setItem("password-check-onboarding-seen", "true");
          this.hasSeenOnboarding = true;
+      }
+
+      this.containsCommonWords = false;
+      if (this.criteria && this.criteria.length >= 6) {
+         this.criteria[5].valid = true;
       }
    }
 
@@ -553,25 +559,11 @@ export class PasswordCheckComponent
       this.showPassword = !this.showPassword;
    }
 
-   toggleCommonWords(event?: Event) {
-      // Empêcher la propagation de l'événement pour éviter de perdre le focus
-      if (event) {
-         event.preventDefault();
-         event.stopPropagation();
-      }
-
-      this.containsCommonWords = !this.containsCommonWords;
-      // Mettre à jour le critère "Pas d'indice facile" en temps réel
+   // Méthode pour s'assurer que le critère est toujours à jour
+   updateCommonWordsCriteria() {
       if (this.criteria && this.criteria.length >= 6) {
          this.criteria[5].valid = !this.containsCommonWords;
       }
-
-      // S'assurer que le focus reste sur l'input après avoir cliqué sur le checkbox
-      setTimeout(() => {
-         if (this.passwordInput) {
-            this.passwordInput.nativeElement.focus();
-         }
-      }, 0);
    }
 
    async copyPassword() {
@@ -664,16 +656,10 @@ export class PasswordCheckComponent
          return;
       }
 
-      // Comportement normal quand pas de résultats affichés
       this.isInputFocused = true;
    }
 
-   onInputBlur() {
-      if (this.password.length === 0) {
-         this.isInputFocused = false;
-         this.showPasswordResults = false;
-      }
-   }
+   onInputBlur() {}
 
    cancelInputFocus() {
       // Si il y a du contenu dans l'input, le supprimer d'abord
@@ -696,6 +682,12 @@ export class PasswordCheckComponent
       // Si pas de contenu, désactiver le focus comme avant
       this.isInputFocused = false;
       this.showPasswordResults = false;
+
+      // Réinitialiser la checkbox des mots courants
+      this.containsCommonWords = false;
+      if (this.criteria && this.criteria.length >= 6) {
+         this.criteria[5].valid = true;
+      }
    }
 
    resetResults() {
@@ -711,7 +703,11 @@ export class PasswordCheckComponent
       this.shouldSplit = false;
       this.displayedNumberPart = "";
       this.displayedUnitPart = "";
-      this.isInputFocused = false; // Remet l'input en état non-focus
+      this.isInputFocused = false;
+      this.containsCommonWords = false;
+      if (this.criteria && this.criteria.length >= 6) {
+         this.criteria[5].valid = true;
+      }
       if (this.typewriterInterval) {
          clearInterval(this.typewriterInterval);
       }
@@ -813,8 +809,8 @@ export class PasswordCheckComponent
          return;
       }
 
-      // Si il y a du texte dans l'input, tester le mot de passe (peu importe le focus)
-      if (this.password.length > 0) {
+      // Si il y a du texte dans l'input OU si la checkbox est cochée, tester le mot de passe
+      if (this.password.length > 0 || this.containsCommonWords) {
          this.checkPassword();
          return;
       }
@@ -840,8 +836,25 @@ export class PasswordCheckComponent
       this.criteria[2].valid = /[a-z]/.test(this.password);
       this.criteria[3].valid = /[0-9]/.test(this.password);
       this.criteria[4].valid = /[^A-Za-z0-9]/.test(this.password);
-      // Nouveau critère : valide si le checkbox n'est PAS coché
-      this.criteria[5].valid = !this.containsCommonWords;
+      // S'assurer que le critère "mots courants" est à jour
+      this.updateCommonWordsCriteria();
+
+      // Gérer le cas où l'input est vide mais la checkbox est cochée
+      if (this.password.length === 0 && this.containsCommonWords) {
+         // Forcer le résultat le plus faible (instantané) pour un mot de passe vide avec mots courants
+         this.message = this.translateService.instant(
+            "TOOLS.PASSWORD_CHECK.TIME_UNITS.INSTANT"
+         );
+         this.passwordResultLevel = "immediate";
+         this.isRapidCracking = true;
+
+         // Démarrer l'effet typewriter pour "Instantané"
+         setTimeout(() => {
+            this.startTypewriterEffect(this.message);
+         }, 300);
+
+         return;
+      }
 
       if (this.password.length > 0) {
          // PRIORITÉ ABSOLUE : Si le checkbox "mots courants" est coché, forcer le résultat à "instantané"
