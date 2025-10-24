@@ -1,9 +1,10 @@
 .page-1 {
    padding-bottom: 166px;
+   background: var(--background-33);
 
    .problems-title-container {
       position: relative;
-      background-image: url('../../../assets/images/problems-bg-1.png');
+      background-image: url("../../../assets/images/problems-bg-1.png");
       background-size: cover;
       height: 210px;
    }
@@ -19,7 +20,6 @@
       gap: var(--spacing-5);
       padding: 0 var(--spacing-3);
    }
-
 }
 
 .page-2 {
@@ -40,5 +40,4 @@
       gap: var(--spacing-5);
       padding: 0 var(--spacing-3);
    }
-
 }
