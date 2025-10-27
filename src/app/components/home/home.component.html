@@ -1,6 +1,9 @@
 <main id="home-container" role="main" aria-labelledby="app-info-title">
    <div class="home-greeting">
-      <h1 class="!text-(--color-1)">{{ "HOME.GREETING" | translate }}</h1>
+      <h1
+         class="!text-(--color-1)"
+         [innerHTML]="'HOME.GREETING' | translate"
+      ></h1>
    </div>
 
    <!-- Composant home-card -->

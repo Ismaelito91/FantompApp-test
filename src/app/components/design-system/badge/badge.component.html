@@ -1,4 +1,6 @@
-<div class="badge rounded-(--border-radius-3) shadow-(--shadow-1) font-bold text-(length:--font-size-body-lg)" [class]="{
+<div
+   class="badge rounded-(--border-radius-3) shadow-(--shadow-1) font-bold text-(length:--font-size-body-lg)"
+   [class]="{
       'bg-(--color-blue-200)': variant() === 'info',
       'text-(--color-blue-600)': variant() === 'info',
       'bg-(--color-green-200)': variant() === 'success',
@@ -9,6 +11,7 @@
       'text-(--color-red-500)': variant() === 'danger-light',
       'badge-sm': size() === 'sm',
       'badge-md': size() === 'md',
-   }">
-   {{ title() }}
+   }"
+>
+   <span [innerHTML]="title()"></span>
 </div>

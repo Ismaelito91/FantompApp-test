@@ -27,7 +27,7 @@
             <div class="section-item flex flex-col color-(--color-8)">
                @if (section.title) {
                <div class="font-[600] text-(--color-8)">
-                  {{ section.title | translate }}
+                  <span [innerHTML]="section.title | translate"></span>
                </div>
                }
                <div class="answers flex flex-col">
@@ -67,7 +67,9 @@
          </div>
       </div>
    </form>
-   <div class="controls fixed max-w-(--max-width-viewport) bottom-0 w-full flex">
+   <div
+      class="controls fixed max-w-(--max-width-viewport) bottom-0 w-full flex"
+   >
       @if(currentStep > 1) {
       <app-button
          [label]="'COMMON.PREVIOUS' | translate"
