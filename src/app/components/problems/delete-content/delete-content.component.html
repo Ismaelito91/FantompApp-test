@@ -18,7 +18,9 @@
             [class.max-h-40]="currentStep === 1"
             [class.opacity-100]="currentStep === 1"
          >
-            {{ "PROBLEMS.DELETE_CONTENT.DESCRIPTION" | translate }}
+            <span
+               [innerHTML]="'PROBLEMS.DELETE_CONTENT.DESCRIPTION' | translate"
+            ></span>
          </p>
       </div>
    </div>
@@ -72,7 +74,9 @@
          </div>
       </div>
    </form>
-   <div class="controls fixed max-w-(--max-width-viewport) bottom-0 w-full flex">
+   <div
+      class="controls fixed max-w-(--max-width-viewport) bottom-0 w-full flex"
+   >
       @if(currentStep > 1) {
       <app-button
          [label]="'COMMON.PREVIOUS' | translate"

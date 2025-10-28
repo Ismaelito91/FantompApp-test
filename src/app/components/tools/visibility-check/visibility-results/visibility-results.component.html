@@ -1,63 +1,109 @@
-<div class="visibility-results-container flex flex-col gap-(--spacing-3) p-(--spacing-3)">
+<div
+   class="visibility-results-container flex flex-col gap-(--spacing-3) p-(--spacing-3)"
+>
    <div class="title flex justify-between items-center">
-      <h3 class="!p-(--spacing-3)">{{ "TOOLS.VISIBILITY_CHECK.RESULTS.TITLE" | translate}}</h3>
+      <h3 class="!p-(--spacing-3)">
+         {{ "TOOLS.VISIBILITY_CHECK.RESULTS.TITLE" | translate }}
+      </h3>
       <app-button-close link="/tools"></app-button-close>
    </div>
    @if (showSecondDiv) {
-   <div @smartSpring
-      class="flex flex-col gap-(--spacing-2) p-(--spacing-3) bg-(--background-4) rounded-(--border-radius-3)">
-      <h6 class="!text-(--color-19)">{{ summary.title | translate }}</h6>
+   <div
+      @smartSpring
+      class="flex flex-col gap-(--spacing-2) p-(--spacing-3) bg-(--background-4) rounded-(--border-radius-3)"
+   >
+      <h6 class="!text-(--color-19)">
+         <span [innerHTML]="summary.title | translate"></span>
+      </h6>
       <p class="text-(--color-10)">{{ summary.content | translate }}</p>
    </div>
    }
-   <div @flipDropFromTopOfPage (@flipDropFromTopOfPage.done)="onFirstAnimationDone()" [@bounceOnceDown]="bounceTrigger"
-      class="details flex flex-col gap-[13px] p-(--spacing-3) bg-(--color-blue-600)">
-
+   <div
+      @flipDropFromTopOfPage
+      (@flipDropFromTopOfPage.done)="onFirstAnimationDone()"
+      [@bounceOnceDown]="bounceTrigger"
+      class="details flex flex-col gap-[13px] p-(--spacing-3) bg-(--color-blue-600)"
+   >
       <!-- Pseudo -->
-      <div class="flex flex-col gap-(--spacing-2) relative bg-(--color-23)"
-         style="padding: 32px 24px 16px 24px; border-radius: 10px;">
-         <img src="assets/images/pseudo-illu.svg" alt="image"
-            class="!w-[88px] h-[49px] object-contain absolute top-[-10px] right-[-6px]" />
+      <div
+         class="flex flex-col gap-(--spacing-2) relative bg-(--color-23)"
+         style="padding: 32px 24px 16px 24px; border-radius: 10px"
+      >
+         <img
+            src="assets/images/pseudo-illu.svg"
+            alt="image"
+            class="!w-[88px] h-[49px] object-contain absolute top-[-10px] right-[-6px]"
+         />
          <div class="flex flex-col gap-(--spacing-1)">
-            <h5 class="!text-(--color-16) !font-[600]">{{ "TOOLS.VISIBILITY_CHECK.RESULTS.PSEUDO.TITLE" | translate}}
+            <h5 class="!text-(--color-16) !font-[600]">
+               {{ "TOOLS.VISIBILITY_CHECK.RESULTS.PSEUDO.TITLE" | translate }}
             </h5>
             <ul>
                @for (answer of results.pseudo.slice(0, 6); track $index) {
-               <li>{{ answer | translate }}
+               <li>
+                  <span [innerHTML]="answer | translate"></span>
                   @if ($index === 5 && results.pseudo.length > 6) {
-                  <span style="font-weight: 700; color: var(--color-11)">(...)</span>
+                  <span style="font-weight: 700; color: var(--color-11)"
+                     >(...)</span
+                  >
                   }
                </li>
                } @empty {
-               <li>{{ "TOOLS.VISIBILITY_CHECK.RESULTS.NO_PERSONAL_INFO" | translate }}</li>
+               <li>
+                  {{
+                     "TOOLS.VISIBILITY_CHECK.RESULTS.NO_PERSONAL_INFO"
+                        | translate
+                  }}
+               </li>
                }
             </ul>
          </div>
          <div class="flex justify-center items-center">
-            <app-badge [variant]="pseudoBadge.variant" [title]="pseudoBadge.title | translate"></app-badge>
+            <app-badge
+               [variant]="pseudoBadge.variant"
+               [title]="pseudoBadge.title | translate"
+            ></app-badge>
          </div>
       </div>
       <!-- Bio -->
-      <div class="flex flex-col gap-(--spacing-2) relative bg-(--color-23)"
-         style="padding: 32px 24px 16px 24px; border-radius: 10px;">
-         <img src="assets/images/bio-illu.svg" alt="image"
-            class="!w-[88px] h-[75px] object-contain absolute top-[-10px] right-[-17px]" />
+      <div
+         class="flex flex-col gap-(--spacing-2) relative bg-(--color-23)"
+         style="padding: 32px 24px 16px 24px; border-radius: 10px"
+      >
+         <img
+            src="assets/images/bio-illu.svg"
+            alt="image"
+            class="!w-[88px] h-[75px] object-contain absolute top-[-10px] right-[-17px]"
+         />
          <div class="flex flex-col gap-(--spacing-1)">
-            <h5 class="!text-(--color-16) !font-[600]">{{ "TOOLS.VISIBILITY_CHECK.RESULTS.BIO.TITLE" | translate }}</h5>
+            <h5 class="!text-(--color-16) !font-[600]">
+               {{ "TOOLS.VISIBILITY_CHECK.RESULTS.BIO.TITLE" | translate }}
+            </h5>
             <ul>
                @for (answer of results.bio.slice(0, 6); track $index) {
-               <li>{{ answer | translate }}
+               <li>
+                  <span [innerHTML]="answer | translate"></span>
                   @if ($index === 5 && results.bio.length > 6) {
-                  <span style="font-weight: 700; color: var(--color-11)">(...)</span>
+                  <span style="font-weight: 700; color: var(--color-11)"
+                     >(...)</span
+                  >
                   }
                </li>
                } @empty {
-               <li>{{ "TOOLS.VISIBILITY_CHECK.RESULTS.NO_PERSONAL_INFO" | translate }}</li>
+               <li>
+                  {{
+                     "TOOLS.VISIBILITY_CHECK.RESULTS.NO_PERSONAL_INFO"
+                        | translate
+                  }}
+               </li>
                }
             </ul>
          </div>
          <div class="flex justify-center items-center">
-            <app-badge [variant]="bioBadge.variant" [title]="bioBadge.title | translate"></app-badge>
+            <app-badge
+               [variant]="bioBadge.variant"
+               [title]="bioBadge.title | translate"
+            ></app-badge>
          </div>
       </div>
    </div>
