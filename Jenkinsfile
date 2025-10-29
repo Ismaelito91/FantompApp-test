@@ -79,7 +79,7 @@ pipeline {
                if (lastCommit =~ /^(release:|pre-release:)/) {
                   echo "🛑 Commit détecté comme release/pre-release → déploiement ignoré."
                   currentBuild.result = 'SUCCESS'
-                  error("Déploiement ignoré pour un commit de release.")
+                  return
                } else {
                   echo "✅ Commit autorisé, on continue le pipeline."
                }
