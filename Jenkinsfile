@@ -70,24 +70,14 @@ pipeline {
          }
       }
 
-      stage('Check commit source') {
-         steps {
-            script {
+      stage('Deploy Application') {
+         when {
+            expression {
+               // On relit le dernier commit pour vérifier
                def lastCommit = sh(script: "git log -1 --pretty=%B", returnStdout: true).trim()
-               echo "🧾 Dernier message de commit : ${lastCommit}"
-
-               if (lastCommit =~ /^(release:|pre-release:)/) {
-                  echo "🛑 Commit détecté comme release/pre-release → déploiement ignoré."
-                  currentBuild.result = 'SUCCESS'
-                  return
-               } else {
-                  echo "✅ Commit autorisé, on continue le pipeline."
-               }
+               return !(lastCommit =~ /^(release:|pre-release:)/)
             }
          }
-      }
-
-      stage('Deploy Application') {
          steps {
             script {
                echo "🚀 Déploiement en cours..."
