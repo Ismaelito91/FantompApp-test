@@ -1,4 +1,5 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ComponentStatus } from '../../model/enum/component-status.enum';
 import { ComponentType } from '../../model/enum/component-type.enum';
 import PageComponentModel from '../../model/page-component.model';
@@ -16,9 +17,10 @@ import { TranslatePipe } from '@ngx-translate/core';
    templateUrl: './secure-myself.component.html',
    styleUrl: './secure-myself.component.scss'
 })
-export class SecureMyselfComponent implements OnInit {
+export class SecureMyselfComponent implements OnInit, OnDestroy {
    private readonly pageComponentService = inject(PageComponentService);
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
+   private subscription?: Subscription;
 
    rootPage = signal<PageComponentModel>({ id: 0, translations: [], childrenIdList: [] });
    page = signal<PageComponentModel | null>({ id: 0, translations: [], childrenIdList: [] });
@@ -27,6 +29,15 @@ export class SecureMyselfComponent implements OnInit {
 
    ngOnInit(): void {
       this.loadRootPage();
+      
+      // S'abonner aux changements de la componentMap (lors de setOverride par exemple)
+      this.subscription = this.pageComponentUtils.onComponentMapUpdated$.subscribe(() => {
+         this.refreshPageData();
+      });
+   }
+
+   ngOnDestroy(): void {
+      this.subscription?.unsubscribe();
    }
 
    private loadRootPage(): void {
@@ -47,6 +58,18 @@ export class SecureMyselfComponent implements OnInit {
       } else {
          this.rootPage.set(rootPage);
          this.page.set(rootPage);
+      }
+   }
+
+   /**
+    * Rafraîchit les données de la page depuis la componentMap mise à jour
+    */
+   private refreshPageData(): void {
+      const rootPage = this.pageComponentUtils.findRootPage(2);
+      if (rootPage) {
+         this.rootPage.set(rootPage);
+         this.page.set(rootPage);
+         console.log("secure-myself: Page rafraîchie suite à la mise à jour du device");
       }
    }
 

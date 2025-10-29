@@ -48,7 +48,7 @@ export class ViewAllComponent {
    private loadRootPage(): void {
       let rootPage = this.pageComponentUtils.getComponentById(this.targetId);
       
-      if (!rootPage || sessionStorage.getItem('overrideDevice')) {
+      if (!rootPage) {
 
          this.pageComponentService.getRootPageComponentsBySectionId(2).subscribe({
             next: (data) => {

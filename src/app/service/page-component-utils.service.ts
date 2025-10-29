@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import PageComponentModel from '../model/page-component.model';
 import { ComponentType } from '../model/enum/component-type.enum';
 
@@ -8,11 +9,19 @@ import { ComponentType } from '../model/enum/component-type.enum';
 export class PageComponentUtilsService {
 
    private readonly componentMap = new Map<number, PageComponentModel>();
+   private readonly componentMapUpdated$ = new Subject<void>();
+
+   // Observable pour que les composants puissent s'abonner aux changements
+   get onComponentMapUpdated$() {
+      return this.componentMapUpdated$.asObservable();
+   }
 
    updateComponentMap(data: Record<string, PageComponentModel>) {
       for (const [key, value] of Object.entries(data)) {
          this.componentMap.set(parseInt(key), value as PageComponentModel);
       }
+      // Notifier tous les composants que la map a été mise à jour
+      this.componentMapUpdated$.next();
    }
 
    findRootPage(sectionId: number): PageComponentModel | null {
