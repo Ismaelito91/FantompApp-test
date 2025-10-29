@@ -1,1 +1,806 @@
-{}
+{
+   "APP": {
+      "TITLE": "FantomApp",
+      "LOADING": "Loading...",
+      "ERROR": "Error loading application",
+      "INSTALL_APP": "Install the app'",
+      "NEW_VERSION_AVAILABLE": "New version available",
+      "UPDATE_APP": "Application update"
+   },
+   "COMMON": {
+      "ORGANISATION": "CNIL",
+      "SAVE": "Enregistrer",
+      "CANCEL": "Cancel",
+      "DELETE": "Delete",
+      "EDIT": "Edit",
+      "CLOSE": "Close",
+      "SEARCH": "Search",
+      "BACK": "Go Back",
+      "NEXT": "Next",
+      "PREVIOUS": "Previous",
+      "RESULTS": "Results",
+      "HOME": "Home",
+      "PROBLEM": "Problem",
+      "TOOLS": "Tools",
+      "SECURE": "Securing myself",
+      "YES": "Yes",
+      "NO": "No",
+      "UNDERSTOOD": "Got it",
+      "DOWNLOAD": "Download",
+      "COPY": "Copy",
+      "COPIED": "Copied !",
+      "OR": "or"
+   },
+   "DESIGN_SYSTEM": {
+      "STEPPER": {
+         "DESCRIPTION": "Question {{ currentStep }} out of {{ totalSteps }}"
+      },
+      "TAG_UNCLICKABLE": {
+         "IMPORTANT": "IMPORTANT",
+         "SECONDARY": "SECOND STEP"
+      }
+   },
+   "ONBOARDING": {
+      "CLOSE": "Close the onboarding",
+      "SKIP": "Skip",
+      "NEXT": "Next",
+      "PREVIOUS": "Back",
+      "CONTINUE": "Continue",
+      "START_USING": "Start using it",
+      "TAP_TO_CONTINUE": "Tap to continue",
+      "WELCOME_TO": "Welcome to FantomApp",
+      "GHOST_MODE_EXPLANATION": "Here you surf on ghost mode, no one knows you're here. None of your information have been saved. You're free to explore how to protect your private life.",
+      "PROGRESS": "Onboarding progress",
+      "GO_TO_STEP": "Go to step",
+      "COMPLETED_STEP": "Completed step",
+      "CURRENT_STEP": "Current step",
+      "FUTURE_STEP": "next step",
+      "STEP_INFO": "Step",
+      "OF": "On",
+      "BUBBLE": {
+         "WELCOME": "Hi ! I'm here to guide you through the app !"
+      },
+      "WELCOME": {
+         "TITLE": "Welcome to FantomApp !",
+         "DESCRIPTION": "Discover an application designed to protect your privacy and offer you an exceptional user experience. Let us introduce you to its main features."
+      },
+      "APPEARANCE": {
+         "TITLE": "Customize your experience",
+         "DESCRIPTION": "Choose the appearance of the app according to your preferences and your surroundings.",
+         "FEATURE_1": "Choice between light, dark or automatic mode.",
+         "FEATURE_2": "Use the same settings as your device",
+         "FEATURE_3": "Interface optimised for visual comfort"
+      },
+      "ICON_CHANGE": {
+         "TITLE": "Change the app icon",
+         "DESCRIPTION": "Customize the icon you see on your home screen for more discretion or aesthetic.",
+         "FEATURE_1": "Several icons designs available",
+         "FEATURE_2": "Instantaneous and securised change",
+         "FEATURE_3": "Discreet option to protect your privacy"
+      },
+      "RESOURCES": {
+         "TITLE": "Acces all the ressources",
+         "DESCRIPTION": "Find all the important informations and useful tools at your fingertips.",
+         "FEATURE_1": "Complete documentation of the app",
+         "FEATURE_2": "Detailled user guides",
+         "FEATURE_3": "Support and online help"
+      },
+      "ACCESSIBILITY": {
+         "TITLE": "An app for all",
+         "DESCRIPTION": "FantomApp was designed to be accessible to all users, regardless of their abilies.",
+         "FEATURE_1": "A screen-reader-friendly interface",
+         "FEATURE_2": "An optimised keybord navigation",
+         "FEATURE_3": "Compliant with RGAA accessibility standards"
+      },
+      "READY": {
+         "TITLE": "You're all set!",
+         "DESCRIPTION": "You are now familiar the main features of FantomApp. Enjoy your secured and personnalised experience to the fullest."
+      }
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Chose your favourite system display.",
+      "THEME": {
+         "LABEL": "Theme",
+         "DEFAULT": "Default system ",
+         "LIGHT": "Light mode",
+         "DARK": "Dark mode",
+         "SYSTEM_SETTINGS": "Use the same settings as your device"
+      }
+   },
+   "APP_ICON_SELECTOR": {
+      "TITLE": "The app's icons",
+      "SUBTITLE": "Customize the icon of the app.",
+      "DEFAULT": "Default Icon",
+      "DEFAULT_DESC": "The original icon",
+      "GHOST": "Phantom icon",
+      "GHOST_DESC": "A mysterious and discreet version",
+      "DARK": "Dark icon",
+      "DARK_DESC": "Perfect for night-time users",
+      "COLORFUL": "Colourful icon",
+      "COLORFUL_DESC": "A vibrant and joyfull icon"
+   },
+   "HOME": {
+      "GREETING": "Hi 👋 How can we help you ?",
+      "WELCOME": "Welcom on FantomApp",
+      "APP_INFO_TITLE": "About the app",
+      "APPEARANCE": "Appearence",
+      "CHANGE_ICON": "Changing the icon",
+      "RESOURCES": "Ressources",
+      "WHAT_IS_APP": "What's this app for?",
+      "RIGHTS": "I have rights online",
+      "ACCESSIBILITY": "FantomApp for all (Accessibility)",
+      "TUTORIAL": "Watching the welcoming tutorial again",
+      "CARDS": {
+         "MAIN_TITLE": "Securing my social",
+         "PASSWORD_CHECK": {
+            "TITLE": "Testing my password",
+            "DESCRIPTION": "How much time does it take to a cybercriminal to find it?"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "Blurring<br />my picture",
+            "DESCRIPTION": "Anonimysing my profile<br />picture"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "I have a problem online",
+            "DELETE_CONTENT": {
+               "TITLE": "Erasing content"
+            },
+            "HARASSMENT": {
+               "TITLE": "I'm going through cyberbullying"
+            }
+         }
+      }
+   },
+   "PROBLEMS": {
+      "DELETE_CONTENT": {
+         "CARD": {
+            "FIRST_TITLE": "ERASING A CONTENT",
+            "SECOND_TITLE": "I want to erase content",
+            "DESCRIPTION": "Requesting the removal of a photo or a video about you"
+         },
+         "TITLE": "I want to erase content",
+         "DESCRIPTION": "A photo, video or comment where you appear is bothering you ? Removing it takes time but we will help you to go through it.🗑",
+         "REPORTED": {
+            "TITLE": "Have you reported the content to the social media / platform?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Yes, <strong>I already reported the content</strong>",
+                  "ANSWER_2_TITLE": "No, <strong>I haven't reported the content yet>"
+               }
+            }
+         },
+         "VIOLENT": {
+            "TITLE": "Is it a violent content or does it shows you undressed?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Yes",
+                  "ANSWER_2_TITLE": "No"
+               }
+            }
+         },
+         "RESULTS": {
+            "REPORTED_CONTENT": {
+               "TITLE": "You have reported the content?",
+               "P1": {
+                  "DESCRIPTION": "✅ Kudos, you had a <strong>very good reflex</strong> by reporting the content to the plateform. <br /><br />✅ Social media receive a lot of reports and their moderation takes time. But <strong>even without an immediate answer</strong> your report is important."
+               },
+               "P2": {
+                  "TITLE_PART1": "We advise you to file complaint to the ",
+                  "TITLE_PART2": " if :",
+                  "TOOLTIP": "The French data protection authority that helps you to protect your private life online.",
+                  "DESCRIPTION1": "You contacted the social network and they didn't answer you back <strong>for at least a month</strong>",
+                  "DESCRIPTION2": "The social network answered you but the reply is <strong>incomplete</strong> or <strong>unsatisfying</strong>."
+               },
+               "BUTTON": "File a complaint",
+               "TUTORIAL": {
+                  "P1": {
+                     "TITLE": "What's the role of the <span class='text-(--color-24)'>CNIL</span> ?",
+                     "DESCRIPTION": "The role of the French data protection authority is to preserve the liberties of each one of us? It advises and controls the use of personal data by companies, administrations and associations."
+                  },
+                  "P2": {
+                     "TITLE": "Why do I have to wait for an answer for <span class='text-(--color-24)'>1 month</span> ? ⏱️",
+                     "DESCRIPTION": "It's the legal delay. That means that the law leaves 1 month to the platform to reply to you (it's the General Data Protection Regulation, or GDPR)."
+                  },
+                  "P3": {
+                     "TITLE": "What's  an <span class='text-(--color-24)'>an incomplete or a wrong </span> reply? 📝",
+                     "DESCRIPTION": "The platform has not taken into account your demand or its answer doesn't fit what you asked for."
+                  }
+               },
+               "COMPLAINT": {
+                  "TITLE": "Prepare the evidences",
+                  "DESCRIPTION": "Save photos of each steps, they will be useful to file the complaint.",
+                  "P1": {
+                     "TITLE": "Examples of screenshots:",
+                     "DESCRIPTION": "🛑 <strong>The content to delete</strong><br />Screenshot of the problematic text, photo or video<br /> <br />🌍 <strong>The website adress</strong><br />Link to the website (URL)<br /> <br />ℹ️ <strong>Information on the person who posted the content</strong><br />Link to their profile<br /><br />✉️ <strong>Your requeste of deletion</strong><br />- Screenshots of the text where you are requesting the deletion<br />- Screenshots of the reply (if there is one)"
+                  },
+                  "BUTTON": "Access the form"
+               }
+            },
+            "UNREPORTED_CONTENT": {
+               "TITLE": "You haven't reported the content yet?",
+               "P1": {
+                  "TITLE": "The first step is to report it to the social media.",
+                  "DESCRIPTION": "Keep (carefully) every proves of your report. If the socail media does not reply to you after strong>1 month</strong>, you can file report to the CNIL the:"
+               },
+               "CONTACTS": {
+                  "TITLE": "Social Media contacts",
+                  "SOCIAL_MEDIA": {
+                     "INSTAGRAM": {
+                        "TITLE": "Instagram",
+                        "LINK": {
+                           "TITLE": "Report a Violation of your Privacy on Instagram or Threads",
+                           "DESCRIPTION": "https://help.instagram.com/contact/512241091300432"
+                        },
+                        "BUTTON": "How to file the form?"
+                     },
+                     "SNAPCHAT": {
+                        "TITLE": "Snapchat",
+                        "LINK": {
+                           "TITLE": "Submit a request – Snapchat Support",
+                           "DESCRIPTION": "https://help.snapchat.com/hc/en-gb/requests/new"
+                        },
+                        "MAIL": {
+                           "TITLE": "Contacting Snapchat by email",
+                           "DESCRIPTION": "dpo@snapchat.com"
+                        },
+                        "BUTTON": "See an email example"
+                     },
+                     "TIKTOK": {
+                        "TITLE": "TikTok",
+                        "LINK": {
+                           "TITLE": "Submit a privacy request",
+                           "DESCRIPTION": "https://www.tiktok.com/legal/report/privacy/webform/en"
+                        },
+                        "BUTTON": "How to file the form?"
+                     },
+                     "X": {
+                        "TITLE": "X",
+                        "LINK": {
+                           "TITLE": "X privacy policy inquiries",
+                           "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                        },
+                        "BUTTON": "How to file the form?"
+                     },
+                     "FACEBOOK": {
+                        "TITLE": "Facebook",
+                        "LINK": {
+                           "TITLE": "Contac forms",
+                           "DESCRIPTION": "https://www.facebook.com/help/contact/954059743194940"
+                        },
+                        "BUTTON": "How to file the form?"
+                     }
+                  }
+               },
+               "FACEBOOK": {
+                  "TITLE": "How to file the form? - Facebook",
+                  "DESCRIPTION": "Here is what you need to do to file the form below:",
+                  "P1": {
+                     "TITLE": "1. Select the country where you live in “Please select your country”"
+                  },
+                  "P2": {
+                     "TITLE": "2. Write your surname and name:"
+                  },
+                  "P3": {
+                     "TITLE": "3. Indicate your email"
+                  },
+                  "P4": {
+                     "TITLE": "4. Select “My Privacy” in “Who's privacy is being violated?”"
+                  },
+                  "P5": {
+                     "TITLE": "5. Select “Yes” for “Are you under the age of 18?”"
+                  },
+                  "P6": {
+                     "TITLE": "6. Select “Yes” if you have the URL of the content you want to report"
+                  },
+                  "P7": {
+                     "TITLE": "7. Indicate the type of content"
+                  },
+                  "P8": {
+                     "TITLE": "8. Paste the URL of the reported content"
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Contact forms",
+                     "DESCRIPTION": "https://www.facebook.com/help/contact/954059743194940"
+                  }
+               },
+               "INSTAGRAM": {
+                  "TITLE": "How to file the form? - Instagram",
+                  "DESCRIPTION": "Here is what you need to do to file the form below:",
+                  "P1": {
+                     "TITLE": "1. Select the country where you live"
+                  },
+                  "P2": {
+                     "TITLE": "2. Write your name and surname"
+                  },
+                  "P3": {
+                     "TITLE": "3. Write your email adress"
+                  },
+                  "P4": {
+                     "TITLE": "4. Seclect “Self” at the question “Who are you reporting for?”"
+                  },
+                  "P5": {
+                     "TITLE": "5. Select “Yes, I am under 18”"
+                  },
+                  "P6": {
+                     "TITLE": "6. Paste the URL of the content you want to report."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Report a Violation of your Privacy on Instagram or Threads",
+                     "DESCRIPTION": "https://help.instagram.com/contact/1716697545776727"
+                  }
+               },
+               "X": {
+                  "TITLE": "How to file the form - X",
+                  "DESCRIPTION": "Here is what you need to do to file the form below:",
+                  "P1": {
+                     "TITLE": "1. Select “I want to ask a question regarding privacy on X” in “How can we help?”"
+                  },
+                  "P2": {
+                     "TITLE": "2. Select “Delete X account data” in “Please tell us more”"
+                  },
+                  "P3": {
+                     "TITLE": "3. Copy/paste the example below in “Please enter your question” and insert your information instead of the [...] of the example."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "X privacy policy inquiries",
+                     "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                  }
+               },
+               "TIKTOK": {
+                  "TITLE": "How to file the form ? - TikTok",
+                  "DESCRIPTION": "Here is what you need to do to file the form below:",
+                  "P1": {
+                     "TITLE": "1. Write your email adress"
+                  },
+                  "P2": {
+                     "TITLE": "2. Select the country where you live"
+                  },
+                  "P3": {
+                     "TITLE": "3. Write your username tikok"
+                  },
+                  "P4": {
+                     "TITLE": "4. Select “Exercise your rights under data portection laws” in “Submit a request”"
+                  },
+                  "P5": {
+                     "TITLE": "5. Select “I have a question about exercising privacy and data protection rights” dans “Select a subcategory”"
+                  },
+                  "P6": {
+                     "TITLE": "6. Copy/paste the example below in “Please enter your question” and insert your information instead of the [...] of the example."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "X privacy policy inquiries",
+                     "DESCRIPTION": "https://help.x.com/fr/forms/privacy/question"
+                  }
+               },
+               "SNAPCHAT": {
+                  "TITLE": "Example of email - Snapchat",
+                  "DESCRIPTION": "To request a deletion, you can contact the Data Protection Officer (DPO).",
+                  "P1": {
+                     "TITLE": "\uD83D\uDCDD Email adress of the contact"
+                  }
+               },
+               "TEMPLATE_MESSAGE": {
+                  "TITLE": "\uD83D\uDCDD Example of mail to send",
+                  "DESCRIPTION": "Dear Sir/Madam,<br><br>Information about me is currently published on your website on the follomwing pages:<br><span style=\"color: var(--color-24);\">[URL link(s) of the content you wish to delete]</span><br>Therefore, in application of the Articles 21.1 and 17.1.c of the General Data Protection Regulation (GDPR), I ask you to  please delete the following personal data concerning me:<br><span style=\"color: var(--color-24);\">[description of the information to be deleted]</span>.<br>I would like these information to be deleted because:<br><span style=\"color: var(--color-24);\">[suppression motive]</span><br>additionnaly, I thank you for taking the necessariy steps to ensure that these pages are no longer referenced by search engines (article 17.2 of the GDPR). Please send me a response as soon as possible and no longer than a month from the recept of my request (article 12.3 du RGPD).<br>Sincerely,"
+               }
+            },
+            "VIOLENT_CONTENT": {
+               "TITLE": "Is it a violent content or is it showing you undressed?",
+               "DESCRIPTION": "The diffusion of violent content or sexual content without your consent is very serious and the responsible can be punished.",
+               "P1": {
+                  "TITLE": "You are not alone",
+                  "DESCRIPTION": "What is hapening to you can be very complicated to go through, but in life, you are never alone ! There are always solutions to change things, and people to help you navigate through this."
+               },
+               "P2": {
+                  "TITLE": "Finding help",
+                  "DESCRIPTION": "You can talk about it with your parents, a friend, a family member, a professor or an adult whom you trust. 🤝 <strong>Professionnals</strong> can also help you at the <strong>3018</strong>. Anonymous, confidential and free of charge, from 9 am to 11 pm, 7 days a week. <span class=\"text-(--color-24)\"><strong>Call until someone picks up </strong>.</span>",
+                  "LINK": {
+                     "TITLE": "Talk with the 3018",
+                     "DESCRIPTION": "https://e-enfance.org/besoin-daide/"
+                  },
+                  "CALL": {
+                     "TITLE": "3018"
+                  },
+                  "MESSAGE": {
+                     "TITLE": "3018"
+                  }
+               },
+               "P3": {
+                  "TITLE": "Déposer plainte",
+                  "DESCRIPTION": "La plainte permet de signaler à la justice les faits dont tu es victime. Tu peux déposer plainte en allant voir la police ou la gendarmerie, ou par courrier.",
+                  "LINK": {
+                     "TITLE": "Ma Sécurité | Ma Sécurité",
+                     "DESCRIPTION": "https://www.masecurite.interieur.gouv.fr/fr"
+                  }
+               },
+               "BUTTON": {
+                  "REPORTED": "Adresser une plainte à la CNIL",
+                  "UNREPORTED": "Signaler le contenu"
+               }
+            }
+         }
+      },
+      "HACKING": {
+         "CARD": {
+            "FIRST_TITLE": "PIRATAGE DE COMPTE",
+            "SECOND_TITLE": "Je me suis fait pirater",
+            "DESCRIPTION": "Récupérer son compte ou autre chose"
+         },
+         "TITLE": "Je me suis fait pirater",
+         "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté.",
+         "TUTORIAL": {
+            "P1": {
+               "EMOJI": "❌",
+               "CONTENT": "Mon compte s'est <strong>déconnecté</strong> tout seul et je n'arrive plus à y accéder"
+            },
+            "P2": {
+               "EMOJI": "🖼️",
+               "CONTENT": "Du <strong>contenu</strong> est apparu sur mon feed mais ce n'est pas moi qui l'ai publié"
+            },
+            "P3": {
+               "EMOJI": "🔒",
+               "CONTENT": "Mon <strong>mot de passe</strong> ne fonctionne plus"
+            },
+            "P4": {
+               "EMOJI": "📩",
+               "CONTENT": "Mes amis ont été contactés soit disant par moi mais ce n'est pas moi qui leur aient envoyé un <strong>message</strong>"
+            },
+            "P5": {
+               "CONTENT": "<strong>Alors ton compte a peut-être été piraté</strong>"
+            }
+         },
+         "SITUATION": {
+            "TITLE": "Quelle est ta situation ?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "J’ai <strong>encore accès</strong> à mon compte",
+                  "ANSWER_2_TITLE": "Je n’ai <strong>plus accès</strong> à mon compte"
+               }
+            }
+         },
+         "RESULTS": {
+            "HAVE_ACCESS": {
+               "TITLE": "J’ai encore accès à mon compte",
+               "DESCRIPTION": "Quelques gestes pour reprendre le contrôle de son compte",
+               "ACTIONS": {
+                  "IMMEDIATELY": {
+                     "TITLE": "À faire tout de suite ⏱️",
+                     "A1": {
+                        "TITLE": "Changer son mot de passe",
+                        "SHORT_DESCRIPTION": "Constitue immédiatement un mot de passe fort",
+                        "LONG_DESCRIPTION": "Crée tout de suite un mot de passe solide pour ton compte. FantomApp peut t’aider à vérifier si ton mot de passe est facilement trouvable."
+                     },
+                     "A2": {
+                        "TITLE": "Activer la double authentification",
+                        "SHORT_DESCRIPTION": "Ajoute un code de sécurité en plus",
+                        "LONG_DESCRIPTION": "La double authentification ajoute une protection en plus à ton compte. Même si quelqu’un découvre ton mot de passe, il ne pourra pas se connecter sans un deuxième code (reçu par SMS ou via une appli).<br />👉 C’est comme une deuxième serrure sur ta porte."
+                     },
+                     "A3": {
+                        "TITLE": "Vérifier ses informations",
+                        "SHORT_DESCRIPTION": "Regarde si ton mail et ton numéro n’ont pas été changés",
+                        "LONG_DESCRIPTION": "📲 Contact, publications, infos bancaires, si tu les avais indiquées, ont-elles été modifiées ?<br /><br />Si tu vois un numéro ou une adresse que tu ne connais pas :<ul style='list-style: disc; margin-left: 2rem;'><li>Fais une capture d’écran pour garder une preuve</li><li>Modifie-les tout de suite</li></ul>"
+                     },
+                     "A4": {
+                        "TITLE": "Vérifier qui est connecté à son compte",
+                        "SHORT_DESCRIPTION": "Voir si des appareils inconnus sont connectés à ton compte",
+                        "LONG_DESCRIPTION": "Va dans les paramètres de ton compte et déconnecte tous les appareils jusqu'ici autorisés.<br />❌ Si tu vois un appareil ou une connexion que tu ne reconnais pas :<ul style='list-style: disc; margin-left: 2rem;'><li>Fais une capture d’écran pour garder une preuve</li><li>Déconnecte-le tout de suite</li></ul>"
+                     }
+                  },
+                  "LATER": {
+                     "TITLE": "À faire plus tard",
+                     "A1": {
+                        "TITLE": "Prévenir ses amis et contacts",
+                        "SHORT_DESCRIPTION": "Ils pourraient recevoir des messages bizarres",
+                        "LONG_DESCRIPTION": "📢 Préviens tes contacts (amis, famille, etc.) que ton compte a été piraté.<br />⚠️ Ils pourraient recevoir des messages de la personne qui se fait passer pour toi. Dis-leur de ne pas répondre et de ne pas cliquer sur les liens."
+                     },
+                     "A2": {
+                        "TITLE": "Changer ses autres mots de passe",
+                        "SHORT_DESCRIPTION": "Protège tes autres comptes",
+                        "LONG_DESCRIPTION": "Si tu utilises le même mot de passe sur d’autres sites ou applis, modifie-le aussi là-bas.<br />👉 Ça évite que d’autres comptes soient piratés à leur tour."
+                     },
+                     "A3": {
+                        "TITLE": "Prévenir la banque",
+                        "SHORT_DESCRIPTION": "Agir si tes infos bancaires étaient sur ton compte",
+                        "LONG_DESCRIPTION": "💳 Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, j’en parle tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vit e, et bloquer la carte si nécessaire pour éviter tout vol."
+                     },
+                     "A4": {
+                        "TITLE": "Utiliser un gestionnaire de mot de passe",
+                        "SHORT_DESCRIPTION": "Pour sécuriser tes mots de passe",
+                        "LONG_DESCRIPTION": "🔐 Un gestionnaire de mots de passe, c’est une application ou un outil de ton téléphone qui garde tous tes mots de passe en sécurité.Il peut aussi en créer des très solides pour chaque site ou appli, et les remplir automatiquement quand tu te connectes.<br />👉 C’est comme un coffre-fort numérique pour tous tes comptes."
+                     },
+                     "A5": {
+                        "TITLE": "Ne jamais partager ses mots de passe",
+                        "SHORT_DESCRIPTION": "Le mieux est de les garder pour soi",
+                        "LONG_DESCRIPTION": "Quelqu’un pourrait lire tes messages, publier à ta place ou te voler ton compte.<br />Ton mot de passe, c’est perso — comme le code de ton téléphone."
+                     }
+                  }
+               }
+            },
+            "NO_ACCESS": {
+               "TITLE": "Je n’ai plus accès à mon compte",
+               "CONTACT": {
+                  "TITLE": "✉️ Contacter le réseau social",
+                  "DESCRIPTION": "Commence par contacter le réseau social pour dire que ton compte a été piraté.<br />➡️ Clique sur le lien du réseau que tu utilises."
+               },
+               "SOCIAL_MEDIA": {
+                  "INSTAGRAM": {
+                     "TITLE": "Instagram",
+                     "LINK": {
+                        "TITLE": "Faire une demande d’assistance Instagram",
+                        "DESCRIPTION": "https://www.instagram.com/hacked/"
+                     }
+                  },
+                  "SNAPCHAT": {
+                     "TITLE": "Snapchat",
+                     "LINK": {
+                        "TITLE": "Envoyer une demande – Assistance Snapchat",
+                        "DESCRIPTION": "https://help.snapchat.com/hc/fr-fr/requests/new"
+                     }
+                  },
+                  "TIKTOK": {
+                     "TITLE": "TikTok",
+                     "LINK": {
+                        "TITLE": "Signaler un problème | TikTok",
+                        "DESCRIPTION": "https://www.tiktok.com/legal/report/feedback"
+                     }
+                  },
+                  "X": {
+                     "TITLE": "X",
+                     "LINK": {
+                        "TITLE": "Le compte est piraté ou compromis",
+                        "DESCRIPTION": "https://help.x.com/fr/forms/account-access/regain-access/hacked-or-compromised"
+                     }
+                  },
+                  "FACEBOOK": {
+                     "TITLE": "Facebook",
+                     "LINK": {
+                        "TITLE": "Faire une demande d’assistance Facebook",
+                        "DESCRIPTION": "https://www.facebook.com/hacked?ref=helpcenter"
+                     }
+                  }
+               },
+               "RECOMMENDATIONS": {
+                  "TITLE": "👍 Suivre ces recommandations",
+                  "DESCRIPTION": "Même si tu n’as plus accès à ton compte, tu peux encore agir. Ces gestes t’aideront à te protéger et éviter que ça se reproduise.",
+                  "ACTIONS": {
+                     "LATER": {
+                        "A1": {
+                           "TITLE": "Prévenir ses amis et contacts",
+                           "SHORT_DESCRIPTION": "Ils pourraient recevoir des messages bizarres",
+                           "LONG_DESCRIPTION": "📢 Préviens tes contacts (amis, famille, etc.) que ton compte a été piraté.<br />⚠️ Ils pourraient recevoir des messages de la personne qui se fait passer pour toi. Dis-leur de ne pas répondre et de ne pas cliquer sur les liens."
+                        },
+                        "A2": {
+                           "TITLE": "Changer ses autres mots de passe",
+                           "SHORT_DESCRIPTION": "Protège tes autres comptes",
+                           "LONG_DESCRIPTION": "Si tu utilises le même mot de passe sur d’autres sites ou applis, modifie-le aussi là-bas.<br />👉 Ça évite que d’autres comptes soient piratés à leur tour."
+                        },
+                        "A3": {
+                           "TITLE": "Prévenir la banque",
+                           "SHORT_DESCRIPTION": "Agir si tes infos bancaires étaient sur ton compte",
+                           "LONG_DESCRIPTION": "💳 Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, j’en parle tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vit e, et bloquer la carte si nécessaire pour éviter tout vol."
+                        },
+                        "A4": {
+                           "TITLE": "Utiliser un gestionnaire de mot de passe",
+                           "SHORT_DESCRIPTION": "Pour sécuriser tes mots de passe",
+                           "LONG_DESCRIPTION": "🔐 Un gestionnaire de mots de passe, c’est une application ou un outil de ton téléphone qui garde tous tes mots de passe en sécurité.Il peut aussi en créer des très solides pour chaque site ou appli, et les remplir automatiquement quand tu te connectes.<br />👉 C’est comme un coffre-fort numérique pour tous tes comptes."
+                        },
+                        "A5": {
+                           "TITLE": "Ne jamais partager ses mots de passe",
+                           "SHORT_DESCRIPTION": "Le mieux est de les garder pour soi",
+                           "LONG_DESCRIPTION": "Quelqu’un pourrait lire tes messages, publier à ta place ou te voler ton compte.<br />Ton mot de passe, c’est perso — comme le code de ton téléphone."
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "TOOLS": {
+      "TITLE": "Outils",
+      "PASSWORD_CHECK_TITLE": "Je teste mon mot de passe",
+      "PASSWORD_CHECK_DESCRIPTION": "En combien de temps un cybercriminel le trouve ?",
+      "BLUR_IMAGE_TITLE": "J'anonymise ma photo",
+      "BLUR_IMAGE_DESCRIPTION": "Flouter ma photo de profil",
+      "VISIBILITY_CHECK_TITLE": "Je teste ma visibilité",
+      "VISIBILITY_CHECK_DESCRIPTION": "Que révèlent mon pseudo et ma bio ?",
+      "VISIBILITY_CHECK": {
+         "TITLE": "Je teste ma visibilité",
+         "DESCRIPTION": "Peut-on m'identifier à partir de mon pseudo et ma bio ?",
+         "PSEUDO": {
+            "TITLE": "Que contient ton pseudo ?",
+            "IDENTITY": {
+               "TITLE": "🪪 Identité",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier",
+                  "ANSWER_1_DESCRIPTION": "(exemple : Martin)",
+                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé.",
+                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1)",
+                  "ANSWER_3_TITLE": "Mon surnom",
+                  "ANSWER_4_TITLE": "Ma date de naissance"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "🗺️ Origine géographique ou culturelle",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon code postal",
+                  "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300)",
+                  "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine",
+                  "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.)"
+               }
+            }
+         },
+         "BIO": {
+            "TITLE": "Que contient ta bio ?",
+            "EMPTY": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Je n’ai rien écrit dans ma bio"
+               }
+            },
+            "IDENTITY": {
+               "TITLE": "🪪 Identité",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier",
+                  "ANSWER_1_DESCRIPTION": "(exemple : Martin)",
+                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé.",
+                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1)",
+                  "ANSWER_3_TITLE": "Mon surnom",
+                  "ANSWER_4_TITLE": "Ma date de naissance"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "🗺️ Origine géographique ou culturelle",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mon code postal",
+                  "ANSWER_1_DESCRIPTION": "(exemple: 78 ou 44300)",
+                  "ANSWER_2_TITLE": "Mon lieu de vie ou d’origine",
+                  "ANSWER_2_DESCRIPTION": "(Ville, région, pays, emoji de drapeau.)"
+               }
+            },
+            "DIGITAL_LIFE": {
+               "TITLE": "👥 Vie numérique",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Les liens vers mes autres réseaux.",
+                  "ANSWER_1_DESCRIPTION": "(Twitter, Instagram, TikTok, LinkedIn).",
+                  "ANSWER_2_TITLE": "Les comptes de mon entourage",
+                  "ANSWER_2_DESCRIPTION": "(Amis, relations amoureuses...)"
+               }
+            },
+            "INTEREST": {
+               "TITLE": "🎭 Centres d’intérêt",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Un lien vers mon club ou une association où je participe.",
+                  "ANSWER_1_DESCRIPTION": "(ex : @VolleyNantes)"
+               }
+            },
+            "EDUCATION_PRO": {
+               "TITLE": "🏫 Éducation ou profession",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Une mention de mon établissement ou de mon entreprise.",
+                  "ANSWER_2_TITLE": "Mes compétences",
+                  "ANSWER_2_DESCRIPTION": "(Apprenti pâtissier, Étudiant en médecine…)"
+               }
+            }
+         },
+         "RESULTS": {
+            "TITLE": "Tes résultats",
+            "SUMMARY": {
+               "GOOD": {
+                  "TITLE": "Bien joué ! 🥷",
+                  "CONTENT": "Ton profil ne permet pas de savoir qui tu es dans la vie, sur les réseaux et aussi hors ligne."
+               },
+               "OK": {
+                  "TITLE": "Pas mal ! 🥸",
+                  "CONTENT": "Il y a encore quelques indices pour deviner qui tu es dans la vraie vie mais tu peux encore t’améliorer et divulguer moins d’informations sur toi."
+               },
+               "BAD": {
+                  "TITLE": "Prudence ! 🧐",
+                  "CONTENT": "Ton profil contient beaucoup d’informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie."
+               }
+            },
+            "PSEUDO": {
+               "TITLE": "Ton pseudo indique"
+            },
+            "BIO": {
+               "TITLE": "Ta bio indique"
+            },
+            "STATE": {
+               "PUBLIC": "PUBLIC 👀",
+               "DISCREET": "DISCRET 🙈️",
+               "INVISIBLE": "INVISIBLE 👻"
+            },
+            "NO_PERSONAL_INFO": "Aucune information personnelle !"
+         }
+      },
+      "BLUR_IMAGE": {
+         "TITLE": "Anonymiser ma photo",
+         "DESCRIPTION": "Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne.",
+         "ADVICE": "💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée !",
+         "UPLOAD_IMAGE": "Importer une photo 🤳",
+         "BLUR": "Flouter",
+         "PIXELATE": "Pixelliser",
+         "ALL_BLUR": "Tout flouter",
+         "BRUSH_SIZE": "Taille du flou",
+         "TUTORIAL": {
+            "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter."
+         }
+      },
+      "PASSWORD_CHECK": {
+         "TITLE": "Je teste mon mot de passe",
+         "DESCRIPTION": "Combien de temps faut-il à un cybercriminel pour le trouver ?",
+         "CRIMINAL_GUESSES": "Un cybercriminel le devine en :",
+         "ASSESSMENT_TEXT": "Ton mot de passe a :",
+         "INPUT_LABEL": "Mot de passe",
+         "COPY_PASSWORD": "Copier le mot de passe",
+         "COPIED": "Copié !",
+         "BADGES": {
+            "IMMEDIATE": "C'EST IMMÉDIAT ⚠️",
+            "RAPID": "C'EST RAPIDE 😬",
+            "CORRECT": "C'EST CORRECT 🙂",
+            "SUPER": "C'EST SUPER 😎"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "12 caractères minimum",
+            "UPPERCASE": "1 majuscule au moins",
+            "LOWERCASE": "1 minuscule au moins",
+            "DIGIT": "1 chiffre au moins",
+            "SPECIAL_CHAR": "1 caractère spécial au moins",
+            "CRITERIA_VALIDATED": "Critère validé",
+            "CRITERIA_NOT_VALIDATED": "Critère non validé"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "C'est quoi un bon mot de passe ?",
+            "TEST_PASSWORD": "Tester mon mot de passe 🔒",
+            "STRENGTHEN_PASSWORD": "Renforcer mon mot de passe"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Comment ça marche ?",
+               "STEP_1": "🔐 <strong>Étape 1</strong> : Tape ton mot de passe dans le champ prévu.",
+               "STEP_2": "🧪 <strong>Étape 2</strong> : Clique sur \"Tester mon mot de passe\".",
+               "STEP_3": "⏱️ <strong>Étape 3</strong> : Hop, apparaît en combien de temps un cybercriminel pourrait le trouver… et accéder à tes données personnelles !",
+               "NOTE": "FantomApp n'enregistre aucune information.",
+               "UNDERSTOOD": "Compris"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Un mot de passe solide c'est :",
+               "CLOSE": "Fermer",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 caractères",
+                  "UPPERCASE": "des majuscules",
+                  "LOWERCASE": "des minuscules",
+                  "SPECIAL_CHARS": "des caractères spéciaux (*, @, !)"
+               },
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "🏴‍☠️ Les cybercriminels utilisent toutes les bases de données de mots qui existent dans toutes les langues.",
+                  "NO_DICTIONARY": "⚠️ Donc n'utilises aucun mot du dictionnaire pour constituer ton mot de passe"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Instantané",
+            "MINUTES": "minutes",
+            "HOURS": "heures",
+            "DAY": "jour",
+            "DAYS": "jours",
+            "WEEK": "semaine",
+            "WEEKS": "semaines",
+            "MONTHS": "mois",
+            "YEARS": "ans",
+            "THOUSAND_YEARS": "milliers d'années",
+            "MILLION_YEARS": "millions d'années",
+            "BILLION_YEARS": "milliards d'années",
+            "TRILLION_YEARS": "billions d'années",
+            "QUADRILLION_YEARS": "trillions d'années"
+         }
+      }
+   },
+   "SECURE_MYSELF": {
+      "VIEW_ALL": {
+         "TUTORIAL": {
+            "TITLE": "Comment ça marche ?",
+            "DESCRIPTION": "Lorsque tu as changé un paramètre, coche le badge <strong>pour te souvenir</strong> de ce que tu as sécurisé sur ton compte !"
+         }
+      }
+   }
+}
