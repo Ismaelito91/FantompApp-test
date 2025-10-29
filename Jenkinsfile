@@ -33,21 +33,19 @@ pipeline {
       
       stage('Install dependencies') {
          steps {
-               sh 'pnpm install --frozen-lockfile'
+            sh 'pnpm install --frozen-lockfile'
          }
       }
 
       stage('Audit dependencies') {
          steps {
-               sh 'pnpm audit || true'
+            sh 'pnpm audit || true'
          }
       }
 
       stage('Build') {
          steps {
-            script {
-               sh "pnpm build"
-            }
+            sh "pnpm build"
          }
       }
 
@@ -72,6 +70,23 @@ pipeline {
          }
       }
 
+      stage('Check commit source') {
+         steps {
+            script {
+               def lastCommit = sh(script: "git log -1 --pretty=%B", returnStdout: true).trim()
+               echo "🧾 Dernier message de commit : ${lastCommit}"
+
+               if (lastCommit =~ /^(release:|pre-release:)/) {
+                  echo "🛑 Commit détecté comme release/pre-release → déploiement ignoré."
+                  currentBuild.result = 'SUCCESS'
+                  error("Déploiement ignoré pour un commit de release.")
+               } else {
+                  echo "✅ Commit autorisé, on continue le pipeline."
+               }
+            }
+         }
+      }
+
       stage('Deploy Application') {
          steps {
             script {
@@ -90,14 +105,14 @@ pipeline {
    post {
       regression {
          office365ConnectorSend(
-            message:"Erreur lors du build de Fantom-App-Frontend",
-            webhookUrl:"https://actongroupe.webhook.office.com/webhookb2/d44322f9-b245-4929-b720-f8a573d5f65b@f2e2825c-f8d0-44fd-ae55-81c226791777/JenkinsCI/422034bbcb634ebca3cf0478f9a14a92/f1435656-c6b6-40ff-8fa2-91db51a97567/V2pJ_tgc0JSNdMBdB21SKV_rSErsqMc17TmJ72VzusXs01"
+            message: "Erreur lors du build de Fantom-App-Frontend ❌",
+            webhookUrl: "https://actongroupe.webhook.office.com/webhookb2/d44322f9-b245-4929-b720-f8a573d5f65b@f2e2825c-f8d0-44fd-ae55-81c226791777/JenkinsCI/422034bbcb634ebca3cf0478f9a14a92/f1435656-c6b6-40ff-8fa2-91db51a97567/V2pJ_tgc0JSNdMBdB21SKV_rSErsqMc17TmJ72VzusXs01"
          )
       }
       fixed {
          office365ConnectorSend(
-            message:"Build de Fantom-App-Frontend réparré",
-            webhookUrl:"https://actongroupe.webhook.office.com/webhookb2/d44322f9-b245-4929-b720-f8a573d5f65b@f2e2825c-f8d0-44fd-ae55-81c226791777/JenkinsCI/422034bbcb634ebca3cf0478f9a14a92/f1435656-c6b6-40ff-8fa2-91db51a97567/V2pJ_tgc0JSNdMBdB21SKV_rSErsqMc17TmJ72VzusXs01"
+            message: "Build de Fantom-App-Frontend réparé ✅",
+            webhookUrl: "https://actongroupe.webhook.office.com/webhookb2/d44322f9-b245-4929-b720-f8a573d5f65b@f2e2825c-f8d0-44fd-ae55-81c226791777/JenkinsCI/422034bbcb634ebca3cf0478f9a14a92/f1435656-c6b6-40ff-8fa2-91db51a97567/V2pJ_tgc0JSNdMBdB21SKV_rSErsqMc17TmJ72VzusXs01"
          )
       }
       cleanup {
