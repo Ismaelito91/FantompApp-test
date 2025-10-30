@@ -1,7 +1,9 @@
 <div class="flex flex-col card-container">
    <div class="flex justify-between card-header">
       <div class="flex items-center card-header-title">
-         <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="logo" class="!size-[32px] object-contain" />
+         @if ((data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage) {
+            <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="logo" class="!size-[32px] object-contain" />
+         }
          @if ((data() | pageTranslation)?.firstTitle) {
             <h5 class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></h5>
          }
@@ -13,13 +15,15 @@
          <mat-icon svgIcon="chevron16x16-icon" class="!size-[16px]"></mat-icon>
       </a>
    </div>
-   <div class="flex card-children">
-      @for (child of sortedChildren; track $index) {
-         @switch (child.type) {
-            @case (ComponentType.CARD_8) {
-               <app-card-8 [data]="child"></app-card-8>
+   @if (sortedChildren.length > 0) {
+      <div class="flex card-children">
+         @for (child of sortedChildren; track $index) {
+            @switch (child.type) {
+               @case (ComponentType.CARD_8) {
+                  <app-card-8 [data]="child"></app-card-8>
+               }
             }
          }
-      }
-   </div>
+      </div>
+   }
 </div>
