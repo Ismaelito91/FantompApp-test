@@ -30,15 +30,15 @@ export class LanguageService {
       flagUrl?: string; // svg flag url
    }[] = [
       { code: "FR", languageName: "Français", countryName: CountryRegion.FR, flagUrl: "assets/flags/fr.png" },
-      { code: "IE", languageName: "English", countryName: CountryRegion.IE, flagUrl: "assets/flags/ie.png" },
-      { code: "HU", languageName: "Magyar", countryName: CountryRegion.HU, flagUrl: "assets/flags/hu.png" },
-      { code: "GR", languageName: "Ελληνικά", countryName: CountryRegion.GR, flagUrl: "assets/flags/gr.png" },
-      { code: "DK", languageName: "Dansk", countryName: CountryRegion.DK, flagUrl: "assets/flags/dk.png" },
-      { code: "PL", languageName: "Polski", countryName: CountryRegion.PL, flagUrl: "assets/flags/pl.png" },
-      { code: "PT", languageName: "Português", countryName: CountryRegion.PT, flagUrl: "assets/flags/pt.png" },
-      { code: "ES", languageName: "Español", countryName: CountryRegion.ES, flagUrl: "assets/flags/es.png" },
-      { code: "CT", languageName: "Español", countryName: CountryRegion.CT, flagUrl: "assets/flags/ct.png" },
-      { code: "LU", languageName: "Lëtzebuergesch", countryName: CountryRegion.LU, flagUrl: "assets/flags/lu.png" },
+      // { code: "IE", languageName: "English", countryName: CountryRegion.IE, flagUrl: "assets/flags/ie.png" },
+      // { code: "HU", languageName: "Magyar", countryName: CountryRegion.HU, flagUrl: "assets/flags/hu.png" },
+      // { code: "GR", languageName: "Ελληνικά", countryName: CountryRegion.GR, flagUrl: "assets/flags/gr.png" },
+      // { code: "DK", languageName: "Dansk", countryName: CountryRegion.DK, flagUrl: "assets/flags/dk.png" },
+      // { code: "PL", languageName: "Polski", countryName: CountryRegion.PL, flagUrl: "assets/flags/pl.png" },
+      // { code: "PT", languageName: "Português", countryName: CountryRegion.PT, flagUrl: "assets/flags/pt.png" },
+      // { code: "ES", languageName: "Español", countryName: CountryRegion.ES, flagUrl: "assets/flags/es.png" },
+      // { code: "CT", languageName: "Español", countryName: CountryRegion.CT, flagUrl: "assets/flags/ct.png" },
+      // { code: "LU", languageName: "Lëtzebuergesch", countryName: CountryRegion.LU, flagUrl: "assets/flags/lu.png" },
       { code: "XX", languageName: "International", countryName: CountryRegion.XX, flagUrl: "" },
    ];
 
