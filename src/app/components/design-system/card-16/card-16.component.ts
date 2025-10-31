@@ -35,4 +35,10 @@ export class Card16Component {
          default: return 'primary';
       }
    }
+
+   goToNextPage(child: PageComponentModel | undefined, index: number) {
+      if (!child) return;
+      this.utilsService.goToWithState(child.nextId ? `/hacking/have-access/${child.nextId}/actions`
+         : child.next ? `/hacking/have-access/${child.next.id}/actions`: null, {  page: child.next, index: index })
+   }
 }

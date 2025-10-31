@@ -114,14 +114,10 @@ export class DeleteContentComponent {
       }
    }
 
-   forceRadioSelection(event: Event, sectionName: string, value: any) {
-      // Empêcher la double exécution si le clic est déjà sur l'input radio
-      const target = event.target as HTMLElement;
-      if (target.tagName === "INPUT") {
-         return;
+   selectAnswer(sectionName: string, value: any) {
+      const control = this.formGroup.get(sectionName);
+      if (control) {
+         control.setValue(value);
       }
-
-      // Forcer la sélection de la valeur
-      this.formGroup.get(sectionName)?.setValue(value);
    }
 }

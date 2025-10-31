@@ -54,14 +54,14 @@
                      [value]="answer.value"
                      class="answer flex items-center"
                      (click)="
-                        forceRadioSelection($event, section.name, answer.value)
+                     selectAnswer(section.name, answer.value)
                      "
                      (keydown.enter)="
-                        forceRadioSelection($event, section.name, answer.value);
+                        selectAnswer(section.name, answer.value);
                         $event.preventDefault()
                      "
                      (keydown.space)="
-                        forceRadioSelection($event, section.name, answer.value);
+                        selectAnswer(section.name, answer.value);
                         $event.preventDefault()
                      "
                   >
