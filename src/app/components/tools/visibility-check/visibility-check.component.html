@@ -25,43 +25,46 @@
          <div class="section-items flex flex-col">
             @for (section of currentQuestion.sections; track section.name) {
             <div class="section-item flex flex-col color-(--color-8)">
-               @if (section.title) {
-               <div class="font-[600] text-(--color-8)">
-                  <span [innerHTML]="section.title | translate"></span>
-               </div>
-               }
-               <div class="answers flex flex-col">
-                  @for (answer of section.answers; track $index) {
-                  <mat-checkbox
-                     [disableRipple]="true"
-                     [checked]="isChecked(section.name, answer.title)"
-                     (change)="
-                        onCheckboxChange(
-                           section.name,
-                           answer.title,
-                           $event.checked
-                        )
-                     "
-                     (click)="
-                        forceCheckboxSelection(
-                           $event,
-                           section.name,
-                           answer.title
-                        )
-                     "
-                     class="answer flex items-center cursor-pointer checkbox-custom"
-                  >
-                     <span class="check-title">{{
-                        answer.title | translate
-                     }}</span>
-                     @if (answer.description) {
-                     <span class="check-description ml-1">{{
-                        answer.description | translate
-                     }}</span>
-                     }
-                  </mat-checkbox>
+               <fieldset>
+                  @if (section.title) {
+                     <legend class="sr-only">{{ getCleanTitle(section.title) }}</legend>
+                     <div class="font-[600] text-(--color-8)" aria-hidden="true">
+                        <span [innerHTML]="section.title | translate"></span>
+                     </div>
                   }
-               </div>
+                  <div class="answers flex flex-col">
+                     @for (answer of section.answers; track $index) {
+                     <mat-checkbox
+                        [disableRipple]="true"
+                        [checked]="isChecked(section.name, answer.title)"
+                        (change)="
+                           onCheckboxChange(
+                              section.name,
+                              answer.title,
+                              $event.checked
+                           )
+                        "
+                        (click)="
+                           forceCheckboxSelection(
+                              $event,
+                              section.name,
+                              answer.title
+                           )
+                        "
+                        class="answer flex items-center cursor-pointer checkbox-custom"
+                     >
+                        <span class="check-title">{{
+                           answer.title | translate
+                        }}</span>
+                        @if (answer.description) {
+                        <span class="check-description ml-1">{{
+                           answer.description | translate
+                        }}</span>
+                        }
+                     </mat-checkbox>
+                     }
+                  </div>
+               </fieldset>
             </div>
             }
          </div>

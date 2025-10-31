@@ -4,7 +4,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatIconModule } from "@angular/material/icon";
 import { Router } from "@angular/router";
-import { TranslatePipe } from "@ngx-translate/core";
+import { TranslatePipe, TranslateService } from "@ngx-translate/core";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { StepperComponent } from "../../design-system/stepper/stepper.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
@@ -44,6 +44,7 @@ type Results = {
 })
 export class VisibilityCheckComponent {
    private readonly router = inject(Router);
+   private readonly translateService = inject(TranslateService);
    currentStep = 1;
    totalSteps = 2;
    questions: Question[] = [
@@ -268,5 +269,12 @@ export class VisibilityCheckComponent {
       // Récupérer l'état actuel et inverser la sélection
       const isCurrentlyChecked = this.isChecked(sectionName, answerTitle);
       this.onCheckboxChange(sectionName, answerTitle, !isCurrentlyChecked);
+   }
+
+   getCleanTitle(translationKey: string | undefined): string {
+      if (!translationKey) return "";
+      const translated = this.translateService.instant(translationKey);
+      // Retirer toutes les balises <span aria-hidden="true">...</span> (avec variations d'espaces et d'attributs)
+      return translated.replace(/<span[^>]*aria-hidden\s*=\s*["']true["'][^>]*>.*?<\/span>\s*/gi, "").trim();
    }
 }

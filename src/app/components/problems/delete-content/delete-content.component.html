@@ -32,7 +32,7 @@
       ></app-stepper>
       }
       <div class="sections flex flex-col">
-         <h4 class="text-(--color-19)">
+         <h4 class="text-(--color-19)" aria-hidden="true">
             {{ currentQuestion.title | translate }}
          </h4>
          <div class="section-items flex flex-col">
@@ -43,40 +43,47 @@
                   {{ section.title | translate }}
                </div>
                }
-               <mat-radio-group
-                  [formControlName]="section.name"
-                  [name]="section.name"
-                  class="answers flex flex-col cursor-pointer"
-               >
-                  @for (answer of section.answers; track $index) {
-                  <mat-radio-button
-                     [disableRipple]="true"
-                     [value]="answer.value"
-                     class="answer flex items-center"
-                     (click)="
-                     selectAnswer(section.name, answer.value)
-                     "
-                     (keydown.enter)="
-                        selectAnswer(section.name, answer.value);
-                        $event.preventDefault()
-                     "
-                     (keydown.space)="
-                        selectAnswer(section.name, answer.value);
-                        $event.preventDefault()
-                     "
-                  >
-                     <span
-                        class="radio-title"
-                        [innerHTML]="answer.title | translate"
-                     ></span>
-                     @if (answer.description) {
-                     <span class="radio-description ml-1">{{
-                        answer.description | translate
-                     }}</span>
-                     }
-                  </mat-radio-button>
+               <fieldset>
+                  @if (section.title) {
+                  <legend class="sr-only">{{ section.title | translate }}</legend>
+                  } @else {
+                     <legend class="sr-only">{{ currentQuestion.title | translate }}</legend>
                   }
-               </mat-radio-group>
+                  <mat-radio-group
+                     [formControlName]="section.name"
+                     [name]="section.name"
+                     class="answers flex flex-col cursor-pointer"
+                  >
+                     @for (answer of section.answers; track $index) {
+                     <mat-radio-button
+                        [disableRipple]="true"
+                        [value]="answer.value"
+                        class="answer flex items-center"
+                        (click)="
+                        selectAnswer(section.name, answer.value)
+                        "
+                        (keydown.enter)="
+                           selectAnswer(section.name, answer.value);
+                           $event.preventDefault()
+                        "
+                        (keydown.space)="
+                           selectAnswer(section.name, answer.value);
+                           $event.preventDefault()
+                        "
+                     >
+                        <span
+                           class="radio-title"
+                           [innerHTML]="answer.title | translate"
+                        ></span>
+                        @if (answer.description) {
+                        <span class="radio-description ml-1">{{
+                           answer.description | translate
+                        }}</span>
+                        }
+                     </mat-radio-button>
+                     }
+                  </mat-radio-group>
+               </fieldset>
             </div>
             }
          </div>
