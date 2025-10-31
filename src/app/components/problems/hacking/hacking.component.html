@@ -122,6 +122,14 @@
                      [value]="answer.value"
                      class="answer flex items-center cursor-pointer"
                      (click)="selectAnswer(section.name, answer.value)"
+                     (keydown.enter)="
+                        selectAnswer(section.name, answer.value);
+                        $event.preventDefault()
+                     "
+                     (keydown.space)="
+                        selectAnswer(section.name, answer.value);
+                        $event.preventDefault()
+                     "
                   >
                      <span
                         class="radio-title"

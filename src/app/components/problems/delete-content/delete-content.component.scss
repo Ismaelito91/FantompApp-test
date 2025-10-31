@@ -68,6 +68,24 @@
                            color: var(--color-neutral-light-content-4);
                         }
                      }
+
+                     // Cacher l'outline de l'input radio natif
+                     ::ng-deep {
+                        input[type="radio"] {
+                           outline: none !important;
+                           &:focus,
+                           &:focus-visible {
+                              outline: none !important;
+                           }
+                        }
+                     }
+
+                     // S'assurer que seul le conteneur mat-radio-button a l'outline
+                     &:focus-within,
+                     &:focus-visible {
+                        outline: 3px solid var(--color-1) !important;
+                        outline-offset: 4px !important;
+                     }
                   }
                }
             }

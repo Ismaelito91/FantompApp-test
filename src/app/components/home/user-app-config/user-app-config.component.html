@@ -13,6 +13,8 @@
          class="theme-option"
          [class.selected]="isThemeSelected('system')"
          (click)="setTheme('system')"
+         (keydown.enter)="setTheme('system'); $event.preventDefault()"
+         (keydown.space)="setTheme('system'); $event.preventDefault()"
          role="listitem"
          [attr.aria-checked]="isThemeSelected('system')"
          tabindex="0"
@@ -23,6 +25,7 @@
             value="system"
             [disableRipple]="true"
             aria-hidden="true"
+            tabindex="-1"
          ></mat-radio-button>
          <div class="theme-info">
             <span class="theme-title">
@@ -41,6 +44,8 @@
          class="theme-option"
          [class.selected]="isThemeSelected('light')"
          (click)="setTheme('light')"
+         (keydown.enter)="setTheme('light'); $event.preventDefault()"
+         (keydown.space)="setTheme('light'); $event.preventDefault()"
          role="listitem"
          [attr.aria-checked]="isThemeSelected('light')"
          tabindex="0"
@@ -51,6 +56,7 @@
             value="light"
             [disableRipple]="true"
             aria-hidden="true"
+            tabindex="-1"
          ></mat-radio-button>
          <div class="theme-info">
             <span class="theme-title">
@@ -66,6 +72,8 @@
          class="theme-option"
          [class.selected]="isThemeSelected('dark')"
          (click)="setTheme('dark')"
+         (keydown.enter)="setTheme('dark'); $event.preventDefault()"
+         (keydown.space)="setTheme('dark'); $event.preventDefault()"
          role="listitem"
          [attr.aria-checked]="isThemeSelected('dark')"
          tabindex="0"
@@ -76,6 +84,7 @@
             value="dark"
             [disableRipple]="true"
             aria-hidden="true"
+            tabindex="-1"
          ></mat-radio-button>
          <div class="theme-info">
             <span class="theme-title">
