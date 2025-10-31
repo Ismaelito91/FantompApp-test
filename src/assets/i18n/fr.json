@@ -222,6 +222,15 @@
                }
             }
          },
+         "VIOLENT": {
+            "TITLE": "Est ce qu'il s'agit d'un contenu violent ou te représentant nu·e ?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Oui",
+                  "ANSWER_2_TITLE": "Non"
+               }
+            }
+         },
          "RESULTS": {
             "REPORTED_CONTENT": {
                "TITLE": "Tu as signalé le contenu ?",
