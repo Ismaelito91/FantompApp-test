@@ -14,7 +14,7 @@ export class LanguageService {
    private overrideLang: SupportedLanguage | null = null;
 
    public setOverrideLang(lang: string | null) {
-      const upper = (lang || '').toUpperCase();
+      const upper = (lang || "").toUpperCase();
       if (upper !== "") {
          this.overrideLang = upper as SupportedLanguage;
          this.setLanguage(this.overrideLang);
@@ -28,18 +28,85 @@ export class LanguageService {
       languageName: string; // Français, English, ...
       countryName: string; // France, Éire, ...
       flagUrl?: string; // svg flag url
+      flagAltKey?: string; // Translation key for flag alt text
    }[] = [
-      { code: "FR", languageName: "Français", countryName: CountryRegion.FR, flagUrl: "assets/flags/fr.png" },
-      // { code: "IE", languageName: "English", countryName: CountryRegion.IE, flagUrl: "assets/flags/ie.png" },
-      // { code: "HU", languageName: "Magyar", countryName: CountryRegion.HU, flagUrl: "assets/flags/hu.png" },
-      // { code: "GR", languageName: "Ελληνικά", countryName: CountryRegion.GR, flagUrl: "assets/flags/gr.png" },
-      // { code: "DK", languageName: "Dansk", countryName: CountryRegion.DK, flagUrl: "assets/flags/dk.png" },
-      // { code: "PL", languageName: "Polski", countryName: CountryRegion.PL, flagUrl: "assets/flags/pl.png" },
-      // { code: "PT", languageName: "Português", countryName: CountryRegion.PT, flagUrl: "assets/flags/pt.png" },
-      // { code: "ES", languageName: "Español", countryName: CountryRegion.ES, flagUrl: "assets/flags/es.png" },
-      // { code: "CT", languageName: "Español", countryName: CountryRegion.CT, flagUrl: "assets/flags/ct.png" },
-      // { code: "LU", languageName: "Lëtzebuergesch", countryName: CountryRegion.LU, flagUrl: "assets/flags/lu.png" },
-      { code: "XX", languageName: "International", countryName: CountryRegion.XX, flagUrl: "" },
+      {
+         code: "FR",
+         languageName: "Français",
+         countryName: CountryRegion.FR,
+         flagUrl: "assets/images/flag/france.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.FRANCE",
+      },
+      // {
+      //    code: "IE",
+      //    languageName: "English",
+      //    countryName: CountryRegion.IE,
+      //    flagUrl: "assets/images/flag/Ireland.svg",
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.IRELAND",
+      // },
+      // {
+      //    code: "HU",
+      //    languageName: "Magyar",
+      //    countryName: CountryRegion.HU,
+      //    flagUrl: "assets/images/flag/Hungary.svg",
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.HUNGARY",
+      // },
+      // {
+      //    code: "GR",
+      //    languageName: "Ελληνικά",
+      //    countryName: CountryRegion.GR,
+      //    flagUrl: "assets/images/flag/grece.svg",
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.GREECE",
+      // },
+      // {
+      //    code: "DK",
+      //    languageName: "Dansk",
+      //    countryName: CountryRegion.DK,
+      //    flagUrl: "assets/images/flag/dansk.svg",
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.DENMARK",
+      // },
+      // {
+      //    code: "PL",
+      //    languageName: "Polski",
+      //    countryName: CountryRegion.PL,
+      //    flagUrl: "assets/images/flag/Poland.svg",
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.POLAND",
+      // },
+      // {
+      //    code: "PT",
+      //    languageName: "Português",
+      //    countryName: CountryRegion.PT,
+      //    flagUrl: "assets/images/flag/Portugal.svg",
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.PORTUGAL",
+      // },
+      // {
+      //    code: "ES",
+      //    languageName: "Español",
+      //    countryName: CountryRegion.ES,
+      //    flagUrl: "assets/images/flag/spain.svg",
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.SPAIN",
+      // },
+      // {
+      //    code: "CT",
+      //    languageName: "Español",
+      //    countryName: CountryRegion.CT,
+      //    flagUrl: "assets/images/flag/spain.svg",
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.CATALONIA",
+      // },
+      // {
+      //    code: "LU",
+      //    languageName: "Lëtzebuergesch",
+      //    countryName: CountryRegion.LU,
+      //    flagUrl: "assets/images/flag/Luxembourg.svg",
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.LUXEMBOURG",
+      // },
+      {
+         code: "XX",
+         languageName: "International",
+         countryName: CountryRegion.XX,
+         flagUrl: "",
+         flagAltKey: "ALT_TEXT.GENERAL.FLAG",
+      },
    ];
 
    constructor(private translateService: TranslateService) {

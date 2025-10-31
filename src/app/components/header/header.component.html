@@ -75,10 +75,10 @@
          <img
             class="flag-img !size-[16px] !m-0"
             [src]="currentFlagUrl"
-            alt="flag"
+            [alt]="currentFlagAltKey | translate"
          />
          } @else {
-         <mat-icon class="!size-[20px] !m-0">🌐</mat-icon>
+         <span class="emoji-icon !m-0">🌐</span>
          } @if (!languageMenuTrigger.menuOpen) {
          <mat-icon class="chevron" iconPositionEnd>expand_more</mat-icon>
          } @else {
@@ -97,12 +97,13 @@
          >
             <div class="lang-item">
                @if (lang.flagUrl) {
-               <img class="flag-img" [src]="lang.flagUrl" alt="flag" />
+               <img
+                  class="flag-img"
+                  [src]="lang.flagUrl"
+                  [alt]="lang.flagAltKey || 'ALT_TEXT.GENERAL.FLAG' | translate"
+               />
                } @else {
-               <mat-icon
-                  class="!text-[20px] !mr-[6px] ml-[-2px] !size-[22px] !m-0"
-                  >🌐</mat-icon
-               >
+               <span class="emoji-icon">🌐</span>
                }
                <span class="language">{{ lang.languageName }}</span>
                <span class="country">&nbsp;⸱&nbsp;{{ lang.countryName }}</span>
