@@ -49,7 +49,7 @@
       "START_USING": "Start using it",
       "TAP_TO_CONTINUE": "Tap to continue",
       "WELCOME_TO": "Welcome to FantomApp",
-      "GHOST_MODE_EXPLANATION": "Here you surf on ghost mode, no one knows you're here. None of your information have been saved. You're free to explore how to protect your private life.",
+      "GHOST_MODE_EXPLANATION": "Here you browse in <span class=\"ghost-mode\">ghost mode</span>, no one knows you're here. None of your information has been saved. You're free to explore how to protect your privacy.",
       "PROGRESS": "Onboarding progress",
       "GO_TO_STEP": "Go to step",
       "COMPLETED_STEP": "Completed step",
@@ -59,6 +59,18 @@
       "OF": "On",
       "BUBBLE": {
          "WELCOME": "Hi ! I'm here to guide you through the app !"
+      },
+      "STEP_TWO": {
+         "TITLE": "Do you need help? <span aria-hidden=\"true\">🛟</span>",
+         "DESCRIPTION": "Sometimes we can have problems online. Here, you will find tips and solutions."
+      },
+      "STEP_THREE": {
+         "TITLE": "Tools <span aria-hidden=\"true\">🛠️</span>",
+         "DESCRIPTION": "Strong password, protected photo, verified bio: take control of your privacy!"
+      },
+      "STEP_FOUR": {
+         "TITLE": "Essential settings <span aria-hidden=\"true\">⚙️</span>",
+         "DESCRIPTION": "It's not always easy to configure your accounts... on FantomApp you will find lots of tips."
       },
       "WELCOME": {
          "TITLE": "Welcome to FantomApp !",

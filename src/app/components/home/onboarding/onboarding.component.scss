@@ -324,7 +324,7 @@
       text-align: left;
       width: 100%;
    }
-   .ghost-mode {
+   ::ng-deep .ghost-mode {
       color: var(--color-11);
       font-weight: var(--font-weight-heading);
    }

@@ -56,8 +56,7 @@
                [@slideInUp]="animationStates().explanation"
             >
                <div class="bubble-content">
-                  <p>
-                     {{ "ONBOARDING.GHOST_MODE_EXPLANATION" | translate }}
+                  <p [innerHTML]="'ONBOARDING.GHOST_MODE_EXPLANATION' | translate">
                   </p>
                </div>
             </div>
@@ -141,13 +140,11 @@
       <div class="problem-bubble">
          <div class="bubble-content">
             <div class="problem-header">
-               <h3 class="problem-title">
-                  Tu as besoin d'aide ? <span aria-hidden="true">🛟</span>
+               <h3 class="problem-title" [innerHTML]="'ONBOARDING.STEP_TWO.TITLE' | translate">
                </h3>
             </div>
             <p class="problem-description">
-               Parfois on peut avoir des problèmes en ligne. Ici, tu trouveras
-               des pistes et des solutions.
+               {{ "ONBOARDING.STEP_TWO.DESCRIPTION" | translate }}
             </p>
             <button
                type="button"
@@ -212,13 +209,11 @@
       <div class="tools-bubble">
          <div class="bubble-content">
             <div class="problem-header">
-               <h3 class="problem-title">
-                  Outils <span aria-hidden="true">🛠️</span>
+               <h3 class="problem-title" [innerHTML]="'ONBOARDING.STEP_THREE.TITLE' | translate">
                </h3>
             </div>
             <p class="problem-description">
-               Mot de passe béton, photo protégée, bio vérifiée : prends le
-               contrôle de ta vie privée !
+               {{ "ONBOARDING.STEP_THREE.DESCRIPTION" | translate }}
             </p>
             <button
                type="button"
@@ -285,13 +280,11 @@
       <div class="settings-bubble">
          <div class="bubble-content">
             <div class="problem-header">
-               <h3 class="problem-title">
-                  Paramètres essentiels <span aria-hidden="true">⚙️</span>
+               <h3 class="problem-title" [innerHTML]="'ONBOARDING.STEP_FOUR.TITLE' | translate">
                </h3>
             </div>
             <p class="problem-description">
-               C'est pas toujours simple de paramétrer tes comptes... sur
-               FantomApp tu trouveras plein d'astuces.
+               {{ "ONBOARDING.STEP_FOUR.DESCRIPTION" | translate }}
             </p>
             <button
                type="button"

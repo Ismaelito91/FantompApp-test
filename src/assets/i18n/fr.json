@@ -52,7 +52,7 @@
       "START_USING": "Commencer à utiliser",
       "TAP_TO_CONTINUE": "Appuyez pour continuer",
       "WELCOME_TO": "Bienvenue sur",
-      "GHOST_MODE_EXPLANATION": "Ici tu navigues en mode fantôme, personne ne sait que tu es là. Aucune information sur toi n'est enregistrée. Tu es libre d'explorer comment protéger ta vie privée.",
+      "GHOST_MODE_EXPLANATION": "Ici tu navigues en <span class=\"ghost-mode\">mode fantôme</span>, personne ne sait que tu es là. Aucune information sur toi n'est enregistrée. Tu es libre d'explorer comment protéger ta vie privée.",
       "PROGRESS": "Progression de l'introduction",
       "GO_TO_STEP": "Aller à l'étape",
       "COMPLETED_STEP": "Étape terminée",
@@ -62,6 +62,18 @@
       "OF": "sur",
       "BUBBLE": {
          "WELCOME": "Salut ! Je suis là pour t'accompagner dans la découverte de l'app !"
+      },
+      "STEP_TWO": {
+         "TITLE": "Tu as besoin d'aide ? <span aria-hidden=\"true\">🛟</span>",
+         "DESCRIPTION": "Parfois on peut avoir des problèmes en ligne. Ici, tu trouveras des pistes et des solutions."
+      },
+      "STEP_THREE": {
+         "TITLE": "Outils <span aria-hidden=\"true\">🛠️</span>",
+         "DESCRIPTION": "Mot de passe béton, photo protégée, bio vérifiée : prends le contrôle de ta vie privée !"
+      },
+      "STEP_FOUR": {
+         "TITLE": "Paramètres essentiels <span aria-hidden=\"true\">⚙️</span>",
+         "DESCRIPTION": "C'est pas toujours simple de paramétrer tes comptes... sur FantomApp tu trouveras plein d'astuces."
       },
       "WELCOME": {
          "TITLE": "Bienvenue dans Fantôme App !",
