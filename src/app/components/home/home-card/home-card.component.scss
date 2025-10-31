@@ -110,11 +110,6 @@
    transform: translateY(-2px);
 }
 
-.home-card-anonym:focus {
-   outline: 2px solid var(--color-primary-500);
-   outline-offset: 2px;
-}
-
 #blur-image-tool {
    background-image: url("../../../../assets/images/bg-blur-img.png");
    width: calc(170px + 8vw);
@@ -184,12 +179,6 @@
 .home-card-problem:hover,
 .home-card-harassment:hover {
    transform: translateY(-2px);
-}
-
-.home-card-problem:focus,
-.home-card-harassment:focus {
-   outline: 2px solid var(--color-primary-500);
-   outline-offset: 2px;
 }
 
 .problem-bg-container {

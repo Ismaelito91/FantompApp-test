@@ -49,3 +49,7 @@
    height: 18px;
    object-fit: contain;
 }
+
+a:focus-visible {
+   display: block;
+}

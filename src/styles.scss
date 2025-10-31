@@ -584,6 +584,12 @@
          text-decoration: underline;
       }
    }
+
+   *:focus-visible {
+      outline: 3px solid var(--color-1) !important;
+      outline-offset: 4px !important;
+   }
+
 }
 
 // Dark overrides

@@ -60,6 +60,9 @@
    padding: 4px 0;
    background: var(--background-2);
    box-shadow: var(--shadow-1);
+   *:focus-visible {
+      outline-offset: -3px !important;
+   }
 }
 
 /* Force flag images inside the language menu panel to 16x16. Use ::ng-deep
