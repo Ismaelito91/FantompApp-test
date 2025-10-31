@@ -3,7 +3,11 @@
    min-height: 100vh;
    padding-bottom: var(--spacing-5);
 
-   .problems-title {
+   .resources-title {
+      padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
+   }
+
+   .resources-description {
       padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
    }
 
@@ -12,7 +16,7 @@
       object-fit: cover;
    }
 
-   .problems-items-container {
+   .resources-items-container {
       gap: var(--spacing-5);
       padding: 0 var(--spacing-3);
    }

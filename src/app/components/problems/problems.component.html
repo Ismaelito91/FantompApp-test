@@ -3,7 +3,7 @@
       <div class="problems-container flex flex-col page-1">
          <div class="problems-title-container">
             @if ((page() | pageTranslation)?.firstTitle) {
-               <h1 class="problems-title" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></h1>
+               <h1 class="problems-title ckeditor-content" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></h1>
             }
          </div>
          <div class="problems-items-container flex flex-col">
@@ -39,7 +39,10 @@
          <img [src]="(page() | pageTranslation)?.image" alt="image" class="image-cover z-101"/>
          <app-button-back class="fixed top-(--spacing-3) pl-(--spacing-5) z-102"></app-button-back>
          @if ((page() | pageTranslation)?.firstTitle) {
-            <h3 class="problems-title" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></h3>
+            <h3 class="problems-title ckeditor-content" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></h3>
+         }
+         @if ((page() | pageTranslation)?.description) {
+            <p class="problems-description ckeditor-content" [innerHTML]="(page() | pageTranslation)?.description! | translate | safeHtml"></p>
          }
          <div class="problems-items-container flex flex-col">
             @for (problem of sortedChildren; track $index) {
