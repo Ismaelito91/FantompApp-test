@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -6,9 +6,9 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatDividerModule } from "@angular/material/divider";
 import { TranslateModule } from "@ngx-translate/core";
 import { LanguageService } from "../../service/language.service";
-import {Router, RouterModule} from "@angular/router";
-import {DeviceService} from "../../service/device.service";
-import {Device} from "../../model/enum/device.enum";
+import { Router, RouterModule } from "@angular/router";
+import { DeviceService } from "../../service/device.service";
+import { Device } from "../../model/enum/device.enum";
 
 @Component({
    selector: "app-header",
@@ -27,18 +27,16 @@ import {Device} from "../../model/enum/device.enum";
 })
 export class HeaderComponent implements OnInit {
    private deviceService = inject(DeviceService);
-   protected _languageService= inject(LanguageService);
+   protected _languageService = inject(LanguageService);
    private router = inject(Router);
-   
 
-   ngOnInit(): void {
-   }
+   ngOnInit(): void {}
 
    isVisible(): boolean {
-      return this.router.url.includes('/secure-myself');
+      return this.router.url.includes("/secure-myself");
    }
 
-   selectedDevice: string | null = sessionStorage.getItem('overrideDevice');
+   selectedDevice: string | null = sessionStorage.getItem("overrideDevice");
 
    setDevice(device: Device) {
       this.selectedDevice = device;
@@ -48,9 +46,17 @@ export class HeaderComponent implements OnInit {
    // Fournit l'URL du drapeau de la langue courante
    get currentFlagUrl(): string {
       const current = this._languageService.supportedLanguages.find(
-         l => l.code === this._languageService.language()
+         (l) => l.code === this._languageService.language()
       );
-      return current?.flagUrl || '';
+      return current?.flagUrl || "";
+   }
+
+   // Fournit la clé de traduction pour l'alt du drapeau actuel
+   get currentFlagAltKey(): string {
+      const current = this._languageService.supportedLanguages.find(
+         (l) => l.code === this._languageService.language()
+      );
+      return current?.flagAltKey || "ALT_TEXT.GENERAL.FLAG";
    }
    protected readonly Device = Device;
 }
