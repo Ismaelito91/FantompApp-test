@@ -58,3 +58,21 @@
       }
    }
 }
+.close-button {
+   color: #10052e;
+   background-color: white;
+   font-family: Nunito;
+   font-weight: 700;
+   font-style: Bold;
+   font-size: 18px;
+   line-height: 28px;
+   letter-spacing: 0%;
+   text-align: center;
+   height: 48px;
+   &:focus-visible {
+    outline: 2px solid var(--color-neutral-light-background-2) !important;
+   }
+}
+::ng-deep .mat-mdc-menu-item:focus-visible {
+   outline-offset: -4px !important;
+}

@@ -11,6 +11,7 @@ import {
    Component,
    effect,
    ElementRef,
+   HostListener,
    signal,
    ViewChild,
 } from "@angular/core";
@@ -71,6 +72,7 @@ export const moveFromTo = trigger("moveFromTo", [
 })
 export class BlurImageComponent {
    @ViewChild("canvas") canvasRef!: ElementRef<HTMLCanvasElement>;
+   @ViewChild("closeButton", { read: ElementRef }) closeButtonRef!: ElementRef<HTMLButtonElement>;
 
    // Reactive properties
    brushSize = signal(70);
@@ -112,7 +114,17 @@ export class BlurImageComponent {
    onFadeInDone() {
       // Déclenche l'animation de la main après la fin du fadeIn
       this.handAnimationState = "active";
+      // Met le focus sur le bouton de fermeture
+      this.closeButtonRef.nativeElement.focus();
    }
+
+   @HostListener("document:keydown.escape", ["$event"])
+   handleEscapeKey(event: KeyboardEvent) {
+      if (this.showTutorial) {
+         this.onCloseTutorial();
+      }
+   }
+
    onCloseTutorial() {
       localStorage.setItem("blur-tutorial", "true");
       this.showTutorial = false;

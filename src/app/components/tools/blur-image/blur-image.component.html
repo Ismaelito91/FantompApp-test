@@ -27,18 +27,8 @@
       </h5>
       <button
          mat-flat-button
-         style="
-            color: #10052e;
-            background-color: white;
-            font-family: Nunito;
-            font-weight: 700;
-            font-style: Bold;
-            font-size: 18px;
-            line-height: 28px;
-            letter-spacing: 0%;
-            text-align: center;
-            height: 48px;
-         "
+         class="close-button"
+         #closeButton
          (click)="onCloseTutorial()"
       >
          {{ "COMMON.UNDERSTOOD" | translate }}
@@ -46,7 +36,7 @@
    </div>
 </div>
 }
-<div class="flex flex-col h-screen p-(--spacing-3) gap-(--spacing-3) relative">
+<div class="flex flex-col h-screen p-(--spacing-3) gap-(--spacing-3) relative" [attr.inert]="showTutorial && (fileInput.files && fileInput.files.length > 0) ? 'true' : null">
    <app-button-back
       class="fixed top-[16px] pl-(--spacing-3) z-2"
    ></app-button-back>
