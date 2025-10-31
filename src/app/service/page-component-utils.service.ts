@@ -38,7 +38,7 @@ export class PageComponentUtilsService {
                return value;
             }
          } else if (3 === sectionId) {
-            if (value.type === ComponentType.PAGE_RESOURCES) {
+            if (value.type === ComponentType.PAGE_HOME) {
                return value;
             }
          }

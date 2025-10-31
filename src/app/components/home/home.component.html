@@ -1,13 +1,26 @@
 <main id="home-container" role="main" aria-labelledby="app-info-title">
    <div class="home-greeting">
       <h1
-         class="!text-(--color-1)"
-         [innerHTML]="'HOME.GREETING' | translate"
+      class="!text-(--color-1)"
+      [innerHTML]="'HOME.GREETING' | translate"
       ></h1>
    </div>
-
+   
    <!-- Composant home-card -->
    <app-home-card></app-home-card>
+   @if (page()?.type == ComponentType.PAGE_HOME) {
+      @if (sortedChildren.length > 0) {
+         <div class="children-container w-full">
+            @for (child of sortedChildren; track $index) {
+               @switch (child.type) {
+                  @case (ComponentType.CARD_7) {
+                     <app-card-7 [data]="child"></app-card-7>
+                  }
+               }
+            }
+         </div>
+      }
+   }
    <div class="app-info w-full flex flex-col gap-(--spacing-3)">
       <h5 id="app-info-title">{{ "HOME.APP_INFO_TITLE" | translate }}</h5>
       <div id="app-info-parent">

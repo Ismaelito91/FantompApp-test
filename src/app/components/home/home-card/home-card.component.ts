@@ -1,7 +1,7 @@
-import { Component, OnInit, computed, inject, effect } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { Router, RouterModule } from "@angular/router";
+import { Component, computed, effect, inject } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
+import { Router, RouterModule } from "@angular/router";
 import { TranslatePipe } from "@ngx-translate/core";
 import { GhostAnimationService } from "../../../service/ghost-animation.service";
 import { PreloadService } from "../../../service/preload.service";
@@ -13,7 +13,7 @@ import { PreloadService } from "../../../service/preload.service";
    templateUrl: "./home-card.component.html",
    styleUrls: ["./home-card.component.scss"],
 })
-export class HomeCardComponent implements OnInit {
+export class HomeCardComponent {
    private ghostAnimationService = inject(GhostAnimationService);
    private preloadService = inject(PreloadService);
    private homePageLinkIds: Map<string, number> = new Map();
@@ -36,8 +36,6 @@ export class HomeCardComponent implements OnInit {
          }
       });
    }
-
-   ngOnInit(): void {}
 
    navigateTo(url: string): void {
       this.router.navigate([url]);

@@ -1,18 +1,17 @@
-import { Injectable, inject, signal } from "@angular/core";
-import { TranslateService } from "@ngx-translate/core";
-import { catchError, of, forkJoin, tap, map, finalize, Observable } from "rxjs";
-import SettingModel from "../model/setting.model";
+import { inject, Injectable, signal } from "@angular/core";
+import { catchError, finalize, forkJoin, map, of, tap } from "rxjs";
 import PageComponentModel from "../model/page-component.model";
+import SettingModel from "../model/setting.model";
+import { ImagePreloadService } from "./image-preload.service";
 import { PageComponentUtilsService } from "./page-component-utils.service";
 import { PageComponentService } from "./page-component.service";
 import { SettingService } from "./setting.service";
-import { LanguageService } from "./language.service";
-import { ImagePreloadService } from "./image-preload.service";
 
 export interface PreloadedData {
   settings: SettingModel | null;
   problemsSection: Record<string, PageComponentModel>;
   secureMyselfSection: Record<string, PageComponentModel>;
+  homeSection: Record<string, PageComponentModel>;
   homePageLinkIds: Record<string, number>;
   translations?: { [lang: string]: any };
 }
@@ -68,6 +67,12 @@ export class PreloadService {
           return of({} as Record<string, PageComponentModel>);
         })
       ),
+      homeSection: this.pageComponentService.getRootPageComponentsBySectionId(3).pipe(
+        catchError(err => {
+          console.error("Erreur lors du chargement de la section 'Home':", err);
+          return of({} as Record<string, PageComponentModel>);
+        })
+      ),
       homePageLinkIds: this.pageComponentService.getHomePageLinkIds().pipe(
         catchError(err => {
           console.error("Erreur lors du chargement des liens de la page d'accueil:", err);
@@ -79,6 +84,7 @@ export class PreloadService {
         settings: data.settings,
         problemsSection: data.problemsSection || {},
         secureMyselfSection: data.secureMyselfSection || {},
+        homeSection: data.homeSection || {},
         homePageLinkIds: data.homePageLinkIds || {}
       })),
       tap(preloadedData => {
