@@ -160,6 +160,10 @@
    &:focus-visible {
       outline: 2px solid var(--color-neutral-light-background-1) !important;
    }
+   position: absolute;
+   top: 73px;
+   right: 19px;
+   z-index: 10;
 }
 
 .main-character-area {
@@ -461,12 +465,6 @@
    .highlight-circle {
       display: none;
    }
-   .step-two-skip {
-      position: absolute;
-      top: 73px;
-      right: 19px;
-      z-index: 10;
-   }
    .highlight-problem {
       position: fixed;
       width: 64px;
@@ -593,12 +591,6 @@
    .highlight-circle {
       display: none;
    }
-   .step-three-skip {
-      position: absolute;
-      top: 73px;
-      right: 19px;
-      z-index: 10;
-   }
    .highlight-tools {
       position: fixed;
       width: 64px;
@@ -675,12 +667,6 @@
    }
    .highlight-circle {
       display: none;
-   }
-   .step-four-skip {
-      position: absolute;
-      top: 73px;
-      right: 19px;
-      z-index: 10;
    }
    .highlight-settings {
       position: fixed;

@@ -12,17 +12,6 @@
    @if (currentStep() === 1) {
    <div class="onboarding-step-one">
       <div class="onboarding-container">
-         <!-- Bouton Passer en haut à droite -->
-         <button
-            #step1SkipButton
-            type="button"
-            class="skip-button"
-            [@slideInUp]="animationStates().skip"
-            (click)="closeOnboarding(); $event.stopPropagation()"
-         >
-            {{ "ONBOARDING.SKIP" | translate }}
-         </button>
-
          <!-- Zone du haut : Bulles de l'étape 1 -->
          <div class="top-section">
             <!-- Bulle de bienvenue -->
@@ -122,6 +111,17 @@
                </svg>
             </button>
          </div>
+         
+         <!-- Bouton Passer en haut à droite -->
+         <button
+            #step1SkipButton
+            type="button"
+            class="skip-button"
+            [@slideInUp]="animationStates().skip"
+            (click)="closeOnboarding(); $event.stopPropagation()"
+         >
+            {{ "ONBOARDING.SKIP" | translate }}
+         </button>
       </div>
    </div>
    }
