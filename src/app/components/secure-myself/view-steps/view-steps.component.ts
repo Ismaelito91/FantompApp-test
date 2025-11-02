@@ -97,7 +97,7 @@ export class ViewStepsComponent implements AfterViewInit {
       const direction = this.pendingFocusDirection;
       this.pendingFocusDirection = null;
       if (!direction) return;
-      setTimeout(() => this.focusArrowButton(direction), 0);
+      setTimeout(() => this.focusArrowButton(direction), 100);
    }
 
    private focusArrowButton(direction: 'prev' | 'next'): void {
@@ -105,9 +105,12 @@ export class ViewStepsComponent implements AfterViewInit {
       if (!host) return;
       const activeSlide = host.querySelector('swiper-slide.swiper-slide-active') as HTMLElement | null;
       if (!activeSlide) return;
-      const selector = direction === 'prev' ? 'button[aria-label="Previous"]' : 'button[aria-label="Next"]';
-      const btn = activeSlide.querySelector(selector) as HTMLButtonElement | null;
-      btn?.focus();
+      const cardContainer = activeSlide.querySelector('div.card-swiper-container') as HTMLElement | null;
+      if (!cardContainer) return;
+      cardContainer.focus();
+      // const selector = direction === 'prev' ? 'button[aria-label="Previous"]' : 'button[aria-label="Next"]';
+      // const btn = activeSlide.querySelector(selector) as HTMLButtonElement | null;
+      // btn?.focus();
    }
 
    onkeydown(event: KeyboardEvent) {

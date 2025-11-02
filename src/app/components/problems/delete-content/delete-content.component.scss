@@ -20,6 +20,9 @@
       padding-bottom: 200px;
       gap: var(--spacing-5);
       flex: 1;
+      &:focus-visible {
+         outline-offset: -3px !important
+      }
 
       .sections {
          gap: var(--spacing-5);

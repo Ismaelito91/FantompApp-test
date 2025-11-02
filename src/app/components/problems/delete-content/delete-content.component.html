@@ -24,7 +24,7 @@
          </p>
       </div>
    </div>
-   <form class="questions-container flex flex-col" [formGroup]="formGroup">
+   <form class="questions-container flex flex-col" [formGroup]="formGroup" #questionsContainer tabindex="-1">
       @if (totalSteps > 1) {
       <app-stepper
          [currentStep]="currentStep"

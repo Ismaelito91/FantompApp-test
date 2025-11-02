@@ -1,14 +1,14 @@
-<div class="flex flex-col h-full card-container">
+<div class="card-swiper-container flex flex-col h-full card-container" tabindex="-1">
    <div class="flex-grow flex items-center justify-center overflow-hidden relative">
       @if (index() > 0) {
-      <button mat-fab aria-label="Previous" class="previous-btn nav-btn" (click)="prev.emit()">
+      <button mat-fab aria-label="Previous" class="previous-btn nav-btn" (click)="prev.emit()" tabindex="0">
          <mat-icon svgIcon="arrow24x24-icon" class="rotate-180"></mat-icon>
       </button>
       }
       <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen-image"
          style="max-height: 100%; max-width: 100%; object-fit: contain;" />
       @if (index() < maxIndex()) {
-      <button mat-fab aria-label="Next" class="next-btn nav-btn" (click)="next.emit()">
+      <button mat-fab aria-label="Next" class="next-btn nav-btn" (click)="next.emit()" tabindex="0">
          <mat-icon svgIcon="arrow24x24-icon"></mat-icon>
       </button>
       }

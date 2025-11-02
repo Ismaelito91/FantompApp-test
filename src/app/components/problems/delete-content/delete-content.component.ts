@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ViewChild, ElementRef } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
@@ -42,6 +42,8 @@ type Answer = {
 })
 export class DeleteContentComponent {
    private readonly router = inject(Router);
+   @ViewChild("questionsContainer", { read: ElementRef })
+   questionsContainerRef!: ElementRef<HTMLFormElement>;
    currentStep = 1;
    totalSteps = 2;
    questions: Question[] = [
@@ -91,11 +93,25 @@ export class DeleteContentComponent {
    onClickNext() {
       this.currentStep++;
       this.currentQuestion = this.questions[this.currentStep - 1];
+      this.focusOnNewContent();
    }
 
    onClickPrevious() {
       this.currentStep--;
       this.currentQuestion = this.questions[this.currentStep - 1];
+      this.focusOnNewContent();
+   }
+
+   private focusOnNewContent() {
+      setTimeout(() => {
+         if (this.questionsContainerRef?.nativeElement) {
+            this.questionsContainerRef.nativeElement.focus();
+            this.questionsContainerRef.nativeElement.scrollIntoView({
+               behavior: "smooth",
+               block: "start",
+            });
+         }
+      }, 100);
    }
 
    onClickResults() {

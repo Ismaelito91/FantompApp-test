@@ -121,9 +121,12 @@ export class ActionsComponent {
       if (!host) return;
       const activeSlide = host.querySelector('swiper-slide.swiper-slide-active') as HTMLElement | null;
       if (!activeSlide) return;
-      const selector = direction === 'prev' ? 'button[aria-label="Previous"]' : 'button[aria-label="Next"]';
-      const btn = activeSlide.querySelector(selector) as HTMLButtonElement | null;
-      btn?.focus();
+      const cardContainer = activeSlide.querySelector('div.card-swiper-container') as HTMLElement | null;
+      if (!cardContainer) return;
+      cardContainer.focus();
+      // const selector = direction === 'prev' ? 'button[aria-label="Previous"]' : 'button[aria-label="Next"]';
+      // const btn = activeSlide.querySelector(selector) as HTMLButtonElement | null;
+      // btn?.focus();
    }
 
    onkeydown(event: KeyboardEvent) {

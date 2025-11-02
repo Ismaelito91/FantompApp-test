@@ -1,3 +1,9 @@
+.card-swiper-container {
+   &:focus-visible {
+      outline: 3px none var(--color-1) !important;
+      outline-offset: -4px !important;
+   }
+}
 .card-19-description {
    gap: var(--spacing-3);
 }

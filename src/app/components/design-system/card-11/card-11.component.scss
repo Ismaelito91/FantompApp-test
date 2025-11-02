@@ -1,3 +1,10 @@
+.card-swiper-container {
+   &:focus-visible {
+      outline: 3px none var(--color-1) !important;
+      outline-offset: -4px !important;
+   }
+}
+
 
 .card-11-description {
    margin: 24px 32px 48px 32px;
