@@ -7,6 +7,9 @@ import {
    ChangeDetectorRef,
    AfterViewInit,
    computed,
+   ViewChild,
+   ElementRef,
+   effect,
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { MatButtonModule } from "@angular/material/button";
@@ -117,6 +120,23 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
    private themeService = inject(ThemeService);
    private ghostAnimationService = inject(GhostAnimationService);
 
+   @ViewChild("step1NextButton", { read: ElementRef })
+   step1NextButtonRef!: ElementRef<HTMLButtonElement>;
+   @ViewChild("step1SkipButton", { read: ElementRef })
+   step1SkipButtonRef!: ElementRef<HTMLButtonElement>;
+   @ViewChild("step2NextButton", { read: ElementRef })
+   step2NextButtonRef!: ElementRef<HTMLButtonElement>;
+   @ViewChild("step2SkipButton", { read: ElementRef })
+   step2SkipButtonRef!: ElementRef<HTMLButtonElement>;
+   @ViewChild("step3NextButton", { read: ElementRef })
+   step3NextButtonRef!: ElementRef<HTMLButtonElement>;
+   @ViewChild("step3SkipButton", { read: ElementRef })
+   step3SkipButtonRef!: ElementRef<HTMLButtonElement>;
+   @ViewChild("step4NextButton", { read: ElementRef })
+   step4NextButtonRef!: ElementRef<HTMLButtonElement>;
+   @ViewChild("step4SkipButton", { read: ElementRef })
+   step4SkipButtonRef!: ElementRef<HTMLButtonElement>;
+
    // Signal pour l'étape actuelle
    currentStep = signal<number>(1);
 
@@ -133,9 +153,43 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
       skip: "hidden",
       nextButton: "hidden",
    });
+
+   constructor() {
+      // Effet pour gérer le focus à chaque changement d'étape
+      effect(() => {
+         const step = this.currentStep();
+         if (this.onboardingService.isOnboardingVisible()) {
+            setTimeout(() => {
+               this.focusCurrentStepButton(step);
+            }, 100);
+         }
+      });
+   }
+
    ngOnInit() {
       console.log("🚀 Onboarding démarré, étape initiale:", this.currentStep());
       this.startStep1Animations();
+   }
+
+   private focusCurrentStepButton(step: number) {
+      let buttonRef: ElementRef<HTMLButtonElement> | undefined;
+      switch (step) {
+         case 1:
+            buttonRef = this.step1NextButtonRef || this.step1SkipButtonRef;
+            break;
+         case 2:
+            buttonRef = this.step2NextButtonRef || this.step2SkipButtonRef;
+            break;
+         case 3:
+            buttonRef = this.step3NextButtonRef || this.step3SkipButtonRef;
+            break;
+         case 4:
+            buttonRef = this.step4NextButtonRef || this.step4SkipButtonRef;
+            break;
+      }
+      if (buttonRef?.nativeElement) {
+         buttonRef.nativeElement.focus();
+      }
    }
 
    ngAfterViewInit() {
@@ -192,6 +246,12 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
             nextButton: "visible",
          }));
          this.cdr.detectChanges();
+         // Mettre le focus sur le bouton Next après l'animation
+         setTimeout(() => {
+            if (this.step1NextButtonRef?.nativeElement) {
+               this.step1NextButtonRef.nativeElement.focus();
+            }
+         }, 100);
       }, 3900);
    }
 

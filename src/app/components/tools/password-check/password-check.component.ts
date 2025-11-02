@@ -427,6 +427,12 @@ export class PasswordCheckComponent
    @ViewChild("passwordInput", { static: false })
    passwordInput!: ElementRef<HTMLInputElement>;
 
+   @ViewChild("closeButton", { read: ElementRef })
+   closeButtonRef!: ElementRef<HTMLButtonElement>;
+
+   @ViewChild("backButton", { read: ElementRef })
+   backButtonRef!: ElementRef<HTMLButtonElement>;
+
    password: string = "";
    message: string = "";
    showPassword: boolean = false;
@@ -470,8 +476,6 @@ export class PasswordCheckComponent
       // Si c'est la première fois, affiche l'onboarding immédiatement
       if (!this.hasSeenOnboarding) {
          this.showInfoModal = true;
-         localStorage.setItem("password-check-onboarding-seen", "true");
-         this.hasSeenOnboarding = true;
       }
 
       this.containsCommonWords = false;
@@ -485,15 +489,22 @@ export class PasswordCheckComponent
       setTimeout(() => {
          this.initializeCriteria();
       }, 100);
+
+      // Si le modal d'onboarding est ouvert, mettre le focus sur le bouton de fermeture
+      if (this.showInfoModal && this.closeButtonRef) {
+         setTimeout(() => {
+            if (this.closeButtonRef?.nativeElement) {
+               this.closeButtonRef.nativeElement.focus();
+            }
+         }, 200);
+      }
    }
 
-   private activateInput() {
-      // Activer l'input automatiquement
-      this.isInputFocused = true;
-      // Focus sur l'input après un petit délai pour s'assurer que l'élément est rendu
+   private activateDefaultButton() {
+      // Focus sur le premier boutton du formulaire (pas l'input pour pas déclencher l'animation)
       setTimeout(() => {
-         if (this.passwordInput) {
-            this.passwordInput.nativeElement.focus();
+         if (this.backButtonRef) {
+            this.backButtonRef.nativeElement.querySelector('button')?.focus();
          }
       }, 200);
    }
@@ -593,13 +604,18 @@ export class PasswordCheckComponent
    toggleInfoModal() {
       this.showInfoModal = !this.showInfoModal;
 
-      if (!this.showInfoModal) {
-         // Remettre le focus sur l'élément principal après fermeture
+      if (this.showInfoModal) {
+         // Mettre le focus sur le bouton de fermeture quand le modal s'ouvre
          setTimeout(() => {
-            if (this.passwordInput) {
-               this.passwordInput.nativeElement.focus();
+            if (this.closeButtonRef?.nativeElement) {
+               this.closeButtonRef.nativeElement.focus();
             }
          }, 100);
+      } else {
+         
+         localStorage.setItem("password-check-onboarding-seen", "true");
+         // Remettre le focus sur l'élément principal après fermeture
+         this.activateDefaultButton();
       }
    }
 
@@ -608,11 +624,7 @@ export class PasswordCheckComponent
 
       if (!this.showPasswordInfoModal) {
          // Remettre le focus sur l'élément principal après fermeture
-         setTimeout(() => {
-            if (this.passwordInput) {
-               this.passwordInput.nativeElement.focus();
-            }
-         }, 100);
+         this.activateDefaultButton();
       }
    }
 

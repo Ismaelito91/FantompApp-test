@@ -14,6 +14,7 @@
       <div class="onboarding-container">
          <!-- Bouton Passer en haut à droite -->
          <button
+            #step1SkipButton
             type="button"
             class="skip-button"
             [@slideInUp]="animationStates().skip"
@@ -89,6 +90,7 @@
          <!-- Contrôles de navigation -->
          <div class="ghost-footer" [@slideInUp]="animationStates().nextButton">
             <button
+               #step1NextButton
                type="button"
                class="start-button next-button"
                (click)="completeOnboarding(); $event.stopPropagation()"
@@ -147,6 +149,7 @@
                {{ "ONBOARDING.STEP_TWO.DESCRIPTION" | translate }}
             </p>
             <button
+               #step2NextButton
                type="button"
                class="bubble-next-button"
                (click)="completeOnboarding(); $event.stopPropagation()"
@@ -185,6 +188,7 @@
 
       <!-- Bouton Passer pour l'étape 2 -->
       <button
+         #step2SkipButton
          type="button"
          class="skip-button step-two-skip"
          (click)="closeOnboarding(); $event.stopPropagation()"
@@ -216,6 +220,7 @@
                {{ "ONBOARDING.STEP_THREE.DESCRIPTION" | translate }}
             </p>
             <button
+               #step3NextButton
                type="button"
                class="bubble-next-button"
                (click)="completeOnboarding(); $event.stopPropagation()"
@@ -254,6 +259,7 @@
 
       <!-- Bouton Passer pour l'étape 3 -->
       <button
+         #step3SkipButton
          type="button"
          class="skip-button step-three-skip"
          (click)="closeOnboarding(); $event.stopPropagation()"
@@ -287,6 +293,7 @@
                {{ "ONBOARDING.STEP_FOUR.DESCRIPTION" | translate }}
             </p>
             <button
+               #step4NextButton
                type="button"
                class="bubble-next-button"
                (click)="completeOnboarding(); $event.stopPropagation()"
@@ -325,6 +332,7 @@
 
       <!-- Bouton Passer pour l'étape 4 -->
       <button
+         #step4SkipButton
          type="button"
          class="skip-button step-four-skip"
          (click)="closeOnboarding(); $event.stopPropagation()"

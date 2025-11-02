@@ -70,7 +70,9 @@ export class ViewAllComponent {
 
    openDialog() {
       const dialogRef = this.dialog.open(TutorialDialog, {
-         backdropClass: 'blurred-backdrop'
+         backdropClass: 'blurred-backdrop',
+         restoreFocus: true,
+         autoFocus: true
       });
 
       dialogRef.afterClosed().subscribe(() => {

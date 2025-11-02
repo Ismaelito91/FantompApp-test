@@ -1,12 +1,14 @@
 @switch (_settingService.appStatus()) {
    @case ("initialized") {
-      @if (!hideHeader) {
-         <app-header />
-      }
-      <router-outlet />
-      @if (!hideFooter) {
-         <app-footer />
-      }
+      <div [attr.inert]="_onboardingService.isOnboardingVisible() ? 'true' : null">
+         @if (!hideHeader) {
+            <app-header />
+         }
+         <router-outlet />
+         @if (!hideFooter) {
+            <app-footer />
+         }
+      </div>
       <app-onboarding *ngIf="_onboardingService.isOnboardingVisible()" />
    } @case ("pending") {
       {{ "APP.LOADING" | translate }}

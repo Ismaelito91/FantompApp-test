@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from "@angular/animations";
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { MatRadioModule } from "@angular/material/radio";
 import { Router } from "@angular/router";
@@ -93,6 +93,9 @@ export const fadeInBtnWithDelay = trigger("fadeInBtnWithDelay", [
 })
 export class HackingComponent implements OnInit {
    private readonly router = inject(Router);
+   @ViewChild("closeTutorialButton", { read: ElementRef })
+   closeTutorialButtonRef!: ElementRef<HTMLElement>;
+
    currentStep = 1;
    totalSteps = 1;
    questions: Question[] = [
@@ -130,6 +133,14 @@ export class HackingComponent implements OnInit {
    onBox1Done() {
       this.showBox2 = true;
       this.showBox3 = true;
+   }
+
+   onButtonAnimationDone() {
+      // accessiblité : prise de focus sur le bouton Suivant
+      const buttonElement = this.closeTutorialButtonRef.nativeElement.querySelector('button');
+      if (buttonElement) {
+         buttonElement.focus();
+      }
    }
 
    ngOnInit(): void {

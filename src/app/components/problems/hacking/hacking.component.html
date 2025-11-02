@@ -59,7 +59,9 @@
    <div>
       @if (showBox3) {
       <app-button
+         #closeTutorialButton
          @fadeInBtnWithDelay
+         (@fadeInBtnWithDelay.done)="onButtonAnimationDone()"
          variant="primary"
          [label]="'COMMON.NEXT' | translate"
          (click)="onCloseTutorial()"
@@ -68,7 +70,7 @@
    </div>
 </div>
 }
-<div class="hacking-container">
+<div class="hacking-container" [attr.inert]="showTutorial ? 'true' : null">
    <div class="fixed bg-(image:--background-31) h-[110px] w-full z-100"></div>
    <div class="header flex flex-col relative z-101">
       <app-button-back class="fixed top-[16px] z-103"></app-button-back>

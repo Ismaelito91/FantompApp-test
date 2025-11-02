@@ -157,6 +157,9 @@
    z-index: 10;
    background: none;
    border: none;
+   &:focus-visible {
+      outline: 2px solid var(--color-neutral-light-background-1) !important;
+   }
 }
 
 .main-character-area {
