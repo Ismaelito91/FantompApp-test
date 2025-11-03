@@ -3,23 +3,71 @@
    <div class="header flex flex-col relative z-101">
       <app-button-back class="fixed top-[16px] z-103"></app-button-back>
       <div class="flex justify-end z-102">
-         <img src="assets/images/report-picto.png" alt="image" class="!w-[86px] object-contain" />
+         <img
+            src="assets/images/report-picto.png"
+            alt="
+            "
+            class="!w-[86px] object-contain"
+         />
       </div>
       <div class="details flex flex-col">
-         <h3>{{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.TITLE" | translate }}</h3>
-         <p>{{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.DESCRIPTION" | translate }}</p>
+         <h3>
+            {{
+               "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.TITLE"
+                  | translate
+            }}
+         </h3>
+         <p>
+            {{
+               "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.DESCRIPTION"
+                  | translate
+            }}
+         </p>
       </div>
    </div>
    <div class="content flex flex-col gap-(--spacing-6)">
-      <div class="pt-[50px] pb-[50px] pl-[18px] pr-[18px] rounded-(--border-radius-2) bg-(--background-4)">
-         <img src="assets/images/screenshot-action.svg" alt="screenshot" class="!w-full !h-[235px]" />
+      <div
+         class="pt-[50px] pb-[50px] pl-[18px] pr-[18px] rounded-(--border-radius-2) bg-(--background-4)"
+      >
+         <img
+            src="assets/images/screenshot-action.svg"
+            alt="
+            "
+            class="!w-full !h-[235px]"
+         />
       </div>
       <div class="flex flex-col gap-(--spacing-3)">
-         <h5 class="!pl-(--spacing-3) !pr-(--spacing-3)" [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.P1.TITLE' | translate"></h5>
-         <p class="bg-(--background-4) p-(--spacing-3) rounded-(--border-radius-2)" style="font-weight: 500;" [innerHtml]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.P1.DESCRIPTION' | translate"></p>
+         <h5
+            class="!pl-(--spacing-3) !pr-(--spacing-3)"
+            [innerHTML]="
+               'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.P1.TITLE'
+                  | translate
+            "
+         ></h5>
+         <p
+            class="bg-(--background-4) p-(--spacing-3) rounded-(--border-radius-2)"
+            style="font-weight: 500"
+            [innerHtml]="
+               'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.P1.DESCRIPTION'
+                  | translate
+            "
+         ></p>
       </div>
       <div class="controls fixed bottom-0 w-full flex">
-         <app-button [label]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.BUTTON' | translate" variant="primary" [iconAfterLabel]="{name: 'icon-external-link24x24' }"
-            class="w-full" (click)="utilsService.goToExternal('https://demarche.publik-preprod.cnil.fr/preproduction-plainte/soumettre-une-plainte-par-mineur/?parcours=57fccd22')"></app-button>
+         <app-button
+            [label]="
+               'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.COMPLAINT.BUTTON'
+                  | translate
+            "
+            variant="primary"
+            [iconAfterLabel]="{ name: 'icon-external-link24x24' }"
+            class="w-full"
+            (click)="
+               utilsService.goToExternal(
+                  'https://demarche.publik-preprod.cnil.fr/preproduction-plainte/soumettre-une-plainte-par-mineur/?parcours=57fccd22'
+               )
+            "
+         ></app-button>
       </div>
    </div>
+</div>

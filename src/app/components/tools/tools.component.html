@@ -2,58 +2,97 @@
 <div class="tools-container flex flex-col" @slideInOut>
    <h1 class="tools-title">{{ "TOOLS.TITLE" | translate }}</h1>
    <div class="tools-items flex flex-col">
-      <div id="password-check-tool" class="tools-item flex justify-between items-center cursor-pointer"
+      <div
+         id="password-check-tool"
+         class="tools-item flex justify-between items-center cursor-pointer"
          (click)="onClickTool('password-check')"
          role="button"
          tabindex="0"
          (keydown.enter)="onClickTool('password-check')"
-         >
+      >
          <div class="tools-item-body flex items-center">
-            <img src="assets/images/password-check-tool-img.png" alt="image" class="tools-item-img" />
+            <img
+               src="assets/images/password-check-tool-img.png"
+               alt=""
+               class="tools-item-img"
+            />
             <div class="tools-item-text flex flex-col">
-               <h6 class="tools-item-title">{{ "TOOLS.PASSWORD_CHECK_TITLE" | translate }}</h6>
-               <p class="tools-item-description">{{ "TOOLS.PASSWORD_CHECK_DESCRIPTION" | translate }}</p>
+               <h6 class="tools-item-title">
+                  {{ "TOOLS.PASSWORD_CHECK_TITLE" | translate }}
+               </h6>
+               <p class="tools-item-description">
+                  {{ "TOOLS.PASSWORD_CHECK_DESCRIPTION" | translate }}
+               </p>
             </div>
          </div>
          <div>
-            <mat-icon svgIcon="chevron24x24-icon" class="!size-[24px]"
-               style="color: var(--color-neutral-light-background-1)"></mat-icon>
+            <mat-icon
+               svgIcon="chevron24x24-icon"
+               class="!size-[24px]"
+               style="color: var(--color-neutral-light-background-1)"
+            ></mat-icon>
          </div>
       </div>
-      <div id="blur-image-tool" class="tools-item flex justify-between items-center cursor-pointer"
+      <div
+         id="blur-image-tool"
+         class="tools-item flex justify-between items-center cursor-pointer"
          (click)="onClickTool('blur-image')"
          role="button"
          tabindex="0"
          (keydown.enter)="onClickTool('blur-image')"
-         >
+      >
          <div class="tools-item-body flex items-center">
-            <img src="assets/images/blur-image-tool-img.png" alt="image" class="tools-item-img" />
+            <img
+               src="assets/images/blur-image-tool-img.png"
+               alt=""
+               class="tools-item-img"
+            />
             <div class="tools-item-text flex flex-col">
-               <h6 class="tools-item-title">{{ "TOOLS.BLUR_IMAGE_TITLE" | translate }}</h6>
-               <p class="tools-item-description">{{ "TOOLS.BLUR_IMAGE_DESCRIPTION" | translate }}</p>
+               <h6 class="tools-item-title">
+                  {{ "TOOLS.BLUR_IMAGE_TITLE" | translate }}
+               </h6>
+               <p class="tools-item-description">
+                  {{ "TOOLS.BLUR_IMAGE_DESCRIPTION" | translate }}
+               </p>
             </div>
          </div>
          <div>
-            <mat-icon svgIcon="chevron24x24-icon" class="!size-[24px]"
-               style="color: var(--color-neutral-light-background-1)"></mat-icon>
+            <mat-icon
+               svgIcon="chevron24x24-icon"
+               class="!size-[24px]"
+               style="color: var(--color-neutral-light-background-1)"
+            ></mat-icon>
          </div>
       </div>
-      <div id="visibility-check-tool" class="tools-item flex justify-between items-center cursor-pointer"
+      <div
+         id="visibility-check-tool"
+         class="tools-item flex justify-between items-center cursor-pointer"
          (click)="onClickTool('visibility-check')"
          role="button"
          tabindex="0"
          (keydown.enter)="onClickTool('visibility-check')"
-         >
+      >
          <div class="tools-item-body flex items-center">
-            <img src="assets/images/visibility-check-tool-img.png" alt="image" class="tools-item-img" />
+            <img
+               src="assets/images/visibility-check-tool-img.png"
+               alt=""
+               class="tools-item-img"
+            />
             <div class="tools-item-text flex flex-col">
-               <h6 class="tools-item-title">{{ "TOOLS.VISIBILITY_CHECK_TITLE" | translate }}</h6>
-               <p class="tools-item-description">{{ "TOOLS.VISIBILITY_CHECK_DESCRIPTION" | translate }}</p>
+               <h6 class="tools-item-title">
+                  {{ "TOOLS.VISIBILITY_CHECK_TITLE" | translate }}
+               </h6>
+               <p class="tools-item-description">
+                  {{ "TOOLS.VISIBILITY_CHECK_DESCRIPTION" | translate }}
+               </p>
             </div>
          </div>
          <div>
-            <mat-icon svgIcon="chevron24x24-icon" class="!size-[24px]"
-               style="color: var(--color-neutral-light-background-1)"></mat-icon>
+            <mat-icon
+               svgIcon="chevron24x24-icon"
+               class="!size-[24px]"
+               style="color: var(--color-neutral-light-background-1)"
+            ></mat-icon>
          </div>
       </div>
    </div>

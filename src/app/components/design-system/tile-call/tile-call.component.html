@@ -1,17 +1,48 @@
-<a [href]="(data() | pageTranslation)?.firstTitle ? `tel:${((data() | pageTranslation)?.firstTitle! | translate | stripHtml)}` : null">
+<a
+   [href]="(data() | pageTranslation)?.firstTitle ? `tel:${((data() | pageTranslation)?.firstTitle! | translate | stripHtml)}` : null"
+>
    <div class="flex flex-col tile-main">
       @if ((data() | pageTranslation)?.description) {
-         <div class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></div>
+      <div
+         class="ckeditor-content"
+         [innerHTML]="
+            (data() | pageTranslation)?.description!
+               | translate
+               | replaceStringDark
+                  : 'hsl(258, 88%, 40%)'
+                  : 'var(--color-primary-400)'
+               | safeHtml
+         "
+      ></div>
       }
       <div class="tile-container flex justify-between items-center">
          <div class="flex items-center tile-body">
-            <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" class="tile-image" />
+            <img
+               [src]="
+                  (data() | pageTranslation)?.image ||
+                  (data() | pageTranslation)?.staticImage
+               "
+               [alt]="'ALT_TEXT.CONTACT.PHONE' | translate"
+               class="tile-image"
+            />
             @if ((data() | pageTranslation)?.firstTitle) {
-               <h3 [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml" class="tile-title ckeditor-content"></h3>
+            <h3
+               [innerHTML]="
+                  (data() | pageTranslation)?.firstTitle!
+                     | translate
+                     | replaceStringDark
+                        : 'hsl(258, 88%, 40%)'
+                        : 'var(--color-primary-400)'
+                     | safeHtml
+               "
+               class="tile-title ckeditor-content"
+            ></h3>
             }
          </div>
          <div>
-            <mat-icon [svgIcon]="isDarkMode() ? 'icon-phone-dark' : 'icon-phone-light'"></mat-icon>
+            <mat-icon
+               [svgIcon]="isDarkMode() ? 'icon-phone-dark' : 'icon-phone-light'"
+            ></mat-icon>
          </div>
       </div>
    </div>

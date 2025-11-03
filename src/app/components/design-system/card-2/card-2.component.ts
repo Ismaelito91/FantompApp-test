@@ -1,17 +1,25 @@
-import { Component, computed, inject, input } from '@angular/core';
-import PageComponentModel from '../../../model/page-component.model';
-import { ThemeService } from '../../../service/theme.service';
-import { MatIconModule } from '@angular/material/icon';
-import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
+import { Component, computed, inject, input } from "@angular/core";
+import PageComponentModel from "../../../model/page-component.model";
+import { ThemeService } from "../../../service/theme.service";
+import { MatIconModule } from "@angular/material/icon";
+import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
+import { StripHtmlPipe } from "../../../pipes/strip-html.pipe";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
-import { TranslatePipe } from '@ngx-translate/core';
-import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
+import { TranslatePipe } from "@ngx-translate/core";
+import { ReplaceStringDarkPipe } from "../../../pipes/replace-string-dark.pipe";
 
 @Component({
-   selector: 'app-card-2',
-   imports: [MatIconModule, SafeHtmlPipe, PageTranslationPipe, TranslatePipe, ReplaceStringDarkPipe],
-   templateUrl: './card-2.component.html',
-   styleUrl: './card-2.component.scss'
+   selector: "app-card-2",
+   imports: [
+      MatIconModule,
+      SafeHtmlPipe,
+      StripHtmlPipe,
+      PageTranslationPipe,
+      TranslatePipe,
+      ReplaceStringDarkPipe,
+   ],
+   templateUrl: "./card-2.component.html",
+   styleUrl: "./card-2.component.scss",
 })
 export class Card2Component {
    private readonly themeService = inject(ThemeService);

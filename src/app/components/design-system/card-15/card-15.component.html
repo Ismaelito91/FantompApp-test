@@ -1,43 +1,66 @@
 <div class="card-container">
    <div class="card-title">
-      <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="image" class="!size-[24px]"/>
+      <img
+         [src]="
+            (data() | pageTranslation)?.image ||
+            (data() | pageTranslation)?.staticImage
+         "
+         alt=""
+         class="!size-[24px]"
+      />
       @if ((data() | pageTranslation)?.firstTitle) {
-         <h6 class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></h6>
+      <h6
+         class="ckeditor-content"
+         [innerHTML]="
+            (data() | pageTranslation)?.firstTitle!
+               | translate
+               | replaceStringDark
+                  : 'hsl(258, 88%, 40%)'
+                  : 'var(--color-primary-400)'
+               | safeHtml
+         "
+      ></h6>
       }
    </div>
    @if (sortedChildren.length > 0) {
-      <div class="card-children flex flex-col">
-         @for (child of sortedChildren; track $index) {
-            @switch (child.type) {
-               @case (ComponentType.ENRICHED_LINK) {
-                  <app-enriched-link [data]="child"></app-enriched-link>
-               }
-               @case (ComponentType.TILE_CALL) {
-                  <app-tile-call [data]="child"></app-tile-call>
-               }
-               @case (ComponentType.TILE_MESSAGE) {
-                  <app-tile-message [data]="child"></app-tile-message>
-               }
-               @case (ComponentType.TILE_MAIL) {
-                  <app-tile-mail [data]="child"></app-tile-mail>
-               }
-               @case (ComponentType.BUTTON_PRIMARY) {
-                  @if ((child | pageTranslation)?.firstTitle) {
-                     <app-button variant="primary" [label]="(child | pageTranslation)?.firstTitle! | translate" size="sm" [data]="child" class="flex justify-end"></app-button>
-                  }
-               }
-               @case (ComponentType.BUTTON_SECONDARY) {
-                  @if ((child | pageTranslation)?.firstTitle) {
-                     <app-button variant="secondary" [label]="(child | pageTranslation)?.firstTitle! | translate" size="sm" [data]="child" class="flex justify-end"></app-button>
-                  }
-               }
-               @case (ComponentType.BUTTON_TERTIARY) {
-                  @if ((child | pageTranslation)?.firstTitle) {
-                     <app-button variant="tertiary" [label]="(child | pageTranslation)?.firstTitle! | translate" size="sm" [data]="child" class="flex justify-end"></app-button>
-                  }
-               }
-            }
-         }
-      </div>
+   <div class="card-children flex flex-col">
+      @for (child of sortedChildren; track $index) { @switch (child.type) {
+      @case (ComponentType.ENRICHED_LINK) {
+      <app-enriched-link [data]="child"></app-enriched-link>
+      } @case (ComponentType.TILE_CALL) {
+      <app-tile-call [data]="child"></app-tile-call>
+      } @case (ComponentType.TILE_MESSAGE) {
+      <app-tile-message [data]="child"></app-tile-message>
+      } @case (ComponentType.TILE_MAIL) {
+      <app-tile-mail [data]="child"></app-tile-mail>
+      } @case (ComponentType.BUTTON_PRIMARY) { @if ((child |
+      pageTranslation)?.firstTitle) {
+      <app-button
+         variant="primary"
+         [label]="(child | pageTranslation)?.firstTitle! | translate"
+         size="sm"
+         [data]="child"
+         class="flex justify-end"
+      ></app-button>
+      } } @case (ComponentType.BUTTON_SECONDARY) { @if ((child |
+      pageTranslation)?.firstTitle) {
+      <app-button
+         variant="secondary"
+         [label]="(child | pageTranslation)?.firstTitle! | translate"
+         size="sm"
+         [data]="child"
+         class="flex justify-end"
+      ></app-button>
+      } } @case (ComponentType.BUTTON_TERTIARY) { @if ((child |
+      pageTranslation)?.firstTitle) {
+      <app-button
+         variant="tertiary"
+         [label]="(child | pageTranslation)?.firstTitle! | translate"
+         size="sm"
+         [data]="child"
+         class="flex justify-end"
+      ></app-button>
+      } } } }
+   </div>
    }
 </div>

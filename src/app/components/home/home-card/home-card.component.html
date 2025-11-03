@@ -22,7 +22,7 @@
       <div class="tools-item-body flex items-center">
          <img
             src="../../../../assets/images/password-img.svg"
-            alt="image"
+            alt=""
             class="tools-item-img"
          />
          <div class="tools-item-text flex flex-col">
@@ -125,7 +125,9 @@
 
    <!-- Section des cartes de problèmes -->
 
-   <div class="home-cards-problems-container mt-(--spacing-3) gap-(--spacing-3)">
+   <div
+      class="home-cards-problems-container mt-(--spacing-3) gap-(--spacing-3)"
+   >
       <h5 class="home-cards__section-title">
          {{ "HOME.CARDS.PROBLEMS.SECTION_TITLE" | translate }}
       </h5>
@@ -140,12 +142,20 @@
             (keydown)="onKeyDownDelete($event)"
          >
             <div class="problem-bg-container">
-               <img class="img-bg" src="assets/images/effacer-contenu.png" alt="">
+               <img
+                  class="img-bg"
+                  src="assets/images/effacer-contenu.png"
+                  alt=""
+               />
             </div>
             <div class="problem-text-content">
                <div class="home-card-problem__text-content">
-                  <h3 class="home-card-subtitle home-card-delete-content__subtitle">
-                     {{ "HOME.CARDS.PROBLEMS.DELETE_CONTENT.TITLE" | translate }}
+                  <h3
+                     class="home-card-subtitle home-card-delete-content__subtitle"
+                  >
+                     {{
+                        "HOME.CARDS.PROBLEMS.DELETE_CONTENT.TITLE" | translate
+                     }}
                   </h3>
                </div>
                <div class="home-card-problem__arrow">
@@ -166,7 +176,11 @@
             (keydown)="onKeyDownHarassment($event)"
          >
             <div class="problem-bg-container">
-               <img class="img-bg" src="assets/images/harcelement-contenu.png" alt="">
+               <img
+                  class="img-bg"
+                  src="assets/images/harcelement-contenu.png"
+                  alt=""
+               />
             </div>
             <div class="problem-text-content">
                <div class="home-card-problem__text-content">
