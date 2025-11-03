@@ -1,34 +1,54 @@
 <div class="flex flex-col card-container">
    @if ((data() | pageTranslation)?.firstTitle) {
-      <h5 class="card-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></h5>
+   <h5
+      class="card-title ckeditor-content"
+      [innerHTML]="
+         (data() | pageTranslation)?.firstTitle!
+            | translate
+            | replaceStringDark
+               : 'hsl(258, 88%, 40%)'
+               : 'var(--color-primary-400)'
+            | safeHtml
+      "
+   ></h5>
    }
    <div class="card-description">
-      @if ((data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage) {
-         <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="" class="rounded-(--border-radius-1)" />
-      }
-      @if ((data() | pageTranslation)?.description) {
-         <div class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></div>
-      }
-      @if (sortedChildren.length > 0) {
-         <div class="card-children flex flex-col">
-            @for (child of sortedChildren; track $index) {
-               @switch (child.type) {
-                  @case (ComponentType.CARD_13) {
-                     <app-card-13 [data]="child"></app-card-13>
-                  }
-                  @case (ComponentType.ENRICHED_LINK) {
-                     <app-enriched-link [data]="child"></app-enriched-link>
-                  }
-                  @case (ComponentType.TILE_CALL) {
-                     <app-tile-call [data]="child"></app-tile-call>
-                  }
-                  @case (ComponentType.TILE_MESSAGE) {
-                     <app-tile-message [data]="child"></app-tile-message>
-                  }
-               }
-            }
-         </div>
+      @if ((data() | pageTranslation)?.image || (data() |
+      pageTranslation)?.staticImage) {
+      <img
+         [src]="
+            (data() | pageTranslation)?.image ||
+            (data() | pageTranslation)?.staticImage
+         "
+         alt=""
+         aria-hidden="true"
+         class="rounded-(--border-radius-1)"
+      />
+      } @if ((data() | pageTranslation)?.description) {
+      <div
+         class="ckeditor-content"
+         [innerHTML]="
+            (data() | pageTranslation)?.description!
+               | translate
+               | replaceStringDark
+                  : 'hsl(258, 88%, 40%)'
+                  : 'var(--color-primary-400)'
+               | safeHtml
+         "
+      ></div>
+      } @if (sortedChildren.length > 0) {
+      <div class="card-children flex flex-col">
+         @for (child of sortedChildren; track $index) { @switch (child.type) {
+         @case (ComponentType.CARD_13) {
+         <app-card-13 [data]="child"></app-card-13>
+         } @case (ComponentType.ENRICHED_LINK) {
+         <app-enriched-link [data]="child"></app-enriched-link>
+         } @case (ComponentType.TILE_CALL) {
+         <app-tile-call [data]="child"></app-tile-call>
+         } @case (ComponentType.TILE_MESSAGE) {
+         <app-tile-message [data]="child"></app-tile-message>
+         } } }
+      </div>
       }
    </div>
 </div>
-

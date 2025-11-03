@@ -5,6 +5,7 @@
          <img
             [src]="currentQuestion.image"
             alt=""
+            aria-hidden="true"
             class="!w-[104px] object-contain"
          />
       </div>
@@ -27,10 +28,12 @@
             <div class="section-item flex flex-col color-(--color-8)">
                <fieldset>
                   @if (section.title) {
-                     <legend class="sr-only">{{ getCleanTitle(section.title) }}</legend>
-                     <div class="font-[600] text-(--color-8)" aria-hidden="true">
-                        <span [innerHTML]="section.title | translate"></span>
-                     </div>
+                  <legend class="sr-only">
+                     {{ getCleanTitle(section.title) }}
+                  </legend>
+                  <div class="font-[600] text-(--color-8)" aria-hidden="true">
+                     <span [innerHTML]="section.title | translate"></span>
+                  </div>
                   }
                   <div class="answers flex flex-col">
                      @for (answer of section.answers; track $index) {

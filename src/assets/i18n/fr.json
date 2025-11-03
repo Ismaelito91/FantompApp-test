@@ -37,103 +37,6 @@
          "SECURE": "Aller à la page me sécuriser"
       }
    },
-   "ALT_TEXT": {
-      "CONTACT": {
-         "PHONE": "Contacter par téléphone",
-         "WHATSAPP": "Contacter par WhatsApp",
-         "SMS": "Contacter par SMS",
-         "EMAIL": "Contacter par email",
-         "SUPPORT_3018": "Contacter le 3018"
-      },
-      "GENERAL": {
-         "IMAGE": "Image",
-         "PICTO": "Pictogramme",
-         "ILLUSTRATION": "Illustration",
-         "LOGO": "Logo",
-         "FLAG": "Drapeau"
-      },
-      "ONBOARDING": {
-         "LOGO_FANTOMAPP": "Logo FantomApp",
-         "LOGO_FANTOMAPP_DARK": "Logo FantomApp version sombre",
-         "GHOST_WITH_SIGN": "Fantôme avec pancarte",
-         "GHOST_WITH_SIGN_DARK": "Fantôme avec pancarte version sombre",
-         "GHOST_SAD": "Fantôme triste",
-         "ILLUSTRATION_ONBOARDING": "Illustration onboarding",
-         "ILLUSTRATION_SETTINGS": "Illustration onboarding paramètres"
-      },
-      "PROBLEMS": {
-         "DELETE_CONTENT": {
-            "SCREENSHOT": "Capture d'écran",
-            "CALENDAR": "Icône calendrier",
-            "MAIL": "Icône email"
-         }
-      },
-      "TOOLS": {
-         "PASSWORD_CHECK": {
-            "ILLUSTRATION": "Illustration vérification de mot de passe",
-            "PICTO": "Pictogramme mot de passe",
-            "BACKGROUND": "Image de fond",
-            "PASSWORD_IMG": "Illustration mot de passe",
-            "CRITERIA_ICON": "Icône de critère"
-         },
-         "BLUR_IMAGE": {
-            "BLUR_EFFECT": "Effet de flou",
-            "HAND": "Icône main",
-            "IMAGE_ILLU": "Illustration d'image"
-         },
-         "VISIBILITY_CHECK": {
-            "ILLUSTRATION": "Illustration vérification de visibilité"
-         }
-      },
-      "HOME": {
-         "APP_INFO": {
-            "ILLUSTRATION_FANTOMAPP": "Illustration FantomApp"
-         },
-         "APP_ICON_SELECTOR": {
-            "ICON_1": "Icône FantomApp 1",
-            "ICON_2": "Icône FantomApp 2",
-            "ICON_3": "Icône FantomApp 3",
-            "ICON_4": "Icône FantomApp 4"
-         },
-         "HOME_CARD": {
-            "BACKGROUND": "Image de fond",
-            "GHOST_NORMAL": "Fantôme normal",
-            "GHOST_WINK": "Fantôme qui cligne de l'œil",
-            "PASSWORD_IMG": "Illustration mot de passe"
-         }
-      },
-      "DESIGN_SYSTEM": {
-         "CARD_4": {
-            "SWITCH_SAD": "Interrupteur triste"
-         },
-         "CARD_7": {
-            "LOGO": "Logo"
-         },
-         "CARD_8": {
-            "SCREEN_IMAGE": "Image d'écran"
-         },
-         "CARD_12": {
-            "CALENDAR": "Calendrier"
-         },
-         "CARD_17": {
-            "RECO_IMAGE": "Image de recommandation"
-         }
-      },
-      "PWA": {
-         "LOGO": "Logo",
-         "ICON_MENU_IOS": "Icône menu iOS",
-         "ICON_ADD_BUTTON_IOS": "Icône bouton ajouter iOS"
-      },
-      "SPLASH_SCREEN": {
-         "LOGO_FANTOMAPP": "Logo FantomApp représentant un fantôme blanc",
-         "LOGO_CNIL": "Logo de la CNIL (Commission Nationale de l'Informatique et des Libertés)"
-      },
-      "SECURE_MYSELF": {
-         "TUTORIAL": {
-            "LABEL_ILLUSTRATION": "Illustration étiquette"
-         }
-      }
-   },
    "DESIGN_SYSTEM": {
       "STEPPER": {
          "DESCRIPTION": "Question {{ currentStep }} sur {{ totalSteps }}"
@@ -900,8 +803,8 @@
             "DIGIT": "1 chiffre au moins",
             "SPECIAL_CHAR": "1 caractère spécial au moins",
             "NO_EASY_CLUES": "Pas d'indice facile (nom, prénom, mot courant)",
-            "CRITERIA_VALIDATED": "Critère validé",
-            "CRITERIA_NOT_VALIDATED": "Critère non validé"
+            "CRITERIA_VALIDATED": "contient",
+            "CRITERIA_NOT_VALIDATED": "ne contient pas"
          },
          "BUTTONS": {
             "WHAT_IS_GOOD_PASSWORD": "C'est quoi un bon mot de passe ?",
@@ -958,6 +861,41 @@
             "TITLE": "Comment ça marche ?",
             "DESCRIPTION": "Lorsque tu as changé un paramètre, coche le badge <strong>pour te souvenir</strong> de ce que tu as sécurisé sur ton compte !"
          }
+      }
+   },
+   "ALT_TEXT": {
+      "CONTACT": {
+         "PHONE": "Contacter par téléphone",
+         "WHATSAPP": "Contacter par WhatsApp",
+         "SMS": "Contacter par SMS",
+         "EMAIL": "Contacter par email",
+         "SUPPORT_3018": "Contacter le 3018"
+      },
+      "GENERAL": {
+         "FLAG": "Drapeau"
+      },
+      "COUNTRIES": {
+         "FRANCE": "Français",
+         "IRELAND": "English",
+         "HUNGARY": "Magyar",
+         "GREECE": "Ελληνικά",
+         "DENMARK": "Dansk",
+         "POLAND": "Polski",
+         "PORTUGAL": "Português",
+         "SPAIN": "Español",
+         "CATALONIA": "Español",
+         "LUXEMBOURG": "Lëtzebuergesch"
+      },
+      "TOOLS": {
+         "PASSWORD_CHECK": {
+            "CRITERIA": {
+               "CRITERIA_VALIDATED": "contient",
+               "CRITERIA_NOT_VALIDATED": "ne contient pas"
+            }
+         }
+      },
+      "ONBOARDING": {
+         "LOGO_FANTOMAPP": "FantomApp"
       }
    }
 }
