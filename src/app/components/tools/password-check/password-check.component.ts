@@ -433,6 +433,9 @@ export class PasswordCheckComponent
    @ViewChild("backButton", { read: ElementRef })
    backButtonRef!: ElementRef<HTMLButtonElement>;
 
+   @ViewChild("closePasswordInfoModalButton", { read: ElementRef })
+   closePasswordInfoModalButtonRef!: ElementRef<HTMLButtonElement>;
+
    password: string = "";
    message: string = "";
    showPassword: boolean = false;
@@ -625,6 +628,13 @@ export class PasswordCheckComponent
       if (!this.showPasswordInfoModal) {
          // Remettre le focus sur l'élément principal après fermeture
          this.activateDefaultButton();
+      } else {
+         setTimeout(() => {
+            console.log("closePasswordInfoModalButtonRef", this.closePasswordInfoModalButtonRef);
+            if (this.closePasswordInfoModalButtonRef?.nativeElement) {
+               this.closePasswordInfoModalButtonRef.nativeElement.focus();
+            }
+         }, 100);
       }
    }
 
@@ -829,7 +839,9 @@ export class PasswordCheckComponent
 
       // Si pas de texte et input pas focus, montrer l'info sur les bons mots de passe
       if (this.password.length === 0 && !this.isInputFocused) {
-         this.togglePasswordInfoModal();
+         // bloc de texte utilisé lors de la méthode onKeyDown,
+         // pourra être retiré si on gère les bouton normalement
+         this.handleButtonWhatIsGoodPasswordClick();
          return;
       }
 
@@ -837,6 +849,9 @@ export class PasswordCheckComponent
       if (this.password.length === 0 && this.isInputFocused) {
          return;
       }
+   }
+   handleButtonWhatIsGoodPasswordClick() {
+      this.togglePasswordInfoModal();
    }
 
    checkPassword() {
