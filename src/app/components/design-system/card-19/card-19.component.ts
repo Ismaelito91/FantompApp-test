@@ -1,20 +1,18 @@
 import { Component, input, output } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { TranslatePipe } from "@ngx-translate/core";
 import PageComponentModel from "../../../model/page-component.model";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
-import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
-import { StripHtmlPipe } from "../../../pipes/strip-html.pipe";
-import { MatIconModule } from "@angular/material/icon";
-import { MatButtonModule } from "@angular/material/button";
-import { TagUnclickableComponent } from "../tag-unclickable/tag-unclickable.component";
-import { TranslatePipe } from "@ngx-translate/core";
 import { ReplaceStringDarkPipe } from "../../../pipes/replace-string-dark.pipe";
+import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
+import { TagUnclickableComponent } from "../tag-unclickable/tag-unclickable.component";
 
 @Component({
    selector: "app-card-19",
    imports: [
       PageTranslationPipe,
       SafeHtmlPipe,
-      StripHtmlPipe,
       MatIconModule,
       MatButtonModule,
       TagUnclickableComponent,

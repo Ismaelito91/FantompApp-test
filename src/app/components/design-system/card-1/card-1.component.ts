@@ -1,19 +1,17 @@
 import { Component, computed, inject, input } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
+import { TranslatePipe } from "@ngx-translate/core";
 import PageComponentModel from "../../../model/page-component.model";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
-import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
-import { StripHtmlPipe } from "../../../pipes/strip-html.pipe";
-import { ThemeService } from "../../../service/theme.service";
-import { TranslatePipe } from "@ngx-translate/core";
 import { ReplaceStringDarkPipe } from "../../../pipes/replace-string-dark.pipe";
+import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
+import { ThemeService } from "../../../service/theme.service";
 
 @Component({
    selector: "app-card-1",
    imports: [
       MatIconModule,
       SafeHtmlPipe,
-      StripHtmlPipe,
       PageTranslationPipe,
       TranslatePipe,
       ReplaceStringDarkPipe,

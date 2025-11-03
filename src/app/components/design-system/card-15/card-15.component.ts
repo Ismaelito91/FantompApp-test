@@ -6,7 +6,6 @@ import PageComponentModel from "../../../model/page-component.model";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 import { ReplaceStringDarkPipe } from "../../../pipes/replace-string-dark.pipe";
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
-import { StripHtmlPipe } from "../../../pipes/strip-html.pipe";
 import { PageComponentUtilsService } from "../../../service/page-component-utils.service";
 import { ButtonComponent } from "../button/button.component";
 import { EnrichedLinkComponent } from "../enriched-link/enriched-link.component";
@@ -19,7 +18,6 @@ import { TileMessageComponent } from "../tile-message/tile-message.component";
    imports: [
       PageTranslationPipe,
       SafeHtmlPipe,
-      StripHtmlPipe,
       EnrichedLinkComponent,
       TileCallComponent,
       TileMessageComponent,
