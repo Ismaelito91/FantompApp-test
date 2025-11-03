@@ -31,7 +31,8 @@
       >
          <img
             src="assets/images/pseudo-illu.svg"
-            alt="image"
+            alt=""
+            aria-hidden="true"
             class="!w-[88px] h-[49px] object-contain absolute top-[-10px] right-[-6px]"
          />
          <div class="flex flex-col gap-(--spacing-1)">
@@ -41,7 +42,7 @@
             <ul>
                @for (answer of results.pseudo.slice(0, 6); track $index) {
                <li>
-                  <span [innerHTML]="answer | translate"></span>
+                  {{ answer | translate }}
                   @if ($index === 5 && results.pseudo.length > 6) {
                   <span style="font-weight: 700; color: var(--color-11)"
                      >(...)</span
@@ -72,7 +73,8 @@
       >
          <img
             src="assets/images/bio-illu.svg"
-            alt="image"
+            alt=""
+            aria-hidden="true"
             class="!w-[88px] h-[75px] object-contain absolute top-[-10px] right-[-17px]"
          />
          <div class="flex flex-col gap-(--spacing-1)">

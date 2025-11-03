@@ -27,13 +27,13 @@
                   @if (!isDarkMode()) {
                   <img
                      src="assets/images/onboarding/logo-fantomapp.svg"
-                     alt="Logo Fantomapp"
+                     alt="FantomApp"
                      class="app-logo"
                   />
                   } @else {
                   <img
                      src="assets/images/logo-fantomapp-dark.svg"
-                     alt="Logo Fantomapp dark"
+                     alt="FantomApp"
                      class="app-logo"
                   />
                   }
@@ -46,8 +46,11 @@
                [@slideInUp]="animationStates().explanation"
             >
                <div class="bubble-content">
-                  <p [innerHTML]="'ONBOARDING.GHOST_MODE_EXPLANATION' | translate">
-                  </p>
+                  <p
+                     [innerHTML]="
+                        'ONBOARDING.GHOST_MODE_EXPLANATION' | translate
+                     "
+                  ></p>
                </div>
             </div>
          </div>
@@ -61,7 +64,7 @@
 
             <img
                src="assets/images/onboarding/switch-pancarte.svg"
-               alt="Fantôme avec pancarte"
+               alt=""
                class="ghost-character"
             />
             } @else {
@@ -69,7 +72,7 @@
             <div class="ghost-dark-wrapper">
                <img
                   src="assets/images/switch-pancarte-dark.svg"
-                  alt="Fantôme avec pancarte dark"
+                  alt=""
                   class="ghost-character"
                />
             </div>
@@ -84,7 +87,9 @@
                class="start-button next-button"
                (click)="completeOnboarding(); $event.stopPropagation()"
             >
-               <span class="button-text">{{ "ONBOARDING.NEXT" | translate }}</span>
+               <span class="button-text">{{
+                  "ONBOARDING.NEXT" | translate
+               }}</span>
                <svg
                   width="24"
                   height="24"
@@ -111,7 +116,7 @@
                </svg>
             </button>
          </div>
-         
+
          <!-- Bouton Passer en haut à droite -->
          <button
             #step1SkipButton
@@ -133,7 +138,7 @@
       <div class="sad-ghost-wrapper switch-triste-ghost">
          <img
             src="assets/images/onboarding/Switch-triste-img.svg"
-            alt="Fantôme triste"
+            alt=""
             class="sad-ghost-character"
          />
       </div>
@@ -142,8 +147,10 @@
       <div class="problem-bubble">
          <div class="bubble-content">
             <div class="problem-header">
-               <h3 class="problem-title" [innerHTML]="'ONBOARDING.STEP_TWO.TITLE' | translate">
-               </h3>
+               <h3
+                  class="problem-title"
+                  [innerHTML]="'ONBOARDING.STEP_TWO.TITLE' | translate"
+               ></h3>
             </div>
             <p class="problem-description">
                {{ "ONBOARDING.STEP_TWO.DESCRIPTION" | translate }}
@@ -154,7 +161,9 @@
                class="bubble-next-button"
                (click)="completeOnboarding(); $event.stopPropagation()"
             >
-               <span class="button-text">{{ "ONBOARDING.NEXT" | translate }}</span>
+               <span class="button-text">{{
+                  "ONBOARDING.NEXT" | translate
+               }}</span>
                <svg
                   width="24"
                   height="24"
@@ -204,7 +213,7 @@
       <div class="sad-ghost-wrapper illu-onboarding-ghost">
          <img
             src="assets/images/onboarding/illu-onboarding.svg"
-            alt="Illustration onboarding"
+            alt=""
             class="ghost-character"
          />
       </div>
@@ -213,8 +222,10 @@
       <div class="tools-bubble">
          <div class="bubble-content">
             <div class="problem-header">
-               <h3 class="problem-title" [innerHTML]="'ONBOARDING.STEP_THREE.TITLE' | translate">
-               </h3>
+               <h3
+                  class="problem-title"
+                  [innerHTML]="'ONBOARDING.STEP_THREE.TITLE' | translate"
+               ></h3>
             </div>
             <p class="problem-description">
                {{ "ONBOARDING.STEP_THREE.DESCRIPTION" | translate }}
@@ -225,7 +236,9 @@
                class="bubble-next-button"
                (click)="completeOnboarding(); $event.stopPropagation()"
             >
-               <span class="button-text">{{ "ONBOARDING.NEXT" | translate }}</span>
+               <span class="button-text">{{
+                  "ONBOARDING.NEXT" | translate
+               }}</span>
                <svg
                   width="24"
                   height="24"
@@ -277,7 +290,7 @@
       <div class="sad-ghost-wrapper illu-onboarding-4-ghost">
          <img
             src="assets/images/onboarding/illu-onboarding-4.svg"
-            alt="Illustration onboarding paramètres"
+            alt=""
             class="ghost-character"
          />
       </div>
@@ -286,8 +299,10 @@
       <div class="settings-bubble">
          <div class="bubble-content">
             <div class="problem-header">
-               <h3 class="problem-title" [innerHTML]="'ONBOARDING.STEP_FOUR.TITLE' | translate">
-               </h3>
+               <h3
+                  class="problem-title"
+                  [innerHTML]="'ONBOARDING.STEP_FOUR.TITLE' | translate"
+               ></h3>
             </div>
             <p class="problem-description">
                {{ "ONBOARDING.STEP_FOUR.DESCRIPTION" | translate }}
@@ -298,7 +313,9 @@
                class="bubble-next-button"
                (click)="completeOnboarding(); $event.stopPropagation()"
             >
-               <span class="button-text">{{ "ONBOARDING.NEXT" | translate }}</span>
+               <span class="button-text">{{
+                  "ONBOARDING.NEXT" | translate
+               }}</span>
                <svg
                   width="24"
                   height="24"

@@ -1,19 +1,29 @@
-import { Component, inject, input, output } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { TranslatePipe } from '@ngx-translate/core';
-import PageComponentModel from '../../../model/page-component.model';
+import { Component, inject, input, output } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { TranslatePipe } from "@ngx-translate/core";
+import PageComponentModel from "../../../model/page-component.model";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
-import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
-import { UtilsService } from '../../../service/utils.service';
+import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
+import { StripHtmlPipe } from "../../../pipes/strip-html.pipe";
+import { UtilsService } from "../../../service/utils.service";
 import { TagUnclickableComponent } from "../tag-unclickable/tag-unclickable.component";
-import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
+import { ReplaceStringDarkPipe } from "../../../pipes/replace-string-dark.pipe";
 
 @Component({
-   selector: 'app-card-18',
-   imports: [PageTranslationPipe, SafeHtmlPipe, MatIconModule, MatButtonModule, TagUnclickableComponent, TranslatePipe, ReplaceStringDarkPipe],
-   templateUrl: './card-18.component.html',
-   styleUrl: './card-18.component.scss'
+   selector: "app-card-18",
+   imports: [
+      PageTranslationPipe,
+      SafeHtmlPipe,
+      StripHtmlPipe,
+      MatIconModule,
+      MatButtonModule,
+      TagUnclickableComponent,
+      TranslatePipe,
+      ReplaceStringDarkPipe,
+   ],
+   templateUrl: "./card-18.component.html",
+   styleUrl: "./card-18.component.scss",
 })
 export class Card18Component {
    readonly utilsService = inject(UtilsService);

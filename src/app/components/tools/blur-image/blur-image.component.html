@@ -14,12 +14,12 @@
 >
    <div class="flex flex-col justify-center items-center p-[65px]">
       <div class="relative h-[220px]">
-         <img src="assets/images/blur-effect.svg" alt="blur-effect" />
+         <img src="assets/images/blur-effect.svg" alt="" />
          <div
             [@moveFromTo]="handAnimationState"
             class="w-[127px] h-[110px] absolute top-[13px] left-[27px]"
          >
-            <img src="assets/images/hand.svg" alt="hand" />
+            <img src="assets/images/hand.svg" alt="" />
          </div>
       </div>
       <h5 style="color: white; text-align: center; padding-bottom: 32px">
@@ -36,7 +36,14 @@
    </div>
 </div>
 }
-<div class="flex flex-col h-screen p-(--spacing-3) gap-(--spacing-3) relative" [attr.inert]="showTutorial && (fileInput.files && fileInput.files.length > 0) ? 'true' : null">
+<div
+   class="flex flex-col h-screen p-(--spacing-3) gap-(--spacing-3) relative"
+   [attr.inert]="
+      showTutorial && fileInput.files && fileInput.files.length > 0
+         ? 'true'
+         : null
+   "
+>
    <app-button-back
       class="fixed top-[16px] pl-(--spacing-3) z-2"
    ></app-button-back>
@@ -187,7 +194,7 @@
                   'active': action === 'blur',
                }"
             >
-               <img src="assets/images/flouter.svg" class="image" />
+               <img src="assets/images/flouter.svg" class="image" alt="" />
                <div class="label">
                   {{ "TOOLS.BLUR_IMAGE.BLUR" | translate }}
                </div>
@@ -199,7 +206,7 @@
                   'active': action === 'pixelate',
                }"
             >
-               <img src="assets/images/pixelliser.svg" class="image" />
+               <img src="assets/images/pixelliser.svg" class="image" alt="" />
                <div class="label">
                   {{ "TOOLS.BLUR_IMAGE.PIXELATE" | translate }}
                </div>
@@ -299,7 +306,7 @@
       >
          <img
             src="assets/images/photo-illu.svg"
-            alt="image-illu"
+            alt=""
             class="h-[200px] cursor-pointer"
             (click)="fileInput.click()"
          />

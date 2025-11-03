@@ -1,39 +1,65 @@
-<div [@slideUpDown]="animationState" (@slideUpDown.done)="onAnimationDone($event)" class="modal-full-container relative">
+<div
+   [@slideUpDown]="animationState"
+   (@slideUpDown.done)="onAnimationDone($event)"
+   class="modal-full-container relative"
+>
    <div class="flex flex-col gap-(--spacing-5)">
       <div class="flex justify-center items-center">
-         <img [src]="(data | pageTranslation)?.image || (data | pageTranslation)?.staticImage" alt="picto" class="!max-w-[108px] !max-h-[96px] object-contain" />
-         <app-button-close class="absolute top-(--spacing-4) right-(--spacing-3) z-1" (click)="closeDialog()"></app-button-close>
+         <img
+            [src]="
+               (data | pageTranslation)?.image ||
+               (data | pageTranslation)?.staticImage
+            "
+            alt=""
+            class="!max-w-[108px] !max-h-[96px] object-contain"
+         />
+         <app-button-close
+            class="absolute top-(--spacing-4) right-(--spacing-3) z-1"
+            (click)="closeDialog()"
+         ></app-button-close>
       </div>
       <div class="details flex flex-col gap(--spacing-3)">
          @if ((data | pageTranslation)?.firstTitle) {
-            <h3 class="ckeditor-content" [innerHTML]="(data | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></h3>
-         }
-         @if ((data | pageTranslation)?.description) {
-            <span class="ckeditor-content" [innerHTML]="(data | pageTranslation)?.description! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></span>
+         <h3
+            class="ckeditor-content"
+            [innerHTML]="
+               (data | pageTranslation)?.firstTitle!
+                  | translate
+                  | replaceStringDark
+                     : 'hsl(258, 88%, 40%)'
+                     : 'var(--color-primary-400)'
+                  | safeHtml
+            "
+         ></h3>
+         } @if ((data | pageTranslation)?.description) {
+         <span
+            class="ckeditor-content"
+            [innerHTML]="
+               (data | pageTranslation)?.description!
+                  | translate
+                  | replaceStringDark
+                     : 'hsl(258, 88%, 40%)'
+                     : 'var(--color-primary-400)'
+                  | safeHtml
+            "
+         ></span>
          }
       </div>
    </div>
    @if (sortedChildren.length > 0) {
-      <div class="card-children flex flex-col">
-         @for (child of sortedChildren; track $index) {
-            @switch (child.type) {
-               @case (ComponentType.ENRICHED_LINK) {
-                  <app-enriched-link [data]="child"></app-enriched-link>
-               }
-               @case (ComponentType.DIVIDER) {
-                  <app-divider></app-divider>
-               }
-               @case (ComponentType.CARD_20) {
-                  <app-card-20 [data]="child"></app-card-20>
-               }
-               @case (ComponentType.TEMPLATE_MESSAGE) {
-                  <app-template-message [data]="child"></app-template-message>
-               }
-               @case (ComponentType.TILE_MAIL) {
-                  <app-tile-mail [data]="child"></app-tile-mail>
-               }
-            }
-         }
-      </div>
+   <div class="card-children flex flex-col">
+      @for (child of sortedChildren; track $index) { @switch (child.type) {
+      @case (ComponentType.ENRICHED_LINK) {
+      <app-enriched-link [data]="child"></app-enriched-link>
+      } @case (ComponentType.DIVIDER) {
+      <app-divider></app-divider>
+      } @case (ComponentType.CARD_20) {
+      <app-card-20 [data]="child"></app-card-20>
+      } @case (ComponentType.TEMPLATE_MESSAGE) {
+      <app-template-message [data]="child"></app-template-message>
+      } @case (ComponentType.TILE_MAIL) {
+      <app-tile-mail [data]="child"></app-tile-mail>
+      } } }
+   </div>
    }
 </div>

@@ -1,25 +1,41 @@
 @if (data.mobileType === 'android') {
-  <mat-toolbar class="android-prompt">
-    <img alt="Logo" src="./assets/images/clear/app-icon.svg">
-    <button mat-button (click)="installPwa()" attr.aria-label="{{'APP.INSTALL_APP' | translate}}">
-       {{'APP.INSTALL_APP' | translate}}
-    </button>
-    <button mat-icon-button (click)="close()" attr.aria-label="{{'COMMON.CLOSE' | translate}}">
+<mat-toolbar class="android-prompt">
+   <img alt="" src="./assets/images/clear/app-icon.svg" />
+   <button
+      mat-button
+      (click)="installPwa()"
+      attr.aria-label="{{ 'APP.INSTALL_APP' | translate }}"
+   >
+      {{ "APP.INSTALL_APP" | translate }}
+   </button>
+   <button
+      mat-icon-button
+      (click)="close()"
+      attr.aria-label="{{ 'COMMON.CLOSE' | translate }}"
+   >
       <mat-icon>close</mat-icon>
-    </button>
-  </mat-toolbar>
-}
-
-@if (data.mobileType === 'ios') {
-  <div class="ios-prompt">
-    <button class="close-ios-inv" mat-button color="primary" (click)="close()"  attr.aria-label="{{'COMMON.CLOSE' | translate}}">
+   </button>
+</mat-toolbar>
+} @if (data.mobileType === 'ios') {
+<div class="ios-prompt">
+   <button
+      class="close-ios-inv"
+      mat-button
+      color="primary"
+      (click)="close()"
+      attr.aria-label="{{ 'COMMON.CLOSE' | translate }}"
+   >
       <mat-icon>close</mat-icon>
-    </button>
-    <div><span>
-      {{'APP.INSTALL_APP' | translate}}
-    </span></div>
-    <div class="icons"><img alt="icône menu ios" src="./assets/images/clear/app-icon.svg">
-      <mat-icon>navigate_next</mat-icon> <img alt="icône bouton ajouter ios" src="./assets/images/clear/app-icon.svg">
-    </div>
-  </div>
+   </button>
+   <div>
+      <span>
+         {{ "APP.INSTALL_APP" | translate }}
+      </span>
+   </div>
+   <div class="icons">
+      <img alt="" src="./assets/images/clear/app-icon.svg" />
+      <mat-icon>navigate_next</mat-icon>
+      <img alt="" src="./assets/images/clear/app-icon.svg" />
+   </div>
+</div>
 }

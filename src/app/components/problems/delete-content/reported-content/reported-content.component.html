@@ -3,10 +3,19 @@
    <div class="header flex flex-col relative z-101">
       <app-button-back class="fixed top-[16px] z-103"></app-button-back>
       <div class="flex justify-end z-102">
-         <img src="assets/images/report-picto.png" alt="image" class="!w-[86px] !h-[66px] object-contain" />
+         <img
+            src="assets/images/report-picto.png"
+            alt=""
+            class="!w-[86px] !h-[66px] object-contain"
+         />
       </div>
       <div class="details flex flex-col">
-         <h3>{{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.TITLE" | translate }}</h3>
+         <h3>
+            {{
+               "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.TITLE"
+                  | translate
+            }}
+         </h3>
       </div>
    </div>
    <div class="content flex flex-col gap-(--spacing-4)">
@@ -14,42 +23,99 @@
       <app-divider></app-divider>
       <div class="flex flex-col gap-(--spacing-5)">
          <h5 class="!pl-(--spacing-3) !pr-(--spacing-3)">
-            {{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TITLE_PART1" | translate }}
-            <span [matTooltip]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TOOLTIP' | translate"
-               #tooltip="matTooltip" style="display: inline-flex; color: var(--color-24); cursor: pointer;">
-               <span style="text-decoration: underline;" (click)="tooltip.toggle()">
-                  {{ "COMMON.ORGANISATION" | translate}}</span><mat-icon svgIcon="icon-definition24x24" (click)="openDialog()"></mat-icon></span>{{
-            "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TITLE_PART2" | translate}}
+            {{
+               "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TITLE_PART1"
+                  | translate
+            }}
+            <span
+               [matTooltip]="
+                  'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TOOLTIP'
+                     | translate
+               "
+               #tooltip="matTooltip"
+               style="
+                  display: inline-flex;
+                  color: var(--color-24);
+                  cursor: pointer;
+               "
+            >
+               <span
+                  style="text-decoration: underline"
+                  (click)="tooltip.toggle()"
+               >
+                  {{ "COMMON.ORGANISATION" | translate }}</span
+               ><mat-icon
+                  svgIcon="icon-definition24x24"
+                  (click)="openDialog()"
+               ></mat-icon></span
+            >{{
+               "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TITLE_PART2"
+                  | translate
+            }}
          </h5>
-         <div class="flex flex-col bg-(--background-7) rounded-(--border-radius-2) pt-(--spacing-2) pb-(--spacing-2)">
-            <div class="flex justify-center items-center gap-[10px] p-(--spacing-2) pr-[3px]">
+         <div
+            class="flex flex-col bg-(--background-7) rounded-(--border-radius-2) pt-(--spacing-2) pb-(--spacing-2)"
+         >
+            <div
+               class="flex justify-center items-center gap-[10px] p-(--spacing-2) pr-[3px]"
+            >
                <div>
-                  <img src="assets/images/calendar-picto.svg" alt="calendar" class="!max-w-[43px] !min-w-[43px]" />
+                  <img
+                     src="assets/images/calendar-picto.svg"
+                     alt="
+                     "
+                     class="!max-w-[43px] !min-w-[43px]"
+                  />
                </div>
-               <div class="p-[10px]"
-                  [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.DESCRIPTION1' | translate"></div>
+               <div
+                  class="p-[10px]"
+                  [innerHTML]="
+                     'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.DESCRIPTION1'
+                        | translate
+                  "
+               ></div>
             </div>
             <div class="flex justify-center">
                <span
                   class="bg-(--color-24) pt-[4px] pb-[4px] pl-(--spacing-1) pr-(--spacing-1) rounded-(--border-radius-3) text-(--color-neutral-light-background-2)"
-                  style="font-weight: 700;">
+                  style="font-weight: 700"
+               >
                   {{ "COMMON.OR" | translate }}
                </span>
             </div>
-            <div class="flex justify-center items-center gap-[10px] p-(--spacing-2) pr-[3px]">
+            <div
+               class="flex justify-center items-center gap-[10px] p-(--spacing-2) pr-[3px]"
+            >
                <div>
-                  <img src="assets/images/mail-picto.svg" alt="mail" class="!max-w-[43px] !min-w-[43px]" />
+                  <img
+                     src="assets/images/mail-picto.svg"
+                     alt=""
+                     class="!max-w-[43px] !min-w-[43px]"
+                  />
                </div>
-               <div class="p-[10px]"
-                  [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.DESCRIPTION2' | translate">
-               </div>
+               <div
+                  class="p-[10px]"
+                  [innerHTML]="
+                     'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.DESCRIPTION2'
+                        | translate
+                  "
+               ></div>
             </div>
          </div>
       </div>
    </div>
    <div class="controls fixed bottom-0 w-full flex">
-      <app-button [label]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.BUTTON' | translate" variant="primary"
-         [iconAfterLabel]="{name: 'arrow24x24-icon' }" class="w-full"
-         (click)="utilsService.goTo('delete-content/reported-content/complaint')"></app-button>
+      <app-button
+         [label]="
+            'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.BUTTON'
+               | translate
+         "
+         variant="primary"
+         [iconAfterLabel]="{ name: 'arrow24x24-icon' }"
+         class="w-full"
+         (click)="
+            utilsService.goTo('delete-content/reported-content/complaint')
+         "
+      ></app-button>
    </div>
 </div>

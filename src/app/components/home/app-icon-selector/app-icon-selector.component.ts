@@ -2,11 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { RouterModule } from "@angular/router";
+import { TranslateModule } from "@ngx-translate/core";
 import { IconGeneratorService } from "../../../service/icon-generator.service";
 
 @Component({
    selector: "app-app-icon-selector",
-   imports: [MatIconModule, MatButtonModule, RouterModule],
+   imports: [MatIconModule, MatButtonModule, RouterModule, TranslateModule],
    templateUrl: "./app-icon-selector.component.html",
    styleUrl: "./app-icon-selector.component.scss",
 })

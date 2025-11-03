@@ -6,6 +6,7 @@
          routerLinkActive="active-link"
          [routerLinkActiveOptions]="{ exact: true }"
          class="nav-button home-button"
+         [attr.aria-label]="'COMMON.ARIA_LABEL.HOME' | translate"
       >
          <div class="icon-container">
             <mat-icon
@@ -27,6 +28,7 @@
          class="nav-button problem-button"
          [class.problem-active]="isProblemIconActive"
          [class.force-active]="isProblemIconActive"
+         [attr.aria-label]="'COMMON.ARIA_LABEL.PROBLEM' | translate"
       >
          <div class="icon-container">
             <mat-icon
@@ -48,6 +50,7 @@
          class="nav-button tools-button"
          [class.tools-active]="isToolsIconActive"
          [class.force-active]="isToolsIconActive"
+         [attr.aria-label]="'COMMON.ARIA_LABEL.TOOLS' | translate"
       >
          <div class="icon-container">
             <mat-icon
@@ -71,6 +74,7 @@
          class="nav-button secure-button"
          [class.secure-active]="isSecureMyselfIconActive"
          [class.force-active]="isSecureMyselfIconActive"
+         [attr.aria-label]="'COMMON.ARIA_LABEL.SECURE' | translate"
       >
          <div class="icon-container">
             <mat-icon

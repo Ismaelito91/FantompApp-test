@@ -1,9 +1,28 @@
-<a [routerLink]="data().nextId ? `/secure-myself/${data().nextId}/steps` : null"
-   class="flex justify-between items-center card-container">
+<a
+   [routerLink]="data().nextId ? `/secure-myself/${data().nextId}/steps` : null"
+   class="flex justify-between items-center card-container"
+>
    <div class="flex items-center" style="gap: 12px">
-      <img class="card-image" [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" alt="screen-image" />
+      <img
+         class="card-image"
+         [src]="
+            (data() | pageTranslation)?.image ||
+            (data() | pageTranslation)?.staticImage
+         "
+         alt=""
+      />
       @if ((data() | pageTranslation)?.firstTitle) {
-         <div class="card-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></div>
+      <div
+         class="card-title ckeditor-content"
+         [innerHTML]="
+            (data() | pageTranslation)?.firstTitle!
+               | translate
+               | replaceStringDark
+                  : 'hsl(258, 88%, 40%)'
+                  : 'var(--color-primary-400)'
+               | safeHtml
+         "
+      ></div>
       }
    </div>
    <mat-icon svgIcon="chevron16x16-icon" class="!size-[16px]"></mat-icon>

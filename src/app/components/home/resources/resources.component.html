@@ -1,37 +1,44 @@
 @if (page()?.type == ComponentType.PAGE_RESOURCES) {
-   <div class="resources-container flex flex-col">
-      <div class="fixed bg-(image:--background-31) h-[110px] w-full z-100"></div>
-      <img [src]="(page() | pageTranslation)?.image" alt="image" class="image-cover z-101"/>
-      <app-button-back class="fixed top-(--spacing-3) pl-(--spacing-5) z-102"></app-button-back>
-      @if ((page() | pageTranslation)?.firstTitle) {
-         <h3 class="resources-title ckeditor-content" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></h3>
-      }
-      @if ((page() | pageTranslation)?.description) {
-         <p class="resources-description ckeditor-content" [innerHTML]="(page() | pageTranslation)?.description! | translate | safeHtml"></p>
-      }
-      <div class="resources-items-container flex flex-col">
-         @for (child of sortedChildren; track $index) {
-            @switch (child.type) {
-               @case (ComponentType.CARD_3) {
-                  <app-card-3 [data]="child"></app-card-3>
-               }
-               @case (ComponentType.CARD_4) {
-                  <app-card-4 [data]="child"></app-card-4>
-               }
-               @case (ComponentType.CARD_5) {
-                  <app-card-5 [data]="child"></app-card-5>
-               }
-               @case (ComponentType.CARD_6) {
-                  <app-card-6 [data]="child"></app-card-6>
-               }
-               @case (ComponentType.CARD_14) {
-                  <app-card-14 [data]="child"></app-card-14>
-               }
-               @case (ComponentType.DIVIDER) {
-                  <app-divider />
-               }
-            }
-         }
-      </div>
+<div class="resources-container flex flex-col">
+   <div class="fixed bg-(image:--background-31) h-[110px] w-full z-100"></div>
+   <img
+      [src]="(page() | pageTranslation)?.image"
+      alt=""
+      class="image-cover z-101"
+   />
+   <app-button-back
+      class="fixed top-(--spacing-3) pl-(--spacing-5) z-102"
+   ></app-button-back>
+   @if ((page() | pageTranslation)?.firstTitle) {
+   <h3
+      class="resources-title ckeditor-content"
+      [innerHTML]="
+         (page() | pageTranslation)?.firstTitle! | translate | safeHtml
+      "
+   ></h3>
+   } @if ((page() | pageTranslation)?.description) {
+   <p
+      class="resources-description ckeditor-content"
+      [innerHTML]="
+         (page() | pageTranslation)?.description! | translate | safeHtml
+      "
+   ></p>
+   }
+   <div class="resources-items-container flex flex-col">
+      @for (child of sortedChildren; track $index) { @switch (child.type) {
+      @case (ComponentType.CARD_3) {
+      <app-card-3 [data]="child"></app-card-3>
+      } @case (ComponentType.CARD_4) {
+      <app-card-4 [data]="child"></app-card-4>
+      } @case (ComponentType.CARD_5) {
+      <app-card-5 [data]="child"></app-card-5>
+      } @case (ComponentType.CARD_6) {
+      <app-card-6 [data]="child"></app-card-6>
+      } @case (ComponentType.CARD_14) {
+      <app-card-14 [data]="child"></app-card-14>
+      } @case (ComponentType.DIVIDER) {
+      <app-divider />
+      } } }
    </div>
+</div>
 }

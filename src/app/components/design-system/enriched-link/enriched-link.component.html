@@ -1,18 +1,58 @@
-<a [href]="(data() | pageTranslation)?.description ? ((data() | pageTranslation)?.description! | translate | stripHtml) : null" target="_blank">
+<a
+   [href]="
+      (data() | pageTranslation)?.description
+         ? ((data() | pageTranslation)?.description! | translate | stripHtml)
+         : null
+   "
+   target="_blank"
+>
    <div class="flex justify-between tile-main">
       <div class="flex flex-col justify-center tile-container">
          @if ((data() | pageTranslation)?.firstTitle) {
-            <div class="tile-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></div>
+         <div
+            class="tile-title ckeditor-content"
+            [innerHTML]="
+               (data() | pageTranslation)?.firstTitle!
+                  | translate
+                  | replaceStringDark
+                     : 'hsl(258, 88%, 40%)'
+                     : 'var(--color-primary-400)'
+                  | safeHtml
+            "
+         ></div>
          }
          <div class="flex items-center tile-body">
-            <img [src]="(data() | pageTranslation)?.image || (data() | pageTranslation)?.staticImage" class="tile-image" />
+            <img
+               [src]="
+                  (data() | pageTranslation)?.image ||
+                  (data() | pageTranslation)?.staticImage
+               "
+               [alt]="'ALT_TEXT.CONTACT.WHATSAPP' | translate"
+               class="tile-image"
+            />
             @if ((data() | pageTranslation)?.description) {
-               <div class="tile-link ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></div>
+            <div
+               class="tile-link ckeditor-content"
+               [innerHTML]="
+                  (data() | pageTranslation)?.description!
+                     | translate
+                     | replaceStringDark
+                        : 'hsl(258, 88%, 40%)'
+                        : 'var(--color-primary-400)'
+                     | safeHtml
+               "
+            ></div>
             }
          </div>
       </div>
       <div class="flex items-center">
-         <mat-icon [svgIcon]="isDarkMode() ? 'icon-external-link-dark' : 'icon-external-link-clear'"></mat-icon>
+         <mat-icon
+            [svgIcon]="
+               isDarkMode()
+                  ? 'icon-external-link-dark'
+                  : 'icon-external-link-clear'
+            "
+         ></mat-icon>
       </div>
    </div>
 </a>
