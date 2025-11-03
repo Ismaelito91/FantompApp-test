@@ -122,11 +122,26 @@
       margin-left: auto;
 
       &.selected {
-         background: radial-gradient(
-            circle at center,
-            var(--color-8) 50%,
-            transparent 50%
-         );
+         background: radial-gradient(circle at center,
+               var(--color-8) 50%,
+               transparent 50%);
+      }
+   }
+
+   &:hover,
+   &:active {
+      .language,
+      .country {
+         color: var(--color-37);
+      }
+
+      .radio {
+         border-color: var(--color-37);
+         &.selected {
+            background: radial-gradient(circle at center,
+                  var(--color-37) 50%,
+                  transparent 50%);
+         }
       }
    }
 }
