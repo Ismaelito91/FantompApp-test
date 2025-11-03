@@ -27,13 +27,13 @@
                   @if (!isDarkMode()) {
                   <img
                      src="assets/images/onboarding/logo-fantomapp.svg"
-                     alt="FantomApp"
+                     [alt]="'ALT_TEXT.ONBOARDING.LOGO_FANTOMAPP' | translate"
                      class="app-logo"
                   />
                   } @else {
                   <img
                      src="assets/images/logo-fantomapp-dark.svg"
-                     alt="FantomApp"
+                     [alt]="'ALT_TEXT.ONBOARDING.LOGO_FANTOMAPP' | translate"
                      class="app-logo"
                   />
                   }
@@ -65,6 +65,7 @@
             <img
                src="assets/images/onboarding/switch-pancarte.svg"
                alt=""
+               aria-hidden="true"
                class="ghost-character"
             />
             } @else {
@@ -73,6 +74,7 @@
                <img
                   src="assets/images/switch-pancarte-dark.svg"
                   alt=""
+                  aria-hidden="true"
                   class="ghost-character"
                />
             </div>
@@ -139,6 +141,7 @@
          <img
             src="assets/images/onboarding/Switch-triste-img.svg"
             alt=""
+            aria-hidden="true"
             class="sad-ghost-character"
          />
       </div>
@@ -214,6 +217,7 @@
          <img
             src="assets/images/onboarding/illu-onboarding.svg"
             alt=""
+            aria-hidden="true"
             class="ghost-character"
          />
       </div>
@@ -291,6 +295,7 @@
          <img
             src="assets/images/onboarding/illu-onboarding-4.svg"
             alt=""
+            aria-hidden="true"
             class="ghost-character"
          />
       </div>

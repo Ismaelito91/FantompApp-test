@@ -14,12 +14,12 @@
 >
    <div class="flex flex-col justify-center items-center p-[65px]">
       <div class="relative h-[220px]">
-         <img src="assets/images/blur-effect.svg" alt="" />
+         <img src="assets/images/blur-effect.svg" alt="" aria-hidden="true" />
          <div
             [@moveFromTo]="handAnimationState"
             class="w-[127px] h-[110px] absolute top-[13px] left-[27px]"
          >
-            <img src="assets/images/hand.svg" alt="" />
+            <img src="assets/images/hand.svg" alt="" aria-hidden="true" />
          </div>
       </div>
       <h5 style="color: white; text-align: center; padding-bottom: 32px">
@@ -194,7 +194,12 @@
                   'active': action === 'blur',
                }"
             >
-               <img src="assets/images/flouter.svg" class="image" alt="" />
+               <img
+                  src="assets/images/flouter.svg"
+                  class="image"
+                  alt=""
+                  aria-hidden="true"
+               />
                <div class="label">
                   {{ "TOOLS.BLUR_IMAGE.BLUR" | translate }}
                </div>
@@ -206,7 +211,12 @@
                   'active': action === 'pixelate',
                }"
             >
-               <img src="assets/images/pixelliser.svg" class="image" alt="" />
+               <img
+                  src="assets/images/pixelliser.svg"
+                  class="image"
+                  alt=""
+                  aria-hidden="true"
+               />
                <div class="label">
                   {{ "TOOLS.BLUR_IMAGE.PIXELATE" | translate }}
                </div>

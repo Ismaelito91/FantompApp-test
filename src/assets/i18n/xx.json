@@ -757,8 +757,8 @@
             "LOWERCASE": "1 minuscule au moins",
             "DIGIT": "1 chiffre au moins",
             "SPECIAL_CHAR": "1 caractère spécial au moins",
-            "CRITERIA_VALIDATED": "Critère validé",
-            "CRITERIA_NOT_VALIDATED": "Critère non validé"
+            "CRITERIA_VALIDATED": "contient",
+            "CRITERIA_NOT_VALIDATED": "ne contient pas"
          },
          "BUTTONS": {
             "WHAT_IS_GOOD_PASSWORD": "C'est quoi un bon mot de passe ?",
@@ -813,6 +813,41 @@
             "TITLE": "Comment ça marche ?",
             "DESCRIPTION": "Lorsque tu as changé un paramètre, coche le badge <strong>pour te souvenir</strong> de ce que tu as sécurisé sur ton compte !"
          }
+      }
+   },
+   "ALT_TEXT": {
+      "CONTACT": {
+         "PHONE": "Contacter par téléphone",
+         "WHATSAPP": "Contacter par WhatsApp",
+         "SMS": "Contacter par SMS",
+         "EMAIL": "Contacter par email",
+         "SUPPORT_3018": "Contacter le 3018"
+      },
+      "GENERAL": {
+         "FLAG": "Drapeau"
+      },
+      "COUNTRIES": {
+         "FRANCE": "Français",
+         "IRELAND": "English",
+         "HUNGARY": "Magyar",
+         "GREECE": "Ελληνικά",
+         "DENMARK": "Dansk",
+         "POLAND": "Polski",
+         "PORTUGAL": "Português",
+         "SPAIN": "Español",
+         "CATALONIA": "Español",
+         "LUXEMBOURG": "Lëtzebuergesch"
+      },
+      "TOOLS": {
+         "PASSWORD_CHECK": {
+            "CRITERIA": {
+               "CRITERIA_VALIDATED": "contient",
+               "CRITERIA_NOT_VALIDATED": "ne contient pas"
+            }
+         }
+      },
+      "ONBOARDING": {
+         "LOGO_FANTOMAPP": "FantomApp"
       }
    }
 }
