@@ -22,7 +22,8 @@
                   (data() | pageTranslation)?.image ||
                   (data() | pageTranslation)?.staticImage
                "
-               [alt]="'ALT_TEXT.CONTACT.PHONE' | translate"
+               aria-hidden="true"
+               alt=""
                class="tile-image"
             />
             @if ((data() | pageTranslation)?.firstTitle) {

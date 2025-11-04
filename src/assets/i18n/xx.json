@@ -381,7 +381,7 @@
                   },
                   "ENRICHED_LINK": {
                      "TITLE": "X privacy policy inquiries",
-                     "DESCRIPTION": "https://help.x.com/fr/forms/privacy/question"
+                     "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
                   }
                },
                "SNAPCHAT": {
@@ -816,16 +816,6 @@
       }
    },
    "ALT_TEXT": {
-      "CONTACT": {
-         "PHONE": "Contacter par téléphone",
-         "WHATSAPP": "Contacter par WhatsApp",
-         "SMS": "Contacter par SMS",
-         "EMAIL": "Contacter par email",
-         "SUPPORT_3018": "Contacter le 3018"
-      },
-      "GENERAL": {
-         "FLAG": "Drapeau"
-      },
       "COUNTRIES": {
          "FRANCE": "Français",
          "IRELAND": "English",
