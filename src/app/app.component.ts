@@ -289,5 +289,28 @@ export class AppComponent implements OnInit {
             this.domSanitizer.bypassSecurityTrustResourceUrl(icon.path)
          );
       });
+
+      // Enregistrement des icônes de password check
+      const passwordCheckIcons = [
+         {
+            name: "password-eye-open",
+            path: "assets/images/icon-password-eye-open.svg",
+         },
+         {
+            name: "password-eye-closed",
+            path: "assets/images/icon-password-eye-closed.svg",
+         },
+         {
+            name: "password-copy",
+            path: "assets/images/icon-password-copy.svg",
+         },
+      ];
+
+      passwordCheckIcons.forEach((icon) => {
+         this.matIconRegistry.addSvgIcon(
+            icon.name,
+            this.domSanitizer.bypassSecurityTrustResourceUrl(icon.path)
+         );
+      });
    }
 }
