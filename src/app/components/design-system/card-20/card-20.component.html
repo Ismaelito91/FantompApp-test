@@ -18,6 +18,7 @@
          (data() | pageTranslation)?.image ||
          (data() | pageTranslation)?.staticImage
       "
-      [alt]="(data() | pageTranslation)?.firstTitle! | translate | stripHtml"
+      alt=""
+      aria-hidden="true"
    />
 </div>
