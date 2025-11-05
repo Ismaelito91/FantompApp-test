@@ -159,57 +159,47 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
       effect(() => {
          const step = this.currentStep();
          if (this.onboardingService.isOnboardingVisible()) {
-            setTimeout(() => {
-               this.focusCurrentStepButton(step);
-            }, 100);
+            setTimeout(
+               () => {
+                  this.focusCurrentStepButton(step);
+               },
+               step > 1 ? 300 : 100
+            );
          }
       });
    }
 
    ngOnInit() {
-      console.log("🚀 Onboarding démarré, étape initiale:", this.currentStep());
       this.startStep1Animations();
    }
 
    private focusCurrentStepButton(step: number) {
-      let buttonRef: ElementRef<HTMLButtonElement> | undefined;
-      switch (step) {
-         case 1:
-            buttonRef = this.step1NextButtonRef || this.step1SkipButtonRef;
-            break;
-         case 2:
-            buttonRef = this.step2NextButtonRef || this.step2SkipButtonRef;
-            break;
-         case 3:
-            buttonRef = this.step3NextButtonRef || this.step3SkipButtonRef;
-            break;
-         case 4:
-            buttonRef = this.step4NextButtonRef || this.step4SkipButtonRef;
-            break;
-      }
-      if (buttonRef?.nativeElement) {
-         buttonRef.nativeElement.focus();
-      }
+      document.activeElement instanceof HTMLElement &&
+         document.activeElement.blur();
+
+      const buttons: (HTMLElement | null)[] = [
+         this.step1NextButtonRef?.nativeElement ||
+            this.step1SkipButtonRef?.nativeElement,
+         document.querySelector("footer .problem-button") as HTMLElement,
+         document.querySelector("footer .tools-button") as HTMLElement,
+         document.querySelector("footer .secure-button") as HTMLElement,
+      ];
+
+      buttons[step - 1]?.focus();
    }
 
    ngAfterViewInit() {
       // Plus besoin de détection manuelle, le ThemeService s'en charge
-      console.log("✅ Vue initialisée, thème détecté:", this.isDarkMode());
    }
 
-   ngOnDestroy() {
-      console.log("🔚 Onboarding terminé");
-   }
+   ngOnDestroy() {}
 
    /**
     * Démarre les animations de l'étape 1
     */
    private startStep1Animations(): void {
-      console.log("🎬 Démarrage des animations étape 1");
-
       // Étape 1: Welcome apparaît en premier
       setTimeout(() => {
-         console.log("✨ Affichage du welcome");
          this.animationStates.update((states) => ({
             ...states,
             welcome: "visible",
@@ -219,7 +209,6 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
 
       // Étape 2: Fantôme apparaît après 1500ms
       setTimeout(() => {
-         console.log("👻 Affichage du fantôme");
          this.animationStates.update((states) => ({
             ...states,
             ghost: "visible",
@@ -229,7 +218,6 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
 
       // Étape 3: Bulle explicative après 2700ms
       setTimeout(() => {
-         console.log("💭 Affichage de l'explication");
          this.animationStates.update((states) => ({
             ...states,
             explanation: "visible",
@@ -239,7 +227,6 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
 
       // Étape 4: Boutons de contrôle après 3900ms
       setTimeout(() => {
-         console.log("🎛️ Affichage des contrôles");
          this.animationStates.update((states) => ({
             ...states,
             skip: "visible",
@@ -259,41 +246,26 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
     * Termine l'onboarding et passe à l'étape suivante
     */
    completeOnboarding(): void {
-      console.log(
-         "➡️ Complete Onboarding appelé, étape actuelle:",
-         this.currentStep()
-      );
+      const step = this.currentStep();
 
-      if (this.currentStep() === 1) {
-         // Passer à l'étape 2, activer l'icône problème
+      if (step === 1) {
          this.currentStep.set(2);
          this.onboardingService.activateProblemIcon();
-         console.log("🔄 Passage à l'étape 2");
-      } else if (this.currentStep() === 2) {
-         // Passer à l'étape 3, activer l'icône outils
+         this.router.navigate(["/problems"]);
+      } else if (step === 2) {
          this.currentStep.set(3);
          this.onboardingService.deactivateProblemIcon();
          this.onboardingService.activateToolsIcon();
-         console.log("🔄 Passage à l'étape 3");
-      } else if (this.currentStep() === 3) {
-         // Passer à l'étape 4, activer l'icône "Me sécuriser" et naviguer vers la page des problèmes
+         this.router.navigate(["/tools"]);
+      } else if (step === 3) {
          this.currentStep.set(4);
          this.onboardingService.deactivateToolsIcon();
          this.onboardingService.activateSecureMyselfIcon();
-         this.router.navigate(["/problems"]);
-         console.log("🔄 Passage à l'étape 4 sur la page des problèmes");
-         console.log("📍 Étape actuelle après navigation:", this.currentStep());
-         console.log(
-            "👁️ Onboarding visible:",
-            this.onboardingService.isOnboardingVisible()
-         );
-      } else if (this.currentStep() === 4) {
-         // Fermer l'onboarding et rediriger vers la page d'accueil
+         this.router.navigate(["/secure-myself"]);
+      } else if (step === 4) {
          this.onboardingService.completeOnboarding();
          this.onboardingService.deactivateSecureMyselfIcon();
          this.router.navigate(["/home"]);
-         console.log("✅ Onboarding terminé, redirection vers /home");
-         // Déclencher l'animation du fantôme après un délai pour laisser la page se charger
          this.ghostAnimationService.triggerGhostAnimation();
       }
    }
@@ -302,6 +274,14 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
     * Ferme l'onboarding sans le marquer comme terminé
     */
    closeOnboarding(): void {
+      // Retirer le focus avant de fermer l'onboarding
+      if (document.activeElement instanceof HTMLElement) {
+         document.activeElement.blur();
+      }
+      // Désactiver toutes les icônes actives
+      this.onboardingService.deactivateProblemIcon();
+      this.onboardingService.deactivateToolsIcon();
+      this.onboardingService.deactivateSecureMyselfIcon();
       this.onboardingService.completeOnboarding();
       this.onboardingService.hideOnboarding();
       this.router.navigate(["/home"]);
