@@ -346,9 +346,6 @@ export class PasswordCheckComponent
       if (this.typewriterInterval) {
          clearInterval(this.typewriterInterval);
       }
-
-      // retour en arrière
-      history.back();
    }
 
    // Effet typewriter lettre par lettre
