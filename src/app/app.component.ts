@@ -20,6 +20,7 @@ import { filter, map } from "rxjs";
 import { PreloadService } from "./service/preload.service";
 import { IconGeneratorService } from "./service/icon-generator.service";
 import { DeviceService } from "./service/device.service";
+import { UtilsService } from "./service/utils.service";
 
 @Component({
    selector: "app-root",
@@ -46,6 +47,7 @@ export class AppComponent implements OnInit {
    private router = inject(Router);
    private activatedRoute = inject(ActivatedRoute);
    private deviceService = inject(DeviceService);
+   public utilsService = inject(UtilsService);
    hideHeader = false;
    hideFooter = false;
    private preloadService = inject(PreloadService);

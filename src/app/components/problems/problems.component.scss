@@ -4,9 +4,15 @@
 
    .problems-title-container {
       position: relative;
-      background-image: url("../../../assets/images/problems-bg-1.png");
-      background-size: cover;
       height: 210px;
+   }
+
+   .problems-container-bg {
+      background-image: url("../../../assets/images/problems-bg-1.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      // top: -140px;
+      // right: -130px;
    }
 
    .problems-title {
@@ -43,5 +49,15 @@
    .problems-items-container {
       gap: var(--spacing-5);
       padding: 0 var(--spacing-3);
+   }
+}
+
+@media ((min-width: 520px) and (max-width: 770px)) {
+   .problems-container-bg {
+      top: -70px;
+   }
+
+   .problems-title {
+      padding-right: 140px !important;
    }
 }

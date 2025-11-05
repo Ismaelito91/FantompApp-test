@@ -47,7 +47,7 @@
       </a>
    </div>
    @if (sortedChildren.length > 0) {
-   <div class="flex card-children">
+   <div class="flex card-children" [ngClass]="{ 'show-scrollbar': utilsService.isDesktop() }">
       @for (child of sortedChildren; track $index) { @switch (child.type) {
       @case (ComponentType.CARD_8) {
       <app-card-8 [data]="child"></app-card-8>

@@ -17,8 +17,6 @@
    scrollbar-width: none;
 }
 
-@media (min-width: 600px) {
-   .card-children {
-      scrollbar-width: thin;
-   }
+.show-scrollbar {
+   scrollbar-width: thin !important;
 }

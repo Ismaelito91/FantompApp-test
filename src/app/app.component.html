@@ -1,18 +1,27 @@
 @switch (_settingService.appStatus()) {
-   @case ("initialized") {
-      <div [attr.inert]="_onboardingService.isOnboardingVisible() ? 'true' : null">
-         @if (!hideHeader) {
-            <app-header />
-         }
-         <router-outlet />
+  @case ("initialized") {
+    <div class="app-layout" [attr.inert]="_onboardingService.isOnboardingVisible() && !utilsService.isDesktop() ? 'true' : null">
+      <!-- Barre latérale (footer sur desktop) -->
+      <app-footer class="side-nav desktop-only" />
+      <div class="main-content">
+        @if (!hideHeader) {
+          <app-header />
+        }
+        <router-outlet />
+        <!-- Footer visible seulement sur mobile -->
          @if (!hideFooter) {
-            <app-footer />
+            <app-footer class="mobile-only" />
          }
       </div>
-      <app-onboarding *ngIf="_onboardingService.isOnboardingVisible()" />
-   } @case ("pending") {
-      {{ "APP.LOADING" | translate }}
-   } @case ("failed") {
-      {{ "APP.ERROR" | translate }}
-   } 
+    </div>
+    @if (_onboardingService.isOnboardingVisible() && !utilsService.isDesktop()) {
+       <app-onboarding />
+    }
+  }
+  @case ("pending") {
+    {{ "APP.LOADING" | translate }}
+  }
+  @case ("failed") {
+    {{ "APP.ERROR" | translate }}
+  }
 }

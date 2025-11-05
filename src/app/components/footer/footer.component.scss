@@ -1,3 +1,7 @@
+.desktop-only {
+   display: none !important;
+}
+
 .toolbar-nav {
    position: fixed;
    bottom: 0;
@@ -24,9 +28,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       &:focus-visible {
          outline-offset: -3px !important;
       }
+
       .icon-container {
          position: relative;
          width: 24px;
@@ -85,8 +91,6 @@
       /* shared active-state sizing/centering */
       &.active-link,
       &.problem-active,
-      &.active-link,
-      &.problem-active,
       &.force-active,
       &.tools-active {
          background-color: var(--color-primary-100);
@@ -131,6 +135,47 @@
                   color: inherit !important;
                }
             }
+         }
+      }
+   }
+}
+
+@media (min-width: 770px) {
+   .desktop-only {
+      display: block !important;
+   }
+
+   .logo {
+      padding: 14px 10px;
+   }
+
+   .toolbar-nav {
+      position: relative;
+      flex-direction: column;
+      height: 100%;
+      padding-inline: var(--spacing-2);
+
+      .nav-button {
+         flex-direction: row;
+         justify-content: start;
+
+         span {
+            font-size: var(--font-size-body-md);
+         }
+
+         &.active-link,
+         &.problem-active,
+         &.force-active,
+         &.tools-active {
+            padding: var(--spacing-2);
+         }
+      }
+
+      ::ng-deep {
+         .mdc-button__label {
+            display: flex;
+            gap: 10px;
+
          }
       }
    }

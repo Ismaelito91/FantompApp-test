@@ -1,0 +1,50 @@
+.app-layout {
+   display: flex;
+   flex-direction: column;
+   /* mobile par défaut */
+   height: 100vh;
+}
+
+.main-content {
+   position: relative;
+   flex: 1;
+   overflow-y: auto;
+}
+
+/* Masquer/afficher selon le support */
+.desktop-only {
+   display: none;
+}
+
+.mobile-only {
+   display: block;
+}
+
+/* Sur desktop : navigation à gauche */
+@media (min-width: 770px) {
+   .app-layout {
+      flex-direction: row;
+      overflow-y: hidden;
+   }
+
+   .desktop-only {
+      display: block;
+      width: 236px;
+      flex-shrink: 0;
+      border-right: 2px solid var(--color-neutral-light-background-3);
+      background: var(--background-6);
+      height: 100%;
+      padding: var(--spacing-4) var(--spacing-2) var(--spacing-3) var(--spacing-2);
+   }
+
+   .mobile-only {
+      display: none;
+   }
+
+   .main-content {
+      height: 100%;
+      scrollbar-width: none;
+      max-width: var(--max-width-viewport);
+      margin: auto;
+   }
+}

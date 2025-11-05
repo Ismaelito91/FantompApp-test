@@ -14,6 +14,7 @@ import { SettingService } from "../../service/setting.service";
 import { ThemeService } from "../../service/theme.service";
 import { Card7Component } from "../design-system/card-7/card-7.component";
 import { HomeCardComponent } from "./home-card/home-card.component";
+import { UtilsService } from "../../service/utils.service";
 
 @Component({
    selector: "app-home",
@@ -33,7 +34,7 @@ import { HomeCardComponent } from "./home-card/home-card.component";
 export class HomeComponent implements OnInit {
    private themeService = inject(ThemeService);
    private router = inject(Router);
-   private platform = inject(Platform);
+   private utilsService = inject(UtilsService);
    private readonly pageComponentService = inject(PageComponentService);
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
    public shouldShowChangeIcon = false;
@@ -77,9 +78,7 @@ export class HomeComponent implements OnInit {
    });
 
    ngOnInit(): void {
-      this.shouldShowChangeIcon =
-         this.platform.isBrowser && !this.platform.IOS && !this.isTwa();
-
+      this.shouldShowChangeIcon = this.utilsService.isDesktop();
       this.loadRootPage();
    }
 
@@ -142,18 +141,4 @@ export class HomeComponent implements OnInit {
       this.onboardingService.showOnboarding();
    }
 
-   private isTwa(): boolean {
-      if (typeof window === "undefined") {
-         return false;
-      }
-      if (document?.referrer?.includes("android-app:")) {
-         return true;
-      }
-      try {
-         const url = new URL(window.location.href);
-         return url.searchParams.get("utm_source") === "trusted-web-activity";
-      } catch {
-         return false;
-      }
-   }
 }

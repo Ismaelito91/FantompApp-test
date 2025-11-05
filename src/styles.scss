@@ -33,7 +33,8 @@
    --heading-font-family: "Lexend", Arial, sans-serif;
    --body-font-family: "Nunito", Arial, sans-serif;
 
-   --max-width-viewport: 600px;
+   --max-width-viewport: 520px;
+   --max-width-mobile: 770px;
 
    // Tailles de police
    --font-size-h1: 32px;
@@ -329,8 +330,6 @@
       color: var(--color-1);
       transition: background-color 0.3s ease, color 0.3s ease;
       min-height: 100vh;
-      max-width: var(--max-width-viewport);
-      margin: auto;
    }
 
    // Styles globaux pour tous les titres (h1 à h6)

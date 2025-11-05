@@ -1,6 +1,7 @@
 @switch(page()?.type) { @case (ComponentType.PAGE_1) {
-<div class="problems-container flex flex-col page-1">
-   <div class="problems-title-container">
+<div class="problems-container flex flex-col page-1 relative">
+   <div class="absolute problems-container-bg h-full w-full z-100"></div>
+   <div class="problems-title-container z-101">
       @if ((page() | pageTranslation)?.firstTitle) {
       <h1
          class="problems-title"
@@ -10,7 +11,7 @@
       ></h1>
       }
    </div>
-   <div class="problems-items-container flex flex-col">
+   <div class="problems-items-container flex flex-col z-102">
       <a routerLink="/delete-content">
          <app-card-1 [data]="deleteContentProblem"></app-card-1>
       </a>

@@ -1,3 +1,4 @@
+import { Platform } from '@angular/cdk/platform';
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -6,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class UtilsService {
    private readonly router = inject(Router);
+   private platform = inject(Platform);
 
    goTo(url: string) {
       this.router.navigate([url]);
@@ -24,5 +26,9 @@ export class UtilsService {
       const tmp = document.createElement('div');
       tmp.innerHTML = html;
       return tmp.textContent || tmp.innerText || '';
+   }
+
+   isDesktop(): boolean {
+     return this.platform.isBrowser && !this.platform.IOS && !this.platform.ANDROID;
    }
 }

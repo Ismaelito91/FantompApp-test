@@ -10,15 +10,17 @@ import { ComponentStatus } from '../../../model/enum/component-status.enum';
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 import { TranslatePipe } from '@ngx-translate/core';
 import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
-
+import { UtilsService } from '../../../service/utils.service';
+import { NgClass } from '@angular/common';
 @Component({
    selector: 'app-card-7',
-   imports: [Card8Component, MatIconModule, RouterLink, SafeHtmlPipe, PageTranslationPipe, TranslatePipe, ReplaceStringDarkPipe],
+   imports: [Card8Component, MatIconModule, RouterLink, SafeHtmlPipe, PageTranslationPipe, TranslatePipe, ReplaceStringDarkPipe, NgClass],
    templateUrl: './card-7.component.html',
    styleUrl: './card-7.component.scss'
 })
 export class Card7Component {
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
+   public utilsService = inject(UtilsService);
    data = input.required<PageComponentModel>();
    ComponentType = ComponentType;
    ComponentStatus = ComponentStatus;
