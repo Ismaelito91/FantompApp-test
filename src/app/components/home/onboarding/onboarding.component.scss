@@ -15,7 +15,7 @@
 .onboarding-overlay {
    position: fixed;
    top: 0;
-   max-width: var(--max-width-viewport);
+   max-width: var(--max-width-mobile);
    margin: auto;
    width: 100%;
    height: 100%;
@@ -139,7 +139,7 @@
 .onboarding-container {
    position: relative;
    width: 100%;
-   max-width: var(--max-width-viewport);
+   max-width: var(--max-width-mobile);
    height: 100vh;
    display: flex;
    flex-direction: column;
