@@ -11,6 +11,7 @@
           "/index.csr.html",
           "/index.html",
           "/manifest.webmanifest",
+          "/manifest-icon1.webmanifest",
           "/*.css",
           "/*.js"
         ]
@@ -31,22 +32,24 @@
     {
       "name": "api-active-performance",
       "urls": [
-        "/**/api/*"
       ],
       "cacheConfig": {
         "strategy": "performance",
         "maxSize": 1000,
-        "maxAge": "1h"
+        "maxAge": "1h",
+        "timeout": "5s"
       }
     },
     {
       "name": "api-performance",
       "urls": [
+        "/**/api/*"
       ],
       "cacheConfig": {
         "strategy": "performance",
         "maxSize": 1000,
-        "maxAge": "1d"
+        "maxAge": "1d",
+        "timeout": "5s"
       }
     },
     {
@@ -59,6 +62,18 @@
         "maxSize": 1000,
         "maxAge": "1d",
         "timeout": "5s"
+      }
+    },
+    {
+      "name": "api-stale-while-revalidate",
+      "urls": [
+        "/**/api/**"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 500,
+        "maxAge": "7d",
+        "timeout": "0u"
       }
     }
   ]

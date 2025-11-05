@@ -96,11 +96,13 @@ export class PreloadService {
         // Mettre à jour les maps de composants
         this.pageComponentUtils.updateComponentMap(preloadedData.problemsSection);
         this.pageComponentUtils.updateComponentMap(preloadedData.secureMyselfSection);
+        this.pageComponentUtils.updateComponentMap(preloadedData.homeSection);
         
         // Précharger toutes les images (statiques et dynamiques)
         this.imagePreloadService.preloadAllImages({
           problemsSection: preloadedData.problemsSection,
-          secureMyselfSection: preloadedData.secureMyselfSection
+          secureMyselfSection: preloadedData.secureMyselfSection,
+          homeSection: preloadedData.homeSection
         }).subscribe({
           next: () => {
             console.log("fin du pré-chargement");
