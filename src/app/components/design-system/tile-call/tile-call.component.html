@@ -1,5 +1,6 @@
 <a
    [href]="(data() | pageTranslation)?.firstTitle ? `tel:${((data() | pageTranslation)?.firstTitle! | translate | stripHtml)}` : null"
+   [attr.aria-label]="'ALT_TEXT.TILE_CALL.ARIA_LABEL' | translate"
 >
    <div class="flex flex-col tile-main">
       @if ((data() | pageTranslation)?.description) {

@@ -1,24 +1,87 @@
 <div class="flex flex-col card-container" style="padding: 16px; gap: 29px">
-   <div class="flex flex-col" style="gap: 12px;">
+   <div class="flex flex-col" style="gap: 12px">
       <div class="flex justify-between">
          @if ((data() | pageTranslation)?.firstTitle) {
-            <span style="color: var(--color-8); font-weight: 600;" class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></span>
-         }
-         @if (!isOk(data().id!)) {
-         <div class="flex justify-between items-center"
-            style="color: var(--color-8); height: 24px; border: dashed 1px; border-radius: 30px; padding: 2px 8px; gap: 6px;"
-            (click)="onToggleOk(data().id!)">
-            <span style="font-size: 12px;">OK</span>
-            <mat-icon svgIcon="checkbox-unselected16x16-icon"
-               style="height: 16px; width: 16px; margin: 2px 0;"></mat-icon>
+         <span
+            style="color: var(--color-8); font-weight: 600"
+            class="ckeditor-content"
+            [innerHTML]="
+               (data() | pageTranslation)?.firstTitle!
+                  | translate
+                  | replaceStringDark
+                     : 'hsl(258, 88%, 40%)'
+                     : 'var(--color-primary-400)'
+                  | safeHtml
+            "
+         ></span>
+         } @if (!isOk(data().id!)) {
+         <div
+            class="flex justify-between items-center"
+            style="
+               color: var(--color-8);
+               height: 24px;
+               border: dashed 1px;
+               border-radius: 30px;
+               padding: 2px 8px;
+               gap: 6px;
+            "
+            (click)="onToggleOk(data().id!)"
+            role="button"
+            tabindex="0"
+            [attr.aria-pressed]="'false'"
+            [attr.aria-label]="
+               (data().socialMedia || '') +
+               ' ' +
+               ((data() | pageTranslation)?.firstTitle
+                  ? ((data() | pageTranslation)?.firstTitle!
+                    | translate
+                    | stripHtml)
+                  : '') +
+               ' Ok'
+            "
+         >
+            <span style="font-size: 12px">OK</span>
+            <mat-icon
+               svgIcon="checkbox-unselected16x16-icon"
+               style="height: 16px; width: 16px; margin: 2px 0"
+            ></mat-icon>
          </div>
          } @else {
-         <div class="flex justify-between items-center"
-            style="color: white; height: 24px; border-radius: 30px; padding: 2px 8px; gap: 6px; background-color: var(--color-24);"
-            (click)="onToggleOk(data().id!)">
-            <span style="font-size: 12px;">OK !</span>
-            <mat-icon svgIcon="checkbox-selected16x16-icon"
-               style="height: 16px; width: 16px; margin: 2px 0; color: var(--color-24);"></mat-icon>
+         <div
+            class="flex justify-between items-center"
+            style="
+               color: white;
+               height: 24px;
+               border-radius: 30px;
+               padding: 2px 8px;
+               gap: 6px;
+               background-color: var(--color-24);
+            "
+            (click)="onToggleOk(data().id!)"
+            role="button"
+            tabindex="0"
+            [attr.aria-pressed]="'true'"
+            [attr.aria-label]="
+               (data().socialMedia || '') +
+               ' ' +
+               ((data() | pageTranslation)?.firstTitle
+                  ? ((data() | pageTranslation)?.firstTitle!
+                    | translate
+                    | stripHtml)
+                  : '') +
+               ' Ok'
+            "
+         >
+            <span style="font-size: 12px">OK !</span>
+            <mat-icon
+               svgIcon="checkbox-selected16x16-icon"
+               style="
+                  height: 16px;
+                  width: 16px;
+                  margin: 2px 0;
+                  color: var(--color-24);
+               "
+            ></mat-icon>
          </div>
          }
       </div>

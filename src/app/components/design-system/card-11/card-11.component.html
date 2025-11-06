@@ -5,7 +5,7 @@
       @if (index() > 0) {
       <button
          mat-fab
-         aria-label="Previous"
+         [attr.aria-label]="'COMMON.PREVIOUS' | translate"
          class="previous-btn nav-btn"
          (click)="prev.emit()"
       >
@@ -24,7 +24,7 @@
       @if (index() < maxIndex()) {
       <button
          mat-fab
-         aria-label="Next"
+         [attr.aria-label]="'COMMON.NEXT' | translate"
          class="next-btn nav-btn"
          (click)="next.emit()"
       >

@@ -6,6 +6,8 @@
          class="lang-trigger"
          mat-button
          [mat-menu-trigger-for]="deviceMenu"
+         [attr.aria-disabled]="null"
+         [attr.role]="null"
       >
          <mat-icon class="!size-[16px] !m-0">📱</mat-icon>
          @if (!deviceMenuTrigger.menuOpen) {
@@ -22,6 +24,9 @@
             mat-menu-item
             class="lang-item"
             (click)="setDevice(Device.IOS)"
+            [attr.aria-pressed]="
+               selectedDevice === Device.IOS ? 'true' : 'false'
+            "
          >
             <div class="lang-item">
                <span class="language">IOS</span>
@@ -36,6 +41,9 @@
             mat-menu-item
             class="lang-item"
             (click)="setDevice(Device.ANDROID)"
+            [attr.aria-pressed]="
+               selectedDevice === Device.ANDROID ? 'true' : 'false'
+            "
          >
             <div class="lang-item">
                <span class="language">Android</span>
@@ -50,6 +58,9 @@
             mat-menu-item
             class="lang-item"
             (click)="setDevice(Device.WEB)"
+            [attr.aria-pressed]="
+               selectedDevice === Device.WEB ? 'true' : 'false'
+            "
          >
             <div class="lang-item web">
                <span class="language">Web</span>
@@ -70,6 +81,8 @@
          class="lang-trigger"
          mat-button
          [mat-menu-trigger-for]="languageMenu"
+         [attr.aria-disabled]="null"
+         [attr.role]="null"
       >
          @if (currentFlagUrl) {
          <img
@@ -94,6 +107,9 @@
             mat-menu-item
             class="lang-item"
             (click)="_languageService.setLanguage(lang.code)"
+            [attr.aria-pressed]="
+               _languageService.language() === lang.code ? 'true' : 'false'
+            "
          >
             <div class="lang-item">
                @if (lang.flagUrl) {

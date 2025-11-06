@@ -186,6 +186,7 @@
          }
          <div
             class="actions absolute bottom-(--spacing-2) left-1/2 -translate-x-1/2 p-(--spacing-2) bg-[#10052E33] rounded-(--spacing-3) flex"
+            aria-hidden="true"
          >
             <div
                class="action flex flex-col justify-center items-center cursor-pointer"
@@ -255,6 +256,9 @@
             </button>
          </div>
          <div>
+            <span class="sr-only">
+               {{ "TOOLS.BLUR_IMAGE.GLOBAL_BLUR_INFO" | translate }}
+            </span>
             <app-button
                [label]="'TOOLS.BLUR_IMAGE.ALL_BLUR' | translate"
                variant="secondary"
@@ -316,7 +320,7 @@
       >
          <img
             src="assets/images/photo-illu.svg"
-            alt=""
+            [alt]="'ALT_TEXT.TOOLS.BLUR_IMAGE.IMAGE_ALT' | translate"
             class="h-[200px] cursor-pointer"
             (click)="fileInput.click()"
          />
