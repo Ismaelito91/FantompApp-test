@@ -14,16 +14,18 @@ export class PageComponentService {
 
    getRootPageComponentsBySectionId(sectionId: number) {
       let devicesHeader: Device[];
+      let url = `api/public/page-components/section/${sectionId}/root`;
 
       const override = sessionStorage.getItem('overrideDevice');
       if (override === Device.WEB || override === Device.ANDROID || override === Device.IOS) {
          devicesHeader = [override as Device];
+         url += `?device=${encodeURIComponent(override)}`; // ajout du device pour forcer le service worker à ne pas utiliser le cache
       } else {
          devicesHeader = this.deviceService.getDevicesHeader();
       }
 
       return this._http.get<Record<string, PageComponentModel>>(
-         `api/public/page-components/section/${sectionId}/root`,
+         url,
          { headers: { 'X-Devices': devicesHeader } }
       );
    }
