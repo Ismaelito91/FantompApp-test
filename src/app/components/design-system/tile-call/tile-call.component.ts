@@ -1,18 +1,25 @@
-import { Component, computed, inject, input } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import PageComponentModel from '../../../model/page-component.model';
-import { ThemeService } from '../../../service/theme.service';
+import { Component, computed, inject, input } from "@angular/core";
+import { MatIconModule } from "@angular/material/icon";
+import { TranslatePipe } from "@ngx-translate/core";
+import PageComponentModel from "../../../model/page-component.model";
+import { ThemeService } from "../../../service/theme.service";
 import { StripHtmlPipe } from "../../../pipes/strip-html.pipe";
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
-import { TranslatePipe } from '@ngx-translate/core';
-import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
+import { ReplaceStringDarkPipe } from "../../../pipes/replace-string-dark.pipe";
 
 @Component({
-   selector: 'app-tile-call',
-   imports: [MatIconModule, StripHtmlPipe, SafeHtmlPipe, PageTranslationPipe, TranslatePipe, ReplaceStringDarkPipe],
-   templateUrl: './tile-call.component.html',
-   styleUrl: './tile-call.component.scss'
+   selector: "app-tile-call",
+   imports: [
+      MatIconModule,
+      StripHtmlPipe,
+      SafeHtmlPipe,
+      PageTranslationPipe,
+      TranslatePipe,
+      ReplaceStringDarkPipe,
+   ],
+   templateUrl: "./tile-call.component.html",
+   styleUrl: "./tile-call.component.scss",
 })
 export class TileCallComponent {
    private readonly themeService = inject(ThemeService);

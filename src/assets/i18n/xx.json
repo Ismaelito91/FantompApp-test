@@ -733,6 +733,7 @@
          "PIXELATE": "Pixelliser",
          "ALL_BLUR": "Tout flouter",
          "BRUSH_SIZE": "Taille du flou",
+         "GLOBAL_BLUR_INFO": "Vous pouvez flouter globalement toute l'image en utilisant ce bouton. En cliquant dessus, une liste de pourcentages de floutage s'affiche pour choisir l'intensité du flou.",
          "TUTORIAL": {
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter."
          }
@@ -834,7 +835,19 @@
                "CRITERIA_VALIDATED": "contient",
                "CRITERIA_NOT_VALIDATED": "ne contient pas"
             }
+         },
+         "BLUR_IMAGE": {
+            "IMAGE_ALT": "Importer une photo"
          }
+      },
+      "ENRICHED_LINK": {
+         "ARIA_LABEL": "Link that redirects to an external page for victims of cyberbullying or digital violence"
+      },
+      "TILE_CALL": {
+         "ARIA_LABEL": "Link that redirects to the call function for victims of cyberbullying or digital violence"
+      },
+      "TILE_MESSAGE": {
+         "ARIA_LABEL": "Link that redirects to the SMS sending function for victims of cyberbullying or digital violence"
       },
       "ONBOARDING": {
          "LOGO_FANTOMAPP": "FantomApp"

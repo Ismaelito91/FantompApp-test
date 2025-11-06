@@ -1,26 +1,49 @@
-<button mat-flat-button class="btn w-full" [class]="{
+<button
+   mat-flat-button
+   class="btn w-full"
+   [class]="{
    'btn-lg': size() === 'lg',
    'btn-md': size() === 'md',
    'btn-sm': size() === 'sm',
    'primary': variant() === 'primary',
    'secondary': variant() === 'secondary',
    'tertiary': variant() === 'tertiary',
-}" (click)="handleClick()">
+}"
+   (click)="handleClick()"
+>
    <div class="flex items-center gap-(--spacing-1)">
       @if (iconBeforeLabel()) {
-      <mat-icon [svgIcon]="iconBeforeLabel()!.name" [style.transform]="
-    'rotate(' + (iconBeforeLabel()?.rotate || 0) + 'deg)' +
-    ' scaleX(' + (iconBeforeLabel()?.scaleX || 1) + ')' +
-    ' scaleY(' + (iconBeforeLabel()?.scaleY || 1) + ')'
-  "></mat-icon>
+      <mat-icon
+         [svgIcon]="iconBeforeLabel()!.name"
+         [style.transform]="
+            'rotate(' +
+            (iconBeforeLabel()?.rotate || 0) +
+            'deg)' +
+            ' scaleX(' +
+            (iconBeforeLabel()?.scaleX || 1) +
+            ')' +
+            ' scaleY(' +
+            (iconBeforeLabel()?.scaleY || 1) +
+            ')'
+         "
+      ></mat-icon>
       }
       <span [innerHTML]="label() | safeHtml"></span>
       @if (iconAfterLabel()) {
-      <mat-icon [svgIcon]="iconAfterLabel()!.name" [style.transform]="
-    'rotate(' + (iconAfterLabel()?.rotate || 0) + 'deg)' +
-    ' scaleX(' + (iconAfterLabel()?.scaleX || 1) + ')' +
-    ' scaleY(' + (iconAfterLabel()?.scaleY || 1) + ')'
-  "></mat-icon>
+      <mat-icon
+         [svgIcon]="iconAfterLabel()!.name"
+         [style.transform]="
+            'rotate(' +
+            (iconAfterLabel()?.rotate || 0) +
+            'deg)' +
+            ' scaleX(' +
+            (iconAfterLabel()?.scaleX || 1) +
+            ')' +
+            ' scaleY(' +
+            (iconAfterLabel()?.scaleY || 1) +
+            ')'
+         "
+      ></mat-icon>
       }
    </div>
 </button>

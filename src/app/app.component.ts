@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from "@angular/core";
+import { Component, OnInit, inject, effect } from "@angular/core";
 import {
    ActivatedRoute,
    NavigationEnd,
@@ -53,6 +53,34 @@ export class AppComponent implements OnInit {
    private preloadService = inject(PreloadService);
    // Force l'initialisation de l'IconGeneratorService au démarrage
    private _iconGen = inject(IconGeneratorService);
+
+   constructor() {
+      // Mettre à jour l'attribut lang sur <html> quand la langue change
+      effect(() => {
+         const langCode = this.languageService.language();
+         const htmlLang = this.mapLanguageCodeToHtmlLang(langCode);
+         if (document.documentElement) {
+            document.documentElement.lang = htmlLang;
+         }
+      });
+   }
+
+   private mapLanguageCodeToHtmlLang(langCode: string): string {
+      const langMap: Record<string, string> = {
+         FR: "fr",
+         IE: "en",
+         HU: "hu",
+         GR: "el",
+         DK: "da",
+         PL: "pl",
+         PT: "pt",
+         ES: "es",
+         CT: "es",
+         LU: "lb",
+         XX: "en",
+      };
+      return langMap[langCode] || "fr";
+   }
 
    ngOnInit(): void {
       // Appliquer les overrides via query params avant le preload
