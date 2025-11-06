@@ -30,25 +30,14 @@
   ],
   "dataGroups": [
     {
-      "name": "api-active-performance",
-      "urls": [
-      ],
-      "cacheConfig": {
-        "strategy": "performance",
-        "maxSize": 1000,
-        "maxAge": "1h",
-        "timeout": "5s"
-      }
-    },
-    {
       "name": "api-performance",
       "urls": [
+        "/**/api/public/images/*"
       ],
       "cacheConfig": {
         "strategy": "performance",
-        "maxSize": 1000,
-        "maxAge": "1d",
-        "timeout": "5s"
+        "maxSize": 300,
+        "maxAge": "30d"
       }
     },
     {
@@ -70,7 +59,7 @@
       ],
       "cacheConfig": {
         "strategy": "freshness",
-        "maxSize": 500,
+        "maxSize": 50,
         "maxAge": "7d",
         "timeout": "0u"
       }
