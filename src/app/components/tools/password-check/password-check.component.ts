@@ -1,22 +1,25 @@
 import { CommonModule, Location } from "@angular/common";
 import {
+   AfterViewInit,
    Component,
+   ElementRef,
+   HostListener,
    OnDestroy,
    OnInit,
-   AfterViewInit,
-   ElementRef,
    ViewChild,
-   HostListener,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { Router } from "@angular/router";
-import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatIconModule } from "@angular/material/icon";
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { Router } from "@angular/router";
+import { Arrow, flip, offset, shift } from '@ngx-popovers/core';
+import { PopoverComponent, PopoverTemplate } from '@ngx-popovers/popover';
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { PasswordSecurityService } from "../../../service/password-security.service";
+import { BadgeComponent } from "../../design-system/badge/badge.component";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonCloseComponent } from "../../design-system/button-close/button-close.component";
-import { BadgeComponent } from "../../design-system/badge/badge.component";
-import { PasswordSecurityService } from "../../../service/password-security.service";
 
 @Component({
    selector: "app-password-check",
@@ -29,13 +32,15 @@ import { PasswordSecurityService } from "../../../service/password-security.serv
       TranslateModule,
       MatCheckboxModule,
       MatIconModule,
+      MatTooltipModule,
+      PopoverComponent,
+      PopoverTemplate,
+      Arrow,
    ],
    templateUrl: "./password-check.component.html",
    styleUrl: "./password-check.component.scss",
 })
-export class PasswordCheckComponent
-   implements OnDestroy, OnInit, AfterViewInit
-{
+export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit {
    @ViewChild("passwordInput", { static: false })
    passwordInput!: ElementRef<HTMLInputElement>;
 
@@ -73,6 +78,7 @@ export class PasswordCheckComponent
    shouldSplit: boolean = false;
    displayedNumberPart: string = "";
    displayedUnitPart: string = "";
+   popoverMiddleware = [flip(), shift(), offset(8)];
 
    constructor(
       private router: Router,
@@ -228,7 +234,7 @@ export class PasswordCheckComponent
             }
          }, 100);
       } else {
-         
+
          localStorage.setItem("password-check-onboarding-seen", "true");
          // Remettre le focus sur l'élément principal après fermeture
          this.activateDefaultButton();
@@ -294,7 +300,7 @@ export class PasswordCheckComponent
       this.isInputFocused = true;
    }
 
-   onInputBlur() {}
+   onInputBlur() { }
 
    cancelInputFocus() {
       // Si il y a du contenu dans l'input, le supprimer d'abord

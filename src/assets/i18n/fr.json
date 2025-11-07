@@ -784,7 +784,12 @@
       },
       "PASSWORD_CHECK": {
          "TITLE": "Je teste mon mot de passe",
-         "DESCRIPTION": "Combien de temps faut-il à un cybercriminel pour le trouver ?",
+         "DESCRIPTION_PART1": "Combien de temps faut-il à un cybercriminel pour le trouver par",
+         "DESCRIPTION_PART2": "?",
+         "DESCRIPTION_TOOLTIP": {
+            "TITLE": "force brute",
+            "CONTENT": "Une <strong>attaque par force brute</strong> (bruteforce attack) consiste à tester, l’une après l’autre, chaque combinaison possible d’un mot de passe. (source : <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
+         },
          "CRIMINAL_GUESSES": "Un cybercriminel le devine en :",
          "ASSESSMENT_TEXT": "Ton mot de passe :",
          "INPUT_LABEL": "Mot de passe",
