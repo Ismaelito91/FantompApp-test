@@ -899,13 +899,13 @@
          }
       },
       "ENRICHED_LINK": {
-         "ARIA_LABEL": "Lien qui redirige vers une page d'aide pour les victimes de harcèlement ou de violences numériques"
+         "ARIA_LABEL": "Lien qui redirige vers une page externe"
       },
       "TILE_CALL": {
-         "ARIA_LABEL": "Lien qui redirige vers la fonction d'appel téléphonique pour les victimes de harcèlement ou de violences numériques "
+         "ARIA_LABEL": "Lien qui redirige vers la fonction d'appel téléphonique"
       },
       "TILE_MESSAGE": {
-         "ARIA_LABEL": "Lien qui redirige vers la fonction d'envoi de SMS pour les victimes de harcèlement ou de violences numériques "
+         "ARIA_LABEL": "Lien qui redirige vers la fonction d'envoi de SMS "
       },
       "ONBOARDING": {
          "LOGO_FANTOMAPP": "FantomApp"
