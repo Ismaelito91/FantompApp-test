@@ -42,4 +42,15 @@ export class Card9Component {
          localStorage.setItem("sm-section-" + id, "true");
       }
    }
+
+   sanitizeEmoji(value: string | null | undefined): string {
+      if (!value) {
+         return "";
+      }
+
+      return value
+         .replace(/\p{Extended_Pictographic}/gu, "")
+         .replace(/\s+/g, " ")
+         .trim();
+   }
 }
