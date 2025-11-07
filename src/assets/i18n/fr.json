@@ -901,6 +901,15 @@
             "CRITERIA": {
                "CRITERIA_VALIDATED": "contient",
                "CRITERIA_NOT_VALIDATED": "ne contient pas"
+            },
+            "INPUT": {
+               "EYE_BUTTON": {
+                  "SHOW": "Afficher le mot de passe",
+                  "HIDE": "Cacher le mot de passe"
+               },
+               "COPY_BUTTON": {
+                  "COPY": "Copier le mot de passe"
+               }
             }
          },
          "BLUR_IMAGE": {
