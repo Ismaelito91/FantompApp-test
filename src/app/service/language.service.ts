@@ -29,6 +29,7 @@ export class LanguageService {
       countryName: string; // France, Éire, ...
       flagUrl?: string; // svg flag url
       flagAltKey?: string; // Translation key for flag alt text
+      lang: string; // html lang attribute
    }[] = [
       {
          code: "FR",
@@ -36,6 +37,7 @@ export class LanguageService {
          countryName: CountryRegion.FR,
          flagUrl: "assets/images/flag/france.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.FRANCE",
+         lang: "fr",
       },
       // {
       //    code: "IE",
@@ -43,6 +45,7 @@ export class LanguageService {
       //    countryName: CountryRegion.IE,
       //    flagUrl: "assets/images/flag/Ireland.svg",
       //    flagAltKey: "ALT_TEXT.COUNTRIES.IRELAND",
+      //    lang: "en-IE",
       // },
       // {
       //    code: "HU",
@@ -50,13 +53,15 @@ export class LanguageService {
       //    countryName: CountryRegion.HU,
       //    flagUrl: "assets/images/flag/Hungary.svg",
       //    flagAltKey: "ALT_TEXT.COUNTRIES.HUNGARY",
+      //    lang: "hu",
       // },
       // {
       //    code: "GR",
       //    languageName: "Ελληνικά",
       //    countryName: CountryRegion.GR,
       //    flagUrl: "assets/images/flag/grece.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.GREECE",
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.GREECE",  
+      //    lang: "el",
       // },
       // {
       //    code: "DK",
@@ -64,6 +69,7 @@ export class LanguageService {
       //    countryName: CountryRegion.DK,
       //    flagUrl: "assets/images/flag/dansk.svg",
       //    flagAltKey: "ALT_TEXT.COUNTRIES.DENMARK",
+      //    lang: "da",
       // },
       // {
       //    code: "PL",
@@ -71,6 +77,7 @@ export class LanguageService {
       //    countryName: CountryRegion.PL,
       //    flagUrl: "assets/images/flag/Poland.svg",
       //    flagAltKey: "ALT_TEXT.COUNTRIES.POLAND",
+      //    lang: "pl",
       // },
       // {
       //    code: "PT",
@@ -78,6 +85,7 @@ export class LanguageService {
       //    countryName: CountryRegion.PT,
       //    flagUrl: "assets/images/flag/Portugal.svg",
       //    flagAltKey: "ALT_TEXT.COUNTRIES.PORTUGAL",
+      //    lang: "pt",
       // },
       // {
       //    code: "ES",
@@ -85,6 +93,7 @@ export class LanguageService {
       //    countryName: CountryRegion.ES,
       //    flagUrl: "assets/images/flag/spain.svg",
       //    flagAltKey: "ALT_TEXT.COUNTRIES.SPAIN",
+      //    lang: "es",
       // },
       // {
       //    code: "CT",
@@ -92,6 +101,7 @@ export class LanguageService {
       //    countryName: CountryRegion.CT,
       //    flagUrl: "assets/images/flag/spain.svg",
       //    flagAltKey: "ALT_TEXT.COUNTRIES.CATALONIA",
+      //    lang: "ca-ES",
       // },
       // {
       //    code: "LU",
@@ -99,6 +109,7 @@ export class LanguageService {
       //    countryName: CountryRegion.LU,
       //    flagUrl: "assets/images/flag/Luxembourg.svg",
       //    flagAltKey: "ALT_TEXT.COUNTRIES.LUXEMBOURG",
+      //    lang: "lb",
       // },
       {
          code: "XX",
@@ -106,6 +117,7 @@ export class LanguageService {
          countryName: CountryRegion.XX,
          flagUrl: "",
          flagAltKey: "ALT_TEXT.GENERAL.FLAG",
+         lang: "en"
       },
    ];
 

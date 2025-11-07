@@ -111,7 +111,7 @@
                _languageService.language() === lang.code ? 'true' : 'false'
             "
          >
-            <div class="lang-item">
+            <div class="lang-item" [attr.lang]="lang.lang">
                @if (lang.flagUrl) {
                <img
                   class="flag-img"
