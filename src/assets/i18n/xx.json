@@ -817,6 +817,10 @@
       }
    },
    "ALT_TEXT": {
+      "HEADER": {
+         "CURRENT_LANGUAGE": "Langue active : {{language}}",
+         "CURRENT_DEVICE": "Device active : {{device}}"
+      },
       "COUNTRIES": {
          "FRANCE": "Français",
          "IRELAND": "English",

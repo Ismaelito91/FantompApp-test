@@ -8,6 +8,10 @@
          [mat-menu-trigger-for]="deviceMenu"
          [attr.aria-disabled]="null"
          [attr.role]="null"
+         [attr.aria-label]="
+            'ALT_TEXT.HEADER.CURRENT_DEVICE'
+            | translate : { device: selectedDevice }
+         "
       >
          <mat-icon class="!size-[16px] !m-0">📱</mat-icon>
          @if (!deviceMenuTrigger.menuOpen) {
@@ -85,7 +89,7 @@
          [attr.role]="null"
          [attr.lang]="currentLanguageLang"
          [attr.aria-label]="
-            'HEADER.CURRENT_LANGUAGE'
+            'ALT_TEXT.HEADER.CURRENT_LANGUAGE'
                | translate : { language: currentLanguageName }
          "
       >

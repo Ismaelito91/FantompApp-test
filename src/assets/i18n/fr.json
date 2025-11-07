@@ -37,9 +37,6 @@
          "SECURE": "Aller à la page me sécuriser"
       }
    },
-   "HEADER": {
-      "CURRENT_LANGUAGE": "Langue active : {{language}}"
-   },
    "DESIGN_SYSTEM": {
       "STEPPER": {
          "DESCRIPTION": "Question {{ currentStep }} sur {{ totalSteps }}"
@@ -873,6 +870,10 @@
       }
    },
    "ALT_TEXT": {
+      "HEADER": {
+         "CURRENT_LANGUAGE": "Langue active : {{language}}",
+         "CURRENT_DEVICE": "Device active : {{device}}"
+      },
       "CONTACT": {
          "PHONE": "Contacter par téléphone",
          "WHATSAPP": "Contacter par WhatsApp",
