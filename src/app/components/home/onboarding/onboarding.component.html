@@ -135,7 +135,7 @@
 
    <!-- ===== ÉTAPE 2 : DÉMONSTRATION PROBLÈME ===== -->
    @if (currentStep() === 2) {
-   <div class="onboarding-step-two">
+   <div class="onboarding-step onboarding-step-two">
       <!-- Fantôme triste pour l'étape 2 -->
       <div class="sad-ghost-wrapper switch-triste-ghost">
          <img
@@ -147,7 +147,7 @@
       </div>
 
       <!-- Bulle d'aide pour l'étape 2 (problème) -->
-      <div class="problem-bubble">
+      <div class="step-bubble problem-bubble">
          <div class="bubble-content">
             <div class="problem-header">
                <h3
@@ -202,7 +202,7 @@
       <button
          #step2SkipButton
          type="button"
-         class="skip-button step-two-skip"
+         class="skip-button"
          (click)="closeOnboarding(); $event.stopPropagation()"
       >
          {{ "ONBOARDING.SKIP" | translate }}
@@ -212,7 +212,7 @@
 
    <!-- ===== ÉTAPE 3 : DÉMONSTRATION OUTILS ===== -->
    @if (currentStep() === 3) {
-   <div class="onboarding-step-three">
+   <div class="onboarding-step onboarding-step-three">
       <div class="sad-ghost-wrapper illu-onboarding-ghost">
          <img
             src="assets/images/onboarding/illu-onboarding.svg"
@@ -223,7 +223,7 @@
       </div>
 
       <!-- Bulle d'aide pour l'étape 3 (outils) -->
-      <div class="tools-bubble">
+      <div class="step-bubble tools-bubble">
          <div class="bubble-content">
             <div class="problem-header">
                <h3
@@ -278,7 +278,7 @@
       <button
          #step3SkipButton
          type="button"
-         class="skip-button step-three-skip"
+         class="skip-button"
          (click)="closeOnboarding(); $event.stopPropagation()"
       >
          {{ "ONBOARDING.SKIP" | translate }}
@@ -287,9 +287,8 @@
    }
 
    <!-- ===== ÉTAPE 4 : DÉMONSTRATION PARAMÈTRES ===== -->
-   <!-- DEBUG: Étape actuelle = {{ currentStep() }} -->
    @if (currentStep() === 4) {
-   <div class="onboarding-step-four">
+   <div class="onboarding-step onboarding-step-four">
       <!-- Fantôme triste pour l'étape 4 -->
       <div class="sad-ghost-wrapper illu-onboarding-4-ghost">
          <img
@@ -301,7 +300,7 @@
       </div>
 
       <!-- Bulle d'aide pour l'étape 4 (paramètres) -->
-      <div class="settings-bubble">
+      <div class="step-bubble settings-bubble">
          <div class="bubble-content">
             <div class="problem-header">
                <h3
@@ -319,31 +318,18 @@
                (click)="completeOnboarding(); $event.stopPropagation()"
             >
                <span class="button-text">{{
-                  "ONBOARDING.NEXT" | translate
+                  "COMMON.UNDERSTOOD" | translate
                }}</span>
                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+                  width="16"
+                  height="13"
+                  viewBox="0 0 16 13"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   class="arrow-icon"
                >
-                  <path
-                     d="M4 12L19 12"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-miterlimit="10"
-                     stroke-linecap="round"
-                  />
-                  <path
-                     d="M13 6L19 12L13 18"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-miterlimit="10"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                  />
+               <path d="M1.00002 6.87193L5.03676 10.9087L14.9458 0.999628" 
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                </svg>
             </button>
          </div>
@@ -356,7 +342,7 @@
       <button
          #step4SkipButton
          type="button"
-         class="skip-button step-four-skip"
+         class="skip-button"
          (click)="closeOnboarding(); $event.stopPropagation()"
       >
          {{ "ONBOARDING.SKIP" | translate }}

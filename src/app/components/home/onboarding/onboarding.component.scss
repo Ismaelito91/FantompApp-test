@@ -1,14 +1,98 @@
-// Classes utilitaires pour l'accessibilité
-.sr-only {
-   position: absolute !important;
-   width: 1px !important;
-   height: 1px !important;
-   padding: 0 !important;
-   margin: -1px !important;
-   overflow: hidden !important;
-   clip: rect(0, 0, 0, 0) !important;
-   white-space: nowrap !important;
-   border: 0 !important;
+// Variables pour les styles répétés
+$step-background-gradient: linear-gradient(
+   180deg,
+   var(--color-neutral-light-content-1) 0%,
+   color-mix(in srgb, var(--color-neutral-light-content-1) 95%, transparent) 44.93%,
+   color-mix(in srgb, var(--color-neutral-light-content-1) 70%, transparent) 100%
+);
+
+// Mixin pour les styles communs des étapes 2, 3, 4
+@mixin step-overlay-styles {
+   .blurred-background {
+      display: none;
+   }
+   background: $step-background-gradient;
+}
+
+// Mixin pour les masques radial-gradient
+@mixin step-mask($position) {
+   -webkit-mask: radial-gradient(circle at $position, transparent 40px, black 40px);
+   mask: radial-gradient(circle at $position, transparent 40px, black 40px);
+}
+
+// Classe de base commune pour les étapes 2, 3, 4
+.onboarding-step {
+   display: flex;
+   flex-direction: column;
+   padding: 16px 16px 0;
+   width: 100%;
+   height: 100%;
+
+   .transparent-overlay {
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+      background: rgba(from var(--background-10) r g b/0.75) !important;
+   }
+
+   &.element-hidden,
+   &.element-visible {
+      transition: none !important;
+      animation: none !important;
+   }
+
+   .highlight-circle {
+      display: none;
+   }
+}
+
+// Classe commune pour les bulles des étapes 2, 3, 4
+.step-bubble {
+   position: absolute;
+   bottom: calc(-7.547vh + 195.31px);
+   height: 22vh;
+   width: calc(100% - 32px);
+   border-radius: var(--border-radius-2);
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-2);
+   z-index: 9999;
+
+   .bubble-content {
+      background: var(--background-4);
+      border-radius: var(--border-radius-2);
+      padding: var(--spacing-3) var(--spacing-4);
+      color: var(--color-3);
+      font-family: var(--body-font-family);
+      width: 100%;
+      height: 50vw;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(0px, calc((100vw - 375px) / 37px * var(--spacing-2)), var(--spacing-2));
+   }
+
+   .bubble-next-button {
+      border-radius: var(--border-radius-5);
+      width: 170px;
+      margin-left: clamp(0px, 30vw, 260px);
+      cursor: pointer;
+   }
+}
+
+// Mixin pour les flèches de bulles (::after)
+@mixin bubble-arrow-after($left-position) {
+   &::after {
+      content: "";
+      position: absolute;
+      width: 26.19px;
+      height: 20px;
+      left: $left-position;
+      bottom: -19px;
+      transform: translateX(-50%);
+      border-left: 13.095px solid transparent;
+      border-right: 13.095px solid transparent;
+      border-top: 20px solid var(--background-4);
+      pointer-events: none;
+   }
 }
 
 // Overlay principal avec fond flouté
@@ -23,109 +107,29 @@
    display: flex;
    align-items: center;
    justify-content: center;
-
    background: linear-gradient(
       180deg,
       var(--color-neutral-light-content-1) 0%,
-      color-mix(in srgb, var(--color-neutral-light-content-1) 88%, transparent)
-         44.93%,
-      color-mix(in srgb, var(--color-neutral-light-content-1) 30%, transparent)
-         100%
+      color-mix(in srgb, var(--color-neutral-light-content-1) 88%, transparent) 44.93%,
+      color-mix(in srgb, var(--color-neutral-light-content-1) 30%, transparent) 100%
    );
+
    &.step-two {
-      .blurred-background {
-         display: none;
-      }
-      background: linear-gradient(
-         180deg,
-         var(--color-neutral-light-content-1) 0%,
-         color-mix(
-               in srgb,
-               var(--color-neutral-light-content-1) 95%,
-               transparent
-            )
-            44.93%,
-         color-mix(
-               in srgb,
-               var(--color-neutral-light-content-1) 70%,
-               transparent
-            )
-            100%
-      );
-      -webkit-mask: radial-gradient(
-         circle at 38.5% calc(100% - 60px),
-         transparent 40px,
-         black 40px
-      );
-      mask: radial-gradient(
-         circle at 38.5% calc(100% - 60px),
-         transparent 40px,
-         black 40px
-      );
+      @include step-overlay-styles;
+      @include step-mask(38.5% calc(100% - 60px));
    }
+
    &.step-three {
-      .blurred-background {
-         display: none;
-      }
-      background: linear-gradient(
-         180deg,
-         var(--color-neutral-light-content-1) 0%,
-         color-mix(
-               in srgb,
-               var(--color-neutral-light-content-1) 95%,
-               transparent
-            )
-            44.93%,
-         color-mix(
-               in srgb,
-               var(--color-neutral-light-content-1) 70%,
-               transparent
-            )
-            100%
-      );
-      -webkit-mask: radial-gradient(
-         circle at 61.5% calc(100% - 65px),
-         transparent 40px,
-         black 40px
-      );
-      mask: radial-gradient(
-         circle at 61.5% calc(100% - 65px),
-         transparent 40px,
-         black 40px
-      );
+      @include step-overlay-styles;
+      @include step-mask(61.5% calc(100% - 65px));
    }
+
    &.step-four {
-      .blurred-background {
-         display: none;
-      }
-      background: linear-gradient(
-         180deg,
-         var(--color-neutral-light-content-1) 0%,
-         color-mix(
-               in srgb,
-               var(--color-neutral-light-content-1) 95%,
-               transparent
-            )
-            44.93%,
-         color-mix(
-               in srgb,
-               var(--color-neutral-light-content-1) 70%,
-               transparent
-            )
-            100%
-      );
-      -webkit-mask: radial-gradient(
-         circle at 84% calc(100% - 65px),
-         transparent 40px,
-         black 40px
-      );
-      mask: radial-gradient(
-         circle at 85% calc(100% - 65px),
-         transparent 40px,
-         black 40px
-      );
+      @include step-overlay-styles;
+      @include step-mask(84% calc(100% - 65px));
    }
 }
+
 .blurred-background {
    position: absolute;
    top: 0;
@@ -136,6 +140,7 @@
    backdrop-filter: blur(13px);
    z-index: 1;
 }
+
 .onboarding-container {
    position: relative;
    width: 100%;
@@ -148,6 +153,7 @@
    box-sizing: border-box;
    z-index: 2;
 }
+
 .top-section {
    margin-top: 10vh;
    display: flex;
@@ -158,23 +164,23 @@
    width: 100%;
    box-sizing: border-box;
 }
+
 .skip-button {
-   color: var(--color-neutral-light-background-1);
-   margin-left: 75%;
-   cursor: pointer;
-   font-size: calc(var(--font-size-body-md) + 0.2vw);
-   font-weight: var(--font-weight-title);
-   transition: all 0.2s ease;
-   z-index: 10;
-   background: none;
-   border: none;
-   &:focus-visible {
-      outline: 2px solid var(--color-neutral-light-background-1) !important;
-   }
    position: absolute;
    top: 73px;
    right: 19px;
    z-index: 10;
+   color: var(--color-neutral-light-background-1);
+   cursor: pointer;
+   font-size: calc(var(--font-size-body-md) + 0.2vw);
+   font-weight: var(--font-weight-title);
+   transition: all 0.2s ease;
+   background: none;
+   border: none;
+
+   &:focus-visible {
+      outline: 2px solid var(--color-neutral-light-background-1) !important;
+   }
 }
 
 .main-character-area {
@@ -206,7 +212,8 @@
       box-shadow: none;
    }
 }
-// Classe de base pour les bulles (sans flèche par défaut)
+
+// Classe de base pour les bulles
 .bubble-content {
    background: var(--background-4);
    color: var(--color-3);
@@ -216,33 +223,19 @@
    position: relative;
 }
 
-// Flèches spécifiques pour les étapes 2, 3, 4 (bulles fixes)
-.problem-bubble .bubble-content,
-.tools-bubble .bubble-content,
+// Flèches spécifiques pour les étapes 2, 3, 4 (bulles fixes) - seule différence entre les bulles
+.problem-bubble .bubble-content {
+   @include bubble-arrow-after(36%);
+}
+
+.tools-bubble .bubble-content {
+   @include bubble-arrow-after(62.5%);
+}
+
 .settings-bubble .bubble-content {
-   &::after {
-      content: "";
-      position: absolute;
-      width: 26.19px;
-      height: 19.99px;
-      left: 36%; // par défaut, étape 2
-      bottom: -19.99px;
-      transform: translateX(-50%);
-      border-left: 13.095px solid transparent;
-      border-right: 13.095px solid transparent;
-      border-top: 19.99px solid var(--background-4);
-      pointer-events: none;
-   }
+   @include bubble-arrow-after(90%);
 }
 
-// Styles spécifiques pour les flèches des étapes 3 et 4
-.tools-bubble .bubble-content::after {
-   left: 62.5%;
-}
-
-.settings-bubble .bubble-content::after {
-   left: 90%;
-}
 .welcome-bubble {
    white-space: nowrap;
    position: relative;
@@ -250,36 +243,18 @@
    transform-origin: left center;
    display: block;
    align-self: flex-start;
+
    .bubble-content {
-      background: var(--background-4);
-      color: var(--color-3);
-      font-family: var(--body-font-family);
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
       display: flex;
       align-items: center;
       gap: var(--spacing-2);
       padding: 12px 16px;
       border-radius: var(--border-radius-5);
       margin-bottom: 12px;
-
-      /* Languette de bulle BD - coin gauche vers le bas */
-      // &::after {
-      //    content: "";
-      //    position: absolute;
-      //    bottom: -10px;
-      //    left: 30px;
-      //    width: 0;
-      //    height: 0;
-      //    border-left: 8px solid transparent;
-      //    border-right: 15px solid transparent;
-      //    border-top: 12px solid var(--background-4);
-      //    transform: rotate(-15deg);
-      //    pointer-events: none;
-      // }
+      height: 100%;
    }
 }
+
 .welcome-text {
    font-size: var(--font-size-body-md);
    color: var(--color-3);
@@ -288,6 +263,7 @@
    font-weight: var(--font-weight-body);
    font-family: var(--body-font-family);
 }
+
 .app-logo {
    width: clamp(112px, 11.2vw, 112px) !important;
    height: clamp(18px, 1.8vw, 18px) !important;
@@ -306,33 +282,16 @@
    transform-origin: left center;
    display: block;
    align-self: flex-start;
+
    .bubble-content {
-      background: var(--background-4);
-      color: var(--color-3);
-      font-family: var(--body-font-family);
-      width: 100%;
-      height: 100%;
       display: flex;
       align-items: center;
       padding: 24px 16px;
       border-radius: var(--border-radius-3);
       margin-bottom: 15px;
-
-      /* Languette de bulle BD - coin droit vers le bas, pointant vers le fantôme */
-      // &::after {
-      //    content: "";
-      //    position: absolute;
-      //    bottom: -12px;
-      //    right: 80px;
-      //    width: 0;
-      //    height: 0;
-      //    border-left: 18px solid transparent;
-      //    border-right: 6px solid transparent;
-      //    border-top: 15px solid var(--background-4);
-      //    transform: rotate(20deg);
-      //    pointer-events: none;
-      // }
+      height: 100%;
    }
+
    p {
       font-size: var(--font-size-body-md);
       color: var(--color-3);
@@ -342,11 +301,13 @@
       text-align: left;
       width: 100%;
    }
+
    ::ng-deep .ghost-mode {
       color: var(--color-11);
       font-weight: var(--font-weight-heading);
    }
 }
+
 .ghost-footer {
    display: flex;
    justify-content: center;
@@ -356,38 +317,27 @@
    padding-top: 0;
    transform-origin: center center;
 }
-.bottom-controls {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: var(--spacing-4);
-   width: 100%;
-   margin-top: auto;
-   margin-bottom: var(--spacing-3);
-}
-.action-area {
-   display: flex;
-   justify-content: center;
-   padding-left: 16px;
-   padding-right: 16px;
-}
+
 .onboarding-step-one {
    width: 100%;
    height: 100%;
+
+   .bubble-content::after {
+      left: 0;
+      bottom: -11px;
+      width: 22px;
+      height: 18px;
+      background: var(--background-4);
+      opacity: 1;
+      transform: rotate(18deg);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      border-bottom-left-radius: 4px;
+   }
 }
+
 .onboarding-step-two {
    height: 100%;
-   display: flex;
-   flex-direction: column;
-   padding-left: 16px;
-   padding-right: 16px;
-   padding-top: 16px;
-   width: 100%;
-   .transparent-overlay {
-      -webkit-backdrop-filter: none !important;
-      backdrop-filter: none !important;
-      background: rgba(from var(--background-10) r g b/0.75) !important;
-   }
+
    .sad-ghost-character {
       margin-left: clamp(100px, calc(100px + 150 * (100vw - 430px)), 250px);
       margin-top: min(
@@ -397,162 +347,32 @@
       min-height: 180px;
       height: 44.62vh;
       object-fit: contain;
+
       svg {
          width: 100%;
          height: auto;
       }
    }
-   .problem-bubble {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      bottom: calc(-7.547vh + 195.31px);
-      width: calc(100% - 32px);
-      height: 22vh;
-      gap: 10px;
-      .bubble-content {
-         background: var(--background-4);
-         border-radius: var(--border-radius-2);
-         padding: var(--spacing-3) var(--spacing-4);
-         color: var(--color-3);
-         font-family: var(--body-font-family);
-         width: 100%;
-         height: 50vw;
-         display: flex;
-         flex-direction: column;
-         gap: clamp(
-            0px,
-            (100vw - 375px) / 37px * var(--spacing-2),
-            var(--spacing-2)
-         );
-      }
-      .bubble-arrow {
-         position: absolute;
-         width: 0;
-         height: 0;
-         bottom: -19.99px;
-         left: 37.5%;
-         transform: translateX(-50%);
-         border-left: 13.095px solid transparent;
-         border-right: 13.095px solid transparent;
-         border-top: 19.99px solid var(--background-4);
-      }
 
-      // Bouton "Suivant" de l'ÉTAPE 2 - PROBLÈME/AIDE
-      .bubble-next-button {
-         border-radius: var(--border-radius-5);
-         position: relative;
-         margin-left: clamp(0px, 30vw, 260px);
-         width: 170px;
-         cursor: pointer;
-      }
-   }
+
    .sad-ghost-wrapper {
       object-fit: contain;
-   }
-   .sad-ghost-wrapper.illu-onboarding-ghost {
-      top: 113.48px;
-      z-index: 15000;
-   }
-   .sad-ghost-wrapper.illu-onboarding-4-ghost {
-      top: 151px;
-      left: 16.45px;
-      z-index: 15000;
-   }
-   &.element-hidden,
-   &.element-visible {
-      transition: none !important;
-      animation: none !important;
-   }
-   .highlight-circle {
-      display: none;
-   }
-   .highlight-problem {
-      position: fixed;
-      width: 64px;
-      height: 64px;
-      top: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 50%;
-      border: 2px solid var(--color-primary-500);
-      pointer-events: none;
-      z-index: 9998;
-      animation: highlight-pulse 2s infinite;
-      background: transparent;
-   }
-   @keyframes highlight-pulse {
-      0% {
-         box-shadow: 0 0 0 0 var(--color-primary-500);
-      }
-      70% {
-         box-shadow: 0 0 0 15px var(--color-primary-500);
-      }
-      100% {
-         box-shadow: 0 0 0 0 var(--color-primary-500);
-      }
-   }
-}
-.onboarding-step-three {
-   display: flex;
-   flex-direction: column;
-   padding-left: 16px;
-   padding-right: 16px;
-   padding-top: 16px;
-   width: 100%;
-   height: 100%;
-   .transparent-overlay {
-      -webkit-backdrop-filter: none !important;
-      backdrop-filter: none !important;
-      background: rgba(from var(--background-10) r g b/0.75) !important;
-   }
-   .tools-bubble {
-      position: absolute;
-      bottom: calc(-7.547vh + 195.31px);
-      height: 22vh;
-      width: calc(100% - 32px);
-      border-radius: var(--border-radius-2);
-      display: flex;
-      flex-direction: column;
 
-      gap: var(--spacing-2);
-      z-index: 9999;
-      .bubble-content {
-         background: var(--background-4);
-         border-radius: var(--border-radius-2);
-         padding: var(--spacing-3) var(--spacing-4);
-         color: var(--color-3);
-         font-family: var(--body-font-family);
-         width: 100%;
-         height: 50vw;
-         display: flex;
-         flex-direction: column;
-         gap: clamp(
-            0px,
-            calc((100vw - 375px) / 37px * var(--spacing-2)),
-            var(--spacing-2)
-         );
+      &.illu-onboarding-ghost {
+         top: 113.48px;
+         z-index: 15000;
       }
-      .bubble-arrow {
-         position: absolute;
-         width: 0;
-         height: 0;
-         bottom: -19.99px;
-         left: 62.5%;
-         transform: translateX(-50%);
-         border-left: 13.095px solid transparent;
-         border-right: 13.095px solid transparent;
-         border-top: 19.99px solid var(--background-4);
-      }
-      // Bouton "Suivant" de l'ÉTAPE 3 - OUTILS
-      .bubble-next-button {
-         border-radius: var(--border-radius-5);
-         width: 170px;
-         margin-left: clamp(0px, 30vw, 260px);
+
+      &.illu-onboarding-4-ghost {
+         top: 151px;
+         left: 16.45px;
+         z-index: 15000;
       }
    }
-   // Correction : styles spécifiques pour le fantôme "outils"
+
+}
+
+.onboarding-step-three {
    .sad-ghost-wrapper.illu-onboarding-ghost {
       margin-left: auto;
       margin-right: auto;
@@ -561,6 +381,7 @@
             (clamp(35px, calc((100vw - 375px) * 2.2973 + 35px), 120px) - 25px) *
             (1 - clamp(0, (100vw - 430px) / 0.0001px, 1))
       );
+
       .ghost-character {
          height: clamp(
             300px,
@@ -573,61 +394,13 @@
          object-fit: contain;
       }
    }
-   &.element-hidden,
-   &.element-visible {
-      transition: none !important;
-      animation: none !important;
-   }
-   .highlight-circle {
-      display: none;
-   }
-   .highlight-tools {
-      position: fixed;
-      width: 64px;
-      height: 64px;
-      top: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 50%;
-      border: 2px solid var(--color-primary-500);
-      pointer-events: none;
-      z-index: 9998;
-      animation: highlight-pulse 2s infinite;
-      background: transparent;
-      @media (max-width: 480px) {
-         width: 56px;
-         height: 56px;
-         top: 6px;
-      }
-   }
-   @keyframes highlight-pulse {
-      0% {
-         box-shadow: 0 0 0 0 var(--color-primary-500);
-      }
-      70% {
-         box-shadow: 0 0 0 15px var(--color-primary-500);
-      }
-      100% {
-         box-shadow: 0 0 0 0 var(--color-primary-500);
-      }
-   }
+
 }
+
 .onboarding-step-four {
-   display: flex;
-   flex-direction: column;
    justify-content: center;
    align-items: center;
-   padding-left: 16px;
-   padding-right: 16px;
-   padding-top: 16px;
-   width: 100%;
-   width: 100%;
-   height: 100%;
-   .transparent-overlay {
-      -webkit-backdrop-filter: none !important;
-      backdrop-filter: none !important;
-      background: rgba(from var(--background-10) r g b/0.75) !important;
-   }
+
    .sad-ghost-wrapper.illu-onboarding-ghost {
       position: fixed;
       bottom: 42vh;
@@ -635,10 +408,12 @@
       transform: translateX(-50%);
       z-index: 15000;
       pointer-events: none;
+
       .ghost-character {
          object-fit: contain;
       }
    }
+
    .sad-ghost-wrapper.illu-onboarding-4-ghost {
       position: fixed;
       bottom: max(
@@ -648,6 +423,7 @@
       z-index: 15000;
       margin-right: 40px;
       pointer-events: none;
+
       .ghost-character {
          height: min(
             350px,
@@ -656,44 +432,7 @@
          object-fit: contain;
       }
    }
-   &.element-hidden,
-   &.element-visible {
-      transition: none !important;
-      animation: none !important;
-   }
-   .highlight-circle {
-      display: none;
-   }
-   .highlight-settings {
-      position: fixed;
-      width: 64px;
-      height: 64px;
-      top: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 50%;
-      border: 2px solid var(--color-primary-500);
-      pointer-events: none;
-      z-index: 9998;
-      animation: highlight-pulse 2s infinite;
-      background: transparent;
-      @media (max-width: 480px) {
-         width: 56px;
-         height: 56px;
-         top: 6px;
-      }
-   }
-   @keyframes highlight-pulse {
-      0% {
-         box-shadow: 0 0 0 0 var(--color-primary-500);
-      }
-      70% {
-         box-shadow: 0 0 0 15px var(--color-primary-500);
-      }
-      100% {
-         box-shadow: 0 0 0 0 var(--color-primary-500);
-      }
-   }
+
 }
 
 .start-button {
@@ -701,7 +440,8 @@
    height: calc(40px + 1vh) !important;
    margin: 0 16px calc(20px + 2vh) 16px !important;
 }
-// ===== STYLE GÉNÉRAL pour tous les boutons "Suivant" des étapes 2, 3, 4 =====
+
+// Style général pour tous les boutons "Suivant" des étapes 2, 3, 4
 .bubble-next-button {
    height: 48px;
    background: var(--color-8);
@@ -725,20 +465,24 @@
       transform: translateY(-3px);
       box-shadow: 0px 8px 20px rgba(from var(--color-primary-500) r g b/0.35);
    }
+
    &:active {
       transform: translateY(0);
       box-shadow: 0px 4px 12px rgba(from var(--color-primary-500) r g b/0.25);
    }
+
    .arrow-icon {
       width: 18px;
       height: 18px;
       transition: transform 0.2s ease;
       display: block;
    }
+
    &:hover .arrow-icon {
       transform: translateX(6px);
    }
 }
+
 .problem-title {
    font-family: var(--heading-font-family);
    font-size: var(--font-size-h3);
@@ -746,6 +490,7 @@
    color: var(--color-3);
    white-space: nowrap;
 }
+
 .problem-description {
    font-family: var(--body-font-family);
    font-size: var(--font-size-body-md);
@@ -754,103 +499,13 @@
    color: var(--color-neutral-content-1);
    letter-spacing: var(--letter-spacing-body);
 }
+
 .problem-header {
    margin-bottom: var(--spacing-2);
 }
+
 .ghost-dark-wrapper {
    position: relative;
    display: inline-block;
-   .emoji-pancarte {
-      position: absolute;
-      left: 60%;
-      top: 15%;
-      transform: translate(-50%, -50%);
-      font-size: 2.2rem;
-      pointer-events: none;
-      user-select: none;
-      -webkit-user-select: none;
-      filter: drop-shadow(0 1px 2px #0008);
-   }
 }
-@keyframes highlight-pulse {
-   0% {
-      box-shadow: 0 0 0 0 var(--color-primary-500);
-      border-color: var(--color-primary-500);
-      background: transparent;
-   }
-   50% {
-      box-shadow: 0 0 0 8px rgba(115, 71, 255, 0.3);
-      border-color: var(--color-primary-600);
-      background: transparent;
-   }
-   100% {
-      box-shadow: 0 0 0 0 var(--color-primary-500);
-      border-color: var(--color-primary-500);
-      background: transparent;
-   }
-}
-.settings-bubble {
-   position: absolute;
-   bottom: clamp(105px, calc(105px + (30 * (100vw - 375px) / 55)), 130px);
-   height: clamp(210px, calc(210px + (30 * (100vw - 375px) / 55)), 230px);
-   width: calc(100% - 32px);
-   opacity: 1;
-   border-radius: var(--border-radius-2);
-   display: flex;
-   flex-direction: column;
-   gap: var(--spacing-2);
-   z-index: 9999;
-   .bubble-content {
-      background: var(--background-4);
-      border-radius: var(--border-radius-2);
-      padding: var(--spacing-4) var(--spacing-5);
-      color: var(--color-3);
-      font-family: var(--body-font-family);
-      height: 100%;
-      box-sizing: border-box;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-   }
-   .bubble-arrow {
-      position: absolute;
-      width: 0;
-      height: 0;
-      bottom: -19.99px;
-      left: 87.5%;
-      transform: translateX(-50%);
-      border-left: 13.095px solid transparent;
-      border-right: 13.095px solid transparent;
-      border-top: 19.99px solid var(--background-4);
-   }
-   // Bouton "Suivant" de l'ÉTAPE 4 - PARAMÈTRES ESSENTIELS
-   .bubble-next-button {
-      border-radius: var(--border-radius-5);
-      width: 170px;
-      margin-top: clamp(0px, calc((100vw - 375px) * 0.5405), 20px);
-      margin-left: clamp(0px, 30vw, 260px);
-      margin-bottom: 20vw;
-   }
-}
-.onboarding-step-one .bubble-content::after {
-   left: 0%;
-   transform: translateX(-10%) rotate(-18deg);
-   border-left: 0px solid transparent;
-   border-right: 26.19px solid transparent;
-   border-top: 24px solid var(--background-4);
-   width: 36px;
-   height: 24px;
-   /* Effet visuel accentué */
-}
-.onboarding-step-one .bubble-content::after {
-   left: 0;
-   bottom: -11px;
-   width: 22px;
-   height: 18px;
-   background: var(--background-4);
-   opacity: 1;
-   transform: rotate(18deg);
-   clip-path: polygon(0 0, 100% 0, 0 100%);
-   border-bottom-left-radius: 4px;
-   /* Flèche pivotée vers la gauche */
-}
+
