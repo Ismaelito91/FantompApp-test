@@ -37,6 +37,9 @@
          "SECURE": "Aller à la page me sécuriser"
       }
    },
+   "HEADER": {
+      "CURRENT_LANGUAGE": "Langue active : {{language}}"
+   },
    "DESIGN_SYSTEM": {
       "STEPPER": {
          "DESCRIPTION": "Question {{ currentStep }} sur {{ totalSteps }}"
@@ -890,7 +893,8 @@
          "PORTUGAL": "Português",
          "SPAIN": "Español",
          "CATALONIA": "Español",
-         "LUXEMBOURG": "Lëtzebuergesch"
+         "LUXEMBOURG": "Lëtzebuergesch",
+         "INTERNATIONAL": "International"
       },
       "TOOLS": {
          "PASSWORD_CHECK": {
