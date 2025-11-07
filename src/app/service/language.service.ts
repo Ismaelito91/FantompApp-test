@@ -60,7 +60,7 @@ export class LanguageService {
       //    languageName: "Ελληνικά",
       //    countryName: CountryRegion.GR,
       //    flagUrl: "assets/images/flag/grece.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.GREECE",  
+      //    flagAltKey: "ALT_TEXT.COUNTRIES.GREECE",
       //    lang: "el",
       // },
       // {
@@ -116,8 +116,8 @@ export class LanguageService {
          languageName: "International",
          countryName: CountryRegion.XX,
          flagUrl: "",
-         flagAltKey: "ALT_TEXT.GENERAL.FLAG",
-         lang: "en"
+         flagAltKey: "ALT_TEXT.COUNTRIES.INTERNATIONAL",
+         lang: "en",
       },
    ];
 

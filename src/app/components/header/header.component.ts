@@ -58,5 +58,19 @@ export class HeaderComponent implements OnInit {
       );
       return current?.flagAltKey || "ALT_TEXT.GENERAL.FLAG";
    }
+
+   get currentLanguageName(): string {
+      const current = this._languageService.supportedLanguages.find(
+         (l) => l.code === this._languageService.language()
+      );
+      return current?.languageName || "";
+   }
+
+   get currentLanguageLang(): string {
+      const current = this._languageService.supportedLanguages.find(
+         (l) => l.code === this._languageService.language()
+      );
+      return current?.lang || "fr";
+   }
    protected readonly Device = Device;
 }

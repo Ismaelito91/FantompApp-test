@@ -83,6 +83,11 @@
          [mat-menu-trigger-for]="languageMenu"
          [attr.aria-disabled]="null"
          [attr.role]="null"
+         [attr.lang]="currentLanguageLang"
+         [attr.aria-label]="
+            'HEADER.CURRENT_LANGUAGE'
+               | translate : { language: currentLanguageName }
+         "
       >
          @if (currentFlagUrl) {
          <img
@@ -91,7 +96,13 @@
             [alt]="currentFlagAltKey | translate"
          />
          } @else {
-         <span class="emoji-icon !m-0">🌐</span>
+         <span
+            class="emoji-icon !m-0"
+            role="img"
+            aria-hidden="false"
+            [attr.aria-label]="currentFlagAltKey | translate"
+            >🌐</span
+         >
          } @if (!languageMenuTrigger.menuOpen) {
          <mat-icon class="chevron" iconPositionEnd>expand_more</mat-icon>
          } @else {
@@ -113,13 +124,9 @@
          >
             <div class="lang-item" [attr.lang]="lang.lang">
                @if (lang.flagUrl) {
-               <img
-                  class="flag-img"
-                  [src]="lang.flagUrl"
-                  [alt]="lang.flagAltKey || 'ALT_TEXT.GENERAL.FLAG' | translate"
-               />
+               <img class="flag-img" [src]="lang.flagUrl" alt="" />
                } @else {
-               <span class="emoji-icon">🌐</span>
+               <span class="emoji-icon" aria-hidden="true">🌐</span>
                }
                <span class="language">{{ lang.languageName }}</span>
                <span class="country">&nbsp;⸱&nbsp;{{ lang.countryName }}</span>
