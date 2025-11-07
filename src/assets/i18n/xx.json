@@ -841,13 +841,13 @@
          }
       },
       "ENRICHED_LINK": {
-         "ARIA_LABEL": "Link that redirects to an external page for victims of cyberbullying or digital violence"
+         "ARIA_LABEL": "Lien qui redirige vers une page externe"
       },
       "TILE_CALL": {
-         "ARIA_LABEL": "Link that redirects to the call function for victims of cyberbullying or digital violence"
+         "ARIA_LABEL": "Lien qui redirige vers la fonction d'appel téléphonique"
       },
       "TILE_MESSAGE": {
-         "ARIA_LABEL": "Link that redirects to the SMS sending function for victims of cyberbullying or digital violence"
+         "ARIA_LABEL": "Lien qui redirige vers la fonction d'envoi de SMS "
       },
       "ONBOARDING": {
          "LOGO_FANTOMAPP": "FantomApp"
