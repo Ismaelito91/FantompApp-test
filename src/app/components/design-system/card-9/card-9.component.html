@@ -33,9 +33,11 @@
                (data().socialMedia || '') +
                ' ' +
                ((data() | pageTranslation)?.firstTitle
-                  ? ((data() | pageTranslation)?.firstTitle!
-                    | translate
-                    | stripHtml)
+                  ? sanitizeEmoji(
+                       (data() | pageTranslation)?.firstTitle!
+                          | translate
+                          | stripHtml
+                    )
                   : '') +
                ' Ok'
             "
@@ -65,9 +67,11 @@
                (data().socialMedia || '') +
                ' ' +
                ((data() | pageTranslation)?.firstTitle
-                  ? ((data() | pageTranslation)?.firstTitle!
-                    | translate
-                    | stripHtml)
+                  ? sanitizeEmoji(
+                       (data() | pageTranslation)?.firstTitle!
+                          | translate
+                          | stripHtml
+                    )
                   : '') +
                ' Ok'
             "
