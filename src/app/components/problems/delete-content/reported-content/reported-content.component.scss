@@ -27,3 +27,21 @@
       gap: var(--spacing-3);
    }
 }
+
+::ng-deep .ngx-arrow {
+   .arrow {
+      background-color: var(--color-neutral-light-background-1) !important;
+   }
+}
+
+.popover-content {
+   max-width: calc(100vw - var(--spacing-5));
+   margin: 0 var(--spacing-3);
+   box-sizing: border-box;
+   word-break: break-word;
+   overflow-wrap: anywhere;
+
+   ::ng-deep a {
+      text-decoration: underline;
+   }
+}

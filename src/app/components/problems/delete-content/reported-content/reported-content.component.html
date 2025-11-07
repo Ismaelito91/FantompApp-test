@@ -1,9 +1,9 @@
-<div class="reported-content-container">
+<div [attr.inert]="popover.value ? 'true' : null" class="reported-content-container">
    <div class="fixed bg-(image:--background-31) h-[110px] w-full z-100"></div>
    <div class="header flex flex-col relative z-101">
       <app-button-back class="fixed top-[16px] z-103"></app-button-back>
       <div class="flex justify-end z-102">
-         <img src="assets/images/report-picto.png" alt="" class="!w-[86px] !h-[66px] object-contain" />
+         <img src="assets/images/report-picto.png" alt="" class="w-[86px]! h-[66px]! object-contain" />
       </div>
       <div class="details flex flex-col">
          <h3>{{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.TITLE" | translate }}</h3>
@@ -13,23 +13,36 @@
       <app-card-12 [data]="card_12"></app-card-12>
       <app-divider></app-divider>
       <div class="flex flex-col gap-(--spacing-5)">
-         <h5 class="!pl-(--spacing-3) !pr-(--spacing-3)">
+         <h5 class="pl-(--spacing-3)! pr-(--spacing-3)!">
             {{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TITLE_PART1" | translate }}
-            <span [matTooltip]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TOOLTIP' | translate"
-               #tooltip="matTooltip" style="display: inline-flex; color: var(--color-24); cursor: pointer;">
-               <button style="text-decoration: underline" (click)="tooltip.toggle()">
-                  {{ "COMMON.ORGANISATION" | translate }}
-               </button>
-               <button class="flex"> 
-                  <mat-icon svgIcon="icon-definition24x24" (click)="openDialog()"></mat-icon>
-               </button>
-            </span>
+            <ngx-popover #popover [placement]="'bottom'" [middleware]="popoverMiddleware" [autoUpdate]="true" class="inline">
+               <button [innerHTML]="'COMMON.ORGANISATION' | translate" class="inline-flex cursor-pointer underline text-(--color-24)"
+                  [attr.aria-expanded]="popover.value"></button>
+               @if (popover.value) {
+               <div class="fixed inset-0 bg-black/70 z-900" (click)="popover.close()"></div>
+               }
+               <ng-template ngx-popover-template>
+                  <div
+                     class="popover-content relative max-w-[358px] bg-(--color-neutral-light-background-1) p-[16px] pl-[24px] pr-[60px] rounded-[20px]">
+                     <button (click)="popover.close()" class="absolute top-[16px] right-[24px]">
+                        <mat-icon svgIcon="close24x24-icon" style="color: var(--color-primary-800);"></mat-icon>
+                     </button>
+                     <p [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TOOLTIP' | translate"
+                        class="text-(--color-primary-800)"></p>
+
+                  </div>
+               </ng-template>
+               <ngx-arrow />
+            </ngx-popover>
+            <button class="inline-flex text-(--color-24)" [attr.aria-expanded]="dialog.openDialogs.length > 0" (click)="openDialog()">
+               <mat-icon svgIcon="icon-definition24x24"></mat-icon>
+            </button>
             {{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TITLE_PART2" | translate }}
          </h5>
          <div class="flex flex-col bg-(--background-7) rounded-(--border-radius-2) pt-(--spacing-2) pb-(--spacing-2)">
             <div class="flex justify-center items-center gap-[10px] p-(--spacing-2) pr-[3px]">
                <div>
-                  <img src="assets/images/calendar-picto.svg" alt="" class="!max-w-[43px] !min-w-[43px]" />
+                  <img src="assets/images/calendar-picto.svg" alt="" class="max-w-[43px]! min-w-[43px]!" />
                </div>
                <div class="p-[10px]"
                   [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.DESCRIPTION1' | translate"></div>

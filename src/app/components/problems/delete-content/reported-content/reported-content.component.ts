@@ -15,10 +15,16 @@ import { ButtonComponent } from "../../../design-system/button/button.component"
 import { Card12Component } from "../../../design-system/card-12/card-12.component";
 import { DividerComponent } from "../../../design-system/divider/divider.component";
 import { LanguageService } from '../../../../service/language.service';
+import { Arrow, flip, offset, shift } from '@ngx-popovers/core';
+import { PopoverComponent, PopoverTemplate } from '@ngx-popovers/popover';
 
 @Component({
    selector: 'app-reported-content',
-   imports: [ButtonBackComponent, TranslatePipe, DividerComponent, ButtonComponent, MatIconModule, MatTooltipModule, Card12Component],
+   imports: [ButtonBackComponent, TranslatePipe, DividerComponent, ButtonComponent, MatIconModule, MatTooltipModule, Card12Component,
+      PopoverComponent,
+      PopoverTemplate,
+      Arrow,
+   ],
    templateUrl: './reported-content.component.html',
    styleUrl: './reported-content.component.scss'
 })
@@ -26,6 +32,7 @@ export class ReportedContentComponent {
    readonly utilsService = inject(UtilsService);
    readonly dialog = inject(MatDialog);
    private readonly languageService = inject(LanguageService);
+   popoverMiddleware = [flip(), shift(), offset(8)];
 
    card_12: PageComponentModel = {
       id: 0,
