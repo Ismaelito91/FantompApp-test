@@ -3,7 +3,7 @@
     <div class="app-layout" [attr.inert]="_onboardingService.isOnboardingVisible() && !utilsService.isDesktop() ? 'true' : null">
       <!-- Barre latérale (footer sur desktop) -->
       <app-footer class="side-nav desktop-only" />
-      <div class="main-content">
+      <div class="main-content" #mainContent>
         @if (!hideHeader) {
           <app-header />
         }

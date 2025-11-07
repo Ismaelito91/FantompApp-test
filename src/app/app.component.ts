@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, effect } from "@angular/core";
+import { Component, OnInit, inject, effect, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
 import {
    ActivatedRoute,
    NavigationEnd,
@@ -53,6 +53,7 @@ export class AppComponent implements OnInit {
    private preloadService = inject(PreloadService);
    // Force l'initialisation de l'IconGeneratorService au démarrage
    private _iconGen = inject(IconGeneratorService);
+   @ViewChild('mainContent', { static: false }) mainContentRef?: ElementRef<HTMLElement>;
 
    constructor() {
       // Mettre à jour l'attribut lang sur <html> quand la langue change
@@ -107,6 +108,15 @@ export class AppComponent implements OnInit {
          .subscribe((data) => {
             this.hideFooter = data["hideFooter"] ?? false;
             this.hideHeader = data["hideHeader"] ?? false;
+            // Forcer le scroll en haut de page à chaque changement de route
+            requestAnimationFrame(() => {
+               const mainContent = this.mainContentRef?.nativeElement || document.querySelector('.main-content') as HTMLElement;
+               if (mainContent) {
+                  mainContent.scrollTop = 0;
+               }
+               // Fallback sur window au cas où
+               window.scrollTo(0, 0);
+            });
          });
 
       // Définir les langues disponibles
