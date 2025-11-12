@@ -37,7 +37,8 @@ export class HomeComponent implements OnInit {
    private utilsService = inject(UtilsService);
    private readonly pageComponentService = inject(PageComponentService);
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
-   public shouldShowChangeIcon = false;
+   //public shouldShowChangeIcon = false;
+   public isDesktop = false;
    onboardingService = inject(OnboardingService);
    _settingService = inject(SettingService);
    rootPage = signal<PageComponentModel>({ translations: [] });
@@ -78,7 +79,7 @@ export class HomeComponent implements OnInit {
    });
 
    ngOnInit(): void {
-      this.shouldShowChangeIcon = this.utilsService.isDesktop();
+      this.isDesktop = this.utilsService.isDesktop();
       this.loadRootPage();
    }
 
@@ -102,9 +103,6 @@ export class HomeComponent implements OnInit {
          case "resources":
             this.navigateToResources();
             break;
-         case "what-is-app":
-            this.navigateToWhatIsApp();
-            break;
          case "rights":
             this.navigateToRights();
             break;
@@ -121,11 +119,6 @@ export class HomeComponent implements OnInit {
 
    navigateToResources(): void {
       this.router.navigate(['/resources']);
-   }
-
-   navigateToWhatIsApp(): void {
-      // Lance l'onboarding quand l'utilisateur clique sur "C'est quoi cette app ?"
-      this.onboardingService.showOnboarding();
    }
 
    navigateToRights(): void {

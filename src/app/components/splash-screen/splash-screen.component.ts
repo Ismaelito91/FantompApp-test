@@ -17,6 +17,7 @@ import { gsap } from "gsap";
 import { OnboardingService } from "../../service/onboarding.service";
 import { GhostAnimationService } from "../../service/ghost-animation.service";
 import { PreloadService } from "../../service/preload.service";
+import { UtilsService } from "../../service/utils.service";
 // import { toObservable } from "@angular/core/rxjs-interop";
 // import { combineLatest, timer } from "rxjs";
 // import { filter, take, map } from "rxjs/operators";
@@ -34,6 +35,7 @@ export class SplashScreenComponent implements OnInit {
    private onboardingService = inject(OnboardingService);
    private ghostAnimationService = inject(GhostAnimationService);
    private preloadService = inject(PreloadService);
+   private utilsService = inject(UtilsService);
 
    private minimumTimeElapsed = signal(false);
 
@@ -69,7 +71,7 @@ export class SplashScreenComponent implements OnInit {
          ease: "power2.inOut",
          onComplete: () => {
             // Vérifier si c'est la première visite et si l'onboarding doit être affiché
-            if (!this.onboardingService.hasCompletedOnboarding()) {
+            if (!this.onboardingService.hasCompletedOnboarding() && !this.utilsService.isDesktop()) {
                // Lancer l'onboarding directement
                this.onboardingService.showOnboarding();
                this.router.navigate(["/home"]);

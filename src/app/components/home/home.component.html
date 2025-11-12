@@ -212,6 +212,7 @@
                      ></mat-icon>
                   </button>
                </li>
+               @if (!isDesktop) {
                <li>
                   <button
                      id="tutorial-item"
@@ -231,6 +232,7 @@
                      <span>{{ "HOME.TUTORIAL" | translate }}</span>
                   </button>
                </li>
+               }
             </ul>
          </nav>
       </div>
