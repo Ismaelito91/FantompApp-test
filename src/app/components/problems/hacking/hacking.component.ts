@@ -7,6 +7,7 @@ import { TranslatePipe } from "@ngx-translate/core";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
 import { StepperComponent } from "../../design-system/stepper/stepper.component";
+import { UtilsService } from "../../../service/utils.service";
 
 type Question = {
    image?: string;
@@ -93,6 +94,7 @@ export const fadeInBtnWithDelay = trigger("fadeInBtnWithDelay", [
 })
 export class HackingComponent implements OnInit {
    private readonly router = inject(Router);
+   private readonly utilsService = inject(UtilsService);
    @ViewChild("closeTutorialButton", { read: ElementRef })
    closeTutorialButtonRef!: ElementRef<HTMLElement>;
 
@@ -147,11 +149,13 @@ export class HackingComponent implements OnInit {
       localStorage.getItem("hacking-tutorial") === "true"
          ? (this.showTutorial = false)
          : (this.showTutorial = true);
+      this.utilsService.setBackgroundInert(this.showTutorial);
    }
 
    onCloseTutorial() {
       localStorage.setItem("hacking-tutorial", "true");
       this.showTutorial = false;
+      this.utilsService.setBackgroundInert(false);
    }
 
    selectAnswer(sectionName: string, value: any) {

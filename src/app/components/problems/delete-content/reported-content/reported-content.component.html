@@ -24,7 +24,9 @@
                <ng-template ngx-popover-template>
                   <div
                      class="popover-content relative max-w-[358px] bg-(--background-6) p-[16px] pl-[24px] pr-[60px] rounded-[20px]">
-                     <button (click)="popover.close()" class="absolute top-[16px] right-[24px]">
+                     <button (click)="popover.close()" 
+                           class="cursor-pointer absolute top-[16px] right-[24px]"
+                           [attr.aria-label]="'COMMON.CLOSE' | translate">
                         <mat-icon svgIcon="close24x24-icon" style="color: var(--color-14);"></mat-icon>
                      </button>
                      <p [innerHTML]="'PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TOOLTIP' | translate"
@@ -34,7 +36,9 @@
                </ng-template>
                <ngx-arrow />
             </ngx-popover>
-            <button class="inline-flex text-(--color-24)" [attr.aria-expanded]="dialog.openDialogs.length > 0" (click)="openDialog()">
+            <button class="cursor-pointer inline-flex text-(--color-24)"
+                  [attr.aria-expanded]="dialog.openDialogs.length > 0"
+                  (click)="openDialog()">
                <mat-icon svgIcon="icon-definition24x24"></mat-icon>
             </button>
             {{ "PROBLEMS.DELETE_CONTENT.RESULTS.REPORTED_CONTENT.P2.TITLE_PART2" | translate }}

@@ -1,5 +1,5 @@
 import { Platform } from '@angular/cdk/platform';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class UtilsService {
    private readonly router = inject(Router);
    private platform = inject(Platform);
+   public isBackgroundInert = signal<boolean>(false);
 
    goTo(url: string) {
       this.router.navigate([url]);
@@ -30,5 +31,9 @@ export class UtilsService {
 
    isDesktop(): boolean {
      return this.platform.isBrowser && !this.platform.IOS && !this.platform.ANDROID;
+   }
+
+   setBackgroundInert(value: boolean): void {
+      this.isBackgroundInert.set(value);
    }
 }

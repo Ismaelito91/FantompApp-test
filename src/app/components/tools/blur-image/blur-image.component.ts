@@ -12,6 +12,7 @@ import {
    effect,
    ElementRef,
    HostListener,
+   inject,
    signal,
    ViewChild,
 } from "@angular/core";
@@ -23,6 +24,7 @@ import { TranslatePipe } from "@ngx-translate/core";
 import * as StackBlur from "stackblur-canvas";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
+import { UtilsService } from "../../../service/utils.service";
 
 type Action = "blur" | "pixelate";
 
@@ -71,6 +73,7 @@ export const moveFromTo = trigger("moveFromTo", [
    animations: [fadeInWithDelay, moveFromTo],
 })
 export class BlurImageComponent {
+   private readonly utilsService = inject(UtilsService);
    @ViewChild("canvas") canvasRef!: ElementRef<HTMLCanvasElement>;
    @ViewChild("closeButton", { read: ElementRef }) closeButtonRef!: ElementRef<HTMLButtonElement>;
 
@@ -109,6 +112,7 @@ export class BlurImageComponent {
       localStorage.getItem("blur-tutorial") === "true"
          ? (this.showTutorial = false)
          : (this.showTutorial = true);
+      this.utilsService.setBackgroundInert(this.showTutorial);
    }
 
    onFadeInDone() {
@@ -128,6 +132,7 @@ export class BlurImageComponent {
    onCloseTutorial() {
       localStorage.setItem("blur-tutorial", "true");
       this.showTutorial = false;
+      this.utilsService.setBackgroundInert(false);
    }
 
    onChangeBrushSize(event: Event) {

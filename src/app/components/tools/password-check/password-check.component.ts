@@ -4,9 +4,11 @@ import {
    Component,
    ElementRef,
    HostListener,
+   inject,
    OnDestroy,
    OnInit,
    ViewChild,
+   AfterViewChecked,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { MatCheckboxModule } from "@angular/material/checkbox";
@@ -20,6 +22,7 @@ import { PasswordSecurityService } from "../../../service/password-security.serv
 import { BadgeComponent } from "../../design-system/badge/badge.component";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonCloseComponent } from "../../design-system/button-close/button-close.component";
+import { UtilsService } from "../../../service/utils.service";
 
 @Component({
    selector: "app-password-check",
@@ -40,7 +43,9 @@ import { ButtonCloseComponent } from "../../design-system/button-close/button-cl
    templateUrl: "./password-check.component.html",
    styleUrl: "./password-check.component.scss",
 })
-export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit {
+export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit, AfterViewChecked {
+   private readonly utilsService = inject(UtilsService);
+   private previousPopoverValue: boolean = false;
    @ViewChild("passwordInput", { static: false })
    passwordInput!: ElementRef<HTMLInputElement>;
 
@@ -52,6 +57,9 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit 
 
    @ViewChild("closePasswordInfoModalButton", { read: ElementRef })
    closePasswordInfoModalButtonRef!: ElementRef<HTMLButtonElement>;
+
+   @ViewChild("popover", { static: false })
+   popoverRef!: PopoverComponent;
 
    password: string = "";
    message: string = "";
@@ -98,6 +106,7 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit 
       // Si c'est la première fois, affiche l'onboarding immédiatement
       if (!this.hasSeenOnboarding) {
          this.showInfoModal = true;
+         this.utilsService.setBackgroundInert(this.showInfoModal);
       }
 
       this.containsCommonWords = false;
@@ -119,6 +128,17 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit 
                this.closeButtonRef.nativeElement.focus();
             }
          }, 200);
+      }
+   }
+
+   ngAfterViewChecked() {
+      // Vérifier si l'état du popover a changé
+      if (this.popoverRef) {
+         const currentPopoverValue = !!this.popoverRef.value;
+         if (currentPopoverValue !== this.previousPopoverValue) {
+            this.previousPopoverValue = currentPopoverValue;
+            this.utilsService.setBackgroundInert(this.popoverRef?.value || false);
+         }
       }
    }
 
@@ -225,7 +245,8 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit 
 
    toggleInfoModal() {
       this.showInfoModal = !this.showInfoModal;
-
+      console.log("showInfoModal", this.showInfoModal);
+      this.utilsService.setBackgroundInert(this.showInfoModal);
       if (this.showInfoModal) {
          // Mettre le focus sur le bouton de fermeture quand le modal s'ouvre
          setTimeout(() => {
@@ -243,7 +264,8 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit 
 
    togglePasswordInfoModal() {
       this.showPasswordInfoModal = !this.showPasswordInfoModal;
-
+      console.log("showPasswordInfoModal", this.showPasswordInfoModal);
+      this.utilsService.setBackgroundInert(this.showPasswordInfoModal);
       if (!this.showPasswordInfoModal) {
          // Remettre le focus sur l'élément principal après fermeture
          this.activateDefaultButton();

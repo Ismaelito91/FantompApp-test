@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, AfterViewChecked, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogClose, MatDialogContent } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
@@ -28,11 +28,15 @@ import { PopoverComponent, PopoverTemplate } from '@ngx-popovers/popover';
    templateUrl: './reported-content.component.html',
    styleUrl: './reported-content.component.scss'
 })
-export class ReportedContentComponent {
+export class ReportedContentComponent implements AfterViewChecked {
    readonly utilsService = inject(UtilsService);
    readonly dialog = inject(MatDialog);
    private readonly languageService = inject(LanguageService);
    popoverMiddleware = [flip(), shift(), offset(8)];
+   private previousPopoverValue: boolean = false;
+
+   @ViewChild("popover", { static: false })
+   popoverRef!: PopoverComponent;
 
    card_12: PageComponentModel = {
       id: 0,
@@ -53,6 +57,17 @@ export class ReportedContentComponent {
       this.dialog.open(TutorialDialog, {
          backdropClass: 'blurred-backdrop'
       });
+   }
+
+   ngAfterViewChecked() {
+      // Vérifier si l'état du popover a changé
+      if (this.popoverRef) {
+         const currentPopoverValue = !!this.popoverRef.value;
+         if (currentPopoverValue !== this.previousPopoverValue) {
+            this.previousPopoverValue = currentPopoverValue;
+            this.utilsService.setBackgroundInert(this.popoverRef?.value || false);
+         }
+      }
    }
 }
 
