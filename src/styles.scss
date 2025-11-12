@@ -330,6 +330,7 @@
       color: var(--color-1);
       transition: background-color 0.3s ease, color 0.3s ease;
       min-height: 100vh;
+      touch-action: pan-x pan-y; // empêcher le zoom via double tap sur iOS
    }
 
    // Styles globaux pour tous les titres (h1 à h6)
