@@ -13,7 +13,9 @@
           "/manifest.webmanifest",
           "/manifest-icon1.webmanifest",
           "/*.css",
-          "/*.js"
+          "/*.js",
+          "/*.txt",
+          "/*.json"
         ]
       }
     },
