@@ -29,7 +29,15 @@
       "DOWNLOAD": "Download",
       "COPY": "Copy",
       "COPIED": "Copied !",
-      "OR": "or"
+      "OR": "or",
+      "ACTIVE": "Active",
+      "ARIA_LABEL": {
+         "HOME": "Go to home",
+         "PROBLEM": "Go to problem",
+         "TOOLS": "Go to tools",
+         "SECURE": "Go to secure myself",
+         "MAIN_NAV": "Main menu"
+      }
    },
    "DESIGN_SYSTEM": {
       "STEPPER": {

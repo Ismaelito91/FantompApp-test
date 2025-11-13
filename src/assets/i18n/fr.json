@@ -30,11 +30,13 @@
       "COPY": "Copier",
       "COPIED": "Copié !",
       "OR": "OU",
+      "ACTIVE": "Actif",
       "ARIA_LABEL": {
          "HOME": "Aller à la page d'accueil",
          "PROBLEM": "Aller à la page des problèmes",
          "TOOLS": "Aller à la page des outils",
-         "SECURE": "Aller à la page me sécuriser"
+         "SECURE": "Aller à la page me sécuriser",
+         "MAIN_NAV": "Menu principal"
       }
    },
    "DESIGN_SYSTEM": {

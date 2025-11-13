@@ -2,16 +2,18 @@
    <div class="desktop-only">
       <img src="assets/images/onboarding/logo-fantomapp.svg" alt="Logo" class="logo">
    </div>
-   <nav class="toolbar-nav max-w-(--max-width-mobile)">
-      <button mat-button routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
-         class="nav-button home-button" [attr.aria-label]="'COMMON.ARIA_LABEL.HOME' | translate">
+   <nav class="toolbar-nav max-w-(--max-width-mobile)" [attr.aria-label]="'COMMON.ARIA_LABEL.MAIN_NAV' | translate">
+      <button mat-button routerLink="/home" routerLinkActive="active-link" #rlaHome="routerLinkActive"
+         [routerLinkActiveOptions]="{ exact: true }" class="nav-button home-button"
+         [attr.aria-label]="'COMMON.ARIA_LABEL.HOME' | translate">
          <div class="icon-container">
             <mat-icon [svgIcon]="homeIconInactive" class="icon-inactive icon-dynamic"></mat-icon>
             <mat-icon [svgIcon]="homeIconActive" class="icon-active icon-dynamic"></mat-icon>
          </div>
-         <span>{{ "COMMON.HOME" | translate }}</span>
+         <span>{{ "COMMON.HOME" | translate }} @if (rlaHome.isActive) {<span class="sr-only">{{ "COMMON.ACTIVE" |
+               translate }}</span>}</span>
       </button>
-      <button mat-button routerLink="/problems" routerLinkActive="active-link"
+      <button mat-button routerLink="/problems" routerLinkActive="active-link" #rlaProblem="routerLinkActive"
          [routerLinkActiveOptions]="{ exact: false }" class="nav-button problem-button"
          [class.problem-active]="isProblemIconActive" [class.force-active]="isProblemIconActive"
          [attr.aria-label]="'COMMON.ARIA_LABEL.PROBLEM' | translate">
@@ -19,20 +21,23 @@
             <mat-icon [svgIcon]="problemIconInactive" class="icon-inactive icon-dynamic"></mat-icon>
             <mat-icon [svgIcon]="problemIconActive" class="icon-active icon-dynamic"></mat-icon>
          </div>
-         <span>{{ "COMMON.PROBLEM" | translate }}</span>
+         <span>{{ "COMMON.PROBLEM" | translate }} @if (rlaProblem.isActive) {<span class="sr-only">{{ "COMMON.ACTIVE" |
+               translate }}</span>}</span>
       </button>
-      <button mat-button routerLink="/tools" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
-         class="nav-button tools-button" [class.tools-active]="isToolsIconActive"
-         [class.force-active]="isToolsIconActive" [attr.aria-label]="'COMMON.ARIA_LABEL.TOOLS' | translate">
+      <button mat-button routerLink="/tools" routerLinkActive="active-link" #rlaTools="routerLinkActive"
+         [routerLinkActiveOptions]="{ exact: true }" class="nav-button tools-button"
+         [class.tools-active]="isToolsIconActive" [class.force-active]="isToolsIconActive"
+         [attr.aria-label]="'COMMON.ARIA_LABEL.TOOLS' | translate">
          <div class="icon-container">
             <mat-icon [svgIcon]="toolsIconInactive" class="icon-inactive icon-dynamic"
                [attr.data-icon]="toolsIconInactive"></mat-icon>
             <mat-icon [svgIcon]="toolsIconActive" class="icon-active icon-dynamic"
                [attr.data-icon]="toolsIconActive"></mat-icon>
          </div>
-         <span>{{ "COMMON.TOOLS" | translate }}</span>
+         <span>{{ "COMMON.TOOLS" | translate }} @if (rlaTools.isActive) {<span class="sr-only">{{ "COMMON.ACTIVE" |
+               translate }}</span>}</span>
       </button>
-      <button mat-button routerLink="/secure-myself" routerLinkActive="active-link"
+      <button mat-button routerLink="/secure-myself" routerLinkActive="active-link" #rlaSecure="routerLinkActive"
          [routerLinkActiveOptions]="{ exact: true }" class="nav-button secure-button"
          [class.secure-active]="isSecureMyselfIconActive" [class.force-active]="isSecureMyselfIconActive"
          [attr.aria-label]="'COMMON.ARIA_LABEL.SECURE' | translate">
@@ -40,7 +45,8 @@
             <mat-icon [svgIcon]="secureIconInactive" class="icon-inactive icon-dynamic"></mat-icon>
             <mat-icon [svgIcon]="secureIconActive" class="icon-active icon-dynamic"></mat-icon>
          </div>
-         <span>{{ "COMMON.SECURE" | translate }}</span>
+         <span>{{ "COMMON.SECURE" | translate }} @if (rlaSecure.isActive) {<span class="sr-only">{{
+               "COMMON.ACTIVE" | translate }}</span>}</span>
       </button>
    </nav>
 </div>
