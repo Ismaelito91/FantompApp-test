@@ -773,6 +773,7 @@
       "BLUR_IMAGE": {
          "TITLE": "Anonymiser ma photo",
          "DESCRIPTION": "Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne.",
+         "EDITING_TITLE": "Zone d’édition de la photo importée",
          "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée !",
          "UPLOAD_IMAGE": "Importer une photo <span aria-hidden=\"true\">🤳</span>",
          "BLUR": "Flouter",
@@ -788,6 +789,7 @@
          "TITLE": "Je teste mon mot de passe",
          "DESCRIPTION_PART1": "Combien de temps faut-il à un cybercriminel pour le trouver par",
          "DESCRIPTION_PART2": "?",
+         "FOCUS_ACCESSIBLE_TITLE": "Tester mon mot de passe – zone de saisie",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "force brute",
             "CONTENT": "Une <strong>attaque par force brute</strong> (<i>bruteforce attack</i>) consiste à tester, l’une après l’autre, chaque combinaison possible d’un mot de passe. (source : <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"

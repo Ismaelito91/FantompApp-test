@@ -13,6 +13,8 @@
    @if ((page() | pageTranslation)?.firstTitle) {
    <h2
       style="margin: 18px 25px"
+      role="heading"
+      aria-level="1"
       [innerHTML]="
          (page() | pageTranslation)?.firstTitle! | translate | safeHtml
       "

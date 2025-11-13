@@ -1,24 +1,38 @@
 <div class="card-container">
-   @if ((data() | pageTranslation)?.firstTitle || (data() | pageTranslation)?.secondTitle) {
-      <div class="flex justify-between">
-         @if((data() | pageTranslation)?.firstTitle) {
-            <h5 class="card-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></h5>
-         }
-         @if((data() | pageTranslation)?.secondTitle){
-            <app-tag-unclickable [variant]="toVariant((data() | pageTranslation)?.secondTitle! | translate)" [label]="(data() | pageTranslation)?.description! | translate"></app-tag-unclickable>
-         }
-      </div>
-   }
-   @if (sortedChildren.length > 0) {
-      @for (child of sortedChildren; track $index) {
-         @switch (child.type) {
-            @case (ComponentType.CARD_17) {
-               <app-card-17 [data]="child" role="button" tabindex="0"
-               (click)="goToNextPage(child, $index)"
-               (keydown.enter)="goToNextPage(child, $index)"
-               ></app-card-17>
-            }
-         }
+   @if ((data() | pageTranslation)?.firstTitle || (data() |
+   pageTranslation)?.secondTitle) {
+   <div class="flex justify-between">
+      @if((data() | pageTranslation)?.firstTitle) {
+      <h5
+         role="heading"
+         aria-level="2"
+         class="card-title ckeditor-content"
+         [innerHTML]="
+            (data() | pageTranslation)?.firstTitle!
+               | translate
+               | replaceStringDark
+                  : 'hsl(258, 88%, 40%)'
+                  : 'var(--color-primary-400)'
+               | safeHtml
+         "
+      ></h5>
+      } @if((data() | pageTranslation)?.secondTitle){
+      <app-tag-unclickable
+         [variant]="
+            toVariant((data() | pageTranslation)?.secondTitle! | translate)
+         "
+         [label]="(data() | pageTranslation)?.description! | translate"
+      ></app-tag-unclickable>
       }
-   }
+   </div>
+   } @if (sortedChildren.length > 0) { @for (child of sortedChildren; track
+   $index) { @switch (child.type) { @case (ComponentType.CARD_17) {
+   <app-card-17
+      [data]="child"
+      role="button"
+      tabindex="0"
+      (click)="goToNextPage(child, $index)"
+      (keydown.enter)="goToNextPage(child, $index)"
+   ></app-card-17>
+   } } } }
 </div>

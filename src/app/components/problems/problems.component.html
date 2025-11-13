@@ -1,5 +1,6 @@
+<!-- problems.component.html -->
 @switch(page()?.type) { @case (ComponentType.PAGE_1) {
-<div class="problems-container flex flex-col page-1 relative">
+<div class="problems-container flex flex-col page-1 relative" appHeadingFix>
    <div class="absolute problems-container-bg h-full w-full z-100"></div>
    <div class="problems-title-container z-101">
       @if ((page() | pageTranslation)?.firstTitle) {
@@ -33,7 +34,7 @@
    </div>
 </div>
 } @case (ComponentType.PAGE_2) {
-<div class="problems-container flex flex-col page-2">
+<div class="problems-container flex flex-col page-2" appHeadingFix>
    <div class="fixed bg-(image:--background-31) h-[110px] w-full z-100"></div>
    <img
       [src]="(page() | pageTranslation)?.image"
@@ -47,6 +48,8 @@
    @if ((page() | pageTranslation)?.firstTitle) {
    <h3
       class="problems-title"
+      role="heading"
+      aria-level="1"
       [innerHTML]="
          (page() | pageTranslation)?.firstTitle! | translate | safeHtml
       "

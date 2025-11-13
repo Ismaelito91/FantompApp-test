@@ -733,22 +733,24 @@
          }
       },
       "BLUR_IMAGE": {
-         "TITLE": "Anonymiser ma photo",
-         "DESCRIPTION": "Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne.",
-         "ADVICE": "💡 <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée !",
-         "UPLOAD_IMAGE": "Importer une photo 🤳",
-         "BLUR": "Flouter",
-         "PIXELATE": "Pixelliser",
-         "ALL_BLUR": "Tout flouter",
-         "BRUSH_SIZE": "Taille du flou",
-         "GLOBAL_BLUR_INFO": "Vous pouvez flouter globalement toute l'image en utilisant ce bouton. En cliquant dessus, une liste de pourcentages de floutage s'affiche pour choisir l'intensité du flou.",
+         "TITLE": "Blur my photo",
+         "DESCRIPTION": "Blur or pixelate my profile picture to reduce the risk of being identified online.",
+         "ADVICE": "💡 <strong>Tip</strong>: If you blur your photo to use it as a profile picture, don’t reuse it elsewhere unblurred!",
+         "UPLOAD_IMAGE": "Import a photo 🤳",
+         "BLUR": "Blur",
+         "PIXELATE": "Pixelate",
+         "ALL_BLUR": "Blur everything",
+         "BRUSH_SIZE": "Brush size",
+         "GLOBAL_BLUR_INFO": "You can blur the entire image with this button. Clicking it opens a list of blur percentages to choose the intensity.",
          "TUTORIAL": {
-            "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter."
+            "DESCRIPTION": "Swipe your finger across the image to blur."
          }
       },
       "PASSWORD_CHECK": {
-         "TITLE": "Je teste mon mot de passe",
-         "DESCRIPTION": "Combien de temps faut-il à un cybercriminel pour le trouver ?",
+         "TITLE": "Test my password",
+         "DESCRIPTION_PART1": "How long would it take a cybercriminal to guess it by",
+         "DESCRIPTION_PART2": "?",
+         "FOCUS_ACCESSIBLE_TITLE": "Password test – input area",
          "CRIMINAL_GUESSES": "Un cybercriminel le devine en :",
          "ASSESSMENT_TEXT": "Ton mot de passe a :",
          "INPUT_LABEL": "Mot de passe",
