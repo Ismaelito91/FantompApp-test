@@ -11,7 +11,9 @@
          />
       </div>
       <div class="details flex flex-col">
-         <h3>{{ "PROBLEMS.DELETE_CONTENT.TITLE" | translate }}</h3>
+         <h3 role="heading" aria-level="1">
+            {{ "PROBLEMS.DELETE_CONTENT.TITLE" | translate }}
+         </h3>
          <p
             class="transition-all duration-500 ease-in-out"
             [class.max-h-0]="currentStep !== 1"
@@ -33,7 +35,7 @@
       ></app-stepper>
       }
       <div class="sections flex flex-col">
-         <h4 class="text-(--color-19)">
+         <h4 class="text-(--color-19)" role="heading" aria-level="2">
             {{ currentQuestion.title | translate }}
          </h4>
          <div class="section-items flex flex-col">

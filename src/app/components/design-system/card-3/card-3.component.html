@@ -1,8 +1,29 @@
 <div class="flex flex-col card-container">
    @if ((data() | pageTranslation)?.firstTitle) {
-      <h5 class="card-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></h5>
-   }
-   @if ((data() | pageTranslation)?.description) {
-      <div class="card-description ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></div>
+   <h5
+      role="heading"
+      aria-level="2"
+      class="card-title ckeditor-content"
+      [innerHTML]="
+         (data() | pageTranslation)?.firstTitle!
+            | translate
+            | replaceStringDark
+               : 'hsl(258, 88%, 40%)'
+               : 'var(--color-primary-400)'
+            | safeHtml
+      "
+   ></h5>
+   } @if ((data() | pageTranslation)?.description) {
+   <div
+      class="card-description ckeditor-content"
+      [innerHTML]="
+         (data() | pageTranslation)?.description!
+            | translate
+            | replaceStringDark
+               : 'hsl(258, 88%, 40%)'
+               : 'var(--color-primary-400)'
+            | safeHtml
+      "
+   ></div>
    }
 </div>

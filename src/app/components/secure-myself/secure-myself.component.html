@@ -1,17 +1,18 @@
 <div class="secure-myself-container">
    @if ((page() | pageTranslation)?.firstTitle) {
-      <h1 class="secure-myself-title" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></h1>
+   <h1
+      class="secure-myself-title"
+      [innerHTML]="
+         (page() | pageTranslation)?.firstTitle! | translate | safeHtml
+      "
+   ></h1>
    }
    <div class="flex flex-col secure-myself-children">
-      @for (child of sortedChildren; track $index) {
-         @switch (child.type) {
-            @case (ComponentType.CARD_7) {
-               <app-card-7 [data]="child"></app-card-7>
-            }
-            @case (ComponentType.DIVIDER) {
-               <app-divider></app-divider>
-            }
-         }
-      }
+      @for (child of sortedChildren; track $index) { @switch (child.type) {
+      @case (ComponentType.CARD_7) {
+      <app-card-7 [data]="child"></app-card-7>
+      } @case (ComponentType.DIVIDER) {
+      <app-divider></app-divider>
+      } } }
    </div>
 </div>

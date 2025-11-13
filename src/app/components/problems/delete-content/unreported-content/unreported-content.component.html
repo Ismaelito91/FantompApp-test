@@ -1,6 +1,8 @@
 <div class="reported-violent-content-container relative">
    <div class="fixed bg-(image:--background-31) h-[110px] w-full z-100"></div>
-   <div class="absolute bg-gradient-to-b from-[#CFB1A2] to-[rgba(237, 252, 254, 0)] h-[110px] w-full z-100"></div>
+   <div
+      class="absolute bg-gradient-to-b from-[#CFB1A2] to-[rgba(237, 252, 254, 0)] h-[110px] w-full z-100"
+   ></div>
    <div class="header flex flex-col relative z-101">
       <app-button-back class="fixed top-[16px] z-103"></app-button-back>
       <div class="flex justify-end z-102">
@@ -11,7 +13,7 @@
          />
       </div>
       <div class="details flex flex-col">
-         <h3>
+         <h3 role="heading" aria-level="1">
             {{
                "PROBLEMS.DELETE_CONTENT.RESULTS.UNREPORTED_CONTENT.TITLE"
                   | translate

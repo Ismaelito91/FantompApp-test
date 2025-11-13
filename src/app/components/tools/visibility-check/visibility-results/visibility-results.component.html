@@ -2,7 +2,7 @@
    class="visibility-results-container flex flex-col gap-(--spacing-3) p-(--spacing-3)"
 >
    <div class="title flex justify-between items-center">
-      <h3 class="!p-(--spacing-3)">
+      <h3 class="!p-(--spacing-3)" role="heading" aria-level="1">
          {{ "TOOLS.VISIBILITY_CHECK.RESULTS.TITLE" | translate }}
       </h3>
       <app-button-close link="/tools"></app-button-close>
@@ -12,7 +12,7 @@
       @smartSpring
       class="flex flex-col gap-(--spacing-2) p-(--spacing-3) bg-(--background-4) rounded-(--border-radius-3)"
    >
-      <h6 class="!text-(--color-19)">
+      <h6 class="!text-(--color-19)" role="heading" aria-level="2">
          <span [innerHTML]="summary.title | translate"></span>
       </h6>
       <p class="text-(--color-10)">{{ summary.content | translate }}</p>
@@ -36,7 +36,11 @@
             class="!w-[88px] h-[49px] object-contain absolute top-[-10px] right-[-6px]"
          />
          <div class="flex flex-col gap-(--spacing-1)">
-            <h5 class="!text-(--color-16) !font-[600]">
+            <h5
+               class="!text-(--color-16) !font-[600]"
+               role="heading"
+               aria-level="3"
+            >
                {{ "TOOLS.VISIBILITY_CHECK.RESULTS.PSEUDO.TITLE" | translate }}
             </h5>
             <ul>
@@ -78,7 +82,11 @@
             class="!w-[88px] h-[75px] object-contain absolute top-[-10px] right-[-17px]"
          />
          <div class="flex flex-col gap-(--spacing-1)">
-            <h5 class="!text-(--color-16) !font-[600]">
+            <h5
+               class="!text-(--color-16) !font-[600]"
+               role="heading"
+               aria-level="3"
+            >
                {{ "TOOLS.VISIBILITY_CHECK.RESULTS.BIO.TITLE" | translate }}
             </h5>
             <ul>

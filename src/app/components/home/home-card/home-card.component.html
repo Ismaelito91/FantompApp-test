@@ -1,6 +1,6 @@
 <div class="home-cards-container">
    <!-- Titre principal -->
-   <h5 class="home-cards__main-title">
+   <h5 class="home-cards__main-title" role="heading" aria-level="2">
       {{ "HOME.CARDS.MAIN_TITLE" | translate }}
    </h5>
 
@@ -27,7 +27,7 @@
             class="tools-item-img"
          />
          <div class="tools-item-text flex flex-col">
-            <h6 class="social-card-title">
+            <h6 class="social-card-title" role="heading" aria-level="3">
                {{ "HOME.CARDS.PASSWORD_CHECK.TITLE" | translate }}
             </h6>
             <p class="social-card-description">
@@ -66,6 +66,8 @@
             <div class="home-card-anonym__text-content">
                <h6
                   class="social-card-title"
+                  role="heading"
+                  aria-level="3"
                   [innerHTML]="'HOME.CARDS.BLUR_IMAGE.TITLE' | translate"
                ></h6>
                <p
@@ -136,7 +138,7 @@
    <div
       class="home-cards-problems-container mt-(--spacing-3) gap-(--spacing-3)"
    >
-      <h5 class="home-cards__section-title">
+      <h5 class="home-cards__section-title" role="heading" aria-level="2">
          {{ "HOME.CARDS.PROBLEMS.SECTION_TITLE" | translate }}
       </h5>
 
@@ -161,6 +163,8 @@
                <div class="home-card-problem__text-content">
                   <h3
                      class="home-card-subtitle home-card-delete-content__subtitle"
+                     role="heading"
+                     aria-level="3"
                   >
                      {{
                         "HOME.CARDS.PROBLEMS.DELETE_CONTENT.TITLE" | translate
@@ -194,7 +198,11 @@
             </div>
             <div class="problem-text-content">
                <div class="home-card-problem__text-content">
-                  <h6 class="home-card-subtitle home-card-harassment__subtitle">
+                  <h6
+                     class="home-card-subtitle home-card-harassment__subtitle"
+                     role="heading"
+                     aria-level="3"
+                  >
                      {{ "HOME.CARDS.PROBLEMS.HARASSMENT.TITLE" | translate }}
                   </h6>
                </div>

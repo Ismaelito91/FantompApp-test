@@ -82,7 +82,9 @@
          />
       </div>
       <div class="details flex flex-col">
-         <h3>{{ "PROBLEMS.HACKING.TITLE" | translate }}</h3>
+         <h3 role="heading" aria-level="1">
+            {{ "PROBLEMS.HACKING.TITLE" | translate }}
+         </h3>
          <p
             class="transition-all duration-500 ease-in-out"
             [class.max-h-0]="currentStep !== 1"
@@ -115,9 +117,13 @@
                }
                <fieldset>
                   @if (section.title) {
-                  <legend class="sr-only">{{ section.title | translate }}</legend>
+                  <legend class="sr-only">
+                     {{ section.title | translate }}
+                  </legend>
                   } @else {
-                     <legend class="sr-only">{{ currentQuestion.title | translate }}</legend>
+                  <legend class="sr-only">
+                     {{ currentQuestion.title | translate }}
+                  </legend>
                   }
                   <mat-radio-group
                      [formControlName]="section.name"

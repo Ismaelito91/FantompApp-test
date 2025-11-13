@@ -3,7 +3,7 @@
       <app-button-back size="md"></app-button-back>
    </div>
    <div class="user-rights-content">
-      <h2 class="user-rights-title">
+      <h2 class="user-rights-title" role="heading" aria-level="1">
          {{ "HOME.USER_RIGHTS.TITLE" | translate }}
       </h2>
       <div class="user-rights-text-title flex flex-col gap-(--spacing-3)">
@@ -24,7 +24,11 @@
          <div
             class="user-rights-card-incognito-content flex flex-col gap-(--spacing-3)"
          >
-            <h5 class="user-rights-card-incognito-title">
+            <h5
+               class="user-rights-card-incognito-title"
+               role="heading"
+               aria-level="2"
+            >
                <span
                   [innerHTML]="
                      'HOME.USER_RIGHTS.CARDS.INCOGNITO.TITLE' | translate
@@ -56,7 +60,11 @@
          <div
             class="user-rights-card-data-info-content flex flex-col gap-(--spacing-3)"
          >
-            <h5 class="user-rights-card-data-info-title">
+            <h5
+               class="user-rights-card-data-info-title"
+               role="heading"
+               aria-level="2"
+            >
                <span
                   [innerHTML]="
                      'HOME.USER_RIGHTS.CARDS.DATA_INFO.TITLE' | translate
@@ -85,7 +93,11 @@
          <div
             class="user-rights-card-right-to-object-content flex flex-col gap-(--spacing-3)"
          >
-            <h5 class="user-rights-card-right-to-object-title">
+            <h5
+               class="user-rights-card-right-to-object-title"
+               role="heading"
+               aria-level="2"
+            >
                <span
                   [innerHTML]="
                      'HOME.USER_RIGHTS.CARDS.RIGHT_TO_OBJECT.TITLE' | translate
@@ -114,7 +126,11 @@
          <div
             class="user-rights-card-right-to-portability-content flex flex-col gap-(--spacing-3)"
          >
-            <h5 class="user-rights-card-right-to-portability-title">
+            <h5
+               class="user-rights-card-right-to-portability-title"
+               role="heading"
+               aria-level="2"
+            >
                <span
                   [innerHTML]="
                      'HOME.USER_RIGHTS.CARDS.PORTABILITY.TITLE' | translate
