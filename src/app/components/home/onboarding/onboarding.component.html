@@ -135,19 +135,18 @@
 
    <!-- ===== ÉTAPE 2 : DÉMONSTRATION PROBLÈME ===== -->
    @if (currentStep() === 2) {
-   <div class="onboarding-step onboarding-step-two">
-      <!-- Fantôme triste pour l'étape 2 -->
-      <div class="sad-ghost-wrapper switch-triste-ghost">
-         <img
-            src="assets/images/onboarding/Switch-triste-img.svg"
-            alt=""
-            aria-hidden="true"
-            class="sad-ghost-character"
-         />
-      </div>
-
+   <div class="onboarding-step">
       <!-- Bulle d'aide pour l'étape 2 (problème) -->
       <div class="step-bubble problem-bubble">
+         <!-- Fantôme triste pour l'étape 2 - positionné relativement à la bulle -->
+         <div class="sad-ghost-wrapper sad-ghost-two">
+            <img
+               src="assets/images/onboarding/Switch-triste-img.svg"
+               alt=""
+               aria-hidden="true"
+               class="sad-ghost-character"
+            />
+         </div>
          <div class="bubble-content">
             <div class="problem-header">
                <h3
@@ -158,40 +157,42 @@
             <p class="problem-description">
                {{ "ONBOARDING.STEP_TWO.DESCRIPTION" | translate }}
             </p>
-            <button
-               #step2NextButton
-               type="button"
-               class="bubble-next-button"
-               (click)="completeOnboarding(); $event.stopPropagation()"
-            >
-               <span class="button-text">{{
-                  "ONBOARDING.NEXT" | translate
-               }}</span>
-               <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-icon"
+            <div class="bubble-next-button-container">
+               <button
+                  #step2NextButton
+                  type="button"
+                  class="bubble-next-button"
+                  (click)="completeOnboarding(); $event.stopPropagation()"
                >
-                  <path
-                     d="M4 12L19 12"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-miterlimit="10"
-                     stroke-linecap="round"
-                  />
-                  <path
-                     d="M13 6L19 12L13 18"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-miterlimit="10"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                  />
-               </svg>
-            </button>
+                  <span class="button-text">{{
+                     "ONBOARDING.NEXT" | translate
+                  }}</span>
+                  <svg
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="arrow-icon"
+                  >
+                     <path
+                        d="M4 12L19 12"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                     />
+                     <path
+                        d="M13 6L19 12L13 18"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                     />
+                  </svg>
+               </button>
+            </div>
          </div>
       </div>
 
@@ -212,18 +213,18 @@
 
    <!-- ===== ÉTAPE 3 : DÉMONSTRATION OUTILS ===== -->
    @if (currentStep() === 3) {
-   <div class="onboarding-step onboarding-step-three">
-      <div class="sad-ghost-wrapper illu-onboarding-ghost">
-         <img
-            src="assets/images/onboarding/illu-onboarding.svg"
-            alt=""
-            aria-hidden="true"
-            class="ghost-character"
-         />
-      </div>
-
+   <div class="onboarding-step">
       <!-- Bulle d'aide pour l'étape 3 (outils) -->
       <div class="step-bubble tools-bubble">
+         <!-- Fantôme pour l'étape 3 - positionné relativement à la bulle -->
+         <div class="sad-ghost-wrapper sad-ghost-three">
+            <img
+               src="assets/images/onboarding/illu-onboarding.svg"
+               alt=""
+               aria-hidden="true"
+               class="sad-ghost-character"
+            />
+         </div>
          <div class="bubble-content">
             <div class="problem-header">
                <h3
@@ -234,40 +235,43 @@
             <p class="problem-description">
                {{ "ONBOARDING.STEP_THREE.DESCRIPTION" | translate }}
             </p>
-            <button
-               #step3NextButton
-               type="button"
-               class="bubble-next-button"
-               (click)="completeOnboarding(); $event.stopPropagation()"
-            >
-               <span class="button-text">{{
-                  "ONBOARDING.NEXT" | translate
-               }}</span>
-               <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-icon"
+            <div class="bubble-next-button-container">
+               <button
+                  #step3NextButton
+                  type="button"
+                  class="bubble-next-button"
+                  (click)="completeOnboarding(); $event.stopPropagation()"
                >
-                  <path
-                     d="M4 12L19 12"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-miterlimit="10"
-                     stroke-linecap="round"
-                  />
-                  <path
-                     d="M13 6L19 12L13 18"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-miterlimit="10"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                  />
-               </svg>
-            </button>
+                  <span class="button-text">{{
+                     "ONBOARDING.NEXT" | translate
+                  }}</span>
+                  <svg
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="arrow-icon"
+                  >
+                     <path
+                        d="M4 12L19 12"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                     />
+                     <path
+                        d="M13 6L19 12L13 18"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                     />
+                  </svg>
+               </button>
+            </div>
+            
          </div>
       </div>
 
@@ -288,19 +292,20 @@
 
    <!-- ===== ÉTAPE 4 : DÉMONSTRATION PARAMÈTRES ===== -->
    @if (currentStep() === 4) {
-   <div class="onboarding-step onboarding-step-four">
-      <!-- Fantôme triste pour l'étape 4 -->
-      <div class="sad-ghost-wrapper illu-onboarding-4-ghost">
-         <img
-            src="assets/images/onboarding/illu-onboarding-4.svg"
-            alt=""
-            aria-hidden="true"
-            class="ghost-character"
-         />
-      </div>
+   <div class="onboarding-step">
+      
 
       <!-- Bulle d'aide pour l'étape 4 (paramètres) -->
       <div class="step-bubble settings-bubble">
+         <!-- Fantôme triste pour l'étape 4 -->
+         <div class="sad-ghost-wrapper sad-ghost-four">
+            <img
+               src="assets/images/onboarding/illu-onboarding-4.svg"
+               alt=""
+               aria-hidden="true"
+               class="sad-ghost-character"
+            />
+         </div>
          <div class="bubble-content">
             <div class="problem-header">
                <h3
@@ -311,27 +316,29 @@
             <p class="problem-description">
                {{ "ONBOARDING.STEP_FOUR.DESCRIPTION" | translate }}
             </p>
-            <button
-               #step4NextButton
-               type="button"
-               class="bubble-next-button"
-               (click)="completeOnboarding(); $event.stopPropagation()"
-            >
-               <span class="button-text">{{
-                  "COMMON.UNDERSTOOD" | translate
-               }}</span>
-               <svg
-                  width="16"
-                  height="13"
-                  viewBox="0 0 16 13"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-icon"
+            <div class="bubble-next-button-container">
+               <button
+                  #step4NextButton
+                  type="button"
+                  class="bubble-next-button"
+                  (click)="completeOnboarding(); $event.stopPropagation()"
                >
-               <path d="M1.00002 6.87193L5.03676 10.9087L14.9458 0.999628" 
-               stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-               </svg>
-            </button>
+                  <span class="button-text">{{
+                     "COMMON.UNDERSTOOD" | translate
+                  }}</span>
+                  <svg
+                     width="16"
+                     height="13"
+                     viewBox="0 0 16 13"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="arrow-icon"
+                  >
+                  <path d="M1.00002 6.87193L5.03676 10.9087L14.9458 0.999628" 
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+               </button>
+            </div>
          </div>
       </div>
 

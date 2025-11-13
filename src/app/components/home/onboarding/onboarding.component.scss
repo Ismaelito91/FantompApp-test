@@ -6,6 +6,10 @@ $step-background-gradient: linear-gradient(
    color-mix(in srgb, var(--color-neutral-light-content-1) 70%, transparent) 100%
 );
 
+$bubble-left-step-2: 0.385;
+$bubble-left-step-3: 0.615;
+$bubble-left-step-4: 0.84;
+
 // Mixin pour les styles communs des étapes 2, 3, 4
 @mixin step-overlay-styles {
    .blurred-background {
@@ -48,28 +52,31 @@ $step-background-gradient: linear-gradient(
 // Classe commune pour les bulles des étapes 2, 3, 4
 .step-bubble {
    position: absolute;
-   bottom: calc(-7.547vh + 195.31px);
-   height: 22vh;
+   bottom: 130px; // taille du footer + de la fleche sous la bulle
    width: calc(100% - 32px);
    border-radius: var(--border-radius-2);
    display: flex;
    flex-direction: column;
    gap: var(--spacing-2);
-   z-index: 9999;
+   z-index: 1100;
 
    .bubble-content {
       background: var(--background-4);
       border-radius: var(--border-radius-2);
-      padding: var(--spacing-3) var(--spacing-4);
+      padding: 24px 32px;
       color: var(--color-3);
       font-family: var(--body-font-family);
       width: 100%;
-      height: 50vw;
       display: flex;
       flex-direction: column;
       gap: clamp(0px, calc((100vw - 375px) / 37px * var(--spacing-2)), var(--spacing-2));
    }
-
+   .bubble-next-button-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-top: 16px
+   }
    .bubble-next-button {
       border-radius: var(--border-radius-5);
       width: 170px;
@@ -85,7 +92,7 @@ $step-background-gradient: linear-gradient(
       position: absolute;
       width: 26.19px;
       height: 20px;
-      left: $left-position;
+      left: calc(($left-position * 100vw) - 16px);
       bottom: -19px;
       transform: translateX(-50%);
       border-left: 13.095px solid transparent;
@@ -103,7 +110,7 @@ $step-background-gradient: linear-gradient(
    margin: auto;
    width: 100%;
    height: 100%;
-   z-index: 9999;
+   z-index: 1100;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -116,17 +123,17 @@ $step-background-gradient: linear-gradient(
 
    &.step-two {
       @include step-overlay-styles;
-      @include step-mask(38.5% calc(100% - 60px));
+      @include step-mask(calc($bubble-left-step-2 * 100%) calc(100% - 65px));
    }
 
    &.step-three {
       @include step-overlay-styles;
-      @include step-mask(61.5% calc(100% - 65px));
+      @include step-mask(calc($bubble-left-step-3 * 100%) calc(100% - 65px));
    }
 
    &.step-four {
       @include step-overlay-styles;
-      @include step-mask(84% calc(100% - 65px));
+      @include step-mask(calc($bubble-left-step-4 * 100%) calc(100% - 65px));
    }
 }
 
@@ -168,8 +175,8 @@ $step-background-gradient: linear-gradient(
 .skip-button {
    position: absolute;
    top: 73px;
-   right: 19px;
-   z-index: 10;
+   right: 16px;
+   z-index: 1500;
    color: var(--color-neutral-light-background-1);
    cursor: pointer;
    font-size: calc(var(--font-size-body-md) + 0.2vw);
@@ -224,20 +231,19 @@ $step-background-gradient: linear-gradient(
 }
 
 // Flèches spécifiques pour les étapes 2, 3, 4 (bulles fixes) - seule différence entre les bulles
-.problem-bubble .bubble-content {
-   @include bubble-arrow-after(36%);
+.problem-bubble {
+   @include bubble-arrow-after($bubble-left-step-2);
 }
 
-.tools-bubble .bubble-content {
-   @include bubble-arrow-after(62.5%);
+.tools-bubble {
+   @include bubble-arrow-after($bubble-left-step-3);
 }
 
-.settings-bubble .bubble-content {
-   @include bubble-arrow-after(90%);
+.settings-bubble {
+   @include bubble-arrow-after($bubble-left-step-4);
 }
 
 .welcome-bubble {
-   white-space: nowrap;
    position: relative;
    margin: 0;
    transform-origin: left center;
@@ -335,110 +341,32 @@ $step-background-gradient: linear-gradient(
    }
 }
 
-.onboarding-step-two {
-   height: 100%;
-
+.sad-ghost-wrapper {
+   position:relative;
+   z-index: 1200;
    .sad-ghost-character {
-      margin-left: clamp(100px, calc(100px + 150 * (100vw - 430px)), 250px);
-      margin-top: min(
-         clamp(45px, calc((100vw - 375px) * 3.6486 + 45px), 200px),
-         calc(30px + (max(0px, 431px - 100vw) * 1000))
-      );
-      min-height: 180px;
-      height: 44.62vh;
-      object-fit: contain;
-
-      svg {
-         width: 100%;
-         height: auto;
-      }
+      height: 40vh;
    }
-
-
-   .sad-ghost-wrapper {
-      object-fit: contain;
-
-      &.illu-onboarding-ghost {
-         top: 113.48px;
-         z-index: 15000;
-      }
-
-      &.illu-onboarding-4-ghost {
-         top: 151px;
-         left: 16.45px;
-         z-index: 15000;
-      }
+   &.sad-ghost-two {
+      bottom:-40px;
+      margin-left: auto;
+      margin-right: 0px;
    }
-
-}
-
-.onboarding-step-three {
-   .sad-ghost-wrapper.illu-onboarding-ghost {
+   &.sad-ghost-three {
       margin-left: auto;
       margin-right: auto;
-      margin-top: calc(
-         25px +
-            (clamp(35px, calc((100vw - 375px) * 2.2973 + 35px), 120px) - 25px) *
-            (1 - clamp(0, (100vw - 430px) / 0.0001px, 1))
-      );
-
-      .ghost-character {
-         height: clamp(
-            300px,
-            calc(
-               300px + 130 * ((100vw - 375px) / 37) *
-                  clamp(0, (430.0001px - 100vw) / 0.0001px, 1)
-            ),
-            430px
-         );
-         object-fit: contain;
-      }
    }
-
-}
-
-.onboarding-step-four {
-   justify-content: center;
-   align-items: center;
-
-   .sad-ghost-wrapper.illu-onboarding-ghost {
-      position: fixed;
-      bottom: 42vh;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 15000;
-      pointer-events: none;
-
-      .ghost-character {
-         object-fit: contain;
-      }
+   &.sad-ghost-four {
+      bottom:-60px;
+      margin-left: auto;
+      margin-right: auto;
    }
-
-   .sad-ghost-wrapper.illu-onboarding-4-ghost {
-      position: fixed;
-      bottom: max(
-         clamp(240px, calc(240px + (30 * (100vw - 375px) / 37)), 270px),
-         clamp(270px, calc(270px + (20 * (100vw - 430px) / 100)), 290px)
-      );
-      z-index: 15000;
-      margin-right: 40px;
-      pointer-events: none;
-
-      .ghost-character {
-         height: min(
-            350px,
-            clamp(400px, calc(400px + (100 * (100vw - 375px) / 55)), 500px)
-         );
-         object-fit: contain;
-      }
-   }
-
 }
 
 .start-button {
-   width: calc(100% - 32px) !important;
-   height: calc(40px + 1vh) !important;
-   margin: 0 16px calc(20px + 2vh) 16px !important;
+   width: 100%;
+   height: 48px;
+   margin: 0 0 calc(20px + 2vh) 0;
 }
 
 // Style général pour tous les boutons "Suivant" des étapes 2, 3, 4
@@ -488,7 +416,7 @@ $step-background-gradient: linear-gradient(
    font-size: var(--font-size-h3);
    font-weight: var(--font-weight-heading);
    color: var(--color-3);
-   white-space: nowrap;
+   width: calc(100% + 20px); // pour éviter le wrap trop brutal sur le dernier smiley
 }
 
 .problem-description {
