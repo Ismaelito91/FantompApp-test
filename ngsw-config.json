@@ -55,6 +55,17 @@
          }
       },
       {
+         "name": "api-config-performance",
+         "urls": [
+            "/**/api/config"
+         ],
+         "cacheConfig": {
+            "strategy": "performance",
+            "maxSize": 1,
+            "maxAge": "7d"
+         }
+      },
+      {
          "name": "api-freshness",
          "urls": [
             "/**/api/*"
