@@ -2,89 +2,100 @@
    @if(isVisible()) {
    <div class="header-right">
       <button
-         #deviceMenuTrigger="matMenuTrigger"
          class="lang-trigger"
          mat-button
-         [mat-menu-trigger-for]="deviceMenu"
+         (click)="toggleDeviceMenu()"
          [attr.aria-disabled]="null"
          [attr.role]="null"
          [attr.aria-label]="
             'ALT_TEXT.HEADER.CURRENT_DEVICE'
-            | translate : { device: selectedDevice }
+               | translate : { device: selectedDevice }
          "
+         [attr.aria-expanded]="deviceMenuOpen"
       >
          <mat-icon class="!size-[16px] !m-0">📱</mat-icon>
-         @if (!deviceMenuTrigger.menuOpen) {
+         @if (!deviceMenuOpen) {
          <mat-icon class="chevron" iconPositionEnd>expand_more</mat-icon>
          } @else {
          <mat-icon class="chevron" iconPositionEnd>expand_less</mat-icon>
          }
       </button>
-   </div>
 
-   <mat-menu #deviceMenu="matMenu" class="lang-menu" style="width: auto">
-      <div class="lang-menu-panel">
-         <button
-            mat-menu-item
-            class="lang-item"
-            (click)="setDevice(Device.IOS)"
-            [attr.aria-pressed]="
-               selectedDevice === Device.IOS ? 'true' : 'false'
-            "
-         >
-            <div class="lang-item">
-               <span class="language">IOS</span>
-               <span
-                  class="radio"
-                  [class.selected]="selectedDevice === Device.IOS"
-               ></span>
+      @if (deviceMenuOpen) {
+      <div class="menu-overlay" (click)="closeAllMenus()"></div>
+      <div class="custom-menu-container">
+         <div class="mat-mdc-menu-panel mat-menu-panel lang-menu">
+            <div class="mat-mdc-menu-content">
+               <ul class="menu-list" role="list">
+                  <li role="listitem">
+                     <button
+                        class="mat-mdc-menu-item lang-item"
+                        (click)="setDevice(Device.IOS)"
+                        [attr.aria-pressed]="
+                           selectedDevice === Device.IOS ? 'true' : 'false'
+                        "
+                     >
+                        <div class="lang-item">
+                           <span class="language">IOS</span>
+                           <span
+                              class="radio"
+                              [class.selected]="selectedDevice === Device.IOS"
+                           ></span>
+                        </div>
+                     </button>
+                     <mat-divider class="divider"></mat-divider>
+                  </li>
+                  <li role="listitem">
+                     <button
+                        class="mat-mdc-menu-item lang-item"
+                        (click)="setDevice(Device.ANDROID)"
+                        [attr.aria-pressed]="
+                           selectedDevice === Device.ANDROID ? 'true' : 'false'
+                        "
+                     >
+                        <div class="lang-item">
+                           <span class="language">Android</span>
+                           <span
+                              class="radio"
+                              [class.selected]="
+                                 selectedDevice === Device.ANDROID
+                              "
+                           ></span>
+                        </div>
+                     </button>
+                     <mat-divider class="divider"></mat-divider>
+                  </li>
+                  <li role="listitem">
+                     <button
+                        class="mat-mdc-menu-item lang-item"
+                        (click)="setDevice(Device.WEB)"
+                        [attr.aria-pressed]="
+                           selectedDevice === Device.WEB ? 'true' : 'false'
+                        "
+                     >
+                        <div class="lang-item web">
+                           <span class="language">Web</span>
+                           <span
+                              class="radio"
+                              [class.selected]="selectedDevice === Device.WEB"
+                           ></span>
+                        </div>
+                     </button>
+                     <mat-divider class="divider"></mat-divider>
+                  </li>
+               </ul>
             </div>
-            <mat-divider class="divider"></mat-divider>
-         </button>
-         <button
-            mat-menu-item
-            class="lang-item"
-            (click)="setDevice(Device.ANDROID)"
-            [attr.aria-pressed]="
-               selectedDevice === Device.ANDROID ? 'true' : 'false'
-            "
-         >
-            <div class="lang-item">
-               <span class="language">Android</span>
-               <span
-                  class="radio"
-                  [class.selected]="selectedDevice === Device.ANDROID"
-               ></span>
-            </div>
-            <mat-divider class="divider"></mat-divider>
-         </button>
-         <button
-            mat-menu-item
-            class="lang-item"
-            (click)="setDevice(Device.WEB)"
-            [attr.aria-pressed]="
-               selectedDevice === Device.WEB ? 'true' : 'false'
-            "
-         >
-            <div class="lang-item web">
-               <span class="language">Web</span>
-               <span
-                  class="radio"
-                  [class.selected]="selectedDevice === Device.WEB"
-               ></span>
-            </div>
-            <mat-divider class="divider"></mat-divider>
-         </button>
+         </div>
       </div>
-   </mat-menu>
+      }
+   </div>
    }
 
    <div class="header-right">
       <button
-         #languageMenuTrigger="matMenuTrigger"
          class="lang-trigger"
          mat-button
-         [mat-menu-trigger-for]="languageMenu"
+         (click)="toggleLanguageMenu()"
          [attr.aria-disabled]="null"
          [attr.role]="null"
          [attr.lang]="currentLanguageLang"
@@ -92,6 +103,7 @@
             'ALT_TEXT.HEADER.CURRENT_LANGUAGE'
                | translate : { language: currentLanguageName }
          "
+         [attr.aria-expanded]="languageMenuOpen"
       >
          @if (currentFlagUrl) {
          <img
@@ -107,41 +119,59 @@
             [attr.aria-label]="currentFlagAltKey | translate"
             >🌐</span
          >
-         } @if (!languageMenuTrigger.menuOpen) {
+         } @if (!languageMenuOpen) {
          <mat-icon class="chevron" iconPositionEnd>expand_more</mat-icon>
          } @else {
          <mat-icon class="chevron" iconPositionEnd>expand_less</mat-icon>
          }
       </button>
-   </div>
 
-   <mat-menu #languageMenu="matMenu" class="lang-menu" style="width: auto">
-      <div class="lang-menu-panel">
-         @for (lang of _languageService.supportedLanguages; track lang.code) {
-         <button
-            mat-menu-item
-            class="lang-item"
-            (click)="_languageService.setLanguage(lang.code)"
-            [attr.aria-pressed]="
-               _languageService.language() === lang.code ? 'true' : 'false'
-            "
-         >
-            <div class="lang-item" [attr.lang]="lang.lang">
-               @if (lang.flagUrl) {
-               <img class="flag-img" [src]="lang.flagUrl" alt="" />
-               } @else {
-               <span class="emoji-icon" aria-hidden="true">🌐</span>
-               }
-               <span class="language">{{ lang.languageName }}</span>
-               <span class="country">&nbsp;⸱&nbsp;{{ lang.countryName }}</span>
-               <span
-                  class="radio"
-                  [class.selected]="_languageService.language() === lang.code"
-               ></span>
+      @if (languageMenuOpen) {
+      <div class="menu-overlay" (click)="closeAllMenus()"></div>
+      <div class="custom-menu-container">
+         <div class="mat-mdc-menu-panel mat-menu-panel lang-menu">
+            <div class="mat-mdc-menu-content">
+               <ul class="menu-list" role="list">
+                  @for (lang of _languageService.supportedLanguages; track
+                  lang.code) {
+                  <li role="listitem">
+                     <button
+                        class="mat-mdc-menu-item lang-item"
+                        (click)="
+                           _languageService.setLanguage(lang.code);
+                           closeAllMenus()
+                        "
+                        [attr.aria-pressed]="
+                           _languageService.language() === lang.code
+                              ? 'true'
+                              : 'false'
+                        "
+                     >
+                        <div class="lang-item" [attr.lang]="lang.lang">
+                           @if (lang.flagUrl) {
+                           <img class="flag-img" [src]="lang.flagUrl" alt="" />
+                           } @else {
+                           <span class="emoji-icon" aria-hidden="true">🌐</span>
+                           }
+                           <span class="language">{{ lang.languageName }}</span>
+                           <span class="country"
+                              >&nbsp;⸱&nbsp;{{ lang.countryName }}</span
+                           >
+                           <span
+                              class="radio"
+                              [class.selected]="
+                                 _languageService.language() === lang.code
+                              "
+                           ></span>
+                        </div>
+                     </button>
+                     <mat-divider class="divider"></mat-divider>
+                  </li>
+                  }
+               </ul>
             </div>
-            <mat-divider class="divider"></mat-divider>
-         </button>
-         }
+         </div>
       </div>
-   </mat-menu>
+      }
+   </div>
 </mat-toolbar>

@@ -10,22 +10,26 @@
    align-items: flex-start;
    max-height: var(--spacing-5);
    max-width: var(--max-width-mobile);
+   z-index: 1000;
 }
 
 .header-right {
    padding-left: 10px;
    display: flex;
-   z-index: 1001;
+   position: relative;
 }
 
+// Les boutons doivent rester visibles
 .lang-trigger {
-   display: inline-flex;
+   display: inline-flex !important;
    align-items: center;
    border-radius: 8px;
    background: var(--background-2);
    box-shadow: var(--shadow-1);
    border-radius: 8px;
    max-height: 32px;
+   position: relative;
+   z-index: 1002;
 
    &:focus-visible {
       outline: 2px solid var(--color-3);
@@ -54,31 +58,53 @@
    }
 }
 
-::ng-deep .mat-mdc-menu-panel.lang-menu {
-   width: auto;
-   max-width: none;
-   border-radius: 10px;
+// Overlay qui couvre tout SAUF les boutons
+.menu-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 998;
+   -webkit-backdrop-filter: blur(4px);
+   backdrop-filter: blur(4px);
+   background: transparent;
 }
 
-.lang-menu-panel {
-   max-height: 70vh;
-   min-width: 31vh;
-   overflow: auto;
-   padding: 4px 0;
-   background: var(--background-2);
-   box-shadow: var(--shadow-1);
-   *:focus-visible {
-      outline-offset: -3px !important;
+// Conteneur pour les menus
+.custom-menu-container {
+   position: absolute;
+   top: 100%;
+   right: 0;
+   z-index: 999;
+}
+
+// Styles pour les menus personnalisés
+.mat-mdc-menu-panel {
+   &.lang-menu {
+      width: auto;
+      max-width: none;
+      border-radius: 10px;
+      background: var(--background-2);
+      box-shadow: var(--shadow-1);
+      margin-top: 4px;
+      min-width: 31vh;
+      max-height: 70vh;
+      overflow: auto;
+
+      *:focus-visible {
+         outline-offset: -3px !important;
+      }
    }
 }
 
-::ng-deep .lang-menu-panel .flag-img,
-::ng-deep .mat-mdc-menu-panel.lang-menu .lang-item .flag-img,
-::ng-deep .cdk-overlay-container .lang-menu-panel .flag-img {
-   width: 16px !important;
-   height: 16px !important;
+.menu-list {
+   list-style: none;
+   margin: 0;
+   padding: 0;
 }
 
+// Vos styles existants pour le contenu des menus
 .lang-item {
    display: flex;
    align-items: center;
@@ -122,9 +148,11 @@
       margin-left: auto;
 
       &.selected {
-         background: radial-gradient(circle at center,
-               var(--color-8) 50%,
-               transparent 50%);
+         background: radial-gradient(
+            circle at center,
+            var(--color-8) 50%,
+            transparent 50%
+         );
       }
    }
 
@@ -138,27 +166,14 @@
       .radio {
          border-color: var(--color-37);
          &.selected {
-            background: radial-gradient(circle at center,
-                  var(--color-37) 50%,
-                  transparent 50%);
+            background: radial-gradient(
+               circle at center,
+               var(--color-37) 50%,
+               transparent 50%
+            );
          }
       }
    }
-}
-
-::ng-deep .cdk-overlay-container {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   z-index: 999;
-   -webkit-backdrop-filter: blur(4px);
-   backdrop-filter: blur(4px);
-}
-
-::ng-deep .mat-mdc-menu-item-text {
-   flex-direction: column;
 }
 
 .divider {

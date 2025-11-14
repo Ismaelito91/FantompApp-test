@@ -1,7 +1,7 @@
 <div class="card-container">
    @if ((data() | pageTranslation)?.firstTitle || (data() |
    pageTranslation)?.secondTitle) {
-   <div class="flex justify-between">
+   <div class="flex justify-between" role="list">
       @if((data() | pageTranslation)?.firstTitle) {
       <h5
          role="heading"
@@ -33,6 +33,7 @@
       tabindex="0"
       (click)="goToNextPage(child, $index)"
       (keydown.enter)="goToNextPage(child, $index)"
+      role="listitem"
    ></app-card-17>
    } } } }
 </div>

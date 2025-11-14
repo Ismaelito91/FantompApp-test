@@ -52,10 +52,11 @@
    <div
       class="flex card-children"
       [ngClass]="{ 'show-scrollbar': utilsService.isDesktop() }"
+      role="list"
    >
       @for (child of sortedChildren; track $index) { @switch (child.type) {
       @case (ComponentType.CARD_8) {
-      <app-card-8 [data]="child"></app-card-8>
+      <app-card-8 [data]="child" role="listitem"></app-card-8>
       } } }
    </div>
    }

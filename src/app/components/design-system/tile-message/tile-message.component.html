@@ -1,4 +1,5 @@
 <a
+   role="listitem"
    [href]="(data() | pageTranslation)?.firstTitle ? `sms:${((data() | pageTranslation)?.firstTitle! | translate | stripHtml)}` : null"
    [attr.aria-label]="'ALT_TEXT.TILE_MESSAGE.ARIA_LABEL' | translate"
 >
