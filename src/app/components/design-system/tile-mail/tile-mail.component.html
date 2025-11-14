@@ -1,19 +1,57 @@
-<div class="tile-container flex flex-col gap-(--spacing-2)">
+<div class="tile-container flex flex-col gap-(--spacing-2)" role="listitem">
    @if ((data() | pageTranslation)?.firstTitle) {
-      <h6 class="ckeditor-content" [innerHTML]="(data() | pageTranslation)?.firstTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></h6>
+   <h6
+      class="ckeditor-content"
+      [innerHTML]="
+         (data() | pageTranslation)?.firstTitle!
+            | translate
+            | replaceStringDark
+               : 'hsl(258, 88%, 40%)'
+               : 'var(--color-primary-400)'
+            | safeHtml
+      "
+   ></h6>
    }
    <div class="tile-main relative">
       @if ((data() | pageTranslation)?.secondTitle) {
-         <p class="tile-title ckeditor-content" [innerHTML]="(data() | pageTranslation)?.secondTitle! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></p>
+      <p
+         class="tile-title ckeditor-content"
+         [innerHTML]="
+            (data() | pageTranslation)?.secondTitle!
+               | translate
+               | replaceStringDark
+                  : 'hsl(258, 88%, 40%)'
+                  : 'var(--color-primary-400)'
+               | safeHtml
+         "
+      ></p>
       }
       <div class="tile-body">
          @if ((data() | pageTranslation)?.description) {
-            <p class="mail ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></p>
+         <p
+            class="mail ckeditor-content"
+            [innerHTML]="
+               (data() | pageTranslation)?.description!
+                  | translate
+                  | replaceStringDark
+                     : 'hsl(258, 88%, 40%)'
+                     : 'var(--color-primary-400)'
+                  | safeHtml
+            "
+         ></p>
          }
-         <app-button variant="tertiary" size="sm" [label]="'COMMON.COPY' | translate" [iconAfterLabel]="{name: 'icon-copy16x16'}" (click)="copy()"></app-button>
+         <app-button
+            variant="tertiary"
+            size="sm"
+            [label]="'COMMON.COPY' | translate"
+            [iconAfterLabel]="{ name: 'icon-copy16x16' }"
+            (click)="copy()"
+         ></app-button>
       </div>
       @if (showCopyNotification) {
-         <div class="absolute bottom-[2px] right-[45px]" style="font-size: 14px;">{{ 'COMMON.COPIED' | translate }}</div>
-      } 
+      <div class="absolute bottom-[2px] right-[45px]" style="font-size: 14px">
+         {{ "COMMON.COPIED" | translate }}
+      </div>
+      }
    </div>
 </div>

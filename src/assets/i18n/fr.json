@@ -833,6 +833,7 @@
             "PASSWORD_INFO": {
                "TITLE": "Un mot de passe solide c'est :",
                "CLOSE": "Fermer",
+               "REQUIREMENTS_LIST": "Liste des exigences d'un mot de passe solide",
                "REQUIREMENTS": {
                   "LENGTH": "12 caractères",
                   "DIGITS": "1 ou des nombres",
@@ -840,6 +841,7 @@
                   "LOWERCASE": "des minuscules",
                   "SPECIAL_CHARS": "des caractères spéciaux (*, @, !)"
                },
+               "WARNINGS_SECTION": "Conseils pour choisir un mot de passe sécurisé",
                "WARNINGS": {
                   "CRIMINALS_USE_DB": "<span aria-hidden=\"true\">🏴‍☠️</span> Les cybercriminels utilisent toutes les <strong>bases de données de mots</strong> qui existent dans toutes les langues.",
                   "NO_DICTIONARY": "<span aria-hidden=\"true\">⚠️</span> Donc n'utilises aucun ,<strong>mot du dictionnaire, ton prénom, ou ton nom</strong> pour constituer ton mot de passe"

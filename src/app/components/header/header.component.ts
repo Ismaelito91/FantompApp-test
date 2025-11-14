@@ -1,6 +1,5 @@
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject, OnInit, HostListener } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
-import { MatMenuModule } from "@angular/material/menu";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { MatDividerModule } from "@angular/material/divider";
@@ -16,7 +15,6 @@ import { Device } from "../../model/enum/device.enum";
    imports: [
       MatIconModule,
       MatToolbarModule,
-      MatMenuModule,
       MatButtonModule,
       TranslateModule,
       RouterModule,
@@ -30,7 +28,26 @@ export class HeaderComponent implements OnInit {
    protected _languageService = inject(LanguageService);
    private router = inject(Router);
 
+   deviceMenuOpen = false;
+   languageMenuOpen = false;
+
    ngOnInit(): void {}
+
+   @HostListener("document:click", ["$event"])
+   onDocumentClick(event: MouseEvent) {
+      const target = event.target as HTMLElement;
+      if (
+         !target.closest(".mat-mdc-menu-panel") &&
+         !target.closest(".lang-trigger")
+      ) {
+         this.closeAllMenus();
+      }
+   }
+
+   @HostListener("document:keydown.escape")
+   onEscapePress() {
+      this.closeAllMenus();
+   }
 
    isVisible(): boolean {
       return this.router.url.includes("/secure-myself");
@@ -41,9 +58,28 @@ export class HeaderComponent implements OnInit {
    setDevice(device: Device) {
       this.selectedDevice = device;
       this.deviceService.setOverride(device);
+      this.closeAllMenus();
    }
 
-   // Fournit l'URL du drapeau de la langue courante
+   toggleDeviceMenu() {
+      this.deviceMenuOpen = !this.deviceMenuOpen;
+      if (this.deviceMenuOpen) {
+         this.languageMenuOpen = false;
+      }
+   }
+
+   toggleLanguageMenu() {
+      this.languageMenuOpen = !this.languageMenuOpen;
+      if (this.languageMenuOpen) {
+         this.deviceMenuOpen = false;
+      }
+   }
+
+   closeAllMenus() {
+      this.deviceMenuOpen = false;
+      this.languageMenuOpen = false;
+   }
+
    get currentFlagUrl(): string {
       const current = this._languageService.supportedLanguages.find(
          (l) => l.code === this._languageService.language()
@@ -51,7 +87,6 @@ export class HeaderComponent implements OnInit {
       return current?.flagUrl || "";
    }
 
-   // Fournit la clé de traduction pour l'alt du drapeau actuel
    get currentFlagAltKey(): string {
       const current = this._languageService.supportedLanguages.find(
          (l) => l.code === this._languageService.language()
@@ -72,5 +107,6 @@ export class HeaderComponent implements OnInit {
       );
       return current?.lang || "fr";
    }
+
    protected readonly Device = Device;
 }
