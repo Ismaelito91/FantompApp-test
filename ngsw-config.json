@@ -19,18 +19,18 @@
     },
     {
       "name": "assets",
-      "installMode": "lazy",
+      "installMode": "prefetch",
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2|json)"
+          "/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2|json|txt)"
         ]
       }
     }
   ],
   "dataGroups": [
     {
-      "name": "api-performance",
+      "name": "api-images-performance",
       "urls": [
         "/**/api/public/images/*"
       ],
@@ -43,25 +43,13 @@
     {
       "name": "api-freshness",
       "urls": [
-
-      ],
-      "cacheConfig": {
-        "strategy": "freshness",
-        "maxSize": 1000,
-        "maxAge": "1d",
-        "timeout": "5s"
-      }
-    },
-    {
-      "name": "api-stale-while-revalidate",
-      "urls": [
         "/**/api/*"
       ],
       "cacheConfig": {
         "strategy": "freshness",
         "maxSize": 50,
         "maxAge": "7d",
-        "timeout": "0u"
+        "timeout": "5s"
       }
     }
   ]
