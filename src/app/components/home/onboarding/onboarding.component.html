@@ -12,6 +12,9 @@
    @if (currentStep() === 1) {
    <div class="onboarding-step-one">
       <div class="onboarding-container">
+         <h1 class="sr-only">
+            {{ "ONBOARDING.WELCOME_TO" | translate }}
+         </h1>
          <!-- Zone du haut : Bulles de l'étape 1 -->
          <div class="top-section">
             <!-- Bulle de bienvenue -->
@@ -151,6 +154,8 @@
             <div class="problem-header">
                <h3
                   class="problem-title"
+                  role="heading"
+                  aria-level="1"
                   [innerHTML]="'ONBOARDING.STEP_TWO.TITLE' | translate"
                ></h3>
             </div>
@@ -229,6 +234,8 @@
             <div class="problem-header">
                <h3
                   class="problem-title"
+                  role="heading"
+                  aria-level="1"
                   [innerHTML]="'ONBOARDING.STEP_THREE.TITLE' | translate"
                ></h3>
             </div>
@@ -271,7 +278,6 @@
                   </svg>
                </button>
             </div>
-            
          </div>
       </div>
 
@@ -293,8 +299,6 @@
    <!-- ===== ÉTAPE 4 : DÉMONSTRATION PARAMÈTRES ===== -->
    @if (currentStep() === 4) {
    <div class="onboarding-step">
-      
-
       <!-- Bulle d'aide pour l'étape 4 (paramètres) -->
       <div class="step-bubble settings-bubble">
          <!-- Fantôme triste pour l'étape 4 -->
@@ -310,6 +314,8 @@
             <div class="problem-header">
                <h3
                   class="problem-title"
+                  role="heading"
+                  aria-level="1"
                   [innerHTML]="'ONBOARDING.STEP_FOUR.TITLE' | translate"
                ></h3>
             </div>
@@ -334,8 +340,12 @@
                      xmlns="http://www.w3.org/2000/svg"
                      class="arrow-icon"
                   >
-                  <path d="M1.00002 6.87193L5.03676 10.9087L14.9458 0.999628" 
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                     <path
+                        d="M1.00002 6.87193L5.03676 10.9087L14.9458 0.999628"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                     />
                   </svg>
                </button>
             </div>
