@@ -233,6 +233,12 @@
          }
       </div>
 
+      @if (modificationAlertVisible()) {
+      <p class="modification-alert" role="alert">
+         {{ "TOOLS.BLUR_IMAGE.MODIFICATION_DONE" | translate }}
+      </p>
+      }
+
       <div class="w-full z-1 flex justify-between items-center">
          <div class="flex gap-(--spacing-1)">
             <button

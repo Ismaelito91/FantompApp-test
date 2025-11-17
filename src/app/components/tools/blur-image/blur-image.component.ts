@@ -13,6 +13,7 @@ import {
    ElementRef,
    HostListener,
    inject,
+   OnDestroy,
    signal,
    ViewChild,
 } from "@angular/core";
@@ -72,10 +73,11 @@ export const moveFromTo = trigger("moveFromTo", [
    styleUrl: "./blur-image.component.scss",
    animations: [fadeInWithDelay, moveFromTo],
 })
-export class BlurImageComponent {
+export class BlurImageComponent implements OnDestroy {
    private readonly utilsService = inject(UtilsService);
    @ViewChild("canvas") canvasRef!: ElementRef<HTMLCanvasElement>;
-   @ViewChild("closeButton", { read: ElementRef }) closeButtonRef!: ElementRef<HTMLButtonElement>;
+   @ViewChild("closeButton", { read: ElementRef })
+   closeButtonRef!: ElementRef<HTMLButtonElement>;
 
    // Reactive properties
    brushSize = signal(70);
@@ -93,6 +95,10 @@ export class BlurImageComponent {
    showTutorial: boolean = true;
    showControls: boolean = true;
    handAnimationState = "inactive";
+   modificationAlertVisible = signal(false);
+   private modificationAlertTimeout: ReturnType<typeof setTimeout> | null =
+      null;
+   private hasModifiedDuringStroke = false;
 
    constructor() {
       // Initialize after view renders
@@ -210,6 +216,7 @@ export class BlurImageComponent {
 
    startPainting(event: MouseEvent | Touch) {
       this.showControls = false;
+      this.hasModifiedDuringStroke = false;
       this.saveState();
       this.isPainting = true;
       this.applyBlurEffect(event);
@@ -223,6 +230,10 @@ export class BlurImageComponent {
    stopPainting() {
       this.showControls = true;
       this.isPainting = false;
+      if (this.hasModifiedDuringStroke) {
+         this.showModificationAlert();
+         this.hasModifiedDuringStroke = false;
+      }
    }
 
    private async applyBlurEffect(event: MouseEvent | Touch) {
@@ -249,6 +260,7 @@ export class BlurImageComponent {
          );
       }
 
+      this.hasModifiedDuringStroke = true;
       // 2. Compression destructive
       const finalBlob = await this.canvasToLowQualityBlob(canvas);
       return finalBlob;
@@ -324,6 +336,7 @@ export class BlurImageComponent {
          canvas.height,
          blurRadius
       );
+      this.showModificationAlert();
    }
 
    downloadImage() {
@@ -397,6 +410,22 @@ export class BlurImageComponent {
          );
       } catch (error) {
          console.error("Error loading image:", error);
+      }
+   }
+
+   private showModificationAlert() {
+      this.modificationAlertVisible.set(true);
+      if (this.modificationAlertTimeout) {
+         clearTimeout(this.modificationAlertTimeout);
+      }
+      this.modificationAlertTimeout = window.setTimeout(() => {
+         this.modificationAlertVisible.set(false);
+      }, 4000);
+   }
+
+   ngOnDestroy() {
+      if (this.modificationAlertTimeout) {
+         clearTimeout(this.modificationAlertTimeout);
       }
    }
 }
