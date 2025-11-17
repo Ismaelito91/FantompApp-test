@@ -781,6 +781,7 @@
          "ALL_BLUR": "Tout flouter",
          "BRUSH_SIZE": "Taille du flou",
          "GLOBAL_BLUR_INFO": "Vous pouvez flouter globalement toute l'image en utilisant ce bouton. En cliquant dessus, une liste de pourcentages de floutage s'affiche pour choisir l'intensité du flou.",
+         "MODIFICATION_DONE": "Modification effectuée",
          "TUTORIAL": {
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter."
          }

@@ -15,8 +15,8 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatIconModule } from "@angular/material/icon";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { Router } from "@angular/router";
-import { Arrow, flip, offset, shift } from '@ngx-popovers/core';
-import { PopoverComponent, PopoverTemplate } from '@ngx-popovers/popover';
+import { Arrow, flip, offset, shift } from "@ngx-popovers/core";
+import { PopoverComponent, PopoverTemplate } from "@ngx-popovers/popover";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { PasswordSecurityService } from "../../../service/password-security.service";
 import { BadgeComponent } from "../../design-system/badge/badge.component";
@@ -43,7 +43,9 @@ import { UtilsService } from "../../../service/utils.service";
    templateUrl: "./password-check.component.html",
    styleUrl: "./password-check.component.scss",
 })
-export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit, AfterViewChecked {
+export class PasswordCheckComponent
+   implements OnDestroy, OnInit, AfterViewInit, AfterViewChecked
+{
    private readonly utilsService = inject(UtilsService);
    private previousPopoverValue: boolean = false;
    @ViewChild("passwordInput", { static: false })
@@ -57,6 +59,9 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit,
 
    @ViewChild("closePasswordInfoModalButton", { read: ElementRef })
    closePasswordInfoModalButtonRef!: ElementRef<HTMLButtonElement>;
+
+   @ViewChild("passwordResultsContainer", { read: ElementRef })
+   passwordResultsContainerRef!: ElementRef<HTMLDivElement>;
 
    @ViewChild("popover", { static: false })
    popoverRef!: PopoverComponent;
@@ -137,7 +142,9 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit,
          const currentPopoverValue = !!this.popoverRef.value;
          if (currentPopoverValue !== this.previousPopoverValue) {
             this.previousPopoverValue = currentPopoverValue;
-            this.utilsService.setBackgroundInert(this.popoverRef?.value || false);
+            this.utilsService.setBackgroundInert(
+               this.popoverRef?.value || false
+            );
          }
       }
    }
@@ -146,7 +153,7 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit,
       // Focus sur le premier boutton du formulaire (pas l'input pour pas déclencher l'animation)
       setTimeout(() => {
          if (this.backButtonRef) {
-            this.backButtonRef.nativeElement.querySelector('button')?.focus();
+            this.backButtonRef.nativeElement.querySelector("button")?.focus();
          }
       }, 200);
    }
@@ -255,7 +262,6 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit,
             }
          }, 100);
       } else {
-
          localStorage.setItem("password-check-onboarding-seen", "true");
          // Remettre le focus sur l'élément principal après fermeture
          this.activateDefaultButton();
@@ -271,7 +277,10 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit,
          this.activateDefaultButton();
       } else {
          setTimeout(() => {
-            console.log("closePasswordInfoModalButtonRef", this.closePasswordInfoModalButtonRef);
+            console.log(
+               "closePasswordInfoModalButtonRef",
+               this.closePasswordInfoModalButtonRef
+            );
             if (this.closePasswordInfoModalButtonRef?.nativeElement) {
                this.closePasswordInfoModalButtonRef.nativeElement.focus();
             }
@@ -322,7 +331,7 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit,
       this.isInputFocused = true;
    }
 
-   onInputBlur() { }
+   onInputBlur() {}
 
    cancelInputFocus() {
       // Si il y a du contenu dans l'input, le supprimer d'abord
@@ -494,6 +503,7 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit,
 
    checkPassword() {
       this.showPasswordResults = true;
+      this.focusPasswordResultsContainer();
 
       // Vérification des critères de base pour l'affichage des icônes
       this.criteria[0].valid = this.password.length >= 12;
@@ -541,9 +551,10 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit,
          }
 
          // Comportement normal SEULEMENT si le checkbox n'est pas coché
-         const evaluation = this.passwordSecurityService.evaluatePasswordStrength(
-            this.password
-         );
+         const evaluation =
+            this.passwordSecurityService.evaluatePasswordStrength(
+               this.password
+            );
 
          // Traduire le temps de craquage
          const translatedTime = this.passwordSecurityService.translateTime(
@@ -599,6 +610,17 @@ export class PasswordCheckComponent implements OnDestroy, OnInit, AfterViewInit,
          this.message = "";
          this.isRapidCracking = false;
       }
+   }
+
+   private focusPasswordResultsContainer() {
+      if (!this.showPasswordResults) {
+         return;
+      }
+
+      setTimeout(() => {
+         const element = this.passwordResultsContainerRef?.nativeElement;
+         element?.focus();
+      });
    }
 
    // Méthode pour déterminer le badge approprié selon le niveau de résultat

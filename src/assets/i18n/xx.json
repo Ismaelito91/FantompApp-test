@@ -742,6 +742,7 @@
          "ALL_BLUR": "Blur everything",
          "BRUSH_SIZE": "Brush size",
          "GLOBAL_BLUR_INFO": "You can blur the entire image with this button. Clicking it opens a list of blur percentages to choose the intensity.",
+         "MODIFICATION_DONE": "Modification completed",
          "TUTORIAL": {
             "DESCRIPTION": "Swipe your finger across the image to blur."
          }
