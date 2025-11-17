@@ -9,6 +9,7 @@ export class IconGeneratorService {
    private faviconLink: HTMLLinkElement | null = null;
 
    constructor() {
+      console.warn("IconGeneratorService init");
       this.setupManifestLink();
       this.setupFaviconLink();
       this.initializeIcon();

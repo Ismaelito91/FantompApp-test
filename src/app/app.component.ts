@@ -1,25 +1,24 @@
-import { Component, OnInit, inject, effect, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Component, effect, ElementRef, inject, OnInit, ViewChild } from "@angular/core";
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 import {
    ActivatedRoute,
    NavigationEnd,
    Router,
    RouterOutlet,
 } from "@angular/router";
-import { MatIconRegistry } from "@angular/material/icon";
-import { DomSanitizer } from "@angular/platform-browser";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
-import { CommonModule } from "@angular/common";
+import { filter, map } from "rxjs";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { OnboardingComponent } from "./components/home/onboarding/onboarding.component";
+import { DeviceService } from "./service/device.service";
 import { LanguageService } from "./service/language.service";
 import { OnboardingService } from "./service/onboarding.service";
+import { PreloadService } from "./service/preload.service";
 import { PwaService } from "./service/pwa/pwa.service";
 import { SettingService } from "./service/setting.service";
-import { filter, map } from "rxjs";
-import { PreloadService } from "./service/preload.service";
-import { IconGeneratorService } from "./service/icon-generator.service";
-import { DeviceService } from "./service/device.service";
 import { UtilsService } from "./service/utils.service";
 
 @Component({
@@ -51,8 +50,6 @@ export class AppComponent implements OnInit {
    hideHeader = false;
    hideFooter = false;
    private preloadService = inject(PreloadService);
-   // Force l'initialisation de l'IconGeneratorService au démarrage
-   // private _iconGen = inject(IconGeneratorService);
    @ViewChild('mainContent', { static: false }) mainContentRef?: ElementRef<HTMLElement>;
 
    constructor() {
