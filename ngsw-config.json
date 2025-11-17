@@ -19,7 +19,7 @@
       },
       {
          "name": "assets",
-         "installMode": "prefetch",
+         "installMode": "lazy",
          "updateMode": "prefetch",
          "resources": {
             "files": [
@@ -52,17 +52,6 @@
             "strategy": "performance",
             "maxSize": 300,
             "maxAge": "30d"
-         }
-      },
-      {
-         "name": "api-config-performance",
-         "urls": [
-            "/**/api/config"
-         ],
-         "cacheConfig": {
-            "strategy": "performance",
-            "maxSize": 1,
-            "maxAge": "7d"
          }
       },
       {
