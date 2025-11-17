@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
    hideFooter = false;
    private preloadService = inject(PreloadService);
    // Force l'initialisation de l'IconGeneratorService au démarrage
-   private _iconGen = inject(IconGeneratorService);
+   // private _iconGen = inject(IconGeneratorService);
    @ViewChild('mainContent', { static: false }) mainContentRef?: ElementRef<HTMLElement>;
 
    constructor() {
