@@ -94,6 +94,7 @@
       &.force-active,
       &.tools-active {
          background-color: var(--color-primary-100);
+         color: var(--color-8);
 
          /* when active: show the active icon, hide the inactive one (forceful) */
          .icon-active {
@@ -175,7 +176,6 @@
          .mdc-button__label {
             display: flex;
             gap: 10px;
-
          }
       }
    }
