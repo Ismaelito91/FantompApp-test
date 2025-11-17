@@ -8,11 +8,9 @@
          "resources": {
             "files": [
                "/favicon.png",
-               "/icons/Icone-FantomApp-1-192x192.png",
                "/index.csr.html",
                "/index.html",
                "/manifest.webmanifest",
-               "/manifest-icon1.webmanifest",
                "/*.css",
                "/*.js"
             ]
