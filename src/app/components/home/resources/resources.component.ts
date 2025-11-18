@@ -15,6 +15,8 @@ import { Card5Component } from "../../design-system/card-5/card-5.component";
 import { Card6Component } from "../../design-system/card-6/card-6.component";
 import { DividerComponent } from "../../design-system/divider/divider.component";
 
+const PAGE_CODE = "2.7_ressources";
+
 @Component({
    selector: "app-resources",
    imports: [
@@ -48,8 +50,7 @@ export class ResourcesComponent {
    }
 
    private loadRootPage(): void {
-      let pageResources =
-         this.pageComponentUtils.getComponentByCode("2.7_ressources");
+      let pageResources = this.pageComponentUtils.getComponentByCode(PAGE_CODE);
       this.page.set(pageResources);
       if (!pageResources) {
          this.pageComponentService
@@ -57,14 +58,10 @@ export class ResourcesComponent {
             .subscribe({
                next: (data) => {
                   this.pageComponentUtils.updateComponentMap(data);
-                  pageResources =
-                     this.pageComponentUtils.getComponentByCode(
-                        "2.7_ressources"
-                     );
+                  pageResources = this.pageComponentUtils.getComponentByCode(PAGE_CODE);
                   this.page.set(pageResources);
                },
-               error: (err) =>
-                  console.error("Erreur lors du chargement de home", err),
+               error: (err) => console.error("Erreur lors du chargement de home", err),
             });
       }
    }

@@ -126,8 +126,7 @@ export class HomeComponent implements OnInit {
    }
 
    navigateToAccessibility(): void {
-      // TODO: Implémenter la navigation vers l'accessibilité
-      // this.router.navigate(['/accessibility']);
+      this.router.navigate(['/accessibility']);
    }
 
    navigateToTutorial(): void {
