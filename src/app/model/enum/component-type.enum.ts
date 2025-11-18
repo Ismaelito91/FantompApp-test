@@ -6,6 +6,7 @@ export enum ComponentType {
    PAGE_5 = "PAGE_5",
    PAGE_HOME = "PAGE_HOME",
    PAGE_RESOURCES = "PAGE_RESOURCES",
+   PAGE_ACCESSIBILITY = "PAGE_ACCESSIBILITY",
    CARD_1 = "CARD_1",
    CARD_2 = "CARD_2",
    CARD_3 = "CARD_3",

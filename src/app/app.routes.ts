@@ -27,6 +27,7 @@ import { ActionsComponent } from "./components/problems/hacking/actions/actions.
 import { HaveAccessComponent } from "./components/problems/hacking/have-access/have-access.component";
 import { UserRightsComponent } from "./components/home/user-rights/user-rights.component";
 import { ResourcesComponent } from "./components/home/resources/resources.component";
+import { AccessibilityComponent } from "./components/home/accessibility/accessibility.component";
 
 export const routes: Routes = [
    {
@@ -50,13 +51,11 @@ export const routes: Routes = [
       path: "resources",
       component: ResourcesComponent,
       data: { hideHeader: true, hideFooter: true },
-      children: [
-         {
-            path: ":id",
-            component: ResourcesComponent,
-            data: { hideHeader: true, hideFooter: true },
-         },
-      ],
+   },
+   {
+      path: "accessibility",
+      component: AccessibilityComponent,
+      data: { hideHeader: true, hideFooter: true },
    },
    {
       path: "user-rights",
