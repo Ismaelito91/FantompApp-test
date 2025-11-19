@@ -161,7 +161,9 @@
          "DESCRIPTION_3": "L'application est produite par <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">la CNIL</a> (Commission nationale de l'informatique et des libertés), et financée par la Commission Européenne."
       },
       "CARDS": {
-         "MAIN_TITLE": "Je protège mes réseaux sociaux",
+         "MAIN_TITLE": "Je protège mes réseaux",
+         "VIEW_ALL": "Tout voir",
+         "VIEW_ALL_ARIA": "Afficher tous les outils",
          "PASSWORD_CHECK": {
             "TITLE": "Je teste mon mot de passe",
             "DESCRIPTION": "En combien de temps un cybercriminel le trouve ?"
@@ -172,6 +174,7 @@
          },
          "PROBLEMS": {
             "SECTION_TITLE": "J'ai un problème en ligne",
+            "VIEW_ALL_ARIA": "Afficher toutes les fiches problèmes",
             "DELETE_CONTENT": {
                "TITLE": "Je veux faire effacer un contenu"
             },

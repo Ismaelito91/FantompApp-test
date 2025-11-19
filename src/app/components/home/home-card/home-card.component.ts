@@ -45,6 +45,10 @@ export class HomeCardComponent {
       this.router.navigate(["/tools"]);
    }
 
+   navigateToProblems(): void {
+      this.router.navigate(["/problems"]);
+   }
+
    navigateToHarassment(): void {
       this.router.navigate([
          "/problems/" + this.homePageLinkIds.get("3.3_cyberharcelement") || "",
@@ -52,28 +56,26 @@ export class HomeCardComponent {
    }
 
    navigateToDelete(): void {
-      this.router.navigate([
-         "/delete-content",
-      ]);
+      this.router.navigate(["/delete-content"]);
    }
 
    onKeyDownAnonym(event: KeyboardEvent): void {
       if (event.key === "Enter" || event.key === " ") {
          event.preventDefault();
-         this.navigateTo('tools/blur-image');
+         this.navigateTo("tools/blur-image");
       }
    }
    onKeyDownPasswordCheck(event: KeyboardEvent): void {
       if (event.key === "Enter" || event.key === " ") {
          event.preventDefault();
-         this.navigateTo('tools/password-check');
+         this.navigateTo("tools/password-check");
       }
    }
    navigateToBlurImage(): void {
-      this.navigateTo('tools/blur-image');
+      this.navigateTo("tools/blur-image");
    }
    navigateToPasswordCheck(): void {
-      this.navigateTo('tools/password-check');
+      this.navigateTo("tools/password-check");
    }
 
    onKeyDownHarassment(event: KeyboardEvent): void {

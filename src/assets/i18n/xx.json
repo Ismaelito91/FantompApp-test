@@ -152,6 +152,8 @@
       "TUTORIAL": "Watching the welcoming tutorial again",
       "CARDS": {
          "MAIN_TITLE": "Securing my social",
+         "VIEW_ALL": "View all",
+         "VIEW_ALL_ARIA": "View all security tools",
          "PASSWORD_CHECK": {
             "TITLE": "Testing my password",
             "DESCRIPTION": "How much time does it take to a cybercriminal to find it?"
@@ -162,6 +164,7 @@
          },
          "PROBLEMS": {
             "SECTION_TITLE": "I have a problem online",
+            "VIEW_ALL_ARIA": "View all problem guides",
             "DELETE_CONTENT": {
                "TITLE": "Erasing content"
             },

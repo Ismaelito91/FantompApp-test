@@ -6,7 +6,16 @@
 }
 
 .home-cards__main-title {
-   margin-top: var(--spacing-2);
+   margin: 0;
+}
+
+.home-cards__view-all {
+   color: var(--color-8);
+   font-size: var(--font-size-body-sm);
+   font-weight: var(--font-weight-heading);
+   padding: 10px 16px;
+   cursor: pointer;
+   text-decoration: underline;
 }
 
 /* Style spécifique pour le titre des problèmes */
