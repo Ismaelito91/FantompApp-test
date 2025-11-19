@@ -1,8 +1,19 @@
 <div class="home-cards-container">
-   <!-- Titre principal -->
-   <h5 class="home-cards__main-title" role="heading" aria-level="2">
-      {{ "HOME.CARDS.MAIN_TITLE" | translate }}
-   </h5>
+   <!-- Titre principal avec bouton Tout voir -->
+   <div class="home-cards__main-header flex justify-between items-center">
+      <h5 class="home-cards__main-title" role="heading" aria-level="2">
+         {{ "HOME.CARDS.MAIN_TITLE" | translate }}
+      </h5>
+      <button
+         type="button"
+         class="home-cards__view-all flex items-center"
+         (click)="navigateToTools()"
+         tabindex="0"
+         [attr.aria-label]="'HOME.CARDS.VIEW_ALL_ARIA' | translate"
+      >
+         {{ "HOME.CARDS.VIEW_ALL" | translate }}
+      </button>
+   </div>
 
    <!-- Première carte : Mot de passe (structure harmonisée) -->
    <div
@@ -138,9 +149,20 @@
    <div
       class="home-cards-problems-container mt-(--spacing-3) gap-(--spacing-3)"
    >
-      <h5 class="home-cards__section-title" role="heading" aria-level="2">
-         {{ "HOME.CARDS.PROBLEMS.SECTION_TITLE" | translate }}
-      </h5>
+      <div class="home-cards-problems-header flex justify-between items-center">
+         <h5 class="home-cards__section-title" role="heading" aria-level="2">
+            {{ "HOME.CARDS.PROBLEMS.SECTION_TITLE" | translate }}
+         </h5>
+         <button
+            type="button"
+            class="home-cards__view-all flex items-center"
+            (click)="navigateToProblems()"
+            tabindex="0"
+            [attr.aria-label]="'HOME.CARDS.PROBLEMS.VIEW_ALL_ARIA' | translate"
+         >
+            {{ "HOME.CARDS.VIEW_ALL" | translate }}
+         </button>
+      </div>
 
       <div class="problems-cards-row flex gap-[14px]">
          <div
