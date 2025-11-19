@@ -75,7 +75,7 @@ interface OnboardingElement {
          transition("hidden => visible", [
             // Pop-up avec rebond : de 0 à taille normale
             animate(
-               "500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+               "200ms ease-out",
                style({
                   opacity: 1,
                   transform: "scale(1)",
@@ -103,7 +103,7 @@ interface OnboardingElement {
          transition("hidden => visible", [
             // Pop-up dramatique pour le fantôme avec gros rebond
             animate(
-               "600ms cubic-bezier(0.175, 0.885, 0.32, 1.4)",
+               "200ms ease-out",
                style({
                   opacity: 1,
                   transform: "scale(1)",
@@ -199,33 +199,35 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
     */
    private startStep1Animations(): void {
       // Étape 1: Welcome apparaît en premier
+      const delay = 200;
+
       setTimeout(() => {
          this.animationStates.update((states) => ({
             ...states,
             welcome: "visible",
          }));
          this.cdr.detectChanges();
-      }, 300);
+      }, delay);
 
-      // Étape 2: Fantôme apparaît après 1500ms
+      // Étape 2: Fantôme apparaît rapidement après
       setTimeout(() => {
          this.animationStates.update((states) => ({
             ...states,
             ghost: "visible",
          }));
          this.cdr.detectChanges();
-      }, 1500);
+      }, delay * 2);
 
-      // Étape 3: Bulle explicative après 2700ms
+      // Étape 3: Bulle explicative
       setTimeout(() => {
          this.animationStates.update((states) => ({
             ...states,
             explanation: "visible",
          }));
          this.cdr.detectChanges();
-      }, 2700);
+      }, delay * 3);
 
-      // Étape 4: Boutons de contrôle après 3900ms
+      // Étape 4: Boutons de contrôle
       setTimeout(() => {
          this.animationStates.update((states) => ({
             ...states,
@@ -239,7 +241,7 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
                this.step1NextButtonRef.nativeElement.focus();
             }
          }, 100);
-      }, 3900);
+      }, delay * 4);
    }
 
    /**

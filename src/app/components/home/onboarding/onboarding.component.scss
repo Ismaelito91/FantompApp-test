@@ -2,8 +2,10 @@
 $step-background-gradient: linear-gradient(
    180deg,
    var(--color-neutral-light-content-1) 0%,
-   color-mix(in srgb, var(--color-neutral-light-content-1) 95%, transparent) 44.93%,
-   color-mix(in srgb, var(--color-neutral-light-content-1) 70%, transparent) 100%
+   color-mix(in srgb, var(--color-neutral-light-content-1) 95%, transparent)
+      44.93%,
+   color-mix(in srgb, var(--color-neutral-light-content-1) 70%, transparent)
+      100%
 );
 
 $bubble-left-step-2: 0.385;
@@ -20,7 +22,11 @@ $bubble-left-step-4: 0.84;
 
 // Mixin pour les masques radial-gradient
 @mixin step-mask($position) {
-   -webkit-mask: radial-gradient(circle at $position, transparent 40px, black 40px);
+   -webkit-mask: radial-gradient(
+      circle at $position,
+      transparent 40px,
+      black 40px
+   );
    mask: radial-gradient(circle at $position, transparent 40px, black 40px);
 }
 
@@ -69,13 +75,17 @@ $bubble-left-step-4: 0.84;
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: clamp(0px, calc((100vw - 375px) / 37px * var(--spacing-2)), var(--spacing-2));
+      gap: clamp(
+         0px,
+         calc((100vw - 375px) / 37px * var(--spacing-2)),
+         var(--spacing-2)
+      );
    }
    .bubble-next-button-container {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-      margin-top: 16px
+      margin-top: 16px;
    }
    .bubble-next-button {
       border-radius: var(--border-radius-5);
@@ -117,8 +127,10 @@ $bubble-left-step-4: 0.84;
    background: linear-gradient(
       180deg,
       var(--color-neutral-light-content-1) 0%,
-      color-mix(in srgb, var(--color-neutral-light-content-1) 88%, transparent) 44.93%,
-      color-mix(in srgb, var(--color-neutral-light-content-1) 30%, transparent) 100%
+      color-mix(in srgb, var(--color-neutral-light-content-1) 88%, transparent)
+         44.93%,
+      color-mix(in srgb, var(--color-neutral-light-content-1) 30%, transparent)
+         100%
    );
 
    &.step-two {
@@ -342,13 +354,13 @@ $bubble-left-step-4: 0.84;
 }
 
 .sad-ghost-wrapper {
-   position:relative;
+   position: relative;
    z-index: 1200;
    .sad-ghost-character {
       height: 40vh;
    }
    &.sad-ghost-two {
-      bottom:-40px;
+      bottom: -40px;
       margin-left: auto;
       margin-right: 0px;
    }
@@ -357,7 +369,7 @@ $bubble-left-step-4: 0.84;
       margin-right: auto;
    }
    &.sad-ghost-four {
-      bottom:-60px;
+      bottom: -60px;
       margin-left: auto;
       margin-right: auto;
    }
@@ -367,6 +379,25 @@ $bubble-left-step-4: 0.84;
    width: 100%;
    height: 48px;
    margin: 0 0 calc(20px + 2vh) 0;
+}
+
+@keyframes onboardingImagePop {
+   from {
+      opacity: 0;
+      transform: scale(0.85);
+   }
+
+   to {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+.ghost-character,
+.sad-ghost-character {
+   opacity: 0;
+   transform: scale(0.85);
+   animation: onboardingImagePop 200ms ease-out 200ms forwards;
 }
 
 // Style général pour tous les boutons "Suivant" des étapes 2, 3, 4
@@ -416,7 +447,9 @@ $bubble-left-step-4: 0.84;
    font-size: var(--font-size-h3);
    font-weight: var(--font-weight-heading);
    color: var(--color-3);
-   width: calc(100% + 20px); // pour éviter le wrap trop brutal sur le dernier smiley
+   width: calc(
+      100% + 20px
+   ); // pour éviter le wrap trop brutal sur le dernier smiley
 }
 
 .problem-description {
@@ -436,4 +469,3 @@ $bubble-left-step-4: 0.84;
    position: relative;
    display: inline-block;
 }
-

@@ -63,8 +63,7 @@
             class="main-character-area"
             [@ghostAppear]="animationStates().ghost"
          >
-            @if (!isDarkMode()) {
-
+            @if (animationStates().ghost === 'visible') { @if (!isDarkMode()) {
             <img
                src="assets/images/onboarding/switch-pancarte.svg"
                alt=""
@@ -72,7 +71,6 @@
                class="ghost-character"
             />
             } @else {
-
             <div class="ghost-dark-wrapper">
                <img
                   src="assets/images/switch-pancarte-dark.svg"
@@ -81,7 +79,7 @@
                   class="ghost-character"
                />
             </div>
-            }
+            } }
          </div>
 
          <!-- Contrôles de navigation -->
