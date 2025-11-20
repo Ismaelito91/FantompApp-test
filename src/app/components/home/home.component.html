@@ -1,4 +1,9 @@
-<main id="home-container" role="main" aria-labelledby="app-info-title">
+<main
+   id="home-container"
+   role="main"
+   aria-labelledby="app-info-title"
+   [class.desktop-layout]="isDesktopLayout()"
+>
    <div class="home-greeting">
       <h1
          class="!text-(--color-1)"

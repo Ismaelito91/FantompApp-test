@@ -1,6 +1,13 @@
 import { Platform } from "@angular/cdk/platform";
 import { CommonModule } from "@angular/common";
-import { Component, computed, inject, OnInit, signal } from "@angular/core";
+import {
+   Component,
+   OnDestroy,
+   OnInit,
+   computed,
+   inject,
+   signal,
+} from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { Router, RouterModule } from "@angular/router";
@@ -26,12 +33,12 @@ import { UtilsService } from "../../service/utils.service";
       MatIconModule,
       RouterModule,
       HomeCardComponent,
-      Card7Component
+      Card7Component,
    ],
    templateUrl: "./home.component.html",
    styleUrls: ["./home.component.scss"],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
    private themeService = inject(ThemeService);
    private router = inject(Router);
    private utilsService = inject(UtilsService);
@@ -39,6 +46,9 @@ export class HomeComponent implements OnInit {
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
    //public shouldShowChangeIcon = false;
    public isDesktop = false;
+   public isDesktopLayout = signal(false);
+   private desktopMediaQuery?: MediaQueryList;
+   private desktopLayoutListener?: (event: MediaQueryListEvent) => void;
    onboardingService = inject(OnboardingService);
    _settingService = inject(SettingService);
    rootPage = signal<PageComponentModel>({ translations: [] });
@@ -48,17 +58,20 @@ export class HomeComponent implements OnInit {
    private loadRootPage(): void {
       let rootPage = this.pageComponentUtils.findRootPage(3);
       if (!rootPage) {
-         this.pageComponentService.getRootPageComponentsBySectionId(3).subscribe({
-            next: (data) => {
-               this.pageComponentUtils.updateComponentMap(data);
-               let rootPage = this.pageComponentUtils.findRootPage(3);
-               if (rootPage) {
-                  this.rootPage.set(rootPage);
-                  this.page.set(rootPage);
-               }
-            },
-            error: (err) => console.error('Erreur lors du chargement de home', err)
-         });
+         this.pageComponentService
+            .getRootPageComponentsBySectionId(3)
+            .subscribe({
+               next: (data) => {
+                  this.pageComponentUtils.updateComponentMap(data);
+                  let rootPage = this.pageComponentUtils.findRootPage(3);
+                  if (rootPage) {
+                     this.rootPage.set(rootPage);
+                     this.page.set(rootPage);
+                  }
+               },
+               error: (err) =>
+                  console.error("Erreur lors du chargement de home", err),
+            });
       } else {
          this.rootPage.set(rootPage);
          this.page.set(rootPage);
@@ -80,7 +93,33 @@ export class HomeComponent implements OnInit {
 
    ngOnInit(): void {
       this.isDesktop = this.utilsService.isDesktop();
+      this.initDesktopLayoutListener();
       this.loadRootPage();
+   }
+
+   ngOnDestroy(): void {
+      if (this.desktopMediaQuery && this.desktopLayoutListener) {
+         this.desktopMediaQuery.removeEventListener(
+            "change",
+            this.desktopLayoutListener
+         );
+      }
+   }
+
+   private initDesktopLayoutListener(): void {
+      if (typeof window === "undefined" || !window.matchMedia) {
+         return;
+      }
+
+      this.desktopMediaQuery = window.matchMedia("(min-width: 1024px)");
+      this.isDesktopLayout.set(this.desktopMediaQuery.matches);
+      this.desktopLayoutListener = (event: MediaQueryListEvent) => {
+         this.isDesktopLayout.set(event.matches);
+      };
+      this.desktopMediaQuery.addEventListener(
+         "change",
+         this.desktopLayoutListener
+      );
    }
 
    // Méthodes de navigation pour l'accessibilité RGAA
@@ -118,7 +157,7 @@ export class HomeComponent implements OnInit {
    }
 
    navigateToResources(): void {
-      this.router.navigate(['/resources']);
+      this.router.navigate(["/resources"]);
    }
 
    navigateToRights(): void {
@@ -126,11 +165,10 @@ export class HomeComponent implements OnInit {
    }
 
    navigateToAccessibility(): void {
-      this.router.navigate(['/accessibility']);
+      this.router.navigate(["/accessibility"]);
    }
 
    navigateToTutorial(): void {
       this.onboardingService.showOnboarding();
    }
-
 }
