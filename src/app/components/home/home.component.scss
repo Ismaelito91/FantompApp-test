@@ -31,6 +31,32 @@
 
 .home-greeting {
    margin-top: 38px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-1);
+
+   h1 {
+      margin: 0;
+   }
+
+   &__view-all {
+      align-self: flex-start;
+   }
+}
+
+.view-all-link {
+   display: inline-flex;
+   align-items: center;
+   gap: var(--spacing-1);
+   color: var(--color-8);
+   font-size: var(--font-size-body-sm);
+   font-weight: var(--font-weight-heading);
+   text-decoration: underline;
+   padding: 10px 16px;
+   background: none;
+   border: none;
+   cursor: pointer;
 }
 
 #app-info-parent {

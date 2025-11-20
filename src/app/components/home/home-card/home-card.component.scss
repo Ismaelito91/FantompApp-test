@@ -9,6 +9,20 @@
    margin: 0;
 }
 
+.view-all-link {
+   display: inline-flex;
+   align-items: center;
+   gap: var(--spacing-1);
+   color: var(--color-8);
+   font-size: var(--font-size-body-sm);
+   font-weight: var(--font-weight-heading);
+   text-decoration: underline;
+   padding: 10px 16px;
+   background: none;
+   border: none;
+   cursor: pointer;
+}
+
 .home-cards__view-all {
    color: var(--color-8);
    font-size: var(--font-size-body-sm);
