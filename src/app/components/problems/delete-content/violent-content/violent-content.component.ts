@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, OnInit, signal } from "@angular/core";
 import { TranslatePipe } from "@ngx-translate/core";
 import { ComponentStatus } from "../../../../model/enum/component-status.enum";
 import { ComponentType } from "../../../../model/enum/component-type.enum";
@@ -11,6 +11,12 @@ import { Card4Component } from "../../../design-system/card-4/card-4.component";
 import { Card5Component } from "../../../design-system/card-5/card-5.component";
 import { DividerComponent } from "../../../design-system/divider/divider.component";
 import { LanguageService } from "../../../../service/language.service";
+import { PageComponentUtilsService } from "../../../../service/page-component-utils.service";
+import { PageComponentService } from "../../../../service/page-component.service";
+import { PageTranslationPipe } from "../../../../pipes/page-translation.pipe";
+import { SafeHtmlPipe } from "../../../../pipes/safe-html.pipe";
+
+const PAGE_CODE = "3.1.11/18_contenu_violent";
 
 @Component({
    selector: "app-violent-content",
@@ -21,13 +27,24 @@ import { LanguageService } from "../../../../service/language.service";
       Card4Component,
       Card5Component,
       ButtonComponent,
+      PageTranslationPipe,
+      SafeHtmlPipe,
    ],
    templateUrl: "./violent-content.component.html",
    styleUrl: "./violent-content.component.scss",
 })
-export class ViolentContentComponent {
+export class ViolentContentComponent implements OnInit {
    readonly utilsService = inject(UtilsService);
    private readonly languageService = inject(LanguageService);
+   private readonly pageComponentUtils = inject(PageComponentUtilsService);
+   private readonly pageComponentService = inject(PageComponentService);
+   page = signal<PageComponentModel | null>({
+      id: 0,
+      translations: [],
+      childrenIdList: [],
+   });
+   ComponentType = ComponentType;
+   ComponentStatus = ComponentStatus;
    reported: boolean = false;
 
    card_4: PageComponentModel = {
@@ -140,8 +157,31 @@ export class ViolentContentComponent {
       ],
    };
 
-   constructor() {
+   ngOnInit(): void {
       const state = history.state as { reported: boolean };
       this.reported = state.reported;
+
+      this.loadRootPage();
+   }
+
+   private loadRootPage(): void {
+      let pageResources = this.pageComponentUtils.getComponentByCode(PAGE_CODE);
+      this.page.set(pageResources);
+      if (!pageResources) {
+         this.pageComponentService
+            .getRootPageComponentsBySectionId(3)
+            .subscribe({
+               next: (data) => {
+                  this.pageComponentUtils.updateComponentMap(data);
+                  pageResources = this.pageComponentUtils.getComponentByCode(PAGE_CODE);
+                  this.page.set(pageResources);
+               },
+               error: (err) => console.error("Erreur lors du chargement de home", err),
+            });
+      }
+   }
+
+   get sortedChildren() {
+      return this.pageComponentUtils.getSortedChildren(this.page());
    }
 }
