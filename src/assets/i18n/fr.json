@@ -774,8 +774,8 @@
          }
       },
       "BLUR_IMAGE": {
-         "TITLE": "Anonymiser ma photo",
-         "DESCRIPTION": "Flouter ou pixelliser ma photo de profil pour limiter mon identification en ligne.",
+         "TITLE": "Je floute ma photo",
+         "DESCRIPTION": "Anonymiser ma photo de profil pour limiter mon identification en ligne.",
          "EDITING_TITLE": "Zone d’édition de la photo importée",
          "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée !",
          "UPLOAD_IMAGE": "Importer une photo <span aria-hidden=\"true\">🤳</span>",
