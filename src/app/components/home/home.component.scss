@@ -24,6 +24,11 @@
    }
 }
 
+#home-container.desktop-layout::before {
+   content: none;
+   display: none;
+}
+
 .home-greeting {
    margin-top: 38px;
 }
