@@ -1,40 +1,46 @@
-<div class="no-access-container relative">
-   <div class="fixed bg-(image:--background-31) h-[110px] w-full z-100"></div>
-   <div
-      class="absolute bg-gradient-to-b from-[#3339F0] to-[rgba(237,252,254,0)] h-[110px] w-full z-100"
-   ></div>
-   <div class="header flex flex-col relative z-101">
-      <app-button-back class="fixed top-[16px] z-103"></app-button-back>
-      <div class="flex justify-end z-102">
-         <img
-            src="assets/images/no-access-picto.png"
-            alt=""
-            class="!w-[60px] !h-[74px] object-contain"
-         />
+@if (page()?.type == ComponentType.PAGE_NO_ACCESS) {
+   <div class="no-access-container relative">
+      <div class="fixed bg-(image:--background-31) h-[110px] w-full z-100"></div>
+      <div class="absolute bg-linear-to-b from-[#3339F0] to-[rgba(237,252,254,0)] h-[110px] w-full z-100"></div>
+      <div class="header flex flex-col relative z-101">
+         <app-button-back class="fixed top-4 z-103"></app-button-back>
+         <div class="flex justify-end z-102">
+            <img src="assets/images/no-access-picto.png" alt="" class="w-[60px]! h-[74px]! object-contain" />
+         </div>
+         <div class="details flex flex-col">
+            @if ((page() | pageTranslation)?.firstTitle) {
+               <h3 role="heading" aria-level="1" class="ckeditor-content" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></h3>
+            }
+            @if ((page() | pageTranslation)?.description) {
+               <p class="ckeditor-content" [innerHTML]="(page() | pageTranslation)?.description! | translate | safeHtml"></p>
+            }
+         </div>
       </div>
-      <div class="details flex flex-col">
-         <h3 role="heading" aria-level="1">
-            {{ "PROBLEMS.HACKING.RESULTS.NO_ACCESS.TITLE" | translate }}
-         </h3>
+      @if (sortedChildren.length > 0) {
+         <div class="content flex flex-col gap-(--spacing-4)">
+            @for (child of sortedChildren; track $index) {
+               @switch (child.type) {
+                  @case (ComponentType.CARD_13) {
+                     <app-card-13 [data]="child"></app-card-13>
+                  }
+                  @case (ComponentType.CARD_15) {
+                     <app-card-15 [data]="child"></app-card-15>
+                  }
+                  @case (ComponentType.DIVIDER) {
+                     <app-divider></app-divider>
+                  }
+               }
+            }
+         </div>
+      }
+      <div class="controls fixed max-w-(--max-width-viewport) bottom-0 w-full flex">
+         <app-button
+            [label]="'COMMON.NEXT' | translate"
+            variant="primary"
+            [iconAfterLabel]="{ name: 'arrow24x24-icon' }"
+            class="w-full"
+            (click)="utilsService.goTo('hacking/no-access/recommendations')"
+         ></app-button>
       </div>
    </div>
-   <div class="content flex flex-col gap-(--spacing-4)">
-      <app-card-13 [data]="card_13"></app-card-13>
-      <app-card-15 [data]="card_15_1"></app-card-15>
-      <app-card-15 [data]="card_15_2"></app-card-15>
-      <app-card-15 [data]="card_15_3"></app-card-15>
-      <app-card-15 [data]="card_15_4"></app-card-15>
-      <app-card-15 [data]="card_15_5"></app-card-15>
-   </div>
-   <div
-      class="controls fixed max-w-(--max-width-viewport) bottom-0 w-full flex"
-   >
-      <app-button
-         [label]="'COMMON.NEXT' | translate"
-         variant="primary"
-         [iconAfterLabel]="{ name: 'arrow24x24-icon' }"
-         class="w-full"
-         (click)="utilsService.goTo('hacking/no-access/recommendations')"
-      ></app-button>
-   </div>
-</div>
+}
