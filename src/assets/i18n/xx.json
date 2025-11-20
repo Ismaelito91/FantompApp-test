@@ -738,6 +738,7 @@
       "BLUR_IMAGE": {
          "TITLE": "Blur my photo",
          "DESCRIPTION": "Blur or pixelate my profile picture to reduce the risk of being identified online.",
+         "EDITING_TITLE": "Editing area of the imported photo",
          "ADVICE": "💡 <strong>Tip</strong>: If you blur your photo to use it as a profile picture, don’t reuse it elsewhere unblurred!",
          "UPLOAD_IMAGE": "Import a photo 🤳",
          "BLUR": "Blur",
