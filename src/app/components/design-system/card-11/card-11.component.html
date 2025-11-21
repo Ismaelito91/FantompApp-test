@@ -1,7 +1,5 @@
 <div class="flex flex-col h-full card-container">
-   <div
-      class="flex-grow flex items-center justify-center overflow-hidden relative"
-   >
+   <div class="flex items-center justify-center flex-1 overflow-hidden relative">
       @if (index() > 0) {
       <button
          mat-fab
@@ -19,7 +17,7 @@
          "
          alt=""
          aria-hidden="true"
-         style="max-height: 100%; max-width: 100%; object-fit: contain; border-radius: var(--border-radius-1);"
+         class="card-11-img object-contain rounded-(--border-radius-1)"
       />
       @if (index() < maxIndex()) {
       <button
