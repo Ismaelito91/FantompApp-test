@@ -339,24 +339,49 @@ export class BlurImageComponent implements OnDestroy {
       this.showModificationAlert();
    }
 
-   downloadImage() {
+   // Nouvelle méthode hybride : Partage (iOS) ou Téléchargement (PC)
+   async downloadImage() {
       const canvas = this.canvasRef.nativeElement;
 
-      // 1. Crée un lien temporaire
-      const link = document.createElement("a");
+      // 1. Convertir le canvas en Blob haute qualité (pas le LowQuality utilisé pour l'historique)
+      const blob = await new Promise<Blob | null>((resolve) =>
+         canvas.toBlob(resolve, "image/png", 1.0)
+      );
 
-      // 2. Convertit le canvas en URL de données (format PNG par défaut)
-      const imageUrl = canvas.toDataURL("image/png");
+      if (!blob) {
+         console.error("Impossible de générer l'image");
+         return;
+      }
 
-      // 3. Configure le lien
-      link.href = imageUrl;
-      link.download = "image-blur-" + new Date().getTime() + ".png"; // Nom unique
+      // Création du nom de fichier
+      const fileName = "image-blur-" + new Date().getTime() + ".png";
 
-      // 4. Déclenche le téléchargement
-      link.click();
+      // 2. Créer un objet File (nécessaire pour le partage)
+      const file = new File([blob], fileName, { type: "image/png" });
 
-      // 5. Nettoie la mémoire
-      URL.revokeObjectURL(imageUrl);
+      // 3. Détection : Est-ce que le navigateur supporte le partage de fichiers ? (Cible iOS / Android Chrome)
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+         try {
+            await navigator.share({
+               files: [file],
+               title: "Photo éditée",
+               text: "Voici votre photo modifiée.",
+            });
+            return;
+         } catch (error) {
+            if ((error as any).name !== "AbortError") {
+               console.error("Erreur de partage:", error);
+            }
+         }
+      } else {
+         // 4. Fallback : Comportement classique pour PC (ou navigateurs sans Share API)
+         const url = URL.createObjectURL(blob);
+         const link = document.createElement("a");
+         link.href = url;
+         link.download = fileName;
+         link.click();
+         URL.revokeObjectURL(url);
+      }
    }
 
    async handleImageUpload(event: Event) {
