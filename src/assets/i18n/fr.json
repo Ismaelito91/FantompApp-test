@@ -193,24 +193,20 @@
             "INCOGNITO": {
                "TITLE": "<span aria-hidden=\"true\">🗑️</span> Le droit à l'effacement : Rester incognito",
                "PARAGRAPH_1": "En ligne, tu as le droit de demander <b>l'effacement et le déréférencement</b> de tes données. Concrètement, si tu veux qu'une photo, une vidéo, un texte de toi, ton nom, ton prénom ou d'autres éléments de tes données personnelles soient supprimés ou ne remontent plus dans les requêtes des moteurs de recherche, tu peux en faire la demande aux sites concernés.",
-               "PARAGRAPH_2": "Tu pourras t'adresser directement au site ou à la plateforme, et si ceux-ci ne répondent pas à ta demande sous 1 mois, tu pourras t'adresser à la CNIL (la Commission Nationale de l'Informatique et des Libertés) afin qu'elle te vienne en aide.",
-               "ALT": "Illustration User Rights Card Incognito"
+               "PARAGRAPH_2": "Tu pourras t'adresser directement au site ou à la plateforme, et si ceux-ci ne répondent pas à ta demande sous 1 mois, tu pourras t'adresser à la CNIL (la Commission Nationale de l'Informatique et des Libertés) afin qu'elle te vienne en aide."
             },
             "DATA_INFO": {
                "TITLE": "<span aria-hidden=\"true\">ℹ️</span> Le droit d'information : qui fait quoi avec mes données",
-               "PARAGRAPH": "Tu as le droit de savoir ce que les sites, jeux, applications et autres plateformes font, <b>veulent faire ou comptent faire avec tes données</b> perso.",
-               "ALT": "Illustration User Rights Card Data Info"
+               "PARAGRAPH": "Tu as le droit de savoir ce que les sites, jeux, applications et autres plateformes font, <b>veulent faire ou comptent faire avec tes données</b> perso."
             },
             "RIGHT_TO_OBJECT": {
                "TITLE": "<span aria-hidden=\"true\">❌</span> Le droit d'opposition : reste maître de tes données",
-               "PARAGRAPH": "Tu as le droit de <b>t'opposer à l'utilisation de tes données</b> par des sites ou applications (sauf dans certains cas très précis prévus par la loi).",
-               "ALT": "Illustration User Rights Card Right To Object"
+               "PARAGRAPH": "Tu as le droit de <b>t'opposer à l'utilisation de tes données</b> par des sites ou applications (sauf dans certains cas très précis prévus par la loi)."
             },
             "PORTABILITY": {
                "TITLE": "<span aria-hidden=\"true\">🧳</span> Le droit à la portabilité : où je veux, quand je veux !",
                "PARAGRAPH_1": "Tu as même le droit d'emporter <b>tes données et de les utiliser ailleurs,</b> « en mode » « cliquer et emporter » ! C'est la portabilité.",
-               "PARAGRAPH_2": "Tu les récupères et les utilises ailleurs, chez un concurrent, si tu veux. Cela vaut pour tes photos, audios ou vidéos, ou pour tes cours sur une application de prise de notes sur ordinateur..",
-               "ALT": "Illustration User Rights Card Right To Object"
+               "PARAGRAPH_2": "Tu les récupères et les utilises ailleurs, chez un concurrent, si tu veux. Cela vaut pour tes photos, audios ou vidéos, ou pour tes cours sur une application de prise de notes sur ordinateur.."
             }
          }
       }
@@ -219,10 +215,10 @@
       "DELETE_CONTENT": {
          "CARD": {
             "FIRST_TITLE": "EFFACER UN CONTENU",
-            "SECOND_TITLE": "Je fais effacer un contenu",
+            "SECOND_TITLE": "Je veux faire effacer un contenu",
             "DESCRIPTION": "Demander la suppression d'une photo ou vidéo te concernant"
          },
-         "TITLE": "Je fais effacer un contenu",
+         "TITLE": "Je veux faire effacer un contenu",
          "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L'effacer prend du temps mais nous allons t'aider à aller jusqu'au bout <span aria-hidden=\"true\">🗑️</span>",
          "REPORTED": {
             "TITLE": "As-tu signalé le contenu auprès du réseau social ?",
@@ -562,7 +558,7 @@
                      "A3": {
                         "TITLE": "Prévenir la banque",
                         "SHORT_DESCRIPTION": "Agir si tes infos bancaires étaient sur ton compte",
-                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, j’en parle tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vit e, et bloquer la carte si nécessaire pour éviter tout vol."
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, j’en parle tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vite, et bloquer la carte si nécessaire pour éviter tout vol."
                      },
                      "A4": {
                         "TITLE": "Utiliser un gestionnaire de mot de passe",
@@ -638,7 +634,7 @@
                         "A3": {
                            "TITLE": "Prévenir la banque",
                            "SHORT_DESCRIPTION": "Agir si tes infos bancaires étaient sur ton compte",
-                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, j’en parle tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vit e, et bloquer la carte si nécessaire pour éviter tout vol."
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, j’en parle tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vite, et bloquer la carte si nécessaire pour éviter tout vol."
                         },
                         "A4": {
                            "TITLE": "Utiliser un gestionnaire de mot de passe",
@@ -722,7 +718,7 @@
                "TITLE": "<span aria-hidden=\"true\">👥</span> Vie numérique",
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Les liens vers mes autres réseaux.",
-                  "ANSWER_1_DESCRIPTION": "(Twitter, Instagram, TikTok, LinkedIn).",
+                  "ANSWER_1_DESCRIPTION": "(X, Instagram, TikTok, LinkedIn).",
                   "ANSWER_2_TITLE": "Les comptes de mon entourage",
                   "ANSWER_2_DESCRIPTION": "(Amis, relations amoureuses...)"
                }
@@ -777,7 +773,7 @@
          "TITLE": "Je floute ma photo",
          "DESCRIPTION": "Anonymiser ma photo de profil pour limiter mon identification en ligne.",
          "EDITING_TITLE": "Zone d’édition de la photo importée",
-         "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs non floutée !",
+         "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs, non floutée !<br /><span aria-hidden=\"true\">💡</span> <strong>Bon à savoir</strong>: FantomApp n'enregistre aucune des photos que tu charges ici!",
          "UPLOAD_IMAGE": "Importer une photo <span aria-hidden=\"true\">🤳</span>",
          "BLUR": "Flouter",
          "PIXELATE": "Pixelliser",
@@ -806,7 +802,7 @@
          "COPIED": "Copié !",
          "BADGES": {
             "IMMEDIATE": "C'EST IMMÉDIAT <span aria-hidden=\"true\">⚠️</span>",
-            "RAPID": "MAIS C'EST PAS TOP<span aria-hidden=\"true\">😬</span>",
+            "RAPID": "FAIS ENCORE MIEUX<span aria-hidden=\"true\">👇</span>",
             "CORRECT": "C'EST CORRECT <span aria-hidden=\"true\">🙂</span>",
             "SUPER": "C'EST SUPER <span aria-hidden=\"true\">😎</span>"
          },
@@ -817,8 +813,8 @@
             "DIGIT": "1 chiffre au moins",
             "SPECIAL_CHAR": "1 caractère spécial au moins",
             "NO_EASY_CLUES": "Pas d'indice facile (nom, prénom, mot courant)",
-            "CRITERIA_VALIDATED": "contient",
-            "CRITERIA_NOT_VALIDATED": "ne contient pas"
+            "CRITERIA_VALIDATED": "Critère validé",
+            "CRITERIA_NOT_VALIDATED": "Critère non validé"
          },
          "BUTTONS": {
             "WHAT_IS_GOOD_PASSWORD": "C'est quoi un bon mot de passe ?",
@@ -828,9 +824,9 @@
          "MODALS": {
             "ONBOARDING": {
                "TITLE": "Comment ça marche ?",
-               "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>Étape 1</strong> : Tape ton mot de passe dans le champ prévu.",
+               "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>Étape 1</strong> : Écris ton mot de passe dans le champ prévu.",
                "STEP_2": "<span aria-hidden=\"true\">🧪</span> <strong>Étape 2</strong> : Clique sur \"Tester mon mot de passe\".",
-               "STEP_3": "<span aria-hidden=\"true\">⏱️</span> <strong>Étape 3</strong> : Hop, apparaît en combien de temps un cybercriminel pourrait le trouver… et accéder à tes données personnelles !",
+               "STEP_3": "<span aria-hidden=\"true\">⏱️</span> <strong>Étape 3</strong> : Et hop ! Tu vois en combien de temps un cybercriminel pourrait le trouver… et accéder à tes données personnelles !",
                "NOTE": "FantomApp n'enregistre aucune information.",
                "UNDERSTOOD": "Compris"
             },
@@ -847,8 +843,8 @@
                },
                "WARNINGS_SECTION": "Conseils pour choisir un mot de passe sécurisé",
                "WARNINGS": {
-                  "CRIMINALS_USE_DB": "<span aria-hidden=\"true\">🏴‍☠️</span> Les cybercriminels utilisent toutes les <strong>bases de données de mots</strong> qui existent dans toutes les langues.",
-                  "NO_DICTIONARY": "<span aria-hidden=\"true\">⚠️</span> Donc n'utilises aucun ,<strong>mot du dictionnaire, ton prénom, ou ton nom</strong> pour constituer ton mot de passe"
+                  "CRIMINALS_USE_DB": "<span aria-hidden=\"true\">🏴‍☠️</span> Les cybercriminels utilisent toutes les <strong>bases de données de mots</strong>, qui existent dans toutes les langues.",
+                  "NO_DICTIONARY": "<span aria-hidden=\"true\">⚠️</span> Donc n'utilise aucun <strong>mot du dictionnaire, ton prénom, ou ton nom</strong> pour constituer ton mot de passe"
                }
             }
          },
@@ -860,6 +856,7 @@
             "DAYS": "jours",
             "WEEK": "semaine",
             "WEEKS": "semaines",
+            "MONTH": "mois",
             "MONTHS": "mois",
             "YEARS": "ans",
             "THOUSAND_YEARS": "milliers d'années",
