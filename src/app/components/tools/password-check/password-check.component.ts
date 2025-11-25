@@ -22,6 +22,7 @@ import { PasswordSecurityService } from "../../../service/password-security.serv
 import { BadgeComponent } from "../../design-system/badge/badge.component";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonCloseComponent } from "../../design-system/button-close/button-close.component";
+import { ButtonComponent } from "../../design-system/button/button.component";
 import { UtilsService } from "../../../service/utils.service";
 
 @Component({
@@ -29,6 +30,7 @@ import { UtilsService } from "../../../service/utils.service";
    imports: [
       ButtonBackComponent,
       ButtonCloseComponent,
+      ButtonComponent,
       FormsModule,
       CommonModule,
       BadgeComponent,
