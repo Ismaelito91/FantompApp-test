@@ -23,7 +23,8 @@ export class LanguageService {
       }
    }
 
-   public supportedLanguages: {
+   // Toutes les langues possibles (définies statiquement)
+   private allLanguages: {
       code: SupportedLanguage;
       languageName: string; // Français, English, ...
       countryName: string; // France, Éire, ...
@@ -39,78 +40,78 @@ export class LanguageService {
          flagAltKey: "ALT_TEXT.COUNTRIES.FRANCE",
          lang: "fr",
       },
-      // {
-      //    code: "IE",
-      //    languageName: "English",
-      //    countryName: CountryRegion.IE,
-      //    flagUrl: "assets/images/flag/Ireland.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.IRELAND",
-      //    lang: "en-IE",
-      // },
-      // {
-      //    code: "HU",
-      //    languageName: "Magyar",
-      //    countryName: CountryRegion.HU,
-      //    flagUrl: "assets/images/flag/Hungary.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.HUNGARY",
-      //    lang: "hu",
-      // },
-      // {
-      //    code: "GR",
-      //    languageName: "Ελληνικά",
-      //    countryName: CountryRegion.GR,
-      //    flagUrl: "assets/images/flag/grece.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.GREECE",
-      //    lang: "el",
-      // },
-      // {
-      //    code: "DK",
-      //    languageName: "Dansk",
-      //    countryName: CountryRegion.DK,
-      //    flagUrl: "assets/images/flag/dansk.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.DENMARK",
-      //    lang: "da",
-      // },
-      // {
-      //    code: "PL",
-      //    languageName: "Polski",
-      //    countryName: CountryRegion.PL,
-      //    flagUrl: "assets/images/flag/Poland.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.POLAND",
-      //    lang: "pl",
-      // },
-      // {
-      //    code: "PT",
-      //    languageName: "Português",
-      //    countryName: CountryRegion.PT,
-      //    flagUrl: "assets/images/flag/Portugal.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.PORTUGAL",
-      //    lang: "pt",
-      // },
-      // {
-      //    code: "ES",
-      //    languageName: "Español",
-      //    countryName: CountryRegion.ES,
-      //    flagUrl: "assets/images/flag/spain.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.SPAIN",
-      //    lang: "es",
-      // },
-      // {
-      //    code: "CT",
-      //    languageName: "Español",
-      //    countryName: CountryRegion.CT,
-      //    flagUrl: "assets/images/flag/spain.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.CATALONIA",
-      //    lang: "ca-ES",
-      // },
-      // {
-      //    code: "LU",
-      //    languageName: "Lëtzebuergesch",
-      //    countryName: CountryRegion.LU,
-      //    flagUrl: "assets/images/flag/Luxembourg.svg",
-      //    flagAltKey: "ALT_TEXT.COUNTRIES.LUXEMBOURG",
-      //    lang: "lb",
-      // },
+      {
+         code: "IE",
+         languageName: "English",
+         countryName: CountryRegion.IE,
+         flagUrl: "assets/images/flag/Ireland.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.IRELAND",
+         lang: "en-IE",
+      },
+      {
+         code: "HU",
+         languageName: "Magyar",
+         countryName: CountryRegion.HU,
+         flagUrl: "assets/images/flag/Hungary.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.HUNGARY",
+         lang: "hu",
+      },
+      {
+         code: "GR",
+         languageName: "Ελληνικά",
+         countryName: CountryRegion.GR,
+         flagUrl: "assets/images/flag/grece.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.GREECE",
+         lang: "el",
+      },
+      {
+         code: "DK",
+         languageName: "Dansk",
+         countryName: CountryRegion.DK,
+         flagUrl: "assets/images/flag/dansk.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.DENMARK",
+         lang: "da",
+      },
+      {
+         code: "PL",
+         languageName: "Polski",
+         countryName: CountryRegion.PL,
+         flagUrl: "assets/images/flag/Poland.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.POLAND",
+         lang: "pl",
+      },
+      {
+         code: "PT",
+         languageName: "Português",
+         countryName: CountryRegion.PT,
+         flagUrl: "assets/images/flag/Portugal.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.PORTUGAL",
+         lang: "pt",
+      },
+      {
+         code: "ES",
+         languageName: "Español",
+         countryName: CountryRegion.ES,
+         flagUrl: "assets/images/flag/spain.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.SPAIN",
+         lang: "es",
+      },
+      {
+         code: "CT",
+         languageName: "Español",
+         countryName: CountryRegion.CT,
+         flagUrl: "assets/images/flag/spain.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.CATALONIA",
+         lang: "ca-ES",
+      },
+      {
+         code: "LU",
+         languageName: "Lëtzebuergesch",
+         countryName: CountryRegion.LU,
+         flagUrl: "assets/images/flag/Luxembourg.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.LUXEMBOURG",
+         lang: "lb",
+      },
       {
          code: "XX",
          languageName: "International",
@@ -121,8 +122,46 @@ export class LanguageService {
       },
    ];
 
+   // Langues supportées filtrées selon la configuration backend
+   public supportedLanguages: {
+      code: SupportedLanguage;
+      languageName: string;
+      countryName: string;
+      flagUrl?: string;
+      flagAltKey?: string;
+      lang: string;
+   }[] = this.allLanguages;
+
    constructor(private translateService: TranslateService) {
       this.initLanguage();
+   }
+
+   /**
+    * Filtre les langues supportées selon la configuration du backend
+    * @param enabledLanguages Liste des codes de langues activées (ex: ["FR", "XX"])
+    */
+   public filterSupportedLanguages(enabledLanguages: string[]): void {
+      if (!enabledLanguages || enabledLanguages.length === 0) {
+         // Si aucune langue n'est fournie, on garde toutes les langues par défaut
+         this.supportedLanguages = this.allLanguages;
+         return;
+      }
+
+      const enabledCodes = enabledLanguages.map((lang) => lang.toUpperCase());
+      this.supportedLanguages = this.allLanguages.filter((lang) =>
+         enabledCodes.includes(lang.code)
+      );
+
+      // Si la langue actuelle n'est plus supportée, on bascule vers la première langue disponible
+      if (
+         this.supportedLanguages.length > 0 &&
+         !this.supportedLanguages.some(
+            (lang) => lang.code === this.currentLang()
+         )
+      ) {
+         const firstAvailableLang = this.supportedLanguages[0].code;
+         this.setLanguage(firstAvailableLang);
+      }
    }
 
    public get language(): Signal<SupportedLanguage> {
