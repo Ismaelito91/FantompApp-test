@@ -123,10 +123,6 @@ export class FooterComponent {
       return packageInfo.version;
    }
 
-   get backendVersion() {
-      return this._settingService.settings()?.version;
-   }
-
    get isProblemIconActive() {
       return this.onboardingService.isProblemIconActive();
    }

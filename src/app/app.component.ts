@@ -1,5 +1,12 @@
 import { CommonModule } from "@angular/common";
-import { Component, effect, ElementRef, inject, OnInit, ViewChild } from "@angular/core";
+import {
+   Component,
+   effect,
+   ElementRef,
+   inject,
+   OnInit,
+   ViewChild,
+} from "@angular/core";
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import {
@@ -50,7 +57,8 @@ export class AppComponent implements OnInit {
    hideHeader = false;
    hideFooter = false;
    private preloadService = inject(PreloadService);
-   @ViewChild('mainContent', { static: false }) mainContentRef?: ElementRef<HTMLElement>;
+   @ViewChild("mainContent", { static: false })
+   mainContentRef?: ElementRef<HTMLElement>;
 
    constructor() {
       // Mettre à jour l'attribut lang sur <html> quand la langue change
@@ -59,6 +67,18 @@ export class AppComponent implements OnInit {
          const htmlLang = this.mapLanguageCodeToHtmlLang(langCode);
          if (document.documentElement) {
             document.documentElement.lang = htmlLang;
+         }
+      });
+
+      // Filtrer les langues supportées selon la configuration backend
+      effect(() => {
+         const settings = this._settingService.settings();
+         if (settings?.languages) {
+            this.languageService.filterSupportedLanguages(settings.languages);
+            // Mettre à jour les langues dans TranslateService après filtrage
+            const updatedLanguageCodes =
+               this.languageService.supportedLanguages.map((lang) => lang.code);
+            this.translateService.addLangs(updatedLanguageCodes);
          }
       });
    }
@@ -107,7 +127,9 @@ export class AppComponent implements OnInit {
             this.hideHeader = data["hideHeader"] ?? false;
             // Forcer le scroll en haut de page à chaque changement de route
             requestAnimationFrame(() => {
-               const mainContent = this.mainContentRef?.nativeElement || document.querySelector('.main-content') as HTMLElement;
+               const mainContent =
+                  this.mainContentRef?.nativeElement ||
+                  (document.querySelector(".main-content") as HTMLElement);
                if (mainContent) {
                   mainContent.scrollTop = 0;
                }
@@ -116,7 +138,6 @@ export class AppComponent implements OnInit {
             });
          });
 
-      // Définir les langues disponibles
       const supportedLanguageCodes =
          this.languageService.supportedLanguages.map((lang) => lang.code);
       this.translateService.addLangs(supportedLanguageCodes);
