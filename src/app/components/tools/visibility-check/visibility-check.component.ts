@@ -165,7 +165,7 @@ export class VisibilityCheckComponent {
                   {
                      title: "TOOLS.VISIBILITY_CHECK.BIO.INTEREST.ANSWERS.ANSWER_1_TITLE",
                      description:
-                        "TOOLS.VISIBILITY_CHECK.BIO.INTEREST.ANSWERS.ANSWER_1_TITLE",
+                        "TOOLS.VISIBILITY_CHECK.BIO.INTEREST.ANSWERS.ANSWER_1_DESCRIPTION",
                   },
                ],
             },
