@@ -64,7 +64,7 @@
       <div class="relative">
          <canvas
             #canvas
-            class="w-full object-contain rounded-(--border-radius-1) z-1 max-h-[60vh] min-h-[300px]"
+            class="w-full object-contain rounded-(--border-radius-1) z-1 max-h-[70vh] min-h-[300px]"
             style="touch-action: none"
             [class]="{
                'mt-[60px]': fileInput.files && fileInput.files.length > 0,
@@ -234,7 +234,7 @@
       </div>
 
       @if (modificationAlertVisible()) {
-      <p class="modification-alert" role="alert">
+      <p class="modification-alert absolute top-[30px]" role="alert">
          {{ "TOOLS.BLUR_IMAGE.MODIFICATION_DONE" | translate }}
       </p>
       }

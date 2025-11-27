@@ -303,7 +303,7 @@ export class BlurImageComponent implements OnDestroy {
          canvas.toBlob(
             (blob) => resolve(blob!),
             "image/png",
-            0.4 // Qualité à 40%
+            0.9 // Qualité à 90%
          );
       });
    }
@@ -372,16 +372,12 @@ export class BlurImageComponent implements OnDestroy {
 
          // Dimensions maximales basées sur le viewport (en pourcentages)
          const MAX_WIDTH = Math.floor(window.innerWidth * 0.95); // 95% de la largeur de l'écran (plus large)
-         const MAX_HEIGHT = Math.floor(window.innerHeight * 0.65); // 65% de la hauteur de l'écran (plus haut)
-
-         // Assurer des minimums et maximums raisonnables
-         const finalMaxWidth = Math.min(Math.max(MAX_WIDTH, 350), 600); // Entre 350px et 600px
-         const finalMaxHeight = Math.min(Math.max(MAX_HEIGHT, 300), 550); // Entre 300px et 550px
+         const MAX_HEIGHT = Math.floor(window.innerHeight * 0.8); // 80% de la hauteur de l'écran (plus haut)
 
          // Calculer le ratio de redimensionnement pour respecter les limites
-         const widthRatio = finalMaxWidth / imgBitmap.width;
-         const heightRatio = finalMaxHeight / imgBitmap.height;
-
+         const widthRatio = MAX_WIDTH / imgBitmap.width;
+         const heightRatio = MAX_HEIGHT / imgBitmap.height;
+         
          // Prendre le plus petit ratio pour que l'image tienne dans les deux dimensions
          const scale = Math.min(widthRatio, heightRatio, 1); // Ne jamais agrandir (max 1)
 
@@ -404,10 +400,7 @@ export class BlurImageComponent implements OnDestroy {
          this.saveState();
 
          console.log(`Viewport: ${window.innerWidth}x${window.innerHeight}`);
-         console.log(`Max calculées: ${finalMaxWidth}x${finalMaxHeight}`);
-         console.log(
-            `Image redimensionnée de ${imgBitmap.width}x${imgBitmap.height} à ${finalWidth}x${finalHeight}`
-         );
+         console.log(`Image redimensionnée de ${imgBitmap.width}x${imgBitmap.height} à ${finalWidth}x${finalHeight}`);
       } catch (error) {
          console.error("Error loading image:", error);
       }
