@@ -444,7 +444,7 @@
                }
             },
             "VIOLENT_CONTENT": {
-               "TITLE": "Il s’agit d’un contenu violent ou te représentant nu·e ?",
+               "TITLE": "Est-ce qu'il s'agit d'un contenu violent ou d'une image intime de toi ?",
                "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.",
                "P1": {
                   "TITLE": "Tu n’es pas seul·e",

@@ -168,7 +168,7 @@
             "DESCRIPTION": "How much time does it take to a cybercriminal to find it?"
          },
          "BLUR_IMAGE": {
-            "TITLE": "Blurring<br />my picture",
+            "TITLE": "Blurring my picture",
             "DESCRIPTION": "Anonymising my profile picture"
          },
          "PROBLEMS": {
@@ -266,7 +266,7 @@
                   }
                },
                "COMPLAINT": {
-                  "TITLE": "Prepare the evidences",
+                  "TITLE": "Prepare the evidence",
                   "DESCRIPTION": "Save photos of each steps, they will be useful to file the complaint.",
                   "P1": {
                      "TITLE": "Examples of screenshots:",
@@ -684,7 +684,7 @@
                "ANSWERS": {
                   "ANSWER_1_TITLE": "My postcode",
                   "ANSWER_1_DESCRIPTION": "(example: 34 or 49300)",
-                  "ANSWER_2_TITLE": "Where I live or where i come from",
+                  "ANSWER_2_TITLE": "Where I live or where I come from",
                   "ANSWER_2_DESCRIPTION": "(City, region, country, flag emoji.)"
                }
             }
@@ -758,10 +758,10 @@
                }
             },
             "PSEUDO": {
-               "TITLE": "Your username indicate"
+               "TITLE": "Your username indicates"
             },
             "BIO": {
-               "TITLE": "Your bio indicate"
+               "TITLE": "Your bio indicates"
             },
             "STATE": {
                "PUBLIC": "PUBLIC <span aria-hidden=\"true\">👀</span>",
@@ -773,7 +773,7 @@
       },
       "BLUR_IMAGE": {
          "TITLE": "Anonymising my picture",
-         "DESCRIPTION": "Blurring or pixelating my profile picture to limit mi identification online.",
+         "DESCRIPTION": "Blurring or pixelating my profile picture to limit my identification online.",
          "EDITING_TITLE": "Editing area of the imported photo",
          "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Advice</strong> : If you blur your picture to use it as a profile picture, don't reuse it elsewhere unblurred!<br /><span aria-hidden=\"true\"><span aria-hidden=\"true\">💡</span></span> <strong>Good to know</strong>: FantomApp doesn't save any photo you import here!",
          "UPLOAD_IMAGE": "Import a picture <span aria-hidden=\"true\">🤳</span>",
@@ -784,7 +784,7 @@
          "GLOBAL_BLUR_INFO": "You can blur the entire image with this button. Clicking it opens a list of blur percentages to choose the intensity.",
          "MODIFICATION_DONE": "Modification completed",
          "TUTORIAL": {
-            "DESCRIPTION": "Glide your finger on the image to blur it."
+            "DESCRIPTION": "Slide your finger on the image to blur it."
          }
       },
       "PASSWORD_CHECK": {
@@ -797,7 +797,7 @@
             "CONTENT": "A <strong>brute force attack</strong> consists of testing, one by one, each possible combination of a password. (source : <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
          },
          "CRIMINAL_GUESSES": "A cybercriminal guesses it in:",
-         "ASSESSMENT_TEXT": "Your passwords has:",
+         "ASSESSMENT_TEXT": "Your password:",
          "INPUT_LABEL": "Password",
          "CHECKBOX_LABEL": "Contains my first name, last name, or common words",
          "COPY_PASSWORD": "Copy the password",
@@ -820,14 +820,14 @@
          },
          "BUTTONS": {
             "WHAT_IS_GOOD_PASSWORD": "What's a good password?",
-            "TEST_PASSWORD": "Testing my password <span aria-hidden=\"true\">🔒</span>",
-            "STRENGTHEN_PASSWORD": "Reinforcing my password"
+            "TEST_PASSWORD": "Test my password <span aria-hidden=\"true\">🔒</span>",
+            "STRENGTHEN_PASSWORD": "Reinforce my password"
          },
          "MODALS": {
             "ONBOARDING": {
                "TITLE": "How does it works ?",
                "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>Step 1</strong> : Write your password in the designed field.",
-               "STEP_2": "<span aria-hidden=\"true\">🧪</span> <strong>Step 2</strong> : Click on \"Testing my password\".",
+               "STEP_2": "<span aria-hidden=\"true\">🧪</span> <strong>Step 2</strong> : Click on \"Test my password\".",
                "STEP_3": "⏱️ <strong>Step 3</strong> : And there you have it! You can see how long it would take cybercriminal to crack it… and access your personal data!",
                "NOTE": "FantomApp doesn't retain any information.",
                "UNDERSTOOD": "Got it"
