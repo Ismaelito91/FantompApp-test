@@ -1,12 +1,11 @@
-import { computed, inject, Pipe, PipeTransform } from '@angular/core';
-import { ThemeService } from '../service/theme.service';
+import { computed, inject, Pipe, PipeTransform } from "@angular/core";
+import { ThemeService } from "../service/theme.service";
 
 @Pipe({
-   name: 'replaceStringDark',
-   standalone: true
+   name: "replaceStringDark",
+   standalone: true,
 })
 export class ReplaceStringDarkPipe implements PipeTransform {
-
    private themeService = inject(ThemeService);
 
    isDarkMode = computed(() => {
@@ -18,14 +17,17 @@ export class ReplaceStringDarkPipe implements PipeTransform {
       );
    });
 
-   transform(value: string | null | undefined, oldString: string, newString: string): string {
-      if (!value) return '';
-
+   transform(
+      value: string | null | undefined,
+      oldString: string,
+      newString: string
+   ): string {
+      if (!value) return "";
       if (!this.isDarkMode()) return value;
 
-      // Échappe les caractères spéciaux pour la regex
-      const escapedOldString = oldString.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const regex = new RegExp(escapedOldString, 'gi');
+      const escapedOldString = oldString.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const flexibleOldString = escapedOldString.replace(/\s/g, "\\s*");
+      const regex = new RegExp(flexibleOldString, "gi");
 
       return value.replace(regex, newString);
    }
