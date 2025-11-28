@@ -124,10 +124,9 @@
       "TITLE": "Apparence",
       "SUBTITLE": "Choisis ton thème d'affichage préféré.",
       "THEME": {
-         "LABEL": "Thème",
-         "DEFAULT": "par défaut",
-         "LIGHT": "clair",
-         "DARK": "sombre",
+         "DEFAULT": "Thème par défaut",
+         "LIGHT": "Thème clair",
+         "DARK": "Thème sombre",
          "SYSTEM_SETTINGS": "Utiliser le même réglage que le téléphone"
       }
    },

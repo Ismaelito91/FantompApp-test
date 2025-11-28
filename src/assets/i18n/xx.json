@@ -124,10 +124,9 @@
       "TITLE": "Appearence",
       "SUBTITLE": "Choose your favourite system display.",
       "THEME": {
-         "LABEL": "Theme",
-         "DEFAULT": "Default system ",
-         "LIGHT": "Light mode",
-         "DARK": "Dark mode",
+         "DEFAULT": "Default theme",
+         "LIGHT": "Light theme",
+         "DARK": "Dark theme",
          "SYSTEM_SETTINGS": "Use the same settings as your device"
       }
    },
