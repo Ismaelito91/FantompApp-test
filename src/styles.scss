@@ -333,6 +333,7 @@
    --color-35: var(----color-neutral-light-content-3);
    --color-36: var(--color-neutral-light-content-3);
    --color-37: var(--color-primary-800);
+   --color-38: var(--color-neutral-light-background-3);
 
    body {
       font-family: var(--body-font-family);
@@ -709,4 +710,6 @@
    --color-35: var(--color-neutral-light-background-1);
    --color-36: var(--color-neutral-light-background-3);
    --color-37: var(--color-neutral-dark-background-2);
+   --color-38: transparent;
+
 }
