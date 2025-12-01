@@ -392,6 +392,8 @@ export class BlurImageComponent implements OnDestroy {
          const canvas = this.canvasRef.nativeElement;
          canvas.width = finalWidth;
          canvas.height = finalHeight;
+         this.ctx.imageSmoothingEnabled = true;
+         this.ctx.imageSmoothingQuality = "high";
          this.ctx.drawImage(imgBitmap, 0, 0, finalWidth, finalHeight);
 
          // Réinitialiser l'historique pour la nouvelle image
