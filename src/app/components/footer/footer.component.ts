@@ -1,4 +1,4 @@
-import { Component, effect, inject, signal } from "@angular/core";
+import { Component, computed, effect, inject, signal } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -134,4 +134,8 @@ export class FooterComponent {
    get isSecureMyselfIconActive() {
       return this.onboardingService.isSecureMyselfIconActive();
    }
+
+   isDarkMode = computed(() => {
+      return this.themeService.isDark$();
+   });
 }
