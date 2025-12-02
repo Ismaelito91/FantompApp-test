@@ -43,6 +43,7 @@
          flex-shrink: 0; /* Empêche l'icône de se rétrécir */
          margin: 0 auto; /* Centre l'icône horizontalement */
          overflow: hidden;
+         align-self: center; /* Assure l'alignement vertical et horizontal */
       }
 
       mat-icon {
@@ -86,6 +87,7 @@
          display: block;
          margin: 0 auto;
          text-align: center;
+         align-self: center; /* Assure l'alignement avec l'icône */
       }
 
       /* shared active-state sizing/centering */
@@ -119,6 +121,9 @@
             font-weight: var(--font-weight-title);
             transform: none !important;
             transition: none !important;
+            text-align: center;
+            align-self: center;
+            margin: 0 auto;
          }
       }
 
