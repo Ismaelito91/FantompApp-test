@@ -239,5 +239,22 @@
             </ul>
          </nav>
       </div>
+      @if (!isDesktopLayout()) {
+      <div class="app-logo-container">
+         @if (!isDarkMode()) {
+         <img
+            src="assets/images/onboarding/logo-fantomapp.svg"
+            alt="'ALT_TEXT.ONBOARDING.LOGO_FANTOMAPP' | translate"
+            class="app-logo"
+         />
+         } @else {
+         <img
+            src="assets/images/logo-fantomapp-dark.svg"
+            [alt]="'ALT_TEXT.ONBOARDING.LOGO_FANTOMAPP' | translate"
+            class="app-logo"
+         />
+         }
+      </div>
+      }
    </div>
 </main>
