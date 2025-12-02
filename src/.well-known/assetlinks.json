@@ -10,13 +10,6 @@
     "target": {
       "namespace": "android_app",
       "package_name": "cnil.fantom_app.twa",
-      "sha256_cert_fingerprints": ["1B:54:78:86:F7:45:C5:50:68:A9:BC:B6:1E:DB:B0:93:41:77:66:FE:91:02:E6:36:72:8B:B5:C2:8C:68:B9:70"]
-    }
-  },{
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "cnil.fantom_app.twa",
       "sha256_cert_fingerprints": ["AF:75:2F:79:CD:FB:12:B6:FC:F0:B8:96:BD:BF:4E:30:99:9E:7E:77:54:63:FD:2A:CD:63:D8:42:77:BA:18:18"]
     }
   }]
