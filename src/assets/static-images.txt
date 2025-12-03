@@ -14,7 +14,7 @@ assets/images/bio-illu.svg
 assets/images/blur-effect.svg
 assets/images/blur-image-tool-bg.jpg
 assets/images/blur-image-tool-img.png
-assets/images/calendar-picto.svg
+assets/images/calendar-picto.png
 assets/images/checkbox-selected16x16-icon.svg
 assets/images/checkbox-unselected16x16-icon.svg
 assets/images/chevron16x16-icon.svg

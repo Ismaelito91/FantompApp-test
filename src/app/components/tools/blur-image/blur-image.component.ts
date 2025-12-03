@@ -99,7 +99,7 @@ export class BlurImageComponent implements OnDestroy {
    private modificationAlertTimeout: ReturnType<typeof setTimeout> | null =
       null;
    private hasModifiedDuringStroke = false;
-
+   imgBitmap: ImageBitmap | undefined;
    constructor() {
       // Initialize after view renders
       afterNextRender(() => {
@@ -366,23 +366,19 @@ export class BlurImageComponent implements OnDestroy {
       if (!file) return;
 
       try {
+         const MAX_DEMENSION = 720;
          // Convert FileReader result to Blob properly
          const arrayBuffer = await new Response(file).arrayBuffer();
-         const imgBitmap = await createImageBitmap(new Blob([arrayBuffer]));
-
-         // Dimensions maximales basées sur le viewport (en pourcentages)
-         const MAX_WIDTH = Math.floor(window.innerWidth * 0.95); // 95% de la largeur de l'écran (plus large)
-         const MAX_HEIGHT = Math.floor(window.innerHeight * 0.8); // 80% de la hauteur de l'écran (plus haut)
-
+         this.imgBitmap = await createImageBitmap(new Blob([arrayBuffer]));
          // Calculer le ratio de redimensionnement pour respecter les limites
-         const widthRatio = MAX_WIDTH / imgBitmap.width;
-         const heightRatio = MAX_HEIGHT / imgBitmap.height;
-         
+         const widthRatio = MAX_DEMENSION / this.imgBitmap.width;
+         const heightRatio = MAX_DEMENSION / this.imgBitmap.height;
+
          // Prendre le plus petit ratio pour que l'image tienne dans les deux dimensions
          const scale = Math.min(widthRatio, heightRatio, 1); // Ne jamais agrandir (max 1)
 
-         const finalWidth = Math.floor(imgBitmap.width * scale);
-         const finalHeight = Math.floor(imgBitmap.height * scale);
+         const finalWidth = Math.floor(this.imgBitmap.width * scale);
+         const finalHeight = Math.floor(this.imgBitmap.height * scale);
 
          this.canvasSize.set({
             width: finalWidth,
@@ -394,7 +390,7 @@ export class BlurImageComponent implements OnDestroy {
          canvas.height = finalHeight;
          this.ctx.imageSmoothingEnabled = true;
          this.ctx.imageSmoothingQuality = "high";
-         this.ctx.drawImage(imgBitmap, 0, 0, finalWidth, finalHeight);
+         this.ctx.drawImage(this.imgBitmap, 0, 0, finalWidth, finalHeight);
 
          // Réinitialiser l'historique pour la nouvelle image
          this.historyStack = [];
@@ -402,9 +398,16 @@ export class BlurImageComponent implements OnDestroy {
          this.saveState();
 
          console.log(`Viewport: ${window.innerWidth}x${window.innerHeight}`);
-         console.log(`Image redimensionnée de ${imgBitmap.width}x${imgBitmap.height} à ${finalWidth}x${finalHeight}`);
+         console.log(
+            `Image redimensionnée de ${this.imgBitmap.width}x${this.imgBitmap.height} à ${finalWidth}x${finalHeight}`
+         );
       } catch (error) {
          console.error("Error loading image:", error);
+      } finally {
+         if (this.imgBitmap) {
+            this.imgBitmap.close();
+            console.log("ImageBitmap libéré.");
+         }
       }
    }
 
