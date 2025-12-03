@@ -23,6 +23,7 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatSliderModule } from "@angular/material/slider";
 import { TranslatePipe } from "@ngx-translate/core";
 import * as StackBlur from "stackblur-canvas";
+import { ActivatedRoute } from "@angular/router";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
 import { UtilsService } from "../../../service/utils.service";
@@ -75,6 +76,7 @@ export const moveFromTo = trigger("moveFromTo", [
 })
 export class BlurImageComponent implements OnDestroy {
    private readonly utilsService = inject(UtilsService);
+   private readonly route = inject(ActivatedRoute);
    @ViewChild("canvas") canvasRef!: ElementRef<HTMLCanvasElement>;
    @ViewChild("closeButton", { read: ElementRef })
    closeButtonRef!: ElementRef<HTMLButtonElement>;
@@ -243,7 +245,9 @@ export class BlurImageComponent implements OnDestroy {
       const scaleY = canvas.height / rect.height;
       const x = (event.clientX - rect.left) * scaleX;
       const y = (event.clientY - rect.top) * scaleY;
-      const brushSize = this.brushSize();
+      let brushSize = this.brushSize();
+      brushSize = brushSize * Math.min(Math.floor(scaleX), Math.floor(scaleY));
+      
       // const brushSizeX = brushSize * Math.floor(scaleX);
       // const brushSizeY = brushSize * Math.floor(scaleY);
 
@@ -362,7 +366,12 @@ export class BlurImageComponent implements OnDestroy {
       if (!file) return;
 
       try {
-         const MAX_DEMENSION = 720;
+         // Récupérer max_dim depuis les query params, sinon utiliser la valeur par défaut
+         const maxDimParam = this.route.snapshot.queryParams["max_dim"];
+         const DEFAULT_MAX_DIM = 2048;
+         const MAX_DEMENSION = maxDimParam
+            ? parseInt(maxDimParam, 10)
+            : DEFAULT_MAX_DIM;
          // Convert FileReader result to Blob properly
          const arrayBuffer = await new Response(file).arrayBuffer();
          this.imgBitmap = await createImageBitmap(new Blob([arrayBuffer]));
