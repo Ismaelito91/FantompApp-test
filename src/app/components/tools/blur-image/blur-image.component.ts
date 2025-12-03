@@ -261,8 +261,8 @@ export class BlurImageComponent implements OnDestroy {
       }
 
       this.hasModifiedDuringStroke = true;
-      // 2. Compression destructive
-      const finalBlob = await this.canvasToLowQualityBlob(canvas);
+      // 2. Conversion en Blob
+      const finalBlob = await this.canvasToBlob(canvas);
       return finalBlob;
    }
 
@@ -296,15 +296,11 @@ export class BlurImageComponent implements OnDestroy {
    }
 
    // Conversion en qualité très basse
-   private async canvasToLowQualityBlob(
+   private async canvasToBlob(
       canvas: HTMLCanvasElement
    ): Promise<Blob> {
       return new Promise((resolve) => {
-         canvas.toBlob(
-            (blob) => resolve(blob!),
-            "image/png",
-            0.9 // Qualité à 90%
-         );
+         canvas.toBlob((blob) => resolve(blob!), "image/png");
       });
    }
    private applyGlobalBlur(percentage: number) {
