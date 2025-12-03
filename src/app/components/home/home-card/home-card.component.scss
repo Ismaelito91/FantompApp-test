@@ -48,20 +48,67 @@
    width: 100%;
    height: 100%;
    object-fit: cover;
-   z-index: 0;
-   pointer-events: none;
    border-radius: var(--border-radius-4);
+   pointer-events: none;
+   transition: opacity 0.2s;
+   z-index: 0;
+}
+
+.tools-item::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: url("../../../../assets/images/Property-hover.png") center/cover;
+   border-radius: var(--border-radius-4);
+   opacity: 0;
+   transition: opacity 0.2s;
+   pointer-events: none;
+   z-index: 0;
+}
+
+.tools-item::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background-color: var(--color-neutral-light-background-4);
+   border-radius: var(--border-radius-4);
+   opacity: 0;
+   transition: opacity 0.2s;
+   pointer-events: none;
+   z-index: 0;
+}
+
+.tools-item:hover::before,
+.tools-item:active::before {
+   opacity: 1;
+}
+
+.tools-item:hover::after,
+.tools-item:active::after {
+   opacity: 1;
+}
+
+.tools-item:hover .tools-item-bg,
+.tools-item:active .tools-item-bg {
+   opacity: 0;
 }
 
 .tools-item > *:not(.tools-item-bg) {
    position: relative;
-   z-index: 1;
+   z-index: 2;
+}
+
+.tools-item > div:last-child {
+   position: relative;
+   z-index: 2;
 }
 
 .tools-item-body {
    display: flex;
    align-items: center;
    gap: calc(0.5rem + 0.3vw);
+   position: relative;
+   z-index: 2;
 }
 
 .tools-item-img {
@@ -69,12 +116,16 @@
    max-width: calc(80px + 4vw);
    height: calc(65px + 3vw);
    object-fit: contain;
+   position: relative;
+   z-index: 2;
 }
 
 .tools-item-text {
    display: flex;
    flex-direction: column;
    gap: calc(0.2rem + 0.1vw);
+   position: relative;
+   z-index: 2;
 }
 
 .social-card-title {
@@ -111,7 +162,6 @@
    ===================== */
 .home-card-anonym {
    padding: var(--spacing-2) var(--spacing-3);
-   background-size: cover;
    border: calc(4px + 0.1vw) solid var(--background-4);
    border-radius: var(--border-radius-4);
    box-shadow: var(--shadow-1);
@@ -129,11 +179,45 @@
 }
 
 #blur-image-tool {
-   background-image: url("../../../../assets/images/bg-blur-img.png");
    width: calc(170px + 8vw);
 }
 
+.home-card-anonym-bg {
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: var(--border-radius-4);
+   pointer-events: none;
+   transition: opacity 0.2s;
+   z-index: 0;
+}
+
+.home-card-anonym::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: url("../../../../assets/images/blur-hover.png") center/cover;
+   border-radius: var(--border-radius-4);
+   opacity: 0;
+   transition: opacity 0.2s;
+   pointer-events: none;
+   z-index: 0;
+}
+
+.home-card-anonym:hover::before,
+.home-card-anonym:active::before {
+   opacity: 1;
+}
+
+.home-card-anonym:hover .home-card-anonym-bg,
+.home-card-anonym:active .home-card-anonym-bg {
+   opacity: 0;
+}
+
 .home-card-anonym > *:not(.home-card-anonym-bg) {
+   position: relative;
    z-index: 1;
 }
 
@@ -184,19 +268,19 @@
 .home-card-harassment {
    padding: 6px;
    background-color: var(--background-13);
-
    border-radius: var(--border-radius-2);
    box-shadow: var(--shadow-1);
    position: relative;
    display: flex;
    flex-direction: column;
    cursor: pointer;
-   transition: transform 0.2s ease-in-out;
+   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .home-card-problem:hover,
 .home-card-harassment:hover {
    transform: translateY(-2px);
+   background-color: var(--color-neutral-light-background-4);
 }
 
 .problem-bg-container {
