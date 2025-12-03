@@ -59,19 +59,7 @@
    position: absolute;
    inset: 0;
    background: url("../../../../assets/images/Property-hover.png") center/cover;
-   border-radius: var(--border-radius-4);
-   opacity: 0;
-   transition: opacity 0.2s;
-   pointer-events: none;
-   z-index: 0;
-}
-
-.tools-item::after {
-   content: "";
-   position: absolute;
-   inset: 0;
-   background-color: var(--color-neutral-light-background-4);
-   border-radius: var(--border-radius-4);
+   border-radius: var(--border-radius-3);
    opacity: 0;
    transition: opacity 0.2s;
    pointer-events: none;
