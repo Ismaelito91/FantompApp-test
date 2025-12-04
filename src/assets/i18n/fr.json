@@ -796,7 +796,7 @@
          "CRIMINAL_GUESSES": "Un cybercriminel le devine en :",
          "ASSESSMENT_TEXT": "Ton mot de passe :",
          "INPUT_LABEL": "Mot de passe",
-         "CHECKBOX_LABEL": "Contient mon prénom, nom, ou des mots courants",
+         "CHECKBOX_LABEL": "Contient mon <strong>prénom</strong>, <strong>nom</strong>, ou des <strong>mots courants</strong>",
          "COPY_PASSWORD": "Copier le mot de passe",
          "COPIED": "Copié !",
          "BADGES": {
