@@ -5,6 +5,12 @@
    gap: var(--spacing-1);
    background-color: var(--background-2);
    border-radius: 12px;
+   transition: background-color 0.2s ease;
+}
+
+.card-container:hover,
+.card-container:focus {
+   background-color: var(--background-39);
 }
 
 .card-preview {

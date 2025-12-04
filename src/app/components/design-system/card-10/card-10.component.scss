@@ -6,6 +6,11 @@
    box-shadow: var(--shadow-1);
 }
 
+.card-container:hover,
+.card-container:focus {
+   background-color: var(--background-39);
+}
+
 .card-image {
    width: 109px;
    height: 73px;
