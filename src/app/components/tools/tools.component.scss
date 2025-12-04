@@ -1,3 +1,17 @@
+// Variables z-index pour la hiérarchie des couches
+$z-index-background: 0; // Image de fond (en dessous)
+$z-index-hover: 1; // Images hover (au-dessus du background)
+$z-index-content: 2; // Contenu (texte, icônes - au-dessus de tout)
+
+@mixin hover-pseudo-element {
+   content: "";
+   position: absolute;
+   inset: 0;
+   opacity: 0;
+   pointer-events: none;
+   z-index: $z-index-hover;
+}
+
 .tools-container {
    gap: var(--spacing-5);
    padding: var(--spacing-3);
@@ -32,78 +46,48 @@
    border-radius: var(--border-radius-4);
    pointer-events: none;
    transition: opacity 0.2s;
-   z-index: 0;
+   z-index: $z-index-background;
 }
 
 // Styles communs pour les pseudo-éléments hover
-#password-check-tool::before,
-#blur-image-tool::before,
-#visibility-check-tool::before {
-   content: "";
-   position: absolute;
-   inset: 0;
+.hoverable::before {
+   @include hover-pseudo-element;
    border-radius: var(--border-radius-4);
-   opacity: 0;
-   transition: opacity 0.2s;
-   pointer-events: none;
-   z-index: 0;
 }
 
-#password-check-tool::before {
+// Images spécifiques pour chaque tool (plus spécifique pour surcharger)
+.hoverable.password-check-hover::before {
    background: url("../../../assets/images/Property-hover.png") center/cover;
 }
 
-#blur-image-tool::before {
+.hoverable.blur-image-hover::before {
    background: url("../../../assets/images/blur-hover-.png") center/cover;
 }
 
-#visibility-check-tool::before {
+.hoverable.visibility-check-hover::before {
    background: url("../../../assets/images/visibility-hover.png") center/cover;
 }
 
-#password-check-tool::after,
-#blur-image-tool::after,
-#visibility-check-tool::after {
-   content: "";
-   position: absolute;
-   inset: 0;
-   background: url("/assets/images/Property-hover.png") center/cover;
-   border-radius: var(--border-radius-3);
-   opacity: 0;
-   transition: opacity 0.2s;
-   pointer-events: none;
-   z-index: 0;
-}
-
-// Hover commun
-#password-check-tool:hover::before,
-#password-check-tool:active::before,
-#blur-image-tool:hover::before,
-#blur-image-tool:active::before,
-#visibility-check-tool:hover::before,
-#visibility-check-tool:active::before,
-#password-check-tool:hover::after,
-#password-check-tool:active::after,
-#blur-image-tool:hover::after,
-#blur-image-tool:active::after,
-#visibility-check-tool:hover::after,
-#visibility-check-tool:active::after {
+// États hover/active
+.hoverable:hover::before,
+.hoverable:active::before {
    opacity: 1;
 }
 
-#password-check-tool:hover .tools-item-bg,
-#password-check-tool:active .tools-item-bg,
-#blur-image-tool:hover .tools-item-bg,
-#blur-image-tool:active .tools-item-bg,
-#visibility-check-tool:hover .tools-item-bg,
-#visibility-check-tool:active .tools-item-bg {
+.hoverable:hover .tools-item-bg,
+.hoverable:active .tools-item-bg {
    opacity: 0;
+}
+
+// Classe utilitaire pour les éléments de contenu au-dessus des hover
+.tools-content-layer {
+   position: relative;
+   z-index: $z-index-content;
 }
 
 .tools-item-body {
    gap: var(--spacing-2);
-   position: relative;
-   z-index: 2;
+   @extend .tools-content-layer;
 }
 
 .tools-item-img {
@@ -111,19 +95,16 @@
    max-width: 116px;
    height: 92px;
    object-fit: contain;
-   position: relative;
-   z-index: 2;
+   @extend .tools-content-layer;
 }
 
 .tools-item-text {
    gap: var(--spacing-1);
-   position: relative;
-   z-index: 2;
+   @extend .tools-content-layer;
 }
 
 .tools-item > div:last-child {
-   position: relative;
-   z-index: 2;
+   @extend .tools-content-layer;
 }
 
 .tools-item-title {
