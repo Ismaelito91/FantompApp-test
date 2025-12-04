@@ -799,7 +799,7 @@
          "CRIMINAL_GUESSES": "A cybercriminal guesses it in:",
          "ASSESSMENT_TEXT": "Your password:",
          "INPUT_LABEL": "Password",
-         "CHECKBOX_LABEL": "Contains my first name, last name, or common words",
+         "CHECKBOX_LABEL": "Contains my <strong>first name</strong>, <strong>last name</strong>, or <strong>common words</strong>",
          "COPY_PASSWORD": "Copy the password",
          "COPIED": "Copied!",
          "BADGES": {

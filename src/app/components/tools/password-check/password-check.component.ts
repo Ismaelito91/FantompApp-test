@@ -23,6 +23,7 @@ import { BadgeComponent } from "../../design-system/badge/badge.component";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
 import { ButtonCloseComponent } from "../../design-system/button-close/button-close.component";
 import { ButtonComponent } from "../../design-system/button/button.component";
+import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { UtilsService } from "../../../service/utils.service";
 
 @Component({
@@ -41,6 +42,7 @@ import { UtilsService } from "../../../service/utils.service";
       PopoverComponent,
       PopoverTemplate,
       Arrow,
+      SafeHtmlPipe,
    ],
    templateUrl: "./password-check.component.html",
    styleUrl: "./password-check.component.scss",
