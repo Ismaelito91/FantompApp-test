@@ -90,15 +90,15 @@
          align-self: center; /* Assure l'alignement avec l'icône */
       }
 
-      /* shared active-state sizing/centering */
-      &.active-link,
-      &.problem-active,
-      &.force-active,
-      &.tools-active {
+      $active-states: "&.active-link, &.problem-active, &.force-active, &.tools-active";
+      $not-active: ":not(.active-link):not(.problem-active):not(.force-active):not(.tools-active)";
+
+      #{$active-states},
+      &:hover#{$not-active},
+      &:focus#{$not-active} {
          background-color: var(--color-primary-100);
          color: var(--color-8);
 
-         /* when active: show the active icon, hide the inactive one (forceful) */
          .icon-active {
             opacity: 1 !important;
             z-index: 3 !important;
@@ -129,10 +129,12 @@
 
       :host-context(.dark-theme) .toolbar-nav {
          .nav-button {
-            &.active-link,
-            &.problem-active,
-            &.tools-active,
-            &.force-active {
+            $active-states: "&.active-link, &.problem-active, &.tools-active, &.force-active";
+            $not-active: ":not(.active-link):not(.problem-active):not(.force-active):not(.tools-active)";
+
+            #{$active-states},
+            &:hover#{$not-active},
+            &:focus#{$not-active} {
                color: var(--color-neutral-dark-background-1) !important;
 
                span,
@@ -169,10 +171,12 @@
             font-size: var(--font-size-body-md);
          }
 
-         &.active-link,
-         &.problem-active,
-         &.force-active,
-         &.tools-active {
+         $active-states: "&.active-link, &.problem-active, &.force-active, &.tools-active";
+         $not-active: ":not(.active-link):not(.problem-active):not(.force-active):not(.tools-active)";
+
+         #{$active-states},
+         &:hover#{$not-active},
+         &:focus#{$not-active} {
             padding: var(--spacing-2) 6px;
          }
       }

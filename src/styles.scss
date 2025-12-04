@@ -224,6 +224,7 @@
    --color-neutral-light-background-4: #d6d3de;
    --color-neutral-light-background-5: #f2f1f4;
    --color-neutral-light-content-1: #10052e;
+   --color-neutral-light-content-1_66: #10052e66;
    --color-neutral-light-content-2: #291a4d;
    --color-neutral-light-content-3: #484158;
    --color-neutral-light-content-4: #605775;
@@ -295,6 +296,8 @@
    --background-35: var(--color-neutral-light-background-1_70);
    --background-36: var(--color-neutral-light-background-1);
    --background-37: var(--color-neutral-light-background-1_30);
+   --background-38: var(--color-neutral-light-background-4);
+   --background-39: var(--color-blue-50);
 
    --color-1: var(--color-neutral-light-content-2);
    --color-2: var(--color-primary-950);
@@ -671,6 +674,8 @@
    --background-35: var(--color-neutral-dark-background-2_70);
    --background-36: var(--color-neutral-dark-background-1);
    --background-37: var(--color-neutral-dark-background-2);
+   --background-38: var(--color-neutral-dark-background-3);
+   --background-39: var(--color-neutral-dark-background-4);
 
    --color-1: var(--color-neutral-light-background-2);
    --color-2: var(--color-neutral-light-background-2);
@@ -711,5 +716,4 @@
    --color-36: var(--color-neutral-light-background-3);
    --color-37: var(--color-neutral-dark-background-2);
    --color-38: transparent;
-
 }

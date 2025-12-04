@@ -23,39 +23,87 @@
    position: relative;
 }
 
-#password-check-tool {
-   background-image: url('../../../assets/images/password-check-tool-bg.png');
-}
-
-.tools-item::after {
-   content: '';
+.tools-item-bg {
    position: absolute;
-   top: 0;
-   left: 0;
+   inset: 0;
    width: 100%;
    height: 100%;
-   background-color: #10052E66;
-   opacity: 0;
-   transition: opacity 0.2s ease;
+   object-fit: cover;
+   border-radius: var(--border-radius-4);
    pointer-events: none;
-   z-index: 1;
-   border-radius: var(--border-radius-3);
+   transition: opacity 0.2s;
+   z-index: 0;
 }
 
-.tools-item:active::after {
+// Styles communs pour les pseudo-éléments hover
+#password-check-tool::before,
+#blur-image-tool::before,
+#visibility-check-tool::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: var(--border-radius-4);
+   opacity: 0;
+   transition: opacity 0.2s;
+   pointer-events: none;
+   z-index: 0;
+}
+
+#password-check-tool::before {
+   background: url("../../../assets/images/Property-hover.png") center/cover;
+}
+
+#blur-image-tool::before {
+   background: url("../../../assets/images/blur-hover-.png") center/cover;
+}
+
+#visibility-check-tool::before {
+   background: url("../../../assets/images/visibility-hover.png") center/cover;
+}
+
+#password-check-tool::after,
+#blur-image-tool::after,
+#visibility-check-tool::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: url("/assets/images/Property-hover.png") center/cover;
+   border-radius: var(--border-radius-3);
+   opacity: 0;
+   transition: opacity 0.2s;
+   pointer-events: none;
+   z-index: 0;
+}
+
+// Hover commun
+#password-check-tool:hover::before,
+#password-check-tool:active::before,
+#blur-image-tool:hover::before,
+#blur-image-tool:active::before,
+#visibility-check-tool:hover::before,
+#visibility-check-tool:active::before,
+#password-check-tool:hover::after,
+#password-check-tool:active::after,
+#blur-image-tool:hover::after,
+#blur-image-tool:active::after,
+#visibility-check-tool:hover::after,
+#visibility-check-tool:active::after {
    opacity: 1;
 }
 
-#blur-image-tool {
-   background-image: url('../../../assets/images/blur-image-tool-bg.jpg');
-}
-
-#visibility-check-tool {
-   background-image: url('../../../assets/images/visibility-check-tool-bg.jpg');
+#password-check-tool:hover .tools-item-bg,
+#password-check-tool:active .tools-item-bg,
+#blur-image-tool:hover .tools-item-bg,
+#blur-image-tool:active .tools-item-bg,
+#visibility-check-tool:hover .tools-item-bg,
+#visibility-check-tool:active .tools-item-bg {
+   opacity: 0;
 }
 
 .tools-item-body {
    gap: var(--spacing-2);
+   position: relative;
+   z-index: 2;
 }
 
 .tools-item-img {
@@ -63,10 +111,19 @@
    max-width: 116px;
    height: 92px;
    object-fit: contain;
+   position: relative;
+   z-index: 2;
 }
 
 .tools-item-text {
    gap: var(--spacing-1);
+   position: relative;
+   z-index: 2;
+}
+
+.tools-item > div:last-child {
+   position: relative;
+   z-index: 2;
 }
 
 .tools-item-title {
