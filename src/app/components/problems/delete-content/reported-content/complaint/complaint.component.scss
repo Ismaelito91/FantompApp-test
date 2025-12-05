@@ -27,3 +27,9 @@
       gap: var(--spacing-3);
    }
 }
+
+@media (min-width: 770px) {
+   .complaint-container .controls {
+      left: calc(50% + 118px);
+   }
+}

@@ -28,6 +28,12 @@
    }
 }
 
+@media (min-width: 770px) {
+   .reported-content-container .controls {
+      left: calc(50% + 118px);
+   }
+}
+
 ::ng-deep .ngx-arrow {
    .arrow {
       background-color: var(--background-6) !important;
