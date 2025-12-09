@@ -1,31 +1,32 @@
-.speech-box-1, .speech-box-2 {
-  position: relative;
+.speech-box-1,
+.speech-box-2 {
+   position: relative;
 }
 
 .speech-box-1::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  right: -3px;
-  width: 0;
-  height: 0;
-  border-left: 30px solid transparent;
-  border-right: 12px solid transparent;
-  border-top: 12px solid var(--background-4);
-  transform: skewX(60deg);
+   content: "";
+   position: absolute;
+   bottom: -1px;
+   right: -3px;
+   width: 0;
+   height: 0;
+   border-left: 30px solid transparent;
+   border-right: 12px solid transparent;
+   border-top: 12px solid var(--background-4);
+   transform: skewX(60deg);
 }
 
 .speech-box-2::after {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  left: -14px;
-  width: 0;
-  height: 0;
-  border-left: 30px solid transparent;
-  border-right: 12px solid transparent;
-  border-top: 12px solid var(--color-primary-100);
-  transform: skewX(-73deg);
+   content: "";
+   position: absolute;
+   bottom: 2px;
+   left: -14px;
+   width: 0;
+   height: 0;
+   border-left: 30px solid transparent;
+   border-right: 12px solid transparent;
+   border-top: 12px solid var(--color-primary-100);
+   transform: skewX(-73deg);
 }
 
 .hacking-container {
@@ -35,7 +36,8 @@
    min-height: 100vh;
 
    .header {
-      padding: var(--spacing-3) var(--spacing-5) var(--spacing-4) var(--spacing-5);
+      padding: var(--spacing-3) var(--spacing-5) var(--spacing-4)
+         var(--spacing-5);
       gap: 30px;
 
       .details {
@@ -47,8 +49,14 @@
       background-color: var(--background-7);
       border-radius: var(--border-radius-5) var(--border-radius-5) 0 0;
       padding: var(--spacing-5);
+      padding-bottom: calc(
+         var(--spacing-5) + 100px
+      ); // espace pour les contrôles fixes
       gap: var(--spacing-5);
       flex: 1;
+      min-height: 0; // permet au flex item de scroller
+      overflow-y: auto;
+      overflow-x: hidden;
 
       .sections {
          gap: var(--spacing-5);
@@ -72,8 +80,12 @@
                      --mat-radio-label-text-font: var(--body-font-family);
                      --mat-radio-label-text-size: var(--font-size-body-md);
                      --mat-radio-label-text-weight: var(--font-weight-body);
-                     --mat-radio-label-text-line-height: var(--line-height-body);
-                     --mat-radio-label-text-tracking: var(--letter-spacing-body);
+                     --mat-radio-label-text-line-height: var(
+                        --line-height-body
+                     );
+                     --mat-radio-label-text-tracking: var(
+                        --letter-spacing-body
+                     );
 
                      width: 100%;
 
