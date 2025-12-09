@@ -166,6 +166,7 @@
       .nav-button {
          flex-direction: row;
          justify-content: start;
+         padding: var(--spacing-2) 6px;
 
          span {
             font-size: var(--font-size-body-md);
@@ -182,6 +183,10 @@
       }
 
       ::ng-deep {
+         .mdc-button {
+            margin: 0 !important; // supprime les marges Angular Material
+         }
+
          .mdc-button__label {
             display: flex;
             gap: 10px;
