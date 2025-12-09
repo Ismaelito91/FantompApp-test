@@ -182,7 +182,7 @@ export class HaveAccessComponent {
                   firstTitle:
                      "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A4.TITLE",
                   description:
-                     "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A3.LONG_DESCRIPTION",
+                     "PROBLEMS.HACKING.RESULTS.HAVE_ACCESS.ACTIONS.LATER.A4.LONG_DESCRIPTION",
                   staticImage: "assets/images/reco-password-manager-cover.png",
                },
             ],
