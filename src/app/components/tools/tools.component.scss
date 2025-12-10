@@ -8,6 +8,7 @@ $z-index-content: 2; // Contenu (texte, icônes - au-dessus de tout)
    position: absolute;
    inset: 0;
    opacity: 0;
+   transition: opacity 0.2s;
    pointer-events: none;
    z-index: $z-index-hover;
 }
@@ -44,8 +45,8 @@ $z-index-content: 2; // Contenu (texte, icônes - au-dessus de tout)
    height: 100%;
    object-fit: cover;
    border-radius: var(--border-radius-4);
-   pointer-events: none;
    transition: opacity 0.2s;
+   pointer-events: none;
    z-index: $z-index-background;
 }
 
