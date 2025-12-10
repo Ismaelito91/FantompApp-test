@@ -1,7 +1,12 @@
 <div class="home-cards-container">
    <!-- Titre principal avec bouton Tout voir -->
    <div class="home-cards__main-header flex justify-between items-center">
-      <h5 class="home-cards__main-title" role="heading" aria-level="2">
+      <h5
+         id="network-protection-title"
+         class="home-cards__main-title"
+         role="heading"
+         aria-level="2"
+      >
          {{ "HOME.CARDS.MAIN_TITLE" | translate }}
       </h5>
       <button
@@ -15,93 +20,100 @@
       </button>
    </div>
 
-   <!-- Première carte : Mot de passe (structure harmonisée) -->
    <div
-      id="password-check-tool"
-      class="tools-item flex justify-between items-center cursor-pointer"
-      (click)="navigateToPasswordCheck()"
-      (keydown)="onKeyDownPasswordCheck($event)"
-      tabindex="0"
-      role="button"
+      class="network-protection-section"
+      role="group"
+      aria-labelledby="network-protection-title"
    >
-      <img
-         src="../../../../assets/images/password-check-tool-bg.png"
-         alt=""
-         class="tools-item-bg"
-         aria-hidden="true"
-      />
-      <div class="tools-item-body flex items-center">
+      <!-- Première carte : Mot de passe (structure harmonisée) -->
+      <div
+         id="password-check-tool"
+         class="tools-item flex justify-between items-center cursor-pointer"
+         (click)="navigateToPasswordCheck()"
+         (keydown)="onKeyDownPasswordCheck($event)"
+         tabindex="0"
+         role="button"
+      >
          <img
-            src="../../../../assets/images/password-img.svg"
+            src="../../../../assets/images/password-check-tool-bg.png"
             alt=""
+            class="tools-item-bg"
             aria-hidden="true"
-            class="tools-item-img"
          />
-         <div class="tools-item-text flex flex-col">
-            <h6 class="social-card-title" role="heading" aria-level="3">
-               {{ "HOME.CARDS.PASSWORD_CHECK.TITLE" | translate }}
-            </h6>
-            <p class="social-card-description">
-               {{ "HOME.CARDS.PASSWORD_CHECK.DESCRIPTION" | translate }}
-            </p>
-         </div>
-      </div>
-      <div>
-         <mat-icon
-            svgIcon="chevron24x24-icon"
-            class="!size-[24px]"
-            style="color: var(--color-neutral-light-background-1)"
-         ></mat-icon>
-      </div>
-   </div>
-
-   <!-- Deuxième carte : Anonymisation -->
-   <div
-      class="home-card-anonym"
-      role="button"
-      tabindex="0"
-      (click)="navigateToBlurImage()"
-      (keydown)="onKeyDownAnonym($event)"
-      id="blur-image-tool"
-   >
-      <img
-         src="../../../../assets/images/bg-blur-img.png"
-         alt=""
-         class="home-card-anonym-bg"
-         aria-hidden="true"
-      />
-      <div class="home-card-anonym__content">
-         <div class="home-card-anonym__image-container">
+         <div class="tools-item-body flex items-center">
             <img
-               src="../../../../assets/images/anonym-img.png"
+               src="../../../../assets/images/password-img.svg"
                alt=""
                aria-hidden="true"
-               class="home-card-anonym__image"
+               class="tools-item-img"
             />
+            <div class="tools-item-text flex flex-col">
+               <h6 class="social-card-title" role="heading" aria-level="3">
+                  {{ "HOME.CARDS.PASSWORD_CHECK.TITLE" | translate }}
+               </h6>
+               <p class="social-card-description">
+                  {{ "HOME.CARDS.PASSWORD_CHECK.DESCRIPTION" | translate }}
+               </p>
+            </div>
          </div>
-         <div class="flex items-center gap-(--spacing-1)">
-            <div class="home-card-anonym__text-content">
-               <h6
-                  class="social-card-title"
-                  role="heading"
-                  aria-level="3"
-                  [innerHTML]="'HOME.CARDS.BLUR_IMAGE.TITLE' | translate"
-               ></h6>
-               <p
-                  class="social-card-description"
-                  [innerHTML]="'HOME.CARDS.BLUR_IMAGE.DESCRIPTION' | translate"
-               ></p>
-            </div>
-            <div class="home-card-anonym__arrow">
-               <mat-icon
-                  svgIcon="chevron24x24-icon"
-                  class="!size-[24px]"
-                  style="color: var(--color-neutral-light-background-1)"
-               ></mat-icon>
-            </div>
+         <div>
+            <mat-icon
+               svgIcon="chevron24x24-icon"
+               class="!size-[24px]"
+               style="color: var(--color-neutral-light-background-1)"
+            ></mat-icon>
          </div>
       </div>
 
+      <!-- Deuxième carte : Anonymisation -->
+      <div
+         class="home-card-anonym"
+         role="button"
+         tabindex="0"
+         (click)="navigateToBlurImage()"
+         (keydown)="onKeyDownAnonym($event)"
+         id="blur-image-tool"
+      >
+         <img
+            src="../../../../assets/images/bg-blur-img.png"
+            alt=""
+            class="home-card-anonym-bg"
+            aria-hidden="true"
+         />
+         <div class="home-card-anonym__content">
+            <div class="home-card-anonym__image-container">
+               <img
+                  src="../../../../assets/images/anonym-img.png"
+                  alt=""
+                  aria-hidden="true"
+                  class="home-card-anonym__image"
+               />
+            </div>
+            <div class="flex items-center gap-(--spacing-1)">
+               <div class="home-card-anonym__text-content">
+                  <h6
+                     class="social-card-title"
+                     role="heading"
+                     aria-level="3"
+                     [innerHTML]="'HOME.CARDS.BLUR_IMAGE.TITLE' | translate"
+                  ></h6>
+                  <p
+                     class="social-card-description"
+                     [innerHTML]="
+                        'HOME.CARDS.BLUR_IMAGE.DESCRIPTION' | translate
+                     "
+                  ></p>
+               </div>
+               <div class="home-card-anonym__arrow">
+                  <mat-icon
+                     svgIcon="chevron24x24-icon"
+                     class="!size-[24px]"
+                     style="color: var(--color-neutral-light-background-1)"
+                  ></mat-icon>
+               </div>
+            </div>
+         </div>
+      </div>
       <!-- Fantôme animé -->
       @if (shouldPlayGhostAnimation()) {
       <div class="ghost-animation-container">
