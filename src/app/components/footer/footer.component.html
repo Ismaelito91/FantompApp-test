@@ -1,5 +1,9 @@
 <div>
-   <div class="desktop-only">
+   <a
+      routerLink="/home"
+      class="desktop-only logo-link"
+      [attr.aria-label]="'COMMON.ARIA_LABEL.HOME' | translate"
+   >
       @if (!isDarkMode()) {
       <img
          src="assets/images/onboarding/logo-fantomapp.svg"
@@ -13,7 +17,7 @@
          class="logo"
       />
       }
-   </div>
+   </a>
 
    <nav
       class="toolbar-nav max-w-(--max-width-mobile)"
