@@ -14,3 +14,8 @@
       font-size: var(--font-size-body-sm);
    }
 }
+
+.card-container:hover,
+.card-container:focus {
+   background-color: var(--background-40);
+}
