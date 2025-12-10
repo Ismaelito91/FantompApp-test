@@ -27,12 +27,25 @@
    text-decoration: underline;
 }
 
-/* Style spécifique pour le titre des problèmes */
 .home-cards-problems-container .home-cards__main-title {
    color: var(--color-15);
 }
 
-//  Carte mot de passe (tools-item)
+.network-protection-section {
+   grid-template-columns: 1fr auto;
+   gap: var(--spacing-3);
+   position: relative;
+}
+
+.network-protection-section > #password-check-tool {
+   width: 100%;
+   margin-bottom: var(--spacing-3);
+}
+
+.network-protection-section > #blur-image-tool {
+   width: 50%;
+}
+
 .tools-item {
    padding: 28px 6px;
    border: calc(4px + 0.1vw) solid var(--background-4);
@@ -145,9 +158,6 @@
    opacity: 1;
 }
 
-/* =====================
-   Carte anonymisation
-   ===================== */
 .home-card-anonym {
    padding: var(--spacing-2) var(--spacing-3);
    border: calc(4px + 0.1vw) solid var(--background-4);
@@ -243,9 +253,6 @@
    font-weight: bold;
 }
 
-/* =====================
-   Cartes de problèmes et harcèlement
-   ===================== */
 .home-cards-problems-container {
    display: flex;
    flex-direction: column;
@@ -311,14 +318,13 @@
    color: var(--color-34);
 }
 
-/* Animation du fantôme */
 .ghost-animation-container {
    position: absolute;
-   top: 60%;
-   right: calc(-80px - 4vw);
-   transform: translateY(-50%);
-   width: calc(70px + 3vw);
-   height: calc(100px + 4vw);
+   bottom: 0;
+   left: 75%;
+   transform: translate(-50%, 0);
+   width: calc(100px + 5vw);
+   height: calc(140px + 3vw);
    z-index: 1000;
    pointer-events: none;
    -webkit-user-select: none;
@@ -331,20 +337,17 @@
 
 .ghost-image {
    position: absolute;
-   top: 25px;
+   top: 0;
    left: 0;
-   width: 110%;
+   width: 100%;
    height: 100%;
-   left: 28px;
-   right: 36px;
 }
 
-/* Animation CSS pour le fantôme */
+// Animations pour le fantôme
 
-/* Animation d'entrée : apparition depuis la droite avec rotation */
 @keyframes ghost-entrance {
    0% {
-      transform: translateX(217px) translateY(-30px) rotate(30deg);
+      transform: translateX(50px) translateY(-30px) rotate(30deg);
       opacity: 0;
    }
    100% {
@@ -373,6 +376,7 @@
 .ghost-normal {
    opacity: 0;
    /* Animation d'entrée puis animation de clignotement */
+
    animation: ghost-entrance 0.2s ease-out forwards 0.8s,
       ghost-invisible 0ms ease-out forwards 1.6s,
       ghost-visible 0ms ease-out forwards 1.8s;
@@ -381,11 +385,13 @@
 .ghost-wink-image {
    opacity: 0;
    /* animation de clignotement */
+
    animation: ghost-visible 0ms ease-out forwards 1.6s,
       ghost-invisible 0ms ease-out forwards 1.8s;
 }
 
 // Styles pour les flèches des cartes problème et harcèlement
+
 .home-card-problem__arrow,
 .home-card-harassment__arrow {
    display: flex;
@@ -395,16 +401,17 @@
    justify-content: center;
    transform: translateY(-50%);
    pointer-events: none;
-
-   mat-icon {
-      width: 24px !important;
-      height: 24px !important;
-      font-size: 24px !important;
-      transition: transform 0.2s ease;
-   }
 }
 
+.home-card-problem__arrow mat-icon,
+.home-card-harassment__arrow mat-icon {
+   width: 24px !important;
+   height: 24px !important;
+   font-size: 24px !important;
+   transition: transform 0.2s ease;
+}
 // Couleurs par défaut (mode light)
+
 .home-card-problem__arrow mat-icon {
    color: var(--color-27);
 }
