@@ -4,6 +4,11 @@
    padding: var(--spacing-3);
 }
 
+.tile-main:hover,
+.tile-main:focus {
+   background-color: var(--background-41);
+}
+
 .tile-container {
    overflow: auto;
    gap: 6px;
@@ -40,7 +45,6 @@
       overflow: hidden;
       white-space: nowrap;
    }
-
 }
 
 .tile-image {

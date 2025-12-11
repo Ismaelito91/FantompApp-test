@@ -10,6 +10,10 @@
 .card-container:hover,
 .card-container:focus {
    background-color: var(--background-39);
+
+   .card-description-text {
+      color: var(--color-11) !important;
+   }
 }
 
 .card-preview {
@@ -32,10 +36,12 @@
 
 .card-description {
    gap: 2px;
+   transition: color 0.2s;
 }
 
 .card-description-text {
    font-size: var(--font-size-body-sm);
    font-weight: var(--font-weight-heading);
    color: var(--color-10);
+   transition: color 0.2s;
 }

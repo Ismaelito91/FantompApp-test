@@ -6,6 +6,12 @@
    background-color: var(--background-2);
    padding: 13px 18px;
    border-radius: var(--border-radius-3);
+   transition: background-color 0.2s;
+}
+
+.tile-container:hover,
+.tile-container:focus {
+   background-color: var(--background-41);
 }
 
 .tile-body {

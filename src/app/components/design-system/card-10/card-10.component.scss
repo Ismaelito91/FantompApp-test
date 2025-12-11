@@ -9,6 +9,10 @@
 .card-container:hover,
 .card-container:focus {
    background-color: var(--background-39);
+
+   .card-title {
+      color: var(--color-11);
+   }
 }
 
 .card-image {
@@ -22,4 +26,5 @@
 .card-title {
    font-weight: 600;
    color: var(--color-3);
+   transition: color 0.2s;
 }
