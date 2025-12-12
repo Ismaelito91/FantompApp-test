@@ -10,6 +10,7 @@ import { ReplaceStringDarkPipe } from "../../../pipes/replace-string-dark.pipe";
 
 @Component({
    selector: "app-enriched-link",
+   standalone: true,
    imports: [
       MatIconModule,
       StripHtmlPipe,

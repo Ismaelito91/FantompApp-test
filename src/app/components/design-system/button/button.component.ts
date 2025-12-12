@@ -9,10 +9,10 @@ import { ButtonVariant } from "../../../model/type/button-variant.type";
 import { IconInfo } from "../../../model/type/icon-info.type";
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { PageComponentUtilsService } from "../../../service/page-component-utils.service";
-import { ModalFullComponent } from "../modal-full/modal-full.component";
 
 @Component({
    selector: "app-button",
+   standalone: true,
    imports: [MatButtonModule, MatIconModule, SafeHtmlPipe],
    templateUrl: "./button.component.html",
    styleUrl: "./button.component.scss",
@@ -33,7 +33,7 @@ export class ButtonComponent {
             const modalPage = this.pageComponentUtils.getComponentById(
                this.data()!.modalId!
             );
-            this.openDialog(ModalFullComponent, modalPage);
+            this.openDialog(modalPage);
          } else {
             switch (this.data()!.socialMedia) {
                case SocialMedia.FACEBOOK:
@@ -41,31 +41,31 @@ export class ButtonComponent {
                      this.pageComponentUtils.getComponentByCode(
                         "modal_facebook"
                      );
-                  this.openDialog(ModalFullComponent, modalFacebook);
+                  this.openDialog(modalFacebook);
                   break;
                case SocialMedia.INSTAGRAM:
                   const modalInstagram =
                      this.pageComponentUtils.getComponentByCode(
                         "modal_instagram"
                      );
-                  this.openDialog(ModalFullComponent, modalInstagram);
+                  this.openDialog(modalInstagram);
                   break;
                case SocialMedia.TIKTOK:
                   const modalTiktok =
                      this.pageComponentUtils.getComponentByCode("modal_tiktok");
-                  this.openDialog(ModalFullComponent, modalTiktok);
+                  this.openDialog(modalTiktok);
                   break;
                case SocialMedia.SNAPCHAT:
                   const modalSnapchat =
                      this.pageComponentUtils.getComponentByCode(
                         "modal_snapchat"
                      );
-                  this.openDialog(ModalFullComponent, modalSnapchat);
+                  this.openDialog(modalSnapchat);
                   break;
                case SocialMedia.X:
                   const modalX =
                      this.pageComponentUtils.getComponentByCode("modal_x");
-                  this.openDialog(ModalFullComponent, modalX);
+                  this.openDialog(modalX);
                   break;
                default:
                   console.warn("Aucun dialog ne correspond aux données");
@@ -74,14 +74,14 @@ export class ButtonComponent {
       }
    }
 
-   private openDialog(
-      DialogComponent: any,
+   private async openDialog(
       data: PageComponentModel | null
-   ): void {
-      console.log("ModalFullComponent importé :", DialogComponent);
-
-      if (DialogComponent && data) {
-         this.dialog.open(DialogComponent, {
+   ): Promise<void> {
+      if (data) {
+         // Import dynamique pour éviter la dépendance circulaire
+         const { ModalFullComponent } = await import("../modal-full/modal-full.component");
+         
+         this.dialog.open(ModalFullComponent, {
             width: "100vw",
             maxWidth: "var(--max-width-viewport)",
             panelClass: "modal-slideup",

@@ -10,6 +10,7 @@ import { ReplaceStringDarkPipe } from '../../../pipes/replace-string-dark.pipe';
 
 @Component({
    selector: 'app-tile-mail',
+   standalone: true,
    imports: [PageTranslationPipe, SafeHtmlPipe, MatIconModule, ButtonComponent, TranslatePipe, ReplaceStringDarkPipe],
    templateUrl: './tile-mail.component.html',
    styleUrl: './tile-mail.component.scss'

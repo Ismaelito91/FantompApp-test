@@ -8,6 +8,7 @@ import { PageComponentUtilsService } from "../../../service/page-component-utils
 
 @Component({
    selector: "app-card-20",
+   standalone: true,
    imports: [
       PageTranslationPipe,
       SafeHtmlPipe,

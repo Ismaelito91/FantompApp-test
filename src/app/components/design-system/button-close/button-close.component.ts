@@ -7,6 +7,7 @@ import { ButtonSize } from '../../../model/type/button-size.type';
 
 @Component({
    selector: 'app-button-close',
+   standalone: true,
    imports: [MatIconModule, MatButtonModule, RouterLink, TranslatePipe],
    templateUrl: './button-close.component.html',
    styleUrl: './button-close.component.scss'
