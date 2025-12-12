@@ -1,6 +1,6 @@
 {
    "APP": {
-      "TITLE": "Fantôme App",
+      "TITLE": "FantomApp",
       "LOADING": "Chargement en cours...",
       "ERROR": "Erreur lors du chargement de l'application",
       "INSTALL_APP": "Installer l'application",
@@ -73,18 +73,18 @@
       },
       "STEP_TWO": {
          "TITLE": "Tu as besoin d'aide ? <span aria-hidden=\"true\">🛟</span>",
-         "DESCRIPTION": "Parfois on peut avoir des problèmes en ligne. Ici, tu trouveras des pistes et des solutions."
+         "DESCRIPTION": "Parfois on peut avoir des problèmes en ligne. Ici, tu trouveras des infos et des solutions."
       },
       "STEP_THREE": {
          "TITLE": "Outils <span aria-hidden=\"true\">🛠️</span>",
-         "DESCRIPTION": "Mot de passe béton, photo protégée, bio vérifiée : prends le contrôle de ta vie privée !"
+         "DESCRIPTION": "Mot de passe béton, photo protégée, pseudo et bio vérifiés : prends le contrôle de ta vie privée !"
       },
       "STEP_FOUR": {
          "TITLE": "Paramètres essentiels <span aria-hidden=\"true\">⚙️</span>",
-         "DESCRIPTION": "C'est pas toujours simple de paramétrer tes comptes... sur FantomApp tu trouveras plein d'astuces."
+         "DESCRIPTION": "C'est pas toujours simple de sécuriser tes comptes... sur FantomApp tu trouveras plein d'astuces."
       },
       "WELCOME": {
-         "TITLE": "Bienvenue dans Fantôme App !",
+         "TITLE": "Bienvenue dans FantomApp <span aria-hidden=\"true\">🎉</span>!",
          "DESCRIPTION": "Découvrez une application conçue pour protéger votre vie privée et vous offrir une expérience utilisateur exceptionnelle. Laissez-nous vous présenter ses principales fonctionnalités."
       },
       "APPEARANCE": {
@@ -110,14 +110,14 @@
       },
       "ACCESSIBILITY": {
          "TITLE": "Une application pour tous",
-         "DESCRIPTION": "Fantôme App est conçue pour être accessible à tous les utilisateurs, quelles que soient leurs capacités.",
+         "DESCRIPTION": "FantomApp est conçue pour être accessible à tous les utilisateurs, quelles que soient leurs capacités.",
          "FEATURE_1": "Interface compatible avec les lecteurs d'écran",
          "FEATURE_2": "Navigation au clavier optimisée",
          "FEATURE_3": "Respect des standards d'accessibilité RGAA"
       },
       "READY": {
          "TITLE": "Vous êtes prêt !",
-         "DESCRIPTION": "Vous connaissez maintenant les principales fonctionnalités de Fantôme App. Profitez pleinement de votre expérience sécurisée et personnalisée."
+         "DESCRIPTION": "Vous connaissez maintenant les principales fonctionnalités de FantomApp. Profitez pleinement de votre expérience sécurisée et personnalisée."
       }
    },
    "USER_CONFIG_APP": {
@@ -149,7 +149,7 @@
       "APPEARANCE": "Apparence",
       "CHANGE_ICON": "Changer l'icône",
       "RESOURCES": "Ressources",
-      "WHAT_IS_APP": "C'est quoi cette app ?",
+      "WHAT_IS_APP": "C'est quoi cette app ? (« mentions légales »)",
       "RIGHTS": "J'ai des droits",
       "ACCESSIBILITY": "FantomApp pour tous (Accessibilité)",
       "TUTORIAL": "Revoir le tutoriel de bienvenue",
@@ -178,7 +178,7 @@
                "TITLE": "Je veux faire effacer un contenu"
             },
             "HARASSMENT": {
-               "TITLE": "Je vis du cyber-harcèlement"
+               "TITLE": "Je vis du cyberharcèlement"
             }
          }
       },
@@ -218,7 +218,7 @@
             "DESCRIPTION": "Demander la suppression d'une photo ou vidéo te concernant"
          },
          "TITLE": "Je veux faire effacer un contenu",
-         "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L'effacer prend du temps mais nous allons t'aider à aller jusqu'au bout <span aria-hidden=\"true\">🗑️</span>",
+         "DESCRIPTION": "Une photo, vidéo, commentaire où tu apparais te pose problème ? L'effacer peut prendre du temps mais nous allons t'aider à aller jusqu'au bout <span aria-hidden=\"true\">🗑️</span>",
          "REPORTED": {
             "TITLE": "As-tu signalé le contenu auprès du réseau social ?",
             "NONE": {
@@ -229,7 +229,7 @@
             }
          },
          "VIOLENT": {
-            "TITLE": "Est ce qu'il s'agit d'un contenu violent ou te représentant nu·e ?",
+            "TITLE": "Est ce qu'il s'agit d'un contenu violent ou intime ?",
             "NONE": {
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Oui",
@@ -295,14 +295,14 @@
                      "SNAPCHAT": {
                         "TITLE": "Snapchat",
                         "LINK": {
-                           "TITLE": "Envoyer une demande – Assistance Snapchat",
-                           "DESCRIPTION": "https://help.snapchat.com/hc/fr-fr/requests/new"
+                           "TITLE": "Signaler un abus ou un contenu illégal sur Snapchat",
+                           "DESCRIPTION": "https://help.snapchat.com/hc/fr-fr/articles/7012399221652-Comment-signaler-un-abus-ou-un-contenu-ill%C3%A9gal-sur-Snapchat"
                         },
                         "MAIL": {
                            "TITLE": "Contacter Snapchat par mail",
                            "DESCRIPTION": "dpo@snapchat.com"
                         },
-                        "BUTTON": "Voir un exemple de mail"
+                        "BUTTON": "Comment signaler sur Snapchat ?"
                      },
                      "TIKTOK": {
                         "TITLE": "TikTok",
@@ -447,14 +447,14 @@
                "TITLE": "Est-ce qu'il s'agit d'un contenu violent ou d'une image intime de toi ?",
                "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.",
                "P1": {
-                  "TITLE": "Tu n’es pas seul·e",
-                  "DESCRIPTION": "La situation peut être très compliquée à vivre pour toi, mais dans la vie, on est jamais seul ! Il y a des solutions pour changer les choses et des personnes pour t’accompagner dans cette mésaventure."
+                  "TITLE": "Tu n’es pas seul",
+                  "DESCRIPTION": "La situation peut être très compliquée à vivre pour toi, mais dans la vie, on est jamais seul ! Il y a des solutions pour changer les choses et des personnes pour t’accompagner.Tu peux en parler à tes parents, un ami, un membre de ta famille, un professeur ou à un adulte en qui tu as confiance. <span aria-hidden=\"true\">🤝</span>"
                },
                "P2": {
-                  "TITLE": "Trouver du soutien",
-                  "DESCRIPTION": "Tu peux en parler à tes parents, un ami, un membre de ta famille, un professeur ou à un adulte dans lequel tu as confiance. <span aria-hidden=\"true\">🤝</span> Des <strong>professionnels</strong> peuvent aussi t'aider au <strong>3018</strong>. Anonyme, confidentiel et gratuit de 9h00 à 23h00, 7j/7. <span class=\"text-(--color-24)\"><strong>Appelle jusqu'à ce que tu aies une réponse</strong>.</span>",
+                  "TITLE": "Parler avec le 3018",
+                  "DESCRIPTION": "Des <strong>professionnels</strong> peuvent aussi t'aider au <strong>3018</strong>. Anonyme, confidentiel et gratuit de 9h00 à 23h00, 7j/7. <span class=\"text-(--color-24)\"><strong>Appelle jusqu'à ce que tu aies une réponse</strong>.</span>",
                   "LINK": {
-                     "TITLE": "Parler avec le 3018",
+                     "TITLE": "Par chat",
                      "DESCRIPTION": "https://e-enfance.org/besoin-daide/"
                   },
                   "CALL": {
@@ -462,11 +462,11 @@
                   }
                },
                "P3": {
-                  "TITLE": "Déposer plainte",
-                  "DESCRIPTION": "La plainte permet de signaler à la justice les faits dont tu es victime. Tu peux déposer plainte en allant voir la police ou la gendarmerie, ou par courrier.",
+                  "TITLE": "Parler avec la police",
+                  "DESCRIPTION": "Tu peux échanger à tout moment avec un policier ou un gendarme spécialisé qui te conseillera et pourra prendre ton signalement.",
                   "LINK": {
                      "TITLE": "Ma Sécurité | Ma Sécurité",
-                     "DESCRIPTION": "https://www.masecurite.interieur.gouv.fr/fr"
+                     "DESCRIPTION": "https://www.masecurite.interieur.gouv.fr/fr/tchat-mineurs"
                   }
                },
                "BUTTON": {
@@ -483,7 +483,7 @@
             "DESCRIPTION": "Récupérer son compte ou autre chose"
          },
          "TITLE": "Je me suis fait pirater",
-         "DESCRIPTION": "Si ton compte s'est déconnecté tout seul ou bien du contenu se publie seul, il est peut-être piraté.",
+         "DESCRIPTION": "Ton compte s'est déconnecté ou du contenu a été publié. Il a peut-être été piraté.",
          "TUTORIAL": {
             "P1": {
                "EMOJI": "<span aria-hidden=\"true\">❌</span>",
@@ -499,7 +499,7 @@
             },
             "P4": {
                "EMOJI": "<span aria-hidden=\"true\">📩</span>",
-               "CONTENT": "Mes amis ont été contactés soit disant par moi mais ce n'est pas moi qui leur aient envoyé un <strong>message</strong>"
+               "CONTENT": "Mes amis ont été contactés soit disant par moi mais ce n'est pas moi qui leur ait envoyé un <strong>message</strong>"
             },
             "P5": {
                "CONTENT": "<strong>Alors ton compte a peut-être été piraté</strong>"
@@ -517,7 +517,7 @@
          "RESULTS": {
             "HAVE_ACCESS": {
                "TITLE": "J’ai encore accès à mon compte",
-               "DESCRIPTION": "Quelques gestes pour reprendre le contrôle de son compte",
+               "DESCRIPTION": "Quelques gestes pour reprendre le contrôle de ton compte",
                "ACTIONS": {
                   "IMMEDIATELY": {
                      "TITLE": "À faire tout de suite <span aria-hidden=\"true\">⏱️</span>",
@@ -557,7 +557,7 @@
                      "A3": {
                         "TITLE": "Prévenir la banque",
                         "SHORT_DESCRIPTION": "Agir si tes infos bancaires étaient sur ton compte",
-                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, j’en parle tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vite, et bloquer la carte si nécessaire pour éviter tout vol."
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Si tes <strong>informations bancaires</strong> (comme le numéro de carte) étaient accessibles sur le compte piraté, parles en tout de suite à un adulte.<br />Il faut <strong>prévenir la banque</strong> au plus vite, et bloquer la carte si nécessaire pour éviter tout vol."
                      },
                      "A4": {
                         "TITLE": "Utiliser un gestionnaire de mot de passe",
@@ -566,8 +566,8 @@
                      },
                      "A5": {
                         "TITLE": "Ne jamais partager ses mots de passe",
-                        "SHORT_DESCRIPTION": "Le mieux est de les garder pour soi",
-                        "LONG_DESCRIPTION": "Quelqu’un pourrait lire tes messages, publier à ta place ou te voler ton compte.<br />Ton mot de passe, c’est perso — comme le code de ton téléphone."
+                        "SHORT_DESCRIPTION": "Le mieux est de les garder pour toi",
+                        "LONG_DESCRIPTION": "Quelqu’un pourrait lire tes messages, publier à ta place ou te voler ton compte.<br />Ton mot de passe, c’est perso, comme le code de ton téléphone."
                      }
                   }
                }
@@ -670,7 +670,7 @@
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Mon nom ou mon prénom en entier",
                   "ANSWER_1_DESCRIPTION": "(exemple : Martin)",
-                  "ANSWER_2_TITLE": "Mon nom ou mon prénom en abrégé.",
+                  "ANSWER_2_TITLE": "Mon nom ou ton prénom en abrégé.",
                   "ANSWER_2_DESCRIPTION": "(exemple: Mrt1)",
                   "ANSWER_3_TITLE": "Mon surnom",
                   "ANSWER_4_TITLE": "Ma date de naissance"
@@ -717,7 +717,7 @@
                "TITLE": "<span aria-hidden=\"true\">👥</span> Vie numérique",
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Les liens vers mes autres réseaux.",
-                  "ANSWER_1_DESCRIPTION": "(X, Instagram, TikTok, LinkedIn).",
+                  "ANSWER_1_DESCRIPTION": "(X, Instagram, TikTok, Snapchat).",
                   "ANSWER_2_TITLE": "Les comptes de mon entourage",
                   "ANSWER_2_DESCRIPTION": "(Amis, relations amoureuses...)"
                }
@@ -743,15 +743,15 @@
             "SUMMARY": {
                "GOOD": {
                   "TITLE": "Bien joué ! <span aria-hidden=\"true\">🥷</span>",
-                  "CONTENT": "Ton profil ne permet pas de savoir qui tu es dans la vie, sur les réseaux et aussi hors ligne."
+                  "CONTENT": "Ton profil ne permet pas de savoir qui tu es sur les réseaux et aussi hors ligne."
                },
                "OK": {
                   "TITLE": "Pas mal ! <span aria-hidden=\"true\">🥸</span>",
-                  "CONTENT": "Il y a encore quelques indices pour deviner qui tu es dans la vraie vie mais tu peux encore t’améliorer et divulguer moins d’informations sur toi."
+                  "CONTENT": "Il y a encore quelques indices pour deviner qui tu es dans la vraie vie. Regarde, tu peux divulger encore moins d’informations sur toi :"
                },
                "BAD": {
                   "TITLE": "Prudence ! <span aria-hidden=\"true\">🧐</span>",
-                  "CONTENT": "Ton profil contient beaucoup d’informations sur toi. Sois prudent·e, certaines personnes malintentionné·es peuvent se faire passer pour des ami·es, nuire à ta réputation ou te stalker dans la vraie vie."
+                  "CONTENT": "Ton profil contient beaucoup de choses sur toi. Certaines personnes pourraient se servir de ces informations, se faire passer pour des amis ou nuire à ta réputation :"
                }
             },
             "PSEUDO": {
@@ -772,7 +772,7 @@
          "TITLE": "Je floute ma photo",
          "DESCRIPTION": "Anonymiser ma photo de profil pour limiter mon identification en ligne.",
          "EDITING_TITLE": "Zone d’édition de la photo importée",
-         "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs, non floutée !<br /><span aria-hidden=\"true\">💡</span> <strong>Bon à savoir</strong>: FantomApp n'enregistre aucune des photos que tu charges ici!",
+         "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Conseil</strong> : Si tu floutes ta photo pour la mettre en photo de profil, ne la réutilise pas ailleurs, non floutée<br /><span aria-hidden=\"true\">💡</span> <strong>Bon à savoir</strong>: FantomApp n'enregistre aucune des photos que tu charges ici",
          "UPLOAD_IMAGE": "Importer une photo <span aria-hidden=\"true\">🤳</span>",
          "BLUR": "Flouter",
          "PIXELATE": "Pixelliser",
@@ -801,7 +801,7 @@
          "COPIED": "Copié !",
          "BADGES": {
             "IMMEDIATE": "C'EST IMMÉDIAT <span aria-hidden=\"true\">⚠️</span>",
-            "RAPID": "FAIS ENCORE MIEUX<span aria-hidden=\"true\">👇</span>",
+            "RAPID": "TU PEUX FAIRE MIEUX<span aria-hidden=\"true\">👇</span>",
             "CORRECT": "C'EST CORRECT <span aria-hidden=\"true\">🙂</span>",
             "SUPER": "C'EST SUPER <span aria-hidden=\"true\">😎</span>"
          },
@@ -843,7 +843,7 @@
                "WARNINGS_SECTION": "Conseils pour choisir un mot de passe sécurisé",
                "WARNINGS": {
                   "CRIMINALS_USE_DB": "<span aria-hidden=\"true\">🏴‍☠️</span> Les cybercriminels utilisent toutes les <strong>bases de données de mots</strong>, qui existent dans toutes les langues.",
-                  "NO_DICTIONARY": "<span aria-hidden=\"true\">⚠️</span> Donc n'utilise aucun <strong>mot du dictionnaire, ton prénom, ou ton nom</strong> pour constituer ton mot de passe"
+                  "NO_DICTIONARY": "<span aria-hidden=\"true\">⛔</span> Pas de <strong>mot du dictionnaire, ton prénom, ou ton nom</strong> pour créer ton mot de passe"
                }
             }
          },
