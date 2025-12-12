@@ -1,25 +1,39 @@
-<div class="view-steps-container flex flex-col" (keydown)="onkeydown($event)">
+<div
+   class="view-steps-container flex flex-col"
+   (keydown)="onkeydown($event)"
+   style="position: relative; overflow: auto"
+>
    <app-button-back class="view-header-btn"></app-button-back>
    @if ((page() | pageTranslation)?.firstTitle){
-      <div class="view-header-title text-center" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></div>
+   <div
+      class="view-header-title text-center"
+      [innerHTML]="
+         (page() | pageTranslation)?.firstTitle! | translate | safeHtml
+      "
+   ></div>
    }
 
    <swiper-container #swiper class="flex-1" init="false" class="h-full">
       @for (child of sortedChildren; track $index) {
-         <swiper-slide class="!h-full">
-            @switch (child.type) {
-               @case (ComponentType.CARD_18) {
-                  <app-card-18 [data]="child" [index]="$index" [maxIndex]="(sortedChildren.length - 1)"
-                     (prev)="arrowPrev()"
-                     (next)="arrowNext()"></app-card-18>
-               }
-               @case (ComponentType.CARD_19) {
-                  <app-card-19 [data]="child" [index]="$index" [maxIndex]="(sortedChildren.length - 1)"
-                     (prev)="arrowPrev()"
-                     (next)="arrowNext()"></app-card-19>
-               }
-            }
-         </swiper-slide>
+      <swiper-slide class="!h-full" style="height: 900px">
+         @switch (child.type) { @case (ComponentType.CARD_18) {
+         <app-card-18
+            [data]="child"
+            [index]="$index"
+            [maxIndex]="sortedChildren.length - 1"
+            (prev)="arrowPrev()"
+            (next)="arrowNext()"
+         ></app-card-18>
+         } @case (ComponentType.CARD_19) {
+         <app-card-19
+            [data]="child"
+            [index]="$index"
+            [maxIndex]="sortedChildren.length - 1"
+            (prev)="arrowPrev()"
+            (next)="arrowNext()"
+         ></app-card-19>
+         } }
+      </swiper-slide>
       }
    </swiper-container>
 </div>
