@@ -69,7 +69,11 @@ $z-index-content: 2; // Contenu (texte, icônes - au-dessus de tout)
    background: url("../../../assets/images/visibility-hover.png") center/cover;
 }
 
-// États hover/active
+.hoverable:hover,
+.hoverable:active {
+   background-color: var(--color-neutral-light-content-1_66);
+}
+
 .hoverable:hover::before,
 .hoverable:active::before {
    opacity: 1;
