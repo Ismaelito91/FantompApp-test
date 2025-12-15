@@ -22,11 +22,8 @@ export class UtilsService {
    }
 
    goToExternal(urlOrTranslationKey: string) {
-      // Si c'est une URL (commence par http:// ou https://), l'utiliser directement
-      // Sinon, traiter comme une clé de traduction
-      const url = urlOrTranslationKey.startsWith('http://') || urlOrTranslationKey.startsWith('https://')
-         ? urlOrTranslationKey
-         : this.translateService.instant(urlOrTranslationKey);
+      const url = this.translateService.instant(urlOrTranslationKey);
+      console.log('redirection vers : ', url);
       window.open(url, '_blank');
    }
 
