@@ -1,6 +1,7 @@
 import { Platform } from '@angular/cdk/platform';
 import { inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
    providedIn: 'root'
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 export class UtilsService {
    private readonly router = inject(Router);
    private platform = inject(Platform);
+   private readonly translateService = inject(TranslateService);
    public isBackgroundInert = signal<boolean>(false);
 
    goTo(url: string) {
@@ -19,7 +21,12 @@ export class UtilsService {
       this.router.navigate([url], { state });
    }
 
-   goToExternal(url: string) {
+   goToExternal(urlOrTranslationKey: string) {
+      // Si c'est une URL (commence par http:// ou https://), l'utiliser directement
+      // Sinon, traiter comme une clé de traduction
+      const url = urlOrTranslationKey.startsWith('http://') || urlOrTranslationKey.startsWith('https://')
+         ? urlOrTranslationKey
+         : this.translateService.instant(urlOrTranslationKey);
       window.open(url, '_blank');
    }
 
