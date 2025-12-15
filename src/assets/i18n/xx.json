@@ -9,7 +9,7 @@
    },
    "COMMON": {
       "ORGANISATION": "CNIL",
-      "SAVE": "Enregistrer",
+      "SAVE": "Save",
       "CANCEL": "Cancel",
       "DELETE": "Delete",
       "EDIT": "Edit",
@@ -28,14 +28,14 @@
       "UNDERSTOOD": "Got it",
       "DOWNLOAD": "Download",
       "COPY": "Copy",
-      "COPIED": "Copied !",
+      "COPIED": "Copied!",
       "OR": "or",
       "ACTIVE": "Active",
       "ARIA_LABEL": {
-         "HOME": "Go to home",
-         "PROBLEM": "Go to problem",
-         "TOOLS": "Go to tools",
-         "SECURE": "Go to secure myself",
+         "HOME": "Go to Home",
+         "PROBLEM": "Go to Problem",
+         "TOOLS": "Go to Tools",
+         "SECURE": "Go to Secure myself",
          "MAIN_NAV": "Main menu"
       }
    },
@@ -59,8 +59,8 @@
       "CONTINUE": "Continue",
       "START_USING": "Start using it",
       "TAP_TO_CONTINUE": "Tap to continue",
-      "WELCOME_TO": "Welcome to FantomApp",
-      "GHOST_MODE_EXPLANATION": "Here you surf on <span class=\"ghost-mode\">ghost mode</span>, no one knows you're here. None of your information have been saved. You're free to explore how to protect your private life.",
+      "WELCOME_TO": "Welcome to",
+      "GHOST_MODE_EXPLANATION": "Here you surf on <span class=\"ghost-mode\">ghost mode</span>, no one knows you're here. None of your information is recorded. You're free to explore how to protect your privacy.",
       "PROGRESS": "Onboarding progress",
       "GO_TO_STEP": "Go to step",
       "COMPLETED_STEP": "Completed step",
@@ -69,27 +69,27 @@
       "STEP_INFO": "Step",
       "OF": "On",
       "BUBBLE": {
-         "WELCOME": "Hi ! I'm here to guide you through the app !"
+         "WELCOME": "Hi! I'm here to guide you through the app!"
       },
       "STEP_TWO": {
          "TITLE": "Do you need help? <span aria-hidden=\"true\">🛟</span>",
-         "DESCRIPTION": "Sometimes we can have problems online. Here, you will find tips and solutions."
+         "DESCRIPTION": "Sometimes we can have problems online. Here, you will find information and solutions."
       },
       "STEP_THREE": {
          "TITLE": "Tools <span aria-hidden=\"true\">🛠️</span>",
-         "DESCRIPTION": "Strong password, protected photo, verified bio: take control of your private life!"
+         "DESCRIPTION": "Strong password, protected photo, checked username and bio: take the control of your privacy!"
       },
       "STEP_FOUR": {
          "TITLE": "Essential settings <span aria-hidden=\"true\">⚙️</span>",
-         "DESCRIPTION": "It's not always easy to configure your accounts... on FantomApp you will find lots of tips."
+         "DESCRIPTION": "It's not always easy to secrure your accounts... on FantomApp you'll find lot of tips."
       },
       "WELCOME": {
-         "TITLE": "Welcome to FantomApp !",
-         "DESCRIPTION": "Discover an application designed to protect your privacy and offer you an exceptional user experience. Let us introduce you to its main features."
+         "TITLE": "Welcome to FantomApp!",
+         "DESCRIPTION": "Discover an app designed to protect your privacy and provide you with an exceptional user experience. Let us introduce you to its main features."
       },
       "APPEARANCE": {
          "TITLE": "Customize your experience",
-         "DESCRIPTION": "Choose the appearance of the app according to your preferences and your surroundings.",
+         "DESCRIPTION": "Choose the appearance of the app depending on your preferences and your surroundings.",
          "FEATURE_1": "Choice between light, dark or automatic mode.",
          "FEATURE_2": "Use the same settings as your device",
          "FEATURE_3": "Interface optimised for visual comfort"
@@ -103,14 +103,14 @@
       },
       "RESOURCES": {
          "TITLE": "Acces all the ressources",
-         "DESCRIPTION": "Find all the important informations and useful tools at your fingertips.",
+         "DESCRIPTION": "Find all the important information and useful tools at your fingertips.",
          "FEATURE_1": "Complete documentation of the app",
          "FEATURE_2": "Detailled user guides",
          "FEATURE_3": "Support and online help"
       },
       "ACCESSIBILITY": {
          "TITLE": "An app for all",
-         "DESCRIPTION": "FantomApp was designed to be accessible to all users, regardless of their abilies.",
+         "DESCRIPTION": "FantomApp was designed to be accessible to all users, regardless of their abilities.",
          "FEATURE_1": "A screen-reader-friendly interface",
          "FEATURE_2": "An optimised keybord navigation",
          "FEATURE_3": "Compliant with RGAA accessibility standards"
@@ -131,31 +131,31 @@
       }
    },
    "APP_ICON_SELECTOR": {
-      "TITLE": "The app's icons",
+      "TITLE": "The app's icon",
       "SUBTITLE": "Customize the icon of the app.",
       "DEFAULT": "Default Icon",
       "DEFAULT_DESC": "The original icon",
-      "GHOST": "Phantom icon",
+      "GHOST": "Ghost icon",
       "GHOST_DESC": "A mysterious and discreet version",
       "DARK": "Dark icon",
       "DARK_DESC": "Perfect for night-time users",
       "COLORFUL": "Colourful icon",
-      "COLORFUL_DESC": "A vibrant and joyfull icon"
+      "COLORFUL_DESC": "A vibrant and joyful icon"
    },
    "HOME": {
-      "GREETING": "Hi <span aria-hidden=\"true\">👋</span> How can we help you ?",
-      "WELCOME": "Welcom on FantomApp",
+      "GREETING": "Hi <span aria-hidden=\"true\">👋</span> How can we help you?",
+      "WELCOME": "Welcome to FantomApp",
       "APP_INFO_TITLE": "About the app",
       "APPEARANCE": "Appearence",
-      "CHANGE_ICON": "Changing the icon",
+      "CHANGE_ICON": "Change the icon",
       "RESOURCES": "Ressources",
-      "WHAT_IS_APP": "What's this app for?",
-      "RIGHTS": "I have rights online",
+      "WHAT_IS_APP": "What is this app for?",
+      "RIGHTS": "I have rights",
       "ACCESSIBILITY": "FantomApp for all (Accessibility)",
-      "TUTORIAL": "Watching the welcoming tutorial again",
+      "TUTORIAL": "Watch the welcoming tutorial again",
       "APP_INFO": {
          "TITLE": "What's this app for?",
-         "DESCRIPTION_1": "FantomApp helps you in case of problem, gives you tools to protect your private life online and provides tutorials to preserve your data on the main social networks you can use.",
+         "DESCRIPTION_1": "FantomApp helps you in case of a problem, gives you tools to protect your online privacy and provides tutorials to preserve your data on the main social networks you can use.",
          "DESCRIPTION_2": "When you use this app, you are not tracked and no data about you is exploited.",
          "DESCRIPTION_3": "The application is produced by <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">the CNIL</a> (Commission nationale de l'informatique et des libertés), and funded by the European Commission."
       },
@@ -165,7 +165,7 @@
          "VIEW_ALL_ARIA": "View all security tools",
          "PASSWORD_CHECK": {
             "TITLE": "Testing my password",
-            "DESCRIPTION": "How much time does it take to a cybercriminal to find it?"
+            "DESCRIPTION": "How long a cybercriminal takes to crack your password?"
          },
          "BLUR_IMAGE": {
             "TITLE": "Blurring my picture",
@@ -173,9 +173,9 @@
          },
          "PROBLEMS": {
             "SECTION_TITLE": "I have a problem online",
-            "VIEW_ALL_ARIA": "View all problem guides",
+            "VIEW_ALL_ARIA": "View all problem cards",
             "DELETE_CONTENT": {
-               "TITLE": "Erasing content"
+               "TITLE": "I want to erase content"
             },
             "HARASSMENT": {
                "TITLE": "I'm going through cyberbullying"
@@ -185,27 +185,27 @@
       "USER_RIGHTS": {
          "TITLE": "I have rights",
          "INTRO": {
-            "PARAGRAPH_1": "Whatever your age, you have rights and particularly the right to protect your personal data and your private life.",
-            "PARAGRAPH_2": "Online, you can decide what is seen of you, and what the networks do with your information."
+            "PARAGRAPH_1": "No matter your age, you have rights and particularly the right to protect your personal data and your privacy.",
+            "PARAGRAPH_2": "Online, you can decide what can be seen of you, and what the social media do with your information."
          },
          "CARDS": {
             "INCOGNITO": {
-               "TITLE": "<span aria-hidden=\"true\">🗑️</span> The right to erasure : Stay incognito",
-               "PARAGRAPH_1": "Online, you have the right to request <b>the erasure and dereferencing</b> of your data. Concretely, if you want a photo, a video, a text about you, your name, your first name or other elements of your personal data to be deleted or no longer appear in search requests, you can request it from the relevant sites.",
-               "PARAGRAPH_2": "You can address the site or platform directly."
+               "TITLE": "<span aria-hidden=\"true\">🗑️</span> The right to erasure: Stay incognito",
+               "PARAGRAPH_1": "Online, you have the right to request <b>the erasure and dereferencing</b> of your data. Concretely, if you want a photo, a video, a text from you, your name, your first name or any other elements of your personal data to be deleted or to no longer appear in search engine queries, you can request it to the relevant sites.",
+               "PARAGRAPH_2": "You can address the site or platform directly. If the platform doesn't answer your requesti within 1 month, you can report it to you national Data Protection Authorities and get some help enforcing your rights."
             },
             "DATA_INFO": {
-               "TITLE": "<span aria-hidden=\"true\">ℹ️</span> The right to information : who does what with my data",
-               "PARAGRAPH": "You have the right to know what the sites, games, applications and other platforms do, <b>want to do or want to do with your data</b> personally."
+               "TITLE": "<span aria-hidden=\"true\">ℹ️</span> The right to information: who does what with my data",
+               "PARAGRAPH": "You have the right to know what the sites, games, applications and other platforms do, <b>want to do or are planning to do with your personal data</b>."
             },
             "RIGHT_TO_OBJECT": {
-               "TITLE": "<span aria-hidden=\"true\">❌</span> The right to opposition : remain master of your data",
-               "PARAGRAPH": "You have the right to <b>oppose to the use of your data</b> by sites or applications (except in very specific cases foreseen by law)."
+               "TITLE": "<span aria-hidden=\"true\">❌</span> The right to opposition: keep control of your data",
+               "PARAGRAPH": "You have the right to <b>oppose to the use of your data</b> by websites or apps (except in very specific cases foreseen by law)."
             },
             "PORTABILITY": {
-               "TITLE": "<span aria-hidden=\"true\">🧳</span> The right to portability : where I want, when I want !",
-               "PARAGRAPH_1": "You even have the right to carry <b>your data and use it elsewhere,</b> « in mode » « click and carry » ! This is portability.",
-               "PARAGRAPH_2": "You retrieve and use it elsewhere, with a competitor, if you want. This applies to your photos, audios or videos, or for your courses on a note-taking application on your computer."
+               "TITLE": "<span aria-hidden=\"true\">🧳</span> The right to portability: where I want, when I want!",
+               "PARAGRAPH_1": "You even have the right to carry <b>your data and use it elsewhere,</b> « in mode » « click and collect »! This is data portability.",
+               "PARAGRAPH_2": "You retrieve and use them elsewhere, with a competitor, if you want. This applies to your photos, audios or videos, or for your courses on a note-taking application on your computer."
             }
          }
       }
@@ -218,18 +218,18 @@
             "DESCRIPTION": "Requesting the removal of a photo or a video about you"
          },
          "TITLE": "I want to erase content",
-         "DESCRIPTION": "A photo, video or comment where you appear is bothering you ? Removing it takes time but we will help you to go through it.<span aria-hidden=\"true\">🗑</span>",
+         "DESCRIPTION": "A photo, video or comment where you appear is bothering you? Removing it can take time but we will help you go through this.<span aria-hidden=\"true\">🗑</span>",
          "REPORTED": {
             "TITLE": "Have you reported the content to the social media / platform?",
             "NONE": {
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Yes, <strong>I already reported the content</strong>",
-                  "ANSWER_2_TITLE": "No, <strong>I haven't reported the content yet"
+                  "ANSWER_2_TITLE": "No, <strong>I haven't reported the content yet</strong>"
                }
             }
          },
          "VIOLENT": {
-            "TITLE": "Is it a violent content or does it shows you undressed?",
+            "TITLE": "Is it a violent or intimate content?",
             "NONE": {
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Yes",
@@ -239,38 +239,38 @@
          },
          "RESULTS": {
             "REPORTED_CONTENT": {
-               "TITLE": "You have reported the content?",
+               "TITLE": "You already have reported the content?",
                "P1": {
-                  "DESCRIPTION": "<span aria-hidden=\"true\">✅</span> Kudos, you had a <strong>very good reflex</strong> by reporting the content to the plateform. <br /><br /><span aria-hidden=\"true\">✅</span> Social medias receive a lot of reports and their moderation takes time. But <strong>even without an immediate answer</strong> your report is important."
+                  "DESCRIPTION": "<span aria-hidden=\"true\">✅</span> Kudos! You had a <strong>very good reflex</strong> by reporting the content to the plateform. <br /><br /><span aria-hidden=\"true\">✅</span> Social medias receive a lot of reports and their moderation takes time. But <strong>even without an immediate answer</strong> your report is important."
                },
                "P2": {
                   "TITLE_PART1": "We advise you to file a complaint to the ",
-                  "TITLE_PART2": " if :",
-                  "TOOLTIP": "The French data protection authority that helps you to protect your private life online.",
-                  "DESCRIPTION1": "You contacted the social network and they didn't answer you back <strong>for at least a month</strong>",
+                  "TITLE_PART2": " if:",
+                  "TOOLTIP": "The national data protection authority that helps you to protect your online privacy.",
+                  "DESCRIPTION1": "You contacted the social network and they didn't answer you back <strong>for at least 1 month</strong>",
                   "DESCRIPTION2": "The social network replied to you but the reply is <strong>incomplete</strong> or <strong>unsatisfying</strong>."
                },
                "BUTTON": "File a complaint",
                "TUTORIAL": {
                   "P1": {
-                     "TITLE": "What's the role of the <span class='text-(--color-24)'>CNIL</span> ?",
-                     "DESCRIPTION": "The role of the French data protection authority is to preserve the liberties of each one of us? It advises and controls the use of personal data by companies, administrations and associations."
+                     "TITLE": "What's the role of the <span class='text-(--color-24)'>CNIL</span>?",
+                     "DESCRIPTION": "The role of a data protection authority is to preserve the liberties of each one of us. It advises and controls the use of personal data by companies, administrations and associations."
                   },
                   "P2": {
-                     "TITLE": "Why do I have to wait for an answer for <span class='text-(--color-24)'>1 month</span> ? <span aria-hidden=\"true\">⏱️</span>",
-                     "DESCRIPTION": "It's the legal delay. That means that the law leaves 1 month to the platform to reply to you (it's the General Data Protection Regulation, or GDPR)."
+                     "TITLE": "Why do I have to wait for an answer for <span class='text-(--color-24)'>1 month</span>? <span aria-hidden=\"true\">⏱️</span>",
+                     "DESCRIPTION": "It's the legal delay. That means that the law leaves 1 month to the platform to reply to you (according to the General Data Protection Regulation, or GDPR)."
                   },
                   "P3": {
                      "TITLE": "What's  an <span class='text-(--color-24)'>an incomplete or a wrong </span> reply? <span aria-hidden=\"true\">📝</span>",
-                     "DESCRIPTION": "The platform has not taken into account your demand or its answer doesn't fit what you asked for."
+                     "DESCRIPTION": "The platform didn't take into account all of your request or the answer doesn't fit what you asked for."
                   }
                },
                "COMPLAINT": {
                   "TITLE": "Prepare the evidence",
-                  "DESCRIPTION": "Save photos of each steps, they will be useful to file the complaint.",
+                  "DESCRIPTION": "Save photos of each steps, they will be useful to file a potential complaint.",
                   "P1": {
                      "TITLE": "Examples of screenshots:",
-                     "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>The content to delete</strong><br />Screenshot of the problematic text, photo or video<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>The website adress</strong><br />Link to the website (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Information on the person who posted the content</strong><br />Link to their profile<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Your requeste of deletion</strong><br />- Screenshots of the text where you are requesting the deletion<br />- Screenshots of the reply (if there is one)"
+                     "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>The content to delete</strong><br />Screenshot of the problematic text, photo or video<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>The website address</strong><br />A link to the website (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Information about the person who posted the content</strong><br />A link to their profile<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Your requeste of deletion</strong><br />- Screenshots of the text where you are requesting the deletion<br />- Screenshots of the reply (if there is one)"
                   },
                   "BUTTON": "Access the form"
                }
@@ -279,7 +279,7 @@
                "TITLE": "You haven't reported the content yet?",
                "P1": {
                   "TITLE": "The first step is to report it to the social media.",
-                  "DESCRIPTION": "Carefully keep every evidence of your report. If the social media does not reply to you after <strong>1 month</strong>, you can file report to the data protection authority the:"
+                  "DESCRIPTION": "Carefully keep all the evidence of your report. If the social media doesn't answer you within <strong>1 month</strong>, you can file report to the data protection authority on the:"
                },
                "CONTACTS": {
                   "TITLE": "Social Media contacts",
@@ -290,19 +290,19 @@
                            "TITLE": "Report a Violation of your Privacy on Instagram or Threads",
                            "DESCRIPTION": "https://help.instagram.com/contact/512241091300432"
                         },
-                        "BUTTON": "How to fill in the form?"
+                        "BUTTON": "How to fill out the form?"
                      },
                      "SNAPCHAT": {
                         "TITLE": "Snapchat",
                         "LINK": {
-                           "TITLE": "Submit a request – Snapchat Support",
-                           "DESCRIPTION": "https://help.snapchat.com/hc/en-gb/requests/new"
+                           "TITLE": "Reporting abuse or illegal conent on Snapchat",
+                           "DESCRIPTION": "https://help.snapchat.com/hc/en-gb/articles/7012399221652-How-do-I-report-abuse-or-illegal-content-on-Snapchat"
                         },
                         "MAIL": {
                            "TITLE": "Contacting Snapchat by email",
                            "DESCRIPTION": "dpo@snapchat.com"
                         },
-                        "BUTTON": "See an email example"
+                        "BUTTON": "How to report something on Snapchat"
                      },
                      "TIKTOK": {
                         "TITLE": "TikTok",
@@ -310,7 +310,7 @@
                            "TITLE": "Submit a privacy request",
                            "DESCRIPTION": "https://www.tiktok.com/legal/report/privacy/webform/en"
                         },
-                        "BUTTON": "How to fill in the form?"
+                        "BUTTON": "How to fill out the form?"
                      },
                      "X": {
                         "TITLE": "X",
@@ -318,7 +318,7 @@
                            "TITLE": "X privacy policy inquiries",
                            "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
                         },
-                        "BUTTON": "How to fill in the form?"
+                        "BUTTON": "How to fill out the form?"
                      },
                      "FACEBOOK": {
                         "TITLE": "Facebook",
@@ -326,13 +326,13 @@
                            "TITLE": "Contac forms",
                            "DESCRIPTION": "https://www.facebook.com/help/contact/954059743194940"
                         },
-                        "BUTTON": "How to fill in the form?"
+                        "BUTTON": "How to fill out the form?"
                      }
                   }
                },
                "FACEBOOK": {
-                  "TITLE": "How to fill in the form? - Facebook",
-                  "DESCRIPTION": "Here is what you need to do to file the form below:",
+                  "TITLE": "How to fill out the form? - Facebook",
+                  "DESCRIPTION": "Here is what you need to do to fill out the form below:",
                   "P1": {
                      "TITLE": "1. Select the country where you live in “Please select your country”"
                   },
@@ -364,7 +364,7 @@
                },
                "INSTAGRAM": {
                   "TITLE": "How to fill the form? - Instagram",
-                  "DESCRIPTION": "Here is what you need to do to file the form below:",
+                  "DESCRIPTION": "Here is what you need to do to fill out the form below:",
                   "P1": {
                      "TITLE": "1. Select the country where you live"
                   },
@@ -372,7 +372,7 @@
                      "TITLE": "2. Write your name and surname"
                   },
                   "P3": {
-                     "TITLE": "3. Write your email adress"
+                     "TITLE": "3. Write your email address"
                   },
                   "P4": {
                      "TITLE": "4. Seclect “Self” at the question “Who are you reporting for?”"
@@ -389,8 +389,8 @@
                   }
                },
                "X": {
-                  "TITLE": "How to fill in the form - X",
-                  "DESCRIPTION": "Here is what you need to do to file the form below:",
+                  "TITLE": "How to fill out the form - X",
+                  "DESCRIPTION": "Here is what you need to do to fill out the form below:",
                   "P1": {
                      "TITLE": "1. Select “I want to ask a question regarding privacy on X” in “How can we help?”"
                   },
@@ -406,16 +406,16 @@
                   }
                },
                "TIKTOK": {
-                  "TITLE": "How to fill in the form ? - TikTok",
-                  "DESCRIPTION": "Here is what you need to do to file the form below:",
+                  "TITLE": "How to fill out the form? - TikTok",
+                  "DESCRIPTION": "Here is what you need to do to fill out the form below:",
                   "P1": {
-                     "TITLE": "1. Write your email adress"
+                     "TITLE": "1. Write your email address"
                   },
                   "P2": {
                      "TITLE": "2. Select the country where you live"
                   },
                   "P3": {
-                     "TITLE": "3. Write your username tikok"
+                     "TITLE": "3. Write your Tiktok username"
                   },
                   "P4": {
                      "TITLE": "4. Select “Exercise your rights under data portection laws” in “Submit a request”"
@@ -428,19 +428,19 @@
                   },
                   "ENRICHED_LINK": {
                      "TITLE": "X privacy policy inquiries",
-                     "DESCRIPTION": "https://help.x.com/fr/forms/privacy/question"
+                     "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
                   }
                },
                "SNAPCHAT": {
-                  "TITLE": "Example of email - Snapchat",
+                  "TITLE": "Example of e-mail - Snapchat",
                   "DESCRIPTION": "To request a deletion, you can contact the Data Protection Officer (DPO).",
                   "P1": {
-                     "TITLE": "<span aria-hidden=\"true\">📝</span> Email adress of the contact"
+                     "TITLE": "<span aria-hidden=\"true\">📝</span> Email address of the contact"
                   }
                },
                "TEMPLATE_MESSAGE": {
                   "TITLE": "<span aria-hidden=\"true\">📝</span> Example of mail to send",
-                  "DESCRIPTION": "Dear Sir/Madam,<br><br>Information about me is currently published on your website on the follomwing pages:<br><span style=\"color: var(--color-24);\">[URL link(s) of the content you wish to delete]</span><br>Therefore, in application of the Articles 21.1 and 17.1.c of the General Data Protection Regulation (GDPR), I ask you to  please delete the following personal data concerning me:<br><span style=\"color: var(--color-24);\">[description of the information to be deleted]</span>.<br>I would like these information to be deleted because:<br><span style=\"color: var(--color-24);\">[suppression motive]</span><br>additionnaly, I thank you for taking the necessariy steps to ensure that these pages are no longer referenced by search engines (article 17.2 of the GDPR). Please send me a response as soon as possible and no longer than a month from the recept of my request (article 12.3 du RGPD).<br>Sincerely,"
+                  "DESCRIPTION": "Dear Sir/Madam,<br><br>Information about me is currently shared on your website on the follomwing pages:<br><span style=\"color: var(--color-24);\">[URL link(s) of the content you wish to delete]</span><br>. Therefore, in application of the Articles 21.1 and 17.1.c of the General Data Protection Regulation (GDPR), I ask you to please delete the following personal data concerning me:<br><span style=\"color: var(--color-24);\">[description of the information to be deleted]</span>.<br>I would like these information to be deleted because:<br><span style=\"color: var(--color-24);\">[suppression motive]</span><br>additionnaly, I thank you for taking the necessariy steps to ensure that these pages are no longer referenced by search engines (article 17.2 of the GDPR). Please send your response as soon as possible and no longer than a month from the receipt of my request (article 12.3 du RGPD).<br>Sincerely,"
                }
             },
             "VIOLENT_CONTENT": {
@@ -448,13 +448,13 @@
                "DESCRIPTION": "The diffusion of violent content or sexual content without your consent is very serious and the person responsible can be punished.",
                "P1": {
                   "TITLE": "You are not alone",
-                  "DESCRIPTION": "What is happening to you can be very complicated to go through, but you are never alone ! There are always solutions to change things, and people to help you navigate through this."
+                  "DESCRIPTION": "What is happening to you can be very complicated to go through, but in life, you're never alone! There are always solutions to change things, and people to help you navigate through this. You can talk about it with your parents, a friend, a family member, a professor or an adult whom you trust.<span aria-hidden=\"true\">🤝</span>"
                },
                "P2": {
                   "TITLE": "Finding help",
-                  "DESCRIPTION": "You can talk about it with your parents, a friend, a family member, a professor or an adult whom you trust. <span aria-hidden=\"true\">🤝</span> <strong>Professionnals</strong> can also help you at <strong>the hotline of your country</strong>. Anonymous, confidential and free of charge, from 9 am to 11 pm, 7 days a week. <span class=\"text-(--color-24)\"><strong>Call until someone picks up </strong>.</span>",
+                  "DESCRIPTION": "<strong>Professionnals</strong> can also help you at <strong>the hotline of your country</strong>. Often they are anonymous, confidential and free of charge. <span class=\"text-(--color-24)\"><strong>Call until someone picks up </strong>.</span>",
                   "LINK": {
-                     "TITLE": "Talk with the hotline",
+                     "TITLE": "Talk with a hotline",
                      "DESCRIPTION": "https://www.inhope.org/EN#hotlineReferral"
                   },
                   "CALL": {
@@ -465,7 +465,7 @@
                   }
                },
                "P3": {
-                  "TITLE": "Submit a complaint",
+                  "TITLE": "File a complaint",
                   "DESCRIPTION": "The formal complaint allows you to report the facts you are victim of to the authorities. You can file a complaint by going to the police station or to a constabulary, or by post.",
                   "LINK": {
                      "TITLE": "Ma Sécurité | Ma Sécurité",
@@ -473,7 +473,7 @@
                   }
                },
                "BUTTON": {
-                  "REPORTED": "Submit a formal complaint to the CNIL",
+                  "REPORTED": "Submit a formal complaint to the data protection authority of your country",
                   "UNREPORTED": "Report the content"
                }
             }
@@ -486,11 +486,11 @@
             "DESCRIPTION": "Recover your account or something else"
          },
          "TITLE": "My account was hacked",
-         "DESCRIPTION": "if your account disconnected itself or if content is being published by itself, maybe it was hacked.",
+         "DESCRIPTION": "Your account disconnected itself or content is being published by itself. Maybe it was hacked.",
          "TUTORIAL": {
             "P1": {
                "EMOJI": "<span aria-hidden=\"true\">❌</span>",
-               "CONTENT": "My account <strong>disconnected</strong> itself and I can't accessi it anymore"
+               "CONTENT": "My account <strong>disconnected</strong> itself and I can't access it anymore"
             },
             "P2": {
                "EMOJI": "<span aria-hidden=\"true\">🖼</span>️",
@@ -509,7 +509,7 @@
             }
          },
          "SITUATION": {
-            "TITLE": "What's your situation ?",
+            "TITLE": "What's your situation?",
             "NONE": {
                "ANSWERS": {
                   "ANSWER_1_TITLE": "I <strong>still have access</strong> to my account",
@@ -520,7 +520,7 @@
          "RESULTS": {
             "HAVE_ACCESS": {
                "TITLE": "I still have access to my account",
-               "DESCRIPTION": "Some tips to take back the control of your account",
+               "DESCRIPTION": "Some steps to take back the control of your account",
                "ACTIONS": {
                   "IMMEDIATELY": {
                      "TITLE": "To do now <span aria-hidden=\"true\">⏱️</span>",
@@ -536,13 +536,13 @@
                      },
                      "A3": {
                         "TITLE": "Check your information",
-                        "SHORT_DESCRIPTION": "Check taht your email ddress and phone number were not changed",
-                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📲</span> Were your contacts, publications or bank details (if you provided them) modified?<br /><br />If you see a phone number or an adress that your don't recognise:<ul style='list-style: disc; margin-left: 2rem;'><li>Take a screenshot to kee as proof.</li><li>Change them immediately</li></ul>"
+                        "SHORT_DESCRIPTION": "Check that your email address and phone number were not changed",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📲</span> Were your contacts, publications or bank details (if you provided them) modified?<br /><br />If you see a phone number or an address that your don't recognise:<ul style='list-style: disc; margin-left: 2rem;'><li>Take a screenshot to keep as proof.</li><li>Change them immediately</li></ul>"
                      },
                      "A4": {
-                        "TITLE": "Check who's connected to the account",
+                        "TITLE": "Check who's connected to your account",
                         "SHORT_DESCRIPTION": "Check if any unknown devices are connected to your account",
-                        "LONG_DESCRIPTION": "Go to your account settings and disconnect all devices that have been authorised so far.<br /><span aria-hidden=\"true\">❌</span>  If you see a device or connection you don't recognise :<ul style='list-style: disc; margin-left: 2rem;'><li>Take a screenshot to keep as proof</li><li>Disconnect it immediately</li></ul>"
+                        "LONG_DESCRIPTION": "Go to your account settings and disconnect all devices that were authorised so far.<br /><span aria-hidden=\"true\">❌</span>  If you see a device or connection you don't recognise:<ul style='list-style: disc; margin-left: 2rem;'><li>Take a screenshot to keep as proof</li><li>Disconnect it immediately</li></ul>"
                      }
                   },
                   "LATER": {
@@ -560,12 +560,12 @@
                      "A3": {
                         "TITLE": "Notify your bank",
                         "SHORT_DESCRIPTION": "Take action if your bank details were on your account",
-                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> If your <strong>bank details</strong> (clike your card numbner) were accessibles on the hacked account, i tell an adult immediately.<br /> You must <strong>notify your bank</strong> as soon as possible, and block your card if necessary to prevent theft."
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> If your <strong>bank details</strong> (clike your card numbner) were accessibles on the hacked account, you have to tell an adult immediately.<br /> You must <strong>notify your bank</strong> as soon as possible, and block your card if necessary to prevent any theft."
                      },
                      "A4": {
-                        "TITLE": "Use a password manager",
+                        "TITLE": "Use a password keeper",
                         "SHORT_DESCRIPTION": "To secure your passwords",
-                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> A password manager is an app or tool on your phone that keeps all your passwords safe. It can also create very strong passwords for each website or app and fill them in automatically when you log in.<br /><span aria-hidden=\"true\">👉</span> It's like a digital safe for all your accounts."
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> A password keeper is an app or a tool on your phone that keeps all your passwords safe. It can also create very strong passwords for each website or app and fill them in automatically when you log in.<br /><span aria-hidden=\"true\">👉</span> It's like a digital safe for all your accounts."
                      },
                      "A5": {
                         "TITLE": "Never share your password",
@@ -593,7 +593,7 @@
                      "TITLE": "Snapchat",
                      "LINK": {
                         "TITLE": "Submit a request – Snapchat Support",
-                        "DESCRIPTION": "https://help.snapchat.com/hc/fr-fr/requests/new"
+                        "DESCRIPTION": "https://help.snapchat.com/hc/en-gb/requests/new?co=true&tf_29335679682068=cant_access_account_reason_compromised&ticket_form_id=76586"
                      }
                   },
                   "TIKTOK": {
@@ -607,7 +607,7 @@
                      "TITLE": "X",
                      "LINK": {
                         "TITLE": "The account was hacked or is compromised",
-                        "DESCRIPTION": "https://help.x.com/fr/forms/account-access/regain-access/hacked-or-compromised"
+                        "DESCRIPTION": "https://help.x.com/en/forms/account-access/appeals"
                      }
                   },
                   "FACEBOOK": {
@@ -636,12 +636,12 @@
                         "A3": {
                            "TITLE": "Notify your bank",
                            "SHORT_DESCRIPTION": "Take action if your bank details were on your account",
-                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> If your <strong>bank details</strong> (clike your card numbner) were accessibles on the hacked account, i tell an adult immediately.<br /> You must <strong>notify your bank</strong> as soon as possible, and block your card if necessary to prevent theft."
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> If your <strong>bank details</strong> (clike your card numbner) were accessibles on the hacked account, you have to tell an adult immediately.<br /> You must <strong>notify your bank</strong> as soon as possible, and block your card if necessary to prevent any theft."
                         },
                         "A4": {
-                           "TITLE": "Use a password manager",
+                           "TITLE": "Use a password keeper",
                            "SHORT_DESCRIPTION": "To secure your passwords",
-                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> A password manager is an app or tool on your phone that keeps all your passwords safe. It can also create very strong passwords for each website or app and fill them in automatically when you log in.<br /><span aria-hidden=\"true\">👉</span> It's like a digital safe for all your accounts."
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> A password keeper is an app or tool on your phone that keeps all your passwords safe. It can also create very strong passwords for each website or app and fill them in automatically when you log in.<br /><span aria-hidden=\"true\">👉</span> It's like a digital safe for all your accounts."
                         },
                         "A5": {
                            "TITLE": "Never share your passwords",
@@ -672,7 +672,7 @@
                "TITLE": "<span aria-hidden=\"true\">🪪</span> Identity",
                "ANSWERS": {
                   "ANSWER_1_TITLE": "My full name or surname",
-                  "ANSWER_1_DESCRIPTION": "(example : Martin)",
+                  "ANSWER_1_DESCRIPTION": "(example: Martin)",
                   "ANSWER_2_TITLE": "My name or surname shortened.",
                   "ANSWER_2_DESCRIPTION": "(example: Mrt1)",
                   "ANSWER_3_TITLE": "My nickame",
@@ -700,7 +700,7 @@
                "TITLE": "<span aria-hidden=\"true\">🪪</span> Identity",
                "ANSWERS": {
                   "ANSWER_1_TITLE": "My full name or surname",
-                  "ANSWER_1_DESCRIPTION": "(example : Martin)",
+                  "ANSWER_1_DESCRIPTION": "(example: Martin)",
                   "ANSWER_2_TITLE": "My name or surname shortened.",
                   "ANSWER_2_DESCRIPTION": "(example: Mrt1)",
                   "ANSWER_3_TITLE": "My nickame",
@@ -720,20 +720,20 @@
                "TITLE": "<span aria-hidden=\"true\">👥</span> Digital life",
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Links to my other social media accounts.",
-                  "ANSWER_1_DESCRIPTION": "(X, Instagram, TikTok, LinkedIn).",
-                  "ANSWER_2_TITLE": "My \"friends\" accounts",
+                  "ANSWER_1_DESCRIPTION": "(X, Instagram, TikTok, Snapchat).",
+                  "ANSWER_2_TITLE": "My close circle accounts",
                   "ANSWER_2_DESCRIPTION": "(Friends, family, lover...)"
                }
             },
             "INTEREST": {
                "TITLE": "<span aria-hidden=\"true\">🎭</span> Interests",
                "ANSWERS": {
-                  "ANSWER_1_TITLE": "A link to my club or an association that I'm part of.",
-                  "ANSWER_1_DESCRIPTION": "(ex : @VolleyValences)"
+                  "ANSWER_1_TITLE": "A link to my club or an association I'm part of.",
+                  "ANSWER_1_DESCRIPTION": "(ie: @VolleyValences)"
                }
             },
             "EDUCATION_PRO": {
-               "TITLE": "<span aria-hidden=\"true\">🏫</span> Education or profession",
+               "TITLE": "<span aria-hidden=\"true\">🏫</span> Education or occupation",
                "ANSWERS": {
                   "ANSWER_1_TITLE": "A mention of my school or company.",
                   "ANSWER_2_TITLE": "My skills or cursus",
@@ -746,15 +746,15 @@
             "SUMMARY": {
                "GOOD": {
                   "TITLE": "Good job! <span aria-hidden=\"true\">🥷</span>",
-                  "CONTENT": "You profile doesn't allow to know who you are in real life, on social media, or offline."
+                  "CONTENT": "You profile doesn't allow to know who you are on social media, or offline."
                },
                "OK": {
                   "TITLE": "Not bad! <span aria-hidden=\"true\">🥸</span>",
-                  "CONTENT": "There are still some clues to guess who you are irl but you can still improve and give less information about you."
+                  "CONTENT": "There are still some clues to guess who you are irl. Here, you can give even less information about you:"
                },
                "BAD": {
                   "TITLE": "Careful! <span aria-hidden=\"true\">🧐</span>",
-                  "CONTENT": "Your profile contains a lot of information about you. Be careful, some malicious people may pretend to be your friends, damage your reputation or stalk you in real life."
+                  "CONTENT": "Your profile contains a lot of information about you. Be careful, some people might use this information, pretend to be your friends or damage your reputation."
                }
             },
             "PSEUDO": {
@@ -775,7 +775,7 @@
          "TITLE": "Anonymising my picture",
          "DESCRIPTION": "Blurring or pixelating my profile picture to limit my identification online.",
          "EDITING_TITLE": "Editing area of the imported photo",
-         "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Advice</strong> : If you blur your picture to use it as a profile picture, don't reuse it elsewhere unblurred!<br /><span aria-hidden=\"true\"><span aria-hidden=\"true\">💡</span></span> <strong>Good to know</strong>: FantomApp doesn't save any photo you import here!",
+         "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Advice</strong>: If you blur your picture to use it as a profile picture, don't reuse it elsewhere unblurred<br /><span aria-hidden=\"true\"><span aria-hidden=\"true\">💡</span></span> <strong>Good to know</strong>: FantomApp doesn't save any photo you import here",
          "UPLOAD_IMAGE": "Import a picture <span aria-hidden=\"true\">🤳</span>",
          "BLUR": "Blur",
          "PIXELATE": "Pixelate",
@@ -794,17 +794,17 @@
          "FOCUS_ACCESSIBLE_TITLE": "Testing my password - input field",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "brute force",
-            "CONTENT": "A <strong>brute force attack</strong> consists of testing, one by one, each possible combination of a password. (source : <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
+            "CONTENT": "A <strong>brute force attack</strong> consists of testing, one by one, each possible combination of a password. (source: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
          },
          "CRIMINAL_GUESSES": "A cybercriminal guesses it in:",
          "ASSESSMENT_TEXT": "Your password:",
          "INPUT_LABEL": "Password",
-         "CHECKBOX_LABEL": "Contains my <strong>first name</strong>, <strong>last name</strong>, or <strong>common words</strong>",
+         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Contains my <strong>first name</strong>, <strong>last name</strong>, or <strong>common words</strong>",
          "COPY_PASSWORD": "Copy the password",
          "COPIED": "Copied!",
          "BADGES": {
             "IMMEDIATE": "IT'S IMMEDIATE <span aria-hidden=\"true\">⚠️</span>",
-            "RAPID": "DO EVEN BETTER <span aria-hidden=\"true\">👇</span>",
+            "RAPID": "YOU CAN DO EVEN BETTER <span aria-hidden=\"true\">👇</span>",
             "CORRECT": "IT'S OKAY <span aria-hidden=\"true\">🙂</span>",
             "SUPER": "IT'S GREAT <span aria-hidden=\"true\">😎</span>"
          },
@@ -820,20 +820,20 @@
          },
          "BUTTONS": {
             "WHAT_IS_GOOD_PASSWORD": "What's a good password?",
-            "TEST_PASSWORD": "Test my password <span aria-hidden=\"true\">🔒</span>",
-            "STRENGTHEN_PASSWORD": "Reinforce my password"
+            "TEST_PASSWORD": "Testing my password <span aria-hidden=\"true\">🔒</span>",
+            "STRENGTHEN_PASSWORD": "Reinforcing my password"
          },
          "MODALS": {
             "ONBOARDING": {
-               "TITLE": "How does it works ?",
-               "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>Step 1</strong> : Write your password in the designed field.",
-               "STEP_2": "<span aria-hidden=\"true\">🧪</span> <strong>Step 2</strong> : Click on \"Test my password\".",
-               "STEP_3": "⏱️ <strong>Step 3</strong> : And there you have it! You can see how long it would take cybercriminal to crack it… and access your personal data!",
+               "TITLE": "How does it works?",
+               "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>Step 1</strong>: Write your password in the designed field.",
+               "STEP_2": "<span aria-hidden=\"true\">🧪</span> <strong>Step 2</strong>: Click on \"Test my password\".",
+               "STEP_3": "⏱️ <strong>Step 3</strong>: And there you have it! You can see how long it would take cybercriminal to crack your password… and access your personal data!",
                "NOTE": "FantomApp doesn't retain any information.",
                "UNDERSTOOD": "Got it"
             },
             "PASSWORD_INFO": {
-               "TITLE": "A strong password is :",
+               "TITLE": "A strong password is:",
                "CLOSE": "Close",
                "REQUIREMENTS_LIST": "List of requirements for a strong password",
                "REQUIREMENTS": {
@@ -845,8 +845,8 @@
                },
                "WARNINGS_SECTION": "Tips for choosing a secure password",
                "WARNINGS": {
-                  "CRIMINALS_USE_DB": "<span aria-hidden=\"true\">🏴☠️</span>‍ Cybercriminals use all existing word databases, in all languages.",
-                  "NO_DICTIONARY": "<span aria-hidden=\"true\">⚠️</span>‍ So don't use any words from the dictionary to create your password"
+                  "CRIMINALS_USE_DB": "<span aria-hidden=\"true\">🏴☠️</span>‍ Cybercriminals use all existing <strong>word databases</strong>, in all languages.",
+                  "NO_DICTIONARY": "<span aria-hidden=\"true\">⛔</span>‍ No words from the dictionary, your name or surname to create your password"
                }
             }
          },
@@ -880,8 +880,8 @@
    },
    "ALT_TEXT": {
       "HEADER": {
-         "CURRENT_LANGUAGE": "Current language : {{language}}",
-         "CURRENT_DEVICE": "Current device : {{device}}"
+         "CURRENT_LANGUAGE": "Current language: {{language}}",
+         "CURRENT_DEVICE": "Current device: {{device}}"
       },
       "CONTACT": {
          "PHONE": "Contact by phone",

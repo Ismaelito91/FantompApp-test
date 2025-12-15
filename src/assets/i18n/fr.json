@@ -156,9 +156,25 @@
       "APP_INFO": {
          "TITLE": "C'est quoi cette app ?",
          "DESCRIPTION_1": "FantomApp t'aide en cas de problème, te donne des outils pour protéger ta vie privée en ligne et te fournit des tutos pour préserver tes données sur les principaux réseaux sociaux que tu peux utiliser.",
-         "DESCRIPTION_2": "Lorsque tu utilises cette app, tu n'es pas tracé et aucune donnée te concernant n'est exploitée.",
-         "DESCRIPTION_3": "L'application est produite par <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">la CNIL</a> (Commission nationale de l'informatique et des libertés), et financée par la Commission Européenne."
-      },
+         "DESCRIPTION_2": "L'application est produite par <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">la CNIL</a> (Commission nationale de l'informatique et des libertés), et financée par la Commission Européenne.",
+         "DESCRIPTION_3": "<strong>Editeur :</strong>",
+	      "DESCRIPTION_4": "Commission nationale de l’informatique et des libertés (CNIL), autorité administrative indépendante chargée de la protection des données à caractère personnel.",
+         "DESCRIPTION_5": "Adresse : 3 Place de Fontenoy – 75334 PARIS CEDEX 07, France– Téléphone 01 53 73 22 22 – www.cnil.fr",
+         "DESCRIPTION_6": "Directeur de la publication : Marie-Laure DENIS, Présidente<br />",
+         "DESCRIPTION_7": "<strong>Hébergement</strong> : Scaleway SAS - 8, Rue de la Ville-l'Évêque, 75008 Paris, France.<br /><br />",
+         "DESCRIPTION_8": "<strong>Données personnelles</strong><br />",
+         "DESCRIPTION_9": "La CNIL met à disposition l’application FantomAPP afin d’assurer sa mission d’information et de sensibilisation en tant qu’autorité publique chargée de la protection des données personnelles.",
+         "DESCRIPTION_10": "L’application collecte les données à caractère personnel suivantes : votre adresse IP; les logs de connexion à l’application. ",
+         "DESCRIPTION_11": "Ces données sont indispensables pour assurer le bon fonctionnement technique et la sécurité de l’application et permettent de connaître la date et l’heure d’une connexion à l’application. Ces données sont uniquement consultables par les équipes de la CNIL et de la société en charge du fonctionnement technique et de la sécurité de l’application. Elles sont conservées six mois.",
+         "DESCRIPTION_12": "Aucune autre donnée à caractère personnel n’est collectée. Aucun traceur n’est installé sur l’application. ",
+         "DESCRIPTION_13": "Vous pouvez demander à la CNIL une copie de vos données collectées par l’application en adressant un courriel à educnum[at]cnil.fr ou en utilisant ce <a href=\"https://www.cnil.fr/webform/contactez-le-delegue-la-protection-des-donnees-dpo\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">formulaire en ligne</a>. Pour mieux comprendre vos droits, <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">consultez cnil.fr</a>.",
+         "DESCRIPTION_14": "Si, après nous avoir contactés, vous n’avez pas obtenu de réponse ou une réponse que vous estimez incomplète ou incorrecte, vous pouvez adresser  <a href=\"https://www.cnil.fr/fr/adresser-une-plainte\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">une plainte à la CNIL</a>.<br />",
+         "DESCRIPTION_15": "<strong>Utilisation des marques de la CNIL</strong>",
+         "DESCRIPTION_16": "La marque verbale et visuelle (logo) - FantomApp est protégée auprès de l’Institut national de la propriété intellectuelle.<br />",
+         "DESCRIPTION_17": "Son utilisation sans autorisation écrite de la CNIL, sur tout support, à des fins de valorisation de produits ou de services, notamment à des fins commerciales, est interdite sous peine de poursuites pénales et civiles. Elle est admise à des fins strictement pédagogiques (présentation des actions de la CNIL, etc.).<br />",
+         "DESCRIPTION_18": "<strong>Réutilisation des contenus</strong><br />",
+         "DESCRIPTION_19": "La réutilisation des contenus de l’application FantomApp est soumise aux règles précisées sur <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">le site de la CNIL</a>. La paternité du contenu doit être créditée par la mention suivante : « Source : CNIL FantomApp - https://www.fantomapp.fr »"
+	  },
       "CARDS": {
          "MAIN_TITLE": "Je protège mes réseaux",
          "VIEW_ALL": "Tout voir",
@@ -205,7 +221,7 @@
             "PORTABILITY": {
                "TITLE": "<span aria-hidden=\"true\">🧳</span> Le droit à la portabilité : où je veux, quand je veux !",
                "PARAGRAPH_1": "Tu as même le droit d'emporter <b>tes données et de les utiliser ailleurs,</b> « en mode » « cliquer et emporter » ! C'est la portabilité.",
-               "PARAGRAPH_2": "Tu les récupères et les utilises ailleurs, chez un concurrent, si tu veux. Cela vaut pour tes photos, audios ou vidéos, ou pour tes cours sur une application de prise de notes sur ordinateur.."
+               "PARAGRAPH_2": "Tu les récupères et les utilises ailleurs, chez un concurrent, si tu veux. Cela vaut pour tes photos, audios ou vidéos, ou pour tes cours sur une application de prise de notes sur ordinateur."
             }
          }
       }
@@ -448,7 +464,7 @@
                "DESCRIPTION": "La diffusion de contenus violents ou à caractère sexuel sans ton accord est très grave et le responsable peut être puni.",
                "P1": {
                   "TITLE": "Tu n’es pas seul",
-                  "DESCRIPTION": "La situation peut être très compliquée à vivre pour toi, mais dans la vie, on est jamais seul ! Il y a des solutions pour changer les choses et des personnes pour t’accompagner.Tu peux en parler à tes parents, un ami, un membre de ta famille, un professeur ou à un adulte en qui tu as confiance. <span aria-hidden=\"true\">🤝</span>"
+                  "DESCRIPTION": "La situation peut être très compliquée à vivre pour toi, mais dans la vie, on est jamais seul ! Il y a des solutions pour changer les choses et des personnes pour t’accompagner. Tu peux en parler à tes parents, un ami, un membre de ta famille, un professeur ou à un adulte en qui tu as confiance. <span aria-hidden=\"true\">🤝</span>"
                },
                "P2": {
                   "TITLE": "Parler avec le 3018",
@@ -796,7 +812,7 @@
          "CRIMINAL_GUESSES": "Un cybercriminel le devine en :",
          "ASSESSMENT_TEXT": "Ton mot de passe :",
          "INPUT_LABEL": "Mot de passe",
-         "CHECKBOX_LABEL": "Contient mon <strong>prénom</strong>, <strong>nom</strong>, ou des <strong>mots courants</strong>",
+         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Contient mon <strong>prénom</strong>, <strong>nom</strong>, ou des <strong>mots courants</strong>",
          "COPY_PASSWORD": "Copier le mot de passe",
          "COPIED": "Copié !",
          "BADGES": {
@@ -863,7 +879,7 @@
             "BILLION_YEARS": "milliards d'années",
             "TRILLION_YEARS": "billions d'années",
             "QUADRILLION_YEARS": "trillions d'années",
-            "QUINTILLION_YEARS": "quintillions d'années"
+            "QUINTILLION_YEARS": "quadrillions d'années"
          }
       }
    },
