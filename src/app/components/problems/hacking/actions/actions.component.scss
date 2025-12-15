@@ -1,5 +1,7 @@
 .view-steps-container {
    background-color: var(--background-9);
+   position: relative;
+   overflow: auto;
 }
 
 swiper-container::part(pagination) {

@@ -1,8 +1,4 @@
-<div
-   class="view-steps-container flex flex-col"
-   (keydown)="onkeydown($event)"
-   style="position: relative; overflow: auto"
->
+<div class="view-steps-container flex flex-col" (keydown)="onkeydown($event)">
    <app-button-back class="view-header-btn"></app-button-back>
    @if ((page() | pageTranslation)?.firstTitle){
    <div
@@ -13,9 +9,9 @@
    ></div>
    }
 
-   <swiper-container #swiper class="flex-1" init="false" class="h-full">
+   <swiper-container #swiper class="flex-0" init="false" class="h-full">
       @for (child of sortedChildren; track $index) {
-      <swiper-slide class="!h-full" style="height: 900px">
+      <swiper-slide class="!h-full">
          @switch (child.type) { @case (ComponentType.CARD_18) {
          <app-card-18
             [data]="child"
