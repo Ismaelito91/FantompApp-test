@@ -12,14 +12,6 @@
 
 // Contenu global avec padding uniforme
 .app-info-content {
-   .app-info-image {
-      margin-top: 44px;
-
-      .illustration {
-         width: 100%;
-      }
-   }
-
    .app-info-title {
       font-size: var(--font-size-h2);
       font-weight: var(--font-weight-heading);
@@ -51,5 +43,15 @@
             font-weight: var(--font-weight-heading);
          }
       }
+   }
+}
+
+.app-info-image {
+   width: 100%;
+
+   .image-cover {
+      width: 100%;
+      height: auto;
+      display: block;
    }
 }
