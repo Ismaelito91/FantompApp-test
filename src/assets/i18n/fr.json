@@ -879,8 +879,8 @@
             "MILLION_YEARS": "millions d'années",
             "BILLION_YEARS": "milliards d'années",
             "TRILLION_YEARS": "billions d'années",
-            "QUADRILLION_YEARS": "trillions d'années",
-            "QUINTILLION_YEARS": "quadrillions d'années"
+            "QUADRILLION_YEARS": "billards d'années",
+            "QUINTILLION_YEARS": "trillions d'années"
          }
       }
    },
