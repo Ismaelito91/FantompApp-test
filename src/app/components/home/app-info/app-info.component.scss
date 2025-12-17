@@ -1,5 +1,5 @@
 .app-info-container {
-   padding: 88px var(--spacing-5) 100px var(--spacing-5);
+   padding: 88px var(--spacing-5) var(--spacing-5) var(--spacing-5);
 }
 
 // Bouton retour
@@ -48,10 +48,18 @@
 
 .app-info-image {
    width: 100%;
+   margin-top: 44px;
+   margin-bottom: 100px;
 
    .image-cover {
       width: 100%;
       height: auto;
       display: block;
    }
+}
+
+:host ::ng-deep .app-info-text a,
+:host ::ng-deep .view-steps-container a {
+   text-decoration: underline !important;
+   color: var(--color-7) !important; /* Force la couleur si besoin */
 }

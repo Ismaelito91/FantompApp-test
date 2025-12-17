@@ -153,12 +153,6 @@
       "RIGHTS": "I have rights",
       "ACCESSIBILITY": "FantomApp for all (Accessibility)",
       "TUTORIAL": "Watch the welcoming tutorial again",
-      "APP_INFO": {
-         "TITLE": "What's this app for?",
-         "DESCRIPTION_1": "FantomApp helps you in case of a problem, gives you tools to protect your online privacy and provides tutorials to preserve your data on the main social networks you can use.",
-         "DESCRIPTION_2": "When you use this app, you are not tracked and no data about you is exploited.",
-         "DESCRIPTION_3": "The application is produced by <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">the CNIL</a> (Commission nationale de l'informatique et des libertés), and funded by the European Commission."
-      },
       "CARDS": {
          "MAIN_TITLE": "Securing my socials",
          "VIEW_ALL": "View all",
