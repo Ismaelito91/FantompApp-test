@@ -156,10 +156,10 @@ export class PasswordSecurityService {
           mixedCase: { value: "812", unit: "TRILLION_YEARS", color: "blue" },
           numbersAndLetters: {
              value: "13",
-             unit: "TRILLION_YEARS",
+             unit: "QUADRILLION_YEARS",
              color: "blue",
           },
-          allCharacters: { value: "94", unit: "", color: "green" },
+          allCharacters: { value: "94", unit: "QUADRILLION_YEARS", color: "green" },
        },
        {
           characters: 17,
@@ -185,10 +185,10 @@ export class PasswordSecurityService {
           characters: 18,
           numbersOnly: { value: "284", unit: "THOUSAND_YEARS", color: "orange" },
           lowercaseOnly: { value: "8", unit: "TRILLION_YEARS", color: "orange" },
-          mixedCase: { value: "2", unit: "QUADRILLION_YEARS", color: "blue" },
+          mixedCase: { value: "2", unit: "QUINTILLION_YEARS", color: "blue" },
           numbersAndLetters: {
              value: "52",
-             unit: "QUADRILLION_YEARS",
+             unit: "QUINTILLION_YEARS",
              color: "blue",
           },
           allCharacters: {

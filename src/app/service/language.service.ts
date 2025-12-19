@@ -170,12 +170,20 @@ export class LanguageService {
 
    private initLanguage(): void {
       const savedLang = localStorage.getItem("lang") as SupportedLanguage;
-      const browserLang = this.translateService
-         .getBrowserLang()
-         ?.toUpperCase() as SupportedLanguage;
-      const initialLang =
-         savedLang ||
-         (this.isSupportedLanguage(browserLang) ? browserLang : defaultLang);
+      const rawBrowserLang =
+         this.translateService.getBrowserCultureLang()?.toLowerCase() ||
+         this.translateService.getBrowserLang()?.toLowerCase() ||
+         "";
+
+      let initialLang: SupportedLanguage;
+
+      if (savedLang) {
+         initialLang = savedLang;
+      } else if (rawBrowserLang.startsWith("fr")) {
+         initialLang = "FR";
+      } else {
+         initialLang = "XX";
+      }
 
       this.setLanguage(initialLang);
    }

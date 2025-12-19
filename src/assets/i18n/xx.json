@@ -149,7 +149,7 @@
       "APPEARANCE": "Appearence",
       "CHANGE_ICON": "Change the icon",
       "RESOURCES": "Ressources",
-      "WHAT_IS_APP": "What is this app for?",
+      "WHAT_IS_APP": "What is this app for? (Legal notices)",
       "RIGHTS": "I have rights",
       "ACCESSIBILITY": "FantomApp for all (Accessibility)",
       "TUTORIAL": "Watch the welcoming tutorial again",
@@ -793,7 +793,7 @@
          "CRIMINAL_GUESSES": "A cybercriminal guesses it in:",
          "ASSESSMENT_TEXT": "Your password:",
          "INPUT_LABEL": "Password",
-         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Contains my <strong>first name</strong>, <strong>last name</strong>, or <strong>common words</strong>",
+         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Contains my <strong>first name</strong>, <strong>last name</strong>, or <strong>easy-to-guess words</strong>",
          "COPY_PASSWORD": "Copy the password",
          "COPIED": "Copied!",
          "BADGES": {

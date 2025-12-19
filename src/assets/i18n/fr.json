@@ -149,7 +149,7 @@
       "APPEARANCE": "Apparence",
       "CHANGE_ICON": "Changer l'icône",
       "RESOURCES": "Ressources",
-      "WHAT_IS_APP": "C'est quoi cette app ? (« mentions légales »)",
+      "WHAT_IS_APP": "C'est quoi cette app ? (Mentions légales)",
       "RIGHTS": "J'ai des droits",
       "ACCESSIBILITY": "FantomApp pour tous (Accessibilité)",
       "TUTORIAL": "Revoir le tutoriel de bienvenue",
@@ -791,7 +791,7 @@
          "CRIMINAL_GUESSES": "Un cybercriminel le devine en :",
          "ASSESSMENT_TEXT": "Ton mot de passe :",
          "INPUT_LABEL": "Mot de passe",
-         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Contient mon <strong>prénom</strong>, <strong>nom</strong>, ou des <strong>mots courants</strong>",
+         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Contient mon <strong>prénom</strong>, <strong>nom</strong>, ou des <strong>mots faciles à deviner</strong>",
          "COPY_PASSWORD": "Copier le mot de passe",
          "COPIED": "Copié !",
          "BADGES": {
@@ -857,8 +857,8 @@
             "MILLION_YEARS": "millions d'années",
             "BILLION_YEARS": "milliards d'années",
             "TRILLION_YEARS": "billions d'années",
-            "QUADRILLION_YEARS": "trillions d'années",
-            "QUINTILLION_YEARS": "quadrillions d'années"
+            "QUADRILLION_YEARS": "billards d'années",
+            "QUINTILLION_YEARS": "trillions d'années"
          }
       }
    },
