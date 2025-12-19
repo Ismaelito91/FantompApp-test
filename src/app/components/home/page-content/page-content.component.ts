@@ -3,8 +3,10 @@ import { TranslatePipe } from "@ngx-translate/core";
 import { ComponentStatus } from "../../../model/enum/component-status.enum";
 import { ComponentType } from "../../../model/enum/component-type.enum";
 import PageComponentModel from "../../../model/page-component.model";
+import PageComponentTranslationModel from "../../../model/page-component-translation.model";
 import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
+import { LanguageService } from "../../../service/language.service";
 import { PageComponentUtilsService } from "../../../service/page-component-utils.service";
 import { PageComponentService } from "../../../service/page-component.service";
 import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
@@ -40,6 +42,7 @@ export class PageContentComponent implements OnInit {
 
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
    private readonly pageComponentService = inject(PageComponentService);
+   private readonly languageService = inject(LanguageService);
    page = signal<PageComponentModel | null>({
       id: 0,
       translations: [],

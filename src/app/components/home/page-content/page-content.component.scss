@@ -2,121 +2,111 @@
    display: flex;
    flex-direction: column;
 
+   // Styles génériques pour le background header
+   .page-header-background {
+      display: none;
+   }
+
+   // Styles génériques pour les images
+   .page-image-header {
+      width: 100%;
+      object-fit: cover;
+      z-index: 101;
+      display: none;
+   }
+
+   .page-image-content {
+      width: 100%;
+      height: auto;
+      display: block;
+   }
+
    // Variant: app-info
    &.variant-app-info {
       padding: 88px var(--spacing-5) 100px var(--spacing-5);
 
-      .back-btn {
+      .page-image-content {
+         margin-top: 44px;
+      }
+
+      .button-back {
          position: absolute;
          top: 16px;
          left: 32px;
       }
 
-      .page-content-wrapper {
-         .page-title.variant-app-info {
-            font-size: var(--font-size-h2);
-            font-weight: var(--font-weight-heading);
-            font-family: var(--heading-font-family);
-            line-height: 100%;
-            color: var(--color-1);
-            margin-bottom: 44px;
-         }
+      .page-title {
+         font-size: var(--font-size-h2);
+         font-weight: var(--font-weight-heading);
+         font-family: var(--heading-font-family);
+         line-height: 100%;
+         color: var(--color-1);
+         margin-bottom: 44px;
+      }
 
-         .page-description-wrapper.variant-app-info {
-            .page-description {
-               p {
-                  font-size: var(--font-size-body-md);
-                  color: var(--color-3);
-                  line-height: 1.6;
-                  margin-bottom: var(--spacing-4);
-                  text-align: left;
+      .page-description {
+         p {
+            font-size: var(--font-size-body-md);
+            color: var(--color-3);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-4);
+            text-align: left;
 
-                  &:last-child {
-                     margin-bottom: 0;
-                  }
-
-                  ::ng-deep .cnil-link {
-                     color: var(--color-7);
-                     text-decoration: underline;
-                     text-underline-offset: 3px;
-                     cursor: pointer;
-                     font-weight: var(--font-weight-heading);
-                  }
-               }
+            &:last-child {
+               margin-bottom: 0;
             }
-         }
 
-         .page-image {
-            margin-top: 44px;
-
-            .illustration {
-               width: 100%;
+            ::ng-deep .cnil-link {
+               color: var(--color-7);
+               text-decoration: underline;
+               text-underline-offset: 3px;
+               cursor: pointer;
+               font-weight: var(--font-weight-heading);
             }
          }
       }
    }
 
-   // Variant: accessibility
-   &.variant-accessibility {
-      background-color: var(--background-6);
-      min-height: 100vh;
-      padding-bottom: var(--spacing-5);
-
-      .page-content-wrapper {
-         .page-title.variant-accessibility {
-            padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
-         }
-
-         .page-description-wrapper.variant-accessibility {
-            padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
-         }
-
-         .page-items-container.variant-accessibility {
-            gap: var(--spacing-5);
-            padding: 0 var(--spacing-3);
-         }
-      }
-
-      .image-cover {
-         height: 323px;
-         object-fit: cover;
-      }
-
-      .button-back-accessibility {
-         top: var(--spacing-3);
-         padding-left: var(--spacing-5);
-      }
-   }
-
-   // Variant: resources
+   // Variants communs: accessibility et resources (styles identiques)
+   &.variant-accessibility,
    &.variant-resources {
       background-color: var(--background-6);
       min-height: 100vh;
       padding-bottom: var(--spacing-5);
 
-      .page-content-wrapper {
-         .page-title.variant-resources {
-            padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
-         }
-
-         .page-description-wrapper.variant-resources {
-            padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
-         }
-
-         .page-items-container.variant-resources {
-            gap: var(--spacing-5);
-            padding: 0 var(--spacing-3);
-         }
+      .page-header-background {
+         display: block;
+         position: fixed;
+         background: var(--background-31);
+         height: 110px;
+         width: 100%;
+         z-index: 100;
       }
 
-      .image-cover {
+      .page-image-header {
+         display: block;
          height: 323px;
-         object-fit: cover;
       }
 
-      .button-back-accessibility {
+      .page-image-content {
+         display: none;
+      }
+
+      .button-back {
+         position: fixed;
          top: var(--spacing-3);
          padding-left: var(--spacing-5);
+         z-index: 102;
+      }
+
+      .page-title,
+      .page-description {
+         padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
+      }
+
+      .page-items-container {
+         gap: var(--spacing-5);
+         padding: 0 var(--spacing-3);
       }
    }
 }
