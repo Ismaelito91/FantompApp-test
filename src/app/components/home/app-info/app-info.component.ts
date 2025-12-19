@@ -1,11 +1,14 @@
 import { Component } from "@angular/core";
-import { ButtonBackComponent } from "../../design-system/button-back/button-back.component";
-import { TranslatePipe } from "@ngx-translate/core";
+import { PageContentComponent } from "../page-content/page-content.component";
 
 @Component({
    selector: "app-app-info",
-   imports: [ButtonBackComponent, TranslatePipe],
-   templateUrl: "./app-info.component.html",
-   styleUrl: "./app-info.component.scss",
+   imports: [PageContentComponent],
+   template: `
+      <app-page-content
+         pageCode="2.5_cest-quoi-cette-app"
+         variant="app-info"
+      ></app-page-content>
+   `,
 })
 export class AppInfoComponent {}
