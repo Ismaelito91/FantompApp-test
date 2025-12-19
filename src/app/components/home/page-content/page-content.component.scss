@@ -1,0 +1,129 @@
+.page-content-container {
+   display: flex;
+   flex-direction: column;
+
+   // Variant: app-info
+   &.variant-app-info {
+      padding: 88px var(--spacing-5) 100px var(--spacing-5);
+
+      .back-btn {
+         position: absolute;
+         top: 16px;
+         left: 32px;
+      }
+
+      .page-content-wrapper {
+         .page-title.variant-app-info {
+            font-size: var(--font-size-h2);
+            font-weight: var(--font-weight-heading);
+            font-family: var(--heading-font-family);
+            line-height: 100%;
+            color: var(--color-1);
+            margin-bottom: 44px;
+         }
+
+         .page-description-wrapper.variant-app-info {
+            .page-description {
+               p {
+                  font-size: var(--font-size-body-md);
+                  color: var(--color-3);
+                  line-height: 1.6;
+                  margin-bottom: var(--spacing-4);
+                  text-align: left;
+
+                  &:last-child {
+                     margin-bottom: 0;
+                  }
+
+                  ::ng-deep .cnil-link {
+                     color: var(--color-7);
+                     text-decoration: underline;
+                     text-underline-offset: 3px;
+                     cursor: pointer;
+                     font-weight: var(--font-weight-heading);
+                  }
+               }
+            }
+         }
+
+         .page-image {
+            margin-top: 44px;
+
+            .illustration {
+               width: 100%;
+            }
+         }
+      }
+   }
+
+   // Variant: accessibility
+   &.variant-accessibility {
+      background-color: var(--background-6);
+      min-height: 100vh;
+      padding-bottom: var(--spacing-5);
+
+      .page-content-wrapper {
+         .page-title.variant-accessibility {
+            padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
+         }
+
+         .page-description-wrapper.variant-accessibility {
+            padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
+         }
+
+         .page-items-container.variant-accessibility {
+            gap: var(--spacing-5);
+            padding: 0 var(--spacing-3);
+         }
+      }
+
+      .image-cover {
+         height: 323px;
+         object-fit: cover;
+      }
+
+      .button-back-accessibility {
+         top: var(--spacing-3);
+         padding-left: var(--spacing-5);
+      }
+   }
+
+   // Variant: resources
+   &.variant-resources {
+      background-color: var(--background-6);
+      min-height: 100vh;
+      padding-bottom: var(--spacing-5);
+
+      .page-content-wrapper {
+         .page-title.variant-resources {
+            padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
+         }
+
+         .page-description-wrapper.variant-resources {
+            padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
+         }
+
+         .page-items-container.variant-resources {
+            gap: var(--spacing-5);
+            padding: 0 var(--spacing-3);
+         }
+      }
+
+      .image-cover {
+         height: 323px;
+         object-fit: cover;
+      }
+
+      .button-back-accessibility {
+         top: var(--spacing-3);
+         padding-left: var(--spacing-5);
+      }
+   }
+}
+
+// Styles communs pour les liens dans le contenu CKEditor
+:host ::ng-deep .page-description a,
+:host ::ng-deep .ckeditor-content a {
+   text-decoration: underline !important;
+   color: var(--color-7) !important;
+}
