@@ -45,7 +45,7 @@ export const routes: Routes = [
    {
       path: "app-info",
       component: AppInfoComponent,
-      data: { hideHeader: true },
+      data: { hideHeader: true, hideFooter: true },
    },
    {
       path: "resources",

@@ -7,7 +7,6 @@
 
 assets/images/3018.png
 assets/images/anonym-img.png
-assets/images/app-info.svg
 assets/images/arrow24x24-icon.svg
 assets/images/bg-blur-img.png
 assets/images/bio-illu.svg

@@ -15,105 +15,66 @@
       display: none;
    }
 
+   .no-image-block {
+      height: 88px;
+   }
+
    .page-image-content {
       width: 100%;
       height: auto;
       display: block;
    }
-
-   // Variant: app-info
-   &.variant-app-info {
-      padding: 88px var(--spacing-5) 100px var(--spacing-5);
-
-      .page-image-content {
-         margin-top: 44px;
-      }
-
-      .button-back {
-         position: absolute;
-         top: 16px;
-         left: 32px;
-      }
-
-      .page-title {
-         font-size: var(--font-size-h2);
-         font-weight: var(--font-weight-heading);
-         font-family: var(--heading-font-family);
-         line-height: 100%;
-         color: var(--color-1);
-         margin-bottom: 44px;
-      }
-
-      .page-description {
-         p {
-            font-size: var(--font-size-body-md);
-            color: var(--color-3);
-            line-height: 1.6;
-            margin-bottom: var(--spacing-4);
-            text-align: left;
-
-            &:last-child {
-               margin-bottom: 0;
-            }
-
-            ::ng-deep .cnil-link {
-               color: var(--color-7);
-               text-decoration: underline;
-               text-underline-offset: 3px;
-               cursor: pointer;
-               font-weight: var(--font-weight-heading);
-            }
-         }
-      }
+   
+   h1 {
+      font-size: var(--font-size-h2);
+      line-height: var(--line-height-h2);
+      color: var(--color-3);
+   }
+   .page-description::ng-deep p {
+      font-size: var(--font-size-body-md);
+      color: var(--color-3);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-4);
+      text-align: left;
    }
 
    // Variants communs: accessibility et resources (styles identiques)
-   &.variant-accessibility,
-   &.variant-resources {
-      background-color: var(--background-6);
-      min-height: 100vh;
-      padding-bottom: var(--spacing-5);
+   background-color: var(--background-6);
+   min-height: 100vh;
+   padding-bottom: var(--spacing-5);
 
-      .page-header-background {
-         display: block;
-         position: fixed;
-         background: var(--background-31);
-         height: 110px;
-         width: 100%;
-         z-index: 100;
-      }
-
-      .page-image-header {
-         display: block;
-         height: 323px;
-      }
-
-      .page-image-content {
-         display: none;
-      }
-
-      .button-back {
-         position: fixed;
-         top: var(--spacing-3);
-         padding-left: var(--spacing-5);
-         z-index: 102;
-      }
-
-      .page-title,
-      .page-description {
-         padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
-      }
-
-      .page-items-container {
-         gap: var(--spacing-5);
-         padding: 0 var(--spacing-3);
-      }
+   .page-header-background {
+      display: block;
+      position: fixed;
+      background: var(--background-31);
+      height: 110px;
+      width: 100%;
+      z-index: 100;
    }
-}
 
-// Styles communs pour les liens dans le contenu CKEditor
-:host ::ng-deep .page-description a,
-:host ::ng-deep .ckeditor-content a {
-   text-decoration: underline !important;
-   color: var(--color-7) !important;
+   .page-image-header {
+      display: block;
+      height: 323px;
+   }
+
+   .page-image-content {
+      display: none;
+   }
+
+   .button-back {
+      position: fixed;
+      top: var(--spacing-3);
+      padding-left: var(--spacing-5);
+      z-index: 102;
+   }
+
+   .page-title,
+   .page-description {
+      padding: 0 var(--spacing-5) var(--spacing-5) var(--spacing-5);
+   }
+
+   .page-items-container {
+      gap: var(--spacing-5);
+      padding: 0 var(--spacing-3);
+   }
 }
