@@ -120,7 +120,15 @@ export class BlurImageComponent implements OnDestroy {
       localStorage.getItem("blur-tutorial") === "true"
          ? (this.showTutorial = false)
          : (this.showTutorial = true);
-      this.utilsService.setBackgroundInert(this.showTutorial);
+      // Ne pas bloquer le footer en desktop, même si tutorial est visible
+      // isBackgroundInert ne doit rester true que en mobile lors du blur
+      if (this.showTutorial && !this.isDesktop()) {
+         this.utilsService.setBackgroundInert(true);
+      }
+   }
+
+   private isDesktop(): boolean {
+      return window.innerWidth > 768;
    }
 
    onFadeInDone() {
@@ -401,6 +409,11 @@ export class BlurImageComponent implements OnDestroy {
          this.historyStack = [];
          this.redoStack = [];
          this.saveState();
+
+         // Bloquer le footer si le tutorial est affiché
+         if (this.showTutorial) {
+            this.utilsService.setBackgroundInert(true);
+         }
 
          console.log(`Viewport: ${window.innerWidth}x${window.innerHeight}`);
          console.log(

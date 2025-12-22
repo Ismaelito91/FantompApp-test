@@ -2,7 +2,7 @@
   @case ("initialized") {
     <div class="app-layout" [attr.inert]="_onboardingService.isOnboardingVisible() ? 'true' : null">
       <!-- Barre latérale (footer sur desktop) -->
-      <app-footer class="side-nav desktop-only" [attr.inert]="utilsService.isBackgroundInert() ? 'true' : null" />
+      <app-footer class="side-nav desktop-only" [attr.inert]="(_onboardingService.isOnboardingVisible() || utilsService.isBackgroundInert()) ? 'true' : null" />
       <div class="main-content" #mainContent>
         @if (!hideHeader) {
           <app-header />
