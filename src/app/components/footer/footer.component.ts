@@ -8,7 +8,6 @@ import packageInfo from "../../../../package.json";
 import { SettingService } from "../../service/setting.service";
 import { ThemeService } from "../../service/theme.service";
 import { OnboardingService } from "../../service/onboarding.service";
-import { UtilsService } from "../../service/utils.service";
 
 @Component({
    selector: "app-footer",
@@ -100,11 +99,6 @@ export class FooterComponent {
    private _settingService = inject(SettingService);
    private themeService = inject(ThemeService);
    private onboardingService = inject(OnboardingService);
-   private utilsService = inject(UtilsService);
-
-   get isBackgroundInert(): boolean {
-      return this.utilsService.isBackgroundInert();
-   }
 
    toolsInactiveIcon: string = "tools-clear-inactive";
    toolsActiveIcon: string = "tools-clear-active";
