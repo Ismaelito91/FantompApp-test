@@ -120,7 +120,6 @@ export class BlurImageComponent implements OnDestroy {
       localStorage.getItem("blur-tutorial") === "true"
          ? (this.showTutorial = false)
          : (this.showTutorial = true);
-      this.utilsService.setBackgroundInert(this.showTutorial);
    }
 
    onFadeInDone() {
@@ -128,6 +127,9 @@ export class BlurImageComponent implements OnDestroy {
       this.handAnimationState = "active";
       // Met le focus sur le bouton de fermeture
       this.closeButtonRef.nativeElement.focus();
+      if (this.showTutorial) {
+         this.utilsService.setBackgroundInert(true);
+      }
    }
 
    @HostListener("document:keydown.escape", ["$event"])
