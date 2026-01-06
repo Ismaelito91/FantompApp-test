@@ -854,6 +854,7 @@
             "WEEKS": "weeks",
             "MONTH": "month",
             "MONTHS": "months",
+            "YEAR": "year",
             "YEARS": "years",
             "THOUSAND_YEARS": "thousand years",
             "MILLION_YEARS": "million years",
