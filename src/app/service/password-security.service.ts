@@ -224,6 +224,7 @@ export class PasswordSecurityService {
              WEEK: "semaine",
              WEEKS: "semaines",
              MONTHS: "mois",
+             YEAR: "année",
              YEARS: "ans",
              THOUSAND_YEARS: "milliers d'années",
              MILLION_YEARS: "millions d'années",
