@@ -102,7 +102,7 @@
          "FEATURE_3": "Discreet option to protect your privacy"
       },
       "RESOURCES": {
-         "TITLE": "Acces all the ressources",
+         "TITLE": "Acces all the resources",
          "DESCRIPTION": "Find all the important information and useful tools at your fingertips.",
          "FEATURE_1": "Complete documentation of the app",
          "FEATURE_2": "Detailled user guides",
@@ -148,7 +148,7 @@
       "APP_INFO_TITLE": "About the app",
       "APPEARANCE": "Appearence",
       "CHANGE_ICON": "Change the icon",
-      "RESOURCES": "Ressources",
+      "RESOURCES": "Resource",
       "WHAT_IS_APP": "What is this app for? (Legal notices)",
       "RIGHTS": "I have rights",
       "ACCESSIBILITY": "FantomApp for all (Accessibility)",
