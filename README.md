@@ -49,3 +49,6 @@ Ce module utilise un fichier `.editorconfig`. Ce dernier permet d'unifier le for
 
 Il est donc préférable de ne pas utiliser de formateur de code à part celui-ci. La majorité des IDEs sont compatibles avec ce type de fichier sans nécessiter l'installation d'extensions.
 
+## Licence
+
+Ce projet est sous licence Apache 2.0 - voir le fichier [LICENSE](LICENSE.txt) pour plus de détails. 
