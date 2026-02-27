@@ -15,13 +15,19 @@ export class PageTranslationPipe implements PipeTransform {
    private languageService = inject(LanguageService);
 
    transform(page: PageComponentModel | null | undefined): PageComponentTranslationModel | null {
-      const lang = this.languageService.language(); // "FR", "ES", etc.
+      const lang = this.languageService.language();
       if (!page?.translations) return null;
 
-      return (
-         page.translations.find(t => t.countryRegion === lang) ||
-         page.translations.find(t => t.countryRegion === 'FR') || // Sinon FR translation par défaut
-         null // Sinon rien
-      );
+      const match = page.translations.find(t => t.countryRegion === lang);
+      if (!match) return null;
+
+      if (!match.image && !match.staticImage) {
+         const frTranslation = page.translations.find(t => t.countryRegion === 'FR');
+         if (frTranslation) {
+            return { ...match, image: frTranslation.image, staticImage: frTranslation.staticImage };
+         }
+      }
+
+      return match;
    }
 }
