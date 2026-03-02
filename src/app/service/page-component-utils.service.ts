@@ -1,13 +1,15 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import PageComponentModel from '../model/page-component.model';
 import { ComponentType } from '../model/enum/component-type.enum';
+import { LanguageService } from './language.service';
 
 @Injectable({
    providedIn: 'root'
 })
 export class PageComponentUtilsService {
 
+   private readonly languageService = inject(LanguageService);
    private readonly componentMap = new Map<number, PageComponentModel>();
    private readonly componentMapUpdated$ = new Subject<void>();
 
@@ -60,19 +62,26 @@ export class PageComponentUtilsService {
    }
 
    /**
-    * Trie les enfants d'un composant par position
-    * @param component Le composant dont on veut trier les enfants
-    * @returns Les enfants triés par position
+    * Trie les enfants d'un composant par position et filtre selon la langue sélectionnée.
+    * Un composant est affiché uniquement s'il a une traduction pour la langue courante,
+    * sauf les DIVIDER qui sont toujours affichés.
     */
    getSortedChildren(component: PageComponentModel | null | undefined): PageComponentModel[] {
+      let children: PageComponentModel[];
+
       if (component?.id) { // Si le composant a une id (!= 0) on se base sur childrenIdList (api) sinon sur le children (statique)
          const childrenIdList = component?.childrenIdList ?? [];
-         return childrenIdList
+         children = childrenIdList
             .map(id => this.componentMap.get(id))
             .filter((child): child is PageComponentModel => child !== undefined);
       } else {
-         const children = component?.children ?? [];
-         return [...children].sort((a, b) => a.position! - b.position!);
+         children = [...(component?.children ?? [])].sort((a, b) => a.position! - b.position!);
       }
+
+      const lang = this.languageService.language();
+      return children.filter(child =>
+         child.type === ComponentType.DIVIDER ||
+         child.translations?.some(t => t.countryRegion === lang)
+      );
    }
 } 
