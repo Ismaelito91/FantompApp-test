@@ -69,7 +69,7 @@ export class PageComponentUtilsService {
    getSortedChildren(component: PageComponentModel | null | undefined): PageComponentModel[] {
       let children: PageComponentModel[];
 
-      if (component?.id) {
+      if (component?.id) { // Si le composant a une id (!= 0) on se base sur childrenIdList (api) sinon sur le children (statique)
          const childrenIdList = component?.childrenIdList ?? [];
          children = childrenIdList
             .map(id => this.componentMap.get(id))
