@@ -22,7 +22,7 @@ export class PageTranslationPipe implements PipeTransform {
       if (!match) return null;
 
       if (!match.image && !match.staticImage) {
-         const frTranslation = page.translations.find(t => t.countryRegion === 'FR');
+         const frTranslation = page.translations.find(t => t.countryRegion === 'XX') ?? page.translations.find(t => t.countryRegion === 'FR');
          if (frTranslation) {
             return { ...match, image: frTranslation.image, staticImage: frTranslation.staticImage };
          }
