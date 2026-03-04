@@ -15,9 +15,10 @@ export class PageTranslationPipe implements PipeTransform {
    private languageService = inject(LanguageService);
 
    transform(page: PageComponentModel | null | undefined): PageComponentTranslationModel | null {
-      const lang = this.languageService.language();
       if (!page?.translations) return null;
+      if (!page.id) return page.translations[0] ?? null;
 
+      const lang = this.languageService.language();
       const match = page.translations.find(t => t.countryRegion === lang);
       if (!match) return null;
 

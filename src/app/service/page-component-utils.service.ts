@@ -81,6 +81,7 @@ export class PageComponentUtilsService {
       const lang = this.languageService.language();
       return children.filter(child =>
          child.type === ComponentType.DIVIDER ||
+         !child.id ||
          child.translations?.some(t => t.countryRegion === lang)
       );
    }
