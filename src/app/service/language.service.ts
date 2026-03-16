@@ -135,13 +135,6 @@ export class LanguageService {
       }
 
       this.sortByBrowserPreference();
-
-      if (
-         this.supportedLanguages.length > 0 &&
-         !this.supportedLanguages.some((l) => l.code === this.currentLang())
-      ) {
-         this.setLanguage(this.supportedLanguages[0].code);
-      }
    }
 
    public get language(): Signal<SupportedLanguage> {

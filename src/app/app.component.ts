@@ -143,7 +143,7 @@ export class AppComponent implements OnInit {
       this.translateService.addLangs(supportedLanguageCodes);
 
       // Langue par défaut pour les clés manquantes
-      this.translateService.setDefaultLang("fr");
+      this.translateService.setDefaultLang("xx");
 
       // Le service de langue gère le choix de la langue
       // Il est déjà injecté et s'initialise automatiquement
