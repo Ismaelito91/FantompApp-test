@@ -147,11 +147,20 @@ export class LanguageService {
       } else {
          const enabledCodes = enabledLanguages.map((l) => l.toUpperCase());
          this.supportedLanguages = this.allLanguages.filter((lang) =>
-            enabledCodes.includes(lang.code)
+            enabledCodes.includes(lang.code),
          );
       }
 
       this.sortByBrowserPreference();
+
+      if (
+         this.supportedLanguages.length > 0 &&
+         !this.supportedLanguages.some((l) => l.code === this.currentLang())
+      ) {
+         const xx = this.supportedLanguages.find((l) => l.code === "XX");
+         this.setLanguage(xx?.code ?? this.supportedLanguages[0].code);
+      }
+      this.translateService.use(this.currentLang().toLowerCase());
    }
 
    public get language(): Signal<SupportedLanguage> {
@@ -170,24 +179,38 @@ export class LanguageService {
    }
 
    private getBrowserLangs(): string[] {
-      return (navigator.languages ?? [navigator.language])
-         .map((l) => l.toLowerCase());
+      return (navigator.languages ?? [navigator.language]).map((l) =>
+         l.toLowerCase(),
+      );
+   }
+
+   /** Score sur la 1re locale seulement (évite un 2e choix navigateur qui ferait matcher ex. FR). */
+   private browserMatchScore(entry: LanguageEntry, primary: string): number {
+      if (!primary) return 0;
+      const tag = entry.lang.toLowerCase();
+      const code = entry.code.toLowerCase();
+      const parts = primary.split("-");
+      if (primary === tag) return 3;
+      if (parts.length >= 2 && parts[parts.length - 1] === code) {
+         if (code === "ie" && parts[0] !== "en") return 0;
+         return 2;
+      }
+      if (parts[0] === tag.split("-")[0]) return 1;
+      return 0;
    }
 
    private detectLanguageFromBrowser(): SupportedLanguage {
-      const browserLangs = this.getBrowserLangs();
-      let bestMatch: SupportedLanguage = "XX";
+      const primary = this.getBrowserLangs()[0] ?? "";
+      let best: SupportedLanguage = "XX";
       let bestScore = 0;
-
       for (const entry of this.supportedLanguages) {
-         const score = this.getBrowserMatchScore(entry, browserLangs);
-         if (score > bestScore) {
-            bestScore = score;
-            bestMatch = entry.code;
+         const s = this.browserMatchScore(entry, primary);
+         if (s > bestScore) {
+            bestScore = s;
+            best = entry.code;
          }
       }
-
-      return bestMatch;
+      return bestScore > 0 ? best : "XX";
    }
 
    /**
@@ -196,42 +219,48 @@ export class LanguageService {
     * avec XX (International) toujours en 2e position.
     */
    private sortByBrowserPreference(): void {
-      const browserLangs = this.getBrowserLangs();
-
-      this.supportedLanguages.sort((a, b) => {
-         return this.getBrowserMatchScore(b, browserLangs)
-              - this.getBrowserMatchScore(a, browserLangs);
-      });
-
-      const xxIndex = this.supportedLanguages.findIndex((l) => l.code === "XX");
-      if (xxIndex > 1) {
-         const [xx] = this.supportedLanguages.splice(xxIndex, 1);
-         this.supportedLanguages.splice(1, 0, xx);
-      }
-   }
-
-   private getBrowserMatchScore(
-      entry: LanguageEntry,
-      browserLangs: string[]
-   ): number {
-      const tag = entry.lang.toLowerCase();
-      const code = entry.code.toLowerCase();
-
-      for (let i = 0; i < browserLangs.length; i++) {
-         const bl = browserLangs[i];
-         const positionScore = (browserLangs.length - i) * 10;
-         const blParts = bl.split("-");
-
-         if (bl === tag) return positionScore + 3;
-
-         if (blParts.length >= 2 && blParts[blParts.length - 1] === code) {
-            return positionScore + 2;
+      const primary = this.getBrowserLangs()[0] ?? "";
+      let bestCode: SupportedLanguage | null = null;
+      let bestScore = 0;
+      for (const entry of this.supportedLanguages) {
+         const s = this.browserMatchScore(entry, primary);
+         if (s > bestScore) {
+            bestScore = s;
+            bestCode = entry.code;
          }
-
-         if (blParts[0] === tag.split("-")[0]) return positionScore + 1;
       }
 
-      return 0;
+      const xx = this.supportedLanguages.find((l) => l.code === "XX");
+      const alphabetical = (list: LanguageEntry[]): LanguageEntry[] =>
+         [...list].sort((a, b) =>
+            a.countryName.localeCompare(b.countryName, "fr", {
+               sensitivity: "base",
+            }),
+         );
+
+      if (!bestCode || bestScore === 0) {
+         const fr = this.supportedLanguages.find((l) => l.code === "FR");
+         const rest = alphabetical(
+            this.supportedLanguages.filter(
+               (l) => l.code !== "XX" && l.code !== "FR",
+            ),
+         );
+         this.supportedLanguages = [
+            ...(xx ? [xx] : []),
+            ...(fr ? [fr] : []),
+            ...rest,
+         ];
+      } else {
+         const detected = this.supportedLanguages.find(
+            (l) => l.code === bestCode,
+         )!;
+         const rest = alphabetical(
+            this.supportedLanguages.filter(
+               (l) => l.code !== bestCode && l.code !== "XX",
+            ),
+         );
+         this.supportedLanguages = [detected, ...(xx ? [xx] : []), ...rest];
+      }
    }
 
    private getTranslateLocale(lang: SupportedLanguage): string {
