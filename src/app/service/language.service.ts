@@ -214,9 +214,8 @@ export class LanguageService {
    }
 
    /**
-    * Trie supportedLanguages pour que les langues correspondant
-    * au pays détecté dans le navigateur apparaissent en haut,
-    * avec XX (International) toujours en 2e position.
+    * Sans match fort : XX, FR, puis ordre alphabétique (pays).
+    * Avec match : langue détectée, puis XX, puis alphabétique (sauf cas bestCode === XX : XX, FR, puis alpha).
     */
    private sortByBrowserPreference(): void {
       const primary = this.getBrowserLangs()[0] ?? "";
@@ -239,6 +238,18 @@ export class LanguageService {
          );
 
       if (!bestCode || bestScore === 0) {
+         const fr = this.supportedLanguages.find((l) => l.code === "FR");
+         const rest = alphabetical(
+            this.supportedLanguages.filter(
+               (l) => l.code !== "XX" && l.code !== "FR",
+            ),
+         );
+         this.supportedLanguages = [
+            ...(xx ? [xx] : []),
+            ...(fr ? [fr] : []),
+            ...rest,
+         ];
+      } else if (bestCode === "XX") {
          const fr = this.supportedLanguages.find((l) => l.code === "FR");
          const rest = alphabetical(
             this.supportedLanguages.filter(
