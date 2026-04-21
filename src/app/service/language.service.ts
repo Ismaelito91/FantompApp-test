@@ -199,36 +199,34 @@ export class LanguageService {
       return 0;
    }
 
-   private detectLanguageFromBrowser(): SupportedLanguage {
+   private computeBestMatch(): {
+      code: SupportedLanguage | null;
+      score: number;
+   } {
       const primary = this.getBrowserLangs()[0] ?? "";
-      let best: SupportedLanguage = "XX";
-      let bestScore = 0;
+      let code: SupportedLanguage | null = null;
+      let score = 0;
       for (const entry of this.supportedLanguages) {
          const s = this.browserMatchScore(entry, primary);
-         if (s > bestScore) {
-            bestScore = s;
-            best = entry.code;
+         if (s > score) {
+            score = s;
+            code = entry.code;
          }
       }
-      return bestScore > 0 ? best : "XX";
+      return { code, score };
+   }
+
+   private detectLanguageFromBrowser(): SupportedLanguage {
+      const { code, score } = this.computeBestMatch();
+      return score > 0 && code ? code : "XX";
    }
 
    /**
-    * Sans match fort : XX, FR, puis ordre alphabétique (pays).
-    * Avec match : langue détectée, puis XX, puis alphabétique (sauf cas bestCode === XX : XX, FR, puis alpha).
+    * Pas de match fort (ou best = XX) : XX, FR, puis alphabétique.
+    * Match fort : langue détectée, XX, puis alphabétique.
     */
    private sortByBrowserPreference(): void {
-      const primary = this.getBrowserLangs()[0] ?? "";
-      let bestCode: SupportedLanguage | null = null;
-      let bestScore = 0;
-      for (const entry of this.supportedLanguages) {
-         const s = this.browserMatchScore(entry, primary);
-         if (s > bestScore) {
-            bestScore = s;
-            bestCode = entry.code;
-         }
-      }
-
+      const { code: bestCode, score } = this.computeBestMatch();
       const xx = this.supportedLanguages.find((l) => l.code === "XX");
       const alphabetical = (list: LanguageEntry[]): LanguageEntry[] =>
          [...list].sort((a, b) =>
@@ -237,19 +235,7 @@ export class LanguageService {
             }),
          );
 
-      if (!bestCode || bestScore === 0) {
-         const fr = this.supportedLanguages.find((l) => l.code === "FR");
-         const rest = alphabetical(
-            this.supportedLanguages.filter(
-               (l) => l.code !== "XX" && l.code !== "FR",
-            ),
-         );
-         this.supportedLanguages = [
-            ...(xx ? [xx] : []),
-            ...(fr ? [fr] : []),
-            ...rest,
-         ];
-      } else if (bestCode === "XX") {
+      if (!bestCode || score === 0 || bestCode === "XX") {
          const fr = this.supportedLanguages.find((l) => l.code === "FR");
          const rest = alphabetical(
             this.supportedLanguages.filter(
