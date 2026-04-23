@@ -149,7 +149,7 @@
                      >
                         <div class="lang-item" [attr.lang]="lang.lang">
                            @if (lang.flagUrl) {
-                           <img class="flag-img" [src]="lang.flagUrl" alt="" />
+                           <img class="flag-img" [src]="lang.flagUrl" alt="" aria-hidden="true" />
                            } @else {
                            <span class="emoji-icon" aria-hidden="true">🌐</span>
                            }
