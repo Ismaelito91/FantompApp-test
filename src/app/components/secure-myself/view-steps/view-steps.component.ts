@@ -115,9 +115,13 @@ export class ViewStepsComponent implements AfterViewInit {
             const instance: Swiper | undefined = host?.swiper as
                | Swiper
                | undefined;
-            instance?.on("slideChangeTransitionEnd", () =>
-               this.applyPendingFocus()
-            );
+            instance?.on("slideChangeTransitionEnd", () => {
+               this.syncSlidesState();
+               this.applyPendingFocus();
+            });
+            instance?.on("slidesUpdated", () => this.syncSlidesState());
+            instance?.on("slidesLengthChange", () => this.syncSlidesState());
+            this.syncSlidesState();
          } catch {}
       };
       if (host?.swiper) {
@@ -127,6 +131,30 @@ export class ViewStepsComponent implements AfterViewInit {
             host?.addEventListener("afterinit", register, { once: true });
          } catch {}
       }
+   }
+
+   
+    // masquer les slides inactives aux technologies d'assistance
+    // pour empecher la navigation par swipe du lecteur d'ecran vers des
+    // contenus non visibles. Utilise aria-hidden + inert (inert retire aussi
+    // les elements focusables du parcours clavier).
+   
+   private syncSlidesState(): void {
+      const host = this.swiperEl?.nativeElement as any;
+      const activeIndex: number = host?.swiper?.activeIndex ?? 0;
+      const slides = host?.querySelectorAll?.(
+         "swiper-slide"
+      ) as NodeListOf<HTMLElement> | undefined;
+      slides?.forEach((slide, i) => {
+         const hidden = i !== activeIndex;
+         if (hidden) {
+            slide.setAttribute("aria-hidden", "true");
+            slide.setAttribute("inert", "");
+         } else {
+            slide.removeAttribute("aria-hidden");
+            slide.removeAttribute("inert");
+         }
+      });
    }
 
    private applyPendingFocus(): void {

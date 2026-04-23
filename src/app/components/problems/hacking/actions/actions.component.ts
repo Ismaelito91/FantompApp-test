@@ -97,7 +97,13 @@ export class ActionsComponent {
       const register = () => {
          try {
             const instance: Swiper | undefined = host?.swiper as Swiper | undefined;
-            instance?.on('slideChangeTransitionEnd', () => this.applyPendingFocus());
+            instance?.on('slideChangeTransitionEnd', () => {
+               this.syncSlidesState();
+               this.applyPendingFocus();
+            });
+            instance?.on('slidesUpdated', () => this.syncSlidesState());
+            instance?.on('slidesLengthChange', () => this.syncSlidesState());
+            this.syncSlidesState();
          } catch { }
       };
       if (host?.swiper) {
@@ -107,6 +113,26 @@ export class ActionsComponent {
             host?.addEventListener('afterinit', register, { once: true });
          } catch { }
       }
+   }
+
+    // empêche les lecteurs d'écran d'atteindre les slides non visibles.
+    
+   private syncSlidesState(): void {
+      const host = this.swiperEl?.nativeElement as any;
+      const activeIndex: number = host?.swiper?.activeIndex ?? 0;
+      const slides = host?.querySelectorAll?.('swiper-slide') as
+         | NodeListOf<HTMLElement>
+         | undefined;
+      slides?.forEach((slide, i) => {
+         const hidden = i !== activeIndex;
+         if (hidden) {
+            slide.setAttribute('aria-hidden', 'true');
+            slide.setAttribute('inert', '');
+         } else {
+            slide.removeAttribute('aria-hidden');
+            slide.removeAttribute('inert');
+         }
+      });
    }
 
    private applyPendingFocus(): void {
