@@ -72,7 +72,9 @@ export class ViewAllComponent {
       const dialogRef = this.dialog.open(TutorialDialog, {
          backdropClass: 'blurred-backdrop',
          restoreFocus: true,
-         autoFocus: true
+         autoFocus: 'dialog',
+         ariaLabelledBy: 'secure-myself-tutorial-title',
+         ariaDescribedBy: 'secure-myself-tutorial-description'
       });
 
       dialogRef.afterClosed().subscribe(() => {
