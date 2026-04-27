@@ -1,5 +1,11 @@
 <div
    class="onboarding-overlay"
+   role="dialog"
+   aria-modal="true"
+   [attr.aria-label]="getCurrentDialogLabel()"
+   [attr.aria-describedby]="getCurrentAnnouncementId()"
+   cdkTrapFocus
+   [cdkTrapFocusAutoCapture]="true"
    [class.step-two]="currentStep() === 2"
    [class.step-three]="currentStep() === 3"
    [class.step-four]="currentStep() === 4"
@@ -12,6 +18,14 @@
    @if (currentStep() === 1) {
    <div class="onboarding-step-one">
       <div class="onboarding-container">
+         <p
+            id="onboarding-step-1-announcement"
+            class="sr-only"
+            data-step-announcement="1"
+            tabindex="-1"
+         >
+            {{ getStepAnnouncementText(1) }}
+         </p>
          <h1 class="sr-only">
             {{ "ONBOARDING.WELCOME_TO" | translate }}
          </h1>
@@ -89,6 +103,7 @@
                #step1NextButton
                type="button"
                class="start-button bubble-next-button"
+               (mousedown)="$event.preventDefault()"
                (click)="completeOnboarding(); $event.stopPropagation()"
             >
                <span class="button-text">{{
@@ -138,6 +153,14 @@
    <!-- ===== ÉTAPE 2 : DÉMONSTRATION PROBLÈME ===== -->
    @if (currentStep() === 2) {
    <div class="onboarding-step">
+      <p
+         id="onboarding-step-2-announcement"
+         class="sr-only"
+         data-step-announcement="2"
+         tabindex="-1"
+      >
+         {{ getStepAnnouncementText(2) }}
+      </p>
       <!-- Bulle d'aide pour l'étape 2 (problème) -->
       <div class="step-bubble problem-bubble">
          <!-- Fantôme triste pour l'étape 2 - positionné relativement à la bulle -->
@@ -152,13 +175,20 @@
          <div class="bubble-content">
             <div class="problem-header">
                <h3
+                  id="onboarding-step-2-title"
                   class="problem-title"
                   role="heading"
                   aria-level="1"
                   [innerHTML]="'ONBOARDING.STEP_TWO.TITLE' | translate"
                ></h3>
             </div>
-            <p class="problem-description">
+            <p
+               class="problem-description"
+               id="onboarding-step-2-description"
+               data-step="2"
+               tabindex="-1"
+               aria-labelledby="onboarding-step-2-title"
+            >
                {{ "ONBOARDING.STEP_TWO.DESCRIPTION" | translate }}
             </p>
             <div class="bubble-next-button-container">
@@ -166,6 +196,7 @@
                   #step2NextButton
                   type="button"
                   class="bubble-next-button"
+                  (mousedown)="$event.preventDefault()"
                   (click)="completeOnboarding(); $event.stopPropagation()"
                >
                   <span class="button-text">{{
@@ -218,6 +249,14 @@
    <!-- ===== ÉTAPE 3 : DÉMONSTRATION OUTILS ===== -->
    @if (currentStep() === 3) {
    <div class="onboarding-step">
+      <p
+         id="onboarding-step-3-announcement"
+         class="sr-only"
+         data-step-announcement="3"
+         tabindex="-1"
+      >
+         {{ getStepAnnouncementText(3) }}
+      </p>
       <!-- Bulle d'aide pour l'étape 3 (outils) -->
       <div class="step-bubble tools-bubble">
          <!-- Fantôme pour l'étape 3 - positionné relativement à la bulle -->
@@ -232,13 +271,20 @@
          <div class="bubble-content">
             <div class="problem-header">
                <h3
+                  id="onboarding-step-3-title"
                   class="problem-title"
                   role="heading"
                   aria-level="1"
                   [innerHTML]="'ONBOARDING.STEP_THREE.TITLE' | translate"
                ></h3>
             </div>
-            <p class="problem-description">
+            <p
+               class="problem-description"
+               id="onboarding-step-3-description"
+               data-step="3"
+               tabindex="-1"
+               aria-labelledby="onboarding-step-3-title"
+            >
                {{ "ONBOARDING.STEP_THREE.DESCRIPTION" | translate }}
             </p>
             <div class="bubble-next-button-container">
@@ -246,6 +292,7 @@
                   #step3NextButton
                   type="button"
                   class="bubble-next-button"
+                  (mousedown)="$event.preventDefault()"
                   (click)="completeOnboarding(); $event.stopPropagation()"
                >
                   <span class="button-text">{{
@@ -298,6 +345,14 @@
    <!-- ===== ÉTAPE 4 : DÉMONSTRATION PARAMÈTRES ===== -->
    @if (currentStep() === 4) {
    <div class="onboarding-step">
+      <p
+         id="onboarding-step-4-announcement"
+         class="sr-only"
+         data-step-announcement="4"
+         tabindex="-1"
+      >
+         {{ getStepAnnouncementText(4) }}
+      </p>
       <!-- Bulle d'aide pour l'étape 4 (paramètres) -->
       <div class="step-bubble settings-bubble">
          <!-- Fantôme triste pour l'étape 4 -->
@@ -312,13 +367,20 @@
          <div class="bubble-content">
             <div class="problem-header">
                <h3
+                  id="onboarding-step-4-title"
                   class="problem-title"
                   role="heading"
                   aria-level="1"
                   [innerHTML]="'ONBOARDING.STEP_FOUR.TITLE' | translate"
                ></h3>
             </div>
-            <p class="problem-description">
+            <p
+               class="problem-description"
+               id="onboarding-step-4-description"
+               data-step="4"
+               tabindex="-1"
+               aria-labelledby="onboarding-step-4-title"
+            >
                {{ "ONBOARDING.STEP_FOUR.DESCRIPTION" | translate }}
             </p>
             <div class="bubble-next-button-container">
@@ -326,6 +388,7 @@
                   #step4NextButton
                   type="button"
                   class="bubble-next-button"
+                  (mousedown)="$event.preventDefault()"
                   (click)="completeOnboarding(); $event.stopPropagation()"
                >
                   <span class="button-text">{{

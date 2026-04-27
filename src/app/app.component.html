@@ -1,6 +1,10 @@
 @switch (_settingService.appStatus()) {
   @case ("initialized") {
-    <div class="app-layout" [attr.inert]="_onboardingService.isOnboardingVisible() ? 'true' : null">
+    <div
+      class="app-layout"
+      [attr.inert]="_onboardingService.isOnboardingVisible() ? 'true' : null"
+      [attr.aria-hidden]="_onboardingService.isOnboardingVisible() ? 'true' : null"
+    >
       <!-- Barre latérale (footer sur desktop) -->
       <app-footer class="side-nav desktop-only" [attr.inert]="utilsService.isBackgroundInert() ? 'true' : null" />
       <div class="main-content" #mainContent>
