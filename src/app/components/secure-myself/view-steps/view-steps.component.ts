@@ -122,6 +122,7 @@ export class ViewStepsComponent implements AfterViewInit {
             instance?.on("slidesUpdated", () => this.syncSlidesState());
             instance?.on("slidesLengthChange", () => this.syncSlidesState());
             this.syncSlidesState();
+            this.focusActiveSlide(10);
          } catch {}
       };
       if (host?.swiper) {
@@ -161,24 +162,32 @@ export class ViewStepsComponent implements AfterViewInit {
       const direction = this.pendingFocusDirection;
       this.pendingFocusDirection = null;
       if (!direction) return;
-      setTimeout(() => this.focusArrowButton(direction), 100);
+      setTimeout(() => this.focusActiveSlide(), 100);
    }
 
-   private focusArrowButton(direction: "prev" | "next"): void {
+   private focusActiveSlide(retry = 0): void {
       const host = this.swiperEl?.nativeElement as HTMLElement | undefined;
       if (!host) return;
       const activeSlide = host.querySelector(
          "swiper-slide.swiper-slide-active"
       ) as HTMLElement | null;
-      if (!activeSlide) return;
-      const cardContainer = activeSlide.querySelector(
-         "div.card-swiper-container"
-      ) as HTMLElement | null;
-      if (!cardContainer) return;
-      cardContainer.focus();
-      // const selector = direction === 'prev' ? 'button[aria-label="Previous"]' : 'button[aria-label="Next"]';
-      // const btn = activeSlide.querySelector(selector) as HTMLButtonElement | null;
-      // btn?.focus();
+      const target =
+         (activeSlide?.querySelector(
+            "div.card-swiper-container"
+         ) as HTMLElement | null) ??
+         activeSlide;
+
+      if (!target) {
+         if (retry > 0) {
+            setTimeout(() => this.focusActiveSlide(retry - 1), 100);
+         }
+         return;
+      }
+
+      if (!target.hasAttribute("tabindex")) {
+         target.setAttribute("tabindex", "-1");
+      }
+      target.focus({ preventScroll: true });
    }
 
    onkeydown(event: KeyboardEvent) {
