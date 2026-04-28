@@ -97,7 +97,14 @@ export class ActionsComponent {
       const register = () => {
          try {
             const instance: Swiper | undefined = host?.swiper as Swiper | undefined;
-            instance?.on('slideChangeTransitionEnd', () => this.applyPendingFocus());
+            instance?.on('slideChangeTransitionEnd', () => {
+               this.syncSlidesState();
+               this.applyPendingFocus();
+            });
+            instance?.on('slidesUpdated', () => this.syncSlidesState());
+            instance?.on('slidesLengthChange', () => this.syncSlidesState());
+            this.syncSlidesState();
+            this.focusActiveSlide(10);
          } catch { }
       };
       if (host?.swiper) {
@@ -109,24 +116,49 @@ export class ActionsComponent {
       }
    }
 
+    // empêche les lecteurs d'écran d'atteindre les slides non visibles.
+    
+   private syncSlidesState(): void {
+      const host = this.swiperEl?.nativeElement as any;
+      const activeIndex: number = host?.swiper?.activeIndex ?? 0;
+      const slides = host?.querySelectorAll?.('swiper-slide') as
+         | NodeListOf<HTMLElement>
+         | undefined;
+      slides?.forEach((slide, i) => {
+         const hidden = i !== activeIndex;
+         if (hidden) {
+            slide.setAttribute('aria-hidden', 'true');
+            slide.setAttribute('inert', '');
+         } else {
+            slide.removeAttribute('aria-hidden');
+            slide.removeAttribute('inert');
+         }
+      });
+   }
+
    private applyPendingFocus(): void {
       const direction = this.pendingFocusDirection;
       this.pendingFocusDirection = null;
       if (!direction) return;
-      setTimeout(() => this.focusArrowButton(direction), 0);
+      setTimeout(() => this.focusActiveSlide(), 0);
    }
 
-   private focusArrowButton(direction: 'prev' | 'next'): void {
+   private focusActiveSlide(retry = 0): void {
       const host = this.swiperEl?.nativeElement as HTMLElement | undefined;
       if (!host) return;
       const activeSlide = host.querySelector('swiper-slide.swiper-slide-active') as HTMLElement | null;
-      if (!activeSlide) return;
-      const cardContainer = activeSlide.querySelector('div.card-swiper-container') as HTMLElement | null;
-      if (!cardContainer) return;
-      cardContainer.focus();
-      // const selector = direction === 'prev' ? 'button[aria-label="Previous"]' : 'button[aria-label="Next"]';
-      // const btn = activeSlide.querySelector(selector) as HTMLButtonElement | null;
-      // btn?.focus();
+      const target = (activeSlide?.querySelector('div.card-swiper-container') as HTMLElement | null) ?? activeSlide;
+      if (!target) {
+         if (retry > 0) {
+            setTimeout(() => this.focusActiveSlide(retry - 1), 100);
+         }
+         return;
+      }
+
+      if (!target.hasAttribute('tabindex')) {
+         target.setAttribute('tabindex', '-1');
+      }
+      target.focus({ preventScroll: true });
    }
 
    onkeydown(event: KeyboardEvent) {
