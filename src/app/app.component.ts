@@ -87,6 +87,8 @@ export class AppComponent implements OnInit {
       const langMap: Record<string, string> = {
          FR: "fr",
          IE: "en",
+         SK: "sk",
+         SE: "sv",
          HU: "hu",
          GR: "el",
          DK: "da",
