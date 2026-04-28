@@ -155,9 +155,6 @@ export class ActionsComponent {
          return;
       }
 
-      if (!target.hasAttribute('tabindex')) {
-         target.setAttribute('tabindex', '-1');
-      }
       target.focus({ preventScroll: true });
    }
 

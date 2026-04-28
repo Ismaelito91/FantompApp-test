@@ -66,7 +66,6 @@ export class ViewStepsComponent implements AfterViewInit {
    private pendingFocusDirection: "prev" | "next" | null = null;
 
    ngOnInit(): void {
-      console.log(+this.route.snapshot.params["id"]);
       this.targetId = +this.route.snapshot.params["id"];
       this.loadRootPage();
    }
@@ -184,9 +183,6 @@ export class ViewStepsComponent implements AfterViewInit {
          return;
       }
 
-      if (!target.hasAttribute("tabindex")) {
-         target.setAttribute("tabindex", "-1");
-      }
       target.focus({ preventScroll: true });
    }
 
