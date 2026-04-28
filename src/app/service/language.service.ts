@@ -9,6 +9,7 @@ interface LanguageEntry {
    languageName: string;
    countryName: string;
    flagUrl?: string;
+   flagEmoji?: string;
    flagAltKey?: string;
    lang: string;
 }
@@ -35,6 +36,22 @@ export class LanguageService {
          flagUrl: "assets/images/flag/Ireland.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.IRELAND",
          lang: "en-IE",
+      },
+      {
+         code: "SK",
+         languageName: "Slovenčina",
+         countryName: CountryRegion.SK,
+         flagUrl: "assets/images/flag/Slovakia.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.SLOVAKIA",
+         lang: "sk",
+      },
+      {
+         code: "SE",
+         languageName: "Svenska",
+         countryName: CountryRegion.SE,
+         flagUrl: "assets/images/flag/Sweden.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.SWEDEN",
+         lang: "sv",
       },
       {
          code: "HU",
@@ -142,7 +159,7 @@ export class LanguageService {
    }
 
    public setLanguage(lang: SupportedLanguage): void {
-      this.translateService.use(lang.toLowerCase());
+      this.translateService.use(this.getTranslateLocale(lang));
       this.currentLang.set(lang);
       localStorage.setItem("lang", lang);
    }
@@ -215,5 +232,10 @@ export class LanguageService {
       }
 
       return 0;
+   }
+
+   private getTranslateLocale(lang: SupportedLanguage): string {
+      if (lang === "SE") return "sv";
+      return lang.toLowerCase();
    }
 }
