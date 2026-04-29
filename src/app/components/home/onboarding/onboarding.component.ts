@@ -5,17 +5,18 @@ import {
    OnInit,
    OnDestroy,
    ChangeDetectorRef,
-   AfterViewInit,
    computed,
    ViewChild,
    ElementRef,
    effect,
+   HostListener,
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { A11yModule } from "@angular/cdk/a11y";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatDialogModule } from "@angular/material/dialog";
-import { TranslateModule } from "@ngx-translate/core";
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import {
    trigger,
    state,
@@ -24,30 +25,22 @@ import {
    animate,
 } from "@angular/animations";
 import { OnboardingService } from "../../../service/onboarding.service";
-import { Router } from "@angular/router";
+import { NavigationEnd, NavigationStart, Router } from "@angular/router";
 import { ThemeService } from "../../../service/theme.service";
 import { GhostAnimationService } from "../../../service/ghost-animation.service";
-// Interface pour les éléments d'onboarding
-interface OnboardingElement {
-   id: string;
-   type:
-      | "ghost"
-      | "welcome"
-      | "explanation"
-      | "skip"
-      | "next-button"
-      | "help"
-      | "highlight"
-      | "sad-ghost";
-   step: number;
-   visible: boolean;
-}
+import { Subscription } from "rxjs";
+
+const HTML_TAG_REGEX = /<[^>]*>/g;
+const EMOJI_REGEX =
+   /\p{Extended_Pictographic}(?:\uFE0F|\u200D\p{Extended_Pictographic})*/gu;
+const MULTISPACE_REGEX = /\s+/g;
 
 @Component({
    selector: "app-onboarding",
    standalone: true,
    imports: [
       CommonModule,
+      A11yModule,
       MatButtonModule,
       MatIconModule,
       MatDialogModule,
@@ -113,32 +106,27 @@ interface OnboardingElement {
       ]),
    ],
 })
-export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
+export class OnboardingComponent implements OnInit, OnDestroy {
    private onboardingService = inject(OnboardingService);
    private cdr = inject(ChangeDetectorRef);
    private router = inject(Router);
    private themeService = inject(ThemeService);
    private ghostAnimationService = inject(GhostAnimationService);
+   private translate = inject(TranslateService);
 
    @ViewChild("step1NextButton", { read: ElementRef })
    step1NextButtonRef!: ElementRef<HTMLButtonElement>;
-   @ViewChild("step1SkipButton", { read: ElementRef })
-   step1SkipButtonRef!: ElementRef<HTMLButtonElement>;
    @ViewChild("step2NextButton", { read: ElementRef })
    step2NextButtonRef!: ElementRef<HTMLButtonElement>;
-   @ViewChild("step2SkipButton", { read: ElementRef })
-   step2SkipButtonRef!: ElementRef<HTMLButtonElement>;
    @ViewChild("step3NextButton", { read: ElementRef })
    step3NextButtonRef!: ElementRef<HTMLButtonElement>;
-   @ViewChild("step3SkipButton", { read: ElementRef })
-   step3SkipButtonRef!: ElementRef<HTMLButtonElement>;
    @ViewChild("step4NextButton", { read: ElementRef })
    step4NextButtonRef!: ElementRef<HTMLButtonElement>;
-   @ViewChild("step4SkipButton", { read: ElementRef })
-   step4SkipButtonRef!: ElementRef<HTMLButtonElement>;
 
    // Signal pour l'étape actuelle
    currentStep = signal<number>(1);
+   private routerEventsSub?: Subscription;
+   private focusTimeoutId?: ReturnType<typeof setTimeout>;
 
    // Propriété pour détecter le dark mode via le ThemeService
    isDarkMode = computed(() => {
@@ -155,44 +143,93 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
    });
 
    constructor() {
-      // Effet pour gérer le focus à chaque changement d'étape
       effect(() => {
-         const step = this.currentStep();
-         if (this.onboardingService.isOnboardingVisible()) {
-            setTimeout(
-               () => {
-                  this.focusCurrentStepButton(step);
-               },
-               step > 1 ? 300 : 100
-            );
-         }
+         if (this.onboardingService.isOnboardingVisible())
+            this.scheduleStepFocus(this.currentStep(), "step-change");
       });
    }
 
    ngOnInit() {
       this.startStep1Animations();
+      this.routerEventsSub = this.router.events.subscribe((event) => {
+         if (event instanceof NavigationStart) {
+            if (this.onboardingService.isOnboardingVisible()) this.focusOverlay();
+            return;
+         }
+         if (!(event instanceof NavigationEnd)) return;
+         if (!this.onboardingService.isOnboardingVisible()) return;
+         this.scheduleStepFocus(this.currentStep(), "route");
+      });
    }
 
-   private focusCurrentStepButton(step: number) {
-      document.activeElement instanceof HTMLElement &&
-         document.activeElement.blur();
+   private focusCurrentStepContent(step: number, attempt = 0): void {
+      const target =
+         (document.querySelector(
+            `[data-step-announcement="${step}"]`
+         ) as HTMLElement | null) ?? this.getStepButton(step);
 
-      const buttons: (HTMLElement | null)[] = [
-         this.step1NextButtonRef?.nativeElement ||
-            this.step1SkipButtonRef?.nativeElement,
-         document.querySelector("footer .problem-button") as HTMLElement,
-         document.querySelector("footer .tools-button") as HTMLElement,
-         document.querySelector("footer .secure-button") as HTMLElement,
+      if (!target) {
+         if (attempt < 12) {
+            setTimeout(() => this.focusCurrentStepContent(step, attempt + 1), 100);
+         }
+         return;
+      }
+
+      if (document.activeElement === target) return;
+      target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+   }
+
+   ngOnDestroy() {
+      this.routerEventsSub?.unsubscribe();
+      if (this.focusTimeoutId) clearTimeout(this.focusTimeoutId);
+   }
+
+   getCurrentAnnouncementId(): string {
+      return `onboarding-step-${this.currentStep()}-announcement`;
+   }
+
+   getCurrentDialogLabel(): string {
+      const labels = [
+         "ONBOARDING.WELCOME_TO",
+         "ONBOARDING.STEP_TWO.TITLE",
+         "ONBOARDING.STEP_THREE.TITLE",
+         "ONBOARDING.STEP_FOUR.TITLE",
       ];
-
-      buttons[step - 1]?.focus();
+      return this.getCleanTranslation(labels[this.currentStep() - 1] ?? "");
    }
 
-   ngAfterViewInit() {
-      // Plus besoin de détection manuelle, le ThemeService s'en charge
+   getStepAnnouncementText(step: number): string {
+      const data = [
+         ["ONBOARDING.WELCOME_TO", "ONBOARDING.GHOST_MODE_EXPLANATION"],
+         ["ONBOARDING.STEP_TWO.TITLE", "ONBOARDING.STEP_TWO.DESCRIPTION"],
+         ["ONBOARDING.STEP_THREE.TITLE", "ONBOARDING.STEP_THREE.DESCRIPTION"],
+         ["ONBOARDING.STEP_FOUR.TITLE", "ONBOARDING.STEP_FOUR.DESCRIPTION"],
+      ][step - 1];
+      if (!data) return "";
+      const [title, desc] = data;
+      const appName = step === 1 ? " FantomApp." : ".";
+      return `${this.getCleanTranslation(title)}${appName} ${this.getCleanTranslation(desc)}`;
    }
 
-   ngOnDestroy() {}
+   @HostListener("document:focusin", ["$event"])
+   onDocumentFocusIn(event: FocusEvent): void {
+      const overlay = document.querySelector(".onboarding-overlay");
+      const target = event.target as Node | null;
+      if (!overlay || !target) return;
+      if (overlay.contains(target)) return;
+      if (!this.onboardingService.isOnboardingVisible()) return;
+
+      this.scheduleStepFocus(this.currentStep(), "trap");
+   }
+
+   @HostListener("keydown", ["$event"])
+   onKeyDown(event: KeyboardEvent): void {
+      if (event.key !== "Escape") return;
+      if (!this.onboardingService.isOnboardingVisible()) return;
+      event.preventDefault();
+      this.closeOnboarding();
+   }
 
    /**
     * Démarre les animations de l'étape 1
@@ -235,12 +272,6 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
             nextButton: "visible",
          }));
          this.cdr.detectChanges();
-         // Mettre le focus sur le bouton Next après l'animation
-         setTimeout(() => {
-            if (this.step1NextButtonRef?.nativeElement) {
-               this.step1NextButtonRef.nativeElement.focus();
-            }
-         }, 100);
       }, delay * 4);
    }
 
@@ -287,5 +318,48 @@ export class OnboardingComponent implements OnInit, OnDestroy, AfterViewInit {
       this.onboardingService.completeOnboarding();
       this.onboardingService.hideOnboarding();
       this.router.navigate(["/home"]);
+   }
+
+   private getCleanTranslation(key: string): string {
+      return this.cleanForScreenReader(this.translate.instant(key));
+   }
+
+   private scheduleStepFocus(
+      step: number,
+      source: "step-change" | "route" | "trap"
+   ): void {
+      const baseDelay = source === "trap" ? 0 : source === "route" ? 80 : 120;
+      const delay = baseDelay + (step >= 3 ? 80 : 0);
+
+      if (this.focusTimeoutId) clearTimeout(this.focusTimeoutId);
+      this.focusTimeoutId = setTimeout(() => {
+         this.focusCurrentStepContent(step);
+      }, delay);
+   }
+
+   private focusOverlay(): void {
+      const overlay = document.querySelector(".onboarding-overlay") as
+         | HTMLElement
+         | null;
+      if (!overlay) return;
+      overlay.setAttribute("tabindex", "-1");
+      overlay.focus({ preventScroll: true });
+   }
+
+   private getStepButton(step: number): HTMLButtonElement | null {
+      return [
+         this.step1NextButtonRef?.nativeElement || null,
+         this.step2NextButtonRef?.nativeElement || null,
+         this.step3NextButtonRef?.nativeElement || null,
+         this.step4NextButtonRef?.nativeElement || null,
+      ][step - 1];
+   }
+
+   private cleanForScreenReader(value: string): string {
+      return (value ?? "")
+         .replace(HTML_TAG_REGEX, " ")
+         .replace(EMOJI_REGEX, "")
+         .replace(MULTISPACE_REGEX, " ")
+         .trim();
    }
 }
