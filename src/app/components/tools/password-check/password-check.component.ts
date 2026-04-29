@@ -1,4 +1,5 @@
 import { CommonModule, Location } from "@angular/common";
+import { A11yModule } from "@angular/cdk/a11y";
 import {
    AfterViewInit,
    Component,
@@ -34,6 +35,7 @@ import { UtilsService } from "../../../service/utils.service";
       ButtonComponent,
       FormsModule,
       CommonModule,
+      A11yModule,
       BadgeComponent,
       TranslateModule,
       MatCheckboxModule,
@@ -130,13 +132,9 @@ export class PasswordCheckComponent
          this.initializeCriteria();
       }, 100);
 
-      // Si le modal d'onboarding est ouvert, mettre le focus sur le bouton de fermeture
-      if (this.showInfoModal && this.closeButtonRef) {
-         setTimeout(() => {
-            if (this.closeButtonRef?.nativeElement) {
-               this.closeButtonRef.nativeElement.focus();
-            }
-         }, 200);
+      // Si le modal d'onboarding est ouvert, mettre le focus dans le modal
+      if (this.showInfoModal) {
+         this.focusInfoModalCloseButton();
       }
    }
 
@@ -256,15 +254,9 @@ export class PasswordCheckComponent
 
    toggleInfoModal() {
       this.showInfoModal = !this.showInfoModal;
-      console.log("showInfoModal", this.showInfoModal);
       this.utilsService.setBackgroundInert(this.showInfoModal);
       if (this.showInfoModal) {
-         // Mettre le focus sur le bouton de fermeture quand le modal s'ouvre
-         setTimeout(() => {
-            if (this.closeButtonRef?.nativeElement) {
-               this.closeButtonRef.nativeElement.focus();
-            }
-         }, 100);
+         this.focusInfoModalCloseButton();
       } else {
          localStorage.setItem("password-check-onboarding-seen", "true");
          // Remettre le focus sur l'élément principal après fermeture
@@ -274,22 +266,37 @@ export class PasswordCheckComponent
 
    togglePasswordInfoModal() {
       this.showPasswordInfoModal = !this.showPasswordInfoModal;
-      console.log("showPasswordInfoModal", this.showPasswordInfoModal);
       this.utilsService.setBackgroundInert(this.showPasswordInfoModal);
       if (!this.showPasswordInfoModal) {
          // Remettre le focus sur l'élément principal après fermeture
          this.activateDefaultButton();
       } else {
-         setTimeout(() => {
-            console.log(
-               "closePasswordInfoModalButtonRef",
-               this.closePasswordInfoModalButtonRef
-            );
-            if (this.closePasswordInfoModalButtonRef?.nativeElement) {
-               this.closePasswordInfoModalButtonRef.nativeElement.focus();
-            }
-         }, 100);
+         this.focusPasswordInfoModalCloseButton();
       }
+   }
+
+   private focusInfoModalCloseButton(attempt = 0): void {
+      this.focusModalElement(
+         ".info-modal",
+         () =>
+            (this.closeButtonRef?.nativeElement?.querySelector(
+               "button"
+            ) as HTMLButtonElement | null) ??
+            (this.hostEl.nativeElement.querySelector(
+               ".info-modal .btn"
+            ) as HTMLButtonElement | null),
+         () => this.focusInfoModalCloseButton(attempt + 1),
+         attempt
+      );
+   }
+
+   private focusPasswordInfoModalCloseButton(attempt = 0): void {
+      this.focusModalElement(
+         ".password-info-modal",
+         () => this.closePasswordInfoModalButtonRef?.nativeElement ?? null,
+         () => this.focusPasswordInfoModalCloseButton(attempt + 1),
+         attempt
+      );
    }
 
    // Gestion de la navigation au clavier pour l'accessibilité
@@ -319,6 +326,57 @@ export class PasswordCheckComponent
             this.handleButtonClick();
             event.preventDefault();
          }
+      }
+   }
+
+   @HostListener("document:focusin", ["$event"])
+   onDocumentFocusIn(event: FocusEvent): void {
+      const target = event.target as Node | null;
+      if (!target) return;
+
+      if (this.showInfoModal) {
+         const overlay = this.hostEl.nativeElement.querySelector(
+            ".info-modal-overlay"
+         );
+         if (overlay && !overlay.contains(target)) {
+            setTimeout(() => this.focusInfoModalCloseButton(), 0);
+         }
+         return;
+      }
+
+      if (this.showPasswordInfoModal) {
+         const overlay = this.hostEl.nativeElement.querySelector(
+            ".password-info-modal-overlay"
+         );
+         if (overlay && !overlay.contains(target)) {
+            setTimeout(() => this.focusPasswordInfoModalCloseButton(), 0);
+         }
+      }
+   }
+
+   private focusModalElement(
+      modalSelector: string,
+      fallbackTarget: () => HTMLElement | null,
+      retry: () => void,
+      attempt: number
+   ): void {
+      const modal = this.hostEl.nativeElement.querySelector(modalSelector) as
+         | HTMLElement
+         | null;
+      if (modal) {
+         modal.setAttribute("tabindex", "-1");
+         modal.focus({ preventScroll: true });
+         return;
+      }
+
+      const fallback = fallbackTarget();
+      if (fallback) {
+         fallback.focus({ preventScroll: true });
+         return;
+      }
+
+      if (attempt < 12) {
+         setTimeout(retry, 100);
       }
    }
 
