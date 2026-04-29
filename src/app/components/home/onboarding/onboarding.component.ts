@@ -223,6 +223,14 @@ export class OnboardingComponent implements OnInit, OnDestroy {
       this.scheduleStepFocus(this.currentStep(), "trap");
    }
 
+   @HostListener("keydown", ["$event"])
+   onKeyDown(event: KeyboardEvent): void {
+      if (event.key !== "Escape") return;
+      if (!this.onboardingService.isOnboardingVisible()) return;
+      event.preventDefault();
+      this.closeOnboarding();
+   }
+
    /**
     * Démarre les animations de l'étape 1
     */
