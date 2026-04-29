@@ -1,13 +1,17 @@
 #home-container {
    position: relative;
    width: 100%;
+   box-sizing: border-box;
    min-height: 100vh;
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: stretch;
    gap: var(--spacing-5);
    padding: var(--spacing-3);
    padding-bottom: 140px;
+   /* Le blur du ::before étend la zone peinte et peut créer un scroll horizontal
+      asymétrique au zoom (mobile) ; le contenu réel reste dans la largeur utile. */
+   overflow-x: hidden;
 
    &::before {
       content: "";
