@@ -8,7 +8,10 @@
 .main-content {
    position: relative;
    flex: 1;
+   /* Permet au bloc de s’inscrire dans la largeur du parent flex (évite scroll X au zoom). */
+   min-width: 0;
    overflow-y: auto;
+   overflow-x: hidden;
 }
 
 /* Masquer/afficher selon le support */
