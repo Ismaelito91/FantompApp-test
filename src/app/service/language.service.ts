@@ -123,7 +123,7 @@ export class LanguageService {
          countryName: CountryRegion.XX,
          flagUrl: "",
          flagAltKey: "ALT_TEXT.COUNTRIES.INTERNATIONAL",
-         lang: "xx",
+         lang: "en",
       },
    ];
 
@@ -145,12 +145,9 @@ export class LanguageService {
       if (!enabledLanguages || enabledLanguages.length === 0) {
          this.supportedLanguages = this.allLanguages;
       } else {
-         const enabledCodes = new Set(
-            enabledLanguages.map((l) => String(l).toUpperCase()),
-         );
-         (["SE", "SK"] as const).forEach((c) => enabledCodes.add(c));
+         const enabledCodes = enabledLanguages.map((l) => l.toUpperCase());
          this.supportedLanguages = this.allLanguages.filter((lang) =>
-            enabledCodes.has(lang.code),
+            enabledCodes.includes(lang.code),
          );
       }
 
@@ -190,12 +187,6 @@ export class LanguageService {
    /** Score sur la 1re locale seulement (évite un 2e choix navigateur qui ferait matcher ex. FR). */
    private browserMatchScore(entry: LanguageEntry, primary: string): number {
       if (!primary) return 0;
-      if (entry.code === "XX") {
-         const p = primary.toLowerCase();
-         if (p === "en" || p.startsWith("en-")) {
-            return 2;
-         }
-      }
       const tag = entry.lang.toLowerCase();
       const code = entry.code.toLowerCase();
       const parts = primary.split("-");
@@ -269,7 +260,6 @@ export class LanguageService {
       }
    }
 
-   /** Locale du fichier `assets/i18n/{locale}.json` (champ `lang` de l’entrée). */
    private getTranslateLocale(lang: SupportedLanguage): string {
       const entry = this.allLanguages.find((l) => l.code === lang);
       return entry?.lang ?? lang.toLowerCase();
