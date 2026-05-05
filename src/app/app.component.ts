@@ -76,9 +76,9 @@ export class AppComponent implements OnInit {
          if (settings?.languages) {
             this.languageService.filterSupportedLanguages(settings.languages);
             // Mettre à jour les langues dans TranslateService après filtrage
-            const updatedLanguageCodes =
-               this.languageService.supportedLanguages.map((lang) => lang.code);
-            this.translateService.addLangs(updatedLanguageCodes);
+            const translateLocales =
+               this.languageService.supportedLanguages.map((l) => l.lang);
+            this.translateService.addLangs(translateLocales);
          }
       });
    }
@@ -140,9 +140,9 @@ export class AppComponent implements OnInit {
             });
          });
 
-      const supportedLanguageCodes =
-         this.languageService.supportedLanguages.map((lang) => lang.code);
-      this.translateService.addLangs(supportedLanguageCodes);
+      const translateLocales =
+         this.languageService.supportedLanguages.map((l) => l.lang);
+      this.translateService.addLangs(translateLocales);
 
       // Langue par défaut pour les clés manquantes
       this.translateService.setDefaultLang("xx");

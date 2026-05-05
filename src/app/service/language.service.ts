@@ -123,7 +123,7 @@ export class LanguageService {
          countryName: CountryRegion.XX,
          flagUrl: "",
          flagAltKey: "ALT_TEXT.COUNTRIES.INTERNATIONAL",
-         lang: "en",
+         lang: "xx",
       },
    ];
 
@@ -145,9 +145,12 @@ export class LanguageService {
       if (!enabledLanguages || enabledLanguages.length === 0) {
          this.supportedLanguages = this.allLanguages;
       } else {
-         const enabledCodes = enabledLanguages.map((l) => l.toUpperCase());
+         const enabledCodes = new Set(
+            enabledLanguages.map((l) => String(l).toUpperCase()),
+         );
+         (["SE", "SK"] as const).forEach((c) => enabledCodes.add(c));
          this.supportedLanguages = this.allLanguages.filter((lang) =>
-            enabledCodes.includes(lang.code),
+            enabledCodes.has(lang.code),
          );
       }
 
@@ -160,7 +163,7 @@ export class LanguageService {
          const xx = this.supportedLanguages.find((l) => l.code === "XX");
          this.setLanguage(xx?.code ?? this.supportedLanguages[0].code);
       }
-      this.translateService.use(this.currentLang().toLowerCase());
+      this.translateService.use(this.getTranslateLocale(this.currentLang()));
    }
 
    public get language(): Signal<SupportedLanguage> {
@@ -187,6 +190,12 @@ export class LanguageService {
    /** Score sur la 1re locale seulement (évite un 2e choix navigateur qui ferait matcher ex. FR). */
    private browserMatchScore(entry: LanguageEntry, primary: string): number {
       if (!primary) return 0;
+      if (entry.code === "XX") {
+         const p = primary.toLowerCase();
+         if (p === "en" || p.startsWith("en-")) {
+            return 2;
+         }
+      }
       const tag = entry.lang.toLowerCase();
       const code = entry.code.toLowerCase();
       const parts = primary.split("-");
@@ -260,8 +269,9 @@ export class LanguageService {
       }
    }
 
+   /** Locale du fichier `assets/i18n/{locale}.json` (champ `lang` de l’entrée). */
    private getTranslateLocale(lang: SupportedLanguage): string {
-      if (lang === "SE") return "sv";
-      return lang.toLowerCase();
+      const entry = this.allLanguages.find((l) => l.code === lang);
+      return entry?.lang ?? lang.toLowerCase();
    }
 }
