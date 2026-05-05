@@ -1,1 +1,958 @@
-{}
+{
+   "APP": {
+      "TITLE": "FantomApp",
+      "LOADING": "Načítava sa...",
+      "ERROR": "Chyba pri načítaní aplikácie",
+      "INSTALL_APP": "Nainštalovať aplikáciu",
+      "NEW_VERSION_AVAILABLE": "Dostupná nová verzia",
+      "UPDATE_APP": "Aktualizácia aplikácie"
+   },
+   "COMMON": {
+      "ORGANISATION": "CNIL",
+      "SAVE": "Uložiť",
+      "CANCEL": "Zrušiť",
+      "DELETE": "Vymazať",
+      "EDIT": "Upraviť",
+      "CLOSE": "Zavrieť",
+      "SEARCH": "Hľadať",
+      "BACK": "Späť",
+      "NEXT": "Ďalej",
+      "PREVIOUS": "Predchádzajúce",
+      "RESULTS": "Výsledky",
+      "HOME": "Domov",
+      "PROBLEM": "Problém",
+      "TOOLS": "Nástroje",
+      "SECURE": "Zostaň v bezpečí",
+      "YES": "Áno",
+      "NO": "Nie",
+      "UNDERSTOOD": "Rozumiem",
+      "DOWNLOAD": "Stiahnuť",
+      "COPY": "Kopírovať",
+      "COPIED": "Skopírované!",
+      "OR": "alebo",
+      "ACTIVE": "Aktívne",
+      "ARIA_LABEL": {
+         "HOME": "Prejsť na Domov",
+         "PROBLEM": "Prejsť na Problém",
+         "TOOLS": "Prejsť na Nástroje",
+         "SECURE": "Prejsť na Zabezpečenie",
+         "MAIN_NAV": "Hlavné menu"
+      }
+   },
+   "DESIGN_SYSTEM": {
+      "STEPPER": {
+         "DESCRIPTION": "Otázka {{ currentStep }} z {{ totalSteps }}"
+      },
+      "TAG_UNCLICKABLE": {
+         "IMPORTANT": "DÔLEŽITÉ",
+         "SECONDARY": "DRUHÝ KROK"
+      },
+      "TEMPLATE_MESSAGE": {
+         "BUTTON": "Skopírovať príklad"
+      }
+   },
+   "ONBOARDING": {
+      "CLOSE": "Zavrieť úvod",
+      "SKIP": "Preskočiť",
+      "NEXT": "Ďalej",
+      "PREVIOUS": "Späť",
+      "CONTINUE": "Pokračovať",
+      "START_USING": "Začať používať",
+      "TAP_TO_CONTINUE": "Ťukni pre pokračovanie",
+      "WELCOME_TO": "Vitaj v",
+      "GHOST_MODE_EXPLANATION": "Tu surfuješ v <span class=\"ghost-mode\">režime ducha</span>, nikto nevie, že si tu. Žiadne tvoje informácie sa nezaznamenávajú. Môžeš slobodne skúmať, ako chrániť svoje súkromie.",
+      "PROGRESS": "Priebeh úvodu",
+      "GO_TO_STEP": "Prejsť na krok",
+      "COMPLETED_STEP": "Dokončený krok",
+      "CURRENT_STEP": "Aktuálny krok",
+      "FUTURE_STEP": "nasledujúci krok",
+      "STEP_INFO": "Krok",
+      "OF": "z",
+      "BUBBLE": {
+         "WELCOME": "Ahoj! Som tu, aby som ťa previedol aplikáciou!"
+      },
+      "STEP_TWO": {
+         "TITLE": "Potrebuješ pomoc? <span aria-hidden=\"true\">🛟</span>",
+         "DESCRIPTION": "Niekedy môžeme mať na internete problémy. Tu nájdeš informácie a riešenia."
+      },
+      "STEP_THREE": {
+         "TITLE": "Nástroje <span aria-hidden=\"true\">🛠️</span>",
+         "DESCRIPTION": "Silné heslo, chránená fotka, skontrolované používateľské meno a bio: prevezmi kontrolu nad svojím súkromím!"
+      },
+      "STEP_FOUR": {
+         "TITLE": "Základné nastavenia <span aria-hidden=\"true\">⚙️</span>",
+         "DESCRIPTION": "Nie je vždy ľahké zabezpečiť si účty... vo FantomApp nájdeš veľa tipov."
+      },
+      "WELCOME": {
+         "TITLE": "Vitaj vo FantomApp!",
+         "DESCRIPTION": "Objav aplikáciu navrhnutú na ochranu tvojho súkromia, ktorá ti poskytne výnimočný používateľský zážitok. Dovoľ nám predstaviť ti jej hlavné funkcie."
+      },
+      "APPEARANCE": {
+         "TITLE": "Prispôsob si zážitok",
+         "DESCRIPTION": "Vyber si vzhľad aplikácie podľa svojich preferencií a prostredia.",
+         "FEATURE_1": "Výber medzi svetlým, tmavým alebo automatickým režimom.",
+         "FEATURE_2": "Použi rovnaké nastavenia ako tvoje zariadenie",
+         "FEATURE_3": "Rozhranie optimalizované pre vizuálny komfort"
+      },
+      "ICON_CHANGE": {
+         "TITLE": "Zmeň ikonu aplikácie",
+         "DESCRIPTION": "Prispôsob si ikonu, ktorú vidíš na ploche, pre väčšiu diskrétnosť alebo estetiku.",
+         "FEATURE_1": "K dispozícii je niekoľko dizajnov ikon",
+         "FEATURE_2": "Okamžitá a bezpečná zmena",
+         "FEATURE_3": "Diskrétna možnosť na ochranu tvojho súkromia"
+      },
+      "RESOURCES": {
+         "TITLE": "Prístup ku všetkým zdrojom",
+         "DESCRIPTION": "Nájdi všetky dôležité informácie a užitočné nástroje na dosah ruky.",
+         "FEATURE_1": "Kompletná dokumentácia aplikácie",
+         "FEATURE_2": "Podrobné používateľské príručky",
+         "FEATURE_3": "Podpora a online pomoc"
+      },
+      "ACCESSIBILITY": {
+         "TITLE": "Aplikácia pre všetkých",
+         "DESCRIPTION": "FantomApp bola navrhnutá tak, aby bola prístupná všetkým používateľom bez ohľadu na ich schopnosti.",
+         "FEATURE_1": "Rozhranie vhodné pre čítačky obrazovky",
+         "FEATURE_2": "Optimalizovaná navigácia pomocou klávesnice",
+         "FEATURE_3": "V súlade so štandardmi prístupnosti RGAA"
+      },
+      "READY": {
+         "TITLE": "Všetko je pripravené!",
+         "DESCRIPTION": "Teraz poznáš hlavné funkcie FantomApp. Uži si naplno svoj bezpečný a personalizovaný zážitok."
+      }
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Vzhľad",
+      "SUBTITLE": "Vyber si preferované zobrazenie systému.",
+      "THEME": {
+         "DEFAULT": "Predvolená téma",
+         "LIGHT": "Svetlá téma",
+         "DARK": "Tmavá téma",
+         "SYSTEM_SETTINGS": "Použiť rovnaké nastavenia ako tvoje zariadenie"
+      }
+   },
+   "APP_ICON_SELECTOR": {
+      "TITLE": "Ikona aplikácie",
+      "SUBTITLE": "Prispôsob si ikonu aplikácie.",
+      "DEFAULT": "Predvolená ikona",
+      "DEFAULT_DESC": "Pôvodná ikona",
+      "GHOST": "Ikona ducha",
+      "GHOST_DESC": "Tajomná a diskrétna verzia",
+      "DARK": "Tmavá ikona",
+      "DARK_DESC": "Ideálna pre nočných používateľov",
+      "COLORFUL": "Farebná ikona",
+      "COLORFUL_DESC": "Živá a veselá ikona"
+   },
+   "HOME": {
+      "GREETING": "Ahoj <span aria-hidden=\"true\">👋</span> Ako ti môžeme pomôcť?",
+      "WELCOME": "Vitaj vo FantomApp",
+      "APP_INFO_TITLE": "O aplikácii",
+      "APPEARANCE": "Vzhľad",
+      "CHANGE_ICON": "Zmeniť ikonu",
+      "RESOURCES": "Zdroje",
+      "WHAT_IS_APP": "Na čo slúži táto aplikácia?",
+      "RIGHTS": "Mám práva",
+      "ACCESSIBILITY": "FantomApp pre všetkých (Prístupnosť)",
+      "TUTORIAL": "Znovu si pozrieť úvodný tutoriál",
+      "APP_INFO": {
+         "TITLE": "Čo je táto aplikácia?",
+         "DESCRIPTION_1": "FantomApp ti pomáha v prípade problému, poskytuje nástroje na ochranu tvojho online súkromia a ponúka návody na zabezpečenie tvojich údajov na hlavných sociálnych sieťach, ktoré používaš.",
+         "DESCRIPTION_2": "Aplikácia bola vytvorená <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">CNIL</a> (Commission nationale de l'informatique et des libertés) a je financovaná Európskou komisiou.",
+         "DESCRIPTION_3": "<strong>Vydavateľ:</strong>",
+         "DESCRIPTION_4": "Commission nationale de l’informatique et des libertés (CNIL), nezávislý správny orgán zodpovedný za ochranu osobných údajov.",
+         "DESCRIPTION_5": "Adresa: 3 Place de Fontenoy – 75334 PARIS CEDEX 07, Francúzsko – Telefón +33 1 53 73 22 22 – www.cnil.fr",
+         "DESCRIPTION_6": "Riaditeľ publikácie: Marie-Laure DENIS, Prezidentka<br />",
+         "DESCRIPTION_7": "<strong>Hosting</strong>: Scaleway SAS - 8, Rue de la Ville-l'Évêque, 75008 Paríž, Francúzsko.<br /><br />",
+         "DESCRIPTION_8": "<strong>Osobné údaje</strong><br />",
+         "DESCRIPTION_9": "CNIL poskytuje aplikáciu FantomAPP na plnenie svojho poslania informovania a zvyšovania povedomia ako verejný orgán zodpovedný za ochranu osobných údajov.",
+         "DESCRIPTION_10": "Aplikácia zhromažďuje nasledujúce osobné údaje: tvoja IP adresa; logy pripojenia k aplikácii. ",
+         "DESCRIPTION_11": "Tieto údaje sú nevyhnutné na zabezpečenie správneho technického fungovania a bezpečnosti aplikácie a umožňujú zistiť dátum a čas pripojenia k aplikácii. Tieto údaje sú prístupné iba tímom CNIL a spoločnosti poverenej technickým fungovaním a bezpečnosťou aplikácie. Uchovávajú sa šesť mesiacov.",
+         "DESCRIPTION_12": "Nezhromažďujú sa žiadne iné osobné údaje. V aplikácii nie je nainštalovaný žiadny sledovací softvér (tracker). ",
+         "DESCRIPTION_13": "Môžeš požiadať CNIL o kópiu svojich údajov zhromaždených aplikáciou zaslaním e-mailu na educnum[at]cnil.fr alebo použitím tohto <a href=\"https://www.cnil.fr/webform/contactez-le-delegue-la-protection-des-donnees-dpo\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">online formulára</a>. Pre lepšie pochopenie svojich práv navštív <a href=\"https://dataprotection.gov.sk/sk/dotknute-osoby/prava-dotknutych-osob-slovensko/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">cnil.fr</a>.",
+         "DESCRIPTION_14": "Ak po kontaktovaní CNIL nedostaneš odpoveď alebo dostaneš odpoveď, ktorú považuješ za neúplnú alebo nesprávnu, môžeš poslať <a href=\"https://dataprotection.gov.sk/sk/dotknute-osoby/konanie-ochrane-osobnych-udajov/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">sťažnosť na ÚOOÚ SR (Úrad na ochranu osobných údajov Slovenskej republiky)</a>.<br />",
+         "DESCRIPTION_15": "<strong>Používanie ochranných známok CNIL</strong>",
+         "DESCRIPTION_16": "Slovná a vizuálna značka (logo) - FantomApp je chránená Národným inštitútom priemyselného vlastníctva.<br />",
+         "DESCRIPTION_17": "Jej použitie bez písomného súhlasu CNIL na akomkoľvek nosiči za účelom propagácie produktov alebo služieb, najmä na komerčné účely, je zakázané pod hrozbou trestného a občianskehoprávneho stíhania. Je povolené na výlučne vzdelávacie účely (prezentácia činnosti CNIL atď.).<br />",
+         "DESCRIPTION_18": "<strong>Opätovné použitie obsahu</strong><br />",
+         "DESCRIPTION_19": "Opätovné použitie obsahu z aplikácie FantomApp podlieha pravidlám uvedeným na <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">webovej stránke CNIL</a>. Autorstvo obsahu musí byť uvedené s nasledujúcou zmienkou: \"Zdroj: CNIL FantomApp - https://www.fantomapp.fr\""
+      },
+      "CARDS": {
+         "MAIN_TITLE": "Zabezpečenie mojich sociálnych sietí",
+         "VIEW_ALL": "Zobraziť všetko",
+         "VIEW_ALL_ARIA": "Zobraziť všetky bezpečnostné nástroje",
+         "PASSWORD_CHECK": {
+            "TITLE": "Otestovať moje heslo",
+            "DESCRIPTION": "Ako dlho trvá kyberzločincovi prelomiť tvoje heslo?"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "Rozmazať moju fotku",
+            "DESCRIPTION": "Anonymizácia mojej profilovej fotky"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "Mám problém online",
+            "VIEW_ALL_ARIA": "Zobraziť všetky karty problémov",
+            "DELETE_CONTENT": {
+               "TITLE": "Chcem vymazať obsah"
+            },
+            "HARASSMENT": {
+               "TITLE": "Zažívam kyberšikanu"
+            }
+         }
+      },
+      "USER_RIGHTS": {
+         "TITLE": "Mám práva",
+         "INTRO": {
+            "PARAGRAPH_1": "Bez ohľadu na tvoj vek máš práva, a najmä právo na ochranu tvojich osobných údajov a súkromia.",
+            "PARAGRAPH_2": "Na internete môžeš rozhodnúť, čo je o tebe viditeľné a čo sociálne siete robia s tvojimi informáciami."
+         },
+         "CARDS": {
+            "INCOGNITO": {
+               "TITLE": "<span aria-hidden=\"true\">🗑️</span> Právo na vymazanie: Zostaň inkognito",
+               "PARAGRAPH_1": "Na internete máš právo požiadať o <b>vymazanie a dereferencovanie</b> (odstránenie odkazu) tvojich údajov. Konkrétne, ak chceš, aby bola vymazaná fotka, video, tvoj text, tvoje meno, priezvisko alebo akékoľvek iné prvky tvojich osobných údajov, alebo aby sa už nezobrazovali vo výsledkoch vyhľadávačov, môžeš o to požiadať príslušné stránky.",
+               "PARAGRAPH_2": "Môžeš sa obrátiť priamo na stránku alebo platformu. Ak platforma neodpovie na tvoju žiadosť do 1 mesiaca, môžeš to nahlásiť národnému úradu na ochranu údajov a získať pomoc pri presadzovaní svojich práv."
+            },
+            "DATA_INFO": {
+               "TITLE": "<span aria-hidden=\"true\">ℹ️</span> Právo na informácie: kto ako narába s mojimi údajmi",
+               "PARAGRAPH": "Máš právo vedieť, čo stránky, hry, aplikácie a iné platformy robia, <b>chcú robiť alebo plánujú robiť s tvojimi osobnými údajmi</b>."
+            },
+            "RIGHT_TO_OBJECT": {
+               "TITLE": "<span aria-hidden=\"true\">❌</span> Právo namietať: udrž si kontrolu nad údajmi",
+               "PARAGRAPH": "Máš právo <b>namietať proti používaniu tvojich údajov</b> webovými stránkami alebo aplikáciami (okrem veľmi špecifických prípadov stanovených zákonom)."
+            },
+            "PORTABILITY": {
+               "TITLE": "<span aria-hidden=\"true\">🧳</span> Právo na prenosnosť: kam chcem, kedy chcem!",
+               "PARAGRAPH_1": "Dokonca máš právo vziať si <b>svoje údaje a použiť ich inde,</b> v režime « click and collect »! Toto je prenosnosť údajov.",
+               "PARAGRAPH_2": "Získaš ich späť a použiješ inde, u konkurencie, ak chceš. Týka sa to tvojich fotiek, audia alebo videí, alebo napríklad tvojich študijných materiálov v aplikácii na poznámky v počítači."
+            }
+         }
+      }
+   },
+   "PROBLEMS": {
+      "DELETE_CONTENT": {
+         "CARD": {
+            "FIRST_TITLE": "VYMAZANIE OBSAHU",
+            "SECOND_TITLE": "Chcem vymazať obsah",
+            "DESCRIPTION": "Žiadosť o odstránenie fotky alebo videa o tebe"
+         },
+         "TITLE": "Chcem vymazať obsah",
+         "DESCRIPTION": "Vadí ti fotka, video alebo komentár, kde sa objavuješ? Odstránenie môže trvať nejaký čas, ale pomôžeme ti s tým.<span aria-hidden=\"true\">🗑</span>",
+         "REPORTED": {
+            "TITLE": "Nahlásil/a si obsah sociálnej sieti / platforme?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Áno, <strong>obsah som už nahlásil/a</strong>",
+                  "ANSWER_2_TITLE": "Nie, <strong>obsah som ešte nenahlásil/a</strong>"
+               }
+            }
+         },
+         "VIOLENT": {
+            "TITLE": "Je to násilný alebo intímny obsah?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Áno",
+                  "ANSWER_2_TITLE": "Nie"
+               }
+            }
+         },
+         "RESULTS": {
+            "REPORTED_CONTENT": {
+               "TITLE": "Už si obsah nahlásil/a?",
+               "P1": {
+                  "DESCRIPTION": "<span aria-hidden=\"true\">✅</span> Super! Veľmi dobre si <strong>zareagoval/a</strong> nahlásením obsahu platforme. <br /><br /><span aria-hidden=\"true\">✅</span> Sociálne siete dostávajú veľa nahlásení a ich spracovanie trvá nejaký čas. Ale <strong>aj bez okamžitej odpovede</strong> je tvoje nahlásenie dôležité."
+               },
+               "P2": {
+                  "TITLE_PART1": "Odporúčame ti podať sťažnosť na ",
+                  "TITLE_PART2": " ak:",
+                  "TOOLTIP": "Národný úrad na ochranu údajov, ktorý ti pomáha chrániť tvoje online súkromie.",
+                  "DESCRIPTION1": "Kontaktoval/a si sociálnu sieť a neodpovedali ti <strong>aspoň 1 mesiac</strong>",
+                  "DESCRIPTION2": "Sociálna sieť ti odpovedala, ale odpoveď je <strong>neúplná</strong> alebo <strong>neuspokojivá</strong>."
+               },
+               "BUTTON": "Podať sťažnosť",
+               "TUTORIAL": {
+                  "P1": {
+                     "TITLE": "Aká je úloha <span class='text-(--color-24)'>ÚOOÚ SR</span>?",
+                     "DESCRIPTION": "Úlohou úradu na ochranu údajov je chrániť slobody každého z nás. Radí a kontroluje používanie osobných údajov spoločnosťami, úradmi a združeniami."
+                  },
+                  "P2": {
+                     "TITLE": "Prečo musím čakať na odpoveď <span class='text-(--color-24)'>1 mesiac</span>? <span aria-hidden=\"true\">⏱️</span>",
+                     "DESCRIPTION": "Je to zákonná lehota. To znamená, že zákon dáva platforme 1 mesiac na to, aby ti odpovedala (podľa Všeobecného nariadenia o ochrane údajov alebo GDPR)."
+                  },
+                  "P3": {
+                     "TITLE": "Čo je <span class='text-(--color-24)'>neúplná alebo nesprávna</span> odpoveď? <span aria-hidden=\"true\">📝</span>",
+                     "DESCRIPTION": "Platforma nevzala do úvahy celú tvoju žiadosť alebo odpoveď nezodpovedá tomu, o čo si žiadal/a."
+                  }
+               },
+               "COMPLAINT": {
+                  "TITLE": "Priprav dôkazy",
+                  "DESCRIPTION": "Ulož si fotky každého kroku, budú užitočné pri podávaní prípadnej sťažnosti.",
+                  "P1": {
+                     "TITLE": "Príklady snímok obrazovky:",
+                     "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>Obsah na vymazanie</strong><br />Snímka obrazovky problematického textu, fotky alebo videa<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Adresa webovej stránky</strong><br />Odkaz na webovú stránku (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Informácie o osobe, ktorá obsah zverejnila</strong><br />Odkaz na jej profil<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Tvoja žiadosť o vymazanie</strong><br />- Snímky obrazovky textu, kde žiadaš o vymazanie<br />- Snímky obrazovky odpovede (ak nejaká je)"
+                  },
+                  "BUTTON": "Prejsť na formulár"
+               }
+            },
+            "UNREPORTED_CONTENT": {
+               "TITLE": "Ešte si obsah nenahlásil/a?",
+               "P1": {
+                  "TITLE": "Prvým krokom je nahlásiť to sociálnej sieti.",
+                  "DESCRIPTION": "Starostlivo si uschovaj všetky dôkazy o tvojom nahlásení. Ak ti sociálna sieť neodpovie do <strong>1 mesiaca</strong>, môžeš to nahlásiť úradu na ochranu údajov dňa:"
+               },
+               "CONTACTS": {
+                  "TITLE": "Kontakty na sociálne siete",
+                  "SOCIAL_MEDIA": {
+                     "INSTAGRAM": {
+                        "TITLE": "Instagram",
+                        "LINK": {
+                           "TITLE": "Nahlásiť porušenie tvojho súkromia na Instagrame alebo Threads",
+                           "DESCRIPTION": "https://help.instagram.com/contact/1716697545776727"
+                        },
+                        "BUTTON": "Ako vyplniť formulár?"
+                     },
+                     "SNAPCHAT": {
+                        "TITLE": "Snapchat",
+                        "LINK": {
+                           "TITLE": "Nahlásenie zneužitia alebo nezákonného obsahu na Snapchate",
+                           "DESCRIPTION": "https://help.snapchat.com/hc/sk/articles/7012399221652-Ako-nahl%C3%A1sim-zneu%C5%BE%C3%ADvanie-alebo-nez%C3%A1konn%C3%BD-obsah-na-Snapchate"
+                        },
+                        "MAIL": {
+                           "TITLE": "Kontaktovať Snapchat e-mailom",
+                           "DESCRIPTION": "dpo@snapchat.com"
+                        },
+                        "BUTTON": "Ako niečo nahlásiť na Snapchate"
+                     },
+                     "TIKTOK": {
+                        "TITLE": "TikTok",
+                        "LINK": {
+                           "TITLE": "Odoslať žiadosť o ochranu osobných údajov",
+                           "DESCRIPTION": "https://www.tiktok.com/legal/report/privacy/webform/sk"
+                        },
+                        "BUTTON": "Ako vyplniť formulár?"
+                     },
+                     "X": {
+                        "TITLE": "X",
+                        "LINK": {
+                           "TITLE": "Otázky o zásadách ochrany súkromia X",
+                           "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                        },
+                        "BUTTON": "Ako vyplniť formulár?"
+                     },
+                     "FACEBOOK": {
+                        "TITLE": "Facebook",
+                        "LINK": {
+                           "TITLE": "Kontaktné formuláre",
+                           "DESCRIPTION": "https://sk-sk.facebook.com/help/contact/954059743194940"
+                        },
+                        "BUTTON": "Ako vyplniť formulár?"
+                     }
+                  }
+               },
+               "FACEBOOK": {
+                  "TITLE": "Ako vyplniť formulár? - Facebook",
+                  "DESCRIPTION": "Tu je to, čo musíš urobiť na vyplnenie formulára nižšie:",
+                  "P1": {
+                     "TITLE": "1. Vyber krajinu, kde žiješ"
+                  },
+                  "P2": {
+                     "TITLE": "2. Uveď svoje meno a priezvisko"
+                  },
+                  "P3": {
+                     "TITLE": "3. Uveď svoju e-mailovú adresu"
+                  },
+                  "P4": {
+                     "TITLE": "4. Vyber „Moje súkromie“ v „Koho súkromie bolo narušené?“"
+                  },
+                  "P5": {
+                     "TITLE": "5. Vyber „Áno“ v „Máte menej než 18 rokov?“"
+                  },
+                  "P6": {
+                     "TITLE": "6. Vyber „Áno“, ak máš internetovú adresu obsahu (URL), ktorý chceš nahlásiť"
+                  },
+                  "P7": {
+                     "TITLE": "7. Uveď typ obsahu"
+                  },
+                  "P8": {
+                     "TITLE": "8. Vlož internetovú adresu (URL) obsahu, ktorý chceš nahlásiť"
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Kontaktné formuláre",
+                     "DESCRIPTION": "https://sk-sk.facebook.com/help/contact/954059743194940"
+                  }
+               },
+               "INSTAGRAM": {
+                  "TITLE": "Ako vyplniť formulár? - Instagram",
+                  "DESCRIPTION": "Tu je to, čo musíš urobiť na vyplnenie formulára nižšie:",
+                  "P1": {
+                     "TITLE": "1. Vyber krajinu, kde žiješ"
+                  },
+                  "P2": {
+                     "TITLE": "2. Uveď svoje meno a priezvisko"
+                  },
+                  "P3": {
+                     "TITLE": "3. Uveď svoju e-mailovú adresu"
+                  },
+                  "P4": {
+                     "TITLE": "4. Vyber „Ja“ pri otázke „Za koho nahlasujete?“"
+                  },
+                  "P5": {
+                     "TITLE": "5. Vyber „Áno, mám menej než 18 rokov“"
+                  },
+                  "P6": {
+                     "TITLE": "6. Vlož internetovú adresu (URL) obsahu, ktorý chceš nahlásiť."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Nahlásiť porušenie tvojho súkromia na Instagrame alebo Threads",
+                     "DESCRIPTION": "https://help.instagram.com/contact/1716697545776727"
+                  }
+               },
+               "X": {
+                  "TITLE": "Ako vyplniť formulár - X",
+                  "DESCRIPTION": "Tu je to, čo musíš urobiť na vyplnenie formulára nižšie:",
+                  "P1": {
+                     "TITLE": "1. Vyber „Chcem sa opýtať otázku týkajúcu sa súkromia na X“ v „Ako môžeme pomôcť?“"
+                  },
+                  "P2": {
+                     "TITLE": "2. Vyber „Vymazať dáta účtu na X“ v „Prosím, povedzte nám viac“"
+                  },
+                  "P3": {
+                     "TITLE": "3. Skopíruj/vlož príklad nižšie do „Prosím, zadajte svoju otázku“ a vlož príslušné informácie namiesto [...] v príklade."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Otázky týkajúce sa zásad ochrany súkromia X",
+                     "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                  }
+               },
+               "TIKTOK": {
+                  "TITLE": "Ako vyplniť formulár? - TikTok",
+                  "DESCRIPTION": "Tu je to, čo musíš urobiť na vyplnenie formulára nižšie:",
+                  "P1": {
+                     "TITLE": "1. Vyber krajinu, kde žiješ"
+                  },
+                  "P2": {
+                     "TITLE": "2. Uveď svoju e-mailovú adresu"
+                  },
+                  "P3": {
+                     "TITLE": "3.  Vyber „TikTok“ v „Ktorého produktu sa týka tvoja žiadosť?“"
+                  },
+                  "P4": {
+                     "TITLE": "4. Uveď svoje používateľské meno"
+                  },
+                  "P5": {
+                     "TITLE": "5. Vyber „Uplatňovanie práv podľa zákonov o ochrane údajov“ v „Odoslať žiadosť“"
+                  },
+                  "P6": {
+                     "TITLE": "6. Vyber podkategóriu a skopíruj/vlož príklad nižšie do „Uveď podrobnosti“ a vlož svoje informácie namiesto [...] v príklade."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Otázky týkajúce sa zásad ochrany súkromia X",
+                     "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                  }
+               },
+               "SNAPCHAT": {
+                  "TITLE": "Príklad e-mailu - Snapchat",
+                  "DESCRIPTION": "Ak chceš požiadať o vymazanie, môžeš kontaktovať zodpovednú osobu (DPO).",
+                  "P1": {
+                     "TITLE": "<span aria-hidden=\"true\">📝</span> E-mailová adresa kontaktu"
+                  }
+               },
+               "TEMPLATE_MESSAGE": {
+                  "TITLE": "<span aria-hidden=\"true\">📝</span> Príklad e-mailu na odoslanie",
+                  "DESCRIPTION": "Vážený pán/Vážená pani,<br><br>Informácie, ktoré sa ma týkajú sú momentálne zverejnené na Vašej webovej stránke na nasledujúcich stránkach:<br><span style=\"color: var(--color-24);\">[Odkaz(y) URL na obsah, ktorý chcete vymazať]</span><br>. Preto Vás v súlade s článkami 21.1 a 17.1.c Všeobecného nariadenia o ochrane údajov (GDPR) žiadam o vymazanie nasledujúcich osobných údajov, ktoré sa ma týkajú:<br><span style=\"color: var(--color-24);\">[popis informácií na vymazanie]</span>.<br>Chcel/a by som, aby boli tieto informácie vymazané, pretože:<br><span style=\"color: var(--color-24);\">[dôvod vymazania]</span><br>Okrem toho Vám budem vďačný/á za prijatie potrebných krokov na zabezpečenie toho, aby tieto stránky už neboli indexované vyhľadávačmi (článok 17.2 GDPR). Prosím, pošlite Vašu odpoveď čo najskôr a najneskôr do jedného mesiaca od prijatia mojej žiadosti (článok 12.3 GDPR).<br>S pozdravom,"
+               }
+            },
+            "VIOLENT_CONTENT": {
+               "TITLE": "Je to násilný alebo súkromný obsah, ktorý sa ťa týka?",
+               "DESCRIPTION": "Šírenie násilného alebo sexuálneho obsahu bez tvojho súhlasu je veľmi vážne a osoba zodpovedná za jeho šírenie môže byť potrestaná.",
+               "P1": {
+                  "TITLE": "Nie si sám/sama",
+                  "DESCRIPTION": "To, čo sa ti deje, môže byť veľmi náročné zvládnuť, ale v živote nikdy nie si sám/sama! Vždy existujú možnosti, ako veci zlepšiť, a ľudia, ktorí ti pomôžu sa v tom zorientovať. Môžeš sa o tom porozprávať s rodičmi, kamarátom alebo kamarátkou, členom rodiny, učiteľom alebo dospelým, ktorému dôveruješ.<span aria-hidden=\"true\">🤝</span>"
+               },
+               "P2": {
+                  "TITLE": "Hľadanie pomoci",
+                  "DESCRIPTION": "<strong>Odborníci</strong> ti môžu pomôcť aj na <strong>linke pomoci tvojej krajiny</strong>. Často sú anonymné, dôverné a bezplatné. <span class=\"text-(--color-24)\"><strong>Volaj, kým niekto nezdvihne</strong>.</span>",
+                  "LINK": {
+                     "TITLE": "Hovor s linkou pomoci",
+                     "DESCRIPTION": "https://www.inhope.org/EN#hotlineReferral"
+                  },
+                  "CALL": {
+                     "TITLE": "Linka pomoci"
+                  },
+                  "MESSAGE": {
+                     "TITLE": "Linka pomoci"
+                  }
+               },
+               "P3": {
+                  "TITLE": "Hovor s políciou",
+                  "DESCRIPTION": "Môžeš hovoriť s policajtom vo svojej krajine. Polícia ti bude vedieť poradiť a pomôcť ti podať sťažnosť, ak to bude potrebné.",
+                  "LINK": {
+                     "TITLE": "Ma Sécurité | Ma Sécurité",
+                     "DESCRIPTION": "https://www.masecurite.interieur.gouv.fr/fr"
+                  }
+               },
+               "BUTTON": {
+                  "REPORTED": "Podať formálnu sťažnosť úradu na ochranu údajov tvojej krajiny",
+                  "UNREPORTED": "Nahlásiť obsah"
+               }
+            }
+         }
+      },
+      "HACKING": {
+         "CARD": {
+            "FIRST_TITLE": "HACKNUTÝ ÚČET",
+            "SECOND_TITLE": "Môj účet bol hacknutý",
+            "DESCRIPTION": "Obnovenie účtu alebo niečo iné"
+         },
+         "TITLE": "Môj účet bol hacknutý",
+         "DESCRIPTION": "Tvoj účet sa sám odpojil alebo sa obsah zverejňuje sám. Možno bol hacknutý.",
+         "TUTORIAL": {
+            "P1": {
+               "EMOJI": "<span aria-hidden=\"true\">❌</span>",
+               "CONTENT": "Môj účet sa sám <strong>odpojil</strong> a už k nemu nemám prístup"
+            },
+            "P2": {
+               "EMOJI": "<span aria-hidden=\"true\">🖼</span>️",
+               "CONTENT": "<Na mojom feede sa objavil <strong>obsah</strong>, ale nie som ten/tá, kto ho zverejnil/a"
+            },
+            "P3": {
+               "EMOJI": "<span aria-hidden=\"true\">🔒</span>",
+               "CONTENT": "Moje <strong>heslo</strong> už nefunguje"
+            },
+            "P4": {
+               "EMOJI": "<span aria-hidden=\"true\">📩</span>",
+               "CONTENT": "Mojich priateľov niekto kontaktoval v mojom mene, ale ja nie som te/tán, kto im poslal/a <strong>správu</strong>"
+            },
+            "P5": {
+               "CONTENT": "<strong>Potom mohol byť tvoj účet hacknutý</strong>"
+            }
+         },
+         "SITUATION": {
+            "TITLE": "Aká je tvoja situácia?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Stále <strong>mám prístup</strong> k svojmu účtu",
+                  "ANSWER_2_TITLE": "Už <strong>nemám prístup</strong> k svojmu účtu"
+               }
+            }
+         },
+         "RESULTS": {
+            "HAVE_ACCESS": {
+               "TITLE": "Stále mám prístup k svojmu účtu",
+               "DESCRIPTION": "Niekoľko krokov na získanie kontroly nad účtom",
+               "ACTIONS": {
+                  "IMMEDIATELY": {
+                     "TITLE": "Urobiť teraz <span aria-hidden=\"true\">⏱️</span>",
+                     "A1": {
+                        "TITLE": "Zmeň si heslo",
+                        "SHORT_DESCRIPTION": "Okamžite vytvor silné heslo",
+                        "LONG_DESCRIPTION": "Okamžite si vytvor silné heslo pre svoj účet. FantomApp ti môže pomôcť skontrolovať, či je tvoje heslo ľahko odhaliteľné."
+                     },
+                     "A2": {
+                        "TITLE": "Zapni dvojstupňové overenie",
+                        "SHORT_DESCRIPTION": "Pridaj extra bezpečnostný kód",
+                        "LONG_DESCRIPTION": "Dvojstupňové overenie pridáva extra ochranu tvojmu účtu. Aj keď niekto zistí tvoje heslo, nebude sa môcť prihlásiť bez druhého kódu (prijatého SMS správou alebo cez aplikáciu).<br /><span aria-hidden=\"true\">👉</span> Je to ako druhá zámka na dverách."
+                     },
+                     "A3": {
+                        "TITLE": "Skontroluj svoje informácie",
+                        "SHORT_DESCRIPTION": "Skontroluj, či tvoja e-mailová adresa a telefónne číslo neboli zmenené",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📲</span> Boli upravené tvoje kontakty, publikácie alebo bankové údaje (ak si ich poskytol/a)?<br /><br />Ak vidíš telefónne číslo alebo adresu, ktorú nespoznávaš:<ul style='list-style: disc; margin-left: 2rem;'><li>Urob si snímku obrazovky ako dôkaz.</li><li>Okamžite ich zmeň</li></ul>"
+                     },
+                     "A4": {
+                        "TITLE": "Skontroluj, kto je pripojený k tvojmu účtu",
+                        "SHORT_DESCRIPTION": "Skontroluj, či sú k tvojmu účtu pripojené nejaké neznáme zariadenia",
+                        "LONG_DESCRIPTION": "Choď do nastavení účtu a odpoj všetky zariadenia, ktoré boli doteraz povolené.<br /><span aria-hidden=\"true\">❌</span>  Ak vidíš zariadenie alebo pripojenie, ktoré nespoznávaš:<ul style='list-style: disc; margin-left: 2rem;'><li>Urob si snímku obrazovky ako dôkaz</li><li>Okamžite ho odpoj</li></ul>"
+                     }
+                  },
+                  "LATER": {
+                     "TITLE": "Urobiť neskôr",
+                     "A1": {
+                        "TITLE": "Upozorni svojich priateľov a kontakty",
+                        "SHORT_DESCRIPTION": "Môžu dostávať alebo mohli dostať zvláštne správy",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📢</span>  Povedz svojim kontaktom (priateľom, rodine...), že tvoj účet bol hacknutý.<br /><span aria-hidden=\"true\">⚠️</span> Môžu dostávať správy od niekoho, kto sa za teba vydáva. Povedz im, aby neodpovedali ani neklikali na žiadne odkazy."
+                     },
+                     "A2": {
+                        "TITLE": "Zmeň svoje ostatné heslá",
+                        "SHORT_DESCRIPTION": "Chráň svoje ostatné účty",
+                        "LONG_DESCRIPTION": "Ak používaš rovnaké heslo na iných webových stránkach alebo v aplikáciách, zmeň ho aj tam.<br /><span aria-hidden=\"true\">👉</span> Tým zabrániš tomu, aby boli hacknuté aj iné účty."
+                     },
+                     "A3": {
+                        "TITLE": "Upozorni svoju banku",
+                        "SHORT_DESCRIPTION": "Konaj, ak si mal/a bankové údaje na tvojom účte",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Ak boli tvoje <strong>bankové údaje</strong> (napríklad číslo karty) prístupné na hacknutom účte, musíš to okamžite povedať dospelému.<br /> Musíš <strong>upozorniť svoju banku</strong> čo najskôr a v prípade potreby zablokovať kartu, aby si zabránil/a krádeži."
+                     },
+                     "A4": {
+                        "TITLE": "Používaj správcu hesiel",
+                        "SHORT_DESCRIPTION": "Na zabezpečenie tvojich hesiel",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> Správca hesiel je aplikácia alebo nástroj v telefóne, ktorý udržuje všetky tvoje heslá v bezpečí. Môže tiež vytvárať veľmi silné heslá pre každú webovú stránku alebo aplikáciu a automaticky ich vypĺňať pri prihlásení.<br /><span aria-hidden=\"true\">👉</span> Je to ako digitálny trezor pre všetky tvoje účty."
+                     },
+                     "A5": {
+                        "TITLE": "Nikdy nezdieľaj svoje heslo",
+                        "SHORT_DESCRIPTION": "Najlepšie je nechať si ich pre seba",
+                        "LONG_DESCRIPTION": "Niekto by mohol čítať tvoje správy, pridávať príspevky v tvojom mene alebo ukradnúť tvoj účet.<br />Tvoje heslo je osobné, rovnako ako kód tvojho telefónu."
+                     }
+                  }
+               }
+            },
+            "NO_ACCESS": {
+               "TITLE": "Už nemám prístup k svojmu účtu",
+               "CONTACT": {
+                  "TITLE": "<span aria-hidden=\"true\">✉</span>️ Kontaktuj sociálnu sieť",
+                  "DESCRIPTION": "Začni kontaktovaním sociálnej siete a nahlás, že tvoj účet bol hacknutý.<br /><span aria-hidden=\"true\">➡</span>️ Klikni na odkaz sociálnej siete, ktorú používaš."
+               },
+               "SOCIAL_MEDIA": {
+                  "INSTAGRAM": {
+                     "TITLE": "Instagram",
+                     "LINK": {
+                        "TITLE": "Odoslať žiadosť o pomoc na Instagrame",
+                        "DESCRIPTION": "https://www.instagram.com/hacked/"
+                     }
+                  },
+                  "SNAPCHAT": {
+                     "TITLE": "Snapchat",
+                     "LINK": {
+                        "TITLE": "Nemám prístup k môjmu účtu – Podpora Snapchat",
+                        "DESCRIPTION": "https://help.snapchat.com/hc/sk/articles/23102718270996-Nem%C3%B4%C5%BEem-sa-dosta%C5%A5-do-svojho-%C3%BA%C4%8Dtu"
+                     }
+                  },
+                  "TIKTOK": {
+                     "TITLE": "TikTok",
+                     "LINK": {
+                        "TITLE": "Nahlásiť problém | TikTok",
+                        "DESCRIPTION": "https://www.tiktok.com/legal/report/feedback?lang=sk"
+                     }
+                  },
+                  "X": {
+                     "TITLE": "X",
+                     "LINK": {
+                        "TITLE": "Mám problémy s prístupom k účtu | X ",
+                        "DESCRIPTION": "https://help.x.com/en/forms/account-access/appeals"
+                     }
+                  },
+                  "FACEBOOK": {
+                     "TITLE": "Facebook",
+                     "LINK": {
+                        "TITLE": "Odoslať žiadosť o pomoc na Facebooku",
+                        "DESCRIPTION": "https://www.facebook.com/help/203305893040179?cms_id=203305893040179"
+                     }
+                  }
+               },
+               "RECOMMENDATIONS": {
+                  "TITLE": "<span aria-hidden=\"true\">👍</span> Postupuj podľa týchto odporúčaní",
+                  "DESCRIPTION": "Aj keď už nemáš prístup k svojmu účtu, stále môžeš konať. Tieto kroky ti pomôžu chrániť sa a zabrániť tomu, aby sa to zopakovalo.",
+                  "ACTIONS": {
+                     "LATER": {
+                        "A1": {
+                           "TITLE": "Upozorni svojich priateľov a kontakty",
+                           "SHORT_DESCRIPTION": "Môžu dostávať alebo mohli dostať zvláštne správy",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📢</span> Povedz svojim kontaktom (priateľom, rodine...), že tvoj účet bol hacknutý.<br /><span aria-hidden=\"true\">⚠️</span> Môžu dostávať správy od niekoho, kto sa za teba vydáva. Povedz im, aby neodpovedali ani neklikali na žiadne odkazy."
+                        },
+                        "A2": {
+                           "TITLE": "Zmeň svoje ostatné heslá",
+                           "SHORT_DESCRIPTION": "Chráň svoje ostatné účty",
+                           "LONG_DESCRIPTION": "Ak používaš rovnaké heslo na iných webových stránkach alebo v aplikáciách, zmeň ho aj tam.<br /><span aria-hidden=\"true\">👉</span> Tým zabrániš tomu, aby boli hacknuté aj iné účty."
+                        },
+                        "A3": {
+                           "TITLE": "Upozorni svoju banku",
+                           "SHORT_DESCRIPTION": "Konaj, ak si mal/a bankové údaje na tvojom účte",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Ak boli tvoje <strong>bankové údaje</strong> (napríklad číslo karty) prístupné na hacknutom účte, musíš to okamžite povedať dospelému.<br /> Musíš <strong>upozorniť svoju banku</strong> čo najskôr a v prípade potreby zablokovať kartu, aby si zabránil/a krádeži."
+                        },
+                        "A4": {
+                           "TITLE": "Používaj správcu hesiel",
+                           "SHORT_DESCRIPTION": "Na zabezpečenie tvojich hesiel",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> Správca hesiel je aplikácia alebo nástroj v telefóne, ktorý udržuje všetky tvoje heslá v bezpečí. Môže tiež vytvárať veľmi silné heslá pre každú webovú stránku alebo aplikáciu a automaticky ich vypĺňať pri prihlásení.<br /><span aria-hidden=\"true\">👉</span> Je to ako digitálny trezor pre všetky tvoje účty."
+                        },
+                        "A5": {
+                           "TITLE": "Nikdy nezdieľaj svoje heslá",
+                           "SHORT_DESCRIPTION": "Najlepšie je nechať si ich pre seba",
+                           "LONG_DESCRIPTION": "Niekto by mohol čítať tvoje správy, pridávať príspevky v tvojom mene alebo ukradnúť tvoj účet.<br />Tvoje heslo je osobné, rovnako ako kód tvojho telefónu."
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "TOOLS": {
+      "TITLE": "Nástroje",
+      "PASSWORD_CHECK_TITLE": "Otestovať moje heslo",
+      "PASSWORD_CHECK_DESCRIPTION": "Ako dlho trvá kyberzločincovi, kým ho prelomí?",
+      "BLUR_IMAGE_TITLE": "Anonymizácia mojej fotky",
+      "BLUR_IMAGE_DESCRIPTION": "Rozmazať moju profilovú fotku",
+      "VISIBILITY_CHECK_TITLE": "Otestovať moju viditeľnosť",
+      "VISIBILITY_CHECK_DESCRIPTION": "Čo o mne prezrádza moje používateľské meno a bio?",
+      "VISIBILITY_CHECK": {
+         "TITLE": "Otestovať moju viditeľnosť",
+         "DESCRIPTION": "Môže ma niekto identifikovať podľa môjho používateľského mena a bia?",
+         "PSEUDO": {
+            "TITLE": "Čo je v tvojom používateľskom mene?",
+            "IDENTITY": {
+               "TITLE": "<span aria-hidden=\"true\">🪪</span> Identita",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Moje celé meno alebo priezvisko",
+                  "ANSWER_1_DESCRIPTION": "(príklad: Martin)",
+                  "ANSWER_2_TITLE": "Moje skrátené meno alebo priezvisko.",
+                  "ANSWER_2_DESCRIPTION": "(príklad: Mrt1)",
+                  "ANSWER_3_TITLE": "Moja prezývka",
+                  "ANSWER_4_TITLE": "Môj dátum narodenia"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "<span aria-hidden=\"true\">🗺</span>️Geografický alebo kultúrny pôvod",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Moje poštové smerovacie číslo (PSČ)",
+                  "ANSWER_1_DESCRIPTION": "(príklad: 34 alebo 49300)",
+                  "ANSWER_2_TITLE": "Kde bývam alebo odkiaľ pochádzam",
+                  "ANSWER_2_DESCRIPTION": "(Mesto, región, krajina, emoji vlajky.)"
+               }
+            }
+         },
+         "BIO": {
+            "TITLE": "Čo je v tvojom biu?",
+            "EMPTY": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Do bia som nič nenapísal/a"
+               }
+            },
+            "IDENTITY": {
+               "TITLE": "<span aria-hidden=\"true\">🪪</span> Identita",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Moje celé meno alebo priezvisko",
+                  "ANSWER_1_DESCRIPTION": "(príklad: Martin)",
+                  "ANSWER_2_TITLE": "Moje skrátené meno alebo priezvisko.",
+                  "ANSWER_2_DESCRIPTION": "(príklad: Mrt1)",
+                  "ANSWER_3_TITLE": "Moja prezývka",
+                  "ANSWER_4_TITLE": "Môj dátum narodenia"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "<span aria-hidden=\"true\">🗺</span>️ Geografický alebo kultúrny pôvod",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Moje poštové smerovacie číslo (PSČ)",
+                  "ANSWER_1_DESCRIPTION": "(príklad: 34 alebo 49300)",
+                  "ANSWER_2_TITLE": "Kde bývam alebo odkiaľ pochádzam",
+                  "ANSWER_2_DESCRIPTION": "(Mesto, región, krajina, emoji vlajky.)"
+               }
+            },
+            "DIGITAL_LIFE": {
+               "TITLE": "<span aria-hidden=\"true\">👥</span> Digitálny život",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Odkazy na moje iné účty na sociálnych sieťach.",
+                  "ANSWER_1_DESCRIPTION": "(X, Instagram, TikTok, Snapchat).",
+                  "ANSWER_2_TITLE": "Účty môjho blízkeho okruhu",
+                  "ANSWER_2_DESCRIPTION": "(Priatelia, rodina, partner...)"
+               }
+            },
+            "INTEREST": {
+               "TITLE": "<span aria-hidden=\"true\">🎭</span> Záujmy",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Odkaz na môj klub alebo združenie, ktorého som súčasťou.",
+                  "ANSWER_1_DESCRIPTION": "(napr.: @VolleyValences)"
+               }
+            },
+            "EDUCATION_PRO": {
+               "TITLE": "<span aria-hidden=\"true\">🏫</span> Vzdelanie alebo zamestnanie",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Zmienka o mojej škole alebo spoločnosti, kde pracujem.",
+                  "ANSWER_2_TITLE": "Moje zručnosti alebo štúdium",
+                  "ANSWER_2_DESCRIPTION": "(Pekársky učeň, Študent medicíny…)"
+               }
+            }
+         },
+         "RESULTS": {
+            "TITLE": "Tvoje výsledky",
+            "SUMMARY": {
+               "GOOD": {
+                  "TITLE": "Dobrá práca! <span aria-hidden=\"true\">🥷</span>",
+                  "CONTENT": "Tvoj profil neumožňuje zistiť, kto si na sociálnych sieťach ani offline."
+               },
+               "OK": {
+                  "TITLE": "Nie zlé! <span aria-hidden=\"true\">🥸</span>",
+                  "CONTENT": "Stále existujú nápovedy, kým si v skutočnosti. Takto môžeš o sebe prezradiť ešte menej:"
+               },
+               "BAD": {
+                  "TITLE": "Pozor! <span aria-hidden=\"true\">🧐</span>",
+                  "CONTENT": "Tvoj profil o tebe obsahuje veľa informácií. Buď opatrný/á, niektorí ľudia by mohli tieto informácie použiť, vydávať sa za tvojich priateľov alebo poškodiť tvoju povesť."
+               }
+            },
+            "PSEUDO": {
+               "TITLE": "Tvoje používateľské meno naznačuje"
+            },
+            "BIO": {
+               "TITLE": "Tvoje bio naznačuje"
+            },
+            "STATE": {
+               "PUBLIC": "VEREJNÉ <span aria-hidden=\"true\">👀</span>",
+               "DISCREET": "DISKRÉTNE <span aria-hidden=\"true\">🙈</span>️",
+               "INVISIBLE": "NEVIDITEĽNÉ <span aria-hidden=\"true\">👻</span>"
+            },
+            "NO_PERSONAL_INFO": "Žiadne osobné info!"
+         }
+      },
+      "BLUR_IMAGE": {
+         "TITLE": "Anonymizácia mojej fotky",
+         "DESCRIPTION": "Rozmazanie alebo pixelizácia mojej profilovej fotky na obmedzenie mojej identifikácie online.",
+         "EDITING_TITLE": "Oblasť úprav importovanej fotky",
+         "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Rada</strong>: Ak rozmažeš svoju fotku aby si ju použil/a ako profilovú fotku, nepoužívaj ju inde v nerozmazanej podobe<br /><span aria-hidden=\"true\"><span aria-hidden=\"true\">💡</span></span> <strong>Dobré vedieť</strong>: FantomApp tu neukladá žiadnu fotku, ktorú importuješ",
+         "UPLOAD_IMAGE": "Importovať fotku <span aria-hidden=\"true\">🤳</span>",
+         "BLUR": "Rozmazať",
+         "PIXELATE": "Pixelizovať",
+         "ALL_BLUR": "Rozmazať všetko",
+         "BRUSH_SIZE": "Veľkosť rozmazania",
+         "GLOBAL_BLUR_INFO": "Týmto tlačidlom môžeš rozmazať celý obrázok. Kliknutím sa otvorí zoznam percent rozmazania pre výber intenzity.",
+         "MODIFICATION_DONE": "Úprava dokončená",
+         "TUTORIAL": {
+            "DESCRIPTION": "Posúvaj prst po obrázku na jeho rozmazanie."
+         }
+      },
+      "PASSWORD_CHECK": {
+         "TITLE": "Otestovať moje heslo",
+         "DESCRIPTION_PART1": "Ako dlho trvá kyberzločincovi, kým ho prelomí pomocou",
+         "DESCRIPTION_PART2": "?",
+         "FOCUS_ACCESSIBLE_TITLE": "Otestovať moje heslo - vstupné pole",
+         "DESCRIPTION_TOOLTIP": {
+            "TITLE": "hrubej sily",
+            "CONTENT": "Útok <strong>hrubou silou</strong> spočíva v testovaní, jednej po druhej, každej možnej kombinácie hesla. (zdroj: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
+         },
+         "CRIMINAL_GUESSES": "Kyberzločinec ho uhádne za:",
+         "ASSESSMENT_TEXT": "Tvoje heslo:",
+         "INPUT_LABEL": "Heslo",
+         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Obsahuje moje <strong>meno</strong>, <strong>priezvisko</strong> alebo <strong>ľahko uhádnuteľné slová</strong>",
+         "COPY_PASSWORD": "Kopírovať heslo",
+         "COPIED": "Skopírované!",
+         "BADGES": {
+            "IMMEDIATE": "JE TO OKAMŽITÉ <span aria-hidden=\"true\">⚠️</span>",
+            "RAPID": "MÔŽEŠ TO UROBIŤ EŠTE LEPŠIE <span aria-hidden=\"true\">👇</span>",
+            "CORRECT": "JE TO OK <span aria-hidden=\"true\">🙂</span>",
+            "SUPER": "JE TO SKVELÉ <span aria-hidden=\"true\">😎</span>"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "Minimálne 12 znakov",
+            "UPPERCASE": "Aspoň 1 veľké písmeno",
+            "LOWERCASE": "Aspoň 1 malé písmeno",
+            "DIGIT": "Aspoň 1 číslo",
+            "SPECIAL_CHAR": "Aspoň 1 špeciálny znak",
+            "NO_EASY_CLUES": "Žiadne ľahké nápovedy (priezvisko, meno, bežné slovo)",
+            "CRITERIA_VALIDATED": "Kritérium splnené",
+            "CRITERIA_NOT_VALIDATED": "Kritérium nesplnené"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "Čo je dobré heslo?",
+            "TEST_PASSWORD": "Otestovať moje heslo <span aria-hidden=\"true\">🔒</span>",
+            "STRENGTHEN_PASSWORD": "Posilnenie môjho hesla"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Ako to funguje?",
+               "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>Krok 1</strong>: Napíš svoje heslo do určeného poľa.",
+               "STEP_2": "<span aria-hidden=\"true\">🧪</span> <strong>Krok 2</strong>: Klikni na \"Otestovať moje heslo\".",
+               "STEP_3": "⏱️ <strong>Krok 3</strong>: A je to! Môžeš vidieť, ako dlho by trvalo kyberzločincovi prelomiť tvoje heslo… a získať prístup k tvojim osobným údajom!",
+               "NOTE": "FantomApp neuchováva žiadne informácie.",
+               "UNDERSTOOD": "Rozumiem"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Silné heslo je:",
+               "CLOSE": "Zavrieť",
+               "REQUIREMENTS_LIST": "Zoznam požiadaviek na silné heslo",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 znakov",
+                  "DIGITS": "1 alebo viac čísel",
+                  "UPPERCASE": "veľké písmená",
+                  "LOWERCASE": "malé písmená",
+                  "SPECIAL_CHARS": "špeciálne znaky (*, @, !)"
+               },
+               "WARNINGS_SECTION": "Tipy na výber bezpečného hesla",
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "<span aria-hidden=\"true\">🏴☠️</span>‍ Kyberzločinci používajú všetky existujúce <strong>databázy slov</strong> vo všetkých jazykoch.",
+                  "NO_DICTIONARY": "<span aria-hidden=\"true\">⛔</span>‍ Žiadne slová zo slovníka, tvoje meno alebo priezvisko pri vytváraní hesla"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Okamžité",
+            "MINUTES": "minúty",
+            "HOURS": "hodiny",
+            "DAY": "deň",
+            "DAYS": "dni",
+            "WEEK": "týždeň",
+            "WEEKS": "týždne",
+            "MONTH": "mesiac",
+            "MONTHS": "mesiace",
+            "YEARS": "roky",
+            "THOUSAND_YEARS": "tisíc rokov",
+            "MILLION_YEARS": "miliónov rokov",
+            "BILLION_YEARS": "miliárd rokov",
+            "TRILLION_YEARS": "biliónov rokov",
+            "QUADRILLION_YEARS": "biliárd rokov",
+            "QUINTILLION_YEARS": "triliónov rokov"
+         }
+      }
+   },
+   "SECURE_MYSELF": {
+      "VIEW_ALL": {
+         "TUTORIAL": {
+            "TITLE": "Ako to funguje?",
+            "DESCRIPTION": "Keď zmeníš nastavenie, zaškrtni políčko, <strong>aby si si pripomenul/a</strong>, čo si už na svojom účte zabezpečil/a!"
+         }
+      }
+   },
+   "ALT_TEXT": {
+      "HEADER": {
+         "CURRENT_LANGUAGE": "Aktuálny jazyk: {{language}}",
+         "CURRENT_DEVICE": "Aktuálne zariadenie: {{device}}"
+      },
+      "CONTACT": {
+         "PHONE": "Kontaktovať telefonicky",
+         "WHATSAPP": "Kontaktovať cez WhatsApp",
+         "SMS": "Kontaktovať cez SMS",
+         "EMAIL": "Kontaktovať e-mailom",
+         "SUPPORT_3018": "Hovoriť s linkou pomoci"
+      },
+      "GENERAL": {
+         "FLAG": "Vlajka"
+      },
+      "COUNTRIES": {
+         "FRANCE": "Français",
+         "IRELAND": "English",
+         "HUNGARY": "Magyar",
+         "GREECE": "Ελληνικά",
+         "DENMARK": "Dansk",
+         "POLAND": "Polski",
+         "PORTUGAL": "Português",
+         "SPAIN": "Español",
+         "CATALONIA": "Català",
+         "LUXEMBOURG": "Lëtzebuergesch",
+         "INTERNATIONAL": "Medzinárodné"
+      },
+      "TOOLS": {
+         "PASSWORD_CHECK": {
+            "CRITERIA": {
+               "CRITERIA_VALIDATED": "obsahuje",
+               "CRITERIA_NOT_VALIDATED": "neobsahuje"
+            },
+            "INPUT": {
+               "EYE_BUTTON": {
+                  "SHOW": "Zobraziť heslo",
+                  "HIDE": "Skryť heslo"
+               },
+               "COPY_BUTTON": {
+                  "COPY": "Kopírovať heslo"
+               }
+            }
+         },
+         "BLUR_IMAGE": {
+            "IMAGE_ALT": "Importovať fotku"
+         }
+      },
+      "ENRICHED_LINK": {
+         "ARIA_LABEL": "Odkaz, ktorý presmeruje na externú stránku"
+      },
+      "TILE_CALL": {
+         "ARIA_LABEL": "Odkaz, ktorý presmeruje na funkciu telefonického hovoru"
+      },
+      "TILE_MESSAGE": {
+         "ARIA_LABEL": "Odkaz, ktorý presmeruje na funkciu odosielania SMS"
+      },
+      "ONBOARDING": {
+         "LOGO_FANTOMAPP": "FantomApp"
+      }
+   }
+}

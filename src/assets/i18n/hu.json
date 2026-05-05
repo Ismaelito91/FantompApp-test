@@ -1,1 +1,959 @@
-{}
+{
+   "APP": {
+      "TITLE": "FantomApp",
+      "LOADING": "Betöltés...",
+      "ERROR": "Hiba az alkalmazás betöltésekor",
+      "INSTALL_APP": "Alkalmazás telepítése",
+      "NEW_VERSION_AVAILABLE": "Új verzió érhető el",
+      "UPDATE_APP": "Alkalmazás frissítése"
+   },
+   "COMMON": {
+      "ORGANISATION": "CNIL",
+      "SAVE": "Mentés",
+      "CANCEL": "Mégse",
+      "DELETE": "Törlés",
+      "EDIT": "Szerkesztés",
+      "CLOSE": "Bezárás",
+      "SEARCH": "Keresés",
+      "BACK": "Vissza",
+      "NEXT": "Tovább",
+      "PREVIOUS": "Előző",
+      "RESULTS": "Eredmények",
+      "HOME": "Kezdőlap",
+      "PROBLEM": "Probléma",
+      "TOOLS": "Eszközök",
+      "SECURE": "Biztonság",
+      "YES": "Igen",
+      "NO": "Nem",
+      "UNDERSTOOD": "Értem",
+      "DOWNLOAD": "Letöltés",
+      "COPY": "Másolás",
+      "COPIED": "Másolva!",
+      "OR": "vagy",
+      "ACTIVE": "Aktív",
+      "ARIA_LABEL": {
+         "HOME": "Ugrás a Kezdőlapra",
+         "PROBLEM": "Ugrás a Problémához",
+         "TOOLS": "Ugrás az Eszközökhöz",
+         "SECURE": "Ugrás a Biztonsághoz",
+         "MAIN_NAV": "Főmenü"
+      }
+   },
+   "DESIGN_SYSTEM": {
+      "STEPPER": {
+         "DESCRIPTION": "{{ currentStep }}. kérdés / {{ totalSteps }}"
+      },
+      "TAG_UNCLICKABLE": {
+         "IMPORTANT": "FONTOS",
+         "SECONDARY": "MÁSODIK LÉPÉS"
+      },
+      "TEMPLATE_MESSAGE": {
+         "BUTTON": "Példa másolása"
+      }
+   },
+   "ONBOARDING": {
+      "CLOSE": "Bezárás",
+      "SKIP": "Kihagyás",
+      "NEXT": "Tovább",
+      "PREVIOUS": "Vissza",
+      "CONTINUE": "Folytatás",
+      "START_USING": "Használat megkezdése",
+      "TAP_TO_CONTINUE": "Érintsd meg a folytatáshoz",
+      "WELCOME_TO": "Üdvözöl a",
+      "GHOST_MODE_EXPLANATION": "Itt <span class=\"ghost-mode\">szellem módban</span> szörfölsz, senki sem tudja, hogy itt vagy. Semmilyen információd nem kerül rögzítésre. Szabadon felfedezheted, hogyan védheted meg a magánéleted.",
+      "PROGRESS": "Előrehaladás",
+      "GO_TO_STEP": "Ugrás a lépéshez",
+      "COMPLETED_STEP": "Befejezett lépés",
+      "CURRENT_STEP": "Jelenlegi lépés",
+      "FUTURE_STEP": "következő lépés",
+      "STEP_INFO": "Lépés",
+      "OF": "/",
+      "BUBBLE": {
+         "WELCOME": "Szia! Itt vagyok, hogy végigvezesselek az alkalmazáson!"
+      },
+      "STEP_TWO": {
+         "TITLE": "Segítségre van szükséged? <span aria-hidden=\"true\">🛟</span>",
+         "DESCRIPTION": "Néha problémákba ütközhetünk online. Itt információkat és megoldásokat találsz."
+      },
+      "STEP_THREE": {
+         "TITLE": "Eszközök <span aria-hidden=\"true\">🛠️</span>",
+         "DESCRIPTION": "Erős jelszó, védett fotó, ellenőrzött felhasználónév és biográfia: vedd kezedbe a magánéleted irányítását!"
+      },
+      "STEP_FOUR": {
+         "TITLE": "Alapvető beállítások <span aria-hidden=\"true\">⚙️</span>",
+         "DESCRIPTION": "Nem mindig könnyű biztonságossá tenni a fiókjaidat... a FantomApp-on sok tippet találsz."
+      },
+      "WELCOME": {
+         "TITLE": "Üdvözöl a FantomApp!",
+         "DESCRIPTION": "Fedezz fel egy alkalmazást, amelyet a magánéleted védelmére terveztek, és amely kivételes felhasználói élményt nyújt. Hadd mutassuk be a fő funkcióit."
+      },
+      "APPEARANCE": {
+         "TITLE": "Szabd testre az élményt",
+         "DESCRIPTION": "Válaszd ki az alkalmazás megjelenését a preferenciáid és a környezeted alapján.",
+         "FEATURE_1": "Választás világos, sötét vagy automatikus mód között.",
+         "FEATURE_2": "Használd ugyanazokat a beállításokat, mint az eszközöd",
+         "FEATURE_3": "Vizuális kényelemre optimalizált felület"
+      },
+      "ICON_CHANGE": {
+         "TITLE": "Alkalmazás ikonjának módosítása",
+         "DESCRIPTION": "Szabd testre a kezdőképernyőn látható ikont a nagyobb diszkréció vagy esztétika érdekében.",
+         "FEATURE_1": "Több ikondizájn elérhető",
+         "FEATURE_2": "Azonnali és biztonságos váltás",
+         "FEATURE_3": "Diszkrét lehetőség a magánéleted védelmére"
+      },
+      "RESOURCES": {
+         "TITLE": "Hozzáférés az összes forráshoz",
+         "DESCRIPTION": "Minden fontos információt és hasznos eszközt megtalálsz egy helyen.",
+         "FEATURE_1": "Az alkalmazás teljes dokumentációja",
+         "FEATURE_2": "Részletes felhasználói útmutatók",
+         "FEATURE_3": "Támogatás és online súgó"
+      },
+      "ACCESSIBILITY": {
+         "TITLE": "Egy alkalmazás mindenkinek",
+         "DESCRIPTION": "A FantomApp-ot úgy tervezték, hogy minden felhasználó számára elérhető legyen, képességeitől függetlenül.",
+         "FEATURE_1": "Képernyőolvasó-barát felület",
+         "FEATURE_2": "Optimalizált billentyűzet-navigáció",
+         "FEATURE_3": "Megfelel az RGAA akadálymentesítési szabványoknak"
+      },
+      "READY": {
+         "TITLE": "Minden készen áll!",
+         "DESCRIPTION": "Most már ismered a FantomApp főbb funkcióit. Élvezd a biztonságos és személyre szabott élményt."
+      }
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Megjelenés",
+      "SUBTITLE": "Válaszd ki a kedvenc rendszermegjelenítésedet.",
+      "THEME": {
+         "DEFAULT": "Alapértelmezett téma",
+         "LIGHT": "Világos téma",
+         "DARK": "Sötét téma",
+         "SYSTEM_SETTINGS": "Eszköz beállításainak használata"
+      }
+   },
+   "APP_ICON_SELECTOR": {
+      "TITLE": "Az alkalmazás ikonja",
+      "SUBTITLE": "Szabd testre az alkalmazás ikonját.",
+      "DEFAULT": "Alapértelmezett ikon",
+      "DEFAULT_DESC": "Az eredeti ikon",
+      "GHOST": "Szellem ikon",
+      "GHOST_DESC": "Egy titokzatos és diszkrét változat",
+      "DARK": "Sötét ikon",
+      "DARK_DESC": "Tökéletes éjszakai felhasználóknak",
+      "COLORFUL": "Színes ikon",
+      "COLORFUL_DESC": "Egy élénk és vidám ikon"
+   },
+   "HOME": {
+      "GREETING": "Szia <span aria-hidden=\"true\">👋</span> Hogyan segíthetünk?",
+      "WELCOME": "Üdvözöl a FantomApp",
+      "APP_INFO_TITLE": "Az alkalmazásról",
+      "APPEARANCE": "Megjelenés",
+      "CHANGE_ICON": "Ikon megváltoztatása",
+      "RESOURCES": "Források",
+      "WHAT_IS_APP": "Mire való ez az alkalmazás?",
+      "RIGHTS": "Vannak jogaim",
+      "ACCESSIBILITY": "FantomApp mindenkinek (Akadálymentesítés)",
+      "TUTORIAL": "Nézd meg újra az üdvözlő oktatóanyagot",
+      "APP_INFO": {
+         "TITLE": "Mi ez az alkalmazás?",
+         "DESCRIPTION_1": "A FantomApp segít probléma esetén, eszközöket ad az online magánéleted védelméhez, és útmutatókat nyújt az adataid biztonságához az általad használt fő közösségi oldalakon.",
+         "DESCRIPTION_2": "Az alkalmazást a <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">CNIL</a> (Commission nationale de l'informatique et des libertés) készítette, és az Európai Bizottság finanszírozta.",
+         "DESCRIPTION_3": "<strong>Kiadó:</strong>",
+         "DESCRIPTION_4": "Commission nationale de l’informatique et des libertés (CNIL), egy független közigazgatási hatóság, amely a személyes adatok védelméért felelős.",
+         "DESCRIPTION_5": "Cím: 3 Place de Fontenoy – 75334 PÁRIZS CEDEX 07, Franciaország – Telefon: 01 53 73 22 22 – www.cnil.fr",
+         "DESCRIPTION_6": "Kiadásért felelős: Marie-Laure DENIS, Elnök<br />",
+         "DESCRIPTION_7": "<strong>Tárhelyszolgáltató</strong>: Scaleway SAS - 8, Rue de la Ville-l'Évêque, 75008 Párizs, Franciaország.<br /><br />",
+         "DESCRIPTION_8": "<strong>Személyes adatok</strong><br />",
+         "DESCRIPTION_9": "A CNIL a FantomAPP alkalmazást azért biztosítja, hogy teljesítse tájékoztatási és tudatosságnövelő küldetését, mint a személyes adatok védelméért felelős hatóság.",
+         "DESCRIPTION_10": "Az alkalmazás a következő személyes adatokat gyűjti: IP-címed; alkalmazás csatlakozási naplók.",
+         "DESCRIPTION_11": "Ezek az adatok elengedhetetlenek az alkalmazás megfelelő technikai működésének és biztonságának biztosításához, és lehetővé teszik a csatlakozás dátumának és idejének megismerését. Ezekhez az adatokhoz csak a CNIL csapatai és az alkalmazás technikai működéséért és biztonságáért felelős cég férhet hozzá. Hat hónapig őrzik meg őket.",
+         "DESCRIPTION_12": "Más személyes adat nem kerül gyűjtésre. Az alkalmazásban nincs telepítve nyomkövető.",
+         "DESCRIPTION_13": "Kérheted a CNIL-től az alkalmazás által gyűjtött adataid másolatát az educnum[at]cnil.fr e-mail címen, vagy ezen az <a href=\"https://www.cnil.fr/webform/contactez-le-delegue-la-protection-des-donnees-dpo\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">online űrlapon</a> keresztül. Jogaid jobb megértéséhez látogass el a <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">cnil.fr</a> oldalra.",
+         "DESCRIPTION_14": "Ha kapcsolatfelvétel után nem kaptál választ, vagy úgy ítéled meg, hogy a válasz hiányos vagy helytelen, <a href=\"https://www.cnil.fr/fr/adresser-une-plainte\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">panaszt tehetsz a CNIL-nél</a>.<br />",
+         "DESCRIPTION_15": "<strong>CNIL védjegyek használata</strong>",
+         "DESCRIPTION_16": "A FantomApp szó- és ábrás védjegy (logó) a Nemzeti Ipari Tulajdon Hivatalánál (INPI) van bejegyezve.<br />",
+         "DESCRIPTION_17": "Ennek használata a CNIL írásos engedélye nélkül, bármilyen hordozón, termékek vagy szolgáltatások népszerűsítése céljából, különösen kereskedelmi céllal, tilos, és büntetőjogi valamint polgári jogi felelősségre vonást von maga után. Szigorúan oktatási célokra (CNIL tevékenységek bemutatása stb.) engedélyezett.<br />",
+         "DESCRIPTION_18": "<strong>Tartalom újrafelhasználása</strong><br />",
+         "DESCRIPTION_19": "A FantomApp alkalmazás tartalmának újrafelhasználása a <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">CNIL weboldalán</a> meghatározott szabályokhoz kötött. A tartalom forrását a következőképpen kell megjelölni: \"Forrás: CNIL FantomApp - https://www.fantomapp.fr\""
+      },
+      "CARDS": {
+         "MAIN_TITLE": "Közösségi oldalam biztosítása",
+         "VIEW_ALL": "Összes megtekintése",
+         "VIEW_ALL_ARIA": "Összes biztonsági eszköz megtekintése",
+         "PASSWORD_CHECK": {
+            "TITLE": "Jelszó tesztelése",
+            "DESCRIPTION": "Mennyi időbe telik egy kiberbűnözőnek feltörni a jelszavadat?"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "Kép elhomályosítása",
+            "DESCRIPTION": "Profilkép anonimizálása"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "Problémám van online",
+            "VIEW_ALL_ARIA": "Összes problémakártya megtekintése",
+            "DELETE_CONTENT": {
+               "TITLE": "Tartalmat szeretnék törölni"
+            },
+            "HARASSMENT": {
+               "TITLE": "Internetes zaklatást élek át"
+            }
+         }
+      },
+      "USER_RIGHTS": {
+         "TITLE": "Vannak jogaim",
+         "INTRO": {
+            "PARAGRAPH_1": "Nem számít a korod, jogaid vannak, különösen a személyes adataid és a magánéleted védelméhez való jog.",
+            "PARAGRAPH_2": "Online eldöntheted, mi látható rólad, és mit kezdenek a közösségi oldalak az információiddal."
+         },
+         "CARDS": {
+            "INCOGNITO": {
+               "TITLE": "<span aria-hidden=\"true\">🗑️</span> Törléshez való jog: Maradj inkognitóban",
+               "PARAGRAPH_1": "Online jogod van kérni az adataid <b>törlését és a keresőmotorokból való eltávolítását</b>. Konkrétan, ha azt szeretnéd, hogy egy rólad készült fotót, videót, szöveget, a nevedet, keresztnevedet vagy személyes adataid bármely más elemét töröljék, vagy azok ne jelenjenek meg többé a keresőmotorok találatai között, kérheted ezt az érintett oldalaktól.",
+               "PARAGRAPH_2": "Fordulhatsz közvetlenül az oldalhoz vagy platformhoz. Ha a platform 1 hónapon belül nem válaszol a kérésedre, jelentheted a nemzeti adatvédelmi hatóságnak, és segítséget kaphatsz jogaid érvényesítéséhez."
+            },
+            "DATA_INFO": {
+               "TITLE": "<span aria-hidden=\"true\">ℹ️</span> Tájékoztatáshoz való jog: ki mit csinál az adataimmal",
+               "PARAGRAPH": "Jogod van tudni, mit tesznek, <b>mit akarnak tenni vagy mit terveznek tenni</b> az oldalak, játékok, alkalmazások és egyéb platformok a személyes adataiddal."
+            },
+            "RIGHT_TO_OBJECT": {
+               "TITLE": "<span aria-hidden=\"true\">❌</span> Tiltakozáshoz való jog: tartsd kézben az adataidat",
+               "PARAGRAPH": "Jogod van <b>tiltakozni az adataid felhasználása ellen</b> weboldalak vagy alkalmazások által (kivéve a törvényben meghatározott nagyon speciális eseteket)."
+            },
+            "PORTABILITY": {
+               "TITLE": "<span aria-hidden=\"true\">🧳</span> Adathordozhatósághoz való jog: ahova akarom, amikor akarom!",
+               "PARAGRAPH_1": "Még ahhoz is jogod van, hogy elvidd <b>az adataidat és máshol használd fel őket,</b> „click and collect” módban! Ez az adathordozhatóság.",
+               "PARAGRAPH_2": "Visszaszerezheted és máshol, egy versenytársnál is felhasználhatod őket, ha akarod. Ez vonatkozik a fotóidra, hangfelvételeidre vagy videóidra, vagy akár a jegyzeteidre egy jegyzetelő alkalmazásban a számítógépeden."
+            }
+         }
+      }
+   },
+   "PROBLEMS": {
+      "DELETE_CONTENT": {
+         "CARD": {
+            "FIRST_TITLE": "TARTALOM TÖRLÉSE",
+            "SECOND_TITLE": "Tartalmat szeretnék törölni",
+            "DESCRIPTION": "Rólad készült fotó vagy videó eltávolításának kérése"
+         },
+         "TITLE": "Tartalmat szeretnék törölni",
+         "DESCRIPTION": "Zavar egy fotó, videó vagy hozzászólás, amiben szerepelsz? Az eltávolítása időbe telhet, de segítünk végigcsinálni.<span aria-hidden=\"true\">🗑</span>",
+         "REPORTED": {
+            "TITLE": "Jelentetted a tartalmat a közösségi oldalon / platformon?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Igen, <strong>már jelentettem a tartalmat</strong>",
+                  "ANSWER_2_TITLE": "Nem, <strong>még nem jelentettem a tartalmat</strong>"
+               }
+            }
+         },
+         "VIOLENT": {
+            "TITLE": "Erőszakos vagy intim tartalomról van szó?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Igen",
+                  "ANSWER_2_TITLE": "Nem"
+               }
+            }
+         },
+         "RESULTS": {
+            "REPORTED_CONTENT": {
+               "TITLE": "Már jelentetted a tartalmat?",
+               "P1": {
+                  "DESCRIPTION": "<span aria-hidden=\"true\">✅</span> Szép munka! <strong>Nagyon jó válasz</strong> volt jelenteni a tartalmat a platformnak. <br /><br /><span aria-hidden=\"true\">✅</span> A közösségi oldalak sok jelentést kapnak, és a moderálás időbe telik. De <strong>még azonnali válasz nélkül is</strong> fontos a jelentésed."
+               },
+               "P2": {
+                  "TITLE_PART1": "Javasoljuk, hogy tegyél panaszt a ",
+                  "TITLE_PART2": " felé, ha:",
+                  "TOOLTIP": "A nemzeti adatvédelmi hatóság, amely segít megvédeni az online magánéleted.",
+                  "DESCRIPTION1": "Kapcsolatba léptél a közösségi oldallal, és nem válaszoltak <strong>legalább 1 hónapig</strong>",
+                  "DESCRIPTION2": "A közösségi oldal válaszolt, de a válasz <strong>hiányos</strong> vagy <strong>nem kielégítő</strong>."
+               },
+               "BUTTON": "Panasz benyújtása",
+               "TUTORIAL": {
+                  "P1": {
+                     "TITLE": "Mi a <span class='text-(--color-24)'>CNIL</span> szerepe?",
+                     "DESCRIPTION": "Az adatvédelmi hatóság szerepe az, hogy megőrizze mindannyiunk szabadságát. Tanácsot ad és ellenőrzi a személyes adatok felhasználását cégek, adminisztrációk és egyesületek által."
+                  },
+                  "P2": {
+                     "TITLE": "Miért kell <span class='text-(--color-24)'>1 hónapot</span> várnom a válaszra? <span aria-hidden=\"true\">⏱️</span>",
+                     "DESCRIPTION": "Ez a törvényi határidő. Ez azt jelenti, hogy a törvény 1 hónapot ad a platformnak a válaszadásra (az Általános Adatvédelmi Rendelet, vagyis GDPR szerint)."
+                  },
+                  "P3": {
+                     "TITLE": "Mi az a <span class='text-(--color-24)'>hiányos vagy helytelen</span> válasz? <span aria-hidden=\"true\">📝</span>",
+                     "DESCRIPTION": "A platform nem vette figyelembe a teljes kérésedet, vagy a válasz nem felel meg annak, amit kértél."
+                  }
+               },
+               "COMPLAINT": {
+                  "TITLE": "Készítsd elő a bizonyítékokat",
+                  "DESCRIPTION": "Mentsd el a képernyőképeket minden lépésről, hasznosak lesznek egy esetleges panasz benyújtásához.",
+                  "P1": {
+                     "TITLE": "Példák képernyőképekre:",
+                     "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>A törlendő tartalom</strong><br />Képernyőkép a problémás szövegről, fotóról vagy videóról<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>A weboldal címe</strong><br />Link a weboldalra (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Információk a tartalmat közzétevő személyről</strong><br />Link a profiljára<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>A törlési kérelmed</strong><br />- Képernyőképek a szövegről, amelyben a törlést kéred<br />- Képernyőképek a válaszról (ha van)"
+                  },
+                  "BUTTON": "Ugrás az űrlaphoz"
+               }
+            },
+            "UNREPORTED_CONTENT": {
+               "TITLE": "Még nem jelentetted a tartalmat?",
+               "P1": {
+                  "TITLE": "Az első lépés, hogy jelentsd a közösségi oldalon.",
+                  "DESCRIPTION": "Gondosan őrizd meg a jelentésed minden bizonyítékát. Ha a közösségi oldal nem válaszol <strong>1 hónapon belül</strong>, panaszt tehetsz az adatvédelmi hatóságnál:"
+               },
+               "CONTACTS": {
+                  "TITLE": "Közösségi média kapcsolatok",
+                  "SOCIAL_MEDIA": {
+                     "INSTAGRAM": {
+                        "TITLE": "Instagram",
+                        "LINK": {
+                           "TITLE": "Magánélet megsértésének jelentése az Instagramon vagy a Threads-en",
+                           "DESCRIPTION": "https://help.instagram.com/contact/512241091300432"
+                        },
+                        "BUTTON": "Hogyan töltsd ki az űrlapot?"
+                     },
+                     "SNAPCHAT": {
+                        "TITLE": "Snapchat",
+                        "LINK": {
+                           "TITLE": "Visszaélés vagy illegális tartalom jelentése a Snapchaten",
+                           "DESCRIPTION": "https://help.snapchat.com/hc/en-gb/articles/7012399221652-How-do-I-report-abuse-or-illegal-content-on-Snapchat"
+                        },
+                        "MAIL": {
+                           "TITLE": "Kapcsolatfelvétel a Snapchattel e-mailben",
+                           "DESCRIPTION": "dpo@snapchat.com"
+                        },
+                        "BUTTON": "Hogyan jelents valamit a Snapchaten"
+                     },
+                     "TIKTOK": {
+                        "TITLE": "TikTok",
+                        "LINK": {
+                           "TITLE": "Adatvédelmi kérelem benyújtása",
+                           "DESCRIPTION": "https://www.tiktok.com/legal/report/privacy/webform/en"
+                        },
+                        "BUTTON": "Hogyan töltsd ki az űrlapot?"
+                     },
+                     "X": {
+                        "TITLE": "X",
+                        "LINK": {
+                           "TITLE": "X adatvédelmi irányelvekkel kapcsolatos kérdések",
+                           "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                        },
+                        "BUTTON": "Hogyan töltsd ki az űrlapot?"
+                     },
+                     "FACEBOOK": {
+                        "TITLE": "Facebook",
+                        "LINK": {
+                           "TITLE": "Kapcsolatfelvételi űrlapok",
+                           "DESCRIPTION": "https://www.facebook.com/help/contact/954059743194940"
+                        },
+                        "BUTTON": "Hogyan töltsd ki az űrlapot?"
+                     }
+                  }
+               },
+               "FACEBOOK": {
+                  "TITLE": "Hogyan töltsd ki az űrlapot? - Facebook",
+                  "DESCRIPTION": "Íme, mit kell tenned az alábbi űrlap kitöltéséhez:",
+                  "P1": {
+                     "TITLE": "1. Válaszd ki az országot, ahol élsz a „Please select your country” alatt"
+                  },
+                  "P2": {
+                     "TITLE": "2. Írd be a vezetékneved és keresztneved:"
+                  },
+                  "P3": {
+                     "TITLE": "3. Add meg az e-mail címed"
+                  },
+                  "P4": {
+                     "TITLE": "4. Válaszd a „My Privacy” lehetőséget a „Whose privacy is being violated?” kérdésnél"
+                  },
+                  "P5": {
+                     "TITLE": "5. Válaszd a „Yes” lehetőséget az „Are you under the age of 18?” kérdésnél"
+                  },
+                  "P6": {
+                     "TITLE": "6. Válaszd a „Yes” lehetőséget, ha megvan a jelenteni kívánt tartalom URL-je"
+                  },
+                  "P7": {
+                     "TITLE": "7. Jelöld meg a tartalom típusát"
+                  },
+                  "P8": {
+                     "TITLE": "8. Illeszd be a jelentett tartalom URL-jét"
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Kapcsolatfelvételi űrlapok",
+                     "DESCRIPTION": "https://www.facebook.com/help/contact/954059743194940"
+                  }
+               },
+               "INSTAGRAM": {
+                  "TITLE": "Hogyan töltsd ki az űrlapot? - Instagram",
+                  "DESCRIPTION": "Íme, mit kell tenned az alábbi űrlap kitöltéséhez:",
+                  "P1": {
+                     "TITLE": "1. Válaszd ki az országot, ahol élsz"
+                  },
+                  "P2": {
+                     "TITLE": "2. Írd be a neved és vezetékneved"
+                  },
+                  "P3": {
+                     "TITLE": "3. Írd be az e-mail címed"
+                  },
+                  "P4": {
+                     "TITLE": "4. Válaszd a „Self” lehetőséget a „Who are you reporting for?” kérdésnél"
+                  },
+                  "P5": {
+                     "TITLE": "5. Válaszd a „Yes, I am under 18” lehetőséget"
+                  },
+                  "P6": {
+                     "TITLE": "6. Illeszd be a jelenteni kívánt tartalom URL-jét."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Magánélet megsértésének jelentése az Instagramon vagy a Threads-en",
+                     "DESCRIPTION": "https://help.instagram.com/contact/1716697545776727"
+                  }
+               },
+               "X": {
+                  "TITLE": "Hogyan töltsd ki az űrlapot - X",
+                  "DESCRIPTION": "Íme, mit kell tenned az alábbi űrlap kitöltéséhez:",
+                  "P1": {
+                     "TITLE": "1. Válaszd az „I want to ask a question regarding privacy on X” lehetőséget a „How can we help?” alatt"
+                  },
+                  "P2": {
+                     "TITLE": "2. Válaszd a „Delete X account data” lehetőséget a „Please tell us more” alatt"
+                  },
+                  "P3": {
+                     "TITLE": "3. Másold ki/illeszd be az alábbi példát a „Please enter your question” mezőbe, és a példában szereplő [...] helyére írd be a saját adataidat."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "X adatvédelmi irányelvekkel kapcsolatos kérdések",
+                     "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                  }
+               },
+               "TIKTOK": {
+                  "TITLE": "Hogyan töltsd ki az űrlapot? - TikTok",
+                  "DESCRIPTION": "Íme, mit kell tenned az alábbi űrlap kitöltéséhez:",
+                  "P1": {
+                     "TITLE": "1. Írd be az e-mail címed"
+                  },
+                  "P2": {
+                     "TITLE": "2. Válaszd ki az országot, ahol élsz"
+                  },
+                  "P3": {
+                     "TITLE": "3. Írd be a Tiktok felhasználóneved"
+                  },
+                  "P4": {
+                     "TITLE": "4. Válaszd az „Exercise your rights under data portection laws” lehetőséget a „Submit a request” alatt"
+                  },
+                  "P5": {
+                     "TITLE": "5. Válaszd az „I have a question about exercising privacy and data protection rights” lehetőséget a „Select a subcategory” alatt"
+                  },
+                  "P6": {
+                     "TITLE": "6. Másold ki/illeszd be az alábbi példát a „Please enter your question” mezőbe, és a példában szereplő [...] helyére írd be a saját adataidat."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "X adatvédelmi irányelvekkel kapcsolatos kérdések",
+                     "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                  }
+               },
+               "SNAPCHAT": {
+                  "TITLE": "E-mail példa - Snapchat",
+                  "DESCRIPTION": "A törlés kéréséhez kapcsolatba léphetsz az adatvédelmi tisztviselővel (DPO).",
+                  "P1": {
+                     "TITLE": "<span aria-hidden=\"true\">📝</span> A kapcsolattartó e-mail címe"
+                  }
+               },
+               "TEMPLATE_MESSAGE": {
+                  "TITLE": "<span aria-hidden=\"true\">📝</span> Példa elküldendő e-mailre",
+                  "DESCRIPTION": "Tisztelt Hölgyem/Uram!<br><br>Rólam szóló információk jelenleg megosztásra kerülnek az Önök weboldalán a következő oldalakon:<br><span style=\"color: var(--color-24);\">[A törölni kívánt tartalom URL-címe(i)]</span><br>. Ezért az Általános Adatvédelmi Rendelet (GDPR) 21.1 és 17.1.c cikkeinek alkalmazásában kérem, töröljék a következő rám vonatkozó személyes adatokat:<br><span style=\"color: var(--color-24);\">[a törlendő információk leírása]</span>.<br>Szeretném, ha ezeket az információkat törölnék, mert:<br><span style=\"color: var(--color-24);\">[törlés oka]</span><br>továbbá köszönöm, hogy megteszik a szükséges lépéseket annak biztosítására, hogy ezek az oldalak többé ne szerepeljenek a keresőmotorok találatai között (GDPR 17.2 cikke). Kérem, válaszukat a lehető leghamarabb, de legkésőbb a kérésem kézhezvételétől számított egy hónapon belül küldjék meg (GDPR 12.3 cikke).<br>Tisztelettel,"
+               }
+            },
+            "VIOLENT_CONTENT": {
+               "TITLE": "Erőszakos tartalomról van szó, vagy téged ábrázol meztelenül?",
+               "DESCRIPTION": "Erőszakos tartalom vagy szexuális tartalom terjesztése a beleegyezésed nélkül nagyon súlyos, és a felelős személy büntethető.",
+               "P1": {
+                  "TITLE": "Nem vagy egyedül",
+                  "DESCRIPTION": "Ami veled történik, nagyon nehéz lehet átélni, de az életben sosem vagy egyedül! Mindig vannak megoldások a dolgok megváltoztatására, és emberek, akik segítenek ezen átjutni. Beszélhetsz róla a szüleiddel, egy baráttal, családtaggal, tanárral vagy egy felnőttel, akiben megbízol.<span aria-hidden=\"true\">🤝</span>"
+               },
+               "P2": {
+                  "TITLE": "Segítség keresése",
+                  "DESCRIPTION": "<strong>Szakemberek</strong> is segíthetnek az <strong>országod forródrótján</strong>. Gyakran névtelenek, bizalmasak és ingyenesek. <span class=\"text-(--color-24)\"><strong>Hívj, amíg valaki fel nem veszi</strong>.</span>",
+                  "LINK": {
+                     "TITLE": "Beszélj egy forródróttal",
+                     "DESCRIPTION": "https://www.inhope.org/EN#hotlineReferral"
+                  },
+                  "CALL": {
+                     "TITLE": "Forródrót"
+                  },
+                  "MESSAGE": {
+                     "TITLE": "Forródrót"
+                  }
+               },
+               "P3": {
+                  "TITLE": "Tegyél panaszt",
+                  "DESCRIPTION": "A hivatalos panasz lehetővé teszi, hogy jelentse a hatóságoknak azokat a tényeket, amelyeknek áldozata vagy. Panaszt tehetsz a rendőrségen vagy postai úton.",
+                  "LINK": {
+                     "TITLE": "Ma Sécurité | Ma Sécurité",
+                     "DESCRIPTION": "https://www.masecurite.interieur.gouv.fr/fr"
+                  }
+               },
+               "BUTTON": {
+                  "REPORTED": "Hivatalos panasz benyújtása az országod adatvédelmi hatóságához",
+                  "UNREPORTED": "Tartalom jelentése"
+               }
+            }
+         }
+      },
+      "HACKING": {
+         "CARD": {
+            "FIRST_TITLE": "FELTÖRT FIÓK",
+            "SECOND_TITLE": "A fiókomat feltörték",
+            "DESCRIPTION": "Fiók visszaállítása vagy más"
+         },
+         "TITLE": "A fiókomat feltörték",
+         "DESCRIPTION": "A fiókod magától kijelentkezett, vagy tartalom jelenik meg magától. Lehet, hogy feltörték.",
+         "TUTORIAL": {
+            "P1": {
+               "EMOJI": "<span aria-hidden=\"true\">❌</span>",
+               "CONTENT": "A fiókom magától <strong>kijelentkezett</strong>, és nem férek hozzá többé"
+            },
+            "P2": {
+               "EMOJI": "<span aria-hidden=\"true\">🖼</span>️",
+               "CONTENT": "<Valamilyen <strong>tartalom</strong> jelent meg a falon, de nem én tettem közzé"
+            },
+            "P3": {
+               "EMOJI": "<span aria-hidden=\"true\">🔒</span>",
+               "CONTENT": "A <strong>jelszavam</strong> már nem működik"
+            },
+            "P4": {
+               "EMOJI": "<span aria-hidden=\"true\">📩</span>",
+               "CONTENT": "A barátaimat állítólag én kerestem meg, de nem én küldtem nekik az <strong>üzenetet</strong>"
+            },
+            "P5": {
+               "CONTENT": "<strong>Akkor lehet, hogy a fiókodat feltörték</strong>"
+            }
+         },
+         "SITUATION": {
+            "TITLE": "Mi a helyzeted?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Még <strong>van hozzáférésem</strong> a fiókomhoz",
+                  "ANSWER_2_TITLE": "Már <strong>nincs hozzáférésem</strong> a fiókomhoz"
+               }
+            }
+         },
+         "RESULTS": {
+            "HAVE_ACCESS": {
+               "TITLE": "Még van hozzáférésem a fiókomhoz",
+               "DESCRIPTION": "Néhány lépés a fiókod irányításának visszaszerzéséhez",
+               "ACTIONS": {
+                  "IMMEDIATELY": {
+                     "TITLE": "Most teendő <span aria-hidden=\"true\">⏱️</span>",
+                     "A1": {
+                        "TITLE": "Változtasd meg a jelszavad",
+                        "SHORT_DESCRIPTION": "Azonnal hozz létre egy erős jelszót",
+                        "LONG_DESCRIPTION": "Azonnal hozz létre egy erős jelszót a fiókodhoz. A FantomApp segíthet ellenőrizni, hogy a jelszavad könnyen kitalálható-e."
+                     },
+                     "A2": {
+                        "TITLE": "Kétfaktoros hitelesítés engedélyezése",
+                        "SHORT_DESCRIPTION": "Adj hozzá egy extra biztonsági kódot",
+                        "LONG_DESCRIPTION": "A kétfaktoros hitelesítés extra védelmet nyújt a fiókodnak. Még ha valaki meg is találja a jelszavad, nem tud bejelentkezni egy második kód nélkül (amit SMS-ben vagy alkalmazáson keresztül kapsz meg).<br /><span aria-hidden=\"true\">👉</span> Ez olyan, mint egy második zár az ajtódon."
+                     },
+                     "A3": {
+                        "TITLE": "Ellenőrizd az adataidat",
+                        "SHORT_DESCRIPTION": "Ellenőrizd, hogy az e-mail címed és a telefonszámod nem változott-e meg",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📲</span> Módosultak a kapcsolataid, a bejegyzéseid vagy a banki adataid (ha megadtad őket)?<br /><br />Ha olyan telefonszámot vagy címet látsz, amit nem ismersz fel:<ul style='list-style: disc; margin-left: 2rem;'><li>Készíts képernyőképet bizonyítékként.</li><li>Azonnal változtasd meg őket</li></ul>"
+                     },
+                     "A4": {
+                        "TITLE": "Ellenőrizd, ki csatlakozik a fiókodhoz",
+                        "SHORT_DESCRIPTION": "Ellenőrizd, hogy vannak-e ismeretlen eszközök csatlakoztatva a fiókodhoz",
+                        "LONG_DESCRIPTION": "Menj a fiókbeállításokhoz, és jelentkezz ki minden eszközről, ami eddig engedélyezve volt.<br /><span aria-hidden=\"true\">❌</span>  Ha olyan eszközt vagy kapcsolatot látsz, amit nem ismersz fel:<ul style='list-style: disc; margin-left: 2rem;'><li>Készíts képernyőképet bizonyítékként</li><li>Azonnal jelentkezz ki</li></ul>"
+                     }
+                  },
+                  "LATER": {
+                     "TITLE": "Később teendő",
+                     "A1": {
+                        "TITLE": "Értesítsd barátaidat és kapcsolataidat",
+                        "SHORT_DESCRIPTION": "Lehet, hogy furcsa üzeneteket kapnak vagy kaptak",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📢</span>  Mondd el a kapcsolataidnak (barátok, család...), hogy a fiókodat feltörték.<br /><span aria-hidden=\"true\">⚠️</span> Lehet, hogy üzeneteket kapnak valakitől, aki neked adja ki magát. Mondd meg nekik, hogy ne válaszoljanak, és ne kattintsanak semmilyen linkre."
+                     },
+                     "A2": {
+                        "TITLE": "Változtasd meg a többi jelszavadat is",
+                        "SHORT_DESCRIPTION": "Védd meg a többi fiókodat",
+                        "LONG_DESCRIPTION": "Ha ugyanazt a jelszót használod más weboldalakon vagy alkalmazásokban, változtasd meg ott is.<br /><span aria-hidden=\"true\">👉</span> Ez megakadályozza, hogy más fiókokat is feltörjenek."
+                     },
+                     "A3": {
+                        "TITLE": "Értesítsd a bankodat",
+                        "SHORT_DESCRIPTION": "Cselekedj, ha a banki adataid a fiókodban voltak",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Ha a <strong>banki adataid</strong> (például a kártyaszámod) elérhetők voltak a feltört fiókban, azonnal szólnod kell egy felnőttnek.<br /> A lehető leghamarabb <strong>értesítened kell a bankodat</strong>, és szükség esetén le kell tiltanod a kártyádat, hogy megakadályozz bármilyen lopást."
+                     },
+                     "A4": {
+                        "TITLE": "Használj jelszókezelőt",
+                        "SHORT_DESCRIPTION": "A jelszavaid biztonsága érdekében",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> A jelszókezelő egy alkalmazás vagy eszköz a telefonodon, amely biztonságban tartja az összes jelszavadat. Nagyon erős jelszavakat is létrehozhat minden weboldalhoz vagy alkalmazáshoz, és automatikusan kitölti őket, amikor bejelentkezel.<br /><span aria-hidden=\"true\">👉</span> Ez olyan, mint egy digitális széf az összes fiókodhoz."
+                     },
+                     "A5": {
+                        "TITLE": "Soha ne oszd meg a jelszavadat",
+                        "SHORT_DESCRIPTION": "A legjobb, ha megtartod magadnak",
+                        "LONG_DESCRIPTION": "Valaki elolvashatná az üzeneteidet, posztolhatna a nevedben, vagy ellophatná a fiókodat.<br />A jelszavad személyes, akárcsak a telefonod jelkódja."
+                     }
+                  }
+               }
+            },
+            "NO_ACCESS": {
+               "TITLE": "Már nincs hozzáférésem a fiókomhoz",
+               "CONTACT": {
+                  "TITLE": "<span aria-hidden=\"true\">✉</span>️ Lépj kapcsolatba a közösségi oldallal",
+                  "DESCRIPTION": "Kezdd azzal, hogy felveszed a kapcsolatot a közösségi oldallal, és jelented, hogy a fiókodat feltörték.<br /><span aria-hidden=\"true\">➡</span>️ Kattints az általad használt közösségi oldal linkjére."
+               },
+               "SOCIAL_MEDIA": {
+                  "INSTAGRAM": {
+                     "TITLE": "Instagram",
+                     "LINK": {
+                        "TITLE": "Segítségkérés benyújtása az Instagramon",
+                        "DESCRIPTION": "https://www.instagram.com/hacked/"
+                     }
+                  },
+                  "SNAPCHAT": {
+                     "TITLE": "Snapchat",
+                     "LINK": {
+                        "TITLE": "Kérelem benyújtása – Snapchat Támogatás",
+                        "DESCRIPTION": "https://help.snapchat.com/hc/en-gb/requests/new?co=true&tf_29335679682068=cant_access_account_reason_compromised&ticket_form_id=76586"
+                     }
+                  },
+                  "TIKTOK": {
+                     "TITLE": "TikTok",
+                     "LINK": {
+                        "TITLE": "Probléma jelentése | TikTok",
+                        "DESCRIPTION": "https://www.tiktok.com/legal/report/feedback"
+                     }
+                  },
+                  "X": {
+                     "TITLE": "X",
+                     "LINK": {
+                        "TITLE": "A fiókot feltörték vagy kompromittálódott",
+                        "DESCRIPTION": "https://help.x.com/en/forms/account-access/appeals"
+                     }
+                  },
+                  "FACEBOOK": {
+                     "TITLE": "Facebook",
+                     "LINK": {
+                        "TITLE": "Segítségkérés benyújtása a Facebookon",
+                        "DESCRIPTION": "https://www.facebook.com/hacked?ref=helpcenter"
+                     }
+                  }
+               },
+               "RECOMMENDATIONS": {
+                  "TITLE": "<span aria-hidden=\"true\">👍</span> Kövesd ezeket az ajánlásokat",
+                  "DESCRIPTION": "Még ha már nincs is hozzáférésed a fiókodhoz, akkor is tehetsz lépéseket. Ezek a lépések segítenek megvédeni magad, és megakadályozni, hogy ez újra megtörténjen.",
+                  "ACTIONS": {
+                     "LATER": {
+                        "A1": {
+                           "TITLE": "Értesítsd barátaidat és kapcsolataidat",
+                           "SHORT_DESCRIPTION": "Lehet, hogy furcsa üzeneteket kapnak vagy kaptak",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📢</span> Mondd el a kapcsolataidnak (barátok, család...), hogy a fiókodat feltörték.<br /><span aria-hidden=\"true\">⚠️</span> Lehet, hogy üzeneteket kapnak valakitől, aki neked adja ki magát. Mondd meg nekik, hogy ne válaszoljanak, és ne kattintsanak semmilyen linkre."
+                        },
+                        "A2": {
+                           "TITLE": "Változtasd meg a többi jelszavadat is",
+                           "SHORT_DESCRIPTION": "Védd meg a többi fiókodat",
+                           "LONG_DESCRIPTION": "Ha ugyanazt a jelszót használod más weboldalakon vagy alkalmazásokban, változtasd meg ott is.<br /><span aria-hidden=\"true\">👉</span> Ez megakadályozza, hogy más fiókokat is feltörjenek."
+                        },
+                        "A3": {
+                           "TITLE": "Értesítsd a bankodat",
+                           "SHORT_DESCRIPTION": "Cselekedj, ha a banki adataid a fiókodban voltak",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Ha a <strong>banki adataid</strong> (például a kártyaszámod) elérhetők voltak a feltört fiókban, azonnal szólnod kell egy felnőttnek.<br /> A lehető leghamarabb <strong>értesítened kell a bankodat</strong>, és szükség esetén le kell tiltanod a kártyádat, hogy megakadályozz bármilyen lopást."
+                        },
+                        "A4": {
+                           "TITLE": "Használj jelszókezelőt",
+                           "SHORT_DESCRIPTION": "A jelszavaid biztonsága érdekében",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> A jelszókezelő egy alkalmazás vagy eszköz a telefonodon, amely biztonságban tartja az összes jelszavadat. Nagyon erős jelszavakat is létrehozhat minden weboldalhoz vagy alkalmazáshoz, és automatikusan kitölti őket, amikor bejelentkezel.<br /><span aria-hidden=\"true\">👉</span> Ez olyan, mint egy digitális széf az összes fiókodhoz."
+                        },
+                        "A5": {
+                           "TITLE": "Soha ne oszd meg a jelszavaidat",
+                           "SHORT_DESCRIPTION": "A legjobb, ha megtartod magadnak",
+                           "LONG_DESCRIPTION": "Valaki elolvashatná az üzeneteidet, posztolhatna a nevedben, vagy ellophatná a fiókodat.<br />A jelszavad személyes, akárcsak a telefonod jelkódja."
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "TOOLS": {
+      "TITLE": "Eszközök",
+      "PASSWORD_CHECK_TITLE": "Jelszó tesztelése",
+      "PASSWORD_CHECK_DESCRIPTION": "Mennyi időbe telik, amíg feltörik?",
+      "BLUR_IMAGE_TITLE": "Kép anonimizálása",
+      "BLUR_IMAGE_DESCRIPTION": "Profilkép elhomályosítása",
+      "VISIBILITY_CHECK_TITLE": "Láthatóság tesztelése",
+      "VISIBILITY_CHECK_DESCRIPTION": "Mit árul el rólam a felhasználónevem és a biográfiám?",
+      "VISIBILITY_CHECK": {
+         "TITLE": "Láthatóság tesztelése",
+         "DESCRIPTION": "Azonosíthat valaki a felhasználónevem és a biográfiám alapján?",
+         "PSEUDO": {
+            "TITLE": "Mi van a felhasználónevedben?",
+            "IDENTITY": {
+               "TITLE": "<span aria-hidden=\"true\">🪪</span> Személyazonosság",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Teljes nevem vagy vezetéknevem",
+                  "ANSWER_1_DESCRIPTION": "(példa: Martin)",
+                  "ANSWER_2_TITLE": "Rövidített nevem vagy vezetéknevem.",
+                  "ANSWER_2_DESCRIPTION": "(példa: Mrt1)",
+                  "ANSWER_3_TITLE": "Becenevem",
+                  "ANSWER_4_TITLE": "Születési dátumom"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "<span aria-hidden=\"true\">🗺</span>️Földrajzi vagy kulturális eredet",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Irányítószámom",
+                  "ANSWER_1_DESCRIPTION": "(példa: 34 vagy 49300)",
+                  "ANSWER_2_TITLE": "Hol élek, vagy honnan származom",
+                  "ANSWER_2_DESCRIPTION": "(Város, régió, ország, zászló emoji.)"
+               }
+            }
+         },
+         "BIO": {
+            "TITLE": "Mi van a biográfiádban?",
+            "EMPTY": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Semmit nem írtam a biográfiámba"
+               }
+            },
+            "IDENTITY": {
+               "TITLE": "<span aria-hidden=\"true\">🪪</span> Személyazonosság",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Teljes nevem vagy vezetéknevem",
+                  "ANSWER_1_DESCRIPTION": "(példa: Martin)",
+                  "ANSWER_2_TITLE": "Rövidített nevem vagy vezetéknevem.",
+                  "ANSWER_2_DESCRIPTION": "(példa: Mrt1)",
+                  "ANSWER_3_TITLE": "Becenevem",
+                  "ANSWER_4_TITLE": "Születési dátumom"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "<span aria-hidden=\"true\">🗺</span>️ Földrajzi vagy kulturális eredet",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Irányítószámom",
+                  "ANSWER_1_DESCRIPTION": "(példa: 34 vagy 49300)",
+                  "ANSWER_2_TITLE": "Hol élek, vagy honnan származom",
+                  "ANSWER_2_DESCRIPTION": "(Város, régió, ország, zászló emoji.)"
+               }
+            },
+            "DIGITAL_LIFE": {
+               "TITLE": "<span aria-hidden=\"true\">👥</span> Digitális élet",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Linkek a többi közösségi média fiókomra.",
+                  "ANSWER_1_DESCRIPTION": "(X, Instagram, TikTok, Snapchat).",
+                  "ANSWER_2_TITLE": "A közeli köröm fiókjai",
+                  "ANSWER_2_DESCRIPTION": "(Barátok, család, partner...)"
+               }
+            },
+            "INTEREST": {
+               "TITLE": "<span aria-hidden=\"true\">🎭</span> Érdeklődési körök",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Link a klubomra vagy egy egyesületre, amelynek tagja vagyok.",
+                  "ANSWER_1_DESCRIPTION": "(pl.: @VolleyValences)"
+               }
+            },
+            "EDUCATION_PRO": {
+               "TITLE": "<span aria-hidden=\"true\">🏫</span> Oktatás vagy foglalkozás",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Az iskolám vagy cégem említése.",
+                  "ANSWER_2_TITLE": "Készségeim vagy tanulmányaim",
+                  "ANSWER_2_DESCRIPTION": "(Péktanuló, Orvostanhallgató…)"
+               }
+            }
+         },
+         "RESULTS": {
+            "TITLE": "Eredményeid",
+            "SUMMARY": {
+               "GOOD": {
+                  "TITLE": "Szép munka! <span aria-hidden=\"true\">🥷</span>",
+                  "CONTENT": "A profilod nem teszi lehetővé, hogy megtudják, ki vagy a közösségi médiában vagy offline."
+               },
+               "OK": {
+                  "TITLE": "Nem rossz! <span aria-hidden=\"true\">🥸</span>",
+                  "CONTENT": "Még mindig vannak nyomok, hogy kitalálják, ki vagy a valóságban. Itt még kevesebb információt adhatsz meg magadról:"
+               },
+               "BAD": {
+                  "TITLE": "Vigyázz! <span aria-hidden=\"true\">🧐</span>",
+                  "CONTENT": "A profilod sok információt tartalmaz rólad. Légy óvatos, egyesek felhasználhatják ezeket az információkat, a barátaidnak adhatják ki magukat, vagy kárt tehetnek a hírnevedben."
+               }
+            },
+            "PSEUDO": {
+               "TITLE": "A felhasználóneved azt jelzi"
+            },
+            "BIO": {
+               "TITLE": "A biográfiád azt jelzi"
+            },
+            "STATE": {
+               "PUBLIC": "NYILVÁNOS <span aria-hidden=\"true\">👀</span>",
+               "DISCREET": "DISZKRÉT <span aria-hidden=\"true\">🙈</span>️",
+               "INVISIBLE": "LÁTHATATLAN <span aria-hidden=\"true\">👻</span>"
+            },
+            "NO_PERSONAL_INFO": "Nincs személyes infó!"
+         }
+      },
+      "BLUR_IMAGE": {
+         "TITLE": "Kép anonimizálása",
+         "DESCRIPTION": "Profilkép elhomályosítása vagy pixelezése az online azonosítás korlátozása érdekében.",
+         "EDITING_TITLE": "Az importált fénykép szerkesztési területe",
+         "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Tanács</strong>: Ha elhomályosítod a képedet, hogy profilképként használd, ne használd fel máshol elhomályosítás nélkül<br /><span aria-hidden=\"true\"><span aria-hidden=\"true\">💡</span></span> <strong>Jó tudni</strong>: A FantomApp nem ment el semmilyen fényképet, amit ide importálsz",
+         "UPLOAD_IMAGE": "Kép importálása <span aria-hidden=\"true\">🤳</span>",
+         "BLUR": "Elhomályosítás",
+         "PIXELATE": "Pixelezés",
+         "ALL_BLUR": "Mindent elhomályosít",
+         "BRUSH_SIZE": "Elhomályosítás mérete",
+         "GLOBAL_BLUR_INFO": "Ezzel a gombbal az egész képet elhomályosíthatod. A gombra kattintva megnyílik az elhomályosítási százalékok listája az intenzitás kiválasztásához.",
+         "MODIFICATION_DONE": "Módosítás befejezve",
+         "TUTORIAL": {
+            "DESCRIPTION": "Csúsztasd az ujjad a képen az elhomályosításhoz."
+         }
+      },
+      "PASSWORD_CHECK": {
+         "TITLE": "Jelszó tesztelése",
+         "DESCRIPTION_PART1": "Mennyi időbe telik egy kiberbűnözőnek feltörni",
+         "DESCRIPTION_PART2": "segítségével?",
+         "FOCUS_ACCESSIBLE_TITLE": "Jelszó tesztelése - beviteli mező",
+         "DESCRIPTION_TOOLTIP": {
+            "TITLE": "brute force",
+            "CONTENT": "A <strong>brute force (nyers erő) támadás</strong> abból áll, hogy egyenként tesztelik a jelszó minden lehetséges kombinációját. (forrás: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
+         },
+         "CRIMINAL_GUESSES": "Egy kiberbűnöző ennyi idő alatt találja ki:",
+         "ASSESSMENT_TEXT": "A jelszavad:",
+         "INPUT_LABEL": "Jelszó",
+         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Tartalmazza a <strong>keresztnevemet</strong>, <strong>vezetéknevemet</strong> vagy <strong>könnyen kitalálható szavakat</strong>",
+         "COPY_PASSWORD": "Jelszó másolása",
+         "COPIED": "Másolva!",
+         "BADGES": {
+            "IMMEDIATE": "AZONNALI <span aria-hidden=\"true\">⚠️</span>",
+            "RAPID": "MÉG JOBBAN IS TUDOD CSINÁLNI <span aria-hidden=\"true\">👇</span>",
+            "CORRECT": "EZ OKÉ <span aria-hidden=\"true\">🙂</span>",
+            "SUPER": "EZ SZUPER <span aria-hidden=\"true\">😎</span>"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "Legalább 12 karakter",
+            "UPPERCASE": "Legalább 1 nagybetű",
+            "LOWERCASE": "Legalább 1 kisbetű",
+            "DIGIT": "Legalább 1 szám",
+            "SPECIAL_CHAR": "Legalább 1 speciális karakter",
+            "NO_EASY_CLUES": "Nincsenek könnyű nyomok (vezetéknév, keresztnév, gyakori szó)",
+            "CRITERIA_VALIDATED": "Kritérium teljesítve",
+            "CRITERIA_NOT_VALIDATED": "Kritérium nem teljesült"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "Milyen a jó jelszó?",
+            "TEST_PASSWORD": "Jelszó tesztelése <span aria-hidden=\"true\">🔒</span>",
+            "STRENGTHEN_PASSWORD": "Jelszó megerősítése"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Hogyan működik?",
+               "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>1. lépés</strong>: Írd be a jelszavad a kijelölt mezőbe.",
+               "STEP_2": "<span aria-hidden=\"true\">🧪</span> <strong>2. lépés</strong>: Kattints a \"Jelszó tesztelése\" gombra.",
+               "STEP_3": "⏱️ <strong>3. lépés</strong>: És kész is! Láthatod, mennyi ideig tartana egy kiberbűnözőnek feltörni a jelszavadat… és hozzáférni a személyes adataidhoz!",
+               "NOTE": "A FantomApp nem tárol semmilyen információt.",
+               "UNDERSTOOD": "Értem"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Egy erős jelszó:",
+               "CLOSE": "Bezárás",
+               "REQUIREMENTS_LIST": "Követelmények listája az erős jelszóhoz",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 karakter",
+                  "DIGITS": "1 vagy több szám",
+                  "UPPERCASE": "nagybetűk",
+                  "LOWERCASE": "kisbetűk",
+                  "SPECIAL_CHARS": "speciális karakterek (*, @, !)"
+               },
+               "WARNINGS_SECTION": "Tippek a biztonságos jelszó kiválasztásához",
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "<span aria-hidden=\"true\">🏴☠️</span>‍ A kiberbűnözők az összes létező <strong>szóadatbázist</strong> használják, minden nyelven.",
+                  "NO_DICTIONARY": "<span aria-hidden=\"true\">⛔</span>‍ Ne használj szótári szavakat, a nevedet vagy vezetéknevedet a jelszó létrehozásához"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Azonnali",
+            "MINUTES": "perc",
+            "HOURS": "óra",
+            "DAY": "nap",
+            "DAYS": "nap",
+            "WEEK": "hét",
+            "WEEKS": "hét",
+            "MONTH": "hónap",
+            "MONTHS": "hónap",
+            "YEAR": "év",
+            "YEARS": "év",
+            "THOUSAND_YEARS": "ezer év",
+            "MILLION_YEARS": "millió év",
+            "BILLION_YEARS": "milliárd év",
+            "TRILLION_YEARS": "billió év",
+            "QUADRILLION_YEARS": "billiárd év",
+            "QUINTILLION_YEARS": "trillió év"
+         }
+      }
+   },
+   "SECURE_MYSELF": {
+      "VIEW_ALL": {
+         "TUTORIAL": {
+            "TITLE": "Hogyan működik?",
+            "DESCRIPTION": "Ha megváltoztattál egy beállítást, jelöld be a négyzetet, <strong>hogy emlékeztesd magad</strong>, mit biztosítottál már a fiókodban!"
+         }
+      }
+   },
+   "ALT_TEXT": {
+      "HEADER": {
+         "CURRENT_LANGUAGE": "Jelenlegi nyelv: {{language}}",
+         "CURRENT_DEVICE": "Jelenlegi eszköz: {{device}}"
+      },
+      "CONTACT": {
+         "PHONE": "Kapcsolatfelvétel telefonon",
+         "WHATSAPP": "Kapcsolatfelvétel WhatsApp-on",
+         "SMS": "Kapcsolatfelvétel SMS-ben",
+         "EMAIL": "Kapcsolatfelvétel e-mailben",
+         "SUPPORT_3018": "Beszélj a forródróttal"
+      },
+      "GENERAL": {
+         "FLAG": "Zászló"
+      },
+      "COUNTRIES": {
+         "FRANCE": "Francia",
+         "IRELAND": "Angol",
+         "HUNGARY": "Magyar",
+         "GREECE": "Görög",
+         "DENMARK": "Dán",
+         "POLAND": "Lengyel",
+         "PORTUGAL": "Portugál",
+         "SPAIN": "Spanyol",
+         "CATALONIA": "Katalán",
+         "LUXEMBOURG": "Luxemburgi",
+         "INTERNATIONAL": "Nemzetközi"
+      },
+      "TOOLS": {
+         "PASSWORD_CHECK": {
+            "CRITERIA": {
+               "CRITERIA_VALIDATED": "tartalmazza",
+               "CRITERIA_NOT_VALIDATED": "nem tartalmazza"
+            },
+            "INPUT": {
+               "EYE_BUTTON": {
+                  "SHOW": "Jelszó megjelenítése",
+                  "HIDE": "Jelszó elrejtése"
+               },
+               "COPY_BUTTON": {
+                  "COPY": "Jelszó másolása"
+               }
+            }
+         },
+         "BLUR_IMAGE": {
+            "IMAGE_ALT": "Fénykép importálása"
+         }
+      },
+      "ENRICHED_LINK": {
+         "ARIA_LABEL": "Külső oldalra átirányító link"
+      },
+      "TILE_CALL": {
+         "ARIA_LABEL": "Telefonhívás funkcióra átirányító link"
+      },
+      "TILE_MESSAGE": {
+         "ARIA_LABEL": "SMS küldés funkcióra átirányító link"
+      },
+      "ONBOARDING": {
+         "LOGO_FANTOMAPP": "FantomApp"
+      }
+   }
+}

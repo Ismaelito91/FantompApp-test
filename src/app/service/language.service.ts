@@ -160,7 +160,7 @@ export class LanguageService {
          const xx = this.supportedLanguages.find((l) => l.code === "XX");
          this.setLanguage(xx?.code ?? this.supportedLanguages[0].code);
       }
-      this.translateService.use(this.currentLang().toLowerCase());
+      this.translateService.use(this.getTranslateLocale(this.currentLang()));
    }
 
    public get language(): Signal<SupportedLanguage> {
@@ -261,7 +261,7 @@ export class LanguageService {
    }
 
    private getTranslateLocale(lang: SupportedLanguage): string {
-      if (lang === "SE") return "sv";
-      return lang.toLowerCase();
+      const entry = this.allLanguages.find((l) => l.code === lang);
+      return entry?.lang ?? lang.toLowerCase();
    }
 }
