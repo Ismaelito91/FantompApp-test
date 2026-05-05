@@ -123,7 +123,7 @@ export class LanguageService {
          countryName: CountryRegion.XX,
          flagUrl: "",
          flagAltKey: "ALT_TEXT.COUNTRIES.INTERNATIONAL",
-         lang: "en",
+         lang: "xx",
       },
    ];
 
