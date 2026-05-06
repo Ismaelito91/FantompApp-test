@@ -261,7 +261,11 @@ export class LanguageService {
    }
 
    private getTranslateLocale(lang: SupportedLanguage): string {
-      const entry = this.allLanguages.find((l) => l.code === lang);
-      return entry?.lang ?? lang.toLowerCase();
+      const codeToLocale: Partial<Record<SupportedLanguage, string>> = {
+         SE: "sv",
+         GR: "el",
+         XX: "xx",
+      };
+      return codeToLocale[lang] ?? lang.toLowerCase();
    }
 }
