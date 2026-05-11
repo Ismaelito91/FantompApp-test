@@ -1,5 +1,7 @@
 export enum CountryRegion {
    FR = "France",
+   BEFR = "Belgique",
+   BENL = "België",
    IE = "Éire",
    SK = "Slovensko",
    SE = "Sverige",
