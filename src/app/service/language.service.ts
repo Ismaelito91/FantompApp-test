@@ -12,7 +12,6 @@ interface LanguageEntry {
    flagAltKey?: string;
    lang: string;
    translateLocale?: string;
-   htmlLang?: string;
    browserLangGuard?: string;
 }
 
@@ -35,27 +34,24 @@ export class LanguageService {
          flagUrl: "assets/images/flag/france.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.FRANCE",
          lang: "fr",
-         htmlLang: "fr",
       },
       {
          code: "BEFR",
          languageName: "Français (Belgique)",
          countryName: CountryRegion.BEFR,
          flagUrl: "assets/images/flag/belgium.svg",
-         flagAltKey: "ALT_TEXT.COUNTRIES.BELGIUM",
+         flagAltKey: "ALT_TEXT.COUNTRIES.BELGIUM_FRENCH",
          lang: "fr-BE",
          translateLocale: "fr",
-         htmlLang: "fr-BE",
       },
       {
          code: "BENL",
          languageName: "Nederlands (België)",
          countryName: CountryRegion.BENL,
          flagUrl: "assets/images/flag/belgium.svg",
-         flagAltKey: "ALT_TEXT.COUNTRIES.BELGIUM",
+         flagAltKey: "ALT_TEXT.COUNTRIES.BELGIUM_DUTCH",
          lang: "nl-BE",
          translateLocale: "xx",
-         htmlLang: "nl-BE",
       },
       {
          code: "IE",
@@ -64,7 +60,6 @@ export class LanguageService {
          flagUrl: "assets/images/flag/Ireland.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.IRELAND",
          lang: "en-IE",
-         htmlLang: "en",
          browserLangGuard: "en",
       },
       {
@@ -142,7 +137,6 @@ export class LanguageService {
          flagAltKey: "ALT_TEXT.COUNTRIES.CATALONIA",
          lang: "ca-ES",
          translateLocale: "ct",
-         htmlLang: "es",
       },
       {
          code: "LU",
@@ -160,7 +154,6 @@ export class LanguageService {
          flagAltKey: "ALT_TEXT.COUNTRIES.INTERNATIONAL",
          lang: "en",
          translateLocale: "xx",
-         htmlLang: "en",
       },
    ];
 
@@ -221,7 +214,7 @@ export class LanguageService {
 
    public getHtmlLang(code: SupportedLanguage): string {
       const entry = this.getLanguageEntry(code);
-      return entry?.htmlLang ?? entry?.lang ?? "fr";
+      return entry?.lang ?? "fr";
    }
 
    private initLanguage(): void {

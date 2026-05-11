@@ -919,6 +919,8 @@
          "PORTUGAL": "Português",
          "SPAIN": "Español",
          "CATALONIA": "Català",
+         "BELGIUM_FRENCH": "Français (Belgique)",
+         "BELGIUM_DUTCH": "Nederlands (België)",
          "LUXEMBOURG": "Lëtzebuergesch",
          "INTERNATIONAL": "Medzinárodné"
       },

@@ -920,6 +920,8 @@
          "PORTUGAL": "Portugál",
          "SPAIN": "Spanyol",
          "CATALONIA": "Katalán",
+         "BELGIUM_FRENCH": "Français (Belgique)",
+         "BELGIUM_DUTCH": "Nederlands (België)",
          "LUXEMBOURG": "Luxemburgi",
          "INTERNATIONAL": "Nemzetközi"
       },

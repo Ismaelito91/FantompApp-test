@@ -900,7 +900,8 @@
          "PORTUGAL": "Português",
          "SPAIN": "Español",
          "CATALONIA": "Español",
-         "BELGIUM": "Belgium",
+         "BELGIUM_FRENCH": "Français (Belgique)",
+         "BELGIUM_DUTCH": "Nederlands (België)",
          "LUXEMBOURG": "Lëtzebuergesch",
          "INTERNATIONAL": "International"
       },

@@ -919,6 +919,8 @@
          "PORTUGAL": "Πορτογαλικά",
          "SPAIN": "Ισπανικά",
          "CATALONIA": "Καταλανικά",
+         "BELGIUM_FRENCH": "Français (Belgique)",
+         "BELGIUM_DUTCH": "Nederlands (België)",
          "LUXEMBOURG": "Λουξεμβουργιανά",
          "INTERNATIONAL": "Διεθνές"
       },
