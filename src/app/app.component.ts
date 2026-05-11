@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
       // Mettre à jour l'attribut lang sur <html> quand la langue change
       effect(() => {
          const langCode = this.languageService.language();
-         const htmlLang = this.mapLanguageCodeToHtmlLang(langCode);
+         const htmlLang = this.languageService.getHtmlLang(langCode);
          if (document.documentElement) {
             document.documentElement.lang = htmlLang;
          }
@@ -76,30 +76,11 @@ export class AppComponent implements OnInit {
          if (settings?.languages) {
             this.languageService.filterSupportedLanguages(settings.languages);
             // Mettre à jour les langues dans TranslateService après filtrage
-            const translateLocales =
-               this.languageService.supportedLanguages.map((l) => l.lang);
-            this.translateService.addLangs(translateLocales);
+            this.translateService.addLangs(
+               this.languageService.getAvailableTranslateLocales(),
+            );
          }
       });
-   }
-
-   private mapLanguageCodeToHtmlLang(langCode: string): string {
-      const langMap: Record<string, string> = {
-         FR: "fr",
-         IE: "en",
-         SK: "sk",
-         SE: "sv",
-         HU: "hu",
-         GR: "el",
-         DK: "da",
-         PL: "pl",
-         PT: "pt",
-         ES: "es",
-         CT: "es",
-         LU: "lb",
-         XX: "en",
-      };
-      return langMap[langCode] || "fr";
    }
 
    ngOnInit(): void {
@@ -140,9 +121,9 @@ export class AppComponent implements OnInit {
             });
          });
 
-      const translateLocales =
-         this.languageService.supportedLanguages.map((l) => l.lang);
-      this.translateService.addLangs(translateLocales);
+      this.translateService.addLangs(
+         this.languageService.getAvailableTranslateLocales(),
+      );
 
       // Langue par défaut pour les clés manquantes
       this.translateService.setDefaultLang("xx");
