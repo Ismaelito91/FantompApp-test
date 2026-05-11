@@ -9,9 +9,11 @@ interface LanguageEntry {
    languageName: string;
    countryName: string;
    flagUrl?: string;
-   flagEmoji?: string;
    flagAltKey?: string;
    lang: string;
+   translateLocale?: string;
+   htmlLang?: string;
+   browserLangGuard?: string;
 }
 
 @Injectable({
@@ -19,7 +21,12 @@ interface LanguageEntry {
 })
 export class LanguageService {
    private currentLang = signal<SupportedLanguage>("FR");
+   private readonly preferredWhenNoStrongMatch: SupportedLanguage[] = [
+      "XX",
+      "FR",
+   ];
 
+   // Source unique des langues: affichage, locale de traduction et règles de matching.
    private readonly allLanguages: LanguageEntry[] = [
       {
          code: "FR",
@@ -28,6 +35,27 @@ export class LanguageService {
          flagUrl: "assets/images/flag/france.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.FRANCE",
          lang: "fr",
+         htmlLang: "fr",
+      },
+      {
+         code: "BEFR",
+         languageName: "Français (Belgique)",
+         countryName: CountryRegion.BEFR,
+         flagUrl: "assets/images/flag/belgium.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.BELGIUM",
+         lang: "fr-BE",
+         translateLocale: "fr",
+         htmlLang: "fr-BE",
+      },
+      {
+         code: "BENL",
+         languageName: "Nederlands (België)",
+         countryName: CountryRegion.BENL,
+         flagUrl: "assets/images/flag/belgium.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.BELGIUM",
+         lang: "nl-BE",
+         translateLocale: "xx",
+         htmlLang: "nl-BE",
       },
       {
          code: "IE",
@@ -36,6 +64,8 @@ export class LanguageService {
          flagUrl: "assets/images/flag/Ireland.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.IRELAND",
          lang: "en-IE",
+         htmlLang: "en",
+         browserLangGuard: "en",
       },
       {
          code: "SK",
@@ -52,6 +82,7 @@ export class LanguageService {
          flagUrl: "assets/images/flag/Sweden.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.SWEDEN",
          lang: "sv",
+         translateLocale: "sv",
       },
       {
          code: "HU",
@@ -68,6 +99,7 @@ export class LanguageService {
          flagUrl: "assets/images/flag/grece.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.GREECE",
          lang: "el",
+         translateLocale: "el",
       },
       {
          code: "DK",
@@ -76,6 +108,7 @@ export class LanguageService {
          flagUrl: "assets/images/flag/dansk.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.DENMARK",
          lang: "da",
+         translateLocale: "dk",
       },
       {
          code: "PL",
@@ -108,6 +141,8 @@ export class LanguageService {
          flagUrl: "assets/images/flag/spain.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.CATALONIA",
          lang: "ca-ES",
+         translateLocale: "ct",
+         htmlLang: "es",
       },
       {
          code: "LU",
@@ -124,9 +159,12 @@ export class LanguageService {
          flagUrl: "",
          flagAltKey: "ALT_TEXT.COUNTRIES.INTERNATIONAL",
          lang: "en",
+         translateLocale: "xx",
+         htmlLang: "en",
       },
    ];
 
+   // Liste effectivement affichée (après filtre backend + tri navigateur).
    public supportedLanguages: LanguageEntry[] = this.allLanguages;
 
    constructor(private translateService: TranslateService) {
@@ -136,18 +174,19 @@ export class LanguageService {
 
    public setOverrideLang(lang: string | null) {
       const upper = (lang || "").toUpperCase();
-      if (upper !== "") {
-         this.setLanguage(upper as SupportedLanguage);
+      if (upper !== "" && this.isSupportedLanguage(upper)) {
+         this.setLanguage(upper);
       }
    }
 
+   // Applique les langues autorisées par l'API puis recalcule l'ordre d'affichage.
    public filterSupportedLanguages(enabledLanguages: string[]): void {
       if (!enabledLanguages || enabledLanguages.length === 0) {
          this.supportedLanguages = this.allLanguages;
       } else {
-         const enabledCodes = enabledLanguages.map((l) => l.toUpperCase());
+         const enabledCodes = new Set(enabledLanguages.map((l) => l.toUpperCase()));
          this.supportedLanguages = this.allLanguages.filter((lang) =>
-            enabledCodes.includes(lang.code),
+            enabledCodes.has(lang.code),
          );
       }
 
@@ -167,24 +206,41 @@ export class LanguageService {
       return computed(() => this.currentLang());
    }
 
+   public getAvailableTranslateLocales(): string[] {
+      const locales = this.supportedLanguages.map((l) =>
+         this.getTranslateLocale(l.code),
+      );
+      return [...new Set(locales)];
+   }
+
    public setLanguage(lang: SupportedLanguage): void {
       this.translateService.use(this.getTranslateLocale(lang));
       this.currentLang.set(lang);
       localStorage.setItem("lang", lang);
    }
 
-   private initLanguage(): void {
-      const savedLang = localStorage.getItem("lang") as SupportedLanguage;
-      this.setLanguage(savedLang || this.detectLanguageFromBrowser());
+   public getHtmlLang(code: SupportedLanguage): string {
+      const entry = this.getLanguageEntry(code);
+      return entry?.htmlLang ?? entry?.lang ?? "fr";
    }
 
+   private initLanguage(): void {
+      const savedLang = localStorage.getItem("lang");
+      const initialLang =
+         savedLang && this.isSupportedLanguage(savedLang)
+            ? savedLang
+            : this.detectLanguageFromBrowser();
+      this.setLanguage(initialLang);
+   }
+
+   // Compare la locale navigateur à chaque entrée pour déterminer la meilleure langue.
    private getBrowserLangs(): string[] {
+      if (typeof navigator === "undefined") return [];
       return (navigator.languages ?? [navigator.language]).map((l) =>
          l.toLowerCase(),
       );
    }
 
-   /** Score sur la 1re locale seulement (évite un 2e choix navigateur qui ferait matcher ex. FR). */
    private browserMatchScore(entry: LanguageEntry, primary: string): number {
       if (!primary) return 0;
       const tag = entry.lang.toLowerCase();
@@ -192,7 +248,8 @@ export class LanguageService {
       const parts = primary.split("-");
       if (primary === tag) return 3;
       if (parts.length >= 2 && parts[parts.length - 1] === code) {
-         if (code === "ie" && parts[0] !== "en") return 0;
+         const requiredLang = entry.browserLangGuard;
+         if (requiredLang && parts[0] !== requiredLang) return 0;
          return 2;
       }
       if (parts[0] === tag.split("-")[0]) return 1;
@@ -221,51 +278,44 @@ export class LanguageService {
       return score > 0 && code ? code : "XX";
    }
 
-   /**
-    * Pas de match fort (ou best = XX) : XX, FR, puis alphabétique.
-    * Match fort : langue détectée, XX, puis alphabétique.
-    */
+   // Priorité d'affichage: langue détectée + XX, sinon XX puis FR.
    private sortByBrowserPreference(): void {
       const { code: bestCode, score } = this.computeBestMatch();
-      const xx = this.supportedLanguages.find((l) => l.code === "XX");
-      const alphabetical = (list: LanguageEntry[]): LanguageEntry[] =>
-         [...list].sort((a, b) =>
-            a.countryName.localeCompare(b.countryName, "fr", {
-               sensitivity: "base",
-            }),
-         );
-
       if (!bestCode || score === 0 || bestCode === "XX") {
-         const fr = this.supportedLanguages.find((l) => l.code === "FR");
-         const rest = alphabetical(
-            this.supportedLanguages.filter(
-               (l) => l.code !== "XX" && l.code !== "FR",
-            ),
+         this.supportedLanguages = this.orderLanguages(
+            this.preferredWhenNoStrongMatch,
          );
-         this.supportedLanguages = [
-            ...(xx ? [xx] : []),
-            ...(fr ? [fr] : []),
-            ...rest,
-         ];
       } else {
-         const detected = this.supportedLanguages.find(
-            (l) => l.code === bestCode,
-         )!;
-         const rest = alphabetical(
-            this.supportedLanguages.filter(
-               (l) => l.code !== bestCode && l.code !== "XX",
-            ),
-         );
-         this.supportedLanguages = [detected, ...(xx ? [xx] : []), ...rest];
+         this.supportedLanguages = this.orderLanguages([bestCode, "XX"]);
       }
    }
 
    private getTranslateLocale(lang: SupportedLanguage): string {
-      const codeToLocale: Partial<Record<SupportedLanguage, string>> = {
-         SE: "sv",
-         GR: "el",
-         XX: "xx",
-      };
-      return codeToLocale[lang] ?? lang.toLowerCase();
+      const entry = this.getLanguageEntry(lang);
+      return entry?.translateLocale ?? lang.toLowerCase();
+   }
+
+   private getLanguageEntry(code: SupportedLanguage): LanguageEntry | undefined {
+      return this.allLanguages.find((l) => l.code === code);
+   }
+
+   private isSupportedLanguage(code: string): code is SupportedLanguage {
+      return this.allLanguages.some((l) => l.code === code);
+   }
+
+   // Place d'abord les langues prioritaires, puis trie le reste par pays.
+   private orderLanguages(priority: SupportedLanguage[]): LanguageEntry[] {
+      const prioritized = priority
+         .map((code) => this.supportedLanguages.find((l) => l.code === code))
+         .filter((l): l is LanguageEntry => Boolean(l));
+      const excludedCodes = new Set(prioritized.map((l) => l.code));
+      const rest = [...this.supportedLanguages]
+         .filter((l) => !excludedCodes.has(l.code))
+         .sort((a, b) =>
+            a.countryName.localeCompare(b.countryName, "fr", {
+               sensitivity: "base",
+            }),
+         );
+      return [...prioritized, ...rest];
    }
 }
