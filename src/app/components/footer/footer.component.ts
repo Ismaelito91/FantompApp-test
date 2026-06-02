@@ -8,6 +8,7 @@ import packageInfo from "../../../../package.json";
 import { SettingService } from "../../service/setting.service";
 import { ThemeService } from "../../service/theme.service";
 import { OnboardingService } from "../../service/onboarding.service";
+import { ZoomLayoutService } from "../../service/zoom-layout.service";
 
 @Component({
    selector: "app-footer",
@@ -99,6 +100,7 @@ export class FooterComponent {
    private _settingService = inject(SettingService);
    private themeService = inject(ThemeService);
    private onboardingService = inject(OnboardingService);
+   private readonly zoomLayout = inject(ZoomLayoutService);
 
    toolsInactiveIcon: string = "tools-clear-inactive";
    toolsActiveIcon: string = "tools-clear-active";
@@ -138,4 +140,8 @@ export class FooterComponent {
    isDarkMode = computed(() => {
       return this.themeService.isDark$();
    });
+
+   shouldUseZoomLayout(): boolean {
+      return this.zoomLayout.isZoomAtLeast(1.7);
+   }
 }
