@@ -18,6 +18,8 @@
       "BACK": "Πίσω",
       "NEXT": "Επόμενο",
       "PREVIOUS": "Προηγούμενο",
+      "CAROUSEL_PREVIOUS": "",
+      "CAROUSEL_NEXT": "",
       "RESULTS": "Αποτελέσματα",
       "HOME": "Αρχική",
       "PROBLEM": "Πρόβλημα",
@@ -799,6 +801,8 @@
          "BRUSH_SIZE": "Μέγεθος θολώματος",
          "GLOBAL_BLUR_INFO": "Μπορείς να θολώσεις ολόκληρη την εικόνα με αυτό το κουμπί. Πατώντας το ανοίγει μια λίστα ποσοστών θολώματος για να επιλέξεις την ένταση.",
          "MODIFICATION_DONE": "Η τροποποίηση ολοκληρώθηκε",
+         "UNDO": "",
+         "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Σύρε το δάχτυλό σου στην εικόνα για να τη θολώσεις."
          }
@@ -897,7 +901,8 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Τρέχουσα γλώσσα: {{language}}",
-         "CURRENT_DEVICE": "Τρέχουσα συσκευή: {{device}}"
+         "CURRENT_DEVICE": "Τρέχουσα συσκευή: {{device}}",
+         "NO_DEVICE_SELECTED": ""
       },
       "CONTACT": {
          "PHONE": "Επικοινωνία μέσω τηλεφώνου",

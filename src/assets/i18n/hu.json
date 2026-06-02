@@ -18,6 +18,8 @@
       "BACK": "Vissza",
       "NEXT": "Tovább",
       "PREVIOUS": "Előző",
+      "CAROUSEL_PREVIOUS": "",
+      "CAROUSEL_NEXT": "",
       "RESULTS": "Eredmények",
       "HOME": "Kezdőlap",
       "PROBLEM": "Probléma",
@@ -799,6 +801,8 @@
          "BRUSH_SIZE": "Elhomályosítás mérete",
          "GLOBAL_BLUR_INFO": "Ezzel a gombbal az egész képet elhomályosíthatod. A gombra kattintva megnyílik az elhomályosítási százalékok listája az intenzitás kiválasztásához.",
          "MODIFICATION_DONE": "Módosítás befejezve",
+         "UNDO": "",
+         "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Csúsztasd az ujjad a képen az elhomályosításhoz."
          }
@@ -898,7 +902,8 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Jelenlegi nyelv: {{language}}",
-         "CURRENT_DEVICE": "Jelenlegi eszköz: {{device}}"
+         "CURRENT_DEVICE": "Jelenlegi eszköz: {{device}}",
+         "NO_DEVICE_SELECTED": ""
       },
       "CONTACT": {
          "PHONE": "Kapcsolatfelvétel telefonon",

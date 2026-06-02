@@ -32,6 +32,7 @@
          [routerLinkActiveOptions]="{ exact: true }"
          class="nav-button home-button"
          [attr.aria-label]="'COMMON.ARIA_LABEL.HOME' | translate"
+         [attr.aria-current]="rlaHome.isActive ? 'page' : null"
       >
          <div class="icon-container">
             <mat-icon
@@ -43,12 +44,7 @@
                class="icon-active icon-dynamic"
             ></mat-icon>
          </div>
-         <span
-            >{{ "COMMON.HOME" | translate }} @if (rlaHome.isActive) {<span
-               class="sr-only"
-               >{{ "COMMON.ACTIVE" | translate }}</span
-            >}</span
-         >
+         <span>{{ "COMMON.HOME" | translate }}</span>
       </button>
       <button
          mat-button
@@ -60,6 +56,7 @@
          [class.problem-active]="isProblemIconActive"
          [class.force-active]="isProblemIconActive"
          [attr.aria-label]="'COMMON.ARIA_LABEL.PROBLEM' | translate"
+         [attr.aria-current]="rlaProblem.isActive ? 'page' : null"
       >
          <div class="icon-container">
             <mat-icon
@@ -71,12 +68,7 @@
                class="icon-active icon-dynamic"
             ></mat-icon>
          </div>
-         <span
-            >{{ "COMMON.PROBLEM" | translate }} @if (rlaProblem.isActive) {<span
-               class="sr-only"
-               >{{ "COMMON.ACTIVE" | translate }}</span
-            >}</span
-         >
+         <span>{{ "COMMON.PROBLEM" | translate }}</span>
       </button>
       <button
          mat-button
@@ -88,6 +80,7 @@
          [class.tools-active]="isToolsIconActive"
          [class.force-active]="isToolsIconActive"
          [attr.aria-label]="'COMMON.ARIA_LABEL.TOOLS' | translate"
+         [attr.aria-current]="rlaTools.isActive ? 'page' : null"
       >
          <div class="icon-container">
             <mat-icon
@@ -101,12 +94,7 @@
                [attr.data-icon]="toolsIconActive"
             ></mat-icon>
          </div>
-         <span
-            >{{ "COMMON.TOOLS" | translate }} @if (rlaTools.isActive) {<span
-               class="sr-only"
-               >{{ "COMMON.ACTIVE" | translate }}</span
-            >}</span
-         >
+         <span>{{ "COMMON.TOOLS" | translate }}</span>
       </button>
       <button
          mat-button
@@ -118,6 +106,7 @@
          [class.secure-active]="isSecureMyselfIconActive"
          [class.force-active]="isSecureMyselfIconActive"
          [attr.aria-label]="'COMMON.ARIA_LABEL.SECURE' | translate"
+         [attr.aria-current]="rlaSecure.isActive ? 'page' : null"
       >
          <div class="icon-container">
             <mat-icon
@@ -129,12 +118,7 @@
                class="icon-active icon-dynamic"
             ></mat-icon>
          </div>
-         <span
-            >{{ "COMMON.SECURE" | translate }} @if (rlaSecure.isActive) {<span
-               class="sr-only"
-               >{{ "COMMON.ACTIVE" | translate }}</span
-            >}</span
-         >
+         <span>{{ "COMMON.SECURE" | translate }}</span>
       </button>
    </nav>
 </div>

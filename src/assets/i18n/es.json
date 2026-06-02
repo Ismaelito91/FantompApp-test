@@ -18,6 +18,8 @@
       "BACK": "Volver",
       "NEXT": "Siguiente",
       "PREVIOUS": "Anterior",
+      "CAROUSEL_PREVIOUS": "",
+      "CAROUSEL_NEXT": "",
       "RESULTS": "Resultados",
       "HOME": "Inicio",
       "PROBLEM": "Problema",
@@ -799,6 +801,8 @@
          "BRUSH_SIZE": "Tamaño del difuminado",
          "GLOBAL_BLUR_INFO": "Puedes difuminar toda la imagen con este botón. Al hacer clic se abre una lista de porcentajes de desenfoque para elegir la intensidad.",
          "MODIFICATION_DONE": "Modificación completada",
+         "UNDO": "",
+         "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Desliza el dedo sobre la imagen para difuminarla."
          }
@@ -897,7 +901,8 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Idioma actual: {{language}}",
-         "CURRENT_DEVICE": "Dispositivo actual: {{device}}"
+         "CURRENT_DEVICE": "Dispositivo actual: {{device}}",
+         "NO_DEVICE_SELECTED": ""
       },
       "CONTACT": {
          "PHONE": "Contactar por teléfono",
