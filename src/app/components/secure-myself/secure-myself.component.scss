@@ -11,3 +11,19 @@
    gap: 22px;
    padding-left: var(--spacing-5);
 }
+
+.secure-myself-container--zoom {
+   box-sizing: border-box;
+   padding-left: var(--spacing-3);
+   padding-right: var(--spacing-3);
+}
+
+.secure-myself-container--zoom .secure-myself-title {
+   margin-left: 0;
+   margin-right: 0;
+}
+
+.secure-myself-container--zoom .secure-myself-children {
+   padding-left: 0;
+   gap: var(--spacing-3);
+}

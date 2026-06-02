@@ -21,6 +21,7 @@
 
    <nav
       class="toolbar-nav max-w-(--max-width-mobile)"
+      [class.toolbar-nav--zoom]="shouldUseZoomLayout()"
       [attr.aria-label]="'COMMON.ARIA_LABEL.MAIN_NAV' | translate"
    >
       <button

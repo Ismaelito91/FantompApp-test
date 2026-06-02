@@ -7,6 +7,7 @@
    .header {
       padding: var(--spacing-3) var(--spacing-5) var(--spacing-4) var(--spacing-5);
       gap: 30px;
+      flex-wrap: wrap;
 
       .details {
          gap: var(--spacing-1);
@@ -40,6 +41,7 @@
                      background-color: var(--background-2);
                      gap: 10px;
                      min-height: 83px;
+                     height: auto;
                      padding: 20px var(--spacing-3);
                      border-radius: var(--border-radius-2);
 

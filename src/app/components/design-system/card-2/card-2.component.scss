@@ -32,3 +32,11 @@
    font-size: var(--font-size-body-sm);
    color: var(--color-9);
 }
+
+.card-item-container--zoom {
+   gap: var(--spacing-1);
+}
+
+.card-image--zoom {
+   display: none;
+}

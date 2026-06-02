@@ -1,17 +1,19 @@
-<div class="card-container flex items-center cursor-pointer">
-   <div>
-      <img
-         [src]="
-            (data() | pageTranslation)?.image ||
-            (data() | pageTranslation)?.staticImage
-         "
-         alt=""
-         aria-hidden="true"
-         class="!min-w-[56px] !min-h-[56px] !max-w-[56px] !max-h-[56px] object-contain rounded-(--border-radius-1)"
-      />
-   </div>
-   <div class="flex justify-between items-center w-full">
-      <div class="flex flex-col">
+<div
+   class="card-container flex items-center cursor-pointer"
+   [class.card-container--zoom]="shouldUseZoomLayout()"
+>
+   <img
+      [src]="
+         (data() | pageTranslation)?.image ||
+         (data() | pageTranslation)?.staticImage
+      "
+      alt=""
+      aria-hidden="true"
+      class="card-image"
+      [class.card-image--zoom]="shouldUseZoomLayout()"
+   />
+   <div class="flex justify-between items-center w-full min-w-0 flex-1">
+      <div class="flex flex-col min-w-0 flex-1">
          @if ((data() | pageTranslation)?.firstTitle) {
          <p
             class="card-title ckeditor-content"

@@ -119,3 +119,17 @@ $z-index-content: 2; // Contenu (texte, icônes - au-dessus de tout)
 .tools-item-description {
    color: var(--color-neutral-light-background-3);
 }
+
+.tools-item-img--zoom {
+   display: none;
+}
+
+.tools-item--zoom .tools-item-body {
+   min-width: 0;
+   flex: 1 1 auto;
+}
+
+.tools-item--zoom .tools-item-text {
+   min-width: 0;
+   flex: 1 1 auto;
+}

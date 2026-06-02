@@ -23,7 +23,10 @@
 
       @if (deviceMenuOpen) {
       <div class="menu-overlay" (click)="closeAllMenus()"></div>
-      <div class="custom-menu-container">
+      <div
+         class="custom-menu-container custom-menu-container--device"
+         [class.is-fixed]="deviceMenuFixed"
+      >
          <div class="mat-mdc-menu-panel mat-menu-panel lang-menu">
             <div class="mat-mdc-menu-content">
                <ul class="menu-list" role="list">
@@ -128,7 +131,10 @@
 
       @if (languageMenuOpen) {
       <div class="menu-overlay" (click)="closeAllMenus()"></div>
-      <div class="custom-menu-container">
+      <div
+         class="custom-menu-container custom-menu-container--language"
+         [class.is-fixed]="languageMenuFixed"
+      >
          <div class="mat-mdc-menu-panel mat-menu-panel lang-menu">
             <div class="mat-mdc-menu-content">
                <ul class="menu-list" role="list">

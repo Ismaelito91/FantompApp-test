@@ -3,6 +3,7 @@ import { Component, inject } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
 import { Router } from "@angular/router";
 import { TranslatePipe } from "@ngx-translate/core";
+import { ZoomLayoutService } from "../../service/zoom-layout.service";
 
 @Component({
    selector: "app-tools",
@@ -24,7 +25,12 @@ import { TranslatePipe } from "@ngx-translate/core";
 })
 export class ToolsComponent {
    private readonly router = inject(Router);
+   private readonly zoomLayout = inject(ZoomLayoutService);
    isLeaving = false;
+
+   shouldUseZoomLayout(): boolean {
+      return this.zoomLayout.isZoomAtLeast(1.7);
+   }
 
    onClickTool(url: string) {
       this.isLeaving = true;

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, HostListener } from "@angular/core";
+import { ChangeDetectorRef, Component, inject, OnInit, HostListener } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
@@ -7,6 +7,7 @@ import { TranslateModule } from "@ngx-translate/core";
 import { LanguageService } from "../../service/language.service";
 import { Router, RouterModule } from "@angular/router";
 import { DeviceService } from "../../service/device.service";
+import { ZoomLayoutService } from "../../service/zoom-layout.service";
 import { Device } from "../../model/enum/device.enum";
 
 @Component({
@@ -27,11 +28,21 @@ export class HeaderComponent implements OnInit {
    private deviceService = inject(DeviceService);
    protected _languageService = inject(LanguageService);
    private router = inject(Router);
+   private cdr = inject(ChangeDetectorRef);
+   private readonly zoomLayout = inject(ZoomLayoutService);
 
    deviceMenuOpen = false;
    languageMenuOpen = false;
+   deviceMenuFixed = false;
+   languageMenuFixed = false;
 
    ngOnInit(): void {}
+
+   @HostListener("window:resize")
+   onWindowResize() {
+      if (this.deviceMenuOpen) this.applyZoomLayout("device");
+      if (this.languageMenuOpen) this.applyZoomLayout("language");
+   }
 
    @HostListener("document:click", ["$event"])
    onDocumentClick(event: MouseEvent) {
@@ -65,6 +76,10 @@ export class HeaderComponent implements OnInit {
       this.deviceMenuOpen = !this.deviceMenuOpen;
       if (this.deviceMenuOpen) {
          this.languageMenuOpen = false;
+         this.languageMenuFixed = false;
+         this.applyZoomLayout("device");
+      } else {
+         this.deviceMenuFixed = false;
       }
    }
 
@@ -72,12 +87,28 @@ export class HeaderComponent implements OnInit {
       this.languageMenuOpen = !this.languageMenuOpen;
       if (this.languageMenuOpen) {
          this.deviceMenuOpen = false;
+         this.deviceMenuFixed = false;
+         this.applyZoomLayout("language");
+      } else {
+         this.languageMenuFixed = false;
       }
    }
 
    closeAllMenus() {
       this.deviceMenuOpen = false;
       this.languageMenuOpen = false;
+      this.deviceMenuFixed = false;
+      this.languageMenuFixed = false;
+   }
+
+   private applyZoomLayout(type: "device" | "language"): void {
+      const fixed = this.zoomLayout.isDomZoomAtLeast(1.5);
+      if (type === "device") {
+         this.deviceMenuFixed = fixed;
+      } else {
+         this.languageMenuFixed = fixed;
+      }
+      this.cdr.markForCheck();
    }
 
    get currentFlagUrl(): string {
