@@ -4,7 +4,8 @@
 
    .problems-title-container {
       position: relative;
-      height: 210px;
+      min-height: 210px;
+      height: auto;
    }
 
    .problems-container-bg {
@@ -16,7 +17,8 @@
    }
 
    .problems-title {
-      height: 80px;
+      min-height: 80px;
+      height: auto;
       margin-top: var(--spacing-6);
       padding: 0 var(--spacing-3);
       padding-right: 100px;
@@ -42,7 +44,9 @@
    }
 
    .image-cover {
-      height: 323px;
+      min-height: 200px;
+      height: auto;
+      max-height: none;
       object-fit: cover;
    }
 
