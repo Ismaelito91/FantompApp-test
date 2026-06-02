@@ -3,6 +3,7 @@
    padding: var(--spacing-2);
    gap: var(--spacing-2);
    border-radius: var(--border-radius-2);
+   min-width: 0;
 
    .card-title {
       color: var(--color-3);
@@ -13,6 +14,24 @@
       color: var(--color-9);
       font-size: var(--font-size-body-sm);
    }
+}
+
+.card-image {
+   min-width: 56px;
+   min-height: 56px;
+   max-width: 56px;
+   max-height: 56px;
+   object-fit: contain;
+   border-radius: var(--border-radius-1);
+   flex-shrink: 0;
+}
+
+.card-container--zoom {
+   gap: var(--spacing-1);
+}
+
+.card-image--zoom {
+   display: none;
 }
 
 .card-container:hover,
