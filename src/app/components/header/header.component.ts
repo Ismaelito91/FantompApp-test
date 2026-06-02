@@ -102,7 +102,7 @@ export class HeaderComponent implements OnInit {
    }
 
    private applyZoomLayout(type: "device" | "language"): void {
-      const fixed = this.zoomLayout.isDomZoomAtLeast(1.5);
+      const fixed = this.zoomLayout.isZoomAtLeast(1.5);
       if (type === "device") {
          this.deviceMenuFixed = fixed;
       } else {
