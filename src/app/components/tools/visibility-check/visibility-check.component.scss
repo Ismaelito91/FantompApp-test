@@ -82,6 +82,18 @@
                         background-color: var(--background-29) !important;
                      }
 
+                     &:focus-within {
+                        outline: 3px solid var(--color-1);
+                        outline-offset: 4px;
+                     }
+
+                     ::ng-deep
+                        .mdc-checkbox__native-control:focus-visible
+                        ~ .mdc-checkbox__background {
+                        outline: 3px solid var(--color-1);
+                        outline-offset: 2px;
+                     }
+
                      &:hover,
                      &.mat-mdc-checkbox-checked {
                         background-color: var(--background-3);
