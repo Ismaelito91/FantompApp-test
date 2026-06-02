@@ -1,4 +1,7 @@
-<div class="secure-myself-container">
+<div
+   class="secure-myself-container"
+   [class.secure-myself-container--zoom]="shouldUseZoomLayout()"
+>
    @if ((page() | pageTranslation)?.firstTitle) {
    <h1
       class="secure-myself-title"

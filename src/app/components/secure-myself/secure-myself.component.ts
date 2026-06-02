@@ -7,6 +7,7 @@ import { PageTranslationPipe } from "../../pipes/page-translation.pipe";
 import { SafeHtmlPipe } from "../../pipes/safe-html.pipe";
 import { PageComponentService } from "../../service/page-component.service";
 import { PageComponentUtilsService } from "../../service/page-component-utils.service";
+import { ZoomLayoutService } from "../../service/zoom-layout.service";
 import { Card7Component } from "../design-system/card-7/card-7.component";
 import { DividerComponent } from "../design-system/divider/divider.component";
 import { TranslatePipe } from "@ngx-translate/core";
@@ -28,6 +29,7 @@ import { TranslatePipe } from "@ngx-translate/core";
 export class SecureMyselfComponent implements OnInit, OnDestroy {
    private readonly pageComponentService = inject(PageComponentService);
    private readonly pageComponentUtils = inject(PageComponentUtilsService);
+   private readonly zoomLayout = inject(ZoomLayoutService);
    private subscription?: Subscription;
 
    rootPage = signal<PageComponentModel>({
@@ -42,6 +44,10 @@ export class SecureMyselfComponent implements OnInit, OnDestroy {
    });
    ComponentType = ComponentType;
    ComponentStatus = ComponentStatus;
+
+   shouldUseZoomLayout(): boolean {
+      return this.zoomLayout.isZoomAtLeast(1.7);
+   }
 
    ngOnInit(): void {
       this.loadRootPage();
