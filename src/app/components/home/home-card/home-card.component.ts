@@ -5,6 +5,7 @@ import { Router, RouterModule } from "@angular/router";
 import { TranslatePipe } from "@ngx-translate/core";
 import { GhostAnimationService } from "../../../service/ghost-animation.service";
 import { PreloadService } from "../../../service/preload.service";
+import { ZoomLayoutService } from "../../../service/zoom-layout.service";
 
 @Component({
    selector: "app-home-card",
@@ -16,6 +17,7 @@ import { PreloadService } from "../../../service/preload.service";
 export class HomeCardComponent {
    private ghostAnimationService = inject(GhostAnimationService);
    private preloadService = inject(PreloadService);
+   private readonly zoomLayout = inject(ZoomLayoutService);
    private homePageLinkIds: Map<string, number> = new Map();
    shouldPlayGhostAnimation = computed(() =>
       this.ghostAnimationService.shouldPlayGhostAnimation()
@@ -100,5 +102,14 @@ export class HomeCardComponent {
       setTimeout(() => {
          this.ghostAnimationService.stopGhostAnimation();
       }, 1500);
+   }
+
+   shouldUseZoomLayout(): boolean {
+      return this.zoomLayout.isZoomAtLeast(1.7);
+   }
+
+   /** Évite de cacher le fantôme en affichage normal; le masque uniquement en zoom fort. */
+   shouldHideGhostForZoom(): boolean {
+      return this.shouldUseZoomLayout();
    }
 }

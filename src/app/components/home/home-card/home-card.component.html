@@ -22,6 +22,7 @@
 
    <div
       class="network-protection-section"
+      [class.network-protection-section--zoom]="shouldUseZoomLayout()"
       role="group"
       aria-labelledby="network-protection-title"
    >
@@ -40,14 +41,14 @@
             class="tools-item-bg"
             aria-hidden="true"
          />
-         <div class="tools-item-body flex items-center">
+         <div class="tools-item-body flex min-w-0 flex-1 items-center">
             <img
                src="../../../../assets/images/password-img.svg"
                alt=""
                aria-hidden="true"
                class="tools-item-img"
             />
-            <div class="tools-item-text flex flex-col">
+            <div class="tools-item-text flex min-w-0 flex-1 flex-col">
                <h6 class="social-card-title" role="heading" aria-level="3">
                   {{ "HOME.CARDS.PASSWORD_CHECK.TITLE" | translate }}
                </h6>
@@ -68,6 +69,7 @@
       <!-- Deuxième carte : Anonymisation -->
       <div
          class="home-card-anonym"
+         [class.home-card-anonym--zoom]="shouldHideGhostForZoom()"
          role="button"
          tabindex="0"
          (click)="navigateToBlurImage()"
@@ -89,7 +91,7 @@
                   class="home-card-anonym__image"
                />
             </div>
-            <div class="flex items-center gap-(--spacing-1)">
+            <div class="flex min-w-0 flex-1 items-center gap-(--spacing-1)">
                <div class="home-card-anonym__text-content">
                   <h6
                      class="social-card-title"
@@ -115,7 +117,7 @@
          </div>
       </div>
       <!-- Fantôme animé -->
-      @if (shouldPlayGhostAnimation()) {
+      @if (!shouldHideGhostForZoom() && shouldPlayGhostAnimation()) {
       <div class="ghost-animation-container">
          <img
             src="assets/images/Switch-not-wink-light.svg"
@@ -144,7 +146,7 @@
             class="ghost-image ghost-wink-image only-on-dark"
          />
       </div>
-      } @else {
+      } @else if (!shouldHideGhostForZoom()) {
       <div class="ghost-animation-container">
          <img
             src="assets/images/Switch-not-wink-light.svg"
