@@ -7,6 +7,15 @@
 
 .card-11-description {
    margin: var(--spacing-4) var(--spacing-4) var(--spacing-9) var(--spacing-4);
+
+   .step-title {
+      display: flex;
+      gap: 8px;
+      margin: 0;
+      font-size: var(--font-size-h6);
+      line-height: var(--line-height-h6);
+      color: inherit;
+   }
 }
 
 .card-11-img {
