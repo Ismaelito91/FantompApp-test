@@ -18,6 +18,8 @@
       "BACK": "Wróć",
       "NEXT": "Dalej",
       "PREVIOUS": "Wstecz",
+      "CAROUSEL_PREVIOUS": "",
+      "CAROUSEL_NEXT": "",
       "RESULTS": "Wyniki",
       "HOME": "Strona główna",
       "PROBLEM": "Problem",
@@ -799,6 +801,8 @@
          "BRUSH_SIZE": "Rozmiar rozmycia",
          "GLOBAL_BLUR_INFO": "Możesz rozmyć cały obraz tym przyciskiem. Kliknięcie otwiera listę procentów rozmycia, aby wybrać intensywność.",
          "MODIFICATION_DONE": "Modyfikacja zakończona",
+         "UNDO": "",
+         "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Przesuń palcem po obrazie, aby go rozmyć."
          }
@@ -898,7 +902,8 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Obecny język: {{language}}",
-         "CURRENT_DEVICE": "Obecne urządzenie: {{device}}"
+         "CURRENT_DEVICE": "Obecne urządzenie: {{device}}",
+         "NO_DEVICE_SELECTED": ""
       },
       "CONTACT": {
          "PHONE": "Kontakt telefoniczny",

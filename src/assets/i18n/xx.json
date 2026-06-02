@@ -18,6 +18,8 @@
       "BACK": "Go Back",
       "NEXT": "Next",
       "PREVIOUS": "Previous",
+      "CAROUSEL_PREVIOUS": "",
+      "CAROUSEL_NEXT": "",
       "RESULTS": "Results",
       "HOME": "Home",
       "PROBLEM": "Problem",
@@ -777,6 +779,8 @@
          "BRUSH_SIZE": "Size of the blur",
          "GLOBAL_BLUR_INFO": "You can blur the entire image with this button. Clicking it opens a list of blur percentages to choose the intensity.",
          "MODIFICATION_DONE": "Modification completed",
+         "UNDO": "",
+         "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Slide your finger on the image to blur it."
          }
@@ -876,7 +880,8 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Current language: {{language}}",
-         "CURRENT_DEVICE": "Current device: {{device}}"
+         "CURRENT_DEVICE": "Active device: {{device}}",
+         "NO_DEVICE_SELECTED": ""
       },
       "CONTACT": {
          "PHONE": "Contact by phone",

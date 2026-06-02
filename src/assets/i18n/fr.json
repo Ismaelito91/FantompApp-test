@@ -18,6 +18,8 @@
       "BACK": "Retour",
       "NEXT": "Suivant",
       "PREVIOUS": "Précédent",
+      "CAROUSEL_PREVIOUS": "Précédent : {{slide}}",
+      "CAROUSEL_NEXT": "Suivant : {{slide}}",
       "RESULTS": "Résultats",
       "HOME": "Accueil",
       "PROBLEM": "Problème",
@@ -775,6 +777,8 @@
          "BRUSH_SIZE": "Taille du flou",
          "GLOBAL_BLUR_INFO": "Vous pouvez flouter globalement toute l'image en utilisant ce bouton. En cliquant dessus, une liste de pourcentages de floutage s'affiche pour choisir l'intensité du flou.",
          "MODIFICATION_DONE": "Modification effectuée",
+         "UNDO": "Annuler la dernière modification",
+         "REDO": "Rétablir la modification",
          "TUTORIAL": {
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter."
          }
@@ -874,7 +878,8 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Langue active : {{language}}",
-         "CURRENT_DEVICE": "Device active : {{device}}"
+         "CURRENT_DEVICE": "Appareil activé : {{device}}",
+         "NO_DEVICE_SELECTED": "Appareil activé : aucun sélectionné"
       },
       "CONTACT": {
          "PHONE": "Contacter par téléphone",

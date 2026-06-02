@@ -18,6 +18,8 @@
       "BACK": "Späť",
       "NEXT": "Ďalej",
       "PREVIOUS": "Predchádzajúce",
+      "CAROUSEL_PREVIOUS": "",
+      "CAROUSEL_NEXT": "",
       "RESULTS": "Výsledky",
       "HOME": "Domov",
       "PROBLEM": "Problém",
@@ -799,6 +801,8 @@
          "BRUSH_SIZE": "Veľkosť rozmazania",
          "GLOBAL_BLUR_INFO": "Týmto tlačidlom môžeš rozmazať celý obrázok. Kliknutím sa otvorí zoznam percent rozmazania pre výber intenzity.",
          "MODIFICATION_DONE": "Úprava dokončená",
+         "UNDO": "",
+         "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Posúvaj prst po obrázku na jeho rozmazanie."
          }
@@ -897,7 +901,8 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Aktuálny jazyk: {{language}}",
-         "CURRENT_DEVICE": "Aktuálne zariadenie: {{device}}"
+         "CURRENT_DEVICE": "Aktuálne zariadenie: {{device}}",
+         "NO_DEVICE_SELECTED": ""
       },
       "CONTACT": {
          "PHONE": "Kontaktovať telefonicky",

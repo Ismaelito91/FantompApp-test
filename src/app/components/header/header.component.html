@@ -8,8 +8,10 @@
          [attr.aria-disabled]="null"
          [attr.role]="null"
          [attr.aria-label]="
-            'ALT_TEXT.HEADER.CURRENT_DEVICE'
-               | translate : { device: selectedDevice }
+            selectedDevice
+               ? ('ALT_TEXT.HEADER.CURRENT_DEVICE'
+                    | translate : { device: selectedDevice })
+               : ('ALT_TEXT.HEADER.NO_DEVICE_SELECTED' | translate)
          "
          [attr.aria-expanded]="deviceMenuOpen"
       >

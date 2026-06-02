@@ -18,6 +18,8 @@
       "BACK": "Gå tillbaka",
       "NEXT": "Nästa",
       "PREVIOUS": "Föregående",
+      "CAROUSEL_PREVIOUS": "",
+      "CAROUSEL_NEXT": "",
       "RESULTS": "Resultat",
       "HOME": "Hem",
       "PROBLEM": "Problem",
@@ -799,6 +801,8 @@
          "BRUSH_SIZE": "Storlek på oskärpan",
          "GLOBAL_BLUR_INFO": "Du kan göra hela bilden suddig med den här knappen. Genom att klicka på den öppnas en lista med procentsatser för suddighet för att välja intensitet.",
          "MODIFICATION_DONE": "Modifiering slutförd",
+         "UNDO": "",
+         "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Dra fingret över bilden för att göra den suddig."
          }
@@ -898,7 +902,8 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Aktuellt språk: {{language}}",
-         "CURRENT_DEVICE": "Aktuell enhet: {{device}}"
+         "CURRENT_DEVICE": "Aktuell enhet: {{device}}",
+         "NO_DEVICE_SELECTED": ""
       },
       "CONTACT": {
          "PHONE": "Kontakta via telefon",
