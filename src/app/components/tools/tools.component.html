@@ -5,6 +5,7 @@
       <div
          id="password-check-tool"
          class="tools-item hoverable password-check-hover flex justify-between items-center cursor-pointer"
+         [class.tools-item--zoom]="shouldUseZoomLayout()"
          (click)="onClickTool('password-check')"
          role="button"
          tabindex="0"
@@ -22,6 +23,7 @@
                alt=""
                aria-hidden="true"
                class="tools-item-img"
+               [class.tools-item-img--zoom]="shouldUseZoomLayout()"
             />
             <div class="tools-item-text flex flex-col">
                <h6 class="tools-item-title" role="heading" aria-level="2">
@@ -43,6 +45,7 @@
       <div
          id="blur-image-tool"
          class="tools-item hoverable blur-image-hover flex justify-between items-center cursor-pointer"
+         [class.tools-item--zoom]="shouldUseZoomLayout()"
          (click)="onClickTool('blur-image')"
          role="button"
          tabindex="0"
@@ -60,6 +63,7 @@
                alt=""
                aria-hidden="true"
                class="tools-item-img"
+               [class.tools-item-img--zoom]="shouldUseZoomLayout()"
             />
             <div class="tools-item-text flex flex-col">
                <h6 class="tools-item-title" role="heading" aria-level="2">
@@ -81,6 +85,7 @@
       <div
          id="visibility-check-tool"
          class="tools-item hoverable visibility-check-hover flex justify-between items-center cursor-pointer"
+         [class.tools-item--zoom]="shouldUseZoomLayout()"
          (click)="onClickTool('visibility-check')"
          role="button"
          tabindex="0"
@@ -98,6 +103,7 @@
                alt=""
                aria-hidden="true"
                class="tools-item-img"
+               [class.tools-item-img--zoom]="shouldUseZoomLayout()"
             />
             <div class="tools-item-text flex flex-col">
                <h6 class="tools-item-title" role="heading" aria-level="2">
