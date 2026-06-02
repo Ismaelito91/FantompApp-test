@@ -187,3 +187,35 @@
    border-top-style: solid !important;
    border-top-color: var(--color-neutral-light-background-4) !important;
 }
+
+// Menu rogne (souvent au fort zoom) : repositionnement au bord droit.
+.custom-menu-container.is-fixed {
+   position: fixed;
+   top: calc(var(--spacing-2) + var(--spacing-5) + 4px);
+   right: 8px;
+   left: auto;
+
+   .mat-mdc-menu-panel.lang-menu {
+      max-width: calc(100vw - 16px);
+   }
+
+   &.custom-menu-container--device .mat-mdc-menu-panel.lang-menu {
+      min-width: auto;
+   }
+
+   .mat-mdc-menu-item {
+      min-height: 44px;
+      height: auto;
+      white-space: normal;
+   }
+
+   .lang-item {
+      min-height: 44px;
+      height: auto;
+
+      .language,
+      .country {
+         overflow-wrap: anywhere;
+      }
+   }
+}
