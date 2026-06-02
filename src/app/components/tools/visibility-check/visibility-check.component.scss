@@ -4,10 +4,14 @@
       var(--background-17) 4.1%,
       var(--background-18) 95.9%
    );
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
 
    .header {
       padding: var(--spacing-3) var(--spacing-3) 36px var(--spacing-5);
       gap: 30px;
+      flex-wrap: wrap;
 
       .details {
          gap: var(--spacing-1);
@@ -24,6 +28,7 @@
       border-radius: var(--border-radius-5) var(--border-radius-5) 0 0;
       padding: var(--spacing-5) var(--spacing-5) 148px var(--spacing-5);
       gap: var(--spacing-5);
+      flex: 1;
 
       .sections {
          gap: var(--spacing-5);
@@ -41,6 +46,7 @@
                      background-color: var(--background-2);
                      gap: 10px;
                      min-height: 83px;
+                     height: auto;
                      padding: 20px var(--spacing-3);
                      border-radius: var(--border-radius-2);
 
