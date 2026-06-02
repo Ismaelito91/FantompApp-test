@@ -6,6 +6,7 @@ import { PageTranslationPipe } from "../../../pipes/page-translation.pipe";
 import { ReplaceStringDarkPipe } from "../../../pipes/replace-string-dark.pipe";
 import { SafeHtmlPipe } from "../../../pipes/safe-html.pipe";
 import { ThemeService } from "../../../service/theme.service";
+import { ZoomLayoutService } from "../../../service/zoom-layout.service";
 
 @Component({
    selector: "app-card-2",
@@ -21,7 +22,12 @@ import { ThemeService } from "../../../service/theme.service";
 })
 export class Card2Component {
    private readonly themeService = inject(ThemeService);
+   private readonly zoomLayout = inject(ZoomLayoutService);
    data = input.required<PageComponentModel>();
+
+   shouldUseZoomLayout(): boolean {
+      return this.zoomLayout.isZoomAtLeast(1.7);
+   }
 
    isDarkMode = computed(() => {
       const theme = this.themeService.selectedTheme()?.name;
