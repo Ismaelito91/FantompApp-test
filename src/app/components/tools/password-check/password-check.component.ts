@@ -681,11 +681,6 @@ export class PasswordCheckComponent
       });
    }
 
-   get badgeAccessibleTitle(): string {
-      const title = this.getBadgeInfo()?.title;
-      return title ? title.replace(/<[^>]*>/g, "").trim() : "";
-   }
-
    // Méthode pour déterminer le badge approprié selon le niveau de résultat
    getBadgeInfo(): {
       title: string;
