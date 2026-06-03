@@ -1,8 +1,6 @@
 <div class="card-container">
    @if ((data() | pageTranslation)?.firstTitle) {
-   <h5
-      role="heading"
-      aria-level="2"
+   <h2
       class="card-title ckeditor-content"
       [innerHTML]="
          (data() | pageTranslation)?.firstTitle!
@@ -12,7 +10,7 @@
                : 'var(--color-primary-400)'
             | safeHtml
       "
-   ></h5>
+   ></h2>
    } @if ((data() | pageTranslation)?.description) {
    <div
       class="card-description ckeditor-content"

@@ -46,37 +46,34 @@
       class="fixed top-(--spacing-3) pl-(--spacing-5) z-102"
    ></app-button-back>
    @if ((page() | pageTranslation)?.firstTitle) {
-   <h3
+   <h1
       class="problems-title"
-      role="heading"
-      aria-level="1"
       [innerHTML]="
          (page() | pageTranslation)?.firstTitle! | translate | safeHtml
       "
-   ></h3>
+   ></h1>
    }
    <div class="problems-items-container flex flex-col">
       @for (problem of sortedChildren; track $index) { @switch (problem.type) {
       @case (ComponentType.CARD_3) {
-      <a [routerLink]="problem.nextId ? `/problems/${problem.nextId}` : null">
-         <app-card-3 [data]="problem"></app-card-3>
-      </a>
+      <app-card-3
+         [data]="problem"
+         [link]="problem.nextId ? '/problems/' + problem.nextId : null"
+      ></app-card-3>
       } @case (ComponentType.CARD_4) {
-      <a [routerLink]="problem.nextId ? `/problems/${problem.nextId}` : null">
-         <app-card-4 [data]="problem"></app-card-4>
-      </a>
+      <app-card-4
+         [data]="problem"
+         [link]="problem.nextId ? '/problems/' + problem.nextId : null"
+      ></app-card-4>
       } @case (ComponentType.CARD_5) {
-      <a [routerLink]="problem.nextId ? `/problems/${problem.nextId}` : null">
-         <app-card-5 [data]="problem"></app-card-5>
-      </a>
+      <app-card-5 [data]="problem"></app-card-5>
       } @case (ComponentType.CARD_6) {
-      <a [routerLink]="problem.nextId ? `/problems/${problem.nextId}` : null">
-         <app-card-6 [data]="problem"></app-card-6>
-      </a>
+      <app-card-6
+         [data]="problem"
+         [link]="problem.nextId ? '/problems/' + problem.nextId : null"
+      ></app-card-6>
       } @case (ComponentType.CARD_14) {
-      <a [routerLink]="problem.nextId ? `/problems/${problem.nextId}` : null">
-         <app-card-14 [data]="problem"></app-card-14>
-      </a>
+      <app-card-14 [data]="problem"></app-card-14>
       } @case (ComponentType.DIVIDER) {
       <app-divider />
       } } }

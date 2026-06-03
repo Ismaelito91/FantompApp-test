@@ -1,7 +1,20 @@
+.card-container {
+   position: relative;
+}
+
 .card-description {
+   position: relative;
+   z-index: 2;
    background-color: var(--color-primary-100);
    padding: var(--spacing-2) var(--spacing-3);
    border-radius: var(--border-radius-2);
    color: var(--color-primary-800);
    font-size: var(--font-size-body-sm);
+}
+
+.card-stretched-link::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   z-index: 1;
 }

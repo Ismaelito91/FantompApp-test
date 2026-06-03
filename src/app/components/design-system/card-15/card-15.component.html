@@ -10,7 +10,7 @@
          class="!size-[24px]"
       />
       @if ((data() | pageTranslation)?.firstTitle) {
-      <h6
+      <h3
          class="ckeditor-content"
          [innerHTML]="
             (data() | pageTranslation)?.firstTitle!
@@ -20,9 +20,7 @@
                   : 'var(--color-primary-400)'
                | safeHtml
          "
-         role="heading"
-         aria-level="3"
-      ></h6>
+      ></h3>
       }
    </div>
    @if (sortedChildren.length > 0) {
