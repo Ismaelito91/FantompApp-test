@@ -1,10 +1,13 @@
 .card-container {
+   position: relative;
    gap: var(--spacing-2);
 }
 
 .card-title {
    color: var(--color-8);
    padding-left: var(--spacing-3);
+   font-size: var(--font-size-h5);
+   line-height: var(--line-height-h5);
 }
 
 .card-body {
@@ -20,10 +23,17 @@
 
 .card-description {
    position: relative;
-   z-index: 1;
+   z-index: 2;
    background-color: var(--background-8);
    padding: var(--spacing-3);
    border-radius: var(--border-radius-3);
    border: 1px solid var(--color-primary-100);
    color: var(--color-11);
+}
+
+.card-stretched-link::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   z-index: 1;
 }
