@@ -33,6 +33,13 @@
       .sections {
          gap: var(--spacing-5);
 
+         .question-title {
+            font-size: 22px;
+            font-weight: 500;
+            float: left;
+            width: 100%;
+         }
+
          .section-items {
             gap: var(--spacing-5);
 
