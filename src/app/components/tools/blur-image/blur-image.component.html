@@ -22,18 +22,18 @@
             <img src="assets/images/hand.svg" alt="" aria-hidden="true" />
          </div>
       </div>
-      <h5
-         style="color: white; text-align: center; padding-bottom: 32px"
-         role="heading"
-         aria-level="1"
+      <h1
+         style="color: white; text-align: center; padding-bottom: 32px; font-size: inherit"
       >
          {{ "TOOLS.BLUR_IMAGE.TUTORIAL.DESCRIPTION" | translate }}
-      </h5>
+      </h1>
       <button
          mat-flat-button
          class="close-button"
          #closeButton
+         type="button"
          (click)="onCloseTutorial()"
+         [attr.aria-label]="'COMMON.UNDERSTOOD' | translate"
       >
          {{ "COMMON.UNDERSTOOD" | translate }}
       </button>
@@ -177,30 +177,35 @@
                   </svg>
                </div>
 
-               <div
+               <button
+                  type="button"
                   class="size-[36px] flex justify-center items-center bg-[#4841584D] rounded-full"
                   style="backdrop-filter: blur(34px)"
                   (click)="showBrushSizer = false"
+                  [attr.aria-label]="'COMMON.CLOSE' | translate"
                >
                   <mat-icon
                      svgIcon="close24x24-icon"
                      class="!size-[24px]"
                      style="color: white"
+                     aria-hidden="true"
                   ></mat-icon>
-               </div>
+               </button>
             </div>
          </div>
          }
          <div
             class="actions absolute bottom-(--spacing-2) left-1/2 -translate-x-1/2 p-(--spacing-2) bg-[#10052E33] rounded-(--spacing-3) flex"
-            aria-hidden="true"
+            role="toolbar"
+            [attr.aria-label]="'TOOLS.BLUR_IMAGE.ACTIONS_TOOLBAR' | translate"
          >
-            <div
+            <button
+               type="button"
                class="action flex flex-col justify-center items-center cursor-pointer"
                (click)="onClickAction('blur')"
-               [class]="{
-                  'active': action === 'blur',
-               }"
+               [attr.aria-pressed]="action === 'blur'"
+               [attr.aria-label]="'TOOLS.BLUR_IMAGE.BLUR' | translate"
+               [class.active]="action === 'blur'"
             >
                <img
                   src="assets/images/flouter.svg"
@@ -208,16 +213,17 @@
                   alt=""
                   aria-hidden="true"
                />
-               <div class="label">
+               <span class="label">
                   {{ "TOOLS.BLUR_IMAGE.BLUR" | translate }}
-               </div>
-            </div>
-            <div
+               </span>
+            </button>
+            <button
+               type="button"
                class="action flex flex-col justify-center items-center cursor-pointer"
                (click)="onClickAction('pixelate')"
-               [class]="{
-                  'active': action === 'pixelate',
-               }"
+               [attr.aria-pressed]="action === 'pixelate'"
+               [attr.aria-label]="'TOOLS.BLUR_IMAGE.PIXELATE' | translate"
+               [class.active]="action === 'pixelate'"
             >
                <img
                   src="assets/images/pixelliser.svg"
@@ -225,10 +231,10 @@
                   alt=""
                   aria-hidden="true"
                />
-               <div class="label">
+               <span class="label">
                   {{ "TOOLS.BLUR_IMAGE.PIXELATE" | translate }}
-               </div>
-            </div>
+               </span>
+            </button>
          </div>
          }
       </div>
@@ -293,6 +299,10 @@
                   mat-menu-item
                   (click)="onClickBlurPercent($event, percentage)"
                   [class]="{ active: blurPercentage === percentage }"
+                  [attr.aria-label]="
+                     'TOOLS.BLUR_IMAGE.BLUR_PERCENT'
+                        | translate : { percent: percentage }
+                  "
                >
                   @if (blurPercentage === percentage) {
                   <mat-icon

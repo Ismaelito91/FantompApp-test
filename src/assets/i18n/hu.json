@@ -805,7 +805,9 @@
          "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Csúsztasd az ujjad a képen az elhomályosításhoz."
-         }
+         },
+         "ACTIONS_TOOLBAR": "",
+         "BLUR_PERCENT": ""
       },
       "PASSWORD_CHECK": {
          "TITLE": "Jelszó tesztelése",
@@ -814,7 +816,8 @@
          "FOCUS_ACCESSIBLE_TITLE": "Jelszó tesztelése - beviteli mező",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "brute force",
-            "CONTENT": "A <strong>brute force (nyers erő) támadás</strong> abból áll, hogy egyenként tesztelik a jelszó minden lehetséges kombinációját. (forrás: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
+            "CONTENT": "A <strong>brute force (nyers erő) támadás</strong> abból áll, hogy egyenként tesztelik a jelszó minden lehetséges kombinációját. (forrás: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)",
+            "ARIA_LABEL": ""
          },
          "CRIMINAL_GUESSES": "Egy kiberbűnöző ennyi idő alatt találja ki:",
          "ASSESSMENT_TEXT": "A jelszavad:",
@@ -903,7 +906,10 @@
       "HEADER": {
          "CURRENT_LANGUAGE": "Jelenlegi nyelv: {{language}}",
          "CURRENT_DEVICE": "Jelenlegi eszköz: {{device}}",
-         "NO_DEVICE_SELECTED": ""
+         "NO_DEVICE_SELECTED": "",
+         "DEVICE_IOS": "",
+         "DEVICE_ANDROID": "",
+         "DEVICE_WEB": ""
       },
       "CONTACT": {
          "PHONE": "Kapcsolatfelvétel telefonon",
