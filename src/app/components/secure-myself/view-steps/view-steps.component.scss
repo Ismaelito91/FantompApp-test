@@ -40,8 +40,14 @@ swiper-container::part(bullet-active) {
    left: 32px;
 }
 
-.view-header-title {
+h1.view-header-title {
+   font-size: var(--font-size-body-md);
+   line-height: var(--line-height-body);
+   font-family: var(--body-font-family);
    font-weight: bold;
+   letter-spacing: var(--letter-spacing-body);
+   color: inherit;
+
    .p {
       color: var(--color-34);
    }
@@ -49,4 +55,7 @@ swiper-container::part(bullet-active) {
 
 .view-header-description {
    color: var(--color-36);
+   font-size: inherit;
+   line-height: inherit;
+   margin: 0;
 }

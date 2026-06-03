@@ -31,13 +31,10 @@
       }
    </div>
    <div class="flex flex-col card-11-description" tabindex="-1">
-      <div class="flex" style="gap: 8px">
-         <h6 role="heading" aria-level="1">{{ index() + 1 }}.</h6>
-         @if ((data() | pageTranslation)?.firstTitle) {
-         <h6
-            role="heading"
-            aria-level="1"
-            class="ckeditor-content"
+      @if ((data() | pageTranslation)?.firstTitle) {
+      <h2 class="step-title ckeditor-content">
+         <span>{{ index() + 1 }}.</span>
+         <span
             [innerHTML]="
                (data() | pageTranslation)?.firstTitle!
                   | translate
@@ -46,9 +43,9 @@
                      : 'var(--color-primary-400)'
                   | safeHtml
             "
-         ></h6>
-         }
-      </div>
+         ></span>
+      </h2>
+      }
       @if ((data() | pageTranslation)?.description) {
       <div
          class="ckeditor-content"

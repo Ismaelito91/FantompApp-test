@@ -2,10 +2,10 @@
    <div class="flex flex-col justify-center items-center view-header">
       <app-button-back class="view-header-btn"></app-button-back>
       @if ((page() | pageTranslation)?.firstTitle) {
-         <div class="text-center view-header-title" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></div>
+         <h1 class="text-center view-header-title" [innerHTML]="(page() | pageTranslation)?.firstTitle! | translate | safeHtml"></h1>
       }
       @if ((page() | pageTranslation)?.description) {
-         <div class="text-center view-header-description" [innerHTML]="(page() | pageTranslation)?.description! | translate | safeHtml"></div>
+         <p class="text-center view-header-description" [innerHTML]="(page() | pageTranslation)?.description! | translate | safeHtml"></p>
       }
    </div>
 
