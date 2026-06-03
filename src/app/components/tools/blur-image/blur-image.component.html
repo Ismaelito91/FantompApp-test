@@ -285,7 +285,9 @@
                   rotate: menuTrigger.menuOpen ? 270 : 90
                }"
                #menuTrigger="matMenuTrigger"
+               #allBlurTrigger
                [matMenuTriggerFor]="menu"
+               (menuClosed)="onAllBlurMenuClosed()"
             ></app-button>
             <mat-menu #menu="matMenu" yPosition="above">
                @for (percentage of blurPercentages(); track $index) {
