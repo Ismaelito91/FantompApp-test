@@ -3,7 +3,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { MatDividerModule } from "@angular/material/divider";
-import { TranslateModule } from "@ngx-translate/core";
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { LanguageService } from "../../service/language.service";
 import { Router, RouterModule } from "@angular/router";
 import { DeviceService } from "../../service/device.service";
@@ -30,6 +30,7 @@ export class HeaderComponent implements OnInit {
    private router = inject(Router);
    private cdr = inject(ChangeDetectorRef);
    private readonly zoomLayout = inject(ZoomLayoutService);
+   private readonly translate = inject(TranslateService);
 
    deviceMenuOpen = false;
    languageMenuOpen = false;
@@ -137,6 +138,15 @@ export class HeaderComponent implements OnInit {
          (l) => l.code === this._languageService.language()
       );
       return current?.lang || "fr";
+   }
+
+   get selectedDeviceLabel(): string {
+      if (!this.selectedDevice) {
+         return "";
+      }
+      const key = `ALT_TEXT.HEADER.DEVICE_${this.selectedDevice}`;
+      const translated = this.translate.instant(key);
+      return translated !== key ? translated : this.selectedDevice;
    }
 
    protected readonly Device = Device;

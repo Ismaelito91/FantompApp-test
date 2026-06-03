@@ -805,7 +805,9 @@
          "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Posúvaj prst po obrázku na jeho rozmazanie."
-         }
+         },
+         "ACTIONS_TOOLBAR": "",
+         "BLUR_PERCENT": ""
       },
       "PASSWORD_CHECK": {
          "TITLE": "Otestovať moje heslo",
@@ -814,7 +816,8 @@
          "FOCUS_ACCESSIBLE_TITLE": "Otestovať moje heslo - vstupné pole",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "hrubej sily",
-            "CONTENT": "Útok <strong>hrubou silou</strong> spočíva v testovaní, jednej po druhej, každej možnej kombinácie hesla. (zdroj: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
+            "CONTENT": "Útok <strong>hrubou silou</strong> spočíva v testovaní, jednej po druhej, každej možnej kombinácie hesla. (zdroj: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)",
+            "ARIA_LABEL": ""
          },
          "CRIMINAL_GUESSES": "Kyberzločinec ho uhádne za:",
          "ASSESSMENT_TEXT": "Tvoje heslo:",
@@ -902,7 +905,10 @@
       "HEADER": {
          "CURRENT_LANGUAGE": "Aktuálny jazyk: {{language}}",
          "CURRENT_DEVICE": "Aktuálne zariadenie: {{device}}",
-         "NO_DEVICE_SELECTED": ""
+         "NO_DEVICE_SELECTED": "",
+         "DEVICE_IOS": "",
+         "DEVICE_ANDROID": "",
+         "DEVICE_WEB": ""
       },
       "CONTACT": {
          "PHONE": "Kontaktovať telefonicky",

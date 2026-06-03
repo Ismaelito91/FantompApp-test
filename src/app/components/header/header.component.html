@@ -10,7 +10,7 @@
          [attr.aria-label]="
             selectedDevice
                ? ('ALT_TEXT.HEADER.CURRENT_DEVICE'
-                    | translate : { device: selectedDevice })
+                    | translate : { device: selectedDeviceLabel })
                : ('ALT_TEXT.HEADER.NO_DEVICE_SELECTED' | translate)
          "
          [attr.aria-expanded]="deviceMenuOpen"
@@ -39,6 +39,9 @@
                         [attr.aria-pressed]="
                            selectedDevice === Device.IOS ? 'true' : 'false'
                         "
+                        [attr.aria-current]="
+                           selectedDevice === Device.IOS ? 'true' : null
+                        "
                      >
                         <div class="lang-item">
                            <span class="language">IOS</span>
@@ -56,6 +59,9 @@
                         (click)="setDevice(Device.ANDROID)"
                         [attr.aria-pressed]="
                            selectedDevice === Device.ANDROID ? 'true' : 'false'
+                        "
+                        [attr.aria-current]="
+                           selectedDevice === Device.ANDROID ? 'true' : null
                         "
                      >
                         <div class="lang-item">
@@ -76,6 +82,9 @@
                         (click)="setDevice(Device.WEB)"
                         [attr.aria-pressed]="
                            selectedDevice === Device.WEB ? 'true' : 'false'
+                        "
+                        [attr.aria-current]="
+                           selectedDevice === Device.WEB ? 'true' : null
                         "
                      >
                         <div class="lang-item web">
@@ -153,6 +162,11 @@
                            _languageService.language() === lang.code
                               ? 'true'
                               : 'false'
+                        "
+                        [attr.aria-current]="
+                           _languageService.language() === lang.code
+                              ? 'true'
+                              : null
                         "
                      >
                         <div class="lang-item" [attr.lang]="lang.lang">

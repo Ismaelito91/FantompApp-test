@@ -805,7 +805,9 @@
          "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Przesuń palcem po obrazie, aby go rozmyć."
-         }
+         },
+         "ACTIONS_TOOLBAR": "",
+         "BLUR_PERCENT": ""
       },
       "PASSWORD_CHECK": {
          "TITLE": "Testowanie hasła",
@@ -814,7 +816,8 @@
          "FOCUS_ACCESSIBLE_TITLE": "Testowanie hasła - pole wprowadzania",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "brute force",
-            "CONTENT": "Atak <strong>brute force</strong> polega na testowaniu, jedna po drugiej, każdej możliwej kombinacji hasła. (źródło: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
+            "CONTENT": "Atak <strong>brute force</strong> polega na testowaniu, jedna po drugiej, każdej możliwej kombinacji hasła. (źródło: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)",
+            "ARIA_LABEL": ""
          },
          "CRIMINAL_GUESSES": "Cyberprzestępca zgaduje je w:",
          "ASSESSMENT_TEXT": "Twoje hasło:",
@@ -903,7 +906,10 @@
       "HEADER": {
          "CURRENT_LANGUAGE": "Obecny język: {{language}}",
          "CURRENT_DEVICE": "Obecne urządzenie: {{device}}",
-         "NO_DEVICE_SELECTED": ""
+         "NO_DEVICE_SELECTED": "",
+         "DEVICE_IOS": "",
+         "DEVICE_ANDROID": "",
+         "DEVICE_WEB": ""
       },
       "CONTACT": {
          "PHONE": "Kontakt telefoniczny",
