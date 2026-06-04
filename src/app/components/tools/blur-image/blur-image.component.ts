@@ -82,6 +82,8 @@ export class BlurImageComponent implements OnDestroy {
    closeButtonRef!: ElementRef<HTMLButtonElement>;
    @ViewChild("allBlurTrigger", { read: ElementRef })
    allBlurTriggerRef!: ElementRef;
+   @ViewChild("tutorialContent", { read: ElementRef })
+   tutorialContentRef!: ElementRef<HTMLDivElement>;
 
    // Reactive properties
    brushSize = signal(70);
@@ -127,8 +129,9 @@ export class BlurImageComponent implements OnDestroy {
    onFadeInDone() {
       // Déclenche l'animation de la main après la fin du fadeIn
       this.handAnimationState = "active";
-      // Met le focus sur le bouton de fermeture
-      this.closeButtonRef.nativeElement.focus();
+      // Place le focus sur le contenu du tutoriel (et non le bouton "J'ai compris")
+      // pour que les lecteurs d'écran restituent d'abord le message d'information (RGAA 10.2)
+      this.tutorialContentRef?.nativeElement?.focus();
       if (this.showTutorial) {
          this.utilsService.setBackgroundInert(true);
       }
