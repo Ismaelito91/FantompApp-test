@@ -9,15 +9,13 @@ import {
    OnDestroy,
    OnInit,
    ViewChild,
-   AfterViewChecked,
+
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatIconModule } from "@angular/material/icon";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { Router } from "@angular/router";
-import { Arrow, flip, offset, shift } from "@ngx-popovers/core";
-import { PopoverComponent, PopoverTemplate } from "@ngx-popovers/popover";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { PasswordSecurityService } from "../../../service/password-security.service";
 import { BadgeComponent } from "../../design-system/badge/badge.component";
@@ -41,19 +39,16 @@ import { UtilsService } from "../../../service/utils.service";
       MatCheckboxModule,
       MatIconModule,
       MatTooltipModule,
-      PopoverComponent,
-      PopoverTemplate,
-      Arrow,
       SafeHtmlPipe,
    ],
    templateUrl: "./password-check.component.html",
    styleUrl: "./password-check.component.scss",
 })
 export class PasswordCheckComponent
-   implements OnDestroy, OnInit, AfterViewInit, AfterViewChecked
+   implements OnDestroy, OnInit, AfterViewInit
 {
    private readonly utilsService = inject(UtilsService);
-   private previousPopoverValue: boolean = false;
+
    @ViewChild("passwordInput", { static: false })
    passwordInput!: ElementRef<HTMLInputElement>;
 
@@ -94,7 +89,7 @@ export class PasswordCheckComponent
    shouldSplit: boolean = false;
    displayedNumberPart: string = "";
    displayedUnitPart: string = "";
-   popoverMiddleware = [flip(), shift(), offset(8)];
+   showForceBruteModal = false;
 
    constructor(
       private router: Router,
@@ -135,18 +130,6 @@ export class PasswordCheckComponent
       }
    }
 
-   ngAfterViewChecked() {
-      // Vérifier si l'état du popover a changé
-      if (this.popoverRef) {
-         const currentPopoverValue = !!this.popoverRef.value;
-         if (currentPopoverValue !== this.previousPopoverValue) {
-            this.previousPopoverValue = currentPopoverValue;
-            this.utilsService.setBackgroundInert(
-               this.popoverRef?.value || false
-            );
-         }
-      }
-   }
 
    private activateDefaultButton() {
       // Focus sur le premier boutton du formulaire (pas l'input pour pas déclencher l'animation)
