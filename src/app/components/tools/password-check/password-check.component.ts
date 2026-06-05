@@ -61,8 +61,8 @@ export class PasswordCheckComponent
    @ViewChild("closePasswordInfoModalButton", { read: ElementRef })
    closePasswordInfoModalButtonRef!: ElementRef<HTMLButtonElement>;
 
-   @ViewChild("popover", { static: false })
-   popoverRef!: PopoverComponent;
+   @ViewChild("passwordResultsContainer", { read: ElementRef })
+   passwordResultsContainerRef!: ElementRef<HTMLDivElement>;
 
    password: string = "";
    message: string = "";
