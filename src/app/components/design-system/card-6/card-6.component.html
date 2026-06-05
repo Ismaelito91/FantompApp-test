@@ -1,3 +1,21 @@
 @if ((data() | pageTranslation)?.description) {
-   <div class="card-description ckeditor-content" [innerHTML]="(data() | pageTranslation)?.description! | translate | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)' | safeHtml"></div>
+<div class="card-container">
+   <div
+      [id]="'card-6-desc-' + data().id"
+      class="card-description ckeditor-content"
+      [innerHTML]="
+         (data() | pageTranslation)?.description!
+            | translate
+            | replaceStringDark:'hsl(258, 88%, 40%)':'var(--color-primary-400)'
+            | safeHtml
+      "
+   ></div>
+   @if (link()) {
+   <a
+      [routerLink]="link()!"
+      class="card-stretched-link"
+      [attr.aria-labelledby]="'card-6-desc-' + data().id"
+   ></a>
+   }
+</div>
 }

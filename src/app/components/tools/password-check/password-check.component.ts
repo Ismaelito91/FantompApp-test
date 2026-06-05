@@ -61,8 +61,8 @@ export class PasswordCheckComponent
    @ViewChild("closePasswordInfoModalButton", { read: ElementRef })
    closePasswordInfoModalButtonRef!: ElementRef<HTMLButtonElement>;
 
-   @ViewChild("passwordResultsContainer", { read: ElementRef })
-   passwordResultsContainerRef!: ElementRef<HTMLDivElement>;
+   @ViewChild("popover", { static: false })
+   popoverRef!: PopoverComponent;
 
    password: string = "";
    message: string = "";
@@ -660,8 +660,7 @@ export class PasswordCheckComponent
       }
 
       setTimeout(() => {
-         const element = this.passwordResultsContainerRef?.nativeElement;
-         element?.focus();
+         document.getElementById("password-result-title")?.focus({ preventScroll: true });
       });
    }
 

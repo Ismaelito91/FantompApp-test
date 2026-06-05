@@ -12,14 +12,12 @@
       </div>
    </div>
    @if ((page() | pageTranslation)?.firstTitle) {
-   <h2
+   <h1
       style="margin: 18px 25px"
-      role="heading"
-      aria-level="1"
       [innerHTML]="
          (page() | pageTranslation)?.firstTitle! | translate | safeHtml
       "
-   ></h2>
+   ></h1>
    } @for (child of sortedChildren; track $index) {
    <app-card-9 [data]="child"></app-card-9>
    }

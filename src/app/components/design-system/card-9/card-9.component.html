@@ -2,8 +2,8 @@
    <div class="flex flex-col" style="gap: 12px" role="list">
       <div class="flex justify-between">
          @if ((data() | pageTranslation)?.firstTitle) {
-         <span
-            style="color: var(--color-8); font-weight: 600"
+         <h2
+            style="color: var(--color-8); font-weight: 600; margin: 0"
             class="ckeditor-content"
             [innerHTML]="
                (data() | pageTranslation)?.firstTitle!
@@ -13,7 +13,7 @@
                      : 'var(--color-primary-400)'
                   | safeHtml
             "
-         ></span>
+         ></h2>
          } @if (!isOk(data().id!)) {
          <div
             class="flex justify-between items-center"

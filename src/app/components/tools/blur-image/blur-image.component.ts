@@ -80,6 +80,8 @@ export class BlurImageComponent implements OnDestroy {
    @ViewChild("canvas") canvasRef!: ElementRef<HTMLCanvasElement>;
    @ViewChild("closeButton", { read: ElementRef })
    closeButtonRef!: ElementRef<HTMLButtonElement>;
+   @ViewChild("allBlurTrigger", { read: ElementRef })
+   allBlurTriggerRef!: ElementRef;
 
    // Reactive properties
    brushSize = signal(70);
@@ -210,6 +212,11 @@ export class BlurImageComponent implements OnDestroy {
       event.stopPropagation();
       this.blurPercentage = percentage;
       this.applyGlobalBlur(percentage);
+   }
+
+   onAllBlurMenuClosed(): void {
+      const btn = this.allBlurTriggerRef?.nativeElement?.querySelector('button');
+      btn?.focus();
    }
 
    private initCanvas() {

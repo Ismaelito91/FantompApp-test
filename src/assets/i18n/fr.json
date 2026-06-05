@@ -18,6 +18,8 @@
       "BACK": "Retour",
       "NEXT": "Suivant",
       "PREVIOUS": "Précédent",
+      "CAROUSEL_PREVIOUS": "Précédent : {{slide}}",
+      "CAROUSEL_NEXT": "Suivant : {{slide}}",
       "RESULTS": "Résultats",
       "HOME": "Accueil",
       "PROBLEM": "Problème",
@@ -775,6 +777,10 @@
          "BRUSH_SIZE": "Taille du flou",
          "GLOBAL_BLUR_INFO": "Vous pouvez flouter globalement toute l'image en utilisant ce bouton. En cliquant dessus, une liste de pourcentages de floutage s'affiche pour choisir l'intensité du flou.",
          "MODIFICATION_DONE": "Modification effectuée",
+         "UNDO": "Annuler la dernière modification",
+         "REDO": "Rétablir la modification",
+         "ACTIONS_TOOLBAR": "Mode de floutage",
+         "BLUR_PERCENT": "Flouter toute l'image à {{percent}} pour cent",
          "TUTORIAL": {
             "DESCRIPTION": "Glisse ton doigt sur l'image pour flouter."
          }
@@ -786,6 +792,7 @@
          "FOCUS_ACCESSIBLE_TITLE": "Tester mon mot de passe – zone de saisie",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "force brute",
+            "ARIA_LABEL": "Qu'est-ce qu'une attaque par force brute ?",
             "CONTENT": "Une <strong>attaque par force brute</strong> (<i>bruteforce attack</i>) consiste à tester, l’une après l’autre, chaque combinaison possible d’un mot de passe. (source : <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
          },
          "CRIMINAL_GUESSES": "Un cybercriminel le devine en :",
@@ -874,7 +881,11 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Langue active : {{language}}",
-         "CURRENT_DEVICE": "Device active : {{device}}"
+         "CURRENT_DEVICE": "Appareil activé : {{device}}",
+         "NO_DEVICE_SELECTED": "Appareil activé : aucun sélectionné",
+         "DEVICE_IOS": "iOS",
+         "DEVICE_ANDROID": "Android",
+         "DEVICE_WEB": "Web"
       },
       "CONTACT": {
          "PHONE": "Contacter par téléphone",

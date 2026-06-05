@@ -18,6 +18,8 @@
       "BACK": "Wróć",
       "NEXT": "Dalej",
       "PREVIOUS": "Wstecz",
+      "CAROUSEL_PREVIOUS": "",
+      "CAROUSEL_NEXT": "",
       "RESULTS": "Wyniki",
       "HOME": "Strona główna",
       "PROBLEM": "Problem",
@@ -799,9 +801,13 @@
          "BRUSH_SIZE": "Rozmiar rozmycia",
          "GLOBAL_BLUR_INFO": "Możesz rozmyć cały obraz tym przyciskiem. Kliknięcie otwiera listę procentów rozmycia, aby wybrać intensywność.",
          "MODIFICATION_DONE": "Modyfikacja zakończona",
+         "UNDO": "",
+         "REDO": "",
          "TUTORIAL": {
             "DESCRIPTION": "Przesuń palcem po obrazie, aby go rozmyć."
-         }
+         },
+         "ACTIONS_TOOLBAR": "",
+         "BLUR_PERCENT": ""
       },
       "PASSWORD_CHECK": {
          "TITLE": "Testowanie hasła",
@@ -810,7 +816,8 @@
          "FOCUS_ACCESSIBLE_TITLE": "Testowanie hasła - pole wprowadzania",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "brute force",
-            "CONTENT": "Atak <strong>brute force</strong> polega na testowaniu, jedna po drugiej, każdej możliwej kombinacji hasła. (źródło: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
+            "CONTENT": "Atak <strong>brute force</strong> polega na testowaniu, jedna po drugiej, każdej możliwej kombinacji hasła. (źródło: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)",
+            "ARIA_LABEL": ""
          },
          "CRIMINAL_GUESSES": "Cyberprzestępca zgaduje je w:",
          "ASSESSMENT_TEXT": "Twoje hasło:",
@@ -898,7 +905,11 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Obecny język: {{language}}",
-         "CURRENT_DEVICE": "Obecne urządzenie: {{device}}"
+         "CURRENT_DEVICE": "Obecne urządzenie: {{device}}",
+         "NO_DEVICE_SELECTED": "",
+         "DEVICE_IOS": "",
+         "DEVICE_ANDROID": "",
+         "DEVICE_WEB": ""
       },
       "CONTACT": {
          "PHONE": "Kontakt telefoniczny",

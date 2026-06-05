@@ -40,11 +40,6 @@ export class ZoomLayoutService {
       return scale >= threshold;
    }
 
-   /** Détection fiable du zoom navigateur (menus header). */
-   isDomZoomAtLeast(threshold = 1.5): boolean {
-      return this.measureDomZoom() >= threshold;
-   }
-
    private measureDomZoom(): number {
       this.zoomVersion();
       if (typeof document === "undefined") return 1;

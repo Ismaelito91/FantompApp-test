@@ -92,8 +92,6 @@
       background: var(--background-2);
       box-shadow: var(--shadow-1);
       margin-top: 4px;
-      min-width: 31vh;
-      max-height: 70vh;
       overflow: auto;
 
       *:focus-visible {
@@ -146,7 +144,9 @@
 
    .radio {
       width: 16px;
+      min-width: 16px;
       height: 16px;
+      min-height: 16px;
       border-radius: 50%;
       border: 2px solid var(--color-8);
       box-sizing: border-box;
@@ -190,32 +190,17 @@
 
 // Menu rogne (souvent au fort zoom) : repositionnement au bord droit.
 .custom-menu-container.is-fixed {
-   position: fixed;
-   top: calc(var(--spacing-2) + var(--spacing-5) + 4px);
-   right: 8px;
-   left: auto;
-
-   .mat-mdc-menu-panel.lang-menu {
-      max-width: calc(100vw - 16px);
-   }
-
-   &.custom-menu-container--device .mat-mdc-menu-panel.lang-menu {
-      min-width: auto;
-   }
 
    .mat-mdc-menu-item {
-      min-height: 44px;
-      height: auto;
       white-space: normal;
    }
-
-   .lang-item {
-      min-height: 44px;
-      height: auto;
-
-      .language,
-      .country {
-         overflow-wrap: anywhere;
+   .mat-mdc-menu-panel {
+      &.lang-menu {
+         max-width: 45vw;
       }
+   }
+   .lang-item {
+      flex-direction: column;
+      height: 100%;
    }
 }
