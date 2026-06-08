@@ -334,52 +334,11 @@ export class UnreportedContentComponent {
 
    getLocaleDateFromLang(date: Date): string {
       const lang = this.languageService.language();
-      let locale: string;
-      switch (lang) {
-         case "FR":
-            locale = "fr-FR";
-            break;
-         // case 'IE':
-         //    locale = 'en-IE';
-         //    break;
-         // case 'ES':
-         //    locale = 'es-ES';
-         //    break;
-         // case 'CT':
-         //    locale = 'ca';
-         //    break;
-         // case 'LU':
-         //    locale = 'lb-LU';
-         //    break;
-         // case 'DK':
-         //    locale = 'da-DK';
-         //    break;
-         // case 'HU':
-         //    locale = 'hu-HU';
-         //    break;
-         // case 'PT':
-         //    locale = 'pt-PT';
-         //    break;
-         // case 'PL':
-         //    locale = 'pl-PL';
-         //    break;
-         // case 'GR':
-         //    locale = 'el-GR';
-         //    break;
-         case "XX":
-            locale = "en";
-            break;
-         default:
-            locale = "fr-FR";
-      }
-
-      const dateTexte = new Intl.DateTimeFormat(locale, {
-         weekday: "long",
+      const locale = this.languageService.getHtmlLang(lang);
+      return new Intl.DateTimeFormat(locale, {
          day: "numeric",
          month: "long",
          year: "numeric",
       }).format(date);
-
-      return dateTexte;
    }
 }
