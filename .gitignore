@@ -39,3 +39,5 @@ dist
 .scannerwork/*
 reports/*
 coverage/*
+
+.claude/*
