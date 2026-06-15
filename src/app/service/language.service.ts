@@ -131,7 +131,7 @@ export class LanguageService {
       },
       {
          code: "CT",
-         languageName: "Español",
+         languageName: "Català",
          countryName: CountryRegion.CT,
          flagUrl: "assets/images/flag/spain.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.CATALONIA",
