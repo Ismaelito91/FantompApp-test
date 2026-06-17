@@ -921,6 +921,7 @@
       "GENERAL": {
          "FLAG": "Vlajka"
       },
+      
       "TOOLS": {
          "PASSWORD_CHECK": {
             "CRITERIA": {

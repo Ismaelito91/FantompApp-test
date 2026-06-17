@@ -922,6 +922,7 @@
       "GENERAL": {
          "FLAG": "Bandera"
       },
+      
       "TOOLS": {
          "PASSWORD_CHECK": {
             "CRITERIA": {
