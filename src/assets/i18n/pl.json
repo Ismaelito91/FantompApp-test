@@ -290,7 +290,8 @@
                      "TITLE": "Przykłady zrzutów ekranu:",
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>Treść do usunięcia</strong><br />Zrzut ekranu problematycznego tekstu, zdjęcia lub wideo<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Adres strony internetowej</strong><br />Link do strony (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Informacje o osobie, która opublikowała treść</strong><br />Link do jej profilu<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Twoje żądanie usunięcia</strong><br />- Zrzuty ekranu tekstu, w którym prosisz o usunięcie<br />- Zrzuty ekranu odpowiedzi (jeśli jest)"
                   },
-                  "BUTTON": "Przejdź do formularza"
+                  "BUTTON": "Przejdź do formularza",
+                  "LINK": ""
                }
             },
             "UNREPORTED_CONTENT": {
@@ -920,21 +921,6 @@
       },
       "GENERAL": {
          "FLAG": "Flaga"
-      },
-      "COUNTRIES": {
-         "FRANCE": "Français",
-         "IRELAND": "English",
-         "HUNGARY": "Magyar",
-         "GREECE": "Ελληνικά",
-         "DENMARK": "Dansk",
-         "POLAND": "Polski",
-         "PORTUGAL": "Português",
-         "SPAIN": "Español",
-         "CATALONIA": "Català",
-         "BELGIUM_FRENCH": "Français (Belgique)",
-         "BELGIUM_DUTCH": "Nederlands (België)",
-         "LUXEMBOURG": "Lëtzebuergesch",
-         "INTERNATIONAL": "Międzynarodowy"
       },
       "TOOLS": {
          "PASSWORD_CHECK": {

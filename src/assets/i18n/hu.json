@@ -290,7 +290,8 @@
                      "TITLE": "Példák képernyőképekre:",
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>A törlendő tartalom</strong><br />Képernyőkép a problémás szövegről, fotóról vagy videóról<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>A weboldal címe</strong><br />Link a weboldalra (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Információk a tartalmat közzétevő személyről</strong><br />Link a profiljára<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>A törlési kérelmed</strong><br />- Képernyőképek a szövegről, amelyben a törlést kéred<br />- Képernyőképek a válaszról (ha van)"
                   },
-                  "BUTTON": "Ugrás az űrlaphoz"
+                  "BUTTON": "Ugrás az űrlaphoz",
+                  "LINK": "https://naih.hu/ugyfelszolgalat-kapcsolat"
                }
             },
             "UNREPORTED_CONTENT": {
@@ -920,21 +921,6 @@
       },
       "GENERAL": {
          "FLAG": "Zászló"
-      },
-      "COUNTRIES": {
-         "FRANCE": "Francia",
-         "IRELAND": "Angol",
-         "HUNGARY": "Magyar",
-         "GREECE": "Görög",
-         "DENMARK": "Dán",
-         "POLAND": "Lengyel",
-         "PORTUGAL": "Portugál",
-         "SPAIN": "Spanyol",
-         "CATALONIA": "Katalán",
-         "BELGIUM_FRENCH": "Français (Belgique)",
-         "BELGIUM_DUTCH": "Nederlands (België)",
-         "LUXEMBOURG": "Luxemburgi",
-         "INTERNATIONAL": "Nemzetközi"
       },
       "TOOLS": {
          "PASSWORD_CHECK": {

@@ -268,7 +268,8 @@
                      "TITLE": "Examples of screenshots:",
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>The content to delete</strong><br />Screenshot of the problematic text, photo or video<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>The website address</strong><br />A link to the website (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Information about the person who posted the content</strong><br />A link to their profile<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Your requeste of deletion</strong><br />- Screenshots of the text where you are requesting the deletion<br />- Screenshots of the reply (if there is one)"
                   },
-                  "BUTTON": "Access the form"
+                  "BUTTON": "Access the form",
+                  "LINK": ""
                }
             },
             "UNREPORTED_CONTENT": {

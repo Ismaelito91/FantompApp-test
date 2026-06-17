@@ -290,7 +290,8 @@
                      "TITLE": "Príklady snímok obrazovky:",
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>Obsah na vymazanie</strong><br />Snímka obrazovky problematického textu, fotky alebo videa<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Adresa webovej stránky</strong><br />Odkaz na webovú stránku (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Informácie o osobe, ktorá obsah zverejnila</strong><br />Odkaz na jej profil<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Tvoja žiadosť o vymazanie</strong><br />- Snímky obrazovky textu, kde žiadaš o vymazanie<br />- Snímky obrazovky odpovede (ak nejaká je)"
                   },
-                  "BUTTON": "Prejsť na formulár"
+                  "BUTTON": "Prejsť na formulár",
+                  "LINK": "https://dataprotection.gov.sk/sk/dotknute-osoby/konanie-ochrane-osobnych-udajov/"
                }
             },
             "UNREPORTED_CONTENT": {
@@ -919,21 +920,6 @@
       },
       "GENERAL": {
          "FLAG": "Vlajka"
-      },
-      "COUNTRIES": {
-         "FRANCE": "Français",
-         "IRELAND": "English",
-         "HUNGARY": "Magyar",
-         "GREECE": "Ελληνικά",
-         "DENMARK": "Dansk",
-         "POLAND": "Polski",
-         "PORTUGAL": "Português",
-         "SPAIN": "Español",
-         "CATALONIA": "Català",
-         "BELGIUM_FRENCH": "Français (Belgique)",
-         "BELGIUM_DUTCH": "Nederlands (België)",
-         "LUXEMBOURG": "Lëtzebuergesch",
-         "INTERNATIONAL": "Medzinárodné"
       },
       "TOOLS": {
          "PASSWORD_CHECK": {

@@ -290,7 +290,8 @@
                      "TITLE": "Ejemplos de capturas de pantalla:",
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>El contenido a eliminar</strong><br />Captura de pantalla del texto, foto o vídeo problemático<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>La dirección del sitio web</strong><br />Un enlace al sitio web (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Información sobre la persona que publicó el contenido</strong><br />Un enlace a su perfil<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Tu solicitud de eliminación</strong><br />- Capturas de pantalla del texto donde solicitas la eliminación<br />- Capturas de pantalla de la respuesta (si la hay)"
                   },
-                  "BUTTON": "Acceder al formulario"
+                  "BUTTON": "Acceder al formulario",
+                  "LINK": "https://sedeaepd.gob.es/sede-electronica/procedures/claims"
                }
             },
             "UNREPORTED_CONTENT": {
@@ -920,21 +921,6 @@
       },
       "GENERAL": {
          "FLAG": "Bandera"
-      },
-      "COUNTRIES": {
-         "FRANCE": "Français",
-         "IRELAND": "English",
-         "HUNGARY": "Magyar",
-         "GREECE": "Ελληνικά",
-         "DENMARK": "Dansk",
-         "POLAND": "Polski",
-         "PORTUGAL": "Português",
-         "SPAIN": "Español",
-         "CATALONIA": "Català",
-         "BELGIUM_FRENCH": "Français (Belgique)",
-         "BELGIUM_DUTCH": "Nederlands (België)",
-         "LUXEMBOURG": "Lëtzebuergesch",
-         "INTERNATIONAL": "International"
       },
       "TOOLS": {
          "PASSWORD_CHECK": {
