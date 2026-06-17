@@ -290,7 +290,8 @@
                      "TITLE": "Exempel på skärmdumpar:",
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>Innehållet som ska raderas</strong><br />Skärmdump av den problematiska texten, fotot eller videon<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Webbplatsens adress</strong><br />En länk till webbplatsen (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Information om personen som publicerade innehållet</strong><br />En länk till deras profil<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Din begäran om radering</strong><br />- Skärmdumpar av texten där du begär radering<br />- Skärmdumpar av svaret (om det finns ett)"
                   },
-                  "BUTTON": "Gå till formuläret"
+                  "BUTTON": "Gå till formuläret",
+                  "LINK": "https://www.imy.se/privatperson/utfora-arenden/filtersida/"
                }
             },
             "UNREPORTED_CONTENT": {

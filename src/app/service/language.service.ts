@@ -42,7 +42,7 @@ export class LanguageService {
          flagUrl: "assets/images/flag/belgium.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.BELGIUM_FRENCH",
          lang: "fr-BE",
-         translateLocale: "fr",
+         translateLocale: "fr-be",
       },
       {
          code: "BENL",
