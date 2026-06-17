@@ -920,21 +920,7 @@
       "GENERAL": {
          "FLAG": "Vlajka"
       },
-      "COUNTRIES": {
-         "FRANCE": "Français",
-         "IRELAND": "English",
-         "HUNGARY": "Magyar",
-         "GREECE": "Ελληνικά",
-         "DENMARK": "Dansk",
-         "POLAND": "Polski",
-         "PORTUGAL": "Português",
-         "SPAIN": "Español",
-         "CATALONIA": "Català",
-         "BELGIUM_FRENCH": "Français (Belgique)",
-         "BELGIUM_DUTCH": "Nederlands (België)",
-         "LUXEMBOURG": "Lëtzebuergesch",
-         "INTERNATIONAL": "Medzinárodné"
-      },
+      
       "TOOLS": {
          "PASSWORD_CHECK": {
             "CRITERIA": {

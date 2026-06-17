@@ -921,21 +921,7 @@
       "GENERAL": {
          "FLAG": "Zászló"
       },
-      "COUNTRIES": {
-         "FRANCE": "Francia",
-         "IRELAND": "Angol",
-         "HUNGARY": "Magyar",
-         "GREECE": "Görög",
-         "DENMARK": "Dán",
-         "POLAND": "Lengyel",
-         "PORTUGAL": "Portugál",
-         "SPAIN": "Spanyol",
-         "CATALONIA": "Katalán",
-         "BELGIUM_FRENCH": "Français (Belgique)",
-         "BELGIUM_DUTCH": "Nederlands (België)",
-         "LUXEMBOURG": "Luxemburgi",
-         "INTERNATIONAL": "Nemzetközi"
-      },
+      
       "TOOLS": {
          "PASSWORD_CHECK": {
             "CRITERIA": {
