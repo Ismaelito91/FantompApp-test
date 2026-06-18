@@ -222,7 +222,7 @@
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>Το περιεχόμενο προς διαγραφή</strong><br />Στιγμιότυπο του προβληματικού κειμένου, φωτογραφίας ή βίντεο<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Η διεύθυνση του ιστότοπου</strong><br />Ένας σύνδεσμος προς τον ιστότοπο (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Πληροφορίες για το άτομο που δημοσίευσε το περιεχόμενο</strong><br />Ένας σύνδεσμος προς το προφίλ του<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Το αίτημά σου για διαγραφή</strong><br />- Στιγμιότυπα του κειμένου όπου ζητάς τη διαγραφή<br />- Στιγμιότυπα της απάντησης (αν υπάρχει)"
                   },
                   "BUTTON": "Πρόσβαση στη φόρμα",
-                  "LINK": ""
+                  "LINK": "https://www.dpa.gr/el/polites/katagelia_stin_arxi"
                }
             },
             "UNREPORTED_CONTENT": {
