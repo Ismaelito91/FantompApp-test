@@ -8,7 +8,7 @@
       "UPDATE_APP": "Ενημέρωση εφαρμογής"
    },
    "COMMON": {
-      "ORGANISATION": "CNIL",
+      "ORGANISATION": "DPA",
       "SAVE": "Αποθήκευση",
       "CANCEL": "Ακύρωση",
       "DELETE": "Διαγραφή",
@@ -158,7 +158,7 @@
       "APP_INFO": {
          "TITLE": "Τι είναι αυτή η εφαρμογή;",
          "DESCRIPTION_1": "Το FantomApp σε βοηθά σε περίπτωση προβλήματος, σου δίνει εργαλεία για την προστασία της διαδικτυακής σου ιδιωτικότητας και σου παρέχει οδηγούς για τη διασφάλιση των δεδομένων σου στα κύρια κοινωνικά δίκτυα που χρησιμοποιείς.",
-         "DESCRIPTION_2": "Η εφαρμογή δημιουργήθηκε από την <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">CNIL</a> (Commission nationale de l'informatique et des libertés), και χρηματοδοτείται από την Ευρωπαϊκή Επιτροπή.",
+         "DESCRIPTION_2": "Η εφαρμογή δημιουργήθηκε από την <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"dpa-link\">DPA</a> (Αρχή Προστασίας Δεδομένων), και χρηματοδοτείται από την Ευρωπαϊκή Επιτροπή.",
          "DESCRIPTION_3": "<strong>Εκδότης:</strong>",
          "DESCRIPTION_4": "Commission nationale de l’informatique et des libertés (CNIL), μια ανεξάρτητη διοικητική αρχή υπεύθυνη για την προστασία δεδομένων προσωπικού χαρακτήρα.",
          "DESCRIPTION_5": "Διεύθυνση: 3 Place de Fontenoy – 75334 PARIS CEDEX 07, Γαλλία – Τηλέφωνο 01 53 73 22 22 – www.cnil.fr",
@@ -271,7 +271,7 @@
                "BUTTON": "Υποβολή καταγγελίας",
                "TUTORIAL": {
                   "P1": {
-                     "TITLE": "Ποιος είναι ο ρόλος της <span class='text-(--color-24)'>CNIL</span>;",
+                     "TITLE": "Ποιος είναι ο ρόλος της <span class='text-(--color-24)'>DPA</span>;",
                      "DESCRIPTION": "Ο ρόλος μιας αρχής προστασίας δεδομένων είναι να διαφυλάσσει τις ελευθερίες μας. Συμβουλεύει και ελέγχει τη χρήση προσωπικών δεδομένων από εταιρείες, φορείς και συλλόγους."
                   },
                   "P2": {

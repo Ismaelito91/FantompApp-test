@@ -8,7 +8,7 @@
       "UPDATE_APP": "Alkalmazás frissítése"
    },
    "COMMON": {
-      "ORGANISATION": "CNIL",
+      "ORGANISATION": "NAIH",
       "SAVE": "Mentés",
       "CANCEL": "Mégse",
       "DELETE": "Törlés",
@@ -271,7 +271,7 @@
                "BUTTON": "Panasz benyújtása",
                "TUTORIAL": {
                   "P1": {
-                     "TITLE": "Mi a <span class='text-(--color-24)'>CNIL</span> szerepe?",
+                     "TITLE": "Mi a <span class='text-(--color-24)'>NAIH</span> szerepe?",
                      "DESCRIPTION": "Az adatvédelmi hatóság szerepe az, hogy megőrizze mindannyiunk szabadságát. Tanácsot ad és ellenőrzi a személyes adatok felhasználását cégek, adminisztrációk és egyesületek által."
                   },
                   "P2": {
