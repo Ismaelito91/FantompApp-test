@@ -84,42 +84,6 @@
       "STEP_FOUR": {
          "TITLE": "Alapvető beállítások <span aria-hidden=\"true\">⚙️</span>",
          "DESCRIPTION": "Nem mindig könnyű biztonságossá tenni a fiókjaidat... a FantomApp-on sok tippet találsz."
-      },
-      "WELCOME": {
-         "TITLE": "Üdvözöl a FantomApp!",
-         "DESCRIPTION": "Fedezz fel egy alkalmazást, amelyet a magánéleted védelmére terveztek, és amely kivételes felhasználói élményt nyújt. Hadd mutassuk be a fő funkcióit."
-      },
-      "APPEARANCE": {
-         "TITLE": "Szabd testre az élményt",
-         "DESCRIPTION": "Válaszd ki az alkalmazás megjelenését a preferenciáid és a környezeted alapján.",
-         "FEATURE_1": "Választás világos, sötét vagy automatikus mód között.",
-         "FEATURE_2": "Használd ugyanazokat a beállításokat, mint az eszközöd",
-         "FEATURE_3": "Vizuális kényelemre optimalizált felület"
-      },
-      "ICON_CHANGE": {
-         "TITLE": "Alkalmazás ikonjának módosítása",
-         "DESCRIPTION": "Szabd testre a kezdőképernyőn látható ikont a nagyobb diszkréció vagy esztétika érdekében.",
-         "FEATURE_1": "Több ikondizájn elérhető",
-         "FEATURE_2": "Azonnali és biztonságos váltás",
-         "FEATURE_3": "Diszkrét lehetőség a magánéleted védelmére"
-      },
-      "RESOURCES": {
-         "TITLE": "Hozzáférés az összes forráshoz",
-         "DESCRIPTION": "Minden fontos információt és hasznos eszközt megtalálsz egy helyen.",
-         "FEATURE_1": "Az alkalmazás teljes dokumentációja",
-         "FEATURE_2": "Részletes felhasználói útmutatók",
-         "FEATURE_3": "Támogatás és online súgó"
-      },
-      "ACCESSIBILITY": {
-         "TITLE": "Egy alkalmazás mindenkinek",
-         "DESCRIPTION": "A FantomApp-ot úgy tervezték, hogy minden felhasználó számára elérhető legyen, képességeitől függetlenül.",
-         "FEATURE_1": "Képernyőolvasó-barát felület",
-         "FEATURE_2": "Optimalizált billentyűzet-navigáció",
-         "FEATURE_3": "Megfelel az RGAA akadálymentesítési szabványoknak"
-      },
-      "READY": {
-         "TITLE": "Minden készen áll!",
-         "DESCRIPTION": "Most már ismered a FantomApp főbb funkcióit. Élvezd a biztonságos és személyre szabott élményt."
       }
    },
    "USER_CONFIG_APP": {
@@ -132,21 +96,8 @@
          "SYSTEM_SETTINGS": "Eszköz beállításainak használata"
       }
    },
-   "APP_ICON_SELECTOR": {
-      "TITLE": "Az alkalmazás ikonja",
-      "SUBTITLE": "Szabd testre az alkalmazás ikonját.",
-      "DEFAULT": "Alapértelmezett ikon",
-      "DEFAULT_DESC": "Az eredeti ikon",
-      "GHOST": "Szellem ikon",
-      "GHOST_DESC": "Egy titokzatos és diszkrét változat",
-      "DARK": "Sötét ikon",
-      "DARK_DESC": "Tökéletes éjszakai felhasználóknak",
-      "COLORFUL": "Színes ikon",
-      "COLORFUL_DESC": "Egy élénk és vidám ikon"
-   },
    "HOME": {
       "GREETING": "Szia <span aria-hidden=\"true\">👋</span> Hogyan segíthetünk?",
-      "WELCOME": "Üdvözöl a FantomApp",
       "APP_INFO_TITLE": "Az alkalmazásról",
       "APPEARANCE": "Megjelenés",
       "CHANGE_ICON": "Ikon megváltoztatása",
@@ -155,28 +106,6 @@
       "RIGHTS": "Vannak jogaim",
       "ACCESSIBILITY": "FantomApp mindenkinek (Akadálymentesítés)",
       "TUTORIAL": "Nézd meg újra az üdvözlő oktatóanyagot",
-      "APP_INFO": {
-         "TITLE": "Mi ez az alkalmazás?",
-         "DESCRIPTION_1": "A FantomApp segít probléma esetén, eszközöket ad az online magánéleted védelméhez, és útmutatókat nyújt az adataid biztonságához az általad használt fő közösségi oldalakon.",
-         "DESCRIPTION_2": "Az alkalmazást a <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">CNIL</a> (Commission nationale de l'informatique et des libertés) készítette, és az Európai Bizottság finanszírozta.",
-         "DESCRIPTION_3": "<strong>Kiadó:</strong>",
-         "DESCRIPTION_4": "Commission nationale de l’informatique et des libertés (CNIL), egy független közigazgatási hatóság, amely a személyes adatok védelméért felelős.",
-         "DESCRIPTION_5": "Cím: 3 Place de Fontenoy – 75334 PÁRIZS CEDEX 07, Franciaország – Telefon: 01 53 73 22 22 – www.cnil.fr",
-         "DESCRIPTION_6": "Kiadásért felelős: Marie-Laure DENIS, Elnök<br />",
-         "DESCRIPTION_7": "<strong>Tárhelyszolgáltató</strong>: Scaleway SAS - 8, Rue de la Ville-l'Évêque, 75008 Párizs, Franciaország.<br /><br />",
-         "DESCRIPTION_8": "<strong>Személyes adatok</strong><br />",
-         "DESCRIPTION_9": "A CNIL a FantomAPP alkalmazást azért biztosítja, hogy teljesítse tájékoztatási és tudatosságnövelő küldetését, mint a személyes adatok védelméért felelős hatóság.",
-         "DESCRIPTION_10": "Az alkalmazás a következő személyes adatokat gyűjti: IP-címed; alkalmazás csatlakozási naplók.",
-         "DESCRIPTION_11": "Ezek az adatok elengedhetetlenek az alkalmazás megfelelő technikai működésének és biztonságának biztosításához, és lehetővé teszik a csatlakozás dátumának és idejének megismerését. Ezekhez az adatokhoz csak a CNIL csapatai és az alkalmazás technikai működéséért és biztonságáért felelős cég férhet hozzá. Hat hónapig őrzik meg őket.",
-         "DESCRIPTION_12": "Más személyes adat nem kerül gyűjtésre. Az alkalmazásban nincs telepítve nyomkövető.",
-         "DESCRIPTION_13": "Kérheted a CNIL-től az alkalmazás által gyűjtött adataid másolatát az educnum[at]cnil.fr e-mail címen, vagy ezen az <a href=\"https://www.cnil.fr/webform/contactez-le-delegue-la-protection-des-donnees-dpo\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">online űrlapon</a> keresztül. Jogaid jobb megértéséhez látogass el a <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">cnil.fr</a> oldalra.",
-         "DESCRIPTION_14": "Ha kapcsolatfelvétel után nem kaptál választ, vagy úgy ítéled meg, hogy a válasz hiányos vagy helytelen, <a href=\"https://www.cnil.fr/fr/adresser-une-plainte\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">panaszt tehetsz a CNIL-nél</a>.<br />",
-         "DESCRIPTION_15": "<strong>CNIL védjegyek használata</strong>",
-         "DESCRIPTION_16": "A FantomApp szó- és ábrás védjegy (logó) a Nemzeti Ipari Tulajdon Hivatalánál (INPI) van bejegyezve.<br />",
-         "DESCRIPTION_17": "Ennek használata a CNIL írásos engedélye nélkül, bármilyen hordozón, termékek vagy szolgáltatások népszerűsítése céljából, különösen kereskedelmi céllal, tilos, és büntetőjogi valamint polgári jogi felelősségre vonást von maga után. Szigorúan oktatási célokra (CNIL tevékenységek bemutatása stb.) engedélyezett.<br />",
-         "DESCRIPTION_18": "<strong>Tartalom újrafelhasználása</strong><br />",
-         "DESCRIPTION_19": "A FantomApp alkalmazás tartalmának újrafelhasználása a <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">CNIL weboldalán</a> meghatározott szabályokhoz kötött. A tartalom forrását a következőképpen kell megjelölni: \"Forrás: CNIL FantomApp - https://www.fantomapp.fr\""
-      },
       "CARDS": {
          "MAIN_TITLE": "Közösségi oldalam biztosítása",
          "VIEW_ALL": "Összes megtekintése",
@@ -922,7 +851,6 @@
       "GENERAL": {
          "FLAG": "Zászló"
       },
-      
       "TOOLS": {
          "PASSWORD_CHECK": {
             "CRITERIA": {
