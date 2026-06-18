@@ -8,7 +8,7 @@
       "UPDATE_APP": "Uppdatering av applikationen"
    },
    "COMMON": {
-      "ORGANISATION": "CNIL",
+      "ORGANISATION": "IMY",
       "SAVE": "Spara",
       "CANCEL": "Avbryt",
       "DELETE": "Radera",
@@ -84,42 +84,6 @@
       "STEP_FOUR": {
          "TITLE": "Viktiga inställningar <span aria-hidden=\"true\">⚙️</span>",
          "DESCRIPTION": "Det är inte alltid lätt att säkra sina konton... i FantomApp hittar du massor av tips."
-      },
-      "WELCOME": {
-         "TITLE": "Välkommen till FantomApp!",
-         "DESCRIPTION": "Upptäck en app utformad för att skydda din integritet och ge dig en exceptionell användarupplevelse. Låt oss presentera dess huvudfunktioner."
-      },
-      "APPEARANCE": {
-         "TITLE": "Anpassa din upplevelse",
-         "DESCRIPTION": "Välj appens utseende baserat på dina preferenser och din omgivning.",
-         "FEATURE_1": "Välj mellan ljust, mörkt eller automatiskt läge.",
-         "FEATURE_2": "Använd samma inställningar som din enhet",
-         "FEATURE_3": "Gränssnitt optimerat för visuell komfort"
-      },
-      "ICON_CHANGE": {
-         "TITLE": "Ändra appikonen",
-         "DESCRIPTION": "Anpassa ikonen du ser på din hemskärm för att göra den mer diskret eller snyggare.",
-         "FEATURE_1": "Flera ikondesigner tillgängliga",
-         "FEATURE_2": "Omedelbar och säker ändring",
-         "FEATURE_3": "Diskret alternativ för att skydda din integritet"
-      },
-      "RESOURCES": {
-         "TITLE": "Få tillgång till alla resurser",
-         "DESCRIPTION": "Hitta all viktig information och användbara verktyg nära till hands.",
-         "FEATURE_1": "Komplett dokumentation av appen",
-         "FEATURE_2": "Detaljerade användarguider",
-         "FEATURE_3": "Support och onlinehjälp"
-      },
-      "ACCESSIBILITY": {
-         "TITLE": "En app för alla",
-         "DESCRIPTION": "FantomApp utformades för att vara tillgänglig för alla användare, oavsett tidigare kunskap.",
-         "FEATURE_1": "Ett användarvänligt gränssnitt",
-         "FEATURE_2": "En optimerad tangentbordsnavigering",
-         "FEATURE_3": "Följer RGAA-tillgänglighetsstandarder"
-      },
-      "READY": {
-         "TITLE": "Du är redo!",
-         "DESCRIPTION": "Du känner nu till de viktigaste funktionerna i FantomApp. Njut av din säkra och personliga upplevelse fullt ut."
       }
    },
    "USER_CONFIG_APP": {
@@ -132,21 +96,8 @@
          "SYSTEM_SETTINGS": "Använd samma inställningar som din enhet"
       }
    },
-   "APP_ICON_SELECTOR": {
-      "TITLE": "Appens ikon",
-      "SUBTITLE": "Anpassa ikonen för appen.",
-      "DEFAULT": "Standardikon",
-      "DEFAULT_DESC": "Originalikonen",
-      "GHOST": "Spökikon",
-      "GHOST_DESC": "En mystisk och diskret version",
-      "DARK": "Mörk ikon",
-      "DARK_DESC": "Perfekt för nattanvändare",
-      "COLORFUL": "Färgstark ikon",
-      "COLORFUL_DESC": "En levande och glad ikon"
-   },
    "HOME": {
       "GREETING": "Hej <span aria-hidden=\"true\">👋</span> Hur kan vi hjälpa dig?",
-      "WELCOME": "Välkommen till FantomApp",
       "APP_INFO_TITLE": "Om appen",
       "APPEARANCE": "Utseende",
       "CHANGE_ICON": "Ändra ikonen",
@@ -155,28 +106,6 @@
       "RIGHTS": "Jag har rättigheter",
       "ACCESSIBILITY": "FantomApp för alla (Tillgänglighet)",
       "TUTORIAL": "Se välkomstguiden igen",
-      "APP_INFO": {
-         "TITLE": "Vad är denna app?",
-         "DESCRIPTION_1": "FantomApp hjälper dig om du har ett problem, ger dig verktyg att försvara din integritet på internet, och ger dig handledning om hur du kan skydda din data på de sociala nätverk du använder.",
-         "DESCRIPTION_2": "Applikationen har producerats av<a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">CNIL</a> (Commission nationale de l'informatique et des libertés), och är finansierad av Europeiska Kommissionen.",
-         "DESCRIPTION_3": "<strong>Utgivare:</strong>",
-         "DESCRIPTION_4": "Commission nationale de l’informatique et des libertés (CNIL), en oberoende förvaltningsmyndighet med ansvar för skyddet av personuppgifter.",
-         "DESCRIPTION_5": "Adress: 3 Place de Fontenoy – 75007 PARIS, France – Telefon 01 53 73 22 22 – www.cnil.fr",
-         "DESCRIPTION_6": "Ansvarig utgivare: Marie-Laure DENIS, President<br />",
-         "DESCRIPTION_7": "<strong>Hosting</strong>: Scaleway SAS - 8, Rue de la Ville-l'Évêque, 75008 Paris, France.<br /><br />",
-         "DESCRIPTION_8": "<strong>Personuppgifter</strong><br />",
-         "DESCRIPTION_9": "CNIL tillhandahåller FantomApp för att fullgöra sitt uppdrag att informera och öka medvetenhet, i sin roll som den myndighet som ansvarar för skyddet av personuppgifter.",
-         "DESCRIPTION_10": " Appen samlar in följande personuppgifter: din IP-adress; anslutningsloggar. ",
-         "DESCRIPTION_11": "Dessa uppgifter är nödvändiga för att säkerställa att applikationen fungerar korrekt och är säker, samt för att kunna fastställa datum och tidpunkt för en anslutning till applikationen. Endast personal vid CNIL och det företag som ansvarar för applikationens tekniska drift och säkerhet har tillgång till dessa uppgifter. De sparas i sex månader.",
-         "DESCRIPTION_12": " Inga andra personuppgifter samlas in. Ingen spårningsfunktion är installerad i appen. ",
-         "DESCRIPTION_13": "Du kan begära en kopia från CNIL av de uppgifter som de har samlat in om dig genom att skicka ett e-postmeddelande till educnum[at]cnil.fr eller genom att använda detta <a href=\"https://www.cnil.fr/webform/contactez-le-delegue-la-protection-des-donnees-dpo\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">webbformulär</a>. För att bättre förstå dina rättigheter, <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">besök cnil.fr</a>.",
-         "DESCRIPTION_14": " Om du efter att ha kontaktat oss inte har fått något svar, eller om du anser att svaret är ofullständigt eller felaktigt, kan du skicka <a href=\"https://www.cnil.fr/fr/adresser-une-plainte\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">ett klagomål till CNIL</a>.<br />",
-         "DESCRIPTION_15": "<strong>Användning av CNIL:s varumärken</strong>",
-         "DESCRIPTION_16": " Det verbala och grafiska varumärket (logotypen) – FantomApp – är skyddat av det nationella institutet för industriell äganderätt.<br />",
-         "DESCRIPTION_17": " Användning utan skriftligt tillstånd från CNIL, oavsett medium, i syfte att marknadsföra produkter eller tjänster, särskilt i kommersiellt syfte, är förbjuden och kan leda till straffrättsliga och civilrättsliga påföljder. Användning är tillåten i strikt utbildningssyfte (presentation av CNIL:s verksamhet m.m.).<br />",
-         "DESCRIPTION_18": "<strong>Återanvänd innehåll</strong><br />",
-         "DESCRIPTION_19": "Återanvändning av innehåll från appen FantomApp omfattas av de regler som anges på <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">CNIL:s webbplats</a>. Upphovsmannen till innehållet måste anges med följande omnämnande: \"Källa: CNIL FantomApp - https://www.fantomapp.fr\""
-      },
       "CARDS": {
          "MAIN_TITLE": "Säkra mina sociala medier",
          "VIEW_ALL": "Visa alla",
@@ -922,7 +851,6 @@
       "GENERAL": {
          "FLAG": "Flagga"
       },
-      
       "TOOLS": {
          "PASSWORD_CHECK": {
             "CRITERIA": {

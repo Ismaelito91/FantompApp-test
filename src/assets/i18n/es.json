@@ -84,42 +84,6 @@
       "STEP_FOUR": {
          "TITLE": "Ajustes esenciales <span aria-hidden=\"true\">⚙️</span>",
          "DESCRIPTION": "No siempre es fácil proteger tus cuentas... en FantomApp encontrarás muchos consejos."
-      },
-      "WELCOME": {
-         "TITLE": "¡Te damos la bienvenida a FantomApp!",
-         "DESCRIPTION": "Descubre una aplicación diseñada para proteger tu privacidad y ofrecerte una experiencia de usuario excepcional. Déjanos presentarte sus funciones principales."
-      },
-      "APPEARANCE": {
-         "TITLE": "Personaliza tu experiencia",
-         "DESCRIPTION": "Elige el aspecto de la aplicación según tus preferencias y tu entorno.",
-         "FEATURE_1": "Elección entre modo claro, oscuro o automático.",
-         "FEATURE_2": "Usa la misma configuración que tu dispositivo",
-         "FEATURE_3": "Interfaz optimizada para el confort visual"
-      },
-      "ICON_CHANGE": {
-         "TITLE": "Cambia el icono de la app",
-         "DESCRIPTION": "Personaliza el icono que ves en tu pantalla de inicio para mayor discreción o estética.",
-         "FEATURE_1": "Varios diseños de iconos disponibles",
-         "FEATURE_2": "Cambio instantáneo y seguro",
-         "FEATURE_3": "Opción discreta para proteger tu privacidad"
-      },
-      "RESOURCES": {
-         "TITLE": "Accede a todos los recursos",
-         "DESCRIPTION": "Encuentra toda la información importante y herramientas útiles al alcance de tu mano.",
-         "FEATURE_1": "Documentación completa de la app",
-         "FEATURE_2": "Guías de usuario detalladas",
-         "FEATURE_3": "Soporte y ayuda en línea"
-      },
-      "ACCESSIBILITY": {
-         "TITLE": "Una app para todos",
-         "DESCRIPTION": "FantomApp ha sido diseñada para ser accesible a todos los usuarios, independientemente de sus capacidades.",
-         "FEATURE_1": "Una interfaz compatible con lectores de pantalla",
-         "FEATURE_2": "Navegación por teclado optimizada",
-         "FEATURE_3": "Cumple con los estándares de accesibilidad RGAA"
-      },
-      "READY": {
-         "TITLE": "¡Todo listo!",
-         "DESCRIPTION": "Ya conoces las funciones principales de FantomApp. Disfruta al máximo de tu experiencia segura y personalizada."
       }
    },
    "USER_CONFIG_APP": {
@@ -132,21 +96,8 @@
          "SYSTEM_SETTINGS": "Usar la misma configuración que el dispositivo"
       }
    },
-   "APP_ICON_SELECTOR": {
-      "TITLE": "El icono de la app",
-      "SUBTITLE": "Personaliza el icono de la aplicación.",
-      "DEFAULT": "Icono predeterminado",
-      "DEFAULT_DESC": "El icono original",
-      "GHOST": "Icono fantasma",
-      "GHOST_DESC": "Una versión misteriosa y discreta",
-      "DARK": "Icono oscuro",
-      "DARK_DESC": "Perfecto para usuarios nocturnos",
-      "COLORFUL": "Icono colorido",
-      "COLORFUL_DESC": "Un icono vibrante y alegre"
-   },
    "HOME": {
       "GREETING": "Hola <span aria-hidden=\"true\">👋</span> ¿Cómo podemos ayudarte?",
-      "WELCOME": "Te damos la bienvenida a FantomApp",
       "APP_INFO_TITLE": "Sobre la app",
       "APPEARANCE": "Apariencia",
       "CHANGE_ICON": "Cambiar el icono",
@@ -155,28 +106,6 @@
       "RIGHTS": "Tengo derechos",
       "ACCESSIBILITY": "FantomApp para todos (Accesibilidad)",
       "TUTORIAL": "Ver de nuevo el tutorial de bienvenida",
-      "APP_INFO": {
-         "TITLE": "¿Qué es esta aplicación?",
-         "DESCRIPTION_1": "FantomApp te ayuda en caso de problema, te da herramientas para proteger tu privacidad en línea y te proporciona tutoriales para salvaguardar tus datos en las principales redes sociales que utilizas.",
-         "DESCRIPTION_2": "La aplicación está producida por <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">la CNIL</a> (Commission nationale de l'informatique et des libertés), y financiada por la Comisión Europea.",
-         "DESCRIPTION_3": "<strong>Editor:</strong>",
-         "DESCRIPTION_4": "Commission nationale de l’informatique et des libertés (CNIL), la autoridad administrativa independiente francesa responsable de la protección de datos personales.",
-         "DESCRIPTION_5": "Dirección: 3 Place de Fontenoy – 75007 PARÍS, Francia – Teléfono +33 1 53 73 22 22 – www.cnil.fr",
-         "DESCRIPTION_6": "Directora de la publicación: Marie-Laure DENIS, Presidenta<br />",
-         "DESCRIPTION_7": "<strong>Alojamiento</strong>: Scaleway SAS - 8, Rue de la Ville-l'Évêque, 75008 París, Francia.<br /><br />",
-         "DESCRIPTION_8": "<strong>Datos personales</strong><br />",
-         "DESCRIPTION_9": "La CNIL proporciona la aplicación FantomAPP para cumplir su misión de información y concienciación como autoridad pública francesa responsable de la protección de datos personales.",
-         "DESCRIPTION_10": "La aplicación recoge los siguientes datos personales: tu dirección IP; registros de conexión de la aplicación. ",
-         "DESCRIPTION_11": "Estos datos son esenciales para garantizar el correcto funcionamiento técnico y la seguridad de la aplicación y permiten conocer la fecha y hora de una conexión a la aplicación. Estos datos son accesibles solo para los equipos de la CNIL y la empresa encargada del funcionamiento técnico y la seguridad de la aplicación. Se conservan durante seis meses.",
-         "DESCRIPTION_12": "No se recogen otros datos personales. No hay ningún rastreador instalado en la aplicación. ",
-         "DESCRIPTION_13": "CNIL una copia de tus datos recogidos por la aplicación enviando un correo electrónico a educnum[at]cnil.fr o utilizando este <a href=\"https://www.cnil.fr/webform/contactez-le-delegue-la-protection-des-donnees-dpo\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">formulario en línea</a>. Para entender mejor tus derechos, <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">visita cnil.fr</a>.",
-         "DESCRIPTION_14": "Si, después de contactar con nosotros, no has recibido respuesta o consideras que la respuesta es incompleta o incorrecta, puedes enviar <a href=\"https://www.cnil.fr/fr/adresser-une-plainte\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">una reclamación a la CNIL</a>.<br />",
-         "DESCRIPTION_15": "<strong>Uso de las marcas de la CNIL</strong>",
-         "DESCRIPTION_16": "La marca denominativa y visual (logotipo) - FantomApp está protegida en el Instituto Nacional de la Propiedad Industrial.<br />",
-         "DESCRIPTION_17": "Su uso sin autorización por escrito de la CNIL, en cualquier medio, con el fin de promocionar productos o servicios, particularmente con fines comerciales, está prohibido bajo pena de enjuiciamiento penal y civil. Está permitido para fines estrictamente educativos (presentación de acciones de la CNIL, etc.).<br />",
-         "DESCRIPTION_18": "<strong>Reutilización de contenido</strong><br />",
-         "DESCRIPTION_19": "La reutilización de contenido de la aplicación FantomApp está sujeta a las reglas especificadas en <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">el sitio web de la CNIL</a>. La autoría del contenido debe acreditarse con la siguiente mención: \"Fuente: CNIL FantomApp - https://www.fantomapp.fr\""
-      },
       "CARDS": {
          "MAIN_TITLE": "Asegurar mis redes sociales",
          "VIEW_ALL": "Ver todo",
@@ -922,7 +851,6 @@
       "GENERAL": {
          "FLAG": "Bandera"
       },
-      
       "TOOLS": {
          "PASSWORD_CHECK": {
             "CRITERIA": {
