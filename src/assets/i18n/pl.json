@@ -8,7 +8,7 @@
       "UPDATE_APP": "Aktualizacja aplikacji"
    },
    "COMMON": {
-      "ORGANISATION": "CNIL",
+      "ORGANISATION": "UODO",
       "SAVE": "Zapisz",
       "CANCEL": "Anuluj",
       "DELETE": "Usuń",
@@ -227,7 +227,7 @@
                "TITLE": "Jeszcze nie zgłosiłeś treści?",
                "P1": {
                   "TITLE": "Pierwszym krokiem jest zgłoszenie tego do mediów społecznościowych.",
-                  "DESCRIPTION": "Ostrożnie zachowaj wszystkie dowody zgłoszenia. Jeśli sieć społecznościowa nie odpowie w ciągu <strong>1 miesiąca</strong>, możesz złożyć skargę do organu ochrony danych na:"
+                  "DESCRIPTION": "Ostrożnie zachowaj wszystkie dowody zgłoszenia. Jeśli sieć społecznościowa nie odpowie w ciągu <strong>1 miesiąca</strong>, możesz złożyć skargę do UODO na:"
                },
                "CONTACTS": {
                   "TITLE": "Kontakty do mediów społecznościowych",

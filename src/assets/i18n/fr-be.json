@@ -139,7 +139,7 @@
             "INCOGNITO": {
                "TITLE": "<span aria-hidden=\"true\">🗑️</span> Le droit à l'effacement : Rester incognito",
                "PARAGRAPH_1": "En ligne, tu as le droit de demander <b>l'effacement et le déréférencement</b> de tes données. Concrètement, si tu veux qu'une photo, une vidéo, un texte de toi, ton nom, ton prénom ou d'autres éléments de tes données personnelles soient supprimés ou ne remontent plus dans les requêtes des moteurs de recherche, tu peux en faire la demande aux sites concernés.",
-               "PARAGRAPH_2": "Tu pourras t'adresser directement au site ou à la plateforme, et si ceux-ci ne répondent pas à ta demande sous 1 mois, tu pourras t'adresser à la CNIL (la Commission Nationale de l'Informatique et des Libertés) afin qu'elle te vienne en aide."
+               "PARAGRAPH_2": "Tu pourras t'adresser directement au site ou à la plateforme, et si ceux-ci ne répondent pas à ta demande sous 1 mois, tu pourras t'adresser à l'APD (l'Autorité de Protection des Données) afin qu'elle te vienne en aide."
             },
             "DATA_INFO": {
                "TITLE": "<span aria-hidden=\"true\">ℹ️</span> Le droit d'information : qui fait quoi avec mes données",
@@ -200,7 +200,7 @@
                "BUTTON": "Adresser une plainte",
                "TUTORIAL": {
                   "P1": {
-                     "TITLE": "Quel est le rôle de la <span class='text-(--color-24)'>CNIL</span> ?",
+                     "TITLE": "Quel est le rôle de l'<span class='text-(--color-24)'>APD</span> ?",
                      "DESCRIPTION": "Le rôle de la Commission nationale de l'Informatique et des Libertés est de préserver les libertés des personnes. Elle conseille et contrôle l’utilisation des données personnelles par les entreprises, les administrations et les associations."
                   },
                   "P2": {
@@ -227,7 +227,7 @@
                "TITLE": "Tu n’as pas encore signalé le contenu ?",
                "P1": {
                   "TITLE": "<span aria-hidden=\"true\">❗️</span>La première étape est de signaler au réseau social",
-                  "DESCRIPTION": "Garde bien toutes les preuves de ton signalement.  Si le réseau social ne répond pas au bout d’<strong>1 mois</strong>, tu peux porter plainte auprès de la CNIL le :"
+                  "DESCRIPTION": "Garde bien toutes les preuves de ton signalement.  Si le réseau social ne répond pas au bout d’<strong>1 mois</strong>, tu peux porter plainte auprès de l'APD le :"
                },
                "CONTACTS": {
                   "TITLE": "Contacts des réseaux sociaux",

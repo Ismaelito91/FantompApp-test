@@ -8,7 +8,7 @@
       "UPDATE_APP": "Alkalmazás frissítése"
    },
    "COMMON": {
-      "ORGANISATION": "CNIL",
+      "ORGANISATION": "NAIH",
       "SAVE": "Mentés",
       "CANCEL": "Mégse",
       "DELETE": "Törlés",
@@ -200,7 +200,7 @@
                "BUTTON": "Panasz benyújtása",
                "TUTORIAL": {
                   "P1": {
-                     "TITLE": "Mi a <span class='text-(--color-24)'>CNIL</span> szerepe?",
+                     "TITLE": "Mi a <span class='text-(--color-24)'>NAIH</span> szerepe?",
                      "DESCRIPTION": "Az adatvédelmi hatóság szerepe az, hogy megőrizze mindannyiunk szabadságát. Tanácsot ad és ellenőrzi a személyes adatok felhasználását cégek, adminisztrációk és egyesületek által."
                   },
                   "P2": {
@@ -227,7 +227,7 @@
                "TITLE": "Még nem jelentetted a tartalmat?",
                "P1": {
                   "TITLE": "Az első lépés, hogy jelentsd a közösségi oldalon.",
-                  "DESCRIPTION": "Gondosan őrizd meg a jelentésed minden bizonyítékát. Ha a közösségi oldal nem válaszol <strong>1 hónapon belül</strong>, panaszt tehetsz az adatvédelmi hatóságnál:"
+                  "DESCRIPTION": "Gondosan őrizd meg a jelentésed minden bizonyítékát. Ha a közösségi oldal nem válaszol <strong>1 hónapon belül</strong>, panaszt tehetsz a NAIH-nál:"
                },
                "CONTACTS": {
                   "TITLE": "Közösségi média kapcsolatok",

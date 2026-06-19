@@ -8,7 +8,7 @@
       "UPDATE_APP": "Aktualizácia aplikácie"
    },
    "COMMON": {
-      "ORGANISATION": "CNIL",
+      "ORGANISATION": "UOOU",
       "SAVE": "Uložiť",
       "CANCEL": "Zrušiť",
       "DELETE": "Vymazať",
@@ -227,7 +227,7 @@
                "TITLE": "Ešte si obsah nenahlásil/a?",
                "P1": {
                   "TITLE": "Prvým krokom je nahlásiť to sociálnej sieti.",
-                  "DESCRIPTION": "Starostlivo si uschovaj všetky dôkazy o tvojom nahlásení. Ak ti sociálna sieť neodpovie do <strong>1 mesiaca</strong>, môžeš to nahlásiť úradu na ochranu údajov dňa:"
+                  "DESCRIPTION": "Starostlivo si uschovaj všetky dôkazy o tvojom nahlásení. Ak ti sociálna sieť neodpovie do <strong>1 mesiaca</strong>, môžeš to nahlásiť na ÚOOÚ SR dňa:"
                },
                "CONTACTS": {
                   "TITLE": "Kontakty na sociálne siete",

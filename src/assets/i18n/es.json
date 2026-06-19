@@ -8,7 +8,7 @@
       "UPDATE_APP": "Actualización de la aplicación"
    },
    "COMMON": {
-      "ORGANISATION": "CNIL",
+      "ORGANISATION": "AEPD",
       "SAVE": "Guardar",
       "CANCEL": "Cancelar",
       "DELETE": "Eliminar",
@@ -227,7 +227,7 @@
                "TITLE": "¿Aún no has denunciado el contenido?",
                "P1": {
                   "TITLE": "El primer paso es denunciarlo ante la red social.",
-                  "DESCRIPTION": "Guarda cuidadosamente todas las pruebas de tu denuncia. Si la red social no te responde en el plazo de <strong>1 mes</strong>, puedes presentar una denuncia a la autoridad de protección de datos en: https://sedeaepd.gob.es/sede-electronica/procedures/claims"
+                  "DESCRIPTION": "Guarda cuidadosamente todas las pruebas de tu denuncia. Si la red social no te responde en el plazo de <strong>1 mes</strong>, puedes presentar una denuncia a la AEPD el :"
                },
                "CONTACTS": {
                   "TITLE": "Contactos de Redes Sociales",
