@@ -84,42 +84,6 @@
       "STEP_FOUR": {
          "TITLE": "Základné nastavenia <span aria-hidden=\"true\">⚙️</span>",
          "DESCRIPTION": "Nie je vždy ľahké zabezpečiť si účty... vo FantomApp nájdeš veľa tipov."
-      },
-      "WELCOME": {
-         "TITLE": "Vitaj vo FantomApp!",
-         "DESCRIPTION": "Objav aplikáciu navrhnutú na ochranu tvojho súkromia, ktorá ti poskytne výnimočný používateľský zážitok. Dovoľ nám predstaviť ti jej hlavné funkcie."
-      },
-      "APPEARANCE": {
-         "TITLE": "Prispôsob si zážitok",
-         "DESCRIPTION": "Vyber si vzhľad aplikácie podľa svojich preferencií a prostredia.",
-         "FEATURE_1": "Výber medzi svetlým, tmavým alebo automatickým režimom.",
-         "FEATURE_2": "Použi rovnaké nastavenia ako tvoje zariadenie",
-         "FEATURE_3": "Rozhranie optimalizované pre vizuálny komfort"
-      },
-      "ICON_CHANGE": {
-         "TITLE": "Zmeň ikonu aplikácie",
-         "DESCRIPTION": "Prispôsob si ikonu, ktorú vidíš na ploche, pre väčšiu diskrétnosť alebo estetiku.",
-         "FEATURE_1": "K dispozícii je niekoľko dizajnov ikon",
-         "FEATURE_2": "Okamžitá a bezpečná zmena",
-         "FEATURE_3": "Diskrétna možnosť na ochranu tvojho súkromia"
-      },
-      "RESOURCES": {
-         "TITLE": "Prístup ku všetkým zdrojom",
-         "DESCRIPTION": "Nájdi všetky dôležité informácie a užitočné nástroje na dosah ruky.",
-         "FEATURE_1": "Kompletná dokumentácia aplikácie",
-         "FEATURE_2": "Podrobné používateľské príručky",
-         "FEATURE_3": "Podpora a online pomoc"
-      },
-      "ACCESSIBILITY": {
-         "TITLE": "Aplikácia pre všetkých",
-         "DESCRIPTION": "FantomApp bola navrhnutá tak, aby bola prístupná všetkým používateľom bez ohľadu na ich schopnosti.",
-         "FEATURE_1": "Rozhranie vhodné pre čítačky obrazovky",
-         "FEATURE_2": "Optimalizovaná navigácia pomocou klávesnice",
-         "FEATURE_3": "V súlade so štandardmi prístupnosti RGAA"
-      },
-      "READY": {
-         "TITLE": "Všetko je pripravené!",
-         "DESCRIPTION": "Teraz poznáš hlavné funkcie FantomApp. Uži si naplno svoj bezpečný a personalizovaný zážitok."
       }
    },
    "USER_CONFIG_APP": {
@@ -132,21 +96,8 @@
          "SYSTEM_SETTINGS": "Použiť rovnaké nastavenia ako tvoje zariadenie"
       }
    },
-   "APP_ICON_SELECTOR": {
-      "TITLE": "Ikona aplikácie",
-      "SUBTITLE": "Prispôsob si ikonu aplikácie.",
-      "DEFAULT": "Predvolená ikona",
-      "DEFAULT_DESC": "Pôvodná ikona",
-      "GHOST": "Ikona ducha",
-      "GHOST_DESC": "Tajomná a diskrétna verzia",
-      "DARK": "Tmavá ikona",
-      "DARK_DESC": "Ideálna pre nočných používateľov",
-      "COLORFUL": "Farebná ikona",
-      "COLORFUL_DESC": "Živá a veselá ikona"
-   },
    "HOME": {
       "GREETING": "Ahoj <span aria-hidden=\"true\">👋</span> Ako ti môžeme pomôcť?",
-      "WELCOME": "Vitaj vo FantomApp",
       "APP_INFO_TITLE": "O aplikácii",
       "APPEARANCE": "Vzhľad",
       "CHANGE_ICON": "Zmeniť ikonu",
@@ -155,28 +106,6 @@
       "RIGHTS": "Mám práva",
       "ACCESSIBILITY": "FantomApp pre všetkých (Prístupnosť)",
       "TUTORIAL": "Znovu si pozrieť úvodný tutoriál",
-      "APP_INFO": {
-         "TITLE": "Čo je táto aplikácia?",
-         "DESCRIPTION_1": "FantomApp ti pomáha v prípade problému, poskytuje nástroje na ochranu tvojho online súkromia a ponúka návody na zabezpečenie tvojich údajov na hlavných sociálnych sieťach, ktoré používaš.",
-         "DESCRIPTION_2": "Aplikácia bola vytvorená <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">CNIL</a> (Commission nationale de l'informatique et des libertés) a je financovaná Európskou komisiou.",
-         "DESCRIPTION_3": "<strong>Vydavateľ:</strong>",
-         "DESCRIPTION_4": "Commission nationale de l’informatique et des libertés (CNIL), nezávislý správny orgán zodpovedný za ochranu osobných údajov.",
-         "DESCRIPTION_5": "Adresa: 3 Place de Fontenoy – 75334 PARIS CEDEX 07, Francúzsko – Telefón +33 1 53 73 22 22 – www.cnil.fr",
-         "DESCRIPTION_6": "Riaditeľ publikácie: Marie-Laure DENIS, Prezidentka<br />",
-         "DESCRIPTION_7": "<strong>Hosting</strong>: Scaleway SAS - 8, Rue de la Ville-l'Évêque, 75008 Paríž, Francúzsko.<br /><br />",
-         "DESCRIPTION_8": "<strong>Osobné údaje</strong><br />",
-         "DESCRIPTION_9": "CNIL poskytuje aplikáciu FantomAPP na plnenie svojho poslania informovania a zvyšovania povedomia ako verejný orgán zodpovedný za ochranu osobných údajov.",
-         "DESCRIPTION_10": "Aplikácia zhromažďuje nasledujúce osobné údaje: tvoja IP adresa; logy pripojenia k aplikácii. ",
-         "DESCRIPTION_11": "Tieto údaje sú nevyhnutné na zabezpečenie správneho technického fungovania a bezpečnosti aplikácie a umožňujú zistiť dátum a čas pripojenia k aplikácii. Tieto údaje sú prístupné iba tímom CNIL a spoločnosti poverenej technickým fungovaním a bezpečnosťou aplikácie. Uchovávajú sa šesť mesiacov.",
-         "DESCRIPTION_12": "Nezhromažďujú sa žiadne iné osobné údaje. V aplikácii nie je nainštalovaný žiadny sledovací softvér (tracker). ",
-         "DESCRIPTION_13": "Môžeš požiadať CNIL o kópiu svojich údajov zhromaždených aplikáciou zaslaním e-mailu na educnum[at]cnil.fr alebo použitím tohto <a href=\"https://www.cnil.fr/webform/contactez-le-delegue-la-protection-des-donnees-dpo\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">online formulára</a>. Pre lepšie pochopenie svojich práv navštív <a href=\"https://dataprotection.gov.sk/sk/dotknute-osoby/prava-dotknutych-osob-slovensko/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">cnil.fr</a>.",
-         "DESCRIPTION_14": "Ak po kontaktovaní CNIL nedostaneš odpoveď alebo dostaneš odpoveď, ktorú považuješ za neúplnú alebo nesprávnu, môžeš poslať <a href=\"https://dataprotection.gov.sk/sk/dotknute-osoby/konanie-ochrane-osobnych-udajov/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">sťažnosť na ÚOOÚ SR (Úrad na ochranu osobných údajov Slovenskej republiky)</a>.<br />",
-         "DESCRIPTION_15": "<strong>Používanie ochranných známok CNIL</strong>",
-         "DESCRIPTION_16": "Slovná a vizuálna značka (logo) - FantomApp je chránená Národným inštitútom priemyselného vlastníctva.<br />",
-         "DESCRIPTION_17": "Jej použitie bez písomného súhlasu CNIL na akomkoľvek nosiči za účelom propagácie produktov alebo služieb, najmä na komerčné účely, je zakázané pod hrozbou trestného a občianskehoprávneho stíhania. Je povolené na výlučne vzdelávacie účely (prezentácia činnosti CNIL atď.).<br />",
-         "DESCRIPTION_18": "<strong>Opätovné použitie obsahu</strong><br />",
-         "DESCRIPTION_19": "Opätovné použitie obsahu z aplikácie FantomApp podlieha pravidlám uvedeným na <a href=\"https://www.cnil.fr/fr/particulier\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"cnil-link\">webovej stránke CNIL</a>. Autorstvo obsahu musí byť uvedené s nasledujúcou zmienkou: \"Zdroj: CNIL FantomApp - https://www.fantomapp.fr\""
-      },
       "CARDS": {
          "MAIN_TITLE": "Zabezpečenie mojich sociálnych sietí",
          "VIEW_ALL": "Zobraziť všetko",
@@ -921,7 +850,6 @@
       "GENERAL": {
          "FLAG": "Vlajka"
       },
-      
       "TOOLS": {
          "PASSWORD_CHECK": {
             "CRITERIA": {

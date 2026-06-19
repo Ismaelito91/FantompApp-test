@@ -84,42 +84,6 @@
       "STEP_FOUR": {
          "TITLE": "Paramètres essentiels <span aria-hidden=\"true\">⚙️</span>",
          "DESCRIPTION": "C'est pas toujours simple de sécuriser tes comptes... sur FantomApp tu trouveras plein d'astuces."
-      },
-      "WELCOME": {
-         "TITLE": "Bienvenue dans FantomApp <span aria-hidden=\"true\">🎉</span>!",
-         "DESCRIPTION": "Découvrez une application conçue pour protéger votre vie privée et vous offrir une expérience utilisateur exceptionnelle. Laissez-nous vous présenter ses principales fonctionnalités."
-      },
-      "APPEARANCE": {
-         "TITLE": "Personnalisez votre expérience",
-         "DESCRIPTION": "Adaptez l'apparence de l'application selon vos préférences et votre environnement.",
-         "FEATURE_1": "Choix entre thème clair, sombre ou automatique",
-         "FEATURE_2": "Adaptation selon les réglages de votre appareil",
-         "FEATURE_3": "Interface optimisée pour le confort visuel"
-      },
-      "ICON_CHANGE": {
-         "TITLE": "Changez l'icône de l'application",
-         "DESCRIPTION": "Personnalisez l'icône visible sur votre écran d'accueil pour plus de discrétion ou d'esthétique.",
-         "FEATURE_1": "Plusieurs designs d'icônes disponibles",
-         "FEATURE_2": "Changement instantané et sécurisé",
-         "FEATURE_3": "Option de discrétion pour votre vie privée"
-      },
-      "RESOURCES": {
-         "TITLE": "Accédez aux ressources",
-         "DESCRIPTION": "Retrouvez toutes les informations importantes et les outils utiles à portée de main.",
-         "FEATURE_1": "Documentation complète de l'application",
-         "FEATURE_2": "Guides d'utilisation détaillés",
-         "FEATURE_3": "Support et aide en ligne"
-      },
-      "ACCESSIBILITY": {
-         "TITLE": "Une application pour tous",
-         "DESCRIPTION": "FantomApp est conçue pour être accessible à tous les utilisateurs, quelles que soient leurs capacités.",
-         "FEATURE_1": "Interface compatible avec les lecteurs d'écran",
-         "FEATURE_2": "Navigation au clavier optimisée",
-         "FEATURE_3": "Respect des standards d'accessibilité RGAA"
-      },
-      "READY": {
-         "TITLE": "Vous êtes prêt !",
-         "DESCRIPTION": "Vous connaissez maintenant les principales fonctionnalités de FantomApp. Profitez pleinement de votre expérience sécurisée et personnalisée."
       }
    },
    "USER_CONFIG_APP": {
@@ -132,21 +96,8 @@
          "SYSTEM_SETTINGS": "Utiliser le même réglage que le téléphone"
       }
    },
-   "APP_ICON_SELECTOR": {
-      "TITLE": "Icône de l'application",
-      "SUBTITLE": "Personnalise l'icône visible de ton application.",
-      "DEFAULT": "Icône par défaut",
-      "DEFAULT_DESC": "L'icône originale de l'application",
-      "GHOST": "Icône fantôme",
-      "GHOST_DESC": "Une version mystérieuse et discrète",
-      "DARK": "Icône sombre",
-      "DARK_DESC": "Parfaite pour les utilisateurs nocturnes",
-      "COLORFUL": "Icône colorée",
-      "COLORFUL_DESC": "Une version vibrante et joyeuse"
-   },
    "HOME": {
       "GREETING": "Bonjour <span aria-hidden=\"true\">👋</span> Comment peut-on t'aider ?",
-      "WELCOME": "Bienvenue sur l'application Fantôme",
       "APP_INFO_TITLE": "Informations sur l'application",
       "APPEARANCE": "Apparence",
       "CHANGE_ICON": "Changer l'icône",
@@ -897,7 +848,6 @@
       "GENERAL": {
          "FLAG": "Drapeau"
       },
-
       "TOOLS": {
          "PASSWORD_CHECK": {
             "CRITERIA": {

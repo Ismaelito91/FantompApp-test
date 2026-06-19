@@ -84,42 +84,6 @@
       "STEP_FOUR": {
          "TITLE": "Essential settings <span aria-hidden=\"true\">⚙️</span>",
          "DESCRIPTION": "It's not always easy to secrure your accounts... on FantomApp you'll find lot of tips."
-      },
-      "WELCOME": {
-         "TITLE": "Welcome to FantomApp!",
-         "DESCRIPTION": "Discover an app designed to protect your privacy and provide you with an exceptional user experience. Let us introduce you to its main features."
-      },
-      "APPEARANCE": {
-         "TITLE": "Customize your experience",
-         "DESCRIPTION": "Choose the appearance of the app depending on your preferences and your surroundings.",
-         "FEATURE_1": "Choice between light, dark or automatic mode.",
-         "FEATURE_2": "Use the same settings as your device",
-         "FEATURE_3": "Interface optimised for visual comfort"
-      },
-      "ICON_CHANGE": {
-         "TITLE": "Change the app icon",
-         "DESCRIPTION": "Customize the icon you see on your home screen for more discretion or aesthetic.",
-         "FEATURE_1": "Several icons designs available",
-         "FEATURE_2": "Instantaneous and securised change",
-         "FEATURE_3": "Discreet option to protect your privacy"
-      },
-      "RESOURCES": {
-         "TITLE": "Acces all the resources",
-         "DESCRIPTION": "Find all the important information and useful tools at your fingertips.",
-         "FEATURE_1": "Complete documentation of the app",
-         "FEATURE_2": "Detailled user guides",
-         "FEATURE_3": "Support and online help"
-      },
-      "ACCESSIBILITY": {
-         "TITLE": "An app for all",
-         "DESCRIPTION": "FantomApp was designed to be accessible to all users, regardless of their abilities.",
-         "FEATURE_1": "A screen-reader-friendly interface",
-         "FEATURE_2": "An optimised keybord navigation",
-         "FEATURE_3": "Compliant with RGAA accessibility standards"
-      },
-      "READY": {
-         "TITLE": "You're all set!",
-         "DESCRIPTION": "You are now familiar the main features of FantomApp. Enjoy your secured and personnalised experience to the fullest."
       }
    },
    "USER_CONFIG_APP": {
@@ -132,21 +96,8 @@
          "SYSTEM_SETTINGS": "Use the same settings as your device"
       }
    },
-   "APP_ICON_SELECTOR": {
-      "TITLE": "The app's icon",
-      "SUBTITLE": "Customize the icon of the app.",
-      "DEFAULT": "Default Icon",
-      "DEFAULT_DESC": "The original icon",
-      "GHOST": "Ghost icon",
-      "GHOST_DESC": "A mysterious and discreet version",
-      "DARK": "Dark icon",
-      "DARK_DESC": "Perfect for night-time users",
-      "COLORFUL": "Colourful icon",
-      "COLORFUL_DESC": "A vibrant and joyful icon"
-   },
    "HOME": {
       "GREETING": "Hi <span aria-hidden=\"true\">👋</span> How can we help you?",
-      "WELCOME": "Welcome to FantomApp",
       "APP_INFO_TITLE": "About the app",
       "APPEARANCE": "Appearence",
       "CHANGE_ICON": "Change the icon",
@@ -900,7 +851,6 @@
       "GENERAL": {
          "FLAG": "Flag"
       },
-      
       "TOOLS": {
          "PASSWORD_CHECK": {
             "CRITERIA": {
