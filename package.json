@@ -1,6 +1,6 @@
 {
    "name": "fantome-app-frontend",
-   "version": "1.0.12-SNAPSHOT",
+   "version": "1.0.13-SNAPSHOT",
    "type": "module",
    "scripts": {
       "ng": "ng",
