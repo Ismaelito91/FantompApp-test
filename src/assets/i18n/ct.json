@@ -1,1 +1,889 @@
-{}
+{
+   "APP": {
+      "TITLE": "FantomApp",
+      "LOADING": "Carregant...",
+      "ERROR": "Error en carregar l'aplicació",
+      "INSTALL_APP": "Instal·la l'aplicació",
+      "NEW_VERSION_AVAILABLE": "Nova versió disponible",
+      "UPDATE_APP": "Actualització de l'aplicació"
+   },
+   "COMMON": {
+      "ORGANISATION": "APDCAT",
+      "SAVE": "Desa",
+      "CANCEL": "Cancel·la",
+      "DELETE": "Suprimeix",
+      "EDIT": "Edita",
+      "CLOSE": "Tanca",
+      "SEARCH": "Cerca",
+      "BACK": "Enrere",
+      "NEXT": "Següent",
+      "PREVIOUS": "Anterior",
+      "RESULTS": "Resultats",
+      "HOME": "Inici",
+      "PROBLEM": "Problema",
+      "TOOLS": "Eines",
+      "SECURE": "Protegeix-te",
+      "YES": "Sí",
+      "NO": "No",
+      "UNDERSTOOD": "Entesos",
+      "DOWNLOAD": "Descarrega",
+      "COPY": "Copia",
+      "COPIED": "Copiat!",
+      "OR": "o",
+      "ACTIVE": "Actiu",
+      "ARIA_LABEL": {
+         "HOME": "Ves a l'Inici",
+         "PROBLEM": "Ves a Problema",
+         "TOOLS": "Ves a Eines",
+         "SECURE": "Ves a Protegeix-te",
+         "MAIN_NAV": "Menú principal"
+      }
+   },
+   "DESIGN_SYSTEM": {
+      "STEPPER": {
+         "DESCRIPTION": "Pregunta {{ currentStep }} de {{ totalSteps }}"
+      },
+      "TAG_UNCLICKABLE": {
+         "IMPORTANT": "IMPORTANT",
+         "SECONDARY": "SEGON PAS"
+      },
+      "TEMPLATE_MESSAGE": {
+         "BUTTON": "Copia l'exemple"
+      }
+   },
+   "ONBOARDING": {
+      "CLOSE": "Tanca la benvinguda",
+      "SKIP": "Omet",
+      "NEXT": "Següent",
+      "PREVIOUS": "Enrere",
+      "CONTINUE": "Continua",
+      "START_USING": "Comença a utilitzar-la",
+      "TAP_TO_CONTINUE": "Prem per continuar",
+      "WELCOME_TO": "Benvingut/da a",
+      "GHOST_MODE_EXPLANATION": "Aquí navegues en <span class=\"ghost-mode\">mode fantasma</span>, ningú sap que hi ets. No es registra cap informació teva. Ets lliure d'explorar com protegir la teva privacitat.",
+      "PROGRESS": "Progrés de la benvinguda",
+      "GO_TO_STEP": "Ves al pas",
+      "COMPLETED_STEP": "Pas completat",
+      "CURRENT_STEP": "Pas actual",
+      "FUTURE_STEP": "pas següent",
+      "STEP_INFO": "Pas",
+      "OF": "De",
+      "BUBBLE": {
+         "WELCOME": "Hola! Estic aquí per guiar-te per l'app!"
+      },
+      "STEP_TWO": {
+         "TITLE": "Necessites ajuda? <span aria-hidden=\"true\">🛟</span>",
+         "DESCRIPTION": "De vegades podem tenir problemes en línia. Aquí trobaràs informació i solucions."
+      },
+      "STEP_THREE": {
+         "TITLE": "Eines <span aria-hidden=\"true\">🛠️</span>",
+         "DESCRIPTION": "Contrasenya forta, foto protegida, nom d'usuari i bio verificats: pren el control de la teva privacitat!"
+      },
+      "STEP_FOUR": {
+         "TITLE": "Configuració essencial <span aria-hidden=\"true\">⚙️</span>",
+         "DESCRIPTION": "No sempre és fàcil protegir els teus comptes... a FantomApp trobaràs molts consells."
+      }
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Aparença",
+      "SUBTITLE": "Tria la visualització del sistema preferida.",
+      "THEME": {
+         "DEFAULT": "Tema per defecte",
+         "LIGHT": "Tema clar",
+         "DARK": "Tema fosc",
+         "SYSTEM_SETTINGS": "Utilitza la mateixa configuració que el teu dispositiu"
+      }
+   },
+   "HOME": {
+      "GREETING": "Hola <span aria-hidden=\"true\">👋</span> Com et podem ajudar?",
+      "APP_INFO_TITLE": "Sobre l'app",
+      "APPEARANCE": "Aparença",
+      "CHANGE_ICON": "Canvia la icona",
+      "RESOURCES": "Recursos",
+      "WHAT_IS_APP": "Per a què serveix aquesta app? (Avisos legals)",
+      "RIGHTS": "Tinc drets",
+      "ACCESSIBILITY": "FantomApp per a tothom (Accessibilitat)",
+      "TUTORIAL": "Torna a veure el tutorial de benvinguda",
+      "CARDS": {
+         "MAIN_TITLE": "Assegurar les meves xarxes",
+         "VIEW_ALL": "Veure-ho tot",
+         "VIEW_ALL_ARIA": "Veure totes les eines de seguretat",
+         "PASSWORD_CHECK": {
+            "TITLE": "Provar la meva contrasenya",
+            "DESCRIPTION": "Quant de temps triga un cibercriminal a desxifrar la teva contrasenya?"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "Difuminar la meva foto",
+            "DESCRIPTION": "Anonimitzar la meva foto de perfil"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "Tinc un problema en línia",
+            "VIEW_ALL_ARIA": "Veure totes les targetes de problemes",
+            "DELETE_CONTENT": {
+               "TITLE": "Vull esborrar contingut"
+            },
+            "HARASSMENT": {
+               "TITLE": "Estic patint ciberassetjament"
+            }
+         }
+      },
+      "USER_RIGHTS": {
+         "TITLE": "Tinc drets",
+         "INTRO": {
+            "PARAGRAPH_1": "Independentment de la teva edat, tens drets i particularment el dret a protegir les teves dades personals i la teva privacitat.",
+            "PARAGRAPH_2": "En línia, pots decidir què es veu de tu i què fan les xarxes socials amb la teva informació."
+         },
+         "CARDS": {
+            "INCOGNITO": {
+               "TITLE": "<span aria-hidden=\"true\">🗑️</span> El dret de supressió: Mantenir-se incògnit",
+               "PARAGRAPH_1": "En línia, tens dret a sol·licitar <b>la supressió i la desreferenciació</b> de les teves dades. Concretament, si vols que una foto, un vídeo, un text teu, el teu nom, el teu cognom o qualsevol altre element de les teves dades personals s'elimini o deixi d'aparèixer a les consultes dels motors de cerca, pots demanar-ho als llocs pertinents.",
+               "PARAGRAPH_2": "Pots dirigir-te directament al lloc o plataforma. Si la plataforma no respon a la teva sol·licitud en 1 mes, pots denunciar-ho a les teves Autoritats de Protecció de Dades nacionals i obtenir ajuda per fer valer els teus drets."
+            },
+            "DATA_INFO": {
+               "TITLE": "<span aria-hidden=\"true\">ℹ️</span> El dret a la informació: qui fa què amb les meves dades",
+               "PARAGRAPH": "Tens dret a saber què fan, <b>volen fer o planegen fer els llocs, jocs, aplicacions i altres plataformes amb les teves dades personals</b>."
+            },
+            "RIGHT_TO_OBJECT": {
+               "TITLE": "<span aria-hidden=\"true\">❌</span> El dret d'oposició: mantén el control de les teves dades",
+               "PARAGRAPH": "Tens dret a <b>oposar-te a l'ús de les teves dades</b> per part de llocs web o apps (excepte en casos molt específics previstos per la llei)."
+            },
+            "PORTABILITY": {
+               "TITLE": "<span aria-hidden=\"true\">🧳</span> El dret a la portabilitat: on jo vulgui, quan jo vulgui!",
+               "PARAGRAPH_1": "Fins i tot tens dret a emportar-te <b>les teves dades i utilitzar-les en un altre lloc,</b> « en mode » « click and collect »! Això és la portabilitat de dades.",
+               "PARAGRAPH_2": "Les recuperes i les utilitzes en un altre lloc, amb un competidor, si vols. Això s'aplica a les teves fotos, àudios o vídeos, o per als teus cursos en una aplicació de presa de notes al teu ordinador."
+            }
+         }
+      }
+   },
+   "PROBLEMS": {
+      "DELETE_CONTENT": {
+         "CARD": {
+            "FIRST_TITLE": "ESBORRAR UN CONTINGUT",
+            "SECOND_TITLE": "Vull esborrar contingut",
+            "DESCRIPTION": "Sol·licitar l'eliminació d'una foto o un vídeo sobre tu"
+         },
+         "TITLE": "Vull esborrar contingut",
+         "DESCRIPTION": "T'està molestant una foto, vídeo o comentari on apareixes? Eliminar-ho pot portar temps, però t'ajudarem a passar per aquest procés.<span aria-hidden=\"true\">🗑</span>",
+         "REPORTED": {
+            "TITLE": "Has denunciat el contingut a la xarxa social / plataforma?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Sí, <strong>ja he denunciat el contingut</strong>",
+                  "ANSWER_2_TITLE": "No, <strong>encara no he denunciat el contingut</strong>"
+               }
+            }
+         },
+         "VIOLENT": {
+            "TITLE": "És un contingut violent o íntim?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Sí",
+                  "ANSWER_2_TITLE": "No"
+               }
+            }
+         },
+         "RESULTS": {
+            "REPORTED_CONTENT": {
+               "TITLE": "Ja has denunciat el contingut?",
+               "P1": {
+                  "DESCRIPTION": "<span aria-hidden=\"true\">✅</span> Felicitats! Has tingut un <strong>molt bon reflex</strong> denunciant el contingut a la plataforma. <br /><br /><span aria-hidden=\"true\">✅</span> Les xarxes socials reben moltes denúncies i la seva moderació porta temps. Però <strong>fins i tot sense una resposta immediata</strong> la teva denúncia és important."
+               },
+               "P2": {
+                  "TITLE_PART1": "T'aconsellem presentar una reclamació a la ",
+                  "TITLE_PART2": " si:",
+                  "TOOLTIP": "L'autoritat nacional de protecció de dades que t'ajuda a protegir la teva privacitat en línia.",
+                  "DESCRIPTION1": "Has contactat amb la xarxa social i no t'han respost <strong>durant almenys 1 mes</strong>",
+                  "DESCRIPTION2": "La xarxa social t'ha respost però la resposta és <strong>incompleta</strong> o <strong>insatisfactòria</strong>."
+               },
+               "BUTTON": "Presentar una reclamació",
+               "TUTORIAL": {
+                  "P1": {
+                     "TITLE": "Quin és el paper de la <span class='text-(--color-24)'>APDCAT</span>?",
+                     "DESCRIPTION": "El paper d'una autoritat de protecció de dades és preservar les llibertats de cadascun de nosaltres. Aconsella i controla l'ús de dades personals per part d'empreses, administracions i associacions."
+                  },
+                  "P2": {
+                     "TITLE": "Per què he d'esperar una resposta durant <span class='text-(--color-24)'>1 mes</span>? <span aria-hidden=\"true\">⏱️</span>",
+                     "DESCRIPTION": "És el termini legal. Això significa que la llei deixa 1 mes a la plataforma per respondre't (segons el Reglament General de Protecció de Dades, o RGPD)."
+                  },
+                  "P3": {
+                     "TITLE": "Què és una resposta <span class='text-(--color-24)'>incompleta o incorrecta</span>? <span aria-hidden=\"true\">📝</span>",
+                     "DESCRIPTION": "La plataforma no ha tingut en compte tota la teva sol·licitud o la resposta no s'ajusta al que has demanat."
+                  }
+               },
+               "COMPLAINT": {
+                  "TITLE": "Prepara les proves",
+                  "DESCRIPTION": "Guarda fotos de cada pas, seran útils per presentar una possible reclamació.",
+                  "P1": {
+                     "TITLE": "Exemples de captures de pantalla:",
+                     "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>El contingut a eliminar</strong><br />Captura de pantalla del text, foto o vídeo problemàtic<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>L'adreça del lloc web</strong><br />Un enllaç al lloc web (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Informació sobre la persona que ha publicat el contingut</strong><br />Un enllaç al seu perfil<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>La teva sol·licitud d'eliminació</strong><br />- Captures de pantalla del text on sol·licites l'eliminació<br />- Captures de pantalla de la resposta (si n'hi ha)"
+                  },
+                  "BUTTON": "Accedir al formulari",
+                  "LINK": ""
+               }
+            },
+            "UNREPORTED_CONTENT": {
+               "TITLE": "Encara no has denunciat el contingut?",
+               "P1": {
+                  "TITLE": "El primer pas és denunciar-ho a la xarxa social.",
+                  "DESCRIPTION": "Guarda acuradament totes les proves de la teva denúncia. Si la xarxa social no et respon en el termini d'<strong>1 mes</strong>, pots presentar una denúncia a l'APDCAT a:"
+               },
+               "CONTACTS": {
+                  "TITLE": "Contactes de les Xarxes Socials",
+                  "SOCIAL_MEDIA": {
+                     "INSTAGRAM": {
+                        "TITLE": "Instagram",
+                        "LINK": {
+                           "TITLE": "Informar d'una violació de la teva privacitat a Instagram o Threads",
+                           "DESCRIPTION": "https://help.instagram.com/contact/512241091300432"
+                        },
+                        "BUTTON": "Com omplir el formulari?"
+                     },
+                     "SNAPCHAT": {
+                        "TITLE": "Snapchat",
+                        "LINK": {
+                           "TITLE": "Informar d'abús o contingut il·legal a Snapchat",
+                           "DESCRIPTION": "https://help.snapchat.com/hc/en-gb/articles/7012399221652-How-do-I-report-abuse-or-illegal-content-on-Snapchat"
+                        },
+                        "MAIL": {
+                           "TITLE": "Contactar amb Snapchat per correu electrònic",
+                           "DESCRIPTION": "dpo@snapchat.com"
+                        },
+                        "BUTTON": "Com denunciar alguna cosa a Snapchat"
+                     },
+                     "TIKTOK": {
+                        "TITLE": "TikTok",
+                        "LINK": {
+                           "TITLE": "Enviar una sol·licitud de privacitat",
+                           "DESCRIPTION": "https://www.tiktok.com/legal/report/privacy/webform/en"
+                        },
+                        "BUTTON": "Com omplir el formulari?"
+                     },
+                     "X": {
+                        "TITLE": "X",
+                        "LINK": {
+                           "TITLE": "Consultes de política de privacitat de X",
+                           "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                        },
+                        "BUTTON": "Com omplir el formulari?"
+                     },
+                     "FACEBOOK": {
+                        "TITLE": "Facebook",
+                        "LINK": {
+                           "TITLE": "Formularis de contacte",
+                           "DESCRIPTION": "https://www.facebook.com/help/contact/954059743194940"
+                        },
+                        "BUTTON": "Com omplir el formulari?"
+                     }
+                  }
+               },
+               "FACEBOOK": {
+                  "TITLE": "Com omplir el formulari? - Facebook",
+                  "DESCRIPTION": "Aquí tens el que has de fer per omplir el formulari de sota:",
+                  "P1": {
+                     "TITLE": "1. Selecciona el país on vius a “Please select your country”"
+                  },
+                  "P2": {
+                     "TITLE": "2. Escriu el teu cognom i nom:"
+                  },
+                  "P3": {
+                     "TITLE": "3. Indica el teu correu electrònic"
+                  },
+                  "P4": {
+                     "TITLE": "4. Selecciona “My Privacy” a “Who's privacy is being violated?”"
+                  },
+                  "P5": {
+                     "TITLE": "5. Selecciona “Yes” a “Are you under the age of 18?”"
+                  },
+                  "P6": {
+                     "TITLE": "6. Selecciona “Yes” si tens l'URL del contingut que vols denunciar"
+                  },
+                  "P7": {
+                     "TITLE": "7. Indica el tipus de contingut"
+                  },
+                  "P8": {
+                     "TITLE": "8. Enganxa l'URL del contingut denunciat"
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Formularis de contacte",
+                     "DESCRIPTION": "https://www.facebook.com/help/contact/954059743194940"
+                  }
+               },
+               "INSTAGRAM": {
+                  "TITLE": "Com omplir el formulari? - Instagram",
+                  "DESCRIPTION": "Aquí tens el que has de fer per omplir el formulari de sota:",
+                  "P1": {
+                     "TITLE": "1. Selecciona el país on vius"
+                  },
+                  "P2": {
+                     "TITLE": "2. Escriu el teu nom i cognom"
+                  },
+                  "P3": {
+                     "TITLE": "3. Escriu la teva adreça de correu electrònic"
+                  },
+                  "P4": {
+                     "TITLE": "4. Selecciona “Self” a la pregunta “Who are you reporting for?”"
+                  },
+                  "P5": {
+                     "TITLE": "5. Selecciona “Yes, I am under 18”"
+                  },
+                  "P6": {
+                     "TITLE": "6. Enganxa l'URL del contingut que vols denunciar."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Informar d'una violació de la teva privacitat a Instagram o Threads",
+                     "DESCRIPTION": "https://help.instagram.com/contact/1716697545776727"
+                  }
+               },
+               "X": {
+                  "TITLE": "Com omplir el formulari - X",
+                  "DESCRIPTION": "Aquí tens el que has de fer per omplir el formulari de sota:",
+                  "P1": {
+                     "TITLE": "1. Selecciona “I want to ask a question regarding privacy on X” a “How can we help?”"
+                  },
+                  "P2": {
+                     "TITLE": "2. Selecciona “Delete X account data” a “Please tell us more”"
+                  },
+                  "P3": {
+                     "TITLE": "3. Copia/enganxa l'exemple de sota a “Please enter your question” i insereix la teva informació en lloc dels [...] de l'exemple."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Consultes de política de privacitat de X",
+                     "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                  }
+               },
+               "TIKTOK": {
+                  "TITLE": "Com omplir el formulari? - TikTok",
+                  "DESCRIPTION": "Aquí tens el que has de fer per omplir el formulari de sota:",
+                  "P1": {
+                     "TITLE": "1. Escriu la teva adreça de correu electrònic"
+                  },
+                  "P2": {
+                     "TITLE": "2. Selecciona el país on vius"
+                  },
+                  "P3": {
+                     "TITLE": "3. Escriu el teu nom d'usuari de Tiktok"
+                  },
+                  "P4": {
+                     "TITLE": "4. Selecciona “Exercise your rights under data portection laws” a “Submit a request”"
+                  },
+                  "P5": {
+                     "TITLE": "5. Selecciona “I have a question about exercising privacy and data protection rights” a “Select a subcategory”"
+                  },
+                  "P6": {
+                     "TITLE": "6. Copia/enganxa l'exemple de sota a “Please enter your question” i insereix la teva informació en lloc dels [...] de l'exemple."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Consultes de política de privacitat de X",
+                     "DESCRIPTION": "https://help.x.com/en/forms/privacy/question"
+                  }
+               },
+               "SNAPCHAT": {
+                  "TITLE": "Exemple de correu electrònic - Snapchat",
+                  "DESCRIPTION": "Per sol·licitar una eliminació, pots contactar amb el Delegat de Protecció de Dades (DPO).",
+                  "P1": {
+                     "TITLE": "<span aria-hidden=\"true\">📝</span> Adreça de correu electrònic del contacte"
+                  }
+               },
+               "TEMPLATE_MESSAGE": {
+                  "TITLE": "<span aria-hidden=\"true\">📝</span> Exemple de correu per enviar",
+                  "DESCRIPTION": "Benvolgut/da,<br><br>Actualment es comparteix informació sobre mi al vostre lloc web a les següents pàgines:<br><span style=\"color: var(--color-24);\">[Enllaç(os) URL del contingut que desitjo eliminar]</span><br>. Per tant, en aplicació dels Articles 21.1 i 17.1.c del Reglament General de Protecció de Dades (RGPD), us demano que si us plau elimineu les següents dades personals que em concerneixen:<br><span style=\"color: var(--color-24);\">[descripció de la informació a eliminar]</span>.<br>Voldria que aquesta informació fos eliminada perquè:<br><span style=\"color: var(--color-24);\">[motiu de la supressió]</span><br>addicionalment, us agraeixo que prengueu les mesures necessàries per assegurar que aquestes pàgines ja no siguin referenciades pels motors de cerca (article 17.2 del RGPD). Si us plau, envieu la vostra resposta el més aviat possible i no més tard d'un mes des de la recepció de la meva sol·licitud (article 12.3 del RGPD).<br>Cordialment,"
+               }
+            },
+            "VIOLENT_CONTENT": {
+               "TITLE": "És un contingut violent o íntim?",
+               "DESCRIPTION": "La difusió de contingut violent o contingut sexual sense el teu consentiment és molt greu i la persona responsable pot ser castigada.",
+               "P1": {
+                  "TITLE": "No estàs sol/a",
+                  "DESCRIPTION": "El que t'està passant pot ser molt complicat de viure, però a la vida, mai estàs sol! Sempre hi ha solucions per canviar les coses, i gent per ajudar-te a superar-ho. Pots parlar-ne amb els teus pares, un amic, un familiar, un professor o un adult en qui confiïs.<span aria-hidden=\"true\">🤝</span>"
+               },
+               "P2": {
+                  "TITLE": "Trobar ajuda",
+                  "DESCRIPTION": "Els <strong>professionals</strong> també poden ajudar-te a la <strong>línia d'ajuda del teu país</strong>. Sovint són anònims, confidencials i gratuïts. <span class=\"text-(--color-24)\"><strong>Truca fins que algú respongui</strong>.</span>",
+                  "LINK": {
+                     "TITLE": "Parlar amb una línia d'ajuda",
+                     "DESCRIPTION": "https://www.inhope.org/EN#hotlineReferral"
+                  },
+                  "CALL": {
+                     "TITLE": "Línia d'ajuda"
+                  },
+                  "MESSAGE": {
+                     "TITLE": "Línia d'ajuda"
+                  }
+               },
+               "P3": {
+                  "TITLE": "Presentar una denúncia",
+                  "DESCRIPTION": "La denúncia formal et permet reportar els fets dels quals ets víctima a les autoritats. Pots presentar una denúncia anant a la comissaria de policia o per correu.",
+                  "LINK": {
+                     "TITLE": "Ma Sécurité | Ma Sécurité",
+                     "DESCRIPTION": "https://www.masecurite.interieur.gouv.fr/fr"
+                  }
+               },
+               "BUTTON": {
+                  "REPORTED": "Presentar una denúncia formal a l'autoritat de protecció de dades del teu país",
+                  "UNREPORTED": "Denunciar el contingut"
+               }
+            }
+         }
+      },
+      "HACKING": {
+         "CARD": {
+            "FIRST_TITLE": "COMPTE HACKEJAT",
+            "SECOND_TITLE": "M'han hackejat el compte",
+            "DESCRIPTION": "Recuperar el teu compte o alguna altra cosa"
+         },
+         "TITLE": "M'han hackejat el compte",
+         "DESCRIPTION": "El teu compte s'ha desconnectat sol o s'està publicant contingut automàticament. Potser t'han hackejat.",
+         "TUTORIAL": {
+            "P1": {
+               "EMOJI": "<span aria-hidden=\"true\">❌</span>",
+               "CONTENT": "El meu compte <strong>s'ha desconnectat</strong> sol i ja no hi puc accedir"
+            },
+            "P2": {
+               "EMOJI": "<span aria-hidden=\"true\">🖼</span>️",
+               "CONTENT": "<Ha aparegut <strong>contingut</strong> al meu feed però jo no soc qui l'ha publicat"
+            },
+            "P3": {
+               "EMOJI": "<span aria-hidden=\"true\">🔒</span>",
+               "CONTENT": "La meva <strong>contrasenya</strong> ja no funciona"
+            },
+            "P4": {
+               "EMOJI": "<span aria-hidden=\"true\">📩</span>",
+               "CONTENT": "Els meus amics han estat contactats suposadament per mi, però jo no soc qui els ha enviat el <strong>missatge</strong>"
+            },
+            "P5": {
+               "CONTENT": "<strong>Aleshores el teu compte pot haver estat hackejat</strong>"
+            }
+         },
+         "SITUATION": {
+            "TITLE": "Quina és la teva situació?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Jo <strong>encara tinc accés</strong> al meu compte",
+                  "ANSWER_2_TITLE": "Jo <strong>ja no tinc accés</strong> al meu compte"
+               }
+            }
+         },
+         "RESULTS": {
+            "HAVE_ACCESS": {
+               "TITLE": "Encara tinc accés al meu compte",
+               "DESCRIPTION": "Alguns passos per recuperar el control del teu compte",
+               "ACTIONS": {
+                  "IMMEDIATELY": {
+                     "TITLE": "Per fer ara <span aria-hidden=\"true\">⏱️</span>",
+                     "A1": {
+                        "TITLE": "Canvia la teva contrasenya",
+                        "SHORT_DESCRIPTION": "Crea una contrasenya forta immediatament",
+                        "LONG_DESCRIPTION": "Crea una contrasenya forta per al teu compte de seguida. FantomApp pot ajudar-te a comprovar si la teva contrasenya és fàcil de descobrir."
+                     },
+                     "A2": {
+                        "TITLE": "Activa l'autenticació de doble factor",
+                        "SHORT_DESCRIPTION": "Afegeix un codi de seguretat extra",
+                        "LONG_DESCRIPTION": "L'autenticació de doble factor afegeix una protecció extra al teu compte. Encara que algú trobi la teva contrasenya, no podrà iniciar sessió sense un segon codi (rebut per SMS o via app).<br /><span aria-hidden=\"true\">👉</span> És com un segon pany a la teva porta."
+                     },
+                     "A3": {
+                        "TITLE": "Comprova la teva informació",
+                        "SHORT_DESCRIPTION": "Comprova que la teva adreça de correu i número de telèfon no hagin canviat",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📲</span> S'han modificat els teus contactes, publicacions o dades bancàries (si les vas proporcionar)?<br /><br />Si veus un número de telèfon o una adreça que no reconeixes:<ul style='list-style: disc; margin-left: 2rem;'><li>Fes una captura de pantalla per guardar com a prova.</li><li>Canvia'ls immediatament</li></ul>"
+                     },
+                     "A4": {
+                        "TITLE": "Comprova qui està connectat al teu compte",
+                        "SHORT_DESCRIPTION": "Comprova si hi ha dispositius desconeguts connectats al teu compte",
+                        "LONG_DESCRIPTION": "Ves a la configuració del teu compte i desconnecta tots els dispositius que estaven autoritzats fins ara.<br /><span aria-hidden=\"true\">❌</span>  Si veus un dispositiu o connexió que no reconeixes:<ul style='list-style: disc; margin-left: 2rem;'><li>Fes una captura de pantalla per guardar com a prova</li><li>Desconnecta'l immediatament</li></ul>"
+                     }
+                  },
+                  "LATER": {
+                     "TITLE": "Per fer més tard",
+                     "A1": {
+                        "TITLE": "Notifica els teus amics i contactes",
+                        "SHORT_DESCRIPTION": "Poden rebre o haver rebut missatges estranys",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📢</span>  Digues als teus contactes (amics, família...) que el teu compte ha estat hackejat.<br /><span aria-hidden=\"true\">⚠️</span> Poden rebre missatges d'algú fent-se passar per tu. Digues-los que no responguin ni facin clic a cap enllaç."
+                     },
+                     "A2": {
+                        "TITLE": "Canvia les teves altres contrasenyes",
+                        "SHORT_DESCRIPTION": "Protegeix els teus altres comptes",
+                        "LONG_DESCRIPTION": "Si utilitzes la mateixa contrasenya a altres llocs web o apps, canvia-la allà també.<br /><span aria-hidden=\"true\">👉</span> Això evitarà que altres comptes siguin hackejats també."
+                     },
+                     "A3": {
+                        "TITLE": "Notifica el teu banc",
+                        "SHORT_DESCRIPTION": "Actua si les teves dades bancàries estaven al teu compte",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Si les teves <strong>dades bancàries</strong> (com el número de la targeta) eren accessibles al compte hackejat, has de dir-ho a un adult immediatament.<br /> Has de <strong>notificar el teu banc</strong> el més aviat possible, i bloquejar la teva targeta si és necessari per evitar qualsevol robatori."
+                     },
+                     "A4": {
+                        "TITLE": "Utilitza un gestor de contrasenyes",
+                        "SHORT_DESCRIPTION": "Per assegurar les teves contrasenyes",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> Un gestor de contrasenyes és una app o eina al teu telèfon que manté totes les teves contrasenyes segures. També pot crear contrasenyes molt fortes per a cada lloc web o app i omplir-les automàticament quan iniciïs sessió.<br /><span aria-hidden=\"true\">👉</span> És com una caixa forta digital per a tots els teus comptes."
+                     },
+                     "A5": {
+                        "TITLE": "Mai comparteixis la teva contrasenya",
+                        "SHORT_DESCRIPTION": "És millor guardar-les per a tu",
+                        "LONG_DESCRIPTION": "Algú podria llegir els teus missatges, publicar en nom teu o robar el teu compte.<br />La teva contrasenya és personal, igual que el codi del teu telèfon."
+                     }
+                  }
+               }
+            },
+            "NO_ACCESS": {
+               "TITLE": "Ja no tinc accés al meu compte",
+               "CONTACT": {
+                  "TITLE": "<span aria-hidden=\"true\">✉</span>️ Contacta amb la xarxa social",
+                  "DESCRIPTION": "Comença contactant amb la xarxa social per informar que el teu compte ha estat hackejat.<br /><span aria-hidden=\"true\">➡</span>️ Fes clic a l'enllaç de la xarxa social que utilitzes."
+               },
+               "SOCIAL_MEDIA": {
+                  "INSTAGRAM": {
+                     "TITLE": "Instagram",
+                     "LINK": {
+                        "TITLE": "Enviar una sol·licitud d'assistència a Instagram",
+                        "DESCRIPTION": "https://www.instagram.com/hacked/"
+                     }
+                  },
+                  "SNAPCHAT": {
+                     "TITLE": "Snapchat",
+                     "LINK": {
+                        "TITLE": "Enviar una sol·licitud – Suport de Snapchat",
+                        "DESCRIPTION": "https://help.snapchat.com/hc/en-gb/requests/new?co=true&tf_29335679682068=cant_access_account_reason_compromised&ticket_form_id=76586"
+                     }
+                  },
+                  "TIKTOK": {
+                     "TITLE": "TikTok",
+                     "LINK": {
+                        "TITLE": "Informar d'un problema | TikTok",
+                        "DESCRIPTION": "https://www.tiktok.com/legal/report/feedback"
+                     }
+                  },
+                  "X": {
+                     "TITLE": "X",
+                     "LINK": {
+                        "TITLE": "El compte ha estat hackejat o està compromès",
+                        "DESCRIPTION": "https://help.x.com/en/forms/account-access/appeals"
+                     }
+                  },
+                  "FACEBOOK": {
+                     "TITLE": "Facebook",
+                     "LINK": {
+                        "TITLE": "Enviar una sol·licitud d'assistència a Facebook",
+                        "DESCRIPTION": "https://www.facebook.com/hacked?ref=helpcenter"
+                     }
+                  }
+               },
+               "RECOMMENDATIONS": {
+                  "TITLE": "<span aria-hidden=\"true\">👍</span> Segueix aquestes recomanacions",
+                  "DESCRIPTION": "Encara que ja no tinguis accés al teu compte, pots prendre mesures. Aquests passos t'ajudaran a protegir-te i evitar que torni a passar.",
+                  "ACTIONS": {
+                     "LATER": {
+                        "A1": {
+                           "TITLE": "Notifica els teus amics i contactes",
+                           "SHORT_DESCRIPTION": "Poden rebre o haver rebut missatges estranys",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📢</span> Digues als teus contactes (amics, família...) que el teu compte ha estat hackejat.<br /><span aria-hidden=\"true\">⚠️</span> Poden rebre missatges d'algú fent-se passar per tu. Digues-los que no responguin ni facin clic a cap enllaç."
+                        },
+                        "A2": {
+                           "TITLE": "Canvia les teves altres contrasenyes",
+                           "SHORT_DESCRIPTION": "Protegeix els teus altres comptes",
+                           "LONG_DESCRIPTION": "Si utilitzes la mateixa contrasenya a altres llocs web o apps, canvia-la allà també.<br /><span aria-hidden=\"true\">👉</span> Això evitarà que altres comptes siguin hackejats també."
+                        },
+                        "A3": {
+                           "TITLE": "Notifica el teu banc",
+                           "SHORT_DESCRIPTION": "Actua si les teves dades bancàries estaven al teu compte",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Si les teves <strong>dades bancàries</strong> (com el número de la targeta) eren accessibles al compte hackejat, has de dir-ho a un adult immediatament.<br /> Has de <strong>notificar el teu banc</strong> el més aviat possible, i bloquejar la teva targeta si és necessari per evitar qualsevol robatori."
+                        },
+                        "A4": {
+                           "TITLE": "Utilitza un gestor de contrasenyes",
+                           "SHORT_DESCRIPTION": "Per assegurar les teves contrasenyes",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> Un gestor de contrasenyes és una app o eina al teu telèfon que manté totes les teves contrasenyes segures. També pot crear contrasenyes molt fortes per a cada lloc web o app i omplir-les automàticament quan iniciïs sessió.<br /><span aria-hidden=\"true\">👉</span> És com una caixa forta digital per a tots els teus comptes."
+                        },
+                        "A5": {
+                           "TITLE": "Mai comparteixis les teves contrasenyes",
+                           "SHORT_DESCRIPTION": "És millor guardar-les per a tu",
+                           "LONG_DESCRIPTION": "Algú podria llegir els teus missatges, publicar en nom teu o robar el teu compte.<br />La teva contrasenya és personal, igual que el codi del teu telèfon."
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "TOOLS": {
+      "TITLE": "Eines",
+      "PASSWORD_CHECK_TITLE": "Provar la meva contrasenya",
+      "PASSWORD_CHECK_DESCRIPTION": "Quant de temps triga un cibercriminal a desxifrar-la?",
+      "BLUR_IMAGE_TITLE": "Anonimitzar la meva foto",
+      "BLUR_IMAGE_DESCRIPTION": "Difuminar la meva foto de perfil",
+      "VISIBILITY_CHECK_TITLE": "Provar la meva visibilitat",
+      "VISIBILITY_CHECK_DESCRIPTION": "Què revelen el meu nom d'usuari i bio sobre mi?",
+      "VISIBILITY_CHECK": {
+         "TITLE": "Provar la meva visibilitat",
+         "DESCRIPTION": "Pot algú identificar-me pel meu nom d'usuari i la meva bio?",
+         "PSEUDO": {
+            "TITLE": "Què hi ha al teu nom d'usuari?",
+            "IDENTITY": {
+               "TITLE": "<span aria-hidden=\"true\">🪪</span> Identitat",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "El meu nom complet o cognom",
+                  "ANSWER_1_DESCRIPTION": "(exemple: Martin)",
+                  "ANSWER_2_TITLE": "El meu nom o cognom escurçat.",
+                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1)",
+                  "ANSWER_3_TITLE": "El meu sobrenom",
+                  "ANSWER_4_TITLE": "La meva data de naixement"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "<span aria-hidden=\"true\">🗺</span>️Origen geogràfic o cultural",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "El meu codi postal",
+                  "ANSWER_1_DESCRIPTION": "(exemple: 34 o 49300)",
+                  "ANSWER_2_TITLE": "On visc o d'on vinc",
+                  "ANSWER_2_DESCRIPTION": "(Ciutat, regió, país, emoji de bandera.)"
+               }
+            }
+         },
+         "BIO": {
+            "TITLE": "Què hi ha a la teva bio?",
+            "EMPTY": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "No he escrit res a la meva bio"
+               }
+            },
+            "IDENTITY": {
+               "TITLE": "<span aria-hidden=\"true\">🪪</span> Identitat",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "El meu nom complet o cognom",
+                  "ANSWER_1_DESCRIPTION": "(exemple: Martin)",
+                  "ANSWER_2_TITLE": "El meu nom o cognom escurçat.",
+                  "ANSWER_2_DESCRIPTION": "(exemple: Mrt1)",
+                  "ANSWER_3_TITLE": "El meu sobrenom",
+                  "ANSWER_4_TITLE": "La meva data de naixement"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "<span aria-hidden=\"true\">🗺</span>️ Origen geogràfic o cultural",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "El meu codi postal",
+                  "ANSWER_1_DESCRIPTION": "(exemple: 34 o 49300)",
+                  "ANSWER_2_TITLE": "On visc o d'on vinc",
+                  "ANSWER_2_DESCRIPTION": "(Ciutat, regió, país, emoji de bandera.)"
+               }
+            },
+            "DIGITAL_LIFE": {
+               "TITLE": "<span aria-hidden=\"true\">👥</span> Vida digital",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Enllaços als meus altres comptes de xarxes socials.",
+                  "ANSWER_1_DESCRIPTION": "(X, Instagram, TikTok, Snapchat).",
+                  "ANSWER_2_TITLE": "Comptes del meu cercle proper",
+                  "ANSWER_2_DESCRIPTION": "(Amics, família, parella...)"
+               }
+            },
+            "INTEREST": {
+               "TITLE": "<span aria-hidden=\"true\">🎭</span> Interessos",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Un enllaç al meu club o una associació de la qual formo part.",
+                  "ANSWER_1_DESCRIPTION": "(ex: @VoleiValences)"
+               }
+            },
+            "EDUCATION_PRO": {
+               "TITLE": "<span aria-hidden=\"true\">🏫</span> Educació o ocupació",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Una menció de la meva escola o empresa.",
+                  "ANSWER_2_TITLE": "Les meves habilitats o estudis",
+                  "ANSWER_2_DESCRIPTION": "(Aprenent de forner, Estudiant de medicina…)"
+               }
+            }
+         },
+         "RESULTS": {
+            "TITLE": "Els teus resultats",
+            "SUMMARY": {
+               "GOOD": {
+                  "TITLE": "Bona feina! <span aria-hidden=\"true\">🥷</span>",
+                  "CONTENT": "El teu perfil no permet saber qui ets a les xarxes socials, ni fora de línia."
+               },
+               "OK": {
+                  "TITLE": "No està malament! <span aria-hidden=\"true\">🥸</span>",
+                  "CONTENT": "Encara hi ha algunes pistes per endevinar qui ets a la vida real. Aquí, pots donar encara menys informació sobre tu:"
+               },
+               "BAD": {
+                  "TITLE": "Compte! <span aria-hidden=\"true\">🧐</span>",
+                  "CONTENT": "El teu perfil conté molta informació sobre tu. Ves amb compte, algunes persones podrien utilitzar aquesta informació, fer-se passar pels teus amics o danyar la teva reputació."
+               }
+            },
+            "PSEUDO": {
+               "TITLE": "El teu nom d'usuari indica"
+            },
+            "BIO": {
+               "TITLE": "La teva bio indica"
+            },
+            "STATE": {
+               "PUBLIC": "PÚBLIC <span aria-hidden=\"true\">👀</span>",
+               "DISCREET": "DISCRET <span aria-hidden=\"true\">🙈</span>️",
+               "INVISIBLE": "INVISIBLE <span aria-hidden=\"true\">👻</span>"
+            },
+            "NO_PERSONAL_INFO": "Sense informació personal!"
+         }
+      },
+      "BLUR_IMAGE": {
+         "TITLE": "Anonimitzar la meva foto",
+         "DESCRIPTION": "Difuminar o pixelar la meva foto de perfil per limitar la meva identificació en línia.",
+         "EDITING_TITLE": "Àrea d'edició de la foto importada",
+         "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Consell</strong>: Si difumines la teva imatge per utilitzar-la com a foto de perfil, no la reutilitzis en cap altre lloc sense difuminar<br /><span aria-hidden=\"true\"><span aria-hidden=\"true\">💡</span></span> <strong>Bo de saber</strong>: FantomApp no guarda cap foto que importis aquí",
+         "UPLOAD_IMAGE": "Importa una foto <span aria-hidden=\"true\">🤳</span>",
+         "BLUR": "Difuminar",
+         "PIXELATE": "Pixelar",
+         "ALL_BLUR": "Difuminar-ho tot",
+         "BRUSH_SIZE": "Mida del pinzell",
+         "GLOBAL_BLUR_INFO": "Pots difuminar tota la imatge amb aquest botó. Fent-hi clic s'obre una llista de percentatges de difuminat per triar la intensitat.",
+         "MODIFICATION_DONE": "Modificació completada",
+         "TUTORIAL": {
+            "DESCRIPTION": "Llisca el dit sobre la imatge per difuminar-la."
+         }
+      },
+      "PASSWORD_CHECK": {
+         "TITLE": "Provar la meva contrasenya",
+         "DESCRIPTION_PART1": "Quant de temps triga un cibercriminal a desxifrar-la per",
+         "DESCRIPTION_PART2": "?",
+         "FOCUS_ACCESSIBLE_TITLE": "Provar la meva contrasenya - camp d'entrada",
+         "DESCRIPTION_TOOLTIP": {
+            "TITLE": "força bruta",
+            "CONTENT": "Un atac de <strong>força bruta</strong> consisteix a provar, una per una, cada possible combinació d'una contrasenya. (font: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
+         },
+         "CRIMINAL_GUESSES": "Un cibercriminal l'endevina en:",
+         "ASSESSMENT_TEXT": "La teva contrasenya:",
+         "INPUT_LABEL": "Contrasenya",
+         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Conté el meu <strong>nom</strong>, <strong>cognom</strong>, o <strong>paraules fàcils d'endevinar</strong>",
+         "COPY_PASSWORD": "Copia la contrasenya",
+         "COPIED": "Copiat!",
+         "BADGES": {
+            "IMMEDIATE": "ÉS IMMEDIAT <span aria-hidden=\"true\">⚠️</span>",
+            "RAPID": "POTS FER-HO ENCARA MILLOR <span aria-hidden=\"true\">👇</span>",
+            "CORRECT": "ESTÀ BÉ <span aria-hidden=\"true\">🙂</span>",
+            "SUPER": "ÉS GENIAL <span aria-hidden=\"true\">😎</span>"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "Mínim 12 caràcters",
+            "UPPERCASE": "Almenys 1 majúscula",
+            "LOWERCASE": "Almenys 1 minúscula",
+            "DIGIT": "Almenys 1 número",
+            "SPECIAL_CHAR": "Almenys 1 caràcter especial",
+            "NO_EASY_CLUES": "Sense pistes fàcils (cognom, nom, paraula comuna)",
+            "CRITERIA_VALIDATED": "Criteri validat",
+            "CRITERIA_NOT_VALIDATED": "Criteri no validat"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "Què és una bona contrasenya?",
+            "TEST_PASSWORD": "Provar la meva contrasenya <span aria-hidden=\"true\">🔒</span>",
+            "STRENGTHEN_PASSWORD": "Reforçar la meva contrasenya"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Com funciona?",
+               "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>Pas 1</strong>: Escriu la teva contrasenya al camp dissenyat.",
+               "STEP_2": "<span aria-hidden=\"true\">🧪</span> <strong>Pas 2</strong>: Fes clic a \"Provar la meva contrasenya\".",
+               "STEP_3": "⏱️ <strong>Pas 3</strong>: I ja ho tens! Pots veure quant trigaria un cibercriminal a desxifrar la teva contrasenya… i accedir a les teves dades personals!",
+               "NOTE": "FantomApp no reté cap informació.",
+               "UNDERSTOOD": "Entesos"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Una contrasenya forta és:",
+               "CLOSE": "Tanca",
+               "REQUIREMENTS_LIST": "Llista de requisits per a una contrasenya forta",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 caràcters",
+                  "DIGITS": "1 o més números",
+                  "UPPERCASE": "majúscules",
+                  "LOWERCASE": "minúscules",
+                  "SPECIAL_CHARS": "caràcters especials (*, @, !)"
+               },
+               "WARNINGS_SECTION": "Consells per triar una contrasenya segura",
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "<span aria-hidden=\"true\">🏴☠️</span>‍ Els cibercriminals utilitzen totes les <strong>bases de dades de paraules</strong> existents, en tots els idiomes.",
+                  "NO_DICTIONARY": "<span aria-hidden=\"true\">⛔</span>‍ Cap paraula del diccionari, el teu nom o cognom per crear la teva contrasenya"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Instantani",
+            "MINUTES": "minuts",
+            "HOURS": "hores",
+            "DAY": "dia",
+            "DAYS": "dies",
+            "WEEK": "setmana",
+            "WEEKS": "setmanes",
+            "MONTH": "mes",
+            "MONTHS": "mesos",
+            "YEAR": "any",
+            "YEARS": "anys",
+            "THOUSAND_YEARS": "mil anys",
+            "MILLION_YEARS": "milions d'anys",
+            "BILLION_YEARS": "mil milions d'anys",
+            "TRILLION_YEARS": "bilions d'anys",
+            "QUADRILLION_YEARS": "mil bilions d'anys",
+            "QUINTILLION_YEARS": "trilions d'anys"
+         }
+      }
+   },
+   "SECURE_MYSELF": {
+      "VIEW_ALL": {
+         "TUTORIAL": {
+            "TITLE": "Com funciona?",
+            "DESCRIPTION": "Quan hagis canviat una configuració, marca la casella <strong>per recordar-te</strong> el que ja has assegurat al teu compte!"
+         }
+      }
+   },
+   "ALT_TEXT": {
+      "HEADER": {
+         "CURRENT_LANGUAGE": "Idioma actual: {{language}}",
+         "CURRENT_DEVICE": "Dispositiu actual: {{device}}"
+      },
+      "CONTACT": {
+         "PHONE": "Contactar per telèfon",
+         "WHATSAPP": "Contactar per WhatsApp",
+         "SMS": "Contactar per SMS",
+         "EMAIL": "Contactar per correu electrònic",
+         "SUPPORT_3018": "Parlar amb la línia d'ajuda"
+      },
+      "GENERAL": {
+         "FLAG": "Bandera"
+      },
+      "COUNTRIES": {
+         "FRANCE": "Français",
+         "IRELAND": "English",
+         "HUNGARY": "Magyar",
+         "GREECE": "Ελληνικά",
+         "DENMARK": "Dansk",
+         "POLAND": "Polski",
+         "PORTUGAL": "Português",
+         "SPAIN": "Español",
+         "CATALONIA": "Català",
+         "LUXEMBOURG": "Lëtzebuergesch",
+         "INTERNATIONAL": "International"
+      },
+      "TOOLS": {
+         "PASSWORD_CHECK": {
+            "CRITERIA": {
+               "CRITERIA_VALIDATED": "conté",
+               "CRITERIA_NOT_VALIDATED": "no conté"
+            },
+            "INPUT": {
+               "EYE_BUTTON": {
+                  "SHOW": "Mostra la contrasenya",
+                  "HIDE": "Amaga la contrasenya"
+               },
+               "COPY_BUTTON": {
+                  "COPY": "Copia la contrasenya"
+               }
+            }
+         },
+         "BLUR_IMAGE": {
+            "IMAGE_ALT": "Importa una foto"
+         }
+      },
+      "ENRICHED_LINK": {
+         "ARIA_LABEL": "Enllaç que redirigeix a una pàgina externa"
+      },
+      "TILE_CALL": {
+         "ARIA_LABEL": "Enllaç que redirigeix a la funció de trucada telefònica"
+      },
+      "TILE_MESSAGE": {
+         "ARIA_LABEL": "Enllaç que redirigeix a la funció d'enviament d'SMS"
+      },
+      "ONBOARDING": {
+         "LOGO_FANTOMAPP": "FantomApp"
+      }
+   }
+}
