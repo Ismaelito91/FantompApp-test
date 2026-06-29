@@ -51,7 +51,7 @@ export class LanguageService {
          flagUrl: "assets/images/flag/belgium.svg",
          flagAltKey: "ALT_TEXT.COUNTRIES.BELGIUM_DUTCH",
          lang: "nl-BE",
-         translateLocale: "xx",
+         translateLocale: "benl",
       },
       {
          code: "IE",

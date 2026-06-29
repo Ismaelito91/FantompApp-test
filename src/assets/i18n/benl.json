@@ -1,0 +1,949 @@
+{
+   "APP": {
+      "TITLE": "FantomApp",
+      "LOADING": "Laden...",
+      "ERROR": "Fout bij het laden van de applicatie",
+      "INSTALL_APP": "Installeer de app",
+      "NEW_VERSION_AVAILABLE": "Nieuwe versie beschikbaar",
+      "UPDATE_APP": "Applicatie-update"
+   },
+   "COMMON": {
+      "ORGANISATION": "GBA",
+      "SAVE": "Opslaan",
+      "CANCEL": "Annuleren",
+      "DELETE": "Verwijderen",
+      "EDIT": "Bewerken",
+      "CLOSE": "Sluiten",
+      "SEARCH": "Zoeken",
+      "BACK": "Ga terug",
+      "NEXT": "Volgende",
+      "PREVIOUS": "Vorige",
+      "RESULTS": "Resultaten",
+      "HOME": "Home",
+      "PROBLEM": "Probleem",
+      "TOOLS": "Tools",
+      "SECURE": "Blijf veilig",
+      "YES": "Ja",
+      "NO": "Nee",
+      "UNDERSTOOD": "Begrepen",
+      "DOWNLOAD": "Downloaden",
+      "COPY": "Kopiëren",
+      "COPIED": "Gekopieerd!",
+      "OR": "of",
+      "ACTIVE": "Actief",
+      "CAROUSEL_PREVIOUS": "Vorige: {{slide}}",
+      "CAROUSEL_NEXT": "Volgende: {{slide}}",
+      "ARIA_LABEL": {
+         "HOME": "Ga naar Home",
+         "PROBLEM": "Ga naar Probleem",
+         "TOOLS": "Ga naar Tools",
+         "SECURE": "Ga naar Beveilig mezelf",
+         "MAIN_NAV": "Hoofdmenu"
+      }
+   },
+   "DESIGN_SYSTEM": {
+      "STEPPER": {
+         "DESCRIPTION": "Vraag {{ currentStep }} van {{ totalSteps }}"
+      },
+      "TAG_UNCLICKABLE": {
+         "IMPORTANT": "BELANGRIJK",
+         "SECONDARY": "TWEEDE STAP"
+      },
+      "TEMPLATE_MESSAGE": {
+         "BUTTON": "Kopieer het voorbeeld"
+      }
+   },
+   "ONBOARDING": {
+      "CLOSE": "Sluit de introductie",
+      "SKIP": "Overslaan",
+      "NEXT": "Volgende",
+      "PREVIOUS": "Vorige",
+      "CONTINUE": "Doorgaan",
+      "START_USING": "Begin met gebruiken",
+      "TAP_TO_CONTINUE": "Tik om door te gaan",
+      "WELCOME_TO": "Welkom bij",
+      "GHOST_MODE_EXPLANATION": "Hier surf je in <span class=\"ghost-mode\">spookmodus</span>, niemand weet dat je hier bent. Geen van je gegevens wordt opgeslagen. Je bent vrij om te ontdekken hoe je je privacy kunt beschermen.",
+      "PROGRESS": "Voortgang introductie",
+      "GO_TO_STEP": "Ga naar stap",
+      "COMPLETED_STEP": "Voltooide stap",
+      "CURRENT_STEP": "Huidige stap",
+      "FUTURE_STEP": "volgende stap",
+      "STEP_INFO": "Stap",
+      "OF": "Van",
+      "BUBBLE": {
+         "WELCOME": "Hoi! Ik ben hier om je door de app te leiden!"
+      },
+      "STEP_TWO": {
+         "TITLE": "Heb je hulp nodig? <span aria-hidden=\"true\">🛟</span>",
+         "DESCRIPTION": "Soms kunnen we online problemen tegenkomen. Hier vind je informatie en oplossingen."
+      },
+      "STEP_THREE": {
+         "TITLE": "Tools <span aria-hidden=\"true\">🛠️</span>",
+         "DESCRIPTION": "Sterk wachtwoord, beveiligde foto, gecontroleerde gebruikersnaam en bio: neem de controle over je privacy!"
+      },
+      "STEP_FOUR": {
+         "TITLE": "Essentiële instellingen <span aria-hidden=\"true\">⚙️</span>",
+         "DESCRIPTION": "Het is niet altijd makkelijk om je accounts te beveiligen... op FantomApp vind je veel tips."
+      },
+      "WELCOME": {
+         "TITLE": "Welkom bij FantomApp!",
+         "DESCRIPTION": "Ontdek een app die is ontworpen om je privacy te beschermen en je een uitzonderlijke gebruikerservaring te bieden. Laten we je de belangrijkste functies voorstellen."
+      },
+      "APPEARANCE": {
+         "TITLE": "Pas je ervaring aan",
+         "DESCRIPTION": "Kies het uiterlijk van de app afhankelijk van je voorkeuren en je omgeving.",
+         "FEATURE_1": "Keuze uit lichte, donkere of automatische modus.",
+         "FEATURE_2": "Gebruik dezelfde instellingen als je apparaat",
+         "FEATURE_3": "Interface geoptimaliseerd voor visueel comfort"
+      },
+      "ICON_CHANGE": {
+         "TITLE": "Wijzig het app-icoon",
+         "DESCRIPTION": "Pas het icoon dat je op je startscherm ziet aan voor meer discretie of esthetiek.",
+         "FEATURE_1": "Meerdere icoonontwerpen beschikbaar",
+         "FEATURE_2": "Directe en veilige wijziging",
+         "FEATURE_3": "Discrete optie om je privacy te beschermen"
+      },
+      "RESOURCES": {
+         "TITLE": "Toegang tot alle bronnen",
+         "DESCRIPTION": "Vind alle belangrijke informatie en nuttige tools binnen handbereik.",
+         "FEATURE_1": "Volledige documentatie van de app",
+         "FEATURE_2": "Gedetailleerde gebruikershandleidingen",
+         "FEATURE_3": "Ondersteuning en online hulp"
+      },
+      "ACCESSIBILITY": {
+         "TITLE": "Een app voor iedereen",
+         "DESCRIPTION": "FantomApp is ontworpen om toegankelijk te zijn voor alle gebruikers, ongeacht hun vaardigheden.",
+         "FEATURE_1": "Een interface die vriendelijk is voor schermlezers",
+         "FEATURE_2": "Een geoptimaliseerde toetsenbordnavigatie",
+         "FEATURE_3": "Voldoet aan de RGAA-toegankelijkheidsnormen"
+      },
+      "READY": {
+         "TITLE": "Je bent er helemaal klaar voor!",
+         "DESCRIPTION": "Je bent nu bekend met de belangrijkste functies van FantomApp. Geniet volop van je beveiligde en gepersonaliseerde ervaring."
+      }
+   },
+   "USER_CONFIG_APP": {
+      "TITLE": "Uiterlijk",
+      "SUBTITLE": "Kies je favoriete systeemweergave.",
+      "THEME": {
+         "DEFAULT": "Standaardthema",
+         "LIGHT": "Licht thema",
+         "DARK": "Donker thema",
+         "SYSTEM_SETTINGS": "Gebruik dezelfde instellingen als je apparaat"
+      }
+   },
+   "APP_ICON_SELECTOR": {
+      "TITLE": "Het app-icoon",
+      "SUBTITLE": "Pas het icoon van de app aan.",
+      "DEFAULT": "Standaardicoon",
+      "DEFAULT_DESC": "Het originele icoon",
+      "GHOST": "Spookicoon",
+      "GHOST_DESC": "Een mysterieuze en discrete versie",
+      "DARK": "Donker icoon",
+      "DARK_DESC": "Perfect voor nachtelijke gebruikers",
+      "COLORFUL": "Kleurrijk icoon",
+      "COLORFUL_DESC": "Een levendig en vrolijk icoon"
+   },
+   "HOME": {
+      "GREETING": "Hoi <span aria-hidden=\"true\">👋</span> Hoe kunnen we je helpen?",
+      "WELCOME": "Welkom bij FantomApp",
+      "APP_INFO_TITLE": "Over de app",
+      "APPEARANCE": "Uiterlijk",
+      "CHANGE_ICON": "Wijzig het icoon",
+      "RESOURCES": "Bronnen",
+      "WHAT_IS_APP": "Waar is deze app voor? (Juridische kennisgeving)",
+      "RIGHTS": "Ik heb rechten",
+      "ACCESSIBILITY": "FantomApp voor iedereen (Toegankelijkheid)",
+      "TUTORIAL": "Bekijk de welkomsttutorial opnieuw",
+      "CARDS": {
+         "MAIN_TITLE": "Mijn sociale media beveiligen",
+         "VIEW_ALL": "Bekijk alles",
+         "VIEW_ALL_ARIA": "Bekijk alle beveiligingstools",
+         "PASSWORD_CHECK": {
+            "TITLE": "Mijn wachtwoord testen",
+            "DESCRIPTION": "Hoe lang duurt het voordat een cybercrimineel je wachtwoord kraakt?"
+         },
+         "BLUR_IMAGE": {
+            "TITLE": "Mijn foto vervagen",
+            "DESCRIPTION": "Mijn profielfoto anonimiseren"
+         },
+         "PROBLEMS": {
+            "SECTION_TITLE": "Ik heb online een probleem",
+            "VIEW_ALL_ARIA": "Bekijk alle probleemkaarten",
+            "DELETE_CONTENT": {
+               "TITLE": "Ik wil inhoud wissen"
+            },
+            "HARASSMENT": {
+               "TITLE": "Ik word gepest op het internet"
+            }
+         }
+      },
+      "USER_RIGHTS": {
+         "TITLE": "Ik heb rechten",
+         "INTRO": {
+            "PARAGRAPH_1": "Ongeacht je leeftijd heb je rechten, en in het bijzonder het recht om je persoonsgegevens en je privacy te beschermen.",
+            "PARAGRAPH_2": "Online kun je beslissen wat er van jou te zien is en wat de sociale media met jouw informatie doen."
+         },
+         "CARDS": {
+            "INCOGNITO": {
+               "TITLE": "<span aria-hidden=\"true\">🗑️</span> Het recht op vergetelheid: Blijf incognito",
+               "PARAGRAPH_1": "Online heb je het recht om <b>het wissen en dereferenceren</b> van je gegevens aan te vragen. Concreet betekent dit dat als je wilt dat een foto, een video, een tekst van jou, je naam, je voornaam of andere elementen van je persoonsgegevens worden verwijderd of niet langer verschijnen in zoekmachineopdrachten, je dit kunt aanvragen bij de relevante sites.",
+               "PARAGRAPH_2": "Je kunt je rechtstreeks tot de site of het platform richten. Als het platform niet binnen 1 maand op je verzoek reageert, kun je dit melden bij je nationale gegevensbeschermingsautoriteit en hulp krijgen bij het afdwingen van je rechten."
+            },
+            "DATA_INFO": {
+               "TITLE": "<span aria-hidden=\"true\">ℹ️</span> Het recht op informatie: wie doet wat met mijn gegevens",
+               "PARAGRAPH": "Je hebt het recht om te weten wat de sites, games, applicaties en andere platforms doen, <b>willen doen of van plan zijn te doen met je persoonsgegevens</b>."
+            },
+            "RIGHT_TO_OBJECT": {
+               "TITLE": "<span aria-hidden=\"true\">❌</span> Het recht van bezwaar: houd controle over je gegevens",
+               "PARAGRAPH": "Je hebt het recht om <b>bezwaar te maken tegen het gebruik van je gegevens</b> door websites of apps (behalve in zeer specifieke gevallen voorzien door de wet)."
+            },
+            "PORTABILITY": {
+               "TITLE": "<span aria-hidden=\"true\">🧳</span> Het recht op overdraagbaarheid: waar ik wil, wanneer ik wil!",
+               "PARAGRAPH_1": "Je hebt zelfs het recht om <b>je gegevens mee te nemen en elders te gebruiken,</b> in « click and collect » modus! Dit is gegevensoverdraagbaarheid.",
+               "PARAGRAPH_2": "Je haalt ze op en gebruikt ze elders, bij een concurrent, als je dat wilt. Dit geldt voor je foto's, audio's of video's, of voor je cursussen op een notitie-app op je computer."
+            }
+         }
+      }
+   },
+   "PROBLEMS": {
+      "DELETE_CONTENT": {
+         "CARD": {
+            "FIRST_TITLE": "INHOUD WISSEN",
+            "SECOND_TITLE": "Ik wil inhoud wissen",
+            "DESCRIPTION": "Verwijdering van een foto of video over jou aanvragen"
+         },
+         "TITLE": "Ik wil inhoud wissen",
+         "DESCRIPTION": "Stoort een foto, video of reactie waarin je voorkomt je? Het verwijderen kan even duren, maar we helpen je erdoorheen.<span aria-hidden=\"true\">🗑️</span>",
+         "REPORTED": {
+            "TITLE": "Heb je de inhoud gemeld bij het sociale netwerk / platform?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Ja, <strong>ik heb de inhoud al gemeld</strong>",
+                  "ANSWER_2_TITLE": "Nee, <strong>ik heb de inhoud nog niet gemeld</strong>"
+               }
+            }
+         },
+         "VIOLENT": {
+            "TITLE": "Is het gewelddadige of intieme inhoud?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Ja",
+                  "ANSWER_2_TITLE": "Nee"
+               }
+            }
+         },
+         "RESULTS": {
+            "REPORTED_CONTENT": {
+               "TITLE": "Heb je de inhoud al gemeld?",
+               "P1": {
+                  "DESCRIPTION": "<span aria-hidden=\"true\">✅</span> Goed gedaan! Je had een <strong>erg goede reflex</strong> door de inhoud bij het platform te melden. <br /><br /><span aria-hidden=\"true\">✅</span> Sociale media ontvangen veel meldingen en hun moderatie kost tijd. Maar <strong>zelfs zonder onmiddellijk antwoord</strong> is je melding belangrijk."
+               },
+               "P2": {
+                  "TITLE_PART1": "We adviseren je om een klacht in te dienen bij ",
+                  "TITLE_PART2": " als:",
+                  "TOOLTIP": "De nationale gegevensbeschermingsautoriteit die je helpt je online privacy te beschermen.",
+                  "DESCRIPTION1": "Je contact hebt opgenomen met het sociale netwerk en ze je <strong>ten minste 1 maand</strong> niet hebben geantwoord",
+                  "DESCRIPTION2": "Het sociale netwerk je heeft geantwoord, maar het antwoord <strong>onvolledig</strong> of <strong>onbevredigend</strong> is."
+               },
+               "BUTTON": "Dien een klacht in",
+               "TUTORIAL": {
+                  "P1": {
+                     "TITLE": "Wat is de rol van de <span class='text-(--color-24)'>GBA</span>?",
+                     "DESCRIPTION": "De rol van een gegevensbeschermingsautoriteit is het behouden van de vrijheden van ons allemaal. Ze adviseert en controleert het gebruik van persoonsgegevens door bedrijven, administraties en verenigingen."
+                  },
+                  "P2": {
+                     "TITLE": "Waarom moet ik <span class='text-(--color-24)'>1 maand</span> op een antwoord wachten? <span aria-hidden=\"true\">⏱️</span>",
+                     "DESCRIPTION": "Dat is de wettelijke termijn. Dat betekent dat de wet het platform 1 maand geeft om je te antwoorden (volgens de Algemene Verordening Gegevensbescherming, of AVG)."
+                  },
+                  "P3": {
+                     "TITLE": "Wat is een <span class='text-(--color-24)'>onvolledig of foutief</span> antwoord? <span aria-hidden=\"true\">📝</span>",
+                     "DESCRIPTION": "Het platform heeft geen rekening gehouden met je volledige verzoek of het antwoord past niet bij wat je vroeg."
+                  }
+               },
+               "COMPLAINT": {
+                  "TITLE": "Bereid het bewijs voor",
+                  "DESCRIPTION": "Bewaar foto's van elke stap, ze zullen nuttig zijn om een mogelijke klacht in te dienen.",
+                  "P1": {
+                     "TITLE": "Voorbeelden van screenshots:",
+                     "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>De te verwijderen inhoud</strong><br />Screenshot van de problematische tekst, foto of video<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Het websiteadres</strong><br />Een link naar de website (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Informatie over de persoon die de inhoud heeft geplaatst</strong><br />Een link naar hun profiel<br /><br /><span aria-hidden=\"true\">✉️</span> <strong>Je verzoek tot verwijdering</strong><br />- Screenshots van de tekst waarin je om verwijdering vraagt<br />- Screenshots van het antwoord (als dat er is)"
+                  },
+                  "BUTTON": "Ga naar het formulier",
+                  "LINK": "https://www.gegevensbeschermingsautoriteit.be/burger/acties/klacht-indienen"
+               }
+            },
+            "UNREPORTED_CONTENT": {
+               "TITLE": "Heb je de inhoud nog niet gemeld?",
+               "P1": {
+                  "TITLE": "De eerste stap is om het te melden bij het sociale netwerk.",
+                  "DESCRIPTION": "Bewaar zorgvuldig al het bewijs van je melding. Als het sociale netwerk je niet binnen <strong>1 maand</strong> antwoordt, kun je een melding doen bij de gegevensbeschermingsautoriteit op:"
+               },
+               "CONTACTS": {
+                  "TITLE": "Contacten sociale media",
+                  "SOCIAL_MEDIA": {
+                     "INSTAGRAM": {
+                        "TITLE": "Instagram",
+                        "LINK": {
+                           "TITLE": "Meld een schending van je privacy op Instagram of Threads",
+                           "DESCRIPTION": "https://help.instagram.com/contact/1716697545776727"
+                        },
+                        "BUTTON": "Hoe vul je het formulier in?"
+                     },
+                     "SNAPCHAT": {
+                        "TITLE": "Snapchat",
+                        "LINK": {
+                           "TITLE": "Misbruik of illegale inhoud melden op Snapchat",
+                           "DESCRIPTION": "https://help.snapchat.com/hc/nl/articles/7012399221652-Hoe-meld-ik-mishandeling-of-misbruik-illegale-content-of-andere-overtredingen-op-Snapchat"
+                        },
+                        "MAIL": {
+                           "TITLE": "Contact opnemen met Snapchat via e-mail",
+                           "DESCRIPTION": "dpo@snapchat.com"
+                        },
+                        "BUTTON": "Hoe meld je iets op Snapchat"
+                     },
+                     "TIKTOK": {
+                        "TITLE": "TikTok",
+                        "LINK": {
+                           "TITLE": "Dien een privacyverzoek in",
+                           "DESCRIPTION": "https://www.tiktok.com/legal/report/privacy/webform/nl"
+                        },
+                        "BUTTON": "Hoe vul je het formulier in?"
+                     },
+                     "X": {
+                        "TITLE": "X",
+                        "LINK": {
+                           "TITLE": "X privacybeleid vragen",
+                           "DESCRIPTION": "https://help.x.com/nl/forms/privacy/question"
+                        },
+                        "BUTTON": "Hoe vul je het formulier in?"
+                     },
+                     "FACEBOOK": {
+                        "TITLE": "Facebook",
+                        "LINK": {
+                           "TITLE": "Contactformulier",
+                           "DESCRIPTION": "https://nl-be.facebook.com/help/contact/954059743194940"
+                        },
+                        "BUTTON": "Hoe vul je het formulier in?"
+                     }
+                  }
+               },
+               "FACEBOOK": {
+                  "TITLE": "Hoe vul je het formulier in? - Facebook",
+                  "DESCRIPTION": "Dit is wat je moet doen om het onderstaande formulier in te vullen:",
+                  "P1": {
+                     "TITLE": "1. Selecteer het land waar je woont in 'Selecteer je land'"
+                  },
+                  "P2": {
+                     "TITLE": "2. Schrijf je voor- en familienaam"
+                  },
+                  "P3": {
+                     "TITLE": "3. Vul je e-mailadres in"
+                  },
+                  "P4": {
+                     "TITLE": "4. Selecteer 'Mijn privacy' bij 'Wiens privacy wordt geschonden?'"
+                  },
+                  "P5": {
+                     "TITLE": "5. Selecteer 'Ja' bij 'Ben je jonger dan 18?'"
+                  },
+                  "P6": {
+                     "TITLE": "6. Selecteer 'Ja' als je de URL hebt van de inhoud die je wilt melden"
+                  },
+                  "P7": {
+                     "TITLE": "7. Geef het type inhoud aan"
+                  },
+                  "P8": {
+                     "TITLE": "8. Plak de URL van de gemelde inhoud"
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Contactformulier",
+                     "DESCRIPTION": "https://nl-be.facebook.com/help/contact/954059743194940"
+                  }
+               },
+               "INSTAGRAM": {
+                  "TITLE": "Hoe vul je het formulier in? - Instagram",
+                  "DESCRIPTION": "Dit is wat je moet doen om het onderstaande formulier in te vullen:",
+                  "P1": {
+                     "TITLE": "1. Selecteer het land waar je woont"
+                  },
+                  "P2": {
+                     "TITLE": "2. Schrijf je voor- en familienaam"
+                  },
+                  "P3": {
+                     "TITLE": "3. Vul je e-mailadres in"
+                  },
+                  "P4": {
+                     "TITLE": "4. Selecteer 'Alleen ik' bij de vraag 'Voor wie dien je een rapport in?'"
+                  },
+                  "P5": {
+                     "TITLE": "5. Selecteer 'Ja, ik ben jonger dan 18'"
+                  },
+                  "P6": {
+                     "TITLE": "6. Plak de URL van de inhoud die je wilt melden."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "Meld een schending van je privacy op Instagram of Threads",
+                     "DESCRIPTION": "https://help.instagram.com/contact/1716697545776727"
+                  }
+               },
+               "X": {
+                  "TITLE": "Hoe vul je het formulier in - X",
+                  "DESCRIPTION": "Dit is wat je moet doen om het onderstaande formulier in te vullen:",
+                  "P1": {
+                     "TITLE": "1. Selecteer 'Ik wil een vraag stellen over privacy op X' bij 'Waarmee kunnen we je helpen?'"
+                  },
+                  "P2": {
+                     "TITLE": "2. Selecteer 'Verwijder X-accountgegevens' bij 'Vertel ons meer'"
+                  },
+                  "P3": {
+                     "TITLE": "3. Kopieer/plak het onderstaande voorbeeld in 'Voer je vraag in' en voeg je gegevens in plaats van de [...] van het voorbeeld in."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "X privacybeleid vragen",
+                     "DESCRIPTION": "https://help.x.com/nl/forms/privacy/question"
+                  }
+               },
+               "TIKTOK": {
+                  "TITLE": "Hoe vul je het formulier in? - TikTok",
+                  "DESCRIPTION": "Dit is wat je moet doen om het onderstaande formulier in te vullen:",
+                  "P1": {
+                     "TITLE": "1. Vul je e-mailadres in"
+                  },
+                  "P2": {
+                     "TITLE": "2. Selecteer het land waar je woont"
+                  },
+                  "P3": {
+                     "TITLE": "3. Vul je TikTok-gebruikersnaam in"
+                  },
+                  "P4": {
+                     "TITLE": "4. Selecteer 'Je rechten onder gegevensbeschermingswetten uitoefenen' bij 'Dien een verzoek in'"
+                  },
+                  "P5": {
+                     "TITLE": "5. Selecteer 'Ik wil bezwaar maken tegen de verwerking van mijn gegevens' bij 'Selecteer een subcategorie'"
+                  },
+                  "P6": {
+                     "TITLE": "6. Kopieer/plak het onderstaande voorbeeld in 'Geef na het lezen van het Hulpcentrum-artikel de onderstaande details' en voeg je gegevens in plaats van de [...] van het voorbeeld in."
+                  },
+                  "ENRICHED_LINK": {
+                     "TITLE": "X privacybeleid vragen",
+                     "DESCRIPTION": "https://www.tiktok.com/legal/report/privacy/webform/nl"
+                  }
+               },
+               "SNAPCHAT": {
+                  "TITLE": "Voorbeeld van e-mail - Snapchat",
+                  "DESCRIPTION": "Om een verwijdering aan te vragen, kun je contact opnemen met de Functionaris voor Gegevensbescherming (DPO).",
+                  "P1": {
+                     "TITLE": "<span aria-hidden=\"true\">📝</span> E-mailadres van het contact"
+                  }
+               },
+               "TEMPLATE_MESSAGE": {
+                  "TITLE": "<span aria-hidden=\"true\">📝</span> Voorbeeld van de te verzenden mail",
+                  "DESCRIPTION": "Geachte heer/mevrouw,<br><br>Informatie over mij wordt momenteel gedeeld op uw website op de volgende pagina's:<br><span style=\"color: var(--color-24);\">[URL-link(s) van de inhoud die u wilt verwijderen]</span><br>. Daarom vraag ik u, in toepassing van de artikelen 21.1 en 17.1.c van de Algemene Verordening Gegevensbescherming (AVG), om de volgende persoonsgegevens over mij te verwijderen:<br><span style=\"color: var(--color-24);\">[beschrijving van de te verwijderen informatie]</span>.<br>Ik wil dat deze informatie wordt verwijderd omdat:<br><span style=\"color: var(--color-24);\">[reden voor verwijdering]</span><br>Daarnaast dank ik u voor het nemen van de nodige stappen om ervoor te zorgen dat deze pagina's niet langer worden geïndexeerd door zoekmachines (artikel 17.2 van de AVG). Gelieve uw antwoord zo spoedig mogelijk te sturen en niet later dan een maand na ontvangst van mijn verzoek (artikel 12.3 van de AVG).<br>Hoogachtend,"
+               }
+            },
+            "VIOLENT_CONTENT": {
+               "TITLE": "Is het gewelddadige of privé-inhoud van jezelf?",
+               "DESCRIPTION": "De verspreiding van gewelddadige inhoud of seksuele inhoud zonder jouw toestemming is zeer ernstig en de verantwoordelijke persoon kan worden gestraft.",
+               "P1": {
+                  "TITLE": "Je bent niet alleen",
+                  "DESCRIPTION": "Wat jou overkomt kan heel ingewikkeld zijn om doorheen te gaan, maar in het leven ben je nooit alleen! Er zijn altijd oplossingen om dingen te veranderen, en mensen om je te helpen hier doorheen te navigeren. Je kunt erover praten met je ouders, een vriend, een familielid, een leraar of een volwassene die je vertrouwt.<span aria-hidden=\"true\">🤝</span>"
+               },
+               "P2": {
+                  "TITLE": "Hulp vinden",
+                  "DESCRIPTION": "<strong>Professionals</strong> kunnen je ook helpen bij <strong>de hotline van je land</strong>. Vaak zijn ze anoniem, vertrouwelijk en gratis. <span class=\"text-(--color-24)\"><strong>Bel totdat iemand opneemt</strong>.</span>",
+                  "LINK": {
+                     "TITLE": "Praat met een hotline",
+                     "DESCRIPTION": "https://childfocus.be/nl-be/Seksuele-Uitbuiting/Misbruikbeelden"
+                  },
+                  "CALL": {
+                     "TITLE": "Hotline"
+                  },
+                  "MESSAGE": {
+                     "TITLE": "Hotline"
+                  }
+               },
+               "P3": {
+                  "TITLE": "Dien een klacht in",
+                  "DESCRIPTION": "Doe aangifte bij de politie: Digitaal seksueel geweld is strafbaar. Maak een afspraak online of telefonisch. Je hoeft dit niet alleen te doen; je mag je laten bijstaan door een advocaat, familielid of vertrouwenspersoon.",
+                  "LINK": {
+                     "TITLE": "lokale politiediensten",
+                     "DESCRIPTION": "https://www.politie.be/nl"
+                  }
+               },
+               "BUTTON": {
+                  "REPORTED": "Dien een formele klacht in bij de gegevensbeschermingsautoriteit van je land",
+                  "UNREPORTED": "Meld de inhoud"
+               }
+            }
+         }
+      },
+      "HACKING": {
+         "CARD": {
+            "FIRST_TITLE": "GEHACKT ACCOUNT",
+            "SECOND_TITLE": "Mijn account is gehackt",
+            "DESCRIPTION": "Herstel je account of iets anders"
+         },
+         "TITLE": "Mijn account is gehackt",
+         "DESCRIPTION": "Je account heeft zichzelf afgemeld of er wordt inhoud vanzelf gepubliceerd. Misschien is het gehackt.",
+         "TUTORIAL": {
+            "P1": {
+               "EMOJI": "<span aria-hidden=\"true\">❌</span>",
+               "CONTENT": "Mijn account is <strong>afgemeld</strong> en ik heb er geen toegang meer toe"
+            },
+            "P2": {
+               "EMOJI": "<span aria-hidden=\"true\">🖼️</span>",
+               "CONTENT": "Er verscheen wat <strong>inhoud</strong> op mijn feed maar ik ben niet degene die het heeft gepubliceerd"
+            },
+            "P3": {
+               "EMOJI": "<span aria-hidden=\"true\">🔒</span>",
+               "CONTENT": "Mijn <strong>wachtwoord</strong> werkt niet meer"
+            },
+            "P4": {
+               "EMOJI": "<span aria-hidden=\"true\">📩</span>",
+               "CONTENT": "Mijn vrienden zijn benaderd door zogenaamd mij, maar ik ben niet degene die hen het <strong>bericht</strong> heeft gestuurd"
+            },
+            "P5": {
+               "CONTENT": "<strong>Dan is je account mogelijk gehackt</strong>"
+            }
+         },
+         "SITUATION": {
+            "TITLE": "Wat is je situatie?",
+            "NONE": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Ik heb <strong>nog steeds toegang</strong> tot mijn account",
+                  "ANSWER_2_TITLE": "Ik heb <strong>geen toegang meer</strong> tot mijn account"
+               }
+            }
+         },
+         "RESULTS": {
+            "HAVE_ACCESS": {
+               "TITLE": "Ik heb nog steeds toegang tot mijn account",
+               "DESCRIPTION": "Enkele stappen om de controle over je account terug te nemen",
+               "ACTIONS": {
+                  "IMMEDIATELY": {
+                     "TITLE": "Nu doen <span aria-hidden=\"true\">⏱️</span>",
+                     "A1": {
+                        "TITLE": "Wijzig je wachtwoord",
+                        "SHORT_DESCRIPTION": "Maak onmiddellijk een sterk wachtwoord aan",
+                        "LONG_DESCRIPTION": "Maak meteen een sterk wachtwoord aan voor je account. FantomApp kan je helpen controleren of je wachtwoord makkelijk te ontdekken is."
+                     },
+                     "A2": {
+                        "TITLE": "Schakel tweestapsverificatie in",
+                        "SHORT_DESCRIPTION": "Voeg een extra beveiligingscode toe",
+                        "LONG_DESCRIPTION": "De tweestapsverificatie voegt een extra bescherming toe aan je account. Zelfs als iemand je wachtwoord vindt, kunnen ze niet inloggen zonder een tweede code (ontvangen per sms of via een app).<br /><span aria-hidden=\"true\">👉</span> Het is als een tweede slot op je deur."
+                     },
+                     "A3": {
+                        "TITLE": "Controleer je gegevens",
+                        "SHORT_DESCRIPTION": "Controleer of je e-mailadres en telefoonnummer niet zijn gewijzigd",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📲</span> Zijn je contacten, bankgegevens of andere gegevens (als je die hebt opgegeven) gewijzigd?<br /><br />Als je een telefoonnummer of adres ziet dat je niet herkent:<ul style='list-style: disc; margin-left: 2rem;'><li>Maak een screenshot om als bewijs te bewaren.</li><li>Wijzig ze onmiddellijk</li></ul>"
+                     },
+                     "A4": {
+                        "TITLE": "Controleer wie er verbonden is met je account",
+                        "SHORT_DESCRIPTION": "Controleer of er onbekende apparaten verbonden zijn met je account",
+                        "LONG_DESCRIPTION": "Ga naar je accountinstellingen en ontkoppel alle apparaten die tot nu toe verbonden waren.<br /><span aria-hidden=\"true\">❌</span> Als je een apparaat of verbinding ziet die je niet herkent:<ul style='list-style: disc; margin-left: 2rem;'><li>Maak een screenshot om als bewijs te bewaren</li><li>Ontkoppel het onmiddellijk</li></ul>"
+                     }
+                  },
+                  "LATER": {
+                     "TITLE": "Later doen",
+                     "A1": {
+                        "TITLE": "Informeer je vrienden en contacten",
+                        "SHORT_DESCRIPTION": "Ze kunnen vreemde berichten ontvangen of ontvangen hebben",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📢</span> Vertel je contacten (vrienden, familie...) dat je account is gehackt.<br /><span aria-hidden=\"true\">⚠️</span> Ze kunnen berichten ontvangen van iemand die zich voordoet als jou. Vertel ze om niet te antwoorden of op links te klikken."
+                     },
+                     "A2": {
+                        "TITLE": "Wijzig je andere wachtwoorden",
+                        "SHORT_DESCRIPTION": "Bescherm je andere accounts",
+                        "LONG_DESCRIPTION": "Als je hetzelfde wachtwoord gebruikt op andere websites of apps, wijzig het daar dan ook.<br /><span aria-hidden=\"true\">👉</span> Dit voorkomt dat andere accounts ook worden gehackt."
+                     },
+                     "A3": {
+                        "TITLE": "Informeer je bank",
+                        "SHORT_DESCRIPTION": "Onderneem actie als je bankgegevens op je account stonden",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Als je <strong>bankgegevens</strong> (zoals je kaartnummer) toegankelijk waren op het gehackte account, moet je dit onmiddellijk aan een volwassene vertellen.<br /> Je moet <strong>je bank op de hoogte stellen</strong> zo snel mogelijk, en je kaart blokkeren indien nodig om diefstal te voorkomen."
+                     },
+                     "A4": {
+                        "TITLE": "Gebruik een wachtwoordmanager",
+                        "SHORT_DESCRIPTION": "Om je wachtwoorden te beveiligen",
+                        "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> Een wachtwoordmanager is een app of tool op je telefoon die al je wachtwoorden veilig bewaart. Het kan ook zeer sterke wachtwoorden maken voor elke website of app en deze automatisch invullen wanneer je inlogt.<br /><span aria-hidden=\"true\">👉</span> Het is als een digitale kluis voor al je accounts."
+                     },
+                     "A5": {
+                        "TITLE": "Deel nooit je wachtwoord",
+                        "SHORT_DESCRIPTION": "Het is het beste om ze voor jezelf te houden",
+                        "LONG_DESCRIPTION": "Iemand zou je berichten kunnen lezen, namens jou kunnen posten of je account kunnen stelen.<br />Je wachtwoord is persoonlijk, net als de toegangscode van je telefoon."
+                     }
+                  }
+               }
+            },
+            "NO_ACCESS": {
+               "TITLE": "Ik heb geen toegang meer tot mijn account",
+               "CONTACT": {
+                  "TITLE": "<span aria-hidden=\"true\">✉️</span> Neem contact op met het sociale netwerk",
+                  "DESCRIPTION": "Begin met contact op te nemen met het sociale netwerk om te melden dat je account is gehackt.<br /><span aria-hidden=\"true\">➡️</span> Klik op de link van het sociale netwerk dat je gebruikt."
+               },
+               "SOCIAL_MEDIA": {
+                  "INSTAGRAM": {
+                     "TITLE": "Instagram",
+                     "LINK": {
+                        "TITLE": "Dien een verzoek om hulp in op Instagram",
+                        "DESCRIPTION": "https://www.instagram.com/hacked/"
+                     }
+                  },
+                  "SNAPCHAT": {
+                     "TITLE": "Snapchat",
+                     "LINK": {
+                        "TITLE": "Dien een verzoek in – Snapchat Support",
+                        "DESCRIPTION": "https://help.snapchat.com/hc/nl/requests/new?co=true&tf_29335679682068=cant_access_account_reason_compromised&ticket_form_id=76586"
+                     }
+                  },
+                  "TIKTOK": {
+                     "TITLE": "TikTok",
+                     "LINK": {
+                        "TITLE": "Meld een probleem | TikTok",
+                        "DESCRIPTION": "https://www.tiktok.com/legal/report/feedback?lang=nl"
+                     }
+                  },
+                  "X": {
+                     "TITLE": "X",
+                     "LINK": {
+                        "TITLE": "Het account is gehackt of gecompromitteerd",
+                        "DESCRIPTION": "https://help.x.com/nl/forms/account-access/appeals/redirect"
+                     }
+                  },
+                  "FACEBOOK": {
+                     "TITLE": "Facebook",
+                     "LINK": {
+                        "TITLE": "Dien een verzoek om hulp in op Facebook",
+                        "DESCRIPTION": "https://www.facebook.com/hacked?ref=helpcenter"
+                     }
+                  }
+               },
+               "RECOMMENDATIONS": {
+                  "TITLE": "<span aria-hidden=\"true\">👍</span> Volg deze aanbevelingen",
+                  "DESCRIPTION": "Zelfs als je geen toegang meer hebt tot je account, kun je nog steeds actie ondernemen. Deze stappen helpen je jezelf te beschermen en te voorkomen dat het opnieuw gebeurt.",
+                  "ACTIONS": {
+                     "LATER": {
+                        "A1": {
+                           "TITLE": "Informeer je vrienden en contacten",
+                           "SHORT_DESCRIPTION": "Ze kunnen vreemde berichten ontvangen of ontvangen hebben",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">📢</span> Vertel je contacten (vrienden, familie...) dat je account is gehackt.<br /><span aria-hidden=\"true\">⚠️</span> Ze kunnen berichten ontvangen van iemand die zich voordoet als jou. Vertel ze om niet te antwoorden of op links te klikken."
+                        },
+                        "A2": {
+                           "TITLE": "Wijzig je andere wachtwoorden",
+                           "SHORT_DESCRIPTION": "Bescherm je andere accounts",
+                           "LONG_DESCRIPTION": "Als je hetzelfde wachtwoord gebruikt op andere websites of apps, wijzig het daar dan ook.<br /><span aria-hidden=\"true\">👉</span> Dit voorkomt dat andere accounts ook worden gehackt."
+                        },
+                        "A3": {
+                           "TITLE": "Informeer je bank",
+                           "SHORT_DESCRIPTION": "Onderneem actie als je bankgegevens op je account stonden",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">💳</span> Als je <strong>bankgegevens</strong> (zoals je kaartnummer) toegankelijk waren op het gehackte account, moet je dit onmiddellijk aan een volwassene vertellen.<br /> Je moet <strong>je bank op de hoogte stellen</strong> zo snel mogelijk, en je kaart blokkeren indien nodig om diefstal te voorkomen."
+                        },
+                        "A4": {
+                           "TITLE": "Gebruik een wachtwoordmanager",
+                           "SHORT_DESCRIPTION": "Om je wachtwoorden te beveiligen",
+                           "LONG_DESCRIPTION": "<span aria-hidden=\"true\">🔐</span> Een wachtwoordmanager is een app of tool op je telefoon die al je wachtwoorden veilig bewaart. Het kan ook zeer sterke wachtwoorden maken voor elke website of app en deze automatisch invullen wanneer je inlogt.<br /><span aria-hidden=\"true\">👉</span> Het is als een digitale kluis voor al je accounts."
+                        },
+                        "A5": {
+                           "TITLE": "Deel nooit je wachtwoorden",
+                           "SHORT_DESCRIPTION": "Het is het beste om ze voor jezelf te houden",
+                           "LONG_DESCRIPTION": "Iemand zou je berichten kunnen lezen, namens jou kunnen posten of je account kunnen stelen.<br />Je wachtwoord is persoonlijk, net als de toegangscode van je telefoon."
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "TOOLS": {
+      "TITLE": "Tools",
+      "PASSWORD_CHECK_TITLE": "Mijn wachtwoord testen",
+      "PASSWORD_CHECK_DESCRIPTION": "Hoe lang duurt het voordat een cybercrimineel het kraakt?",
+      "BLUR_IMAGE_TITLE": "Mijn foto anonimiseren",
+      "BLUR_IMAGE_DESCRIPTION": "Mijn profielfoto vervagen",
+      "VISIBILITY_CHECK_TITLE": "Mijn zichtbaarheid testen",
+      "VISIBILITY_CHECK_DESCRIPTION": "Wat onthullen mijn gebruikersnaam en bio over mij?",
+      "VISIBILITY_CHECK": {
+         "TITLE": "Mijn zichtbaarheid testen",
+         "DESCRIPTION": "Kan iemand mij identificeren aan de hand van mijn gebruikersnaam en mijn bio?",
+         "PSEUDO": {
+            "TITLE": "Wat zit er in je gebruikersnaam?",
+            "IDENTITY": {
+               "TITLE": "<span aria-hidden=\"true\">🪪</span> Identiteit",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mijn volledige naam of achternaam",
+                  "ANSWER_1_DESCRIPTION": "(voorbeeld: Martin)",
+                  "ANSWER_2_TITLE": "Mijn naam of achternaam afgekort.",
+                  "ANSWER_2_DESCRIPTION": "(voorbeeld: Mrt1)",
+                  "ANSWER_3_TITLE": "Mijn bijnaam",
+                  "ANSWER_4_TITLE": "Mijn geboortedatum"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "<span aria-hidden=\"true\">🗺️</span> Locatie en achtergrond",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mijn postcode",
+                  "ANSWER_1_DESCRIPTION": "(voorbeeld: 1000 of 9000)",
+                  "ANSWER_2_TITLE": "Waar ik woon of waar ik vandaan kom",
+                  "ANSWER_2_DESCRIPTION": "(Stad, regio, land, vlag-emoji.)"
+               }
+            }
+         },
+         "BIO": {
+            "TITLE": "Wat zit er in je bio?",
+            "EMPTY": {
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Ik heb niets in mijn bio geschreven"
+               }
+            },
+            "IDENTITY": {
+               "TITLE": "<span aria-hidden=\"true\">🪪</span> Identiteit",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mijn volledige naam of achternaam",
+                  "ANSWER_1_DESCRIPTION": "(voorbeeld: Martin)",
+                  "ANSWER_2_TITLE": "Mijn naam of achternaam afgekort.",
+                  "ANSWER_2_DESCRIPTION": "(voorbeeld: Mrt1)",
+                  "ANSWER_3_TITLE": "Mijn bijnaam",
+                  "ANSWER_4_TITLE": "Mijn geboortedatum"
+               }
+            },
+            "ORIGIN": {
+               "TITLE": "<span aria-hidden=\"true\">🗺️</span> Locatie en achtergrond",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Mijn postcode",
+                  "ANSWER_1_DESCRIPTION": "(voorbeeld: 1000 of 9000)",
+                  "ANSWER_2_TITLE": "Waar ik woon of waar ik vandaan kom",
+                  "ANSWER_2_DESCRIPTION": "(Stad, regio, land, vlag-emoji.)"
+               }
+            },
+            "DIGITAL_LIFE": {
+               "TITLE": "<span aria-hidden=\"true\">👥</span> Digitaal leven",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Links naar mijn andere sociale media-accounts.",
+                  "ANSWER_1_DESCRIPTION": "(X, Instagram, TikTok, Snapchat).",
+                  "ANSWER_2_TITLE": "De accounts van mijn inner circle",
+                  "ANSWER_2_DESCRIPTION": "(Vrienden, familie, lief,...)"
+               }
+            },
+            "INTEREST": {
+               "TITLE": "<span aria-hidden=\"true\">🎭</span> Interesses",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Een link naar mijn club of een vereniging waar ik deel van uitmaak.",
+                  "ANSWER_1_DESCRIPTION": "(bijv: je lokale sportclub)"
+               }
+            },
+            "EDUCATION_PRO": {
+               "TITLE": "<span aria-hidden=\"true\">🏫</span> Onderwijs of beroep",
+               "ANSWERS": {
+                  "ANSWER_1_TITLE": "Een vermelding van mijn school of bedrijf.",
+                  "ANSWER_2_TITLE": "Mijn vaardigheden of opleiding",
+                  "ANSWER_2_DESCRIPTION": "(Bakkersleerling, student geneeskunde…)"
+               }
+            }
+         },
+         "RESULTS": {
+            "TITLE": "Je resultaten",
+            "SUMMARY": {
+               "GOOD": {
+                  "TITLE": "Goed gedaan! <span aria-hidden=\"true\">🥷</span>",
+                  "CONTENT": "Je profiel maakt het niet mogelijk om te weten wie je bent op sociale media of offline."
+               },
+               "OK": {
+                  "TITLE": "Niet slecht! <span aria-hidden=\"true\">🥸</span>",
+                  "CONTENT": "Er zijn nog steeds enkele aanwijzingen om te raden wie je bent in het echte leven. Hier kun je nog minder informatie over jezelf geven:"
+               },
+               "BAD": {
+                  "TITLE": "Voorzichtig! <span aria-hidden=\"true\">🧐</span>",
+                  "CONTENT": "Je profiel bevat veel informatie over jou. Wees voorzichtig, sommige mensen kunnen deze informatie gebruiken, zich voordoen als je vrienden of je reputatie schaden."
+               }
+            },
+            "PSEUDO": {
+               "TITLE": "Je gebruikersnaam geeft aan"
+            },
+            "BIO": {
+               "TITLE": "Je bio geeft aan"
+            },
+            "STATE": {
+               "PUBLIC": "OPENBAAR <span aria-hidden=\"true\">👀</span>",
+               "DISCREET": "DISCREET <span aria-hidden=\"true\">🙈</span>️",
+               "INVISIBLE": "ONZICHTBAAR <span aria-hidden=\"true\">👻</span>"
+            },
+            "NO_PERSONAL_INFO": "Geen persoonlijke info!"
+         }
+      },
+      "BLUR_IMAGE": {
+         "TITLE": "Mijn foto anonimiseren",
+         "DESCRIPTION": "Mijn profielfoto blurren of pixeleren om mijn identificatie online te beperken.",
+         "EDITING_TITLE": "Bewerkingsgebied van de geïmporteerde foto",
+         "ADVICE": "<span aria-hidden=\"true\">💡</span> <strong>Advies</strong>: Als je je foto blurt om hem als profielfoto te gebruiken, gebruik hem dan nergens anders ongeblurd<br /><span aria-hidden=\"true\">💡</span> <strong>Goed om te weten</strong>: FantomApp slaat geen foto's op die je hier importeert",
+         "UPLOAD_IMAGE": "Importeer een foto <span aria-hidden=\"true\">🤳</span>",
+         "BLUR": "Blurren",
+         "PIXELATE": "Pixeleren",
+         "ALL_BLUR": "Alles blurren",
+         "BRUSH_SIZE": "Grootte van de blurring",
+         "GLOBAL_BLUR_INFO": "Je kunt de hele afbeelding blurren met deze knop. Door erop te klikken opent een lijst met blurringspercentages om de intensiteit te kiezen.",
+         "MODIFICATION_DONE": "Wijziging voltooid",
+         "UNDO": "Laatste wijziging ongedaan maken",
+         "REDO": "Wijziging opnieuw uitvoeren",
+         "ACTIONS_TOOLBAR": "Vervagingsmodus",
+         "BLUR_PERCENT": "Hele afbeelding vervagen voor {{percent}} procent",
+         "TUTORIAL": {
+            "DESCRIPTION": "Swipe met je vinger over de afbeelding om deze te blurren."
+         }
+      },
+      "PASSWORD_CHECK": {
+         "TITLE": "Mijn wachtwoord testen",
+         "DESCRIPTION_PART1": "Hoe lang duurt het voor een cybercrimineel om het met brute force te kraken",
+         "DESCRIPTION_PART2": "?",
+         "FOCUS_ACCESSIBLE_TITLE": "Mijn wachtwoord testen - invoerveld",
+         "DESCRIPTION_TOOLTIP": {
+            "TITLE": "brute force",
+            "ARIA_LABEL": "Wat is een brute force-aanval?",
+            "CONTENT": "Een <strong>brute force-aanval</strong> bestaat uit het één voor één testen van elke mogelijke combinatie van een wachtwoord. (bron: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
+         },
+         "CRIMINAL_GUESSES": "Een cybercrimineel raadt het in:",
+         "ASSESSMENT_TEXT": "Je wachtwoord:",
+         "INPUT_LABEL": "Wachtwoord",
+         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Bevat mijn <strong>voornaam</strong>, <strong>achternaam</strong>, of <strong>makkelijk te raden woorden</strong>",
+         "COPY_PASSWORD": "Kopieer het wachtwoord",
+         "COPIED": "Gekopieerd!",
+         "BADGES": {
+            "IMMEDIATE": "ONMIDDELLIJK <span aria-hidden=\"true\">⚠️</span>",
+            "RAPID": "JE KUNT NOG BETER <span aria-hidden=\"true\">👇</span>",
+            "CORRECT": "OKÉ <span aria-hidden=\"true\">🙂</span>",
+            "SUPER": "GEWELDIG <span aria-hidden=\"true\">😎</span>"
+         },
+         "CRITERIA": {
+            "MIN_LENGTH": "Minimaal 12 tekens",
+            "UPPERCASE": "Minstens 1 hoofdletter",
+            "LOWERCASE": "Minstens 1 kleine letter",
+            "DIGIT": "Minstens 1 cijfer",
+            "SPECIAL_CHAR": "Minstens 1 speciaal teken",
+            "NO_EASY_CLUES": "Geen makkelijke aanwijzingen (achternaam, voornaam, veelvoorkomend woord)",
+            "CRITERIA_VALIDATED": "Criterium gevalideerd",
+            "CRITERIA_NOT_VALIDATED": "Criterium niet gevalideerd"
+         },
+         "BUTTONS": {
+            "WHAT_IS_GOOD_PASSWORD": "Wat is een goed wachtwoord?",
+            "TEST_PASSWORD": "Mijn wachtwoord testen <span aria-hidden=\"true\">🔒</span>",
+            "STRENGTHEN_PASSWORD": "Mijn wachtwoord versterken"
+         },
+         "MODALS": {
+            "ONBOARDING": {
+               "TITLE": "Hoe werkt het?",
+               "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>Stap 1</strong>: Schrijf je wachtwoord in het daarvoor bestemde veld.",
+               "STEP_2": "<span aria-hidden=\"true\">🧪</span> <strong>Stap 2</strong>: Klik op \"Test mijn wachtwoord\".",
+               "STEP_3": "<span aria-hidden=\"true\">⏱️</span> <strong>Stap 3</strong>: En daar heb je het! Je kunt zien hoe lang het zou duren voor een cybercrimineel om je wachtwoord te kraken… en toegang te krijgen tot je persoonlijke gegevens!",
+               "NOTE": "FantomApp bewaart geen informatie.",
+               "UNDERSTOOD": "Begrepen"
+            },
+            "PASSWORD_INFO": {
+               "TITLE": "Een sterk wachtwoord is:",
+               "CLOSE": "Sluiten",
+               "REQUIREMENTS_LIST": "Lijst met vereisten voor een sterk wachtwoord",
+               "REQUIREMENTS": {
+                  "LENGTH": "12 tekens",
+                  "DIGITS": "1 of meer cijfers",
+                  "UPPERCASE": "hoofdletters",
+                  "LOWERCASE": "kleine letters",
+                  "SPECIAL_CHARS": "speciale tekens (*, @, !)"
+               },
+               "WARNINGS_SECTION": "Tips voor het kiezen van een veilig wachtwoord",
+               "WARNINGS": {
+                  "CRIMINALS_USE_DB": "<span aria-hidden=\"true\">🏴‍☠️</span> Cybercriminelen gebruiken alle bestaande <strong>woorddatabases</strong>, in alle talen.",
+                  "NO_DICTIONARY": "<span aria-hidden=\"true\">⛔</span> Geen woorden uit het woordenboek, je naam of achternaam om je wachtwoord te maken"
+               }
+            }
+         },
+         "TIME_UNITS": {
+            "INSTANT": "Onmiddellijk",
+            "MINUTES": "minuten",
+            "HOURS": "uren",
+            "DAY": "dag",
+            "DAYS": "dagen",
+            "WEEK": "week",
+            "WEEKS": "weken",
+            "MONTH": "maand",
+            "MONTHS": "maanden",
+            "YEAR": "jaar",
+            "YEARS": "jaren",
+            "THOUSAND_YEARS": "duizend jaar",
+            "MILLION_YEARS": "miljoen jaar",
+            "BILLION_YEARS": "miljard jaar",
+            "TRILLION_YEARS": "biljoen jaar",
+            "QUADRILLION_YEARS": "biljard jaar",
+            "QUINTILLION_YEARS": "triljoen jaar"
+         }
+      }
+   },
+   "SECURE_MYSELF": {
+      "VIEW_ALL": {
+         "TUTORIAL": {
+            "TITLE": "Hoe werkt het?",
+            "DESCRIPTION": "Wanneer je een instelling hebt gewijzigd, vink het vakje aan <strong>om jezelf eraan te herinneren</strong> wat je al hebt beveiligd op je account!"
+         }
+      }
+   },
+   "ALT_TEXT": {
+      "HEADER": {
+         "CURRENT_LANGUAGE": "Huidige taal: {{language}}",
+         "CURRENT_DEVICE": "Huidig apparaat: {{device}}",
+         "NO_DEVICE_SELECTED": "Huidig apparaat: geen geselecteerd",
+         "DEVICE_IOS": "iOS",
+         "DEVICE_ANDROID": "Android",
+         "DEVICE_WEB": "Web"
+      },
+      "CONTACT": {
+         "PHONE": "Contact per telefoon",
+         "WHATSAPP": "Contact per WhatsApp",
+         "SMS": "Contact per SMS",
+         "EMAIL": "Contact per e-mail",
+         "SUPPORT_3018": "Praat met de hotline"
+      },
+      "GENERAL": {
+         "FLAG": "Vlag"
+      },
+      "COUNTRIES": {
+         "FRANCE": "Français",
+         "IRELAND": "English",
+         "HUNGARY": "Magyar",
+         "GREECE": "Ελληνικά",
+         "DENMARK": "Dansk",
+         "POLAND": "Polski",
+         "PORTUGAL": "Português",
+         "SPAIN": "Español",
+         "CATALONIA": "Español",
+         "LUXEMBOURG": "Lëtzebuergesch",
+         "INTERNATIONAL": "International"
+      },
+      "TOOLS": {
+         "PASSWORD_CHECK": {
+            "CRITERIA": {
+               "CRITERIA_VALIDATED": "bevat",
+               "CRITERIA_NOT_VALIDATED": "bevat geen"
+            },
+            "INPUT": {
+               "EYE_BUTTON": {
+                  "SHOW": "Toon het wachtwoord",
+                  "HIDE": "Verberg het wachtwoord"
+               },
+               "COPY_BUTTON": {
+                  "COPY": "Kopieer het wachtwoord"
+               }
+            }
+         },
+         "BLUR_IMAGE": {
+            "IMAGE_ALT": "Importeer een foto"
+         }
+      },
+      "ENRICHED_LINK": {
+         "ARIA_LABEL": "Link die doorverwijst naar een externe pagina"
+      },
+      "TILE_CALL": {
+         "ARIA_LABEL": "Link die doorverwijst naar de telefoonbelfunctie"
+      },
+      "TILE_MESSAGE": {
+         "ARIA_LABEL": "Link die doorverwijst naar de sms-verzendfunctie"
+      },
+      "ONBOARDING": {
+         "LOGO_FANTOMAPP": "FantomApp"
+      }
+   }
+}
