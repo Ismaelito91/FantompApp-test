@@ -14,10 +14,10 @@
    </div>
    <div class="problems-items-container flex flex-col z-102">
       <a routerLink="/delete-content">
-         <app-card-1 [data]="deleteContentProblem"></app-card-1>
+         <app-card-1 [data]="deleteContentProblem()"></app-card-1>
       </a>
       <a routerLink="/hacking">
-         <app-card-1 [data]="hackingProblem"></app-card-1>
+         <app-card-1 [data]="hackingProblem()"></app-card-1>
       </a>
       @for (problem of sortedChildren; track $index) { @switch (problem.type) {
       @case (ComponentType.CARD_1) {

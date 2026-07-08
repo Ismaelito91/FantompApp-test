@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit, signal } from "@angular/core";
+import { Component, computed, inject, OnDestroy, OnInit, signal } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import {
@@ -69,7 +69,7 @@ export class ProblemsComponent implements OnInit, OnDestroy {
       translations: [],
       childrenIdList: [],
    });
-   deleteContentProblem: PageComponentModel = {
+   deleteContentProblem = computed<PageComponentModel>(() => ({
       id: 0,
       type: ComponentType.CARD_1,
       status: ComponentStatus.PUBLISHED,
@@ -86,8 +86,8 @@ export class ProblemsComponent implements OnInit, OnDestroy {
             staticImage: "assets/images/delete-content-problem.png",
          },
       ],
-   };
-   hackingProblem: PageComponentModel = {
+   }));
+   hackingProblem = computed<PageComponentModel>(() => ({
       id: 0,
       type: ComponentType.CARD_1,
       status: ComponentStatus.PUBLISHED,
@@ -104,7 +104,7 @@ export class ProblemsComponent implements OnInit, OnDestroy {
             staticImage: "assets/images/hacking-problem.png",
          },
       ],
-   };
+   }));
    ComponentType = ComponentType;
    ComponentStatus = ComponentStatus;
 
