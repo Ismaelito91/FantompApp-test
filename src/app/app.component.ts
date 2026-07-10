@@ -59,6 +59,7 @@ export class AppComponent implements OnInit {
    private preloadService = inject(PreloadService);
    @ViewChild("mainContent", { static: false })
    mainContentRef?: ElementRef<HTMLElement>;
+   private readonly langParam = new URL(window.location.href).searchParams.get("lang");
 
    constructor() {
       // Mettre à jour l'attribut lang sur <html> quand la langue change
@@ -74,7 +75,9 @@ export class AppComponent implements OnInit {
       effect(() => {
          const settings = this._settingService.settings();
          if (settings?.languages) {
-            this.languageService.filterSupportedLanguages(settings.languages);
+            if (this.langParam?.toUpperCase() !== "ALL") {
+               this.languageService.filterSupportedLanguages(settings.languages);
+            }
             // Mettre à jour les langues dans TranslateService après filtrage
             this.translateService.addLangs(
                this.languageService.getAvailableTranslateLocales(),
@@ -87,8 +90,7 @@ export class AppComponent implements OnInit {
       // Appliquer les overrides via query params avant le preload
       const url = new URL(window.location.href);
       const deviceParam = url.searchParams.get("device");
-      const langParam = url.searchParams.get("lang");
-      this.languageService.setOverrideLang(langParam);
+      this.languageService.setOverrideLang(this.langParam);
       this.deviceService.setOverride(deviceParam);
 
       // On écoute les changements de route pour activer/masquer le header/footer
