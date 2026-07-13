@@ -749,7 +749,7 @@
          "CRIMINAL_GUESSES": "Un cybercriminel le devine en :",
          "ASSESSMENT_TEXT": "Ton mot de passe :",
          "INPUT_LABEL": "Mot de passe",
-         "CHECKBOX_LABEL": "<span aria-hidden=\"true\">🧐❓</span> Contient mon <strong>prénom</strong>, <strong>nom</strong>, ou des <strong>mots faciles à deviner</strong>",
+         "CHECKBOX_LABEL": "Mon mot de passe contient un <strong>mot courant</strong>, <strong>prénom</strong> ou nom <span aria-hidden=\"true\">🤔</span><span aria-hidden=\"true\">❓</span>",
          "COPY_PASSWORD": "Copier le mot de passe",
          "COPIED": "Copié !",
          "BADGES": {
