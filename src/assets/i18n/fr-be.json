@@ -7,6 +7,11 @@
       "NEW_VERSION_AVAILABLE": "Nouvelle version disponible",
       "UPDATE_APP": "Mettre à jour l'application"
    },
+   "NO_CONNECTION": {
+      "TITLE": "Ça fait longtemps !",
+      "TEXT": "FantomApp a besoin d'une connexion Internet pour se remettre à jour. Reconnecte-toi puis réessaie.",
+      "CTA": "Réessayer"
+   },
    "COMMON": {
       "ORGANISATION": "APD",
       "SAVE": "Enregistrer",

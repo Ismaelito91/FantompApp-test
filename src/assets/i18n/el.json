@@ -7,6 +7,11 @@
       "NEW_VERSION_AVAILABLE": "Νέα έκδοση διαθέσιμη",
       "UPDATE_APP": "Ενημέρωση εφαρμογής"
    },
+   "NO_CONNECTION": {
+      "TITLE": "",
+      "TEXT": "",
+      "CTA": ""
+   },
    "COMMON": {
       "ORGANISATION": "DPA",
       "SAVE": "Αποθήκευση",
@@ -106,7 +111,6 @@
       "RIGHTS": "Έχω δικαιώματα",
       "ACCESSIBILITY": "FantomApp για όλους (Προσβασιμότητα)",
       "TUTORIAL": "Δες ξανά το βίντεο καλωσορίσματος",
-      
       "CARDS": {
          "MAIN_TITLE": "Ασφάλιση των κοινωνικών μου δικτύων",
          "VIEW_ALL": "Προβολή όλων",

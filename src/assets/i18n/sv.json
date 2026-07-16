@@ -7,6 +7,11 @@
       "NEW_VERSION_AVAILABLE": "Ny version tillgänglig",
       "UPDATE_APP": "Uppdatering av applikationen"
    },
+   "NO_CONNECTION": {
+      "TITLE": "",
+      "TEXT": "",
+      "CTA": ""
+   },
    "COMMON": {
       "ORGANISATION": "IMY",
       "SAVE": "Spara",
@@ -403,7 +408,7 @@
                   "DESCRIPTION": "Flera organisationer har <strong>experter</strong> som kan hjälpa dig på flera sätt, exempelvis via chatt eller telefon. Du kan kontakta deras <strong>stödlinjer</strong> anonymt och helt gratis. <span class=\"text-(--color-24)\"><strong>Ring tills någon svarar</strong>.</span>",
                   "LINK": {
                      "TITLE": "Prata med en stödlinje",
-                     "DESCRIPTION":""
+                     "DESCRIPTION": ""
                   },
                   "CALL": {
                      "TITLE": "Stödlinje"

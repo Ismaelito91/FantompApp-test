@@ -7,6 +7,11 @@
       "NEW_VERSION_AVAILABLE": "Dostupná nová verzia",
       "UPDATE_APP": "Aktualizácia aplikácie"
    },
+   "NO_CONNECTION": {
+      "TITLE": "",
+      "TEXT": "",
+      "CTA": ""
+   },
    "COMMON": {
       "ORGANISATION": "UOOU",
       "SAVE": "Uložiť",

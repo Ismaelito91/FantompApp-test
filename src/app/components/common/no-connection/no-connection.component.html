@@ -1,0 +1,23 @@
+<div class="no-connection">
+  <div class="no-connection__content">
+    <h1 class="no-connection__title">{{ "NO_CONNECTION.TITLE" | translate }}</h1>
+    <p class="no-connection__text">{{ "NO_CONNECTION.TEXT" | translate }}</p>
+  </div>
+  <object
+    data="assets/images/no-connexion.svg"
+    type="image/svg+xml"
+    aria-hidden="true"
+    class="no-connection__img"
+  ></object>
+  <div class="no-connection__actions">
+    <button class="no-connection__cta" (click)="reload()">
+      {{ "NO_CONNECTION.CTA" | translate }}
+    </button>
+    <img
+      src="assets/images/logo-fantomapp-dark.svg"
+      alt=""
+      aria-hidden="true"
+      class="no-connection__logo"
+    />
+  </div>
+</div>
