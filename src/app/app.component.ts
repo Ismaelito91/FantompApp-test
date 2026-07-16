@@ -5,6 +5,7 @@ import {
    ElementRef,
    inject,
    OnInit,
+   signal,
    ViewChild,
 } from "@angular/core";
 import { MatIconRegistry } from "@angular/material/icon";
@@ -19,6 +20,7 @@ import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { filter, map } from "rxjs";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";
+import { NoConnectionComponent } from "./components/common/no-connection/no-connection.component";
 import { OnboardingComponent } from "./components/home/onboarding/onboarding.component";
 import { DeviceService } from "./service/device.service";
 import { LanguageService } from "./service/language.service";
@@ -38,6 +40,7 @@ import { UtilsService } from "./service/utils.service";
       TranslateModule,
       CommonModule,
       OnboardingComponent,
+      NoConnectionComponent,
    ],
    templateUrl: "./app.component.html",
    styleUrl: "./app.component.scss",
@@ -54,6 +57,7 @@ export class AppComponent implements OnInit {
    private activatedRoute = inject(ActivatedRoute);
    private deviceService = inject(DeviceService);
    public utilsService = inject(UtilsService);
+   isOffline = signal(!navigator.onLine);
    hideHeader = false;
    hideFooter = false;
    private preloadService = inject(PreloadService);
@@ -87,6 +91,9 @@ export class AppComponent implements OnInit {
    }
 
    ngOnInit(): void {
+      window.addEventListener("online", () => this.isOffline.set(false));
+      window.addEventListener("offline", () => this.isOffline.set(true));
+
       // Appliquer les overrides via query params avant le preload
       const url = new URL(window.location.href);
       const deviceParam = url.searchParams.get("device");

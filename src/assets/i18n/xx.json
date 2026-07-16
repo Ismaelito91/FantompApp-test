@@ -7,6 +7,11 @@
       "NEW_VERSION_AVAILABLE": "New version available",
       "UPDATE_APP": "Application update"
    },
+   "NO_CONNECTION": {
+      "TITLE": "",
+      "TEXT": "",
+      "CTA": ""
+   },
    "COMMON": {
       "ORGANISATION": "CNIL",
       "SAVE": "Save",

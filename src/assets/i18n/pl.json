@@ -7,6 +7,11 @@
       "NEW_VERSION_AVAILABLE": "Dostępna nowa wersja",
       "UPDATE_APP": "Aktualizacja aplikacji"
    },
+   "NO_CONNECTION": {
+      "TITLE": "",
+      "TEXT": "",
+      "CTA": ""
+   },
    "COMMON": {
       "ORGANISATION": "UODO",
       "SAVE": "Zapisz",

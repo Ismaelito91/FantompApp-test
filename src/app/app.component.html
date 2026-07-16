@@ -1,3 +1,6 @@
+@if (isOffline()) {
+  <app-no-connection />
+}
 @switch (_settingService.appStatus()) {
   @case ("initialized") {
     <div
