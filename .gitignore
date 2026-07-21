@@ -35,6 +35,9 @@ node_modules
 .angular
 dist
 
+### Outils de test locaux ###
+scripts/serve-prod-proxy.cjs
+
 ### Karma SonarQube ###
 .scannerwork/*
 reports/*

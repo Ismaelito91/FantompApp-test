@@ -5,7 +5,6 @@ import {
    ElementRef,
    inject,
    OnInit,
-   signal,
    ViewChild,
 } from "@angular/core";
 import { MatIconRegistry } from "@angular/material/icon";
@@ -57,7 +56,6 @@ export class AppComponent implements OnInit {
    private activatedRoute = inject(ActivatedRoute);
    private deviceService = inject(DeviceService);
    public utilsService = inject(UtilsService);
-   isOffline = signal(!navigator.onLine);
    hideHeader = false;
    hideFooter = false;
    private preloadService = inject(PreloadService);
@@ -91,9 +89,6 @@ export class AppComponent implements OnInit {
    }
 
    ngOnInit(): void {
-      window.addEventListener("online", () => this.isOffline.set(false));
-      window.addEventListener("offline", () => this.isOffline.set(true));
-
       // Appliquer les overrides via query params avant le preload
       const url = new URL(window.location.href);
       const deviceParam = url.searchParams.get("device");
