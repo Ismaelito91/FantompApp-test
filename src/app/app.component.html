@@ -1,6 +1,3 @@
-@if (isOffline()) {
-  <app-no-connection />
-}
 @switch (_settingService.appStatus()) {
   @case ("initialized") {
     <div
@@ -29,6 +26,6 @@
     {{ "APP.LOADING" | translate }}
   }
   @case ("failed") {
-    {{ "APP.ERROR" | translate }}
+    <app-no-connection />
   }
 }
