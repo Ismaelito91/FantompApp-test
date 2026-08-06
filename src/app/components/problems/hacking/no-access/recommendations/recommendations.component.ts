@@ -88,7 +88,7 @@ export class RecommendationsComponent {
                id: 0,
                countryRegion: this.languageService.language(),
                firstTitle: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A4.TITLE",
-               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A3.LONG_DESCRIPTION",
+               description: "PROBLEMS.HACKING.RESULTS.NO_ACCESS.RECOMMENDATIONS.ACTIONS.LATER.A4.LONG_DESCRIPTION",
                staticImage: "assets/images/reco-password-manager-cover.png"
             }]
          },
