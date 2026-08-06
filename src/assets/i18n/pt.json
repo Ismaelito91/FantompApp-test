@@ -7,6 +7,11 @@
       "NEW_VERSION_AVAILABLE": "Nova versão disponível",
       "UPDATE_APP": "Atualização do aplicativo"
    },
+   "NO_CONNECTION": {
+      "TITLE": "It's been a while!",
+      "TEXT": "FantomApp needs an Internet connection to update itself. Please reconnect and try again.",
+      "CTA": "Retry"
+   },
    "COMMON": {
       "ORGANISATION": "CNIL",
       "SAVE": "Salvar",

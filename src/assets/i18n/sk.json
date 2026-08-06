@@ -8,9 +8,9 @@
       "UPDATE_APP": "Aktualizácia aplikácie"
    },
    "NO_CONNECTION": {
-      "TITLE": "",
-      "TEXT": "",
-      "CTA": ""
+      "TITLE": "It's been a while!",
+      "TEXT": "FantomApp needs an Internet connection to update itself. Please reconnect and try again.",
+      "CTA": "Retry"
    },
    "COMMON": {
       "ORGANISATION": "UOOU",

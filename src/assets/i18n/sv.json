@@ -8,9 +8,9 @@
       "UPDATE_APP": "Uppdatering av applikationen"
    },
    "NO_CONNECTION": {
-      "TITLE": "",
-      "TEXT": "",
-      "CTA": ""
+      "TITLE": "It's been a while!",
+      "TEXT": "FantomApp needs an Internet connection to update itself. Please reconnect and try again.",
+      "CTA": "Retry"
    },
    "COMMON": {
       "ORGANISATION": "IMY",
@@ -67,7 +67,7 @@
       "START_USING": "Börja använda",
       "TAP_TO_CONTINUE": "Tryck för att fortsätta",
       "WELCOME_TO": "Välkommen till",
-      "GHOST_MODE_EXPLANATION": "Här surfar du i <span class=\"ghost-mode\">spökläge</span>, ingen vet att du är här. Inga av dina uppgifter sparas. Du är fri att utforska hur du kan skydda din integritet (din personliga information).",
+      "GHOST_MODE_EXPLANATION": "Här surfar du i <span class=\"ghost-mode\">spökläge</span>, ingen vet att du är här. Inga av dina uppgifter sparas. Du är fri att utforska hur du kan skydda din integritet (din personliga information) på nätet.",
       "PROGRESS": "Framsteg i introduktionen",
       "GO_TO_STEP": "Gå till steg",
       "COMPLETED_STEP": "Slutfört steg",
@@ -80,7 +80,7 @@
       },
       "STEP_TWO": {
          "TITLE": "Behöver du hjälp? <span aria-hidden=\"true\">🛟</span>",
-         "DESCRIPTION": "Ibland kan vi stöta på problem på nätet. Här hittar du information och olika lösningar."
+         "DESCRIPTION": "Ibland kan vi stöta på problem på nätet. Här hittar du viktig information och olika lösningar."
       },
       "STEP_THREE": {
          "TITLE": "Verktyg <span aria-hidden=\"true\">🛠️</span>",
@@ -88,7 +88,7 @@
       },
       "STEP_FOUR": {
          "TITLE": "Viktiga inställningar <span aria-hidden=\"true\">⚙️</span>",
-         "DESCRIPTION": "Det är inte alltid lätt att skydda sina konton... i FantomApp hittar du massor av tips."
+         "DESCRIPTION": "Det är inte alltid lätt att skydda sina konton på sociala medier... i FantomApp hittar du massor av tips."
       }
    },
    "USER_CONFIG_APP": {
@@ -117,7 +117,7 @@
          "VIEW_ALL_ARIA": "Visa alla säkerhetsverktyg",
          "PASSWORD_CHECK": {
             "TITLE": "Testa mitt lösenord",
-            "DESCRIPTION": "Hur lång tid tar det för någon annan att lista ut ditt lösenord?"
+            "DESCRIPTION": "Hur lång tid tar det för någon annan att lista ut mitt lösenord?"
          },
          "BLUR_IMAGE": {
             "TITLE": "Anonymisera min bild",
@@ -148,15 +148,15 @@
             },
             "DATA_INFO": {
                "TITLE": "<span aria-hidden=\"true\">ℹ️</span> Rätten till information: vem gör vad med mina uppgifter?",
-               "PARAGRAPH": "Du har rätt att veta vad olika verksamheter, inklusive webbplatser, spel, applikationer och andra plattformar, <b>gör, vill göra eller planerar att göra med den personliga information som du har delat</b>."
+               "PARAGRAPH": "Rätten till information innebär att verksamheter måste ge dig viss information när dina uppgifter samlas in (t.ex. när du skapar ett konto). Du har rätt att veta vad olika verksamheter, inklusive webbplatser, spel, applikationer och andra plattformar, <b>gör, vill göra eller planerar att göra med den personliga information som du har delat</b>. Om du vill veta vilka uppgifter som sociala medier har sparat om dig och hur de använder uppgifterna kan du skicka en <b>begäran om tillgång</b> till plattformen."
             },
             "RIGHT_TO_OBJECT": {
                "TITLE": "<span aria-hidden=\"true\">❌</span> Rätten att göra invändningar: behåll kontrollen över dina uppgifter!",
-               "PARAGRAPH": "Du har rätt att <b>motsätta dig användningen av dina uppgifter</b> av webbplatser eller appar (förutom i mycket specifika fall som föreskrivs i lag)."
+               "PARAGRAPH": "Du har rätt att <b>motsätta dig användningen av dina uppgifter</b> av webbplatser eller appar (förutom i mycket specifika fall som föreskrivs i lag). Du kan exempelvis invända mot att ett företag eller annan tjänst skickar reklam till dig."
             },
             "PORTABILITY": {
                "TITLE": "<span aria-hidden=\"true\">🧳</span> Rätten till dataportabilitet: var jag vill, när jag vill!",
-               "PARAGRAPH_1": "Du har till och med rätt att <b>flytta dina uppgifter från ett företag eller en tjänst till en annan</b> ! Detta kallas dataportabilitet.",
+               "PARAGRAPH_1": "Du har till och med rätt att <b>flytta dina uppgifter från ett företag eller en tjänst till en annan</b>! Detta kallas dataportabilitet.",
                "PARAGRAPH_2": "Dataportabilitet innebär att du kan hämta alla dina uppgifter från en tjänst, till exempel sociala medier, och föra över dem till en annan. Detta gäller bland annat dina bilder, ljudfiler eller videor, eller dina kurser på en anteckningsapp på din dator."
             }
          }
@@ -214,14 +214,14 @@
                   },
                   "P3": {
                      "TITLE": "Vad är ett <span class='text-(--color-24)'>bristfälligt eller felaktigt</span> svar? <span aria-hidden=\"true\">📝</span>",
-                     "DESCRIPTION": "Att det svaret inte tar hänsyn till hela din begäran, eller att svaret inte passar det du bad om."
+                     "DESCRIPTION": "Att svaret inte tar hänsyn till hela din begäran, eller att svaret inte passar det du bad om."
                   }
                },
                "COMPLAINT": {
                   "TITLE": "Samla ihop bevisen",
                   "DESCRIPTION": "Spara bilder av varje steg! De kommer att vara användbara om du vill lämna in ett klagomål.",
                   "P1": {
-                     "TITLE": "Exempel på skärmdumpar du bör spara:",
+                     "TITLE": "Exempel på bevis du bör spara:",
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>Innehållet som ska raderas</strong><br />Skärmdump av den problematiska texten, fotot eller videon<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Webbplatsens adress</strong><br />En länk till rätt sida på webbplatsen (även kallat webbadress eller URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Information om personen som publicerade innehållet</strong><br />En länk till deras profil<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Din begäran om radering</strong><br />- En skärmdump av texten eller mejlet där du ber att det sociala mediet raderar innehållet<br />- En skärmdump av svaret från det sociala mediet (om du har fått svar)"
                   },
                   "BUTTON": "Gå till formuläret",
@@ -232,7 +232,7 @@
                "TITLE": "Har du inte anmält innehållet än?",
                "P1": {
                   "TITLE": "Be personen att ta bort innehållet eller gör en anmälan det till det sociala mediet.",
-                  "DESCRIPTION": "Ta hjälp av en vuxen som du litar på om du vill anmäla innehållet! Var noga med att spara bevis på din anmälan. Om du inte får svar inom <strong>1 månad</strong> kan du lämna in ett klagomål till IMY den:"
+                  "DESCRIPTION": "Om det känns okej kan du först be personen att ta bort innehållet. Du kan annars anmäla innehållet direkt till plattformen. Ta hjälp av en vuxen som du litar på! Glöm inte att spara bevis på din anmälan. Om du inte får svar inom <strong>1 månad</strong> kan du lämna in ett klagomål till IMY den:"
                },
                "CONTACTS": {
                   "TITLE": "Hur du gör en anmälan till olika sociala medier",
@@ -248,7 +248,7 @@
                      "SNAPCHAT": {
                         "TITLE": "Snapchat",
                         "LINK": {
-                           "TITLE": "Rapportera missbruk eller olagligt innehåll på Snapchat",
+                           "TITLE": "Anmäl missbruk eller olagligt innehåll på Snapchat",
                            "DESCRIPTION": "https://help.snapchat.com/hc/sv/articles/7012399221652-Hur-anm%C3%A4ler-jag-missbruk-olagligt-inneh%C3%A5ll-eller-andra-%C3%B6vertr%C3%A4delser-p%C3%A5-Snapchat"
                         },
                         "MAIL": {
@@ -260,7 +260,7 @@
                      "TIKTOK": {
                         "TITLE": "TikTok",
                         "LINK": {
-                           "TITLE": "Skicka en sekretessbegäran",
+                           "TITLE": "Skicka en sekretessbegäran (begäran om radering)",
                            "DESCRIPTION": "https://www.tiktok.com/legal/report/privacy/webform/sv"
                         },
                         "BUTTON": "Hur fyller jag i formuläret?"
@@ -408,7 +408,7 @@
                   "DESCRIPTION": "Flera organisationer har <strong>experter</strong> som kan hjälpa dig på flera sätt, exempelvis via chatt eller telefon. Du kan kontakta deras <strong>stödlinjer</strong> anonymt och helt gratis. <span class=\"text-(--color-24)\"><strong>Ring tills någon svarar</strong>.</span>",
                   "LINK": {
                      "TITLE": "Prata med en stödlinje",
-                     "DESCRIPTION": ""
+                     "DESCRIPTION":""
                   },
                   "CALL": {
                      "TITLE": "Stödlinje"
@@ -618,7 +618,7 @@
       "VISIBILITY_CHECK_DESCRIPTION": "Vad avslöjar mitt användarnamn och bio om mig?",
       "VISIBILITY_CHECK": {
          "TITLE": "Testa min synlighet",
-         "DESCRIPTION": "Kan någon identifiera mig utifrån mitt användarnamn och min bio?",
+         "DESCRIPTION": "Kan någon identifiera mig utifrån informationen i min profil?",
          "PSEUDO": {
             "TITLE": "Vad finns i mitt användarnamn?",
             "IDENTITY": {
@@ -626,7 +626,7 @@
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Mitt fullständiga namn eller efternamn",
                   "ANSWER_1_DESCRIPTION": "(exempel: Andersson)",
-                  "ANSWER_2_TITLE": "Mitt namn eller efternamn förkortat.",
+                  "ANSWER_2_TITLE": "Mitt namn eller efternamn förkortat",
                   "ANSWER_2_DESCRIPTION": "(exempel: And1)",
                   "ANSWER_3_TITLE": "Mitt smeknamn",
                   "ANSWER_4_TITLE": "Mitt födelsedatum"
@@ -654,7 +654,7 @@
                "ANSWERS": {
                   "ANSWER_1_TITLE": "Mitt fullständiga namn eller efternamn",
                   "ANSWER_1_DESCRIPTION": "(exempel: Andersson)",
-                  "ANSWER_2_TITLE": "Mitt namn eller efternamn förkortat.",
+                  "ANSWER_2_TITLE": "Mitt namn eller efternamn förkortat",
                   "ANSWER_2_DESCRIPTION": "(exempel: And1)",
                   "ANSWER_3_TITLE": "Mitt smeknamn",
                   "ANSWER_4_TITLE": "Mitt födelsedatum"
@@ -681,14 +681,14 @@
             "INTEREST": {
                "TITLE": "<span aria-hidden=\"true\">🎭</span> Intressen",
                "ANSWERS": {
-                  "ANSWER_1_TITLE": "En länk till en klubb eller en förening jag är med i.",
+                  "ANSWER_1_TITLE": "En länk till en klubb eller en förening jag är med i",
                   "ANSWER_1_DESCRIPTION": "(t.ex.: @VolleyValences)"
                }
             },
             "EDUCATION_PRO": {
                "TITLE": "<span aria-hidden=\"true\">🏫</span> Utbildning eller yrke",
                "ANSWERS": {
-                  "ANSWER_1_TITLE": "Namnet på min skola eller arbetsplats.",
+                  "ANSWER_1_TITLE": "Namnet på min skola eller arbetsplats",
                   "ANSWER_2_TITLE": "Mina kunskaper eller min utbildning",
                   "ANSWER_2_DESCRIPTION": "(snickare, servitör…)"
                }
@@ -772,7 +772,7 @@
             "LOWERCASE": "Små bokstäver",
             "DIGIT": "Minst 1 siffra",
             "SPECIAL_CHAR": "Minst 1 specialtecken",
-            "NO_EASY_CLUES": "Inga enkla ledtrådar (efternamn, förnamn, vanliga ord)",
+            "NO_EASY_CLUES": "Inga enkla ledtrådar (förnamn, efternamn, vanliga ord)",
             "CRITERIA_VALIDATED": "Kriterium validerat",
             "CRITERIA_NOT_VALIDATED": "Kriterium inte validerat"
          },
@@ -784,7 +784,7 @@
          "MODALS": {
             "ONBOARDING": {
                "TITLE": "Hur fungerar det?",
-               "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>Steg 1</strong>: Skriv ditt lösenord i det fältet.",
+               "STEP_1": "<span aria-hidden=\"true\">🔐</span> <strong>Steg 1</strong>: Skriv ditt lösenord i fältet.",
                "STEP_2": "<span aria-hidden=\"true\">🧪</span> <strong>Steg 2</strong>: Klicka på \"Testa mitt lösenord\".",
                "STEP_3": "⏱️ <strong>Steg 3</strong>: Och voilà! Du kan se hur lång tid det skulle ta för någon att knäcka ditt lösenord… och komma åt dina uppgifter!",
                "NOTE": "FantomApp sparar inget du skriver här.",
