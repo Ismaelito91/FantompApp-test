@@ -147,6 +147,15 @@ export class LanguageService {
          lang: "lb",
       },
       {
+         code: "DE",
+         languageName: "Deutsch",
+         countryName: CountryRegion.DE,
+         flagUrl: "assets/images/flag/Germany.svg",
+         flagAltKey: "ALT_TEXT.COUNTRIES.GERMANY",
+         lang: "de",
+         translateLocale: "de",
+      },
+      {
          code: "XX",
          languageName: "International",
          countryName: CountryRegion.XX,

@@ -13,5 +13,6 @@ export enum CountryRegion {
    ES = "España",
    CT = "Catalunya",
    LU = "Lëtzebuerg",
+   DE = "Deutschland",
    XX = "International",
 }
