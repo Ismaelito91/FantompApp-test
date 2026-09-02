@@ -41,6 +41,7 @@ export class HomeCardComponent {
 
    navigateTo(url: string): void {
       this.router.navigate([url]);
+      console.log("Navigating to:", url);
    }
 
    navigateToTools(): void {
