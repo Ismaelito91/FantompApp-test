@@ -23,11 +23,11 @@ build:
       - dist/
 
 include:
-  - component: $CI_SERVER_FQDN/aot/core-dev/ci-components/docker-build@0.0.1
+  - component: $CI_SERVER_FQDN/aot/core-dev/ci-components/docker-build@main
     inputs:
       stage: docker-build
       IMAGE_NAME: "fantome-app-frontend"
-      IMAGE_TAG: "${CI_COMMIT_REF_SLUG}"
+      IMAGE_TAG: "${CI_COMMIT_SHORT_SHA}"
       DOCKER_REGISTRY_URL: "rg.fr-par.scw.cloud/demo-aot"
       DOCKER_REGISTRY_USERNAME: nologin
       REGISTRY_PUSH: "true"
@@ -47,5 +47,5 @@ trigger-deploy:
     branch: main
     strategy: depend
   variables:
-    TAG: $CI_COMMIT_REF_SLUG
+    TAG: $CI_COMMIT_SHORT_SHA
     DEPLOYMENT_ENVIRONMENT: sandbox
