@@ -1,0 +1,51 @@
+stages:
+  - build
+  - docker-build
+  - deploy
+
+build:
+  stage: build
+  image: node:20
+  before_script:
+    - corepack enable
+  script:
+    - pnpm install --frozen-lockfile
+    - pnpm audit || true
+    - pnpm build
+  cache:
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - .pnpm-store
+  artifacts:
+    paths:
+      - dist/
+
+include:
+  - component: $CI_SERVER_FQDN/aot/core-dev/ci-components/docker-build@0.0.1
+    inputs:
+      stage: docker-build
+      IMAGE_NAME: "fantome-app-frontend"
+      IMAGE_TAG: "${CI_COMMIT_REF_SLUG}"
+      DOCKER_REGISTRY_URL: "rg.fr-par.scw.cloud/demo-aot"
+      DOCKER_REGISTRY_USERNAME: nologin
+      REGISTRY_PUSH: "true"
+      WORKING_DIR: "."
+      DOCKERFILE: "Dockerfile"
+
+trigger-deploy:
+  stage: deploy
+  allow_failure: true
+  rules:
+    - if: $CI_COMMIT_MESSAGE =~ /^(release:|pre-release:)/
+      when: never
+    - if: $CI_COMMIT_BRANCH == "develop"
+      when: on_success
+  trigger:
+    project: cnil/fantome/fantome-app-deploy
+    branch: main
+    strategy: depend
+  variables:
+    TAG: $CI_COMMIT_REF_SLUG
+    DEPLOYMENT_ENVIRONMENT: sandbox
