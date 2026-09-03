@@ -2,6 +2,7 @@
    "name": "fantome-app-frontend",
    "version": "1.0.21-SNAPSHOT",
    "type": "module",
+   "packageManager": "pnpm@9.15.9",
    "scripts": {
       "ng": "ng",
       "start": "ng serve --proxy-config proxy-dev.conf.json",
