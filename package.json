@@ -1,6 +1,6 @@
 {
    "name": "fantome-app-frontend",
-   "version": "1.0.21",
+   "version": "1.0.22-SNAPSHOT",
    "type": "module",
    "packageManager": "pnpm@9.15.9",
    "scripts": {
