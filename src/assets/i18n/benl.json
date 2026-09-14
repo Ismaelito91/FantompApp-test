@@ -23,6 +23,8 @@
       "BACK": "Ga terug",
       "NEXT": "Volgende",
       "PREVIOUS": "Vorige",
+      "CAROUSEL_PREVIOUS": "Vorige: {{slide}}",
+      "CAROUSEL_NEXT": "Volgende: {{slide}}",
       "RESULTS": "Resultaten",
       "HOME": "Home",
       "PROBLEM": "Probleem",
@@ -36,8 +38,6 @@
       "COPIED": "Gekopieerd!",
       "OR": "of",
       "ACTIVE": "Actief",
-      "CAROUSEL_PREVIOUS": "Vorige: {{slide}}",
-      "CAROUSEL_NEXT": "Volgende: {{slide}}",
       "ARIA_LABEL": {
          "HOME": "Ga naar Home",
          "PROBLEM": "Ga naar Probleem",
@@ -89,42 +89,6 @@
       "STEP_FOUR": {
          "TITLE": "Essentiële instellingen <span aria-hidden=\"true\">⚙️</span>",
          "DESCRIPTION": "Het is niet altijd makkelijk om je accounts te beveiligen... op FantomApp vind je veel tips."
-      },
-      "WELCOME": {
-         "TITLE": "Welkom bij FantomApp!",
-         "DESCRIPTION": "Ontdek een app die is ontworpen om je privacy te beschermen en je een uitzonderlijke gebruikerservaring te bieden. Laten we je de belangrijkste functies voorstellen."
-      },
-      "APPEARANCE": {
-         "TITLE": "Pas je ervaring aan",
-         "DESCRIPTION": "Kies het uiterlijk van de app afhankelijk van je voorkeuren en je omgeving.",
-         "FEATURE_1": "Keuze uit lichte, donkere of automatische modus.",
-         "FEATURE_2": "Gebruik dezelfde instellingen als je apparaat",
-         "FEATURE_3": "Interface geoptimaliseerd voor visueel comfort"
-      },
-      "ICON_CHANGE": {
-         "TITLE": "Wijzig het app-icoon",
-         "DESCRIPTION": "Pas het icoon dat je op je startscherm ziet aan voor meer discretie of esthetiek.",
-         "FEATURE_1": "Meerdere icoonontwerpen beschikbaar",
-         "FEATURE_2": "Directe en veilige wijziging",
-         "FEATURE_3": "Discrete optie om je privacy te beschermen"
-      },
-      "RESOURCES": {
-         "TITLE": "Toegang tot alle bronnen",
-         "DESCRIPTION": "Vind alle belangrijke informatie en nuttige tools binnen handbereik.",
-         "FEATURE_1": "Volledige documentatie van de app",
-         "FEATURE_2": "Gedetailleerde gebruikershandleidingen",
-         "FEATURE_3": "Ondersteuning en online hulp"
-      },
-      "ACCESSIBILITY": {
-         "TITLE": "Een app voor iedereen",
-         "DESCRIPTION": "FantomApp is ontworpen om toegankelijk te zijn voor alle gebruikers, ongeacht hun vaardigheden.",
-         "FEATURE_1": "Een interface die vriendelijk is voor schermlezers",
-         "FEATURE_2": "Een geoptimaliseerde toetsenbordnavigatie",
-         "FEATURE_3": "Voldoet aan de RGAA-toegankelijkheidsnormen"
-      },
-      "READY": {
-         "TITLE": "Je bent er helemaal klaar voor!",
-         "DESCRIPTION": "Je bent nu bekend met de belangrijkste functies van FantomApp. Geniet volop van je beveiligde en gepersonaliseerde ervaring."
       }
    },
    "USER_CONFIG_APP": {
@@ -137,21 +101,8 @@
          "SYSTEM_SETTINGS": "Gebruik dezelfde instellingen als je apparaat"
       }
    },
-   "APP_ICON_SELECTOR": {
-      "TITLE": "Het app-icoon",
-      "SUBTITLE": "Pas het icoon van de app aan.",
-      "DEFAULT": "Standaardicoon",
-      "DEFAULT_DESC": "Het originele icoon",
-      "GHOST": "Spookicoon",
-      "GHOST_DESC": "Een mysterieuze en discrete versie",
-      "DARK": "Donker icoon",
-      "DARK_DESC": "Perfect voor nachtelijke gebruikers",
-      "COLORFUL": "Kleurrijk icoon",
-      "COLORFUL_DESC": "Een levendig en vrolijk icoon"
-   },
    "HOME": {
       "GREETING": "Hoi <span aria-hidden=\"true\">👋</span> Hoe kunnen we je helpen?",
-      "WELCOME": "Welkom bij FantomApp",
       "APP_INFO_TITLE": "Over de app",
       "APPEARANCE": "Uiterlijk",
       "CHANGE_ICON": "Wijzig het icoon",
@@ -274,7 +225,7 @@
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>De te verwijderen inhoud</strong><br />Screenshot van de problematische tekst, foto of video<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Het websiteadres</strong><br />Een link naar de website (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Informatie over de persoon die de inhoud heeft geplaatst</strong><br />Een link naar hun profiel<br /><br /><span aria-hidden=\"true\">✉️</span> <strong>Je verzoek tot verwijdering</strong><br />- Screenshots van de tekst waarin je om verwijdering vraagt<br />- Screenshots van het antwoord (als dat er is)"
                   },
                   "BUTTON": "Ga naar het formulier",
-                  "LINK": "https://www.gegevensbeschermingsautoriteit.be/burger/acties/klacht-indienen"
+                  "LINK": ""
                }
             },
             "UNREPORTED_CONTENT": {
@@ -904,19 +855,6 @@
       },
       "GENERAL": {
          "FLAG": "Vlag"
-      },
-      "COUNTRIES": {
-         "FRANCE": "Français",
-         "IRELAND": "English",
-         "HUNGARY": "Magyar",
-         "GREECE": "Ελληνικά",
-         "DENMARK": "Dansk",
-         "POLAND": "Polski",
-         "PORTUGAL": "Português",
-         "SPAIN": "Español",
-         "CATALONIA": "Español",
-         "LUXEMBOURG": "Lëtzebuergesch",
-         "INTERNATIONAL": "International"
       },
       "TOOLS": {
          "PASSWORD_CHECK": {
