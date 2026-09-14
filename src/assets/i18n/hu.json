@@ -23,8 +23,8 @@
       "BACK": "Vissza",
       "NEXT": "Tovább",
       "PREVIOUS": "Előző",
-      "CAROUSEL_PREVIOUS": "",
-      "CAROUSEL_NEXT": "",
+      "CAROUSEL_PREVIOUS": "Previous: {{slide}}",
+      "CAROUSEL_NEXT": "Next: {{slide}}",
       "RESULTS": "Eredmények",
       "HOME": "Kezdőlap",
       "PROBLEM": "Probléma",
@@ -225,7 +225,7 @@
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>A törlendő tartalom</strong><br />Képernyőkép a problémás szövegről, fotóról vagy videóról<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>A weboldal címe</strong><br />Link a weboldalra (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Információk a tartalmat közzétevő személyről</strong><br />Link a profiljára<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>A törlési kérelmed</strong><br />- Képernyőképek a szövegről, amelyben a törlést kéred<br />- Képernyőképek a válaszról (ha van)"
                   },
                   "BUTTON": "Ugrás az űrlaphoz",
-                  "LINK": "https://www.naih.hu/ugyfelszolgalat-kapcsolat"
+                  "LINK": ""
                }
             },
             "UNREPORTED_CONTENT": {
@@ -736,13 +736,13 @@
          "BRUSH_SIZE": "Elhomályosítás mérete",
          "GLOBAL_BLUR_INFO": "Ezzel a gombbal az egész képet elhomályosíthatod. A gombra kattintva megnyílik az elhomályosítási százalékok listája az intenzitás kiválasztásához.",
          "MODIFICATION_DONE": "Módosítás befejezve",
-         "UNDO": "",
-         "REDO": "",
+         "UNDO": "Undo last change",
+         "REDO": "Redo change",
+         "ACTIONS_TOOLBAR": "Blur mode",
+         "BLUR_PERCENT": "Blur entire image at {{percent}} percent",
          "TUTORIAL": {
             "DESCRIPTION": "Csúsztasd az ujjad a képen az elhomályosításhoz."
-         },
-         "ACTIONS_TOOLBAR": "",
-         "BLUR_PERCENT": ""
+         }
       },
       "PASSWORD_CHECK": {
          "TITLE": "Jelszó tesztelése",
@@ -751,8 +751,8 @@
          "FOCUS_ACCESSIBLE_TITLE": "Jelszó tesztelése - beviteli mező",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "brute force",
-            "CONTENT": "A <strong>brute force (nyers erő) támadás</strong> abból áll, hogy egyenként tesztelik a jelszó minden lehetséges kombinációját. (forrás: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)",
-            "ARIA_LABEL": ""
+            "ARIA_LABEL": "What is a brute force attack?",
+            "CONTENT": "A <strong>brute force (nyers erő) támadás</strong> abból áll, hogy egyenként tesztelik a jelszó minden lehetséges kombinációját. (forrás: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
          },
          "CRIMINAL_GUESSES": "Egy kiberbűnöző ennyi idő alatt találja ki:",
          "ASSESSMENT_TEXT": "A jelszavad:",
@@ -841,10 +841,10 @@
       "HEADER": {
          "CURRENT_LANGUAGE": "Jelenlegi nyelv: {{language}}",
          "CURRENT_DEVICE": "Jelenlegi eszköz: {{device}}",
-         "NO_DEVICE_SELECTED": "",
-         "DEVICE_IOS": "",
-         "DEVICE_ANDROID": "",
-         "DEVICE_WEB": ""
+         "NO_DEVICE_SELECTED": "No device selected",
+         "DEVICE_IOS": "iOS",
+         "DEVICE_ANDROID": "Android",
+         "DEVICE_WEB": "Web"
       },
       "CONTACT": {
          "PHONE": "Kapcsolatfelvétel telefonon",
