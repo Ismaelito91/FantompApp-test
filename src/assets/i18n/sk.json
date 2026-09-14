@@ -23,8 +23,8 @@
       "BACK": "Späť",
       "NEXT": "Ďalej",
       "PREVIOUS": "Predchádzajúce",
-      "CAROUSEL_PREVIOUS": "",
-      "CAROUSEL_NEXT": "",
+      "CAROUSEL_PREVIOUS": "Previous: {{slide}}",
+      "CAROUSEL_NEXT": "Next: {{slide}}",
       "RESULTS": "Výsledky",
       "HOME": "Domov",
       "PROBLEM": "Problém",
@@ -225,7 +225,7 @@
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>Obsah na vymazanie</strong><br />Snímka obrazovky problematického textu, fotky alebo videa<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Adresa webovej stránky</strong><br />Odkaz na webovú stránku (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Informácie o osobe, ktorá obsah zverejnila</strong><br />Odkaz na jej profil<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Tvoja žiadosť o vymazanie</strong><br />- Snímky obrazovky textu, kde žiadaš o vymazanie<br />- Snímky obrazovky odpovede (ak nejaká je)"
                   },
                   "BUTTON": "Prejsť na formulár",
-                  "LINK": "https://dataprotection.gov.sk/sk/dotknute-osoby/konanie-ochrane-osobnych-udajov/"
+                  "LINK": ""
                }
             },
             "UNREPORTED_CONTENT": {
@@ -736,13 +736,13 @@
          "BRUSH_SIZE": "Veľkosť rozmazania",
          "GLOBAL_BLUR_INFO": "Týmto tlačidlom môžeš rozmazať celý obrázok. Kliknutím sa otvorí zoznam percent rozmazania pre výber intenzity.",
          "MODIFICATION_DONE": "Úprava dokončená",
-         "UNDO": "",
-         "REDO": "",
+         "UNDO": "Undo last change",
+         "REDO": "Redo change",
+         "ACTIONS_TOOLBAR": "Blur mode",
+         "BLUR_PERCENT": "Blur entire image at {{percent}} percent",
          "TUTORIAL": {
             "DESCRIPTION": "Posúvaj prst po obrázku na jeho rozmazanie."
-         },
-         "ACTIONS_TOOLBAR": "",
-         "BLUR_PERCENT": ""
+         }
       },
       "PASSWORD_CHECK": {
          "TITLE": "Otestovať moje heslo",
@@ -751,8 +751,8 @@
          "FOCUS_ACCESSIBLE_TITLE": "Otestovať moje heslo - vstupné pole",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "hrubej sily",
-            "CONTENT": "Útok <strong>hrubou silou</strong> spočíva v testovaní, jednej po druhej, každej možnej kombinácie hesla. (zdroj: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)",
-            "ARIA_LABEL": ""
+            "ARIA_LABEL": "What is a brute force attack?",
+            "CONTENT": "Útok <strong>hrubou silou</strong> spočíva v testovaní, jednej po druhej, každej možnej kombinácie hesla. (zdroj: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
          },
          "CRIMINAL_GUESSES": "Kyberzločinec ho uhádne za:",
          "ASSESSMENT_TEXT": "Tvoje heslo:",
@@ -818,6 +818,7 @@
             "WEEKS": "týždne",
             "MONTH": "mesiac",
             "MONTHS": "mesiace",
+            "YEAR": "year",
             "YEARS": "roky",
             "THOUSAND_YEARS": "tisíc rokov",
             "MILLION_YEARS": "miliónov rokov",
@@ -840,10 +841,10 @@
       "HEADER": {
          "CURRENT_LANGUAGE": "Aktuálny jazyk: {{language}}",
          "CURRENT_DEVICE": "Aktuálne zariadenie: {{device}}",
-         "NO_DEVICE_SELECTED": "",
-         "DEVICE_IOS": "",
-         "DEVICE_ANDROID": "",
-         "DEVICE_WEB": ""
+         "NO_DEVICE_SELECTED": "No device selected",
+         "DEVICE_IOS": "iOS",
+         "DEVICE_ANDROID": "Android",
+         "DEVICE_WEB": "Web"
       },
       "CONTACT": {
          "PHONE": "Kontaktovať telefonicky",

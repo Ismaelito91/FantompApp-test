@@ -23,8 +23,8 @@
       "BACK": "Gå tillbaka",
       "NEXT": "Nästa",
       "PREVIOUS": "Föregående",
-      "CAROUSEL_PREVIOUS": "",
-      "CAROUSEL_NEXT": "",
+      "CAROUSEL_PREVIOUS": "Previous: {{slide}}",
+      "CAROUSEL_NEXT": "Next: {{slide}}",
       "RESULTS": "Resultat",
       "HOME": "Hem",
       "PROBLEM": "Problem",
@@ -225,7 +225,7 @@
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>Innehållet som ska raderas</strong><br />Skärmdump av den problematiska texten, fotot eller videon<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Webbplatsens adress</strong><br />En länk till rätt sida på webbplatsen (även kallat webbadress eller URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Information om personen som publicerade innehållet</strong><br />En länk till deras profil<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Din begäran om radering</strong><br />- En skärmdump av texten eller mejlet där du ber att det sociala mediet raderar innehållet<br />- En skärmdump av svaret från det sociala mediet (om du har fått svar)"
                   },
                   "BUTTON": "Gå till formuläret",
-                  "LINK": "https://www.imy.se/privatperson/utfora-arenden/filtersida/"
+                  "LINK": ""
                }
             },
             "UNREPORTED_CONTENT": {
@@ -408,7 +408,7 @@
                   "DESCRIPTION": "Flera organisationer har <strong>experter</strong> som kan hjälpa dig på flera sätt, exempelvis via chatt eller telefon. Du kan kontakta deras <strong>stödlinjer</strong> anonymt och helt gratis. <span class=\"text-(--color-24)\"><strong>Ring tills någon svarar</strong>.</span>",
                   "LINK": {
                      "TITLE": "Prata med en stödlinje",
-                     "DESCRIPTION":""
+                     "DESCRIPTION": "https://www.inhope.org/EN#hotlineReferral"
                   },
                   "CALL": {
                      "TITLE": "Stödlinje"
@@ -736,13 +736,13 @@
          "BRUSH_SIZE": "Storlek på oskärpan",
          "GLOBAL_BLUR_INFO": "Du kan göra hela bilden suddig med den här knappen. Genom att klicka på den öppnas en lista med procentsatser där du kan styra hur suddig bilden ska vara.",
          "MODIFICATION_DONE": "Ändring slutförd",
-         "UNDO": "",
-         "REDO": "",
+         "UNDO": "Undo last change",
+         "REDO": "Redo change",
+         "ACTIONS_TOOLBAR": "Blur mode",
+         "BLUR_PERCENT": "Blur entire image at {{percent}} percent",
          "TUTORIAL": {
             "DESCRIPTION": "Dra fingret över bilden för att göra den suddig."
-         },
-         "ACTIONS_TOOLBAR": "",
-         "BLUR_PERCENT": ""
+         }
       },
       "PASSWORD_CHECK": {
          "TITLE": "Testa mitt lösenord",
@@ -751,8 +751,8 @@
          "FOCUS_ACCESSIBLE_TITLE": "Testa mitt lösenord - inmatningsfält",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "brute force",
-            "CONTENT": "En <strong>brute force-attack</strong> består av att testa varje möjlig kombination av ett lösenord. (källa: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)",
-            "ARIA_LABEL": ""
+            "ARIA_LABEL": "What is a brute force attack?",
+            "CONTENT": "En <strong>brute force-attack</strong> består av att testa varje möjlig kombination av ett lösenord. (källa: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
          },
          "CRIMINAL_GUESSES": "Obehöriga personer kan gissa lösenordet på:",
          "ASSESSMENT_TEXT": "Ditt lösenord:",
@@ -841,10 +841,10 @@
       "HEADER": {
          "CURRENT_LANGUAGE": "Aktuellt språk: {{language}}",
          "CURRENT_DEVICE": "Aktuell enhet: {{device}}",
-         "NO_DEVICE_SELECTED": "",
-         "DEVICE_IOS": "",
-         "DEVICE_ANDROID": "",
-         "DEVICE_WEB": ""
+         "NO_DEVICE_SELECTED": "No device selected",
+         "DEVICE_IOS": "iOS",
+         "DEVICE_ANDROID": "Android",
+         "DEVICE_WEB": "Web"
       },
       "CONTACT": {
          "PHONE": "Kontakta via telefon",

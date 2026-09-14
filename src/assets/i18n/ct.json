@@ -23,6 +23,8 @@
       "BACK": "Enrere",
       "NEXT": "Següent",
       "PREVIOUS": "Anterior",
+      "CAROUSEL_PREVIOUS": "Previous: {{slide}}",
+      "CAROUSEL_NEXT": "Next: {{slide}}",
       "RESULTS": "Resultats",
       "HOME": "Inici",
       "PROBLEM": "Problema",
@@ -734,6 +736,10 @@
          "BRUSH_SIZE": "Mida del pinzell",
          "GLOBAL_BLUR_INFO": "Pots difuminar tota la imatge amb aquest botó. Fent-hi clic s'obre una llista de percentatges de difuminat per triar la intensitat.",
          "MODIFICATION_DONE": "Modificació completada",
+         "UNDO": "Undo last change",
+         "REDO": "Redo change",
+         "ACTIONS_TOOLBAR": "Blur mode",
+         "BLUR_PERCENT": "Blur entire image at {{percent}} percent",
          "TUTORIAL": {
             "DESCRIPTION": "Llisca el dit sobre la imatge per difuminar-la."
          }
@@ -745,6 +751,7 @@
          "FOCUS_ACCESSIBLE_TITLE": "Provar la meva contrasenya - camp d'entrada",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "força bruta",
+            "ARIA_LABEL": "What is a brute force attack?",
             "CONTENT": "Un atac de <strong>força bruta</strong> consisteix a provar, una per una, cada possible combinació d'una contrasenya. (font: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
          },
          "CRIMINAL_GUESSES": "Un cibercriminal l'endevina en:",
@@ -833,7 +840,11 @@
    "ALT_TEXT": {
       "HEADER": {
          "CURRENT_LANGUAGE": "Idioma actual: {{language}}",
-         "CURRENT_DEVICE": "Dispositiu actual: {{device}}"
+         "CURRENT_DEVICE": "Dispositiu actual: {{device}}",
+         "NO_DEVICE_SELECTED": "No device selected",
+         "DEVICE_IOS": "iOS",
+         "DEVICE_ANDROID": "Android",
+         "DEVICE_WEB": "Web"
       },
       "CONTACT": {
          "PHONE": "Contactar per telèfon",
@@ -844,19 +855,6 @@
       },
       "GENERAL": {
          "FLAG": "Bandera"
-      },
-      "COUNTRIES": {
-         "FRANCE": "Français",
-         "IRELAND": "English",
-         "HUNGARY": "Magyar",
-         "GREECE": "Ελληνικά",
-         "DENMARK": "Dansk",
-         "POLAND": "Polski",
-         "PORTUGAL": "Português",
-         "SPAIN": "Español",
-         "CATALONIA": "Català",
-         "LUXEMBOURG": "Lëtzebuergesch",
-         "INTERNATIONAL": "International"
       },
       "TOOLS": {
          "PASSWORD_CHECK": {

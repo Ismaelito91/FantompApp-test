@@ -225,7 +225,7 @@
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>Le contenu à supprimer</strong><br />Capture du texte, de la photo ou de la vidéo qui pose problème<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>L'adresse du site</strong><br />Lien vers le site (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Des informations sur la personne qui a posté le contenu</strong><br />Lien vers le profil de la personne<br /><br /><span aria-hidden=\"true\">✉️</span> <strong>Ta demande de suppression</strong><br />- Capture du message où tu demandes la suppression<br />- Capture de la réponse (s'il y a)"
                   },
                   "BUTTON": "Accéder au formulaire",
-                  "LINK": "https://www.autoriteprotectiondonnees.be/citoyen/agir/introduire-une-plainte"
+                  "LINK": ""
                }
             },
             "UNREPORTED_CONTENT": {
@@ -412,6 +412,9 @@
                   },
                   "CALL": {
                      "TITLE": "3018"
+                  },
+                  "MESSAGE": {
+                     "TITLE": "Hotline"
                   }
                },
                "P3": {

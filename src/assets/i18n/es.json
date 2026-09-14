@@ -23,8 +23,8 @@
       "BACK": "Volver",
       "NEXT": "Siguiente",
       "PREVIOUS": "Anterior",
-      "CAROUSEL_PREVIOUS": "",
-      "CAROUSEL_NEXT": "",
+      "CAROUSEL_PREVIOUS": "Previous: {{slide}}",
+      "CAROUSEL_NEXT": "Next: {{slide}}",
       "RESULTS": "Resultados",
       "HOME": "Inicio",
       "PROBLEM": "Problema",
@@ -225,7 +225,7 @@
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>El contenido a eliminar</strong><br />Captura de pantalla del texto, foto o vídeo problemático<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>La dirección del sitio web</strong><br />Un enlace al sitio web (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Información sobre la persona que publicó el contenido</strong><br />Un enlace a su perfil<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Tu solicitud de eliminación</strong><br />- Capturas de pantalla del texto donde solicitas la eliminación<br />- Capturas de pantalla de la respuesta (si la hay)"
                   },
                   "BUTTON": "Acceder al formulario",
-                  "LINK": "https://sedeaepd.gob.es/sede-electronica/procedures/claims"
+                  "LINK": ""
                }
             },
             "UNREPORTED_CONTENT": {
@@ -736,13 +736,13 @@
          "BRUSH_SIZE": "Tamaño del difuminado",
          "GLOBAL_BLUR_INFO": "Puedes difuminar toda la imagen con este botón. Al hacer clic se abre una lista de porcentajes de desenfoque para elegir la intensidad.",
          "MODIFICATION_DONE": "Modificación completada",
-         "UNDO": "",
-         "REDO": "",
+         "UNDO": "Undo last change",
+         "REDO": "Redo change",
+         "ACTIONS_TOOLBAR": "Blur mode",
+         "BLUR_PERCENT": "Blur entire image at {{percent}} percent",
          "TUTORIAL": {
             "DESCRIPTION": "Desliza el dedo sobre la imagen para difuminarla."
-         },
-         "ACTIONS_TOOLBAR": "",
-         "BLUR_PERCENT": ""
+         }
       },
       "PASSWORD_CHECK": {
          "TITLE": "Probar mi contraseña",
@@ -751,8 +751,8 @@
          "FOCUS_ACCESSIBLE_TITLE": "Probar mi contraseña - campo de entrada",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "fuerza bruta",
-            "CONTENT": "Un ataque de <strong>fuerza bruta</strong> consiste en probar, una por una, cada posible combinación de una contraseña. (fuente: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)",
-            "ARIA_LABEL": ""
+            "ARIA_LABEL": "What is a brute force attack?",
+            "CONTENT": "Un ataque de <strong>fuerza bruta</strong> consiste en probar, una por una, cada posible combinación de una contraseña. (fuente: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
          },
          "CRIMINAL_GUESSES": "Un ciberdelincuente la adivina en:",
          "ASSESSMENT_TEXT": "Tu contraseña:",
@@ -818,6 +818,7 @@
             "WEEKS": "semanas",
             "MONTH": "mes",
             "MONTHS": "meses",
+            "YEAR": "year",
             "YEARS": "años",
             "THOUSAND_YEARS": "mil años",
             "MILLION_YEARS": "millones de años",
@@ -840,18 +841,17 @@
       "HEADER": {
          "CURRENT_LANGUAGE": "Idioma actual: {{language}}",
          "CURRENT_DEVICE": "Dispositivo actual: {{device}}",
-         "NO_DEVICE_SELECTED": "",
-         "DEVICE_IOS": "",
-         "DEVICE_ANDROID": "",
-         "DEVICE_WEB": ""
+         "NO_DEVICE_SELECTED": "No device selected",
+         "DEVICE_IOS": "iOS",
+         "DEVICE_ANDROID": "Android",
+         "DEVICE_WEB": "Web"
       },
       "CONTACT": {
          "PHONE": "Contactar por teléfono",
          "WHATSAPP": "Contactar por WhatsApp",
          "SMS": "Contactar por SMS",
          "EMAIL": "Contactar por correo electrónico",
-         "SUPPORT_3018": "Talk with the hotline",
-         "SUPPORT_017": "Hablar con la línea de ayuda"
+         "SUPPORT_3018": "Talk with the hotline"
       },
       "GENERAL": {
          "FLAG": "Bandera"
@@ -887,19 +887,6 @@
       },
       "ONBOARDING": {
          "LOGO_FANTOMAPP": "FantomApp"
-      },
-      "PAÍSES": {
-         "FRANCE": "Francia",
-         "IRELAND": "Irlanda",
-         "HUNGARY": "Hungría",
-         "GREECE": "Grecia",
-         "DENMARK": "Dinamarca",
-         "POLAND": "Polonia",
-         "PORTUGAL": "Portugal",
-         "SPAIN": "España",
-         "CATALONIA": "Cataluña",
-         "LUXEMBOURG": "Luxemburgo",
-         "INTERNATIONAL": "Internacional"
       }
    }
 }

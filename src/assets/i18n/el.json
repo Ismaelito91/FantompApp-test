@@ -23,8 +23,8 @@
       "BACK": "Πίσω",
       "NEXT": "Επόμενο",
       "PREVIOUS": "Προηγούμενο",
-      "CAROUSEL_PREVIOUS": "",
-      "CAROUSEL_NEXT": "",
+      "CAROUSEL_PREVIOUS": "Previous: {{slide}}",
+      "CAROUSEL_NEXT": "Next: {{slide}}",
       "RESULTS": "Αποτελέσματα",
       "HOME": "Αρχική",
       "PROBLEM": "Πρόβλημα",
@@ -111,7 +111,6 @@
       "RIGHTS": "Έχω δικαιώματα",
       "ACCESSIBILITY": "FantomApp για όλους (Προσβασιμότητα)",
       "TUTORIAL": "Δες ξανά το βίντεο καλωσορίσματος",
-      
       "CARDS": {
          "MAIN_TITLE": "Ασφαλίζω τα κοινωνικά μου δίκτυα",
          "VIEW_ALL": "Προβολή όλων",
@@ -226,7 +225,7 @@
                      "DESCRIPTION": "<span aria-hidden=\"true\">🛑</span> <strong>Το περιεχόμενο προς διαγραφή</strong><br />Στιγμιότυπο του προβληματικού κειμένου, φωτογραφίας ή βίντεο<br /> <br /><span aria-hidden=\"true\">🌍</span> <strong>Η διεύθυνση του ιστότοπου</strong><br />Ένας σύνδεσμος προς τον ιστότοπο (URL)<br /> <br /><span aria-hidden=\"true\">ℹ️</span> <strong>Πληροφορίες για το άτομο που δημοσίευσε το περιεχόμενο</strong><br />Ένας σύνδεσμος προς το προφίλ του<br /><br /><span aria-hidden=\"true\">✉</span>️ <strong>Το αίτημά σου για διαγραφή</strong><br />- Στιγμιότυπα του κειμένου όπου ζητάς τη διαγραφή<br />- Στιγμιότυπα της απάντησης (αν υπάρχει)"
                   },
                   "BUTTON": "Πρόσβαση στη φόρμα",
-                  "LINK": "https://www.dpa.gr/el/polites/katagelia_stin_arxi"
+                  "LINK": ""
                }
             },
             "UNREPORTED_CONTENT": {
@@ -737,13 +736,13 @@
          "BRUSH_SIZE": "Μέγεθος θολώματος",
          "GLOBAL_BLUR_INFO": "Μπορείς να θολώσεις ολόκληρη την εικόνα με αυτό το κουμπί. Πατώντας το ανοίγει μια λίστα ποσοστών θολώματος για να επιλέξεις την ένταση.",
          "MODIFICATION_DONE": "Η τροποποίηση ολοκληρώθηκε",
-         "UNDO": "",
-         "REDO": "",
+         "UNDO": "Undo last change",
+         "REDO": "Redo change",
+         "ACTIONS_TOOLBAR": "Blur mode",
+         "BLUR_PERCENT": "Blur entire image at {{percent}} percent",
          "TUTORIAL": {
             "DESCRIPTION": "Σύρε το δάχτυλό σου στην εικόνα για να τη θολώσεις."
-         },
-         "ACTIONS_TOOLBAR": "",
-         "BLUR_PERCENT": ""
+         }
       },
       "PASSWORD_CHECK": {
          "TITLE": "Δοκιμή του κωδικού μου",
@@ -752,8 +751,8 @@
          "FOCUS_ACCESSIBLE_TITLE": "Δοκιμή του κωδικού μου - πεδίο εισαγωγής",
          "DESCRIPTION_TOOLTIP": {
             "TITLE": "εξαντλητικές αναζητήσεις (brute force)",
-            "CONTENT": "Μια επίθεση <strong>«brute force»</strong> συνίσταται στη δοκιμή, έναν προς έναν, κάθε πιθανού συνδυασμού ενός κωδικού πρόσβασης. (πηγή: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)",
-            "ARIA_LABEL": ""
+            "ARIA_LABEL": "What is a brute force attack?",
+            "CONTENT": "Μια επίθεση <strong>«brute force»</strong> συνίσταται στη δοκιμή, έναν προς έναν, κάθε πιθανού συνδυασμού ενός κωδικού πρόσβασης. (πηγή: <a href='https://www.cnil.fr/fr/definition/force-brute-attaque-informatique' target='_blank'>cnil.fr</a>)"
          },
          "CRIMINAL_GUESSES": "Ένας κυβερνοεγκληματίας τον μαντεύει σε:",
          "ASSESSMENT_TEXT": "Ο κωδικός σου:",
@@ -819,6 +818,7 @@
             "WEEKS": "εβδομάδες",
             "MONTH": "μήνας",
             "MONTHS": "μήνες",
+            "YEAR": "year",
             "YEARS": "χρόνια",
             "THOUSAND_YEARS": "χιλιάδες χρόνια",
             "MILLION_YEARS": "εκατομμύρια χρόνια",
@@ -841,10 +841,10 @@
       "HEADER": {
          "CURRENT_LANGUAGE": "Τρέχουσα γλώσσα: {{language}}",
          "CURRENT_DEVICE": "Τρέχουσα συσκευή: {{device}}",
-         "NO_DEVICE_SELECTED": "",
-         "DEVICE_IOS": "",
-         "DEVICE_ANDROID": "",
-         "DEVICE_WEB": ""
+         "NO_DEVICE_SELECTED": "No device selected",
+         "DEVICE_IOS": "iOS",
+         "DEVICE_ANDROID": "Android",
+         "DEVICE_WEB": "Web"
       },
       "CONTACT": {
          "PHONE": "Επικοινωνία μέσω τηλεφώνου",
@@ -855,21 +855,6 @@
       },
       "GENERAL": {
          "FLAG": "Σημαία"
-      },
-      "COUNTRIES": {
-         "FRANCE": "Γαλλικά",
-         "IRELAND": "Αγγλικά",
-         "HUNGARY": "Ουγγρικά",
-         "GREECE": "Ελληνικά",
-         "DENMARK": "Δανικά",
-         "POLAND": "Πολωνικά",
-         "PORTUGAL": "Πορτογαλικά",
-         "SPAIN": "Ισπανικά",
-         "CATALONIA": "Καταλανικά",
-         "BELGIUM_FRENCH": "Français (Belgique)",
-         "BELGIUM_DUTCH": "Nederlands (België)",
-         "LUXEMBOURG": "Λουξεμβουργιανά",
-         "INTERNATIONAL": "Διεθνές"
       },
       "TOOLS": {
          "PASSWORD_CHECK": {
