@@ -1,11 +1,11 @@
 {
    "APP": {
       "TITLE": "FantomApp",
-      "LOADING": "Loading...",
-      "ERROR": "Error loading application",
-      "INSTALL_APP": "Install the app'",
-      "NEW_VERSION_AVAILABLE": "New version available",
-      "UPDATE_APP": "Application update"
+      "LOADING": "Indlæser...",
+      "ERROR": "Fejl ved indlæsning af applikationen",
+      "INSTALL_APP": "Installer appen",
+      "NEW_VERSION_AVAILABLE": "Ny version tilgængelig",
+      "UPDATE_APP": "Appopdatering"
    },
    "NO_CONNECTION": {
       "TITLE": "It's been a while!",
@@ -23,7 +23,7 @@
       "BACK": "Go Back",
       "NEXT": "Next",
       "PREVIOUS": "Previous",
-      "CAROUSEL_PREVIOUS": "Previous: {{slide}}",
+      "CAROUSEL_PREVIOUS": "Forrige: {{slide}}",
       "CAROUSEL_NEXT": "Next: {{slide}}",
       "RESULTS": "Results",
       "HOME": "Home",
